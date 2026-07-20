@@ -79,9 +79,12 @@ editor:
   # gate is in code rather than in the prompt.
   min_grounding_chars: 400
 
-  # The readability gate's revision budget (SPEC 6.5). One pass reliably
-  # lands just over grade 9 on real editions; two gets under it.
-  readability_max_passes: 2
+  # The readability gate's revision budget (SPEC 6.5). Measured across real
+  # editions: one pass lands about 9.15, two lands 8.89 to 9.07, which
+  # straddles the limit because each generation differs. Three clears it
+  # reliably. The loop exits as soon as the edition passes, so a budget of
+  # three costs nothing on a day that only needs one.
+  readability_max_passes: 3
 
 audio:
   # SPEC 6.7, decision #4. One small model call turns edition.json into a
