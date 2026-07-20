@@ -418,7 +418,12 @@ class FallbackEdition(_EditionBase):
 
     edition_type: Literal["fallback"]
     notice: str = Field(min_length=1)
-    stories: list[RankedStory] = Field(min_length=1, max_length=FALLBACK_STORIES)
+    # Usually the ranked top ten. An empty list is allowed because SPEC
+    # section 7 and decision #8 say a day is never skipped silently: with no
+    # usable clusters at all the page is the notice alone, which is strictly
+    # better than failing the publish and shipping nothing. Proposed SPEC 6.5
+    # addition (M6).
+    stories: list[RankedStory] = Field(default_factory=list, max_length=FALLBACK_STORIES)
 
     @field_validator("notice")
     @classmethod

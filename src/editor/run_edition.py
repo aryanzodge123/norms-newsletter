@@ -121,6 +121,23 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
     edition_type = choose_edition_type(contexts, config)
     plan = plan_sections(contexts)
 
+    # SPEC 6.9 drops the day's bronze and silver partitions once the archival
+    # job has folded them into gold, so any re-run of an already-published
+    # date sees an empty day. Without this guard the re-run would replace a
+    # real edition with an empty fallback, which is the opposite of what
+    # decision #17 means by "the committed editions are the publication
+    # record". An already-published date with nothing left to read keeps what
+    # it published.
+    existing = OUTPUT_DIR / f"{ingest_date.isoformat()}.json"
+    if not contexts and existing.exists():
+        log.info(
+            "no usable clusters for %s and %s already exists (its partitions "
+            "were archived); keeping the published edition",
+            ingest_date,
+            existing.name,
+        )
+        return 0
+
     log.info(
         "run %s: %d items, %d clusters, %d usable -> %s edition",
         run_id,

@@ -266,6 +266,16 @@ def test_fallback_takes_top_ten_by_score(tmp_path):
     assert scores == sorted(scores, reverse=True)
 
 
+def test_fallback_with_no_stories_is_valid(tmp_path):
+    """SPEC 7 / decision #8: never skip a day silently. With nothing usable
+    at all the page is the notice alone, rather than a failed publish."""
+    edition = assemble.assemble_fallback(
+        contexts=[], target_date=TODAY, notice="Nothing to report today.", editions_dir=tmp_path,
+    )
+    validate_edition(edition)
+    assert edition["stories"] == []
+
+
 # --------------------------------------------------------------------------
 # The full run, offline
 # --------------------------------------------------------------------------
@@ -323,6 +333,27 @@ def wired(monkeypatch, local_catalog, tmp_path):
 
     monkeypatch.setattr(run_edition, "get_pipeline", lambda: _Pipeline())
     return local_catalog, editions
+
+
+def test_rerun_after_archival_keeps_the_published_edition(wired, monkeypatch):
+    """SPEC 6.9 drops the day's partitions after a successful publish, so a
+    same-day re-run reads an empty day. It must keep what was published
+    (decision #17), not replace it with an empty fallback."""
+    catalog, editions = wired
+    editions.mkdir(parents=True, exist_ok=True)
+    published = editions / f"{TODAY.isoformat()}.json"
+    original = json.dumps({"edition_type": "normal", "marker": "the real edition"})
+    published.write_text(original)
+
+    # No partitions seeded: this is the post-archival state.
+    called = {"client": False}
+    monkeypatch.setattr(run_edition, "get_client", lambda: called.__setitem__("client", True))
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 0
+    assert published.read_text() == original  # untouched
+    assert called["client"] is False  # and no AI spend on a no-op re-run
 
 
 def test_full_run_writes_a_normal_edition(wired, monkeypatch):
