@@ -6,6 +6,110 @@ deferred.
 
 ---
 
+## Post-M6: article-text enrichment
+
+Date: 2026-07-20
+Spec: SPEC 6.1 (body_excerpt), 6.5 stage 2, decisions #10, #16; DESIGN 4
+Status: complete, gate green, live
+
+### The problem
+
+The first real edition published 4 expandable stories out of 15. The other
+11 were flat cards. The writer stage had skipped them: adapters store the
+feed's summary in `body_excerpt`, and feed summaries are one-line blurbs.
+Measured on the live `gold.raw_items` partition:
+
+| source | items | empty body | avg chars |
+|---|---|---|---|
+| hackernews | 58 | 55 | 33 |
+| google_news_technology | 24 | 0 | 343 |
+| google_news_business | 22 | 0 | 341 |
+| the_hacker_news | 4 | 0 | 393 |
+| techcrunch | 8 | 0 | 179 |
+| arstechnica | 5 | 0 | 73 |
+
+Every source sat at or under the 400-char grounding floor, so decision #16
+correctly refused to write articles that would have been padding. This is
+the M2 finding ("17 of 19 items have an empty body_excerpt") arriving at the
+place where it finally mattered.
+
+### What was built
+
+`src/enrich.py` fetches each item's `canonical_url` and extracts the main
+article text (trafilatura, with a paragraph-scrape fallback), filling
+`body_excerpt` with what SPEC 6.1 actually describes. It runs in the
+collector before the bronze write, so the text is stored once and every
+later stage reads it: clustering embeds real text instead of a title,
+scoring stops being headline-only (the M2 confidence finding), and the
+writer stage has something to ground on.
+
+Safety, all pinned by tests: 10s timeout, capped concurrency, 2MB body cap,
+non-HTML content types skipped, and every failure non-fatal so the item
+keeps its original summary. `item_id` derives from `canonical_url` and
+`published_at`, never the body, so enrichment cannot disturb bronze dedup.
+Fetched text is grounding input only, paraphrased and never republished
+verbatim (decision #10); the quote policy (#15) is unchanged.
+
+`config/pipeline.yaml` gained an `enrich:` block with `EnrichConfig` in
+`src/config.py`. `news.google.com` is in `skip_hosts`: those RSS URLs are
+opaque JS shims (~580KB, no publisher URL, no article text), so fetching one
+costs a request and returns nothing.
+
+DESIGN 4: StoryCard's flat card now carries a "Read at:" source-link row, so
+a story the writer could not ground still reaches its origin. Milind's call.
+
+### Results, measured
+
+```
+collector --dry-run:  fetched 53 of 110 items, improved 48 (+49,248 chars)
+                      75 items at or above the 400-char floor (was near zero)
+edition --dry-run:    17 groundable, 3 collapsed (was 4 and 11)
+local edition:        11 of 11 stories with articles
+live edition:         13 of 13 expand, 0 flat cards
+```
+
+Verified live: page 200 with 13 "Read the full story" cards and no flat
+cards, audio 200 (4.3MB), feed enclosure correct. Spot-checked an article
+against its source: plain English, grounded, no invented specifics.
+
+### Verification
+
+375 tests passing (22 new, all offline: fetching goes through
+`httpx.MockTransport`). Coverage: extraction from an HTML fixture including
+script and style removal, the paragraph fallback, the skip rules (already
+rich, skip_hosts, disabled), every failure mode returning empty (error
+status, non-HTML, oversized, timeout, connection error), truncation to the
+SPEC 6.1 length, `item_id` stability, order preservation, and that a weaker
+extraction never replaces a better feed summary.
+
+```bash
+uv run pytest -q                                          # 375 passed
+uv run python .claude/skills/milestone-verify/verify.py   # GATE PASSED
+```
+
+### Known limitation
+
+Google News items (about half of each run) stay unenrichable and keep their
+~340-char blurb. Making them groundable means replacing those two feeds with
+direct publisher RSS, which is a `config/sources.yaml` change and no code.
+
+### Proposed spec additions (rule 1)
+
+1. **SPEC 6.1**: `body_excerpt` may be filled by fetching the item's
+   `canonical_url`; the `enrich` config, the `skip_hosts` escape hatch, and
+   the rule that any fetch failure falls back to the feed summary.
+2. **DESIGN 4 (StoryCard)**: the null-article card carries source links.
+3. Note in SPEC 6.1 that Google News RSS links are not enrichable.
+
+### Still open
+
+The readability gate remains over the limit (grade 11.9 after the revision
+pass, against the grade-9 target), so editions publish flagged. That is
+SPEC 6.5's publish-and-flag path working as designed, but it is the next
+thing worth tuning now that there is real prose to measure.
+
+---
+
 ## M6 Audio + polish
 
 Date: 2026-07-20
