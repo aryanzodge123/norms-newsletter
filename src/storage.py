@@ -89,6 +89,20 @@ def audio_public_url(key: str) -> str:
     return f"{base.rstrip('/')}/{key.lstrip('/')}"
 
 
+def audio_object_exists(key: str) -> bool:
+    """True when the audio bucket already holds this key.
+
+    Lets a re-run reuse an MP3 it already produced instead of paying for a
+    second script call and a second TTS render.
+    """
+    client = _s3_audio_client()
+    try:
+        client.head_object(Bucket=get_settings().r2_audio_bucket, Key=key)
+        return True
+    except Exception:  # noqa: BLE001 - any miss or error means "regenerate"
+        return False
+
+
 def upload_audio(key: str, data: bytes, *, content_type: str = "audio/mpeg") -> str:
     """Put one object to the audio bucket and return its public URL.
 

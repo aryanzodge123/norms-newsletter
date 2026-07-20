@@ -72,7 +72,8 @@ def test_happy_path_returns_audio_block(config) -> None:
 
     edition = load_fixture("normal.json")
     result = run_audio.build_audio(
-        edition, config, client=ok_client(), synthesizer=FakeSynth(rendered()), upload=fake_upload
+        edition, config, client=ok_client(), synthesizer=FakeSynth(rendered()),
+        upload=fake_upload, exists=lambda key: False,
     )
     assert result.audio == {
         "url": "https://cdn.invalid/audio/2026-07-19.mp3",
@@ -80,6 +81,49 @@ def test_happy_path_returns_audio_block(config) -> None:
         "size_bytes": len(b"ID3fakebytes"),
     }
     assert uploaded["key"] == "audio/2026-07-19.mp3"
+
+
+def test_existing_audio_is_reused_without_spending(config) -> None:
+    """A re-publish must not pay for a second script call and TTS render when
+    the date's MP3 is already in the bucket."""
+    edition = load_fixture("normal.json")
+    edition["audio"] = {
+        "url": "https://old-base.invalid/audio/2026-07-19.mp3",
+        "duration_seconds": 548,
+        "size_bytes": 8781234,
+    }
+    synth = FakeSynth(rendered())
+    client = ok_client()
+    result = run_audio.build_audio(
+        edition,
+        config,
+        client=client,
+        synthesizer=synth,
+        exists=lambda key: True,
+        public_url=lambda key: f"https://new-base.invalid/{key}",
+    )
+    # URL refreshed from current config, measurements kept, nothing spent.
+    assert result.audio == {
+        "url": "https://new-base.invalid/audio/2026-07-19.mp3",
+        "duration_seconds": 548,
+        "size_bytes": 8781234,
+    }
+    assert result.cost_usd == 0.0
+    assert synth.calls == 0
+    assert client.messages.calls == 0
+
+
+def test_missing_object_regenerates(config) -> None:
+    """An audio block whose object is gone from the bucket is rebuilt."""
+    edition = load_fixture("normal.json")
+    edition["audio"] = {"url": "https://x.invalid/a.mp3", "duration_seconds": 1, "size_bytes": 1}
+    synth = FakeSynth(rendered())
+    result = run_audio.build_audio(
+        edition, config, client=ok_client(), synthesizer=synth,
+        exists=lambda key: False, upload=lambda k, d: "https://new.invalid/" + k,
+    )
+    assert synth.calls == 1
+    assert result.audio["duration_seconds"] == 540
 
 
 def test_fallback_edition_has_no_audio(config) -> None:
@@ -106,6 +150,7 @@ def test_tts_failure_is_contained(config) -> None:
         config,
         client=ok_client(),
         synthesizer=FakeSynth(error=TTSError("no encoder")),
+        exists=lambda key: False,
     )
     assert result.audio is None
     assert "TTS failed" in result.note
@@ -121,6 +166,7 @@ def test_upload_failure_is_contained(config) -> None:
         client=ok_client(),
         synthesizer=FakeSynth(rendered()),
         upload=boom,
+        exists=lambda key: False,
     )
     assert result.audio is None
     assert "upload failed" in result.note
@@ -129,7 +175,8 @@ def test_upload_failure_is_contained(config) -> None:
 def test_script_failure_is_contained(config) -> None:
     bad_client = FakeClient(["not json", json.dumps({"turns": []})])
     result = run_audio.build_audio(
-        load_fixture("normal.json"), config, client=bad_client, synthesizer=FakeSynth(rendered())
+        load_fixture("normal.json"), config, client=bad_client,
+        synthesizer=FakeSynth(rendered()), exists=lambda key: False,
     )
     assert result.audio is None
     assert "script failed" in result.note

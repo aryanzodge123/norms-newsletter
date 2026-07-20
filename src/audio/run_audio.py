@@ -26,7 +26,13 @@ from .. import runlog
 from ..config import REPO_ROOT, get_pipeline
 from ..editor.llm import AIFailure, get_client
 from ..editor.schema import validate_edition
-from ..storage import AudioStorageError, get_catalog, upload_audio
+from ..storage import (
+    AudioStorageError,
+    audio_object_exists,
+    audio_public_url,
+    get_catalog,
+    upload_audio,
+)
 from . import script as script_stage
 from .schema import DialogueScript
 from .tts import GeminiSynthesizer, Synthesized, TTSError
@@ -61,6 +67,8 @@ def build_audio(
     client,
     synthesizer=None,
     upload=upload_audio,
+    exists=audio_object_exists,
+    public_url=audio_public_url,
     dry_run: bool = False,
 ) -> AudioResult:
     """Produce the audio block for one edition, or None on any contained
@@ -68,6 +76,25 @@ def build_audio(
     it with a fake synthesizer and a fake upload."""
     if edition.get("edition_type") == "fallback":
         return AudioResult(None, 0.0, 0, "fallback edition carries no audio")
+
+    # A date's MP3 is written once. If this edition already carries an audio
+    # block and the object is still in the bucket, re-derive the URL from the
+    # current configuration and keep the measurements, rather than paying for
+    # a second script call and a second TTS render. This is what makes a
+    # re-publish cheap, and it is also how a corrected public base URL reaches
+    # an already-voiced edition.
+    key = audio_key(edition["date"])
+    existing = edition.get("audio")
+    if existing and not dry_run and exists(key):
+        refreshed = {
+            "url": public_url(key),
+            "duration_seconds": existing["duration_seconds"],
+            "size_bytes": existing["size_bytes"],
+        }
+        note = "reused the MP3 already in R2"
+        if refreshed["url"] != existing.get("url"):
+            note += f" (url refreshed to {refreshed['url']})"
+        return AudioResult(refreshed, 0.0, 0, note)
 
     system_prompt = script_stage.load_system_prompt()
     try:
@@ -93,7 +120,6 @@ def build_audio(
     except TTSError as exc:
         return AudioResult(None, result.cost_usd, turns, f"TTS failed: {exc}")
 
-    key = audio_key(edition["date"])
     try:
         url = upload(key, rendered.audio_mpeg)
     except AudioStorageError as exc:
