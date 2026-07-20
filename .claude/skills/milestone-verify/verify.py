@@ -71,11 +71,11 @@ def load_validator():
     if not schema_path.exists():
         return None, "src/editor/schema.py does not exist yet (built in M3)"
 
-    sys.path.insert(0, str(REPO / "src"))
+    sys.path.insert(0, str(REPO))
     try:
-        from editor import schema as editor_schema  # type: ignore
+        from src.editor import schema as editor_schema  # type: ignore
     except Exception as exc:  # noqa: BLE001
-        return None, f"could not import editor.schema: {exc}"
+        return None, f"could not import src.editor.schema: {exc}"
 
     if callable(getattr(editor_schema, "validate_edition", None)):
         return editor_schema.validate_edition, ""

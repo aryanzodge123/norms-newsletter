@@ -1,0 +1,19 @@
+# Adapter registry (SPEC 6.1).
+#
+# adapter: dotted path to the Adapter class, resolved under src/.
+# max_items_per_run: hard cap enforced by the collector, per SPEC 6.1.
+# enabled: false takes a source out of rotation without deleting its entry.
+#
+# M1 ships two sources. The rest of the v1 list in SPEC 6.1 lands in M6.
+
+- name: hackernews
+  adapter: adapters.hackernews.HackerNewsAdapter
+  topic_hint: tech
+  enabled: true
+  max_items_per_run: 40
+
+- name: arstechnica
+  adapter: adapters.arstechnica.ArsTechnicaAdapter
+  topic_hint: tech
+  enabled: true
+  max_items_per_run: 40

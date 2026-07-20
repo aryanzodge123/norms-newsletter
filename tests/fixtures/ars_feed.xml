@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Ars Technica</title>
+    <link>https://arstechnica.com</link>
+    <description>Serving the Technologist</description>
+
+    <item>
+      <title>Rocket lab launches its fortieth mission</title>
+      <link>https://Arstechnica.com/space/2026/07/rocket-launch/?utm_source=feed&amp;utm_medium=rss&amp;ref=list#comments</link>
+      <description>&lt;p&gt;The launch carried &lt;a href="https://example.com"&gt;four satellites&lt;/a&gt; into low orbit.&lt;/p&gt;</description>
+      <dc:creator>Stephen Clark</dc:creator>
+      <pubDate>Sun, 19 Jul 2026 14:30:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>A quiet update to the storage stack</title>
+      <link>https://arstechnica.com/gadgets/2026/07/storage-update/</link>
+      <description>Incremental, but it matters for laptops.</description>
+      <dc:creator>Andrew Cunningham</dc:creator>
+      <pubDate>Sun, 19 Jul 2026 09:05:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>This entry has no date and must be skipped</title>
+      <link>https://arstechnica.com/no-date/</link>
+      <description>No pubDate element at all.</description>
+    </item>
+
+    <item>
+      <title>This entry has no link and must be skipped</title>
+      <description>No link element at all.</description>
+      <pubDate>Sun, 19 Jul 2026 08:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <link>https://arstechnica.com/no-title/</link>
+      <description>No title element at all.</description>
+      <pubDate>Sun, 19 Jul 2026 07:00:00 +0000</pubDate>
+    </item>
+
+    <item>
+      <title>An older story outside the since window</title>
+      <link>https://arstechnica.com/old/2026/07/older-story/</link>
+      <description>Published well before the window opens.</description>
+      <pubDate>Fri, 17 Jul 2026 11:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

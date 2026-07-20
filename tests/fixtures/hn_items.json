@@ -1,0 +1,56 @@
+{
+  "topstories": [101, 102, 103, 104, 105, 106],
+  "items": {
+    "101": {
+      "id": 101,
+      "type": "story",
+      "by": "pg",
+      "time": 1784471400,
+      "title": "A new compiler for the browser",
+      "url": "https://example.com/compiler?utm_campaign=hn&fbclid=abc123",
+      "score": 412,
+      "descendants": 88
+    },
+    "102": {
+      "id": 102,
+      "type": "story",
+      "by": "dang",
+      "time": 1784460000,
+      "title": "Ask HN: How do you run a small newsroom?",
+      "text": "I have been thinking about <i>automation</i> and wanted to ask.<p>What works? It&#x27;s hard.",
+      "score": 190,
+      "descendants": 240
+    },
+    "103": {
+      "id": 103,
+      "type": "comment",
+      "by": "someone",
+      "time": 1784460000,
+      "text": "Not a story, must be skipped."
+    },
+    "104": {
+      "id": 104,
+      "type": "story",
+      "by": "spammer",
+      "time": 1784460000,
+      "title": "Dead story",
+      "url": "https://example.com/dead",
+      "dead": true
+    },
+    "105": {
+      "id": 105,
+      "type": "story",
+      "by": "nobody",
+      "time": 1784460000,
+      "url": "https://example.com/untitled"
+    },
+    "106": {
+      "id": 106,
+      "type": "story",
+      "by": "historian",
+      "time": 1784200000,
+      "title": "An older story outside the since window",
+      "url": "https://example.com/old"
+    }
+  }
+}

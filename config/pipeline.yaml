@@ -1,0 +1,26 @@
+# Operational values (SPEC 6.10). Keys are added by the milestone that
+# needs them, not speculatively.
+
+collector:
+  # How far back each run asks adapters to look. The collector runs every
+  # 3 hours (SPEC 6.2), so a wider window overlaps on purpose: missed
+  # cycles backfill themselves and bronze dedups the overlap (SPEC 7).
+  since_window_hours: 6
+
+canonical_url:
+  # Hosts whose URLs are worth a network round trip to resolve, per SPEC
+  # 6.1. This list may change at any time, including mid-day. The
+  # deterministic cleanup rules are frozen per spec version; this is not.
+  shortener_hosts:
+    - t.co
+    - bit.ly
+    - buff.ly
+    - ow.ly
+    - tinyurl.com
+    - goo.gl
+    - dlvr.it
+    - ift.tt
+    - trib.al
+    - lnkd.in
+    - shar.es
+    - feedproxy.google.com
