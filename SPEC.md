@@ -1,6 +1,8 @@
 # SPEC.md - Norm's Newsletter
 
-Status: v1.1 (aligned with DESIGN.md v1.0, locked for build)
+Status: v1.2 (aligned with DESIGN.md v1.0, locked for build)
+Changes in v1.2: deployment identity decisions and the pre-launch
+migration plan (section 13); resolved open questions.
 Owner: Milind
 Audience: written so a junior engineer can build from it.
 
@@ -281,6 +283,15 @@ details/summary (DESIGN.md StoryCard); the site works with JavaScript
 disabled. Feeds: /feed.xml with podcast enclosures (DESIGN.md 7).
 Analytics: GoatCounter.
 
+URL configuration rule: the site's absolute URL and base path are defined
+in exactly one place (astro.config: `site` and `base`) and everything that
+needs an absolute URL (feed links, OG tags, audio enclosure URLs,
+canonical links) derives from it. During the build phase this is
+`site: "https://PERSONAL_USERNAME.github.io"`, `base:
+"/norms-newsletter"`. The pre-launch migration (section 13) changes these
+two values and nothing else in the codebase. No URL is ever hardcoded
+anywhere.
+
 ### 6.7 Audio build
 
 audio/script.py: one small model call turns edition.json into a two-host
@@ -368,15 +379,18 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 16 | Background grounding: cluster excerpts + gold retrieval only; no ungrounded specifics |
 | 17 | Editions committed to the repo are the publication record; archive built statically from them |
 | 18 | Ledger design system per DESIGN.md; light-only v1 |
+| 19 | Build phase runs on Milind's personal GitHub account (project site at PERSONAL_USERNAME.github.io/norms-newsletter); a dedicated org and clean URL come via the pre-launch migration (section 13) |
+| 20 | Public launch and podcast directory submission happen only AFTER the migration, so feed and episode URLs never change once subscribers exist |
+| 21 | Contact email for the About page and feed metadata: aryanzodge1@gmail.com (interim; migration may move this to a project-owned address) |
+| 22 | OBA/BD preclearance is a launch gate, not a build gate; repo stays private and the site unpublished until cleared |
 
 ## 11. Remaining open questions
 
-- Custom domain vs github.io default.
 - Whether briefly items get one-line summaries or titles only (v1: titles).
 - Embedding model choice (candidate: bge-small or all-MiniLM).
 - GDELT adapter in v1.1.
-- OBA/preclearance review of the public site before launch (owner: Milind,
-  outside this repo).
+- Whether the migration (section 13) also moves API keys to a
+  project-owned email/account set, and which providers allow it cleanly.
 
 ## 12. Build order
 
@@ -394,3 +408,37 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 Definition of done for v1: 14 consecutive days of correct, unattended
 publication.
+
+## 13. Pre-launch migration plan (personal account -> project identity)
+
+The project is built under Milind's personal GitHub account and personal
+API accounts. Before public launch, it migrates to a self-contained
+project identity. Because decision #20 delays podcast submission and
+public launch until after this migration, no external URL ever breaks.
+
+Target state:
+- GitHub organization `norms-newsletter` containing repo
+  `norms-newsletter.github.io`, serving the site at
+  https://norms-newsletter.github.io (org root Pages site, base "/").
+- Project email address (owns or receives for the accounts below and
+  replaces the interim contact address if desired).
+- API keys reissued under project-scoped tokens or accounts where the
+  provider supports it (Anthropic, Cloudflare, Google, healthchecks.io,
+  GoatCounter); keys that cannot move are rotated and documented.
+
+Migration steps (target: after M6, before launch):
+1. Create the org and the `norms-newsletter.github.io` repo; transfer the
+   existing repo's history into it (git remote swap + push, or GitHub's
+   repo transfer to the org followed by a rename).
+2. Re-add all Actions secrets in the new repo (secrets do not transfer).
+3. Change astro.config `site` to "https://norms-newsletter.github.io" and
+   `base` to "/". Per the URL configuration rule (6.6) this is the only
+   code change.
+4. Update the mini PC collector's git remote.
+5. Rotate any keys being moved to project ownership; verify spikes 5.1
+   and 5.2 from SETUP.md still pass with the new credentials.
+6. Run one full private publish cycle end to end on the new identity.
+7. Flip the repo public, submit the podcast feed to directories, announce.
+
+Exit criterion: one complete unattended 6am publish on the new URL with
+healthchecks green.

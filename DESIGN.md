@@ -1,7 +1,9 @@
 # DESIGN.md - Norm's Newsletter
 
 Status: v1.0 (locked for build)
-Companion document: SPEC.md v1.1 (pipeline, schemas, workflows)
+Companion document: SPEC.md v1.2 (pipeline, schemas, workflows)
+Note: all absolute URLs on the site derive from astro.config per SPEC 6.6;
+no component hardcodes a URL.
 Audience: written so a junior engineer can implement the Astro site directly
 from this document.
 
