@@ -2,33 +2,33 @@
   "date": "2026-07-20",
   "edition_number": 43,
   "edition_type": "normal",
-  "headline_of_the_day": "Hacker wipes Romania's entire land registry database in active cyberattack",
+  "headline_of_the_day": "Hacker wipes Romania's land registry database in cyberattack",
   "key_points": [
     {
-      "text": "A hacker wiped Romania's land registry database, disrupting property records for an entire country with immediate consequences for real estate transactions and ownership verification.",
+      "text": "A hacker wiped Romania's land registry database, disrupting property records for the entire country.",
       "topic": "Cyber"
     },
     {
-      "text": "Russian intelligence hijacked security cameras across Europe and Ukraine to spy on military logistics, NATO operations, and weapons shipments bound for Kyiv.",
+      "text": "Russian intelligence hijacked security cameras across Europe and Ukraine to monitor NATO military logistics and weapons shipments.",
       "topic": "Cyber"
     },
     {
-      "text": "Hackers stole significant data from Craneware, a tech firm used by thousands of US hospitals and pharmacies for billing, potentially exposing health information.",
+      "text": "Hackers stole a significant amount of data from Craneware, a tech firm used by thousands of US hospitals and pharmacies for billing.",
       "topic": "Cyber"
     },
     {
-      "text": "US gas prices climbed back to $4 a gallon as the US and Iran launched attacks, pushing oil prices over 15 percent higher in one week.",
-      "topic": "Finance"
-    },
-    {
-      "text": "The EU fined AliExpress $629 million for failing to remove illegal and counterfeit products, the largest penalty under the new Digital Services Act.",
+      "text": "The European Union fined AliExpress $629 million for failing to stop sales of illegal and counterfeit products, the largest penalty under new digital services rules.",
       "topic": "Regulation"
+    },
+    {
+      "text": "US gas prices returned to an average of $4 per gallon as Middle East tensions drove oil prices higher.",
+      "topic": "Finance"
     }
   ],
   "audio": {
     "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/audio/2026-07-20.mp3",
-    "duration_seconds": 504,
-    "size_bytes": 6054624
+    "duration_seconds": 416,
+    "size_bytes": 4997088
   },
   "sections": [
     {
@@ -36,9 +36,9 @@
       "stories": [
         {
           "cluster_id": "4d37c98394e7b048e1a87119e1900df5",
-          "slug": "amazon-breaks-apple-wallet-feature-used-by-millions",
-          "title": "Amazon breaks Apple Wallet feature used by millions",
-          "summary": "A change on Amazon's side disabled a widely used Apple Wallet capability, affecting how customers access digital tickets and passes.",
+          "slug": "amazon-breaks-apple-wallet-feature-that-millions-rely-on",
+          "title": "Amazon breaks Apple Wallet feature that millions rely on",
+          "summary": "The company disabled a recently added Wallet integration, disrupting a feature users depend on for storing tickets and passes.",
           "score": 8,
           "sources": [
             {
@@ -50,9 +50,9 @@
         },
         {
           "cluster_id": "1d666fd42ee3b0b3af79b41934316e5f",
-          "slug": "amd-launches-helios-rack-system-to-compete-with-nvidia",
-          "title": "AMD launches Helios rack system to compete with Nvidia, Microsoft buys in",
-          "summary": "The chip maker shipped its first complete artificial intelligence rack system with Microsoft as the first major customer, marking a concrete product in the datacenter AI hardware race.",
+          "slug": "amd-ships-first-rack-ai-system-to-compete-with-nvidia-adds",
+          "title": "AMD ships first rack AI system to compete with Nvidia, adds Microsoft as customer",
+          "summary": "The Helios system marks AMD's entry into complete rack-scale AI infrastructure with immediate enterprise adoption.",
           "score": 7,
           "sources": [
             {
@@ -61,17 +61,17 @@
             }
           ],
           "article": {
-            "background": "AMD makes computer chips that power data centers and artificial intelligence systems. Nvidia has dominated this market for years. AMD has been developing its own AI chip systems to compete. Now AMD has announced Helios, its first complete AI rack system, which is a unit of hardware designed to work together in large computing centers.",
-            "what_happened": "AMD launched Helios, a rack system for AI work, with Microsoft as its first major customer. Microsoft said it will deploy AMD's next-generation Instinct chips (for AI) and EPYC chips (for general computing) in its Azure cloud service. This expands the existing partnership between the two companies.",
-            "why_it_matters": "More competition in AI chips can push companies to innovate faster and keep prices down. Microsoft's choice to buy from AMD shows that Nvidia faces real alternatives in the market. This matters to anyone using cloud AI services, since more choices among chip makers help control what those services cost.",
+            "background": "Nvidia makes most of the specialized chips that companies use to train and run artificial intelligence systems. AMD, a competitor, has been working to offer an alternative. This new move expands AMD's lineup and brings a major customer on board.",
+            "what_happened": "AMD announced Helios, its first complete AI system designed for data centers. The system combines AMD's Instinct processors, which handle AI tasks, with AMD EPYC processors, which handle other server functions. Microsoft said it will use these systems in Azure, its cloud service, making it a major customer for AMD's technology.",
+            "why_it_matters": "When multiple companies make AI chips, customers get more choices and typically better pricing. For people using cloud AI services, more competition means lower costs and more options to choose from. AMD's move signals it is ready to challenge Nvidia's dominance in AI infrastructure.",
             "quote": null
           }
         },
         {
           "cluster_id": "01a6df89e1a23fec6cf885a20aff3faa",
-          "slug": "archer-and-anduril-unveil-military-electric-air-taxi",
-          "title": "Archer and Anduril unveil military electric air taxi",
-          "summary": "The two companies jointly developed an autonomous vertical takeoff aircraft for defense applications, moving electric air taxis from concept to military deployment.",
+          "slug": "electric-air-taxis-move-from-concept-to-military-deployment",
+          "title": "Electric air taxis move from concept to military deployment",
+          "summary": "Archer and Anduril unveiled an autonomous vertical takeoff aircraft designed for both commercial and defense use, backed by military contracts.",
           "score": 7,
           "sources": [
             {
@@ -80,9 +80,9 @@
             }
           ],
           "article": {
-            "background": "Archer Aviation builds electric aircraft that take off and land vertically, like helicopters. Anduril Industries is a defense contractor. The two companies have partnered to adapt Archer's technology for military use.",
-            "what_happened": "Anduril and Archer jointly unveiled Thunder, an autonomous military aircraft built on their shared platform. The aircraft is designed to operate alongside helicopters in military operations, supporting them in the field. Archer's stock rose 18% after the announcement.",
-            "why_it_matters": "The companies are using electric aircraft technology for military purposes, not just commercial passenger transport. This means air taxi companies may earn stable funding from defense contracts alongside their civilian businesses.",
+            "background": "Archer Aviation makes electric aircraft designed to carry passengers in cities. The company is now partnering with Anduril, a defense technology company, to build military versions of these aircraft.",
+            "what_happened": "The two companies unveiled Thunder, an autonomous military aircraft they developed together. Thunder is designed to work alongside helicopters as a support drone. Archer's stock price rose 18% after the announcement.",
+            "why_it_matters": "Electric aircraft technology is expanding beyond passenger transport into defense uses. Military contracts can speed up progress on this technology, which may eventually reach commercial markets.",
             "quote": null
           }
         }
@@ -95,7 +95,7 @@
           "cluster_id": "89d7e9d3444607efe7a5c1ac1eea1f79",
           "slug": "trump-administration-moves-to-restrict-access-to-frontier",
           "title": "Trump administration moves to restrict access to frontier AI models",
-          "summary": "The government is working to control who can access the most advanced artificial intelligence systems domestically, a shift with direct implications for researchers and companies.",
+          "summary": "The White House is preparing controls on who can access the most advanced AI systems domestically, citing concerns about Chinese competition.",
           "score": 7,
           "sources": [
             {
@@ -109,7 +109,7 @@
           "cluster_id": "7efdb78f22363d020af1d55453c581fe",
           "slug": "ai-system-disproves-87-year-old-math-conjecture-in-hours",
           "title": "AI system disproves 87-year-old math conjecture in hours",
-          "summary": "A mathematician used Claude to resolve the Jacobian Conjecture, a theoretical problem that had stumped researchers for nearly nine decades, demonstrating genuine capability in mathematical reasoning.",
+          "summary": "A mathematician used Claude to resolve the Jacobian Conjecture, a problem that had remained open since 1939, surprising the mathematics community.",
           "score": 6,
           "sources": [
             {
@@ -122,56 +122,13 @@
       ]
     },
     {
-      "name": "Business",
-      "stories": [
-        {
-          "cluster_id": "2a3579f69268929cc7cb7ad01cca62cd",
-          "slug": "united-employee-threatens-to-call-immigration-enforcement",
-          "title": "United employee threatens to call immigration enforcement on passenger at San Francisco airport",
-          "summary": "A United Airlines agent at SFO threatened to contact ICE during a ticketing dispute with a Mexican American passenger, raising questions about company training and treatment of customers.",
-          "score": 7,
-          "sources": [
-            {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmNDWGxmczgtWl9Mb1Job0VCVktzbWRPT3JUQXA0enNBWUlzeXhpVHNTYUwtYS1HeGlUVm1GOEV6Vk5QeUJveVVZN0dCLXZ1VE5yMHBzdm1ZOF9fdzEySFhJcTZ1Q0FfSzg3VTVRSmJiekpCeDBncEZpazRBZTJsb2k2Mnd4STV0SEtZX3A5Y2VtTDkteHF6R0Z0bVloN3piWklnanNyUlkwS3VfdnY0WA?oc=5"
-            }
-          ],
-          "article": {
-            "background": "United Airlines operates flights from San Francisco International Airport, one of the Bay Area's major hubs. A ticketing dispute between a passenger and a United employee can escalate quickly when tensions rise during the check-in process.",
-            "what_happened": "A United Airlines agent at SFO threatened to call ICE, the federal immigration enforcement agency, during a disagreement with a San Ramon passenger over a ticket issue. The agent made remarks suggesting the passenger did not act like a citizen. United launched an investigation into the incident after it was reported by multiple news outlets.",
-            "why_it_matters": "When airline staff invoke immigration enforcement during routine customer disputes, it affects how safe passengers feel traveling. This incident raises questions about what conduct airlines will tolerate from their employees and what standards govern their interactions with customers.",
-            "quote": null
-          }
-        },
-        {
-          "cluster_id": "5389c89da20d15be104703d7650b3e3b",
-          "slug": "fda-retracts-test-result-but-still-links-taylor-farms",
-          "title": "FDA retracts test result but still links Taylor Farms lettuce to parasite outbreak",
-          "summary": "The agency walked back a positive finding for Cyclospora in lettuce but maintains the Taylor Farms product is connected to an outbreak affecting multiple states and restaurant chains.",
-          "score": 6,
-          "sources": [
-            {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMXgxNndmUjBPN3E0Vk8wTDZXZkFCUXNZdkhVY3VjOXhyQlNqTUFCaDBPQjRlbGFTM3pjZXpiMXpVOTUzQzFBQmFmUzV1eXlGVmNkMTNvS0tESUFoNmticHFnb3ZkbE5GbHNxdUp2bTRCdVBqSDlDUWs4eDBxd0I1TFFVRzdKOFprQVhsYUNCNm83UjBQZGFxVVo1ejJZT3U4QWE4ZHJpR201TGotZnl1dERFX3VyUi1mTEZZbGtsd1QyWVE?oc=5"
-            }
-          ],
-          "article": {
-            "background": "Cyclosporiasis is a foodborne illness caused by a parasite found in contaminated produce. Taylor Farms is a major lettuce supplier whose products are used by restaurants across the country. The company became the focus of an investigation after several cases of the illness were linked to its lettuce.",
-            "what_happened": "The FDA retracted one test result that initially showed the cyclospora parasite in Taylor Farms lettuce, determining it was a false positive. However, the agency still links Taylor Farms lettuce to the outbreak based on other evidence. Iceberg lettuce from the company has been recalled across 27 states, affecting major restaurant chains that use lettuce in salads.",
-            "why_it_matters": "The outbreak has caused some people to avoid salads at popular chains. The FDA's retraction shows the agency is being careful about its findings, but the investigation continues, so eating out at affected restaurants carries a small risk during the outbreak.",
-            "quote": null
-          }
-        }
-      ]
-    },
-    {
       "name": "Finance",
       "stories": [
         {
           "cluster_id": "dd2bd9b3e81c4446b627139256c670e1",
-          "slug": "us-gas-prices-return-to-4-a-gallon-as-us-and-iran-launch",
-          "title": "US gas prices return to $4 a gallon as US and Iran launch attacks",
-          "summary": "Pump prices climbed back above four dollars per gallon nationwide after oil surged more than 15 percent in a week amid escalating Middle East fighting.",
+          "slug": "us-gas-prices-return-to-4-per-gallon-as-middle-east",
+          "title": "US gas prices return to $4 per gallon as Middle East conflict escalates",
+          "summary": "The national average reached $4 a gallon again after US and Iran launched attacks, pushing oil prices sharply higher.",
           "score": 7,
           "sources": [
             {
@@ -183,9 +140,9 @@
         },
         {
           "cluster_id": "0372438359eadffbd8266499c09439c1",
-          "slug": "oil-prices-touch-90-despite-five-months-of-us-iran-war",
-          "title": "Oil prices touch $90 despite five months of US-Iran war",
-          "summary": "Brent crude topped 90 dollars a barrel as Houthi rebels threaten shipping in the Strait of Hormuz, though prices remain lower than many analysts expected given the conflict's duration.",
+          "slug": "oil-prices-touch-90-despite-months-of-us-iran-conflict",
+          "title": "Oil prices touch $90 despite months of US-Iran conflict",
+          "summary": "Energy markets have remained relatively stable even as Middle East fighting intensified, with analysts citing ample global supply.",
           "score": 6,
           "sources": [
             {
@@ -202,9 +159,9 @@
       "stories": [
         {
           "cluster_id": "43b967ddcde5fc954fdadc643fb2921b",
-          "slug": "eu-fines-aliexpress-629-million-for-illegal-product-sales",
-          "title": "EU fines AliExpress $629 million for illegal product sales",
-          "summary": "The European Commission imposed a record penalty after the platform failed to comply with previous orders to stop selling counterfeit and unsafe goods, the largest fine under the Digital Services Act.",
+          "slug": "eu-fines-aliexpress-629-million-for-selling-illegal-products",
+          "title": "EU fines AliExpress $629 million for selling illegal products",
+          "summary": "The European Commission issued a record penalty after the platform failed to comply with orders to remove counterfeit and unsafe items under new digital services law.",
           "score": 7,
           "sources": [
             {
@@ -221,17 +178,17 @@
             }
           ],
           "article": {
-            "background": "AliExpress is an online marketplace where sellers from around the world list products for sale. It is owned by Alibaba Group, a Chinese company. The European Union passed a law in 2022 called the Digital Services Act, which requires online marketplaces to stop illegal sales on their platforms.",
-            "what_happened": "The European Commission, the EU's executive branch, fined AliExpress €550 million, or about $629 million. This is the largest penalty ever imposed under the Digital Services Act. The fine came after AliExpress failed to follow earlier orders to remove counterfeit and unsafe products from its site.",
-            "why_it_matters": "This fine signals that the EU will enforce its product safety rules with major penalties. For shoppers, it means platforms will likely invest more in checking what sellers offer, which may affect prices and selection. It also shows that even large global companies must comply with EU safety standards.",
+            "background": "AliExpress is an online marketplace owned by Alibaba. Third-party sellers use it to sell products around the world. The European Union has a rule called the Digital Services Act that requires online platforms to stop the sale of illegal and counterfeit goods.",
+            "what_happened": "The EU fined AliExpress 550 million euros, or about $629 million. This is the largest penalty under the Digital Services Act so far. The fine came after AliExpress did not remove counterfeit and unsafe items when the EU ordered it to do so.",
+            "why_it_matters": "The fine signals that the EU will enforce its rules against illegal goods sold online. If you buy from AliExpress or similar platforms, the EU is pushing to make those marketplaces safer by removing fake products and items that fail safety standards. The penalty suggests platforms will face serious costs if they ignore these requirements.",
             "quote": null
           }
         },
         {
           "cluster_id": "5e9a6d99156dadcb61934524ef792018",
-          "slug": "czechia-to-ban-mobile-phones-in-schools-starting-september",
-          "title": "Czechia to ban mobile phones in schools starting September 2027",
-          "summary": "The government set a firm implementation date for a nationwide school phone ban affecting millions of students.",
+          "slug": "czechia-bans-mobile-phones-in-schools-starting-september",
+          "title": "Czechia bans mobile phones in schools starting September 2027",
+          "summary": "The country set a firm date for a nationwide classroom phone prohibition affecting millions of students.",
           "score": 6,
           "sources": [
             {
@@ -247,29 +204,34 @@
       "name": "Science",
       "stories": [
         {
+          "cluster_id": "5389c89da20d15be104703d7650b3e3b",
+          "slug": "fda-retracts-test-result-but-maintains-link-between-taylor",
+          "title": "FDA retracts test result but maintains link between Taylor Farms lettuce and parasite outbreak",
+          "summary": "The agency walked back a positive test for cyclospora but still connects the company's lettuce to illnesses across multiple states and restaurant chains.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "google_news_business",
+              "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMXgxNndmUjBPN3E0Vk8wTDZXZkFCUXNZdkhVY3VjOXhyQlNqTUFCaDBPQjRlbGFTM3pjZXpiMXpVOTUzQzFBQmFmUzV1eXlGVmNkMTNvS0tESUFoNmticHFnb3ZkbE5GbHNxdUp2bTRCdVBqSDlDUWs4eDBxd0I1TFFVRzdKOFprQVhsYUNCNm83UjBQZGFxVVo1ejJZT3U4QWE4ZHJpR201TGotZnl1dERFX3VyUi1mTEZZbGtsd1QyWVE?oc=5"
+            }
+          ],
+          "article": {
+            "background": "Cyclosporiasis is a foodborne illness caused by a parasite that can contaminate fresh produce like lettuce. The FDA has been investigating an outbreak linked to lettuce from Taylor Farms, a produce supplier. As part of that investigation, the agency tested samples from the company's products.",
+            "what_happened": "The FDA found cyclospora in one Taylor Farms lettuce sample and initially reported a positive test result. The agency then retracted that test, saying it was a false positive. However, the FDA still connects Taylor Farms lettuce to cyclosporiasis cases across multiple states and restaurant chains, including Taco Bell. Iceberg lettuce has been recalled in 27 states due to potential cyclospora contamination.",
+            "why_it_matters": "If you buy pre-packaged salads or lettuce, especially iceberg lettuce from the recalled areas, this outbreak may have affected the products available to you. The FDA's investigation is still ongoing, so paying attention to recall notices and avoiding products from recalled batches remains important for your health.",
+            "quote": null
+          }
+        },
+        {
           "cluster_id": "aeb193e6d18fdb4eef17222f9543d5bf",
-          "slug": "five-cups-of-coffee-per-day-safe-for-most-adults-study",
-          "title": "Five cups of coffee per day safe for most adults, study confirms",
-          "summary": "A large study found up to 400 milligrams of caffeine daily does not pose health risks for the majority of people, confirming widely held assumptions about coffee consumption.",
+          "slug": "five-cups-of-coffee-per-day-confirmed-safe-for-most-adults",
+          "title": "Five cups of coffee per day confirmed safe for most adults",
+          "summary": "A large study validated that up to 400 milligrams of caffeine daily does not pose health risks for the majority of people.",
           "score": 6,
           "sources": [
             {
               "name": "hackernews",
               "url": "https://newsroom.heart.org/news/coffee-and-heart-health-how-many-cups-of-caffeinated-coffee-are-safe-to-drink-each-day"
-            }
-          ],
-          "article": null
-        },
-        {
-          "cluster_id": "665372a342a6dbc019e93081671468ca",
-          "slug": "led-lighting-squanders-potential-to-reduce-light-pollution",
-          "title": "LED lighting squanders potential to reduce light pollution",
-          "summary": "Despite energy efficiency gains, widespread LED adoption has not reduced nighttime sky brightness due to poor implementation choices affecting wildlife and astronomy.",
-          "score": 4,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://spectrum.ieee.org/led-light-pollution"
             }
           ],
           "article": null
@@ -281,9 +243,9 @@
       "stories": [
         {
           "cluster_id": "4696f89f4516bf22df01a86eaebf763b",
-          "slug": "hacker-wipes-romania-s-land-registry-database",
-          "title": "Hacker wipes Romania's land registry database",
-          "summary": "An active cyberattack destroyed the national property records system, halting real estate transactions across the country.",
+          "slug": "hacker-wipes-romania-s-entire-land-registry-database",
+          "title": "Hacker wipes Romania's entire land registry database",
+          "summary": "The attack destroyed property records for the country, with immediate consequences for real estate transactions and ownership verification.",
           "score": 9,
           "sources": [
             {
@@ -295,9 +257,9 @@
         },
         {
           "cluster_id": "ba27ce56811a74ec35daad585355ed24",
-          "slug": "russian-intelligence-hacks-european-security-cameras-to-spy",
-          "title": "Russian intelligence hacks European security cameras to spy on NATO military logistics",
-          "summary": "Dutch intelligence confirmed that Russian services are systematically hijacking internet-connected cameras to watch weapons shipments and troop movements in Ukraine and NATO states.",
+          "slug": "russian-intelligence-hacks-security-cameras-to-spy-on-nato",
+          "title": "Russian intelligence hacks security cameras to spy on NATO military operations",
+          "summary": "Netherlands intelligence services confirmed Russia is systematically hijacking internet-connected cameras across Europe to watch weapons shipments to Ukraine and troop movements.",
           "score": 8,
           "sources": [
             {
@@ -309,9 +271,9 @@
         },
         {
           "cluster_id": "8e51ee59ed4711fcbe6d4874fd7b3b48",
-          "slug": "healthcare-tech-firm-breach-exposes-data-from-thousands-of",
-          "title": "Healthcare tech firm breach exposes data from thousands of US hospitals",
-          "summary": "Edinburgh-based Craneware, which makes billing software for hospitals and pharmacies, confirmed hackers stole a significant amount of customer data including potential health records.",
+          "slug": "hackers-breach-tech-firm-used-by-thousands-of-us-hospitals",
+          "title": "Hackers breach tech firm used by thousands of US hospitals and pharmacies",
+          "summary": "Edinburgh-based Craneware confirmed a significant data theft during a cyberattack, potentially exposing health information from its billing software used across the US healthcare system.",
           "score": 8,
           "sources": [
             {
@@ -323,9 +285,9 @@
         },
         {
           "cluster_id": "889b86649cf8d488ce3a8a95b9de1a01",
-          "slug": "hackers-exploit-recently-patched-wordpress-bugs-millions-of",
-          "title": "Hackers exploit recently patched WordPress bugs, millions of sites at risk",
-          "summary": "Two critical flaws gave hackers remote takeover capability on tens of millions of WordPress websites whose owners have not yet updated.",
+          "slug": "hackers-exploit-recently-patched-wordpress-bugs-affecting",
+          "title": "Hackers exploit recently patched WordPress bugs affecting millions of websites",
+          "summary": "Two critical flaws in WordPress gave attackers remote takeover access to tens of millions of sites whose owners have not yet updated.",
           "score": 7,
           "sources": [
             {
@@ -340,9 +302,14 @@
   ],
   "briefly": [
     {
-      "title": "Fable is now included on Max plans (up to 50% of weekly limit)",
-      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
-      "topic": "Tech"
+      "title": "United Airlines employee threatens to call ICE on Bay Area family at SFO - NBC News",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmNDWGxmczgtWl9Mb1Job0VCVktzbWRPT3JUQXA0enNBWUlzeXhpVHNTYUwtYS1HeGlUVm1GOEV6Vk5QeUJveVVZN0dCLXZ1VE5yMHBzdm1ZOF9fdzEySFhJcTZ1Q0FfSzg3VTVRSmJiekpCeDBncEZpazRBZTJsb2k2Mnd4STV0SEtZX3A5Y2VtTDkteHF6R0Z0bVloN3piWklnanNyUlkwS3VfdnY0WA?oc=5",
+      "topic": "Business"
+    },
+    {
+      "title": "Hugging Face confirms breach affected internal datasets and credentials, urges users to take action",
+      "url": "https://techcrunch.com/2026/07/20/hugging-face-confirms-breach-affected-internal-datasets-and-credentials-urges-users-to-take-action",
+      "topic": "Cyber"
     },
     {
       "title": "Pay up or not? Ransomware surge has victims facing tough choices",
@@ -355,35 +322,20 @@
       "topic": "Cyber"
     },
     {
-      "title": "Hugging Face confirms breach affected internal datasets and credentials, urges users to take action",
-      "url": "https://techcrunch.com/2026/07/20/hugging-face-confirms-breach-affected-internal-datasets-and-credentials-urges-users-to-take-action",
-      "topic": "Cyber"
-    },
-    {
-      "title": "The ACLU Is Arming Lawyers to Expose State Surveillance Secrets",
-      "url": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets",
-      "topic": "Regulation"
-    },
-    {
-      "title": "Fix AI Mode or get Google out of classrooms, advocates say - Mashable",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE41NmRTVlNhWWswNkM4blhjUjlTVW1US2YwU0lPZjFBUHdiMHdySWVaTllfV2xEMU1Tamw0Y0NORVZXV1paN0JBUThSVFRaeWF2WnBua0xtdll2cXpGS1gwQmNVRW9iUjZiRE9KU3hQbERkVEVNak1V?oc=5",
+      "title": "Fable is now included on Max plans (up to 50% of weekly limit)",
+      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
       "topic": "Tech"
     },
     {
       "title": "Congress Must Stop Enabling Trump’s Crypto Corruption - Rolling Stone",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOeHdIMG41VHcwYnJIUnF0YTRfWHYwZ2ZSdjFWYzh1SVJJUTRveVdpMHZSRnE2RllabkVWeHRhbHlfNzBFLTl4dy1TQWZCenV1TkI1enhVZEtNd193VGpuUl81bUh4RmN3N2dodEtCZmtRcnMtZUlJdGhvNkpIVHU3dEd0eWNwVTJaODA5T3huM2ZTdGZNZ3hNbjRsX25LRlZJajZkeXdadHhQZw?oc=5",
       "topic": "US Politics"
-    },
-    {
-      "title": "\"Professional lurker\" Todd Howard reappears on internet forums following Bethesda's Fallout and Elder Scrolls announcements to thank fans for their support - Eurogamer.net",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5iYWM0d1RoRFU1MTVMLV9sN2tfMThMMUZnNVctNm9xS3FPWndQTmczMnZGN2dFN2hMQ3NfNTlMdERVdUM5bVk0dHRGNXg0cFBoTnhCdHR5Wm1vOXVZOGtBZlhNM2VTR1IzZnp0dw?oc=5",
-      "topic": "Tech"
     }
   ],
   "stats": {
     "items_ingested": 102,
     "clusters_considered": 100,
-    "stories_run": 17,
+    "stories_run": 15,
     "sources": 6,
     "sections_held": 1
   }
