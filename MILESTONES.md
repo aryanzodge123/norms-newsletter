@@ -156,11 +156,34 @@ Two notes on that run, both honest limitations rather than code defects:
   set. The pipeline, the page, and the feed all already point at the right
   URL; it starts resolving the moment public access is on.
 
-### Held (external prerequisite, not code)
+### The full unattended publish (done)
 
-**The public deploy is gated by decision #22** (site stays unpublished until
-OBA/BD preclearance), exactly as M5 held its publish. When cleared:
-`gh workflow run publish.yml -f force=true`.
+Milind cleared decision #22 and authorized the publish. Pages was already
+enabled but in legacy branch mode, which `actions/deploy-pages` cannot use;
+it was switched to `build_type: workflow`. The five R2 audio secrets were
+added to Actions (15 total). M6 was committed and pushed, then
+`gh workflow run publish.yml -f force=true` ran the whole SPEC 6.8 sequence
+green:
+
+```
+gate -> Build edition -> Audio build -> Commit edition -> Astro build
+     -> configure/upload/deploy-pages -> Ping healthchecks -> Archive to gold
+```
+
+Run 29761969723, conclusion success. The live site and feed both return 200.
+CI produced edition No. 43, a **normal** edition with a fully model-written
+audio block: `duration_seconds: 297`, `size_bytes: 3561408`, uploaded to
+`audio/2026-07-20.mp3` and confirmed present in R2. So the complete chain
+(editor, writers, readability gate, dialogue script, Gemini TTS, R2 upload,
+commit, deploy, healthchecks, archival) is proven end to end in CI, not just
+locally. The published feed carries real enclosures for both editions.
+
+**One item remains, and it is a Cloudflare dashboard toggle.** The R2 objects
+exist but `R2_AUDIO_PUBLIC_BASE` still returns 404, because r2.dev public
+access is not enabled on the `norms-audio` bucket. The S3 API cannot set it
+(R2, the bucket, Settings, Public access). Every link already points at the
+right URL and starts resolving the moment that is switched on. Until then the
+page and feed reference an MP3 a listener cannot yet fetch.
 
 ### Decisions and notes
 
