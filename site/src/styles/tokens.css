@@ -1,0 +1,32 @@
+/* Design tokens (DESIGN.md section 3). The only source of color, type, rule,
+   and spacing values. Components reference these variables, never raw values.
+   The site is light-only in v1; there is no dark mode. */
+
+:root {
+  /* 3.1 Color */
+  --paper: #F6F4EE;        /* Page background */
+  --paper-raised: #FBFAF6; /* Boxed surfaces (audio row, glance, sidebar) */
+  --ink: #23231F;          /* Primary text, masthead, heavy rules */
+  --ink-soft: #44433C;     /* Body/summary text */
+  --ink-2: #2E2D27;        /* Glance text, quote text */
+  --muted: #6B6A62;        /* Mono metadata, captions */
+  --oxide: #3F6A50;        /* Accent: labels, links, markers, play icon */
+  --rule: #DDD9CC;         /* Hairlines, box borders */
+  --rule-faint: #E8E5DA;   /* Intra-section story dividers */
+  --notice-border: #C9A24B;/* Fallback banner border only */
+  --notice-bg: #FAF3E3;    /* Fallback banner background only */
+  --notice-title: #7A5E1E; /* Fallback banner label only */
+  --notice-text: #5C4A1E;  /* Fallback banner body only */
+
+  /* 3.2 Type families. Serif = headline + quoted human voice; sans =
+     editorial writing; mono = machine output. Never mix these roles. */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* 3.3 Layout */
+  --container: 720px;
+  --pad-side: 40px;   /* desktop; mobile override in global.css */
+  --rhythm: 30px;     /* between major blocks (28-32px) */
+  --rhythm-in: 17px;  /* inside blocks (16-18px) */
+}

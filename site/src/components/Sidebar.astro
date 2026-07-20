@@ -1,0 +1,101 @@
+---
+// DESIGN.md section 4, Sidebar (desktop only). "By the numbers" box built from
+// edition.json `stats`, then the methodology link, then stacked nav links.
+// Quiet editions swap the last row for "Sections held" plus a plain sentence.
+import { href } from '../lib/urls';
+
+interface Props {
+  stats: {
+    items_ingested: number;
+    clusters_considered: number;
+    stories_run: number;
+    sources: number;
+    sections_held: number;
+  };
+  quiet?: boolean;
+}
+const { stats, quiet = false } = Astro.props;
+
+const rows = [
+  { label: 'Items in', value: stats.items_ingested },
+  { label: 'Clusters', value: stats.clusters_considered },
+  { label: 'Stories run', value: stats.stories_run },
+  quiet
+    ? { label: 'Sections held', value: stats.sections_held }
+    : { label: 'Sources', value: stats.sources },
+];
+---
+
+<aside class="sidebar">
+  <div class="box">
+    <p class="box-label">By the numbers</p>
+    <dl class="rows">
+      {
+        rows.map((r) => (
+          <div class="row">
+            <dt class="mono">{r.label}</dt>
+            <dd class="mono val">{r.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+    {quiet && <p class="note">A quieter day than usual. Some sections had nothing worth running, so they were held.</p>}
+    <hr class="divider" />
+    <a class="method" href={href('/methodology/')}>How this brief is made</a>
+  </div>
+
+  <nav class="links" aria-label="Site">
+    <a href={href('/archive/')}>Archive</a>
+    <a href={href('/about/')}>About</a>
+    <a href={href('/subscribe/')}>RSS and podcast</a>
+  </nav>
+</aside>
+
+<style>
+  .box {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+  }
+  .box-label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .rows { margin: 0; }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+  }
+  .row dt { font-size: 12px; color: var(--muted); }
+  .row dd { margin: 0; }
+  .val { color: var(--oxide); font-weight: 500; font-size: 12px; }
+  .note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 10px 0 0;
+  }
+  .divider { border: 0; border-top: 1px solid var(--rule); margin: 12px 0; }
+  .method {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--oxide);
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+  .links a {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 2;
+    color: var(--oxide);
+  }
+</style>

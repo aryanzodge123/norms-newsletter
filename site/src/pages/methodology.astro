@@ -1,0 +1,115 @@
+---
+import PageShell from '../components/PageShell.astro';
+import { allEditions } from '../lib/editions';
+
+// Running totals from gold.history (SPEC 6.9) are not available until M5.
+// Until then the totals derive from the committed editions on disk, which is
+// honest and updates itself as editions accumulate.
+const all = await allEditions();
+const editionCount = all.length;
+const storiesRun = all.reduce((n, e) => {
+  if (e.data.edition_type === 'fallback') return n;
+  return n + e.data.sections.reduce((m, s) => m + s.stories.length, 0);
+}, 0);
+---
+
+<PageShell
+  title="How this brief is made"
+  path="/methodology/"
+  pageName="Methodology"
+  heading="How this brief is made"
+>
+  <p>
+    Every three hours a collector reads a fixed set of public sources. Twice a
+    day the day's stories are grouped, scored, and written into one brief. A
+    person reviews quality, but no person writes the copy.
+  </p>
+
+  <h2>The pipeline</h2>
+  <p>
+    Sources feed adapters, which normalize each item and store it. Near
+    duplicates are merged, related items are clustered, and each cluster is
+    scored for how much it matters to a general reader. At 6:00 am Eastern an
+    editor stage selects and orders the day's stories, a writer stage drafts
+    each article from the source excerpts, and a readability check runs before
+    anything publishes.
+  </p>
+
+  <figure class="pipeline">
+    <svg
+      viewBox="0 0 960 96"
+      role="img"
+      aria-label="Pipeline: sources feed adapters, which write to bronze, then silver clustering and scoring, then the edition stage, then the published site."
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {['Sources', 'Adapters', 'Bronze', 'Silver', 'Edition', 'Site'].map((label, i) => {
+        const x = 6 + i * 159;
+        return (
+          <>
+            <rect x={x} y={26} width={130} height={44} rx={3}
+              style="fill:var(--paper);stroke:var(--ink);stroke-width:1.5" />
+            <text x={x + 65} y={53} text-anchor="middle"
+              style="fill:var(--ink);font-family:var(--font-sans);font-size:16px;font-weight:500">{label}</text>
+            {i < 5 && (
+              <line x1={x + 130} y1={48} x2={x + 159} y2={48}
+                style="stroke:var(--oxide);stroke-width:1.5" marker-end="url(#arrow)" />
+            )}
+          </>
+        );
+      })}
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 1 L 9 5 L 0 9 z" style="fill:var(--oxide)" />
+        </marker>
+      </defs>
+    </svg>
+  </figure>
+
+  <h2>Editorial policy</h2>
+  <p>
+    Stories are scored on a fixed rubric anchored with worked examples at low,
+    middle, and high marks. Each section runs at least two and at most four
+    stories, with a global ranking across the day. Sections with nothing worth
+    running collapse into a short "Briefly" list, and when several sections are
+    empty the whole edition shrinks. On a genuinely quiet day the brief runs in
+    a shorter format and says so.
+  </p>
+  <p>
+    Articles paraphrase the sources and always link back to them. Specific
+    facts such as dates, numbers, and names come only from the source material,
+    never invented. Quotes are used only when a real person is speaking, at most
+    one per story, kept short, and always attributed and linked. Every story is
+    checked against a plain-language reading standard before it publishes.
+  </p>
+
+  <h2>Running totals</h2>
+  <p>
+    {editionCount} edition{editionCount === 1 ? '' : 's'} published so far,
+    {' '}{storiesRun} stor{storiesRun === 1 ? 'y' : 'ies'} written. Lifetime
+    totals from the permanent archive will appear here once archival is live.
+  </p>
+
+  <h2>The stack</h2>
+  <p>
+    The pipeline is Python. Storage is a columnar table format on object
+    storage, read with an in-process analytics engine. The site is a static
+    build with no client framework and effectively no JavaScript. Language
+    models do exactly four jobs: scoring, editing, writing, and the audio
+    script. Everything else is ordinary deterministic code.
+  </p>
+
+  <h2>Who builds it</h2>
+  <p>Built and maintained by one person as a personal project.</p>
+</PageShell>
+
+<style>
+  .pipeline {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .pipeline svg {
+    width: 100%;
+    min-width: 640px;
+    height: auto;
+  }
+</style>

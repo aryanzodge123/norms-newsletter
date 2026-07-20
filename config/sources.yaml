@@ -1,10 +1,18 @@
 # Adapter registry (SPEC 6.1).
 #
 # adapter: dotted path to the Adapter class, resolved under src/.
+# topic_hint: one of the SPEC 6.5 vocabulary values
+#   (tech / ai / business / finance / world / regulation / science / cyber).
 # max_items_per_run: hard cap enforced by the collector, per SPEC 6.1.
 # enabled: false takes a source out of rotation without deleting its entry.
+# feed_url: per-source feed/endpoint for adapters.rss.RSSAdapter, the one
+#   generic class that serves every plain-RSS source. Bespoke adapters that
+#   hardcode their own endpoint leave it unset.
 #
-# M1 ships two sources. The rest of the v1 list in SPEC 6.1 lands in M6.
+# The v1 source list in SPEC 6.1. Keyed sources ship disabled until their
+# credential is present, so unattended runs stay clean.
+
+# --- API and bespoke, no key -------------------------------------------
 
 - name: hackernews
   adapter: adapters.hackernews.HackerNewsAdapter
@@ -12,8 +20,111 @@
   enabled: true
   max_items_per_run: 40
 
+- name: arxiv
+  adapter: adapters.arxiv.ArxivAdapter
+  topic_hint: ai
+  enabled: true
+  max_items_per_run: 30
+
+- name: federal_register
+  adapter: adapters.federal_register.FederalRegisterAdapter
+  topic_hint: regulation
+  enabled: true
+  max_items_per_run: 30
+
+- name: cisa
+  adapter: adapters.cisa.CISAAdapter
+  topic_hint: cyber
+  enabled: true
+  max_items_per_run: 30
+
+# --- Plain RSS (generic RSSAdapter, feed lives in feed_url) -------------
+
 - name: arstechnica
   adapter: adapters.arstechnica.ArsTechnicaAdapter
   topic_hint: tech
   enabled: true
   max_items_per_run: 40
+
+- name: techcrunch
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: tech
+  enabled: true
+  max_items_per_run: 30
+  feed_url: "https://techcrunch.com/feed/"
+
+- name: openai_blog
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: ai
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://openai.com/blog/rss.xml"
+
+- name: google_news_technology
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: tech
+  enabled: true
+  max_items_per_run: 30
+  feed_url: "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en"
+
+- name: google_news_business
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: business
+  enabled: true
+  max_items_per_run: 30
+  feed_url: "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en"
+
+- name: nature_news
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: science
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.nature.com/nature.rss"
+
+- name: krebs_on_security
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: cyber
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://krebsonsecurity.com/feed/"
+
+- name: the_hacker_news
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: cyber
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://feeds.feedburner.com/TheHackersNews"
+
+- name: sec_edgar_press
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: finance
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.sec.gov/news/pressreleases.rss"
+
+- name: federal_reserve_press
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: finance
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.federalreserve.gov/feeds/press_all.xml"
+
+# --- Keyed sources: enable once the key is set in .env / Actions secrets
+
+- name: newsapi
+  adapter: adapters.newsapi.NewsAPIAdapter
+  topic_hint: world
+  enabled: false  # enable once NEWSAPI_KEY is set in .env / Actions secrets
+  max_items_per_run: 30
+
+- name: finnhub
+  adapter: adapters.finnhub.FinnhubAdapter
+  topic_hint: finance
+  enabled: false  # enable once FINNHUB_KEY is set in .env / Actions secrets
+  max_items_per_run: 30
+
+- name: fred
+  adapter: adapters.fred.FREDAdapter
+  topic_hint: finance
+  enabled: false  # enable once FRED_KEY is set in .env / Actions secrets
+  max_items_per_run: 30

@@ -11,7 +11,7 @@ from datetime import date
 
 import pyarrow as pa
 from pyiceberg.catalog import Catalog
-from pyiceberg.expressions import In
+from pyiceberg.expressions import EqualTo, In
 from pyiceberg.partitioning import PartitionField, PartitionSpec
 from pyiceberg.schema import Schema
 from pyiceberg.table import Table
@@ -97,6 +97,16 @@ def existing_item_ids(table: Table, ingest_dates: set[date]) -> set[str]:
         selected_fields=("item_id",),
     )
     return set(scan.to_arrow().column("item_id").to_pylist())
+
+
+def read_partition(table: Table, ingest_date: date) -> list[RawItem]:
+    """Every stored item for one ingest_date, for the silver stage.
+
+    Silver re-reads the whole day on each run rather than tracking a
+    watermark, which is what lets a missed cycle heal itself (SPEC 6.4).
+    """
+    scan = table.scan(row_filter=EqualTo("ingest_date", ingest_date))
+    return [RawItem(**row) for row in scan.to_arrow().to_pylist()]
 
 
 def append_items(table: Table, items: list[RawItem]) -> tuple[int, int]:

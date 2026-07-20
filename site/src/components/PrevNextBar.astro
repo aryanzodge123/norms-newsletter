@@ -1,0 +1,57 @@
+---
+// DESIGN.md section 4, PrevNextBar. Left: previous edition date + headline.
+// Right: "Browse the archive". Built from the committed editions on disk.
+// The left side is omitted on edition No. 001 (no previous edition).
+import { href, editionPath } from '../lib/urls';
+import { formatDateShort, type Edition } from '../lib/editions';
+
+interface Props {
+  prev: Edition | null;
+}
+const { prev } = Astro.props;
+
+function title(e: Edition): string {
+  return e.data.edition_type === 'fallback'
+    ? 'Abbreviated edition'
+    : e.data.headline_of_the_day;
+}
+---
+
+<nav class="prevnext" aria-label="More editions">
+  {
+    prev ? (
+      <a class="prev" href={href(editionPath(prev.data.date))}>
+        <span aria-hidden="true">&larr;</span>
+        <span class="txt">{formatDateShort(prev.data.date)}: {title(prev)}</span>
+      </a>
+    ) : (
+      <span />
+    )
+  }
+  <a class="archive" href={href('/archive/')}>
+    Browse the archive <span aria-hidden="true">&rarr;</span>
+  </a>
+</nav>
+
+<style>
+  .prevnext {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    border: 1px solid var(--rule);
+    padding: 12px 16px;
+  }
+  .prevnext a {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--oxide);
+  }
+  .prev { display: inline-flex; gap: 8px; min-width: 0; }
+  .prev .txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .archive { white-space: nowrap; flex: 0 0 auto; }
+</style>

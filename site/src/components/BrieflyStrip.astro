@@ -1,0 +1,41 @@
+---
+// DESIGN.md section 4, BrieflyStrip. Section label ("Briefly", or "Briefly,
+// from the quiet sections" when the edition is quiet), then mono lines: title
+// linked to its source, middot, topic tag. Renders edition.json `briefly`.
+import SectionLabel from './SectionLabel.astro';
+
+interface Props {
+  items: { title: string; url: string; topic: string }[];
+  quiet?: boolean;
+}
+const { items, quiet = false } = Astro.props;
+const label = quiet ? 'Briefly, from the quiet sections' : 'Briefly';
+---
+
+{
+  items.length > 0 && (
+    <section class="briefly">
+      <SectionLabel text={label} />
+      <ul class="lines">
+        {items.map((it) => (
+          <li class="line mono">
+            <a class="ttl" href={it.url} rel="noopener">{it.title}</a>
+            <span class="mid"> · </span>
+            <span class="tag">{it.topic}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .lines { list-style: none; margin: 0; padding: 0; }
+  .line {
+    font-size: 12.5px;
+    line-height: 2.1;
+  }
+  .ttl { color: var(--ink-soft); }
+  .mid { color: var(--muted); }
+  .tag { color: var(--muted); }
+</style>

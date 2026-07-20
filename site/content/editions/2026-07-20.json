@@ -1,0 +1,72 @@
+{
+  "date": "2026-07-20",
+  "edition_number": 43,
+  "edition_type": "quiet",
+  "headline_of_the_day": "A slow news Sunday, with one real story worth your time",
+  "key_points": [
+    {
+      "text": "A widely used open-source login tool had a flaw that let attackers skip passwords, and a fix is now available.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "A central bank signaled it may cut interest rates once before the end of the year.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Norm here. It was a quiet one today, so the brief is short. Nothing wrong, just not much happened.",
+      "topic": "norm"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "b3c4d5e6f7a8b3c4d5e6f7a8b3c4d5e6",
+          "slug": "login-tool-password-bypass",
+          "title": "A common login tool had a flaw that let attackers skip passwords",
+          "summary": "The bug is in software many websites use to sign people in, and a fix is out now.",
+          "score": 8,
+          "sources": [
+            {"name": "arstechnica", "url": "https://arstechnica.invalid/login-bypass"},
+            {"name": "hackernews", "url": "https://news.ycombinator.invalid/item?id=41444444"}
+          ],
+          "article": {
+            "background": "Many websites do not build their own login systems. They use shared open-source tools, which are free programs that anyone can inspect and reuse. When one of those tools has a flaw, every site using it can be exposed at once.",
+            "what_happened": "Researchers found a flaw in a popular login tool that let an attacker sign in as someone else without their password. The tool's maintainers released a fix the same day and urged sites to update. There is no sign it was used against real users before the fix.",
+            "why_it_matters": "You do not have to do anything, but this is a good week to turn on two-step login where you can, since it would have blocked this attack. The sites you use should update on their own.",
+            "quote": {
+              "text": "The fix is simple to apply, and we would rather sites patch today than wait for the weekend.",
+              "attribution": "Sam Torres, a maintainer of the login tool",
+              "source_url": "https://arstechnica.invalid/login-bypass"
+            }
+          }
+        },
+        {
+          "cluster_id": "c4d5e6f7a8b9c4d5e6f7a8b9c4d5e6f7",
+          "slug": "router-default-password-warning",
+          "title": "Regulators warn about home routers still using default passwords",
+          "summary": "A safety notice urges people to change the password their internet router shipped with.",
+          "score": 4,
+          "sources": [
+            {"name": "hackernews", "url": "https://news.ycombinator.invalid/item?id=41555555"}
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {"title": "A central bank hinted at one rate cut before year end", "url": "https://arstechnica.invalid/rate-cut-hint", "topic": "Finance"},
+    {"title": "A carmaker recalled 90,000 cars over a software bug", "url": "https://arstechnica.invalid/car-recall", "topic": "Business"},
+    {"title": "A telescope shared its first deep-field image of the year", "url": "https://arstechnica.invalid/telescope-image", "topic": "Science"}
+  ],
+  "stats": {
+    "items_ingested": 61,
+    "clusters_considered": 12,
+    "stories_run": 2,
+    "sources": 2,
+    "sections_held": 3
+  }
+}

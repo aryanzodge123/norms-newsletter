@@ -17,7 +17,7 @@ from pathlib import Path
 
 import yaml
 from dotenv import load_dotenv
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = REPO_ROOT / "config"
@@ -45,6 +45,12 @@ class SourceConfig(Strict):
     topic_hint: str
     enabled: bool = True
     max_items_per_run: int = Field(gt=0)
+    # Optional per-source feed/endpoint URL. The generic RSS adapter
+    # (adapters.rss.RSSAdapter) is one class serving many feeds, so the feed
+    # location lives in the registry rather than in the code. Bespoke
+    # adapters that hardcode their own endpoint ignore this. Proposed SPEC
+    # 6.1 addition (M6).
+    feed_url: str | None = None
 
     @field_validator("adapter")
     @classmethod
@@ -60,6 +66,66 @@ class CollectorConfig(Strict):
     since_window_hours: int = Field(gt=0)
 
 
+class SilverConfig(Strict):
+    """Silver processing thresholds and models (SPEC 6.4)."""
+
+    embedding_model: str
+    embed_chars: int = Field(gt=0)
+    cluster_threshold: float = Field(gt=0.0, le=1.0)
+    scoring_model: str
+    scoring_max_retries: int = Field(ge=0)
+
+
+class EditorConfig(Strict):
+    """Edition generation settings (SPEC 6.5)."""
+
+    editor_model: str
+    writer_model: str
+    max_retries: int = Field(ge=0)
+    writer_concurrency: int = Field(gt=0)
+    min_clusters_for_normal: int = Field(gt=0)
+    min_clusters_for_quiet: int = Field(ge=0)
+    min_grounding_chars: int = Field(ge=0)
+
+    @model_validator(mode="after")
+    def _thresholds_ordered(self) -> EditorConfig:
+        if self.min_clusters_for_quiet > self.min_clusters_for_normal:
+            raise ValueError(
+                "min_clusters_for_quiet must not exceed min_clusters_for_normal, "
+                f"got {self.min_clusters_for_quiet} > {self.min_clusters_for_normal}"
+            )
+        return self
+
+
+class AudioConfig(Strict):
+    """Audio build settings (SPEC 6.7, decision #4).
+
+    The dialogue script is the one AI call; TTS, duration, upload and the
+    audio block are deterministic code. Model ids are pinned for the same
+    eval-stability reason M2/M3 pinned theirs. Speaker voices are Gemini
+    prebuilt voice names behind the swappable TTS interface.
+    """
+
+    script_model: str
+    max_retries: int = Field(ge=0)
+    tts_model: str
+    speaker_a_voice: str
+    speaker_b_voice: str
+    # SPEC 6.7: "1,300-1,600 words". Enforced in code on the validated
+    # script, so a script outside the band is a failure the caller contains
+    # (publish without audio), not something the model is trusted to hold.
+    min_words: int = Field(gt=0)
+    max_words: int = Field(gt=0)
+
+    @model_validator(mode="after")
+    def _word_band_ordered(self) -> AudioConfig:
+        if self.min_words > self.max_words:
+            raise ValueError(
+                f"min_words must not exceed max_words, got {self.min_words} > {self.max_words}"
+            )
+        return self
+
+
 class CanonicalUrlConfig(Strict):
     shortener_hosts: tuple[str, ...] = ()
 
@@ -69,9 +135,27 @@ class CanonicalUrlConfig(Strict):
         return tuple(host.lower() for host in value)
 
 
+class ArchiveConfig(Strict):
+    """Archival job settings (SPEC 6.9)."""
+
+    # How far back the writer stage looks in gold for prior coverage of a
+    # story (SPEC 6.5 stage 2). cluster_id is not stable across days, so the
+    # match is semantic, over this window, against clusters that were
+    # actually published.
+    prior_mention_lookback_days: int = Field(gt=0)
+    # SPEC 6.9: expire snapshots older than this many days on the tables the
+    # archival job touches, so metadata does not grow without bound as daily
+    # partitions are dropped.
+    snapshot_expiry_days: int = Field(gt=0)
+
+
 class PipelineConfig(Strict):
     collector: CollectorConfig
+    silver: SilverConfig
+    editor: EditorConfig
+    audio: AudioConfig
     canonical_url: CanonicalUrlConfig
+    archive: ArchiveConfig
 
 
 class Settings(Strict):
@@ -93,6 +177,21 @@ class Settings(Strict):
     fred_key: str | None = None
     healthchecks_publish_url: str | None = None
     healthchecks_collect_url: str | None = None
+
+    # R2 object storage for the daily MP3 (SPEC 6.7: "MP3 to R2 at
+    # /audio/YYYY-MM-DD.mp3; the repo never stores audio"). Distinct from the
+    # R2 Data Catalog above: object PUTs use the S3 API with account access
+    # keys, not the catalog token. Optional here, required by src/audio.
+    # r2_audio_public_base is the public URL prefix the enclosure/player link
+    # derives from; it is environment-specific and pairs with the bucket, so
+    # it lives with the credentials rather than in the committed yaml. Rule 6
+    # governs the site's own URLs; the audio enclosure is R2-hosted per SPEC
+    # 6.7 (M6 clarification).
+    r2_s3_endpoint: str | None = None
+    r2_access_key_id: str | None = None
+    r2_secret_access_key: str | None = None
+    r2_audio_bucket: str | None = None
+    r2_audio_public_base: str | None = None
 
     @classmethod
     def from_env(cls) -> Settings:
@@ -116,6 +215,11 @@ class Settings(Strict):
             fred_key=os.environ.get("FRED_KEY"),
             healthchecks_publish_url=os.environ.get("HEALTHCHECKS_PUBLISH_URL"),
             healthchecks_collect_url=os.environ.get("HEALTHCHECKS_COLLECT_URL"),
+            r2_s3_endpoint=os.environ.get("R2_S3_ENDPOINT"),
+            r2_access_key_id=os.environ.get("R2_ACCESS_KEY_ID"),
+            r2_secret_access_key=os.environ.get("R2_SECRET_ACCESS_KEY"),
+            r2_audio_bucket=os.environ.get("R2_AUDIO_BUCKET"),
+            r2_audio_public_base=os.environ.get("R2_AUDIO_PUBLIC_BASE"),
         )
 
 

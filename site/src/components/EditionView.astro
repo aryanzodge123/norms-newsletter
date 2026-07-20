@@ -1,0 +1,126 @@
+---
+// The template switch (DESIGN.md section 5). Renders one edition into the
+// normal / quiet / fallback composition. Used by both `/` and the permalink
+// pages so they are byte-for-byte identical. Renders the full frame
+// (header/main/footer); BaseLayout provides <html>/<head> and the scripts.
+import Masthead from './Masthead.astro';
+import Footer from './Footer.astro';
+import AudioRow from './AudioRow.astro';
+import GlanceBlock from './GlanceBlock.astro';
+import SectionLabel from './SectionLabel.astro';
+import StoryCard from './StoryCard.astro';
+import Sidebar from './Sidebar.astro';
+import StatTiles from './StatTiles.astro';
+import BrieflyStrip from './BrieflyStrip.astro';
+import PrevNextBar from './PrevNextBar.astro';
+import NoticeBanner from './NoticeBanner.astro';
+import RankedList from './RankedList.astro';
+import { href } from '../lib/urls';
+import type { Edition } from '../lib/editions';
+
+interface Props {
+  edition: Edition;
+  prev: Edition | null;
+}
+const { edition, prev } = Astro.props;
+const d = edition.data;
+const quiet = d.edition_type === 'quiet';
+---
+
+<Masthead variant="edition" date={d.date} editionNumber={d.edition_number} />
+
+{
+  d.edition_type === 'fallback' ? (
+    <main id="main" class="container stack">
+      <NoticeBanner notice={d.notice} />
+      <RankedList stories={d.stories} />
+    </main>
+  ) : (
+    <main id="main" class="container stack">
+      <h1 class="headline">{d.headline_of_the_day}</h1>
+
+      {d.audio && <AudioRow url={d.audio.url} durationSeconds={d.audio.duration_seconds} />}
+
+      <GlanceBlock keyPoints={d.key_points} />
+
+      <div class="body-grid">
+        <div class="sections stack">
+          {d.sections.map((sec) => (
+            <section class="sec">
+              <SectionLabel text={sec.name} />
+              {sec.stories.map((story) => (
+                <StoryCard story={story} />
+              ))}
+            </section>
+          ))}
+        </div>
+        <div class="rail desktop-only">
+          <Sidebar stats={d.stats} quiet={quiet} />
+        </div>
+      </div>
+
+      <div class="mobile-only">
+        <StatTiles stats={d.stats} quiet={quiet} />
+      </div>
+
+      <BrieflyStrip items={d.briefly} quiet={quiet} />
+
+      <nav class="mobile-nav mobile-only" aria-label="Site">
+        <a href={href('/archive/')}>Archive</a>
+        <a href={href('/about/')}>About</a>
+        <a href={href('/subscribe/')}>RSS</a>
+      </nav>
+
+      <PrevNextBar prev={prev} />
+    </main>
+  )
+}
+
+<Footer />
+
+<style>
+  .headline {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 31px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .body-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 172px;
+    gap: 28px;
+    align-items: start;
+  }
+  .sec + .sec { margin-top: var(--rhythm); }
+
+  .desktop-only { display: block; }
+  .mobile-only { display: none; }
+
+  .mobile-nav {
+    display: none;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .mobile-nav a {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--oxide);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @media (max-width: 720px) {
+    .headline { font-size: 23px; }
+    .body-grid { grid-template-columns: 1fr; gap: 0; }
+    .desktop-only { display: none; }
+    .mobile-only { display: block; }
+    .mobile-nav { display: flex; }
+  }
+</style>

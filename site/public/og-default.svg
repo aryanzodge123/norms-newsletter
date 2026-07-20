@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Norm's Newsletter">
+  <rect width="1200" height="630" fill="#F6F4EE"/>
+  <rect x="120" y="250" width="960" height="4" fill="#23231F"/>
+  <rect x="120" y="262" width="960" height="2" fill="#23231F"/>
+  <text x="600" y="230" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-weight="500" font-size="72" letter-spacing="14" fill="#23231F">NORM'S NEWSLETTER</text>
+  <text x="600" y="330" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="26" fill="#6B6A62">A daily brief, in plain English.</text>
+</svg>

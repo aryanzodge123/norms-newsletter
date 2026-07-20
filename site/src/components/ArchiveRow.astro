@@ -1,0 +1,64 @@
+---
+// DESIGN.md section 4, ArchiveRow. Baseline-aligned row: date, headline linked
+// to the permalink, story count, and audio length with a play glyph. Grouped
+// under month SectionLabels by the archive page.
+import { href, editionPath } from '../lib/urls';
+import { formatDateShort, formatDuration, type Edition } from '../lib/editions';
+
+interface Props {
+  edition: Edition;
+}
+const { edition } = Astro.props;
+const d = edition.data;
+
+const title =
+  d.edition_type === 'fallback' ? 'Abbreviated edition' : d.headline_of_the_day;
+
+const storyCount =
+  d.edition_type === 'fallback'
+    ? d.stories.length
+    : d.sections.reduce((n, s) => n + s.stories.length, 0);
+
+const audio = d.edition_type === 'fallback' ? null : d.audio;
+---
+
+<div class="arow">
+  <span class="date mono">{formatDateShort(d.date)}</span>
+  <a class="headline" href={href(editionPath(d.date))}>{title}</a>
+  <span class="count mono">{storyCount} {storyCount === 1 ? 'story' : 'stories'}</span>
+  {
+    audio && (
+      <span class="audio mono">
+        <span aria-hidden="true">&#9654;</span> {formatDuration(audio.duration_seconds)}
+      </span>
+    )
+  }
+</div>
+
+<style>
+  .arow {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 0;
+  }
+  .date {
+    min-width: 56px;
+    flex: 0 0 auto;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .headline {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--oxide);
+    flex: 1 1 auto;
+  }
+  .count { font-size: 11.5px; color: var(--muted); flex: 0 0 auto; }
+  .audio { font-size: 11.5px; color: var(--oxide); flex: 0 0 auto; }
+
+  @media (max-width: 720px) {
+    .count { display: none; }
+  }
+</style>

@@ -1,0 +1,164 @@
+---
+// DESIGN.md section 4, StoryCard. A styled <details> whose <summary> is the
+// collapsed card. Deep-linkable via id={slug} (the hash-open script in
+// BaseLayout targets it). When `article` is null (writer-stage failure,
+// SPEC 6.5) the card renders as a plain div with no expand affordance.
+import PullQuote from './PullQuote.astro';
+import type { EditionData } from '../lib/editions';
+
+type Story = EditionData extends { sections: infer S }
+  ? S extends readonly { stories: infer St }[]
+    ? St extends readonly (infer One)[]
+      ? One
+      : never
+    : never
+  : never;
+
+interface Props {
+  story: Story;
+}
+const { story } = Astro.props;
+const s = story;
+const nSources = s.sources.length;
+const meta = `score ${s.score} · ${nSources} source${nSources === 1 ? '' : 's'}`;
+---
+
+{
+  s.article === null ? (
+    <div class="card flat" id={s.slug}>
+      <h3 class="title">{s.title}</h3>
+      <p class="summary">{s.summary}</p>
+      <div class="metarow">
+        <span class="mono">{meta}</span>
+      </div>
+    </div>
+  ) : (
+    <details class="card" id={s.slug}>
+      <summary>
+        <h3 class="title">{s.title}</h3>
+        <p class="summary">{s.summary}</p>
+        <div class="metarow">
+          <span class="mono">{meta}</span>
+          <span class="expand">Read the full story <span class="chev">&#9662;</span></span>
+        </div>
+      </summary>
+
+      <div class="article">
+        <p class="art-label">Background</p>
+        <p class="art-body">{s.article.background}</p>
+        <p class="art-label">What happened</p>
+        <p class="art-body">{s.article.what_happened}</p>
+        {s.article.quote && (
+          <PullQuote
+            text={s.article.quote.text}
+            attribution={s.article.quote.attribution}
+            sourceUrl={s.article.quote.source_url}
+          />
+        )}
+        <p class="art-label">Why it matters</p>
+        <p class="art-body">{s.article.why_it_matters}</p>
+
+        <div class="sources">
+          <span class="src-lead mono">Sources:</span>
+          {s.sources.map((src, i) => (
+            <>
+              {i > 0 && <span class="mid mono">·</span>}
+              <a class="src" href={src.url} rel="noopener">{src.name}</a>
+            </>
+          ))}
+          <a class="collapse" data-collapse href={`#${s.slug}`}>
+            Collapse <span class="chev">&#9652;</span>
+          </a>
+        </div>
+      </div>
+    </details>
+  )
+}
+
+<style>
+  .card {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule-faint);
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::marker { content: ''; }
+
+  .title {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 16.5px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .summary {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+  .metarow {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .expand {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--oxide);
+    white-space: nowrap;
+  }
+  .chev { font-size: 10px; }
+
+  /* Expanded content (DESIGN StoryCard): border-left 2px --oxide, 20px pad. */
+  .article {
+    border-left: 2px solid var(--oxide);
+    padding-left: 20px;
+    margin-top: 14px;
+  }
+  .art-label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--oxide);
+    margin: 14px 0 4px;
+  }
+  .art-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .sources {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .src-lead { font-size: 12px; }
+  .src { font-size: 12px; font-family: var(--font-mono); }
+  .mid { color: var(--muted); }
+  .collapse {
+    margin-left: auto;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--oxide);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 720px) {
+    .title { font-size: 15.5px; }
+    .summary { font-size: 13.5px; }
+    summary { min-height: 44px; }
+  }
+</style>

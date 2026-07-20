@@ -219,13 +219,26 @@ git push
    - FRED_KEY
    - HEALTHCHECKS_PUBLISH_URL
    - HEALTHCHECKS_COLLECT_URL
+   - R2_S3_ENDPOINT
+   - R2_ACCESS_KEY_ID
+   - R2_SECRET_ACCESS_KEY
+   - R2_AUDIO_BUCKET
+   - R2_AUDIO_PUBLIC_BASE
+
+   The last five power the M6 audio upload (SPEC 6.7). The MP3 goes to an R2
+   bucket over the S3 API, which uses account access keys (R2 dashboard, R2
+   API Tokens, "Manage API token") rather than the catalog token above.
+   R2_AUDIO_BUCKET is the bucket name, and R2_AUDIO_PUBLIC_BASE is that
+   bucket's public URL (enable "Public access" or a custom domain in the R2
+   dashboard). Until these are set the edition still publishes, without an
+   audio row.
 
 5. GitHub Pages itself gets configured in Milestone M5 (Settings, Pages,
    Source: GitHub Actions). Nothing to do now; noted here so you know it
    is intentionally deferred.
 
 **Verify:** the repo shows both .md files, and the Actions secrets page
-lists all ten names.
+lists all fifteen names.
 
 ---
 
@@ -263,6 +276,11 @@ GEMINI_API_KEY=...
 NEWSAPI_KEY=...
 FINNHUB_KEY=...
 FRED_KEY=...
+R2_S3_ENDPOINT=https://<accountid>.r2.cloudflarestorage.com
+R2_ACCESS_KEY_ID=...
+R2_SECRET_ACCESS_KEY=...
+R2_AUDIO_BUCKET=norms-newsletter-audio
+R2_AUDIO_PUBLIC_BASE=https://<your-r2-public-domain>
 HEALTHCHECKS_PUBLISH_URL=https://hc-ping.com/...
 HEALTHCHECKS_COLLECT_URL=https://hc-ping.com/...
 ```

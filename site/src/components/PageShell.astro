@@ -1,0 +1,51 @@
+---
+// Frame for non-edition pages (archive, about, methodology, subscribe). The
+// masthead uses its page variant (back link + page name) per DESIGN.md
+// Masthead. The frame never changes (principle 1).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Masthead from './Masthead.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  title: string;
+  path: string;
+  pageName: string;
+  heading: string;
+}
+const { title, path, pageName, heading } = Astro.props;
+---
+
+<BaseLayout title={`${title} · Norm's Newsletter`} path={path}>
+  <Masthead variant="page" pageName={pageName} />
+  <main id="main" class="container stack page">
+    <h1 class="page-title">{heading}</h1>
+    <slot />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0;
+  }
+  .page :global(h2) {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin: 24px 0 8px;
+  }
+  .page :global(p) {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+  }
+  .page :global(a) { color: var(--oxide); }
+</style>

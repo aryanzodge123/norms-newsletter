@@ -1,0 +1,63 @@
+---
+import PageShell from '../../components/PageShell.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import ArchiveRow from '../../components/ArchiveRow.astro';
+import { href } from '../../lib/urls';
+import { monthKey, topicSlug, topicsWithEditions, type Edition } from '../../lib/editions';
+
+export async function getStaticPaths() {
+  const map = await topicsWithEditions();
+  return [...map.entries()].map(([name, editions]) => ({
+    params: { topic: topicSlug(name) },
+    props: { name, editions },
+  }));
+}
+
+interface Props {
+  name: string;
+  editions: Edition[];
+}
+const { name, editions } = Astro.props;
+
+const groups: { key: string; editions: Edition[] }[] = [];
+for (const e of editions) {
+  const key = monthKey(e.data.date);
+  const last = groups[groups.length - 1];
+  if (last && last.key === key) last.editions.push(e);
+  else groups.push({ key, editions: [e] });
+}
+---
+
+<PageShell
+  title={`Archive: ${name}`}
+  path={`/archive/${topicSlug(name)}/`}
+  pageName="Archive"
+  heading={`Archive: ${name}`}
+>
+  <p><a href={href('/archive/')}>&larr; All editions</a></p>
+
+  {
+    groups.map((g) => (
+      <section class="month">
+        <SectionLabel text={g.key} />
+        {g.editions.map((e) => (
+          <ArchiveRow edition={e} />
+        ))}
+      </section>
+    ))
+  }
+
+  <p class="count mono">
+    {editions.length} edition{editions.length === 1 ? '' : 's'} in {name}
+  </p>
+</PageShell>
+
+<style>
+  .month + .month { margin-top: var(--rhythm); }
+  .count {
+    font-size: 11.5px;
+    color: var(--muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+  }
+</style>

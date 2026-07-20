@@ -1,0 +1,147 @@
+# The 6am publish (SPEC 6.8). Two crons fire at 10:00 and 11:00 UTC; the
+# gate job lets exactly one of them through, whichever is 06:00 US Eastern
+# for the day (decision #7, DST-correct). workflow_dispatch with force: true
+# runs it now, for testing and for a manual re-publish.
+name: publish
+
+on:
+  schedule:
+    - cron: "0 10 * * *" # 06:00 Eastern during EDT
+    - cron: "0 11 * * *" # 06:00 Eastern during EST
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Bypass the 6am-Eastern gate and publish now"
+        type: boolean
+        default: false
+
+# contents: write commits the edition.json publication record (decision #17).
+# pages + id-token deploy the built site (SPEC 6.8 step 8).
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# One publish at a time. Never cancel a run midway: a half-finished deploy
+# or archival is worse than waiting.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  # SPEC 6.8 scheduling: exit early unless it is 06:00 Eastern today. The
+  # check is src/schedule.py so the DST logic is the same code the tests
+  # pin, not a second copy living in YAML.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: check
+        env:
+          FORCE: ${{ github.event.inputs.force }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import os
+          from datetime import datetime, timezone
+          from src.schedule import is_publish_time
+          force = os.environ.get("FORCE") == "true"
+          proceed = force or is_publish_time(datetime.now(timezone.utc))
+          print("proceed=" + ("true" if proceed else "false"))
+          PY
+
+  publish:
+    needs: gate
+    if: needs.gate.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    env:
+      R2_CATALOG_URI: ${{ secrets.R2_CATALOG_URI }}
+      R2_WAREHOUSE: ${{ secrets.R2_WAREHOUSE }}
+      R2_TOKEN: ${{ secrets.R2_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Audio build (SPEC 6.7): the dialogue script (Anthropic, above), Gemini
+      # multi-speaker TTS, and the R2 object storage the MP3 is uploaded to.
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      R2_S3_ENDPOINT: ${{ secrets.R2_S3_ENDPOINT }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_AUDIO_BUCKET: ${{ secrets.R2_AUDIO_BUCKET }}
+      R2_AUDIO_PUBLIC_BASE: ${{ secrets.R2_AUDIO_PUBLIC_BASE }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Python deps
+        run: uv sync --frozen
+
+      # SPEC 6.8 steps 2-5: read silver, editor agent, writer stage,
+      # readability gate. run_edition validates every AI output and writes
+      # edition.json to site/content/editions/, or a fallback edition if the
+      # editor fails twice (SPEC 7). It never raises for a normal thin day.
+      - name: Build edition
+        run: uv run python -m src.editor.run_edition
+
+      # SPEC 6.8 step 6: audio build. The dialogue script (AI) then Gemini
+      # TTS; the MP3 goes to R2 and the audio block is injected into the
+      # committed edition.json. Every failure is contained to "publish
+      # without an audio row" (SPEC 7), so this never blocks the deploy.
+      - name: Audio build
+        run: uv run python -m src.audio.run_audio
+
+      # SPEC 6.8 step 7: commit the edition.json publication record
+      # (decision #17). Nothing to commit on a same-day re-run is fine.
+      - name: Commit edition
+        run: |
+          git config user.name "norm-bot"
+          git config user.email "actions@github.com"
+          git add site/content/editions/
+          if git diff --cached --quiet; then
+            echo "no edition change to commit"
+          else
+            git commit -m "Publish edition $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      # SPEC 6.8 step 8: build the site against the committed editions and
+      # deploy to Pages. The build is fixture/content driven and needs no
+      # live pipeline (CLAUDE.md rule 4).
+      - name: Install site deps
+        working-directory: site
+        run: npm ci
+
+      - name: Astro build
+        working-directory: site
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      # SPEC 6.8 step 9: ping the publish check. Reached only if the deploy
+      # succeeded, so a failed deploy is a missing ping and the healthchecks
+      # dead man's switch alerts (SPEC 7, "Deploy fails").
+      - name: Ping healthchecks
+        run: curl -fsS --retry 3 "${{ secrets.HEALTHCHECKS_PUBLISH_URL }}"
+
+      # SPEC 6.8 step 10 / 6.9: fold the day into gold and drop the daily
+      # bronze and silver partitions. Runs after the deploy so a failure
+      # here never costs the published edition; it records its own run_log
+      # row for the weekly review.
+      - name: Archive to gold
+        run: uv run python -m src.archive

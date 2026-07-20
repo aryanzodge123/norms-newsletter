@@ -1,0 +1,84 @@
+---
+import PageShell from '../../components/PageShell.astro';
+import SectionLabel from '../../components/SectionLabel.astro';
+import ArchiveRow from '../../components/ArchiveRow.astro';
+import { href } from '../../lib/urls';
+import {
+  allEditions,
+  monthKey,
+  topicsWithEditions,
+  topicSlug,
+} from '../../lib/editions';
+
+const all = await allEditions(); // newest first
+const years = [...new Set(all.map((e) => e.data.date.slice(0, 4)))];
+
+// Group into month buckets, preserving newest-first order.
+const groups: { key: string; editions: typeof all }[] = [];
+for (const e of all) {
+  const key = monthKey(e.data.date);
+  const last = groups[groups.length - 1];
+  if (last && last.key === key) last.editions.push(e);
+  else groups.push({ key, editions: [e] });
+}
+
+const topics = [...(await topicsWithEditions()).keys()].sort();
+---
+
+<PageShell title="Archive" path="/archive/" pageName="Archive" heading="Archive">
+  {
+    years.length > 1 && (
+      <nav class="years" aria-label="Years">
+        {years.map((y) => (
+          <a href={`#year-${y}`}>{y}</a>
+        ))}
+      </nav>
+    )
+  }
+
+  {
+    topics.length > 0 && (
+      <nav class="topics" aria-label="Filter by topic">
+        <span class="mono lead">Filter:</span>
+        {topics.map((t) => (
+          <a href={href(`/archive/${topicSlug(t)}/`)}>{t}</a>
+        ))}
+      </nav>
+    )
+  }
+
+  {
+    groups.map((g) => (
+      <section class="month" id={`year-${g.editions[0].data.date.slice(0, 4)}`}>
+        <SectionLabel text={g.key} />
+        {g.editions.map((e) => (
+          <ArchiveRow edition={e} />
+        ))}
+      </section>
+    ))
+  }
+
+  <p class="count mono">{all.length} edition{all.length === 1 ? '' : 's'} since launch</p>
+</PageShell>
+
+<style>
+  .years, .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .years a, .topics a {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--oxide);
+  }
+  .topics .lead { font-size: 12px; }
+  .month + .month { margin-top: var(--rhythm); }
+  .count {
+    font-size: 11.5px;
+    color: var(--muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+  }
+</style>

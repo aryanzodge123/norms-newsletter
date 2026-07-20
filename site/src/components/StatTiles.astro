@@ -1,0 +1,54 @@
+---
+// DESIGN.md section 4, StatTiles (mobile only). 2x2 grid of bordered tiles
+// replacing the Sidebar: mono label over mono value. Shows Items in and
+// Stories run at minimum; renders all four for parity with the sidebar.
+interface Props {
+  stats: {
+    items_ingested: number;
+    clusters_considered: number;
+    stories_run: number;
+    sources: number;
+    sections_held: number;
+  };
+  quiet?: boolean;
+}
+const { stats, quiet = false } = Astro.props;
+
+const tiles = [
+  { label: 'Items in', value: stats.items_ingested },
+  { label: 'Clusters', value: stats.clusters_considered },
+  { label: 'Stories run', value: stats.stories_run },
+  quiet
+    ? { label: 'Sections held', value: stats.sections_held }
+    : { label: 'Sources', value: stats.sources },
+];
+---
+
+<div class="tiles" aria-label="By the numbers">
+  {
+    tiles.map((t) => (
+      <div class="tile">
+        <span class="mono label">{t.label}</span>
+        <span class="mono value">{t.value}</span>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .tile {
+    border: 1px solid var(--rule);
+    background: var(--paper-raised);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .label { font-size: 11.5px; color: var(--muted); }
+  .value { font-size: 15px; color: var(--oxide); font-weight: 500; }
+</style>

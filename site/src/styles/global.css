@@ -1,0 +1,106 @@
+/* Base document styles built on tokens.css (DESIGN.md sections 3, 6, 9).
+   Self-hosted fonts are imported here (latin subset only, font-display swap)
+   to keep the payload under 300KB. Weights: 400 and 500 only. */
+
+@import '@fontsource/newsreader/latin-400.css';
+@import '@fontsource/newsreader/latin-500.css';
+@import '@fontsource/newsreader/latin-400-italic.css';
+@import '@fontsource/ibm-plex-sans/latin-400.css';
+@import '@fontsource/ibm-plex-sans/latin-500.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+}
+
+/* 3.3 Page container: 720px centered, 40px side padding desktop. */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad-side);
+}
+
+main {
+  display: block;
+}
+
+/* Links: --oxide is the one accent color. */
+a {
+  color: var(--oxide);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* 9. Accessibility: visible focus in --oxide, skip-to-content link. */
+:focus-visible {
+  outline: 2px solid var(--oxide);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--paper-raised);
+  color: var(--oxide);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  padding: 8px 12px;
+  border: 1px solid var(--rule);
+  z-index: 10;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
+/* Shared type roles (DESIGN 3.2). */
+.mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* 3.3 Vertical rhythm between major blocks. */
+.stack > * + * {
+  margin-top: var(--rhythm);
+}
+
+hr.masthead-rule {
+  border: 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  height: 3px;
+  margin: 0;
+}
+
+/* 3.4 One breakpoint at 720px. Below it: mobile layout (DESIGN section 6). */
+@media (max-width: 720px) {
+  :root {
+    --pad-side: 20px;
+  }
+  html {
+    font-size: 13.5px;
+  }
+}

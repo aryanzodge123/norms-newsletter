@@ -26,6 +26,31 @@ VALID_SOURCES = """
 VALID_PIPELINE = """
 collector:
   since_window_hours: 6
+silver:
+  embedding_model: BAAI/bge-small-en-v1.5
+  embed_chars: 500
+  cluster_threshold: 0.82
+  scoring_model: claude-haiku-4-5-20251001
+  scoring_max_retries: 1
+editor:
+  editor_model: claude-sonnet-4-5-20250929
+  writer_model: claude-haiku-4-5-20251001
+  max_retries: 1
+  writer_concurrency: 6
+  min_clusters_for_normal: 12
+  min_clusters_for_quiet: 3
+  min_grounding_chars: 400
+audio:
+  script_model: claude-haiku-4-5-20251001
+  max_retries: 1
+  tts_model: gemini-2.5-flash-preview-tts
+  speaker_a_voice: Kore
+  speaker_b_voice: Puck
+  min_words: 1300
+  max_words: 1600
+archive:
+  prior_mention_lookback_days: 30
+  snapshot_expiry_days: 7
 canonical_url:
   shortener_hosts:
     - t.co
@@ -97,6 +122,31 @@ def test_pipeline_lowercases_shortener_hosts(tmp_path) -> None:
     text = VALID_PIPELINE.replace("- t.co", "- T.CO")
     pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", text))
     assert pipeline.canonical_url.shortener_hosts == ("t.co",)
+
+
+def test_editor_config_loads(tmp_path) -> None:
+    pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE))
+    assert pipeline.editor.min_grounding_chars == 400
+    assert pipeline.editor.editor_model.startswith("claude-sonnet")
+
+
+def test_audio_config_loads(tmp_path) -> None:
+    pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE))
+    assert pipeline.audio.min_words == 1300
+    assert pipeline.audio.max_words == 1600
+    assert pipeline.audio.tts_model.startswith("gemini")
+
+
+def test_audio_rejects_inverted_word_band(tmp_path) -> None:
+    text = VALID_PIPELINE.replace("min_words: 1300", "min_words: 2000")
+    with pytest.raises(ConfigError, match="min_words"):
+        load_pipeline(write(tmp_path, "pipeline.yaml", text))
+
+
+def test_editor_rejects_quiet_above_normal_threshold(tmp_path) -> None:
+    text = VALID_PIPELINE.replace("min_clusters_for_quiet: 3", "min_clusters_for_quiet: 20")
+    with pytest.raises(ConfigError, match="min_clusters_for_quiet"):
+        load_pipeline(write(tmp_path, "pipeline.yaml", text))
 
 
 def test_missing_credentials_fail_loudly(monkeypatch) -> None:

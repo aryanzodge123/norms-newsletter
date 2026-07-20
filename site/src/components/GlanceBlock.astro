@@ -1,0 +1,79 @@
+---
+// DESIGN.md section 4, GlanceBlock. The "Today at a glance" box. Renders
+// edition.json key_points in order (4-6 normal, 3 quiet). Read time is 12
+// seconds per point rounded to a friendly value. The glance replaces any
+// intro paragraph. Glance points never link.
+import { readTimeLabel } from '../lib/editions';
+import type { EditionData } from '../lib/editions';
+
+interface Props {
+  keyPoints: Extract<EditionData, { edition_type: 'normal' }>['key_points'];
+}
+const { keyPoints } = Astro.props;
+---
+
+<section class="glance" aria-label="Today at a glance">
+  <div class="glance-head">
+    <span class="label">Today at a glance</span>
+    <span class="mono read">{readTimeLabel(keyPoints.length)}</span>
+  </div>
+  <ol class="points">
+    {
+      keyPoints.map((p, i) => (
+        <li class="point">
+          <span class="num">{String(i + 1).padStart(2, '0')}</span>
+          <span class="text">
+            {p.text}
+            <span class="mono tag"> {p.topic}</span>
+          </span>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .glance {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-top: 2px solid var(--oxide);
+    padding: 16px 18px;
+  }
+  .glance-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--oxide);
+  }
+  .read { font-size: 12px; }
+  .points { list-style: none; margin: 0; padding: 0; }
+  .point {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    padding: 7px 0;
+    color: var(--ink-2);
+  }
+  .num {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--oxide);
+    flex: 0 0 auto;
+    min-width: 20px;
+  }
+  .text { font-size: 14px; line-height: 1.5; }
+  .tag {
+    font-size: 11.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+</style>

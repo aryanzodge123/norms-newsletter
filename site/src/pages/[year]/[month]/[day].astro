@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import EditionView from '../../../components/EditionView.astro';
+import { allEditions, neighbours } from '../../../lib/editions';
+import { editionPath, ogImagePath } from '../../../lib/urls';
+
+export async function getStaticPaths() {
+  const all = await allEditions();
+  return all.map((edition) => {
+    const [year, month, day] = edition.data.date.split('-');
+    return { params: { year, month, day }, props: { edition } };
+  });
+}
+
+const { edition } = Astro.props;
+const { prev } = await neighbours(edition.data.date);
+
+const d = edition.data;
+const title =
+  d.edition_type === 'fallback'
+    ? `Abbreviated edition · Norm's Newsletter`
+    : `${d.headline_of_the_day} · Norm's Newsletter`;
+---
+
+<BaseLayout
+  title={title}
+  path={editionPath(d.date)}
+  ogType="article"
+  ogImagePath={ogImagePath(d.date)}
+>
+  <EditionView edition={edition} prev={prev} />
+</BaseLayout>

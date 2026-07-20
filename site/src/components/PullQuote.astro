@@ -1,0 +1,39 @@
+---
+// DESIGN.md section 4, PullQuote. Only renders person-speech quotes supplied
+// by the pipeline (policy in SPEC 6.5). Quote text in Newsreader 400 italic;
+// attribution beneath in mono. Serif here encodes a quoted human voice
+// (principle 2: type encodes origin).
+interface Props {
+  text: string;
+  attribution: string;
+  sourceUrl: string;
+}
+const { text, attribution, sourceUrl } = Astro.props;
+---
+
+<figure class="pullquote">
+  <blockquote cite={sourceUrl}>{text}</blockquote>
+  <figcaption class="mono">{attribution}</figcaption>
+</figure>
+
+<style>
+  .pullquote {
+    margin: 16px 0;
+    border-left: 2px solid var(--rule);
+    padding-left: 16px;
+  }
+  blockquote {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  figcaption {
+    margin-top: 6px;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+</style>

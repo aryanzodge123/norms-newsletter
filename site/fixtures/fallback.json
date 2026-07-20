@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-21",
+  "edition_number": 44,
+  "edition_type": "fallback",
+  "notice": "Today's brief is a short one. The usual edition could not be built, so here are the stories that ranked highest, with links to the sources. Full service resumes tomorrow.",
+  "stories": [
+    {"rank": 1, "title": "Regulators approve the first over-the-counter blood pressure implant", "score": 9, "url": "https://arstechnica.invalid/bp-implant", "source": "arstechnica"},
+    {"rank": 2, "title": "A major cloud outage knocked out banking and delivery apps", "score": 8, "url": "https://arstechnica.invalid/cloud-outage", "source": "arstechnica"},
+    {"rank": 3, "title": "A common login tool had a flaw that let attackers skip passwords", "score": 8, "url": "https://arstechnica.invalid/login-bypass", "source": "arstechnica"},
+    {"rank": 4, "title": "A cheaper malaria vaccine begins its first wide rollout", "score": 7, "url": "https://arstechnica.invalid/malaria-vaccine", "source": "arstechnica"},
+    {"rank": 5, "title": "Two big carmakers agree to share one charging plug", "score": 6, "url": "https://arstechnica.invalid/ev-charging-standard", "source": "arstechnica"},
+    {"rank": 6, "title": "State law will make delivery apps show the full price up front", "score": 6, "url": "https://arstechnica.invalid/delivery-fee-law", "source": "arstechnica"},
+    {"rank": 7, "title": "Airlines must issue cash refunds within a week of a canceled flight", "score": 5, "url": "https://arstechnica.invalid/airline-refund-rule", "source": "arstechnica"},
+    {"rank": 8, "title": "New rule requires phone makers to sell repair parts", "score": 5, "url": "https://news.ycombinator.invalid/item?id=41222222", "source": "hackernews"},
+    {"rank": 9, "title": "A central bank held interest rates steady for the third meeting", "score": 4, "url": "https://arstechnica.invalid/rates-hold", "source": "arstechnica"},
+    {"rank": 10, "title": "A large retailer will close 40 underperforming stores", "score": 4, "url": "https://arstechnica.invalid/store-closures", "source": "arstechnica"}
+  ]
+}

@@ -1,0 +1,78 @@
+---
+// DESIGN.md section 4, AudioRow. Bordered row with a play icon, label,
+// duration, and an "Also on RSS" link. Renders a native <audio> element
+// revealed on play tap. The parent omits this component entirely when
+// edition.audio is null (no placeholder). Duration from audio.duration_seconds.
+import { href } from '../lib/urls';
+import { formatDuration as fmt } from '../lib/editions';
+
+interface Props {
+  url: string;
+  durationSeconds: number;
+}
+const { url, durationSeconds } = Astro.props;
+---
+
+<section class="audiorow" aria-label="Listen to today's brief">
+  <button class="play" type="button" aria-label="Play today's brief" aria-controls="brief-audio">
+    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+      <path d="M4 3 L15 9 L4 15 Z" fill="var(--oxide)"></path>
+    </svg>
+  </button>
+  <span class="label">Listen to today's brief</span>
+  <span class="mono dur">{fmt(durationSeconds)}</span>
+  <a class="mono rss" href={href('/subscribe/')}>Also on RSS</a>
+</section>
+<audio id="brief-audio" class="player" controls preload="none" src={url} style="display:none"></audio>
+<noscript>
+  <style>#brief-audio { display: block !important; margin-top: 8px; }</style>
+</noscript>
+
+<!-- The only client JS on the site (DESIGN.md section 7), part 2 of 2:
+     reveal the native <audio> element on play tap and start playback. -->
+<script is:inline>
+  (function () {
+    var row = document.querySelector('.audiorow .play');
+    var audio = document.getElementById('brief-audio');
+    if (!row || !audio) return;
+    row.addEventListener('click', function () {
+      audio.style.display = 'block';
+      audio.play();
+    });
+  })();
+</script>
+
+<style>
+  .audiorow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    padding: 12px 16px;
+  }
+  .play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    padding: 4px;
+    cursor: pointer;
+    min-width: 28px;
+    min-height: 28px;
+  }
+  .label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .dur { font-size: 12px; }
+  .rss {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--oxide);
+  }
+  .player { width: 100%; }
+</style>

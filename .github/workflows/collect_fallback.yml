@@ -1,0 +1,49 @@
+# Backup collector (decision #5). The collector normally runs on the mini
+# PC every 3 hours (SPEC 6.2); this is the disabled Actions fallback for
+# when that machine is down. It is manual by default. To turn it into a live
+# fallback, uncomment the schedule below; the collector is idempotent
+# (bronze dedups) so an overlap with the mini PC is harmless.
+name: collect-fallback
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 */3 * * *" # every 3 hours (SPEC 6.2), uncomment to enable
+
+permissions:
+  contents: read
+
+concurrency:
+  group: collect-fallback
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    env:
+      R2_CATALOG_URI: ${{ secrets.R2_CATALOG_URI }}
+      R2_WAREHOUSE: ${{ secrets.R2_WAREHOUSE }}
+      R2_TOKEN: ${{ secrets.R2_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      HEALTHCHECKS_COLLECT_URL: ${{ secrets.HEALTHCHECKS_COLLECT_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Python deps
+        run: uv sync --frozen
+
+      # SPEC 6.2: collect into bronze. The collector pings the collector
+      # cadence check itself (src/health.py), so the mini PC and this
+      # fallback share one dead man's switch.
+      - name: Collect
+        run: uv run python -m src.collector
+
+      # Chain silver after the collect cycle (deferred from M2). Re-clusters
+      # and re-scores the whole day; incremental scoring keeps the cost near
+      # zero when nothing changed (decision #6).
+      - name: Silver
+        run: uv run python -m src.silver.run_silver

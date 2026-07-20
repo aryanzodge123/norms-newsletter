@@ -1,0 +1,29 @@
+---
+import PageShell from '../components/PageShell.astro';
+import { abs } from '../lib/urls';
+
+// Both feed URLs derive from astro.config (SPEC 6.6). The podcast feed is the
+// same feed.xml; per-episode audio enclosures appear once audio ships in M6.
+const feedUrl = abs('/feed.xml', Astro.site);
+---
+
+<PageShell title="Subscribe" path="/subscribe/" pageName="Subscribe" heading="Subscribe">
+  <p>
+    Norm's Newsletter is available as a feed you can read in any RSS app and
+    listen to in any podcast app. A feed is just a web address your app checks
+    for new editions, so you get the brief without visiting the site.
+  </p>
+
+  <h2>RSS</h2>
+  <p>
+    Add this address to your reader:
+  </p>
+  <p><a href={feedUrl}>{feedUrl}</a></p>
+
+  <h2>Podcast</h2>
+  <p>
+    The same feed carries the audio brief. In your podcast app, look for "Add a
+    show by URL" or "Follow a URL", then paste the address above. New episodes
+    arrive automatically each morning once the audio brief is live.
+  </p>
+</PageShell>

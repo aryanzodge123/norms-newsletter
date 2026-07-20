@@ -7,6 +7,89 @@ collector:
   # cycles backfill themselves and bronze dedups the overlap (SPEC 7).
   since_window_hours: 6
 
+silver:
+  # Pinned per SPEC 11's open question. cluster_threshold is calibrated
+  # against this specific model, so swapping the model is a re-tuning
+  # event, not a config tweak.
+  embedding_model: BAAI/bge-small-en-v1.5
+  # Title plus this many chars of body_excerpt is what gets embedded.
+  # Title alone is too sparse to separate near-duplicate wire copy; the
+  # full 1200-char excerpt lets boilerplate dominate the vector.
+  embed_chars: 500
+  # Decision #2. Observed for two weeks before it is trusted.
+  cluster_threshold: 0.82
+  scoring_model: claude-haiku-4-5-20251001
+  # SPEC 6.4c: invalid twice -> score null, editor ignores the cluster.
+  scoring_max_retries: 1
+
+editor:
+  # SPEC 6.5 stage 1 and stage 2. The editor curates, the writers draft.
+  editor_model: claude-sonnet-4-5-20250929
+  writer_model: claude-haiku-4-5-20251001
+  # SPEC 6.5: invalid twice -> fallback edition (editor) or a story with no
+  # article block (writer). One retry, then contain the failure.
+  max_retries: 1
+  # How many stories the writer stage drafts at once. Stage 2 is one small
+  # call per story and they do not depend on each other (SPEC 6.5).
+  writer_concurrency: 6
+
+  # SPEC 6.5 says a "broadly quiet day" produces a quiet edition and
+  # section 7 says "zero/near-zero data" does too, without quantifying
+  # either. Deterministic code picks the edition type from these numbers
+  # before any AI call, so the shape of the publication is never a model
+  # decision (rule zero) and the quiet path is testable offline.
+  # Clusters with a null score do not count: SPEC 6.4c says the editor
+  # ignores them.
+  min_clusters_for_normal: 12
+  min_clusters_for_quiet: 3
+
+  # The grounding floor for the writer stage. Below this many characters
+  # of body text across a cluster's members, no writer call is made and
+  # the story publishes with article: null.
+  #
+  # Decision #16 allows background to be written only from the provided
+  # excerpts and prior-edition context. M2 found that most Hacker News
+  # items reach silver with an empty body_excerpt, because the HN API
+  # returns text only for Ask HN posts. Asking for an article from a
+  # headline alone is asking the model for facts it does not have, so the
+  # gate is in code rather than in the prompt.
+  min_grounding_chars: 400
+
+audio:
+  # SPEC 6.7, decision #4. One small model call turns edition.json into a
+  # two-host dialogue; deterministic code does the TTS, duration, upload and
+  # the audio block. The script model is pinned like the other AI stages so
+  # the audio eval set does not shift under a version bump.
+  script_model: claude-haiku-4-5-20251001
+  # SPEC 6.7 / SPEC 7: script invalid twice -> no audio, edition ships
+  # without a player row. One retry, then contain.
+  max_retries: 1
+  # Gemini multi-speaker TTS behind the swappable interface (decision #4).
+  # The model id and prebuilt voice names are pinned here; swapping the
+  # backend is a config change, not a code change.
+  tts_model: gemini-2.5-flash-preview-tts
+  speaker_a_voice: Kore
+  speaker_b_voice: Puck
+  # SPEC 6.7: "1,300-1,600 words". Enforced on the validated script.
+  min_words: 1300
+  max_words: 1600
+
+archive:
+  # SPEC 6.9. The archival job folds each day's bronze + silver into the
+  # permanent gold record and drops the daily partitions. These two numbers
+  # are the only tunable parts of it.
+  #
+  # The writer stage's background retrieval (SPEC 6.5 stage 2) looks this
+  # far back in gold for prior coverage of a story. cluster_id is
+  # sha256(seed_item_id) and is not stable day to day, so the same story
+  # gets a different id each day; the match is semantic over this window,
+  # restricted to clusters that were actually published.
+  prior_mention_lookback_days: 30
+  # SPEC 6.9: expire snapshots older than this on the gold tables the job
+  # touches. Gold is the permanent record, but its snapshot history does
+  # not need to be.
+  snapshot_expiry_days: 7
+
 canonical_url:
   # Hosts whose URLs are worth a network round trip to resolve, per SPEC
   # 6.1. This list may change at any time, including mid-day. The

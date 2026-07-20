@@ -1,0 +1,48 @@
+---
+// DESIGN.md section 4, RankedList. Fallback edition body: rows of two-digit
+// rank, story title linked to its source, and "score N · source", separated
+// by --rule-faint hairlines.
+interface Props {
+  stories: { rank: number; title: string; score: number; url: string; source: string }[];
+}
+const { stories } = Astro.props;
+---
+
+<ol class="ranked">
+  {
+    stories.map((s) => (
+      <li class="row">
+        <span class="rank mono">{String(s.rank).padStart(2, '0')}</span>
+        <span class="body">
+          <a class="ttl" href={s.url} rel="noopener">{s.title}</a>
+          <span class="meta mono">score {s.score} · {s.source}</span>
+        </span>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .ranked { list-style: none; margin: 0; padding: 0; }
+  .row {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule-faint);
+  }
+  .rank {
+    font-weight: 500;
+    color: var(--oxide);
+    flex: 0 0 auto;
+    min-width: 22px;
+  }
+  .body { display: flex; flex-direction: column; gap: 3px; }
+  .ttl {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--oxide);
+  }
+  .meta { font-size: 12px; }
+</style>

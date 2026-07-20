@@ -1,0 +1,96 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import { abs, href } from '../lib/urls';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Internal path this page lives at, for canonical + OG URLs. */
+  path: string;
+  ogType?: string;
+  /** Internal path to the OG image. Edition pages pass their per-edition PNG
+   *  (ogImagePath); other pages fall back to the static wordmark card. */
+  ogImagePath?: string;
+}
+
+const {
+  title,
+  description = "A daily brief on technology, AI, business, finance, politics, and the world. Written in plain English. Compiled automatically every morning.",
+  path,
+  ogType = 'website',
+  ogImagePath = '/og-default.svg',
+} = Astro.props;
+
+const canonical = abs(path, Astro.site);
+const ogImage = abs(ogImagePath, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
+    <link rel="icon" href={href('/favicon.ico')} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Norm's Newsletter"
+      href={abs('/feed.xml', Astro.site)}
+    />
+
+    <meta property="og:site_name" content="Norm's Newsletter" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+
+    <!-- The only client JS on the site (DESIGN.md section 7), part 1 of 2:
+         the StoryCard script. It opens the card whose id matches the URL hash
+         so /#slug deep-links, and closes a card from its "Collapse" control.
+         With JS disabled, native details/summary still expands and the
+         Collapse link degrades to a scroll-up anchor. Part 2 (native audio
+         controls) lives in AudioRow.astro. -->
+    <script is:inline>
+      (function () {
+        function openHashTarget() {
+          var id = decodeURIComponent(location.hash.replace(/^#/, ''));
+          if (!id) return;
+          var el = document.getElementById(id);
+          if (el && el.tagName.toLowerCase() === 'details') {
+            el.open = true;
+            el.scrollIntoView();
+          }
+        }
+        openHashTarget();
+        window.addEventListener('hashchange', openHashTarget);
+
+        document.addEventListener('click', function (e) {
+          var t = e.target.closest && e.target.closest('[data-collapse]');
+          if (!t) return;
+          var card = t.closest('details');
+          if (card) {
+            e.preventDefault();
+            card.open = false;
+            card.scrollIntoView({ block: 'nearest' });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

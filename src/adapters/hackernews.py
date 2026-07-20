@@ -38,9 +38,13 @@ class HackerNewsAdapter:
         topic_hint: str,
         max_items: int,
         run_id: str,
+        name: str | None = None,
+        feed_url: str | None = None,  # unused; HN endpoint is fixed
         shortener_hosts: Iterable[str] = (),
         client: httpx.Client | None = None,
     ) -> None:
+        if name:
+            self.name = name
         self.topic_hint = topic_hint
         self.max_items = max_items
         self.run_id = run_id

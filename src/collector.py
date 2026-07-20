@@ -17,9 +17,9 @@ import sys
 import time
 from datetime import UTC, datetime, timedelta
 
-from . import bronze, runlog
+from . import bronze, health, runlog
 from .adapters.base import RawItem
-from .config import SourceConfig, enabled_sources, get_pipeline
+from .config import SourceConfig, enabled_sources, get_pipeline, get_settings
 from .storage import get_catalog
 
 log = logging.getLogger("collector")
@@ -46,10 +46,12 @@ def run_adapter(
     try:
         adapter_class = resolve_adapter(source)
         adapter = adapter_class(
+            name=source.name,
             topic_hint=source.topic_hint,
             max_items=source.max_items_per_run,
             run_id=run_id,
             shortener_hosts=shortener_hosts,
+            feed_url=source.feed_url,
         )
         items = adapter.fetch(since)
         latency_ms = int((time.monotonic() - started) * 1000)
@@ -101,6 +103,11 @@ def collect(*, dry_run: bool = False) -> int:
             print(f"\n  adapters that failed: {', '.join(failed_adapters)}")
         return 0
 
+    # The collector-cadence check (SPEC section 8). Its dead man's switch is
+    # how a stalled mini PC gets noticed; a failed ping never fails the run.
+    collect_url = get_settings().healthchecks_collect_url
+    health.ping(collect_url, health.START)
+
     written = 0
     notes = None
     status = "partial" if failed_adapters else "success"
@@ -115,6 +122,7 @@ def collect(*, dry_run: bool = False) -> int:
         notes = f"bronze write failed: {type(exc).__name__}: {exc}"
         log.error(notes)
     finally:
+        health.ping(collect_url, health.SUCCESS if status != "failed" else health.FAIL)
         try:
             log_table = runlog.ensure_table(get_catalog())
             runlog.write_row(

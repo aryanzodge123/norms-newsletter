@@ -1,0 +1,35 @@
+---
+// DESIGN.md section 4, Footer. 2px --ink top rule, then mono metadata,
+// space-between. Mobile: centered, first phrase only.
+---
+
+<footer class="footer-wrap">
+  <div class="container">
+    <hr class="foot-rule" />
+    <div class="footer">
+      <span class="mono">Compiled by Norm at 6:00 am ET</span>
+      <span class="mono second">Every story links to its original sources</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-wrap { margin-top: 40px; }
+  .foot-rule {
+    border: 0;
+    border-top: 2px solid var(--ink);
+    margin: 0 0 12px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 28px;
+  }
+  .footer .mono { font-size: 11.5px; }
+
+  @media (max-width: 720px) {
+    .footer { justify-content: center; text-align: center; }
+    .footer .second { display: none; }
+  }
+</style>

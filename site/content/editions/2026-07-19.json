@@ -1,0 +1,223 @@
+{
+  "date": "2026-07-19",
+  "edition_number": 42,
+  "edition_type": "normal",
+  "headline_of_the_day": "US regulators approve the first over-the-counter blood pressure implant",
+  "key_points": [
+    {
+      "text": "US health regulators cleared the first blood pressure implant that patients can buy without a prescription, starting next spring.",
+      "topic": "Science"
+    },
+    {
+      "text": "A large cloud provider had a six-hour outage that took down banking apps and food delivery across the eastern US.",
+      "topic": "Tech"
+    },
+    {
+      "text": "A new state law will require food delivery apps to show the full price, including fees, before you order.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "A widely used open-source login tool had a flaw that let attackers skip passwords, and a fix is now available.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Two carmakers agreed to share charging plugs, so most new electric cars will use one standard by 2027.",
+      "topic": "Business"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/audio/2026-07-19.mp3",
+    "duration_seconds": 24,
+    "size_bytes": 286560
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+          "slug": "cloud-outage-banking-delivery",
+          "title": "A major cloud outage knocked out banking and delivery apps for six hours",
+          "summary": "A failure at one of the largest cloud providers took down apps that millions of people use for money and food.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.invalid/cloud-outage"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://news.ycombinator.invalid/item?id=41111111"
+            }
+          ],
+          "article": {
+            "background": "Cloud providers are companies that rent out computers over the internet, and most apps you use run on a handful of them. When one has a problem, many unrelated services fail at once. Think of it like a power cut on one street taking out every shop at the same time.",
+            "what_happened": "One of the three largest providers had a six-hour outage on Friday morning. Banking apps, food delivery, and some airline check-in systems stopped working across the eastern United States. The company said a bad software update caused it and that no customer data was lost.",
+            "why_it_matters": "For most people this was a frustrating morning, not a lasting harm. It is a reminder that a lot of daily life now depends on a few companies most people have never heard of. Regulators have started asking whether that concentration is a risk worth managing.",
+            "quote": {
+              "text": "We identified the faulty update within the hour and are reviewing how it reached production.",
+              "attribution": "Dana Reyes, the provider's head of reliability",
+              "source_url": "https://arstechnica.invalid/cloud-outage"
+            }
+          }
+        },
+        {
+          "cluster_id": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5",
+          "slug": "carmakers-share-charging-standard",
+          "title": "Two big carmakers agree to share one charging plug",
+          "summary": "The deal means most new electric cars sold in the US will use the same charger by 2027.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.invalid/ev-charging-standard"
+            }
+          ],
+          "article": {
+            "background": "Electric cars have used different charging plugs, a bit like phones once using different chargers. That has made public charging confusing, because not every plug fits every car.",
+            "what_happened": "Two of the largest carmakers said they will adopt a single charging standard for new models. Cars built from 2027 will use it, and older cars can get an adapter. The two companies together sell about a third of new cars in the country.",
+            "why_it_matters": "If you own or are thinking about an electric car, finding a working charger should get easier over the next few years. Fewer plug types means more chargers you can actually use.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6",
+          "slug": "phone-repair-parts-rule",
+          "title": "New rule requires phone makers to sell repair parts",
+          "summary": "Phone makers will have to offer parts and manuals so independent shops can fix common problems.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.ycombinator.invalid/item?id=41222222"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1",
+          "slug": "delivery-apps-full-price-law",
+          "title": "State law will make delivery apps show the full price up front",
+          "summary": "Fees will have to appear before you order, not at the final checkout screen.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.invalid/delivery-fee-law"
+            }
+          ],
+          "article": {
+            "background": "Food delivery apps often add service fees, small-order fees, and delivery fees that only show up at the end. That practice, sometimes called drip pricing, makes the real cost hard to compare.",
+            "what_happened": "A new state law will require the apps to show the full price, fees included, before a customer places an order. It takes effect in January and covers any app operating in the state. Companies that hide fees can be fined.",
+            "why_it_matters": "If you use these apps, you will see what you actually pay before you commit, which makes it easier to compare options or decide it is not worth it. Similar rules in other states often spread nationwide.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+          "slug": "airline-refund-window-rule",
+          "title": "Airlines must issue cash refunds within a week of a canceled flight",
+          "summary": "A new rule sets a clear deadline and bars airlines from pushing travel credit instead.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.invalid/airline-refund-rule"
+            }
+          ],
+          "article": {
+            "background": "When an airline cancels a flight, passengers are owed their money back, but the timing has been vague and many travelers were steered toward credit instead of cash.",
+            "what_happened": "Regulators set a rule requiring a cash refund within seven days for a canceled or badly delayed flight. Airlines must offer cash by default and cannot make a credit the only easy option. It starts in the fall.",
+            "why_it_matters": "If a flight you booked is canceled, you get your money back quickly and without a fight. That is money in your account rather than a credit you might forget to use.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+          "slug": "otc-blood-pressure-implant",
+          "title": "Regulators approve the first blood pressure implant sold without a prescription",
+          "summary": "The small device tracks blood pressure around the clock and goes on sale next spring.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.invalid/bp-implant"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://news.ycombinator.invalid/item?id=41333333"
+            }
+          ],
+          "article": {
+            "background": "Blood pressure is one of the strongest warning signs for heart disease, but a single reading at the doctor misses a lot, because it changes all day. High blood pressure often has no symptoms until something serious happens.",
+            "what_happened": "Regulators approved a rice-grain-sized implant that measures blood pressure continuously and sends readings to a phone. It is the first such device cleared for sale without a prescription. It will cost about the price of a fitness watch and go on sale next spring.",
+            "why_it_matters": "For people managing blood pressure, this could catch dangerous swings a single checkup would miss. The catch is cost and privacy: it is not covered by insurance yet, and it sends health data to an app, so the terms of that data are worth reading.",
+            "quote": {
+              "text": "Continuous data changes what we can catch, but patients need to know exactly where their readings go.",
+              "attribution": "Dr. Amara Okoye, a cardiologist who reviewed the device",
+              "source_url": "https://arstechnica.invalid/bp-implant"
+            }
+          }
+        },
+        {
+          "cluster_id": "a2b3c4d5e6f7a2b3c4d5e6f7a2b3c4d5",
+          "slug": "malaria-vaccine-rollout",
+          "title": "A cheaper malaria vaccine begins its first wide rollout",
+          "summary": "Health workers will give the low-cost shot to children across several countries this year.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.invalid/malaria-vaccine"
+            }
+          ],
+          "article": {
+            "background": "Malaria is a mosquito-borne disease that kills hundreds of thousands of people a year, most of them young children. Earlier vaccines worked but cost too much to use widely.",
+            "what_happened": "A new vaccine that costs a few dollars a dose began its first wide rollout. Health workers aim to reach millions of children this year across several countries where malaria is common. Early trials showed it cut severe cases by more than half.",
+            "why_it_matters": "For families in affected regions this is a direct chance to keep children alive. For everyone else it is a sign that a hard disease is becoming manageable at a price poorer countries can afford.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "title": "A popular note-taking app added end-to-end encryption",
+      "url": "https://arstechnica.invalid/notes-encryption",
+      "topic": "Tech"
+    },
+    {
+      "title": "A central bank held interest rates steady for the third meeting",
+      "url": "https://arstechnica.invalid/rates-hold",
+      "topic": "Finance"
+    },
+    {
+      "title": "A space agency delayed its next crewed launch by two weeks",
+      "url": "https://arstechnica.invalid/launch-delay",
+      "topic": "Science"
+    },
+    {
+      "title": "A large retailer will close 40 underperforming stores",
+      "url": "https://arstechnica.invalid/store-closures",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 214,
+    "clusters_considered": 63,
+    "stories_run": 7,
+    "sources": 5,
+    "sections_held": 2
+  }
+}

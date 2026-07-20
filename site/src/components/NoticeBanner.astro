@@ -1,0 +1,37 @@
+---
+// DESIGN.md section 4, NoticeBanner. Fallback editions only. Uses the
+// --notice-* tokens (the only place the amber tint appears). Caps label,
+// body in Norm's voice explaining the shortfall. Never used elsewhere.
+interface Props {
+  notice: string;
+}
+const { notice } = Astro.props;
+---
+
+<section class="notice" role="note">
+  <p class="notice-label">Abbreviated edition</p>
+  <p class="notice-body">{notice}</p>
+</section>
+
+<style>
+  .notice {
+    border: 1px solid var(--notice-border);
+    background: var(--notice-bg);
+    padding: 16px 18px;
+  }
+  .notice-label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--notice-title);
+    margin: 0 0 8px;
+  }
+  .notice-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--notice-text);
+    margin: 0;
+  }
+</style>
