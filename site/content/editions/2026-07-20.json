@@ -2,29 +2,29 @@
   "date": "2026-07-20",
   "edition_number": 43,
   "edition_type": "normal",
-  "headline_of_the_day": "Judge blocks Paramount-Warner Bros merger on antitrust grounds",
+  "headline_of_the_day": "Federal judge blocks Paramount-Warner Bros merger on antitrust grounds",
   "key_points": [
     {
-      "text": "A judge paused the Paramount-Warner Bros merger for 14 days while states argue it will raise prices and cut shows.",
+      "text": "A judge paused the Paramount-Warner Bros merger for 14 days while states argue it breaks antitrust law.",
       "topic": "Regulation"
     },
     {
-      "text": "Hackers are exploiting two serious WordPress flaws from last week, putting tens of millions of websites at risk.",
+      "text": "Hackers are attacking two critical WordPress bugs that were just patched, risking tens of millions of websites.",
       "topic": "Cyber"
     },
     {
-      "text": "Craneware, which makes hospital software, said hackers stole data from thousands of US hospitals and pharmacies.",
+      "text": "A Craneware breach exposed billing data from thousands of US hospitals and pharmacies.",
       "topic": "Cyber"
     },
     {
-      "text": "The EU fined AliExpress 550 million euros for selling unsafe toys and fake products on its site.",
+      "text": "The EU fined AliExpress 550 million euros for selling unsafe toys and counterfeit goods.",
       "topic": "Regulation"
     }
   ],
   "audio": {
     "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-20.mp3",
-    "duration_seconds": 380,
-    "size_bytes": 4562208
+    "duration_seconds": 391,
+    "size_bytes": 4688640
   },
   "sections": [
     {
@@ -32,9 +32,9 @@
       "stories": [
         {
           "cluster_id": "164af08088c88db710c2c504b73b982f",
-          "slug": "lg-monitors-install-mcafee-ads-on-windows-pcs-without-user",
-          "title": "LG monitors install McAfee ads on Windows PCs without user permission",
-          "summary": "Windows Update quietly installs an LG driver and app when a new LG UltraGear monitor plugs into your PC.",
+          "slug": "lg-monitors-silently-install-mcafee-ads-through-windows",
+          "title": "LG monitors silently install McAfee ads through Windows Update",
+          "summary": "Plugging in a new LG UltraGear display automatically downloads an app installer without asking first.",
           "score": 6,
           "sources": [
             {
@@ -43,9 +43,9 @@
             }
           ],
           "article": {
-            "background": "LG makes UltraGear monitors. These are high-end displays aimed at gamers and professionals. When you plug one into a Windows 11 PC for the first time, the system automatically installs software updates.",
-            "what_happened": "Windows Update installs LG's driver updates and an app called LG Monitor App Installer without asking permission. The app does not have its own controls. Instead it shows you links to LG's other apps and McAfee antivirus. The app also sends unwanted ad notifications to your screen.",
-            "why_it_matters": "If you own an LG UltraGear monitor on Windows 11, ads will pop up on your screen. You have to find and remove the LG Monitor App Installer yourself to make them stop. The software installs without your consent or knowledge.",
+            "background": "When you plug in a new LG UltraGear monitor to a Windows 11 PC, the system runs Windows Update. This update silently installs LG driver software and an app installer. Neither one asks for your permission first.",
+            "what_happened": "The LG Monitor App Installer, once on your computer, starts showing pop-up ads. These ads promote LG's other apps and McAfee antivirus. The app has no controls of its own. It simply pushes notifications to your screen without your consent.",
+            "why_it_matters": "You buy a monitor to see your screen better, not to see ads. The installer arrives hidden inside a Windows Update, so most people won't know it is there. You get pop-ups from a tool you never asked for, promoting software you may not want.",
             "quote": null
           }
         },
@@ -53,7 +53,7 @@
           "cluster_id": "da79b381233b82d1f34b9a927ecd9d91",
           "slug": "complete-technical-guide-explains-how-new-york-subway",
           "title": "Complete technical guide explains how New York subway signals work",
-          "summary": "A guide explains the signaling system that NYC subway trains use to stay safe and run on time.",
+          "summary": "A guide explains the color-light block signaling system used across all NYC subway lines.",
           "score": 7,
           "sources": [
             {
@@ -62,9 +62,9 @@
             }
           ],
           "article": {
-            "background": "The New York City subway uses a signal system called wayside color-light block signalling. Signals sit beside the tracks rather than overhead. They use colored lights to show whether a train can proceed. The system divides tracks into blocks, or sections. Electrical sensors in each block detect when a train is present.",
-            "what_happened": "Nearly all current subway routes use this same classic signalling method. The core principles have stayed the same for many years. The system works by placing signals at the side of tracks. Colored lights tell trains whether the next block is clear.",
-            "why_it_matters": "The signalling system keeps trains safely spaced apart on the tracks. If you ride the subway, this is how operators know where every train is. Understanding how signals work explains why trains sometimes stop or slow down between stations. The system's age means upgrades are ongoing but the basic method remains reliable.",
+            "background": "The NYC subway uses a signal system called wayside color-light block signalling. Signals sit beside the track. They use colored lights to show train operators if the track ahead is clear. The track is split into blocks, or sections. The system detects when a train is in each block.",
+            "what_happened": "A guide documents how this signal system works across all NYC subway divisions. It explains the principles behind the colored lights and track blocks. The system's basic design has stayed the same for decades.",
+            "why_it_matters": "Understanding how subway signals work helps riders grasp why trains slow down or stop. It shows how the system keeps trains safely spaced apart. Knowing this makes transit delays easier to understand.",
             "quote": null
           }
         }
@@ -75,9 +75,9 @@
       "stories": [
         {
           "cluster_id": "7e29899969d21d0c3f74027bad894706",
-          "slug": "chinese-ai-lab-moonshot-releases-kimi-k3-model-with",
-          "title": "Chinese AI lab Moonshot releases Kimi K3 model with promised open weights",
-          "summary": "Moonshot will release the code for its new Kimi K3 AI model on July 27, intensifying open AI competition.",
+          "slug": "chinese-lab-moonshot-releases-kimi-k3-model-with-open",
+          "title": "Chinese lab Moonshot releases Kimi K3 model with open weights coming",
+          "summary": "Moonshot announced a 2.8 trillion parameter model and plans to release its weights on July 27.",
           "score": 4,
           "sources": [
             {
@@ -90,17 +90,17 @@
             }
           ],
           "article": {
-            "background": "Moonshot AI, a Chinese lab, released Kimi K3 on July 16th. K3 is a large language model, the kind of AI that powers chatbots. The model has 2.8 trillion parameters, which are settings that shape how it responds. Moonshot promised to release K3's internal weights, the blueprints that let others run it, on July 27th. This matters because most advanced AI models are closed. Companies like OpenAI keep their blueprints secret.",
-            "what_happened": "Moonshot said it will release K3's weights publicly. This would make a cutting-edge model available to anyone with enough computing power. The announcement sparked debate about open versus closed AI models. OpenAI's head of strategic futures argued the US should create doubt about open models. Other tech leaders, including Yann LeCun, countered that open models drive faster innovation.",
-            "why_it_matters": "If Moonshot releases the weights as promised, the economics of AI shift. Right now, companies charge money to access their best models. With K3's weights public, anyone could run something equally powerful for free. This could reshape who profits from AI and where the best research happens. The debate over open models is really a fight about whether closed companies or the broader research community should lead AI's future.",
+            "background": "Moonshot AI, a Chinese research lab, released Kimi K3 on July 16th. K3 is a large language model with 2.8 trillion parameters. A parameter is a number that helps an AI system make decisions. Moonshot plans to release the model's weights, or underlying code, on July 27th. Open-weight models let anyone see and use the code, unlike closed models that companies keep private.",
+            "what_happened": "Kimi K3 became the largest open-weight language model available. The release sparked debate about AI's future. Some people, including OpenAI's Dean W. Ball, worry that open-weight models hurt profits for major AI companies. Others, like researcher Yann LeCun, argue that open code helps innovation and can exist alongside paid systems.",
+            "why_it_matters": "If Moonshot releases K3's weights as promised, smaller groups can build AI tools without paying for expensive systems. This could shift power in the AI industry away from wealthy companies. The debate also reflects a deeper question: whether AI should be open for everyone to use or controlled by large labs. Your ability to use AI tools may depend on which approach wins out.",
             "quote": null
           }
         },
         {
           "cluster_id": "e0362efdb459d7b0deab978add8dbae8",
-          "slug": "ai-system-proves-20-year-old-graph-theory-conjecture-with",
-          "title": "AI system proves 20-year-old graph theory conjecture with ten-line algorithm",
-          "summary": "Researchers used AI to solve a math problem about the best way to match items in a data stream.",
+          "slug": "ai-solves-20-year-old-graph-theory-conjecture-with-proof",
+          "title": "AI solves 20-year-old graph theory conjecture with proof",
+          "summary": "Researchers used AI to prove that a greedy algorithm works best for semi-streaming matching.",
           "score": 4,
           "sources": [
             {
@@ -119,7 +119,7 @@
           "cluster_id": "208040ac2a9ed518095743f835db3c5a",
           "slug": "federal-judge-blocks-paramount-warner-bros-merger-on",
           "title": "Federal judge blocks Paramount-Warner Bros merger on antitrust grounds",
-          "summary": "A judge stopped the merger for 14 days after states said the deal would raise prices and cut TV shows.",
+          "summary": "A judge stopped the deal for 14 days after states argued it would raise prices and cut content choices.",
           "score": 8,
           "sources": [
             {
@@ -140,17 +140,17 @@
             }
           ],
           "article": {
-            "background": "Paramount and Warner Bros. Discovery want to merge into one company. The deal is worth about $110 billion. A group of state attorneys general, led by California's Rob Bonta, sued to block it. They say the merger would break antitrust law, the rule that stops companies from merging in ways that hurt competition.",
-            "what_happened": "Federal Judge Araceli Martínez-Olguín ordered a 14-day pause on Monday. She ruled after hearing arguments on Friday. The judge said the states raised serious questions about whether the merger would break antitrust law. She also said the states would face harm without the pause. Paramount had already agreed not to close the deal before July 22.",
-            "why_it_matters": "If the merger happens, the combined company would control a huge share of movies and TV shows. The judge said she believes the deal could violate antitrust law and harm competition. That could mean fewer choices and higher prices for viewers. The states can ask for another pause after 14 days if needed.",
+            "background": "Paramount and Warner Bros. Discovery are two major studios that make movies and TV shows. A group of twelve state attorneys general, led by California, sued to block their $110 billion merger. They argue it would reduce competition and harm consumers.",
+            "what_happened": "A federal judge granted a 14-day pause on Monday. Judge Araceli Martínez-Olguín said the states showed serious legal questions about antitrust violations. The pause gives both sides more time before the merger can close. Paramount had already agreed not to finish the deal before July 22.",
+            "why_it_matters": "The states worry the combined company could raise prices and produce fewer movies and shows. A bigger studio with less competition can control more of what gets made. The judge found the states' argument strong enough to halt the deal at least temporarily while the case continues.",
             "quote": null
           }
         },
         {
           "cluster_id": "d0ea75fd552ac1ca3a9d91782f95bb98",
-          "slug": "european-union-fines-aliexpress-record-550-million-euros",
-          "title": "European Union fines AliExpress record 550 million euros for illegal goods",
-          "summary": "The EU fined AliExpress 550 million euros for failing to stop sales of unsafe toys and counterfeit goods.",
+          "slug": "eu-fines-aliexpress-record-550-million-euros-for-illegal",
+          "title": "EU fines AliExpress record 550 million euros for illegal goods",
+          "summary": "The EU says AliExpress failed to stop sales of unsafe toys and counterfeit goods.",
           "score": 6,
           "sources": [
             {
@@ -163,9 +163,9 @@
             }
           ],
           "article": {
-            "background": "AliExpress is a Chinese online marketplace where sellers list products for sale, similar to eBay or Amazon. The EU has laws requiring platforms to check for illegal or unsafe goods. These include counterfeit clothes and toys that fail safety tests. The Digital Services Act sets strict rules for how platforms must monitor their listings.",
-            "what_happened": "The European Commission fined AliExpress €550 million (£467 million) for breaking these rules. Investigators found the company did not properly assess risks from illegal products. AliExpress failed to build teams dedicated to removing counterfeit and dangerous items. Reviewers were sometimes given only tens of seconds to evaluate flagged products. The company also made it easy for sellers to hide from detection.",
-            "why_it_matters": "If you buy from AliExpress, you may receive unsafe or fake products. The company's weak checks mean dangerous cosmetics, broken toy safety standards, and counterfeit goods can slip through. This fine is the largest yet under EU law. It signals that the EU will hold platforms accountable for what sellers offer on their sites.",
+            "background": "AliExpress is a Chinese online marketplace where sellers offer goods to buyers worldwide. The EU has rules requiring online platforms to check for illegal or unsafe items. These include counterfeit clothes, fake toys, and dangerous cosmetics. The European Commission enforces these rules through the Digital Services Act.",
+            "what_happened": "The European Commission fined AliExpress €550 million (£467 million) for failing to stop illegal sales. Officials found AliExpress did not hire enough staff to catch bad products. Moderators had only tens of seconds to check flagged items. The company also made it easy for sellers to hide illegal goods.",
+            "why_it_matters": "When online platforms fail to police what they sell, shoppers buy fake or unsafe things without knowing. This fine sets a clear rule: platforms must work to stop illegal sales or face big penalties. If AliExpress now hires more staff to check products, your risk of getting counterfeits or unsafe items drops.",
             "quote": null
           }
         }
@@ -176,9 +176,9 @@
       "stories": [
         {
           "cluster_id": "889b86649cf8d488ce3a8a95b9de1a01",
-          "slug": "hackers-exploit-two-critical-wordpress-bugs-affecting-tens",
-          "title": "Hackers exploit two critical WordPress bugs affecting tens of millions of sites",
-          "summary": "WordPress fixed two serious flaws last week and urged users to update quickly as hackers attack the sites.",
+          "slug": "hackers-exploit-wordpress-bugs-affecting-tens-of-millions",
+          "title": "Hackers exploit WordPress bugs affecting tens of millions of sites",
+          "summary": "WordPress patched two critical bugs last week, but hackers are already attacking unpatched sites.",
           "score": 7,
           "sources": [
             {
@@ -187,17 +187,17 @@
             }
           ],
           "article": {
-            "background": "WordPress is free software that millions of websites use to publish content and run their sites. Last week, WordPress released patches for two critical security flaws. These bugs were severe enough that WordPress enabled forced updates where possible.",
-            "what_happened": "Hackers are now breaking into websites running the vulnerable software. Three cybersecurity firms, Patchstack, Hexastrike, and WatchTowr, confirmed the attacks are happening. As of Monday, tens of millions of WordPress websites had not yet installed the patches.",
-            "why_it_matters": "If your website runs WordPress, you need to update it now. Hackers can break into unpatched sites without a password or special access. Site owners who delay risk losing control of their site and exposing visitor data.",
+            "background": "WordPress is the software behind about 40 percent of all websites. Last week, WordPress fixed two critical security flaws that could let hackers take over sites. The company told users to update \"immediately\" and even turned on forced updates.",
+            "what_happened": "Hackers are now breaking into WordPress sites that still run the old, vulnerable version. Three security firms, Patchstack, Hexastrike, and WatchTowr, all warned that attacks are happening right now. Tens of millions of WordPress websites remain at risk as of Monday.",
+            "why_it_matters": "If your website runs WordPress, you need to update it now. Any unpatched site could be hijacked to steal data, spread malware, or host spam. The longer you wait, the higher the chance attackers will find your site.",
             "quote": null
           }
         },
         {
           "cluster_id": "8e51ee59ed4711fcbe6d4874fd7b3b48",
-          "slug": "healthcare-billing-software-maker-craneware-discloses",
-          "title": "Healthcare billing software maker Craneware discloses breach affecting hospital data",
-          "summary": "Craneware said hackers stole data from thousands of US hospitals and pharmacies that use its software.",
+          "slug": "healthcare-vendor-craneware-confirms-data-breach-affecting",
+          "title": "Healthcare vendor Craneware confirms data breach affecting thousands of hospitals",
+          "summary": "Craneware, a UK billing software maker, says hackers stole customer data from US medical facilities.",
           "score": 7,
           "sources": [
             {
@@ -206,17 +206,17 @@
             }
           ],
           "article": {
-            "background": "Craneware is a U.K.-based company that makes billing and accounting software. Thousands of U.S. hospitals, clinics, and pharmacies use it to manage patient billing and financial records.",
-            "what_happened": "Hackers stole a significant amount of customer data from Craneware's systems. The company announced the breach on Monday. Attackers took employee data, customer data, and partner records. Craneware said the hackers have been removed from its systems. The investigation is still ongoing.",
-            "why_it_matters": "A breach like this could expose patient information. It might also disrupt how hospitals and pharmacies handle payments and records. The company has not said exactly what data was stolen.",
+            "background": "Craneware is a U.K.-based company that makes billing and accounting software. Thousands of U.S. clinics, hospitals, and pharmacies use its software to handle their finances and patient billing. This software processes sensitive financial and patient data.",
+            "what_happened": "Hackers stole a significant amount of data from Craneware's systems, the company announced Monday. The stolen data included employee records, customer information, and partner records. Craneware said the hackers have been removed from its systems. The investigation is still ongoing.",
+            "why_it_matters": "Because so many U.S. medical facilities rely on Craneware, the breach affects a large number of hospitals, clinics, and pharmacies. Stolen patient and financial data puts those facilities and their patients at risk. Healthcare providers may face costs to respond to the breach and notify affected patients.",
             "quote": null
           }
         },
         {
           "cluster_id": "ae0a502d48af0d228a7ec7780914f33c",
-          "slug": "new-malware-hides-stolen-data-in-microsoft-365-calendar",
-          "title": "New malware hides stolen data in Microsoft 365 calendar events dated to 2050",
-          "summary": "HollowGraph malware hides stolen files in Microsoft 365 calendars to sneak them past security tools.",
+          "slug": "malware-hides-stolen-files-in-microsoft-365-calendar-events",
+          "title": "Malware hides stolen files in Microsoft 365 calendar events dated 2050",
+          "summary": "The HollowGraph tool hides stolen data inside hijacked calendars to blend in with normal Microsoft activity.",
           "score": 6,
           "sources": [
             {
@@ -225,9 +225,9 @@
             }
           ],
           "article": {
-            "background": "Researchers at cybersecurity firm Group-IB discovered a new malware called HollowGraph. It hijacks a Microsoft 365 calendar in a compromised account. The malware hides commands and stolen files as attachments on fake calendar events. Those events are dated to the year 2050.",
-            "what_happened": "HollowGraph uses Microsoft's Graph API to move stolen data and commands through normal Microsoft 365 traffic. This makes the activity look like routine calendar use. The malware is a .NET DLL file that only supports two commands: get and send. It never connects to servers owned by the attackers.",
-            "why_it_matters": "Organizations using Microsoft 365 may have this malware moving data and commands through their systems without triggering alerts. Security tools trust Microsoft's legitimate services by default, so activity hidden inside them is harder to spot. The technique shows attackers can hide inside cloud services that most organizations already rely on.",
+            "background": "Microsoft 365 is a cloud service millions of organizations use for email, calendars, and documents. Security tools usually watch for unusual traffic to servers owned by attackers. But a new malware called HollowGraph uses a different hiding spot.",
+            "what_happened": "Researchers at Group-IB found malware that hijacks a Microsoft 365 calendar to receive orders and send stolen files. The malware plants instructions and data on calendar events dated to 2050. It moves everything through normal Microsoft Graph API traffic, which your company's security system sees as routine Microsoft activity.",
+            "why_it_matters": "Most malware gets caught because it phones home to attacker servers. HollowGraph avoids that. It hides inside a service your organization already trusts and uses every day. This means attackers may steal data from your company without triggering the usual alarms.",
             "quote": null
           }
         }
@@ -244,6 +244,16 @@
       "title": "The ACLU Is Arming Lawyers to Expose State Surveillance Secrets",
       "url": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets",
       "topic": "Regulation"
+    },
+    {
+      "title": "Electric air taxis go to war",
+      "url": "https://www.theverge.com/transportation/967891/archer-evtol-military-anduril-air-taxi-thunder",
+      "topic": "Tech"
+    },
+    {
+      "title": "Adobe camera app’s new feature will critique your photos using AI",
+      "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai",
+      "topic": "Tech"
     }
   ],
   "stats": {
