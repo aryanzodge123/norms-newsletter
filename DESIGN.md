@@ -256,7 +256,7 @@ native controls.
 
 Applies to every word the pipeline generates: glance, summaries, articles,
 briefly lines, audio script, notice banner. SPEC.md prompts implement it;
-the readability gate (SPEC 6.8) enforces it.
+the readability gate (SPEC 6.5, run in the 6.8 workflow) enforces it.
 
 1. Write for a smart friend outside the industry. Target roughly 8th-grade
    reading level (Flesch-Kincaid). Edition average must be grade 9 or
