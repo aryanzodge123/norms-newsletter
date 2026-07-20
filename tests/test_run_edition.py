@@ -480,12 +480,49 @@ def test_revision_pass_fixes_a_hard_edition(monkeypatch):
         "background": "The dog ran.", "what_happened": "The cat sat.",
         "why_it_matters": "We had a good day.", "quote": None,
     })
-    client = FakeClient([easy])
+    # The revision pass now simplifies the editor's own text first (its
+    # summaries and glance points are measured by the gate too), then
+    # re-calls the writer for the failing story.
+    simplified = json.dumps({"items": [
+        {"id": "headline", "text": "The dog ran fast."},
+        {"id": "point:0", "text": "The dog ran."},
+        {"id": "summary:hard", "text": "The cat sat down."},
+    ]})
+    client = FakeClient([simplified, easy])
     edition, cost, flag = run_edition._revise_for_readability(
         client, edition, contexts_by_id, cfg, "system", TODAY
     )
     assert flag is False           # gate now passes
-    assert client.messages.calls == 1  # only the failing story re-called
+    assert client.messages.calls == 2  # one simplify call, one story re-called
+    assert edition["sections"][0]["stories"][0]["summary"] == "The cat sat down."
+
+
+def test_revision_stops_early_once_the_gate_passes(monkeypatch):
+    """The loop is bounded by readability_max_passes but must not spend a
+    second pass on an edition that is already under the limit."""
+    cfg = EditorConfig(
+        editor_model="claude-sonnet-4-5-20250929", writer_model="claude-haiku-4-5-20251001",
+        max_retries=1, writer_concurrency=4, min_grounding_chars=400,
+        min_clusters_for_normal=4, min_clusters_for_quiet=2, readability_max_passes=3,
+    )
+    edition = _hard_edition()
+    contexts_by_id = {"a" * 32: ctx("a" * 32)}
+    simplified = json.dumps({"items": [
+        {"id": "headline", "text": "The dog ran fast."},
+        {"id": "point:0", "text": "The dog ran."},
+        {"id": "summary:hard", "text": "The cat sat down."},
+    ]})
+    easy = json.dumps({
+        "background": "The dog ran.", "what_happened": "The cat sat.",
+        "why_it_matters": "We had a good day.", "quote": None,
+    })
+    client = FakeClient([simplified, easy])
+    _, _, flag = run_edition._revise_for_readability(
+        client, edition, contexts_by_id, cfg, "system", TODAY
+    )
+    assert flag is False
+    # One pass was enough, so the budget of 3 was not spent.
+    assert client.messages.calls == 2
 
 
 def test_revision_pass_flags_when_still_hard(monkeypatch):

@@ -81,8 +81,25 @@ def build_user_message(
         parts.append(
             "This story read too hard on the last pass. Rewrite it to read "
             "more simply, keeping every fact and staying within the same "
-            "grounding. These sentences were the hardest, simplify them most:"
+            "grounding. The gate is Flesch-Kincaid grade 9, and it is driven "
+            "by two things only: words per sentence, and syllables per word. "
+            "So do exactly this:"
         )
+        parts.append(
+            "- Keep every sentence at or under 12 words. Split any sentence "
+            "joined by 'and', 'which', 'while', or a semicolon into two."
+        )
+        parts.append(
+            "- Replace long words with short ones wherever the meaning "
+            "survives: 'use' not 'utilize', 'help' not 'facilitate', 'about' "
+            "not 'approximately', 'so' not 'consequently', 'buy' not "
+            "'purchase', 'end' not 'termination'. Proper nouns stay as they are."
+        )
+        parts.append(
+            "- Cut padding outright: 'in order to' is 'to', 'made the decision "
+            "to' is 'decided to', 'is expected to result in' is 'will likely'."
+        )
+        parts.append("These sentences were the hardest, simplify them most:")
         for sentence in revision_sentences:
             parts.append(f"- {sentence}")
     return "\n".join(parts)

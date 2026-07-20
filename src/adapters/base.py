@@ -33,6 +33,15 @@ ITEM_ID_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 BODY_EXCERPT_CHARS = 1200
 
+# One identifying User-Agent for every outbound request the pipeline makes,
+# feeds and article fetches alike. Publishers are entitled to know who is
+# calling, and several (CNBC among them) reject the default client string
+# outright.
+USER_AGENT = (
+    "Mozilla/5.0 (compatible; NormsNewsletter/1.0; "
+    "+https://aryanzodge123.github.io/norms-newsletter/)"
+)
+
 
 class RawItem(BaseModel):
     """One normalized item, matching the bronze schema in SPEC 6.1."""

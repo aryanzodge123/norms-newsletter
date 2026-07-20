@@ -48,6 +48,7 @@ editor:
   min_clusters_for_normal: 12
   min_clusters_for_quiet: 3
   min_grounding_chars: 400
+  readability_max_passes: 2
 audio:
   script_model: claude-haiku-4-5-20251001
   max_retries: 1

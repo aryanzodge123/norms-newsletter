@@ -36,15 +36,10 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from .adapters.base import RawItem, excerpt
+from .adapters.base import USER_AGENT, RawItem, excerpt
 from .config import EnrichConfig
 
 log = logging.getLogger(__name__)
-
-USER_AGENT = (
-    "Mozilla/5.0 (compatible; NormsNewsletter/1.0; "
-    "+https://aryanzodge123.github.io/norms-newsletter/)"
-)
 
 # Only these are worth parsing. A PDF, an image, or a video is a fetch we
 # should not have made and certainly should not try to read as HTML.

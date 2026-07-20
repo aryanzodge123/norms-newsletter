@@ -20,7 +20,7 @@ import feedparser
 import httpx
 
 from .arstechnica import parse_published
-from .base import RawItem, build_item
+from .base import USER_AGENT, RawItem, build_item
 from .hackernews import strip_html
 
 log = logging.getLogger(__name__)
@@ -61,7 +61,9 @@ class RSSAdapter:
             timeout=TIMEOUT_SECONDS, follow_redirects=True
         )
         try:
-            response = client.get(self.feed_url)
+            # Identify the caller. Several publishers reject the default
+            # client string outright (CNBC returns 403).
+            response = client.get(self.feed_url, headers={"User-Agent": USER_AGENT})
             response.raise_for_status()
             return self.parse(response.text, since)
         finally:

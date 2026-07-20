@@ -43,9 +43,9 @@ else. Under 12 words. It should correspond to your top-ranked story.
 The "Today at a glance" box. Four to six points on a normal day, exactly
 three on a quiet day.
 
-Each point is one sentence that stands alone. A reader who reads only the
-glance and closes the page should still have learned the day. Do not write
-teasers that depend on the story below them. "Congress moved on the chip
+Each point is one sentence that stands alone, **under 20 words**. A reader
+who reads only the glance and closes the page should still have learned the
+day. Do not write teasers that depend on the story below them. "Congress moved on the chip
 bill" is a teaser. "Congress passed a bill putting $52 billion into US chip
 factories, the largest such spend in decades" is a point.
 
@@ -82,10 +82,12 @@ Each story needs:
   headlines are written to be clicked. Yours is written to be understood.
   Strip the hype, keep the fact. Expand any acronym a general reader would
   not know. Under 14 words.
-- `summary`, one sentence. What happened, in plain language. Not what the
-  story is "about". This is the line under the title on a collapsed card,
-  and for many readers it is the only thing they will read about this
-  story, so it has to carry the news itself.
+- `summary`, one sentence, **12 to 18 words**. What happened, in plain
+  language. Not what the story is "about". This is the line under the title
+  on a collapsed card, and for many readers it is the only thing they will
+  read about this story, so it has to carry the news itself. One sentence
+  means one sentence: no semicolons, and no second clause bolted on with
+  "and" or "which". If it will not fit, cut a detail rather than run long.
 
 Do not repeat the same fact in `title` and `summary`. The title names the
 event, the summary says what it means or what specifically occurred.

@@ -116,6 +116,12 @@ class EditorConfig(Strict):
     min_clusters_for_normal: int = Field(gt=0)
     min_clusters_for_quiet: int = Field(ge=0)
     min_grounding_chars: int = Field(ge=0)
+    # SPEC 6.5 describes one automatic revision pass for the readability
+    # gate. Measured on real editions, one pass lands just over the line
+    # (11.3 to 9.15), so the count is configurable and defaults to 2. Each
+    # pass costs one small simplify call plus one writer call per failing
+    # story, so this is the knob that trades money for reading grade.
+    readability_max_passes: int = Field(ge=1, default=2)
 
     @model_validator(mode="after")
     def _thresholds_ordered(self) -> EditorConfig:

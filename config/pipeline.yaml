@@ -79,6 +79,10 @@ editor:
   # gate is in code rather than in the prompt.
   min_grounding_chars: 400
 
+  # The readability gate's revision budget (SPEC 6.5). One pass reliably
+  # lands just over grade 9 on real editions; two gets under it.
+  readability_max_passes: 2
+
 audio:
   # SPEC 6.7, decision #4. One small model call turns edition.json into a
   # two-host dialogue; deterministic code does the TTS, duration, upload and

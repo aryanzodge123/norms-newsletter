@@ -60,19 +60,40 @@
   max_items_per_run: 20
   feed_url: "https://openai.com/blog/rss.xml"
 
-- name: google_news_technology
+# The two Google News topic feeds that used to sit here were removed. Their
+# RSS links are opaque redirect shims: the page is ~580KB of JavaScript and
+# carries neither the publisher URL nor the article text, so the enrichment
+# step could never ground them and every story from them published as a flat
+# card. These direct publisher feeds cover the same two topics and their
+# article pages extract cleanly (2,400 to 5,100 characters, measured).
+
+- name: the_verge
   adapter: adapters.rss.RSSAdapter
   topic_hint: tech
   enabled: true
-  max_items_per_run: 30
-  feed_url: "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en"
+  max_items_per_run: 25
+  feed_url: "https://www.theverge.com/rss/index.xml"
 
-- name: google_news_business
+- name: guardian_technology
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: tech
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://www.theguardian.com/uk/technology/rss"
+
+- name: bbc_business
   adapter: adapters.rss.RSSAdapter
   topic_hint: business
   enabled: true
-  max_items_per_run: 30
-  feed_url: "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=en-US&gl=US&ceid=US:en"
+  max_items_per_run: 25
+  feed_url: "https://feeds.bbci.co.uk/news/business/rss.xml"
+
+- name: cnbc_business
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: business
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://www.cnbc.com/id/10001147/device/rss/rss.html"
 
 - name: nature_news
   adapter: adapters.rss.RSSAdapter

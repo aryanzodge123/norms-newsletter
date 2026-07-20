@@ -111,8 +111,16 @@ When in doubt, omit it. A story without a quote is normal.
 
 ## Style reminders that matter here
 
-- Average sentence under 20 words. This is measured after you finish and an
-  edition that reads too hard is sent back for revision.
+- **Average sentence 11 to 13 words. Never over 18.** This is measured after
+  you finish, and an edition that reads too hard is sent back for revision.
+  Two short sentences always beat one long one. If a sentence has a comma
+  splice, a semicolon, or two clauses joined by "and" or "which", split it.
+- **Prefer the short word.** "use" not "utilize", "buy" not "purchase",
+  "help" not "facilitate", "start" not "initiate", "about" not
+  "approximately", "so" not "consequently". The gate counts syllables, and
+  long words are what push an edition over the line faster than anything
+  else. You cannot avoid a company name or a technical term, but you can
+  avoid dressing the rest of the sentence in three-syllable words.
 - First use of any term a general reader might not know gets a plain
   definition in the same sentence, not in a later one.
 - At most one analogy in the whole story, and it goes early, in background.

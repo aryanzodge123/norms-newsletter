@@ -2,92 +2,73 @@
   "date": "2026-07-20",
   "edition_number": 43,
   "edition_type": "normal",
-  "headline_of_the_day": "Federal judge halts Paramount-Warner Bros merger as states cite antitrust concerns",
+  "headline_of_the_day": "Hacker wiped Romania's entire land registry database in active cyberattack",
   "key_points": [
     {
-      "text": "A federal judge paused the Paramount-Warner Bros merger for 14 days after states argued it would violate antitrust law and reduce competition in film and television.",
+      "text": "A hacker wiped Romania's entire land registry database, disrupting property records for the country.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "A federal judge blocked the Paramount-Warner Bros merger for 14 days while states challenge it.",
       "topic": "Regulation"
     },
     {
-      "text": "Hackers are exploiting two critical WordPress vulnerabilities patched last week, putting tens of millions of websites at risk until administrators apply updates.",
+      "text": "Hackers are exploiting newly patched WordPress flaws, putting tens of millions of websites at risk.",
       "topic": "Cyber"
     },
     {
-      "text": "AMD shipped its first complete AI server system to compete with Nvidia, adding Microsoft as a customer for the new rack-scale hardware.",
-      "topic": "Tech"
-    },
-    {
-      "text": "Romania's entire land registry database was wiped by a hacker, disrupting property records for the whole country.",
-      "topic": "Cyber"
-    },
-    {
-      "text": "Gas prices returned to an average of four dollars per gallon as tensions between the US and Iran disrupted oil markets.",
-      "topic": "Finance"
+      "text": "The European Commission fined AliExpress a record $629 million for selling counterfeit and harmful products.",
+      "topic": "Regulation"
     }
   ],
   "audio": {
     "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-20.mp3",
-    "duration_seconds": 364,
-    "size_bytes": 4369248
+    "duration_seconds": 438,
+    "size_bytes": 5253984
   },
   "sections": [
     {
       "name": "Technology",
       "stories": [
         {
-          "cluster_id": "1d666fd42ee3b0b3af79b41934316e5f",
-          "slug": "amd-ships-first-complete-ai-server-system-adds-microsoft-as",
-          "title": "AMD ships first complete AI server system, adds Microsoft as customer",
-          "summary": "The chip maker launched Helios, a rack-scale system designed to compete with Nvidia in data centers, with Microsoft deploying the hardware as part of an expanded partnership.",
-          "score": 7,
+          "cluster_id": "164af08088c88db710c2c504b73b982f",
+          "slug": "windows-update-silently-installs-mcafee-ads-with-lg-monitor",
+          "title": "Windows Update silently installs McAfee ads with LG monitor drivers",
+          "summary": "LG UltraGear monitors trigger automatic driver updates that include unwanted ads on Windows 11.",
+          "score": 3,
           "sources": [
             {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0tRlF5bzh6NUI5VmZKRW9oTzljR3pJbjVLSl9Yb0NqeEtfMVlTQU5TcHl2dU10YkNtN1ZYb0pCWHl1RHhVd1hNZkZDQ21GSTN0NXZTVXRwalhsWk1tNjlYejF5SUF0TTNLdXVqZnROaWV6R3JfZ2fSAXtBVV95cUxPSE4wRDExampVaGU0bDg4VUVIVDFxOEo1QkxXelFLQ2RwTGpzWHJrOV9vb1l3dWIwUWtEWlU5THY0My1HTUlEMVFpRVFCOURkTUVWQXQ0aktqTzdqN3luZkZVZC05eXRwN2otTFVuSHVLdS1kVEtpNU9WT1E?oc=5"
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/967983/lg-monitors-mcafee-adware-gamers-nexus"
             }
           ],
           "article": {
-            "background": "Nvidia has long dominated the market for artificial intelligence chips used in large data centers. AMD, a competitor, has been working to offer alternatives. Now AMD is launching new products designed to challenge Nvidia's lead.",
-            "what_happened": "AMD announced Helios, its first rack AI system built to compete with Nvidia in data centers. The company also said Microsoft will deploy AMD's next-generation Instinct and EPYC processors. This expands an existing partnership between the two companies to include more AI and computing infrastructure for Microsoft's Azure cloud service.",
-            "why_it_matters": "Microsoft's choice signals that AMD's chips are becoming a real alternative to Nvidia. This could eventually give cloud customers more options for the AI services they use. For now, the shift is mainly about data center hardware, but what big companies like Microsoft deploy tends to shape what technology becomes standard.",
+            "background": "LG makes gaming monitors called UltraGear. When you plug one into a Windows 11 PC for the first time, Windows automatically installs software from LG. This happens without asking permission or telling you it is happening.",
+            "what_happened": "The software that installs is called the LG Monitor App Installer. It does not add any controls of its own. Instead it points to LG's other apps and to McAfee antivirus. The installer begins sending unwanted ad pop-ups to your screen.",
+            "why_it_matters": "If you buy a new LG gaming monitor, you may see McAfee ads appear on your PC without having agreed to install anything. You cannot control this through the app itself. You would need to find and remove the software manually to stop the ads.",
             "quote": null
           }
         },
         {
-          "cluster_id": "01a6df89e1a23fec6cf885a20aff3faa",
-          "slug": "archer-and-anduril-unveil-autonomous-military-aircraft",
-          "title": "Archer and Anduril unveil autonomous military aircraft based on electric air taxi design",
-          "summary": "The companies jointly developed a vertical takeoff and landing platform that adapts commercial electric air taxi technology for defense use, representing a new category of autonomous military aircraft.",
-          "score": 7,
-          "sources": [
-            {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVWtmTjF6bkwyemp6dnhXZW9jWVAzVHhyVDhEQ0VValQtTUxyLVI4MjV4eEpvOTZIdGZPWjcwOWY4YnpqWDJXU29BYXEtUHJRbkxObnpWT2ExNXdDaWZpTWZrWmNSYWVMVGhxbFVqSzItMmN1dWwwRkZSSERKOEJuMWVzV1lNV05Vc0NLMmNWUGVDY2FrNl9ObA?oc=5"
-            }
-          ],
-          "article": {
-            "background": "Archer Aviation builds electric aircraft that take off and land vertically, a technology known as eVTOLs. The company has been developing these aircraft for passenger transport. Anduril is a defense contractor. The two companies are now using this same aircraft technology for military purposes.",
-            "what_happened": "Archer and Anduril jointly unveiled an autonomous military aircraft called Thunder. The aircraft is built on electric vertical takeoff technology originally designed for passenger flights. Anduril is also pitching the technology to the US Army as a robotic wingman that could fly alongside helicopters. Archer's stock rose 18 percent after the announcement.",
-            "why_it_matters": "This shows electric aircraft technology is moving from commercial ideas into actual military use. Defense agencies typically move slowly and demand high reliability, so the interest from the military suggests the technology is advancing quickly. For consumers, this signals electric aviation is becoming a real part of transportation planning, not just a future idea.",
-            "quote": null
-          }
-        },
-        {
-          "cluster_id": "a4115b6490df2c548bfad8c935b0a41f",
-          "slug": "youtube-bans-monetization-of-ai-generated-low-quality",
-          "title": "YouTube bans monetization of AI-generated low-quality content",
-          "summary": "The platform clarified that three types of inauthentic content, including AI slop, cannot earn ad revenue, discouraging creators from using automated tools to mass-produce videos.",
-          "score": 7,
+          "cluster_id": "88ac1c1db9f8987420bbb3931f9c1e3a",
+          "slug": "adobe-adds-ai-photo-critique-feature-to-experimental-camera",
+          "title": "Adobe adds AI photo critique feature to experimental camera app",
+          "summary": "Project Indigo uses AI to grade your photos and suggest edits.",
+          "score": 3,
           "sources": [
             {
               "name": "techcrunch",
-              "url": "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos"
+              "url": "https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/967791/adobe-indigo-camera-app-ai-playground-update"
             }
           ],
           "article": {
-            "background": "YouTube has been working to reduce low-quality content on its platform. Last year, the company started blocking payments to creators who make mass-produced videos and other repetitive content, especially those made with AI tools. Now YouTube is being more specific about which videos fall into this category.",
-            "what_happened": "YouTube clarified its policies around monetization by explaining three types of videos it calls \"inauthentic content\" that cannot earn money for creators. These include videos made with AI and other automated tools designed to produce large amounts of low-quality content quickly. The policy aims to discourage creators from using these methods.",
-            "why_it_matters": "If you watch YouTube, you should see fewer low-quality AI videos cluttering up your recommendations and feed. Creators will have less reason to make these videos since they cannot earn money from them. This means the platform should have more genuine, higher-effort content from people actually trying to entertain or inform you.",
+            "background": "Adobe launched Project Indigo last year as an experimental iPhone camera app. It started with pro controls, multi-frame super-resolution, and different capture modes. It aimed to give photos a more natural, film-like look.",
+            "what_happened": "Adobe is adding AI-powered features to Project Indigo through a new AI Playground. The app will now use large language models (AI systems trained on text) to critique photos and suggest edits. It also adds object removal, depth of field effects, and style filters.",
+            "why_it_matters": "If you use an iPhone, you may soon have AI feedback built into your camera app. This could help you improve photos right as you take them, without switching apps. For now the feature is experimental, so it is only available to some users.",
             "quote": null
           }
         }
@@ -97,87 +78,44 @@
       "name": "Artificial intelligence",
       "stories": [
         {
-          "cluster_id": "690931ac004117ee13a8a34b9af9646d",
-          "slug": "two-chinese-labs-release-frontier-ai-models-matching-top-us",
-          "title": "Two Chinese labs release frontier AI models matching top US systems",
-          "summary": "Moonshot Labs and Alibaba both launched models that perform close to Anthropic's Fable 5 and will release their weights publicly in coming weeks.",
-          "score": 7,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://www.emergingtrajectories.com/lh/frontier-lab-economics"
-            }
-          ],
-          "article": {
-            "background": "AI companies race to build the most capable foundation models, the underlying systems that power chatbots and other applications. Traditionally, companies like Anthropic kept their best models private, sharing only limited versions with paying customers. This gave them a key advantage: only they could offer top performance.",
-            "what_happened": "This week, Moonshot Labs released Kimi K3 and Alibaba released Qwen 3.8. Both models perform close to Anthropic's Fable 5, one of the world's most capable models. Both companies plan to release their model weights publicly in the coming weeks, making the code available to anyone.",
-            "why_it_matters": "If open models match proprietary ones in performance, companies can no longer compete on capability alone. Developers who charge for access will need new reasons for customers to pay, like better user interfaces, specialized training, or dedicated support. This shift means the AI market will likely change how companies make money and compete.",
-            "quote": null
-          }
-        },
-        {
-          "cluster_id": "ef1f04eb0bfc00e43348645395e06618",
-          "slug": "china-takes-lead-in-ai-development-with-open-weights",
-          "title": "China takes lead in AI development with open-weights strategy",
-          "summary": "Chinese companies are releasing capable models with public weights while US firms keep theirs closed, giving China competitive advantage in the global AI market.",
-          "score": 7,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing"
-            }
-          ],
-          "article": {
-            "background": "Some companies lock up their AI models, letting only paying customers use them. Others release open-weights AI models, which means anyone can download and modify the underlying code. American companies like OpenAI and Google have mostly chosen the locked-up approach. Chinese companies are taking the opposite path, releasing models that developers worldwide can freely use and build on.",
-            "what_happened": "Chinese AI companies are gaining a competitive edge by releasing open-weights models while American firms keep their most powerful models proprietary. The reporting suggests that models alone have little lasting competitive advantage. Real value comes from the business services built around them: deals, contracts, and features that work with enterprise systems. Because models themselves offer so little protection, China's open approach may prove stronger than America's locked-down strategy.",
-            "why_it_matters": "Which country's approach wins could shape what AI tools become available to you and how affordable they are. Right now the competition is mostly among large organizations and developers. But if open-weights models prove more useful than locked ones, American AI companies could lose their lead in a technology that will touch many industries. The outcome will matter for which country's tech industry dominates in the years ahead.",
-            "quote": null
-          }
-        }
-      ]
-    },
-    {
-      "name": "Business",
-      "stories": [
-        {
-          "cluster_id": "2a3579f69268929cc7cb7ad01cca62cd",
-          "slug": "united-airlines-investigates-employee-who-threatened-to",
-          "title": "United Airlines investigates employee who threatened to call immigration enforcement on passenger",
-          "summary": "An agent at San Francisco airport allegedly told a Mexican American passenger during a ticketing dispute that they should call Immigration and Customs Enforcement, prompting a company investigation.",
-          "score": 7,
-          "sources": [
-            {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmNDWGxmczgtWl9Mb1Job0VCVktzbWRPT3JUQXA0enNBWUlzeXhpVHNTYUwtYS1HeGlUVm1GOEV6Vk5QeUJveVVZN0dCLXZ1VE5yMHBzdm1ZOF9fdzEySFhJcTZ1Q0FfSzg3VTVRSmJiekpCeDBncEZpazRBZTJsb2k2Mnd4STV0SEtZX3A5Y2VtTDkteHF6R0Z0bVloN3piWklnanNyUlkwS3VfdnY0WA?oc=5"
-            }
-          ],
-          "article": {
-            "background": "United Airlines is a major airline that operates flights from San Francisco International Airport (SFO) and other hubs. A United employee got into a dispute with a passenger over a ticket issue at SFO.",
-            "what_happened": "During the ticketing dispute, the United employee allegedly told the passenger, a Mexican American traveler from San Ramon, that the company should call ICE, the federal immigration agency. The employee also allegedly said, \"You don't act like a citizen.\" The passenger recorded the interaction and shared it publicly, leading United to investigate the employee's conduct.",
-            "why_it_matters": "This incident shows how customer service disputes can turn into confrontations involving threats about immigration status. If you travel by air, it raises questions about what accountability looks like when airline staff make statements like these, and what protections exist for passengers during disagreements.",
-            "quote": {
-              "text": "You don't act like a citizen.",
-              "attribution": "United Airlines employee, during the confrontation at SFO",
-              "source_url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUmNDWGxmczgtWl9Mb1Job0VCVktzbWRPT3JUQXA0enNBWUlzeXhpVHNTYUwtYS1HeGlUVm1GOEV6Vk5QeUJveVVZN0dCLXZ1VE5yMHBzdm1ZOF9fdzEySFhJcTZ1Q0FfSzg3VTVRSmJiekpCeDBncEZpazRBZTJsb2k2Mnd4STV0SEtZX3A5Y2VtTDkteHF6R0Z0bVloN3piWklnanNyUlkwS3VfdnY0WA?oc=5"
-            }
-          }
-        },
-        {
-          "cluster_id": "bc0228cb4ee500e05f56ccff610e5fb0",
-          "slug": "fda-retracts-test-result-but-maintains-lettuce-link-to",
-          "title": "FDA retracts test result but maintains lettuce link to parasite outbreak",
-          "summary": "The agency walked back a positive test for Cyclospora in Taylor Farms lettuce but still believes iceberg lettuce caused the multi-state cyclosporiasis outbreak.",
+          "cluster_id": "0dec1398fc4f66eb9064b99892081388",
+          "slug": "clay-writes-internal-policy-against-ai-writing-tools-for",
+          "title": "Clay writes internal policy against AI writing tools for engineers",
+          "summary": "Clay says AI writing tools make it harder for engineers to think clearly.",
           "score": 6,
           "sources": [
             {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMXgxNndmUjBPN3E0Vk8wTDZXZkFCUXNZdkhVY3VjOXhyQlNqTUFCaDBPQjRlbGFTM3pjZXpiMXpVOTUzQzFBQmFmUzV1eXlGVmNkMTNvS0tESUFoNmticHFnb3ZkbE5GbHNxdUp2bTRCdVBqSDlDUWs4eDBxd0I1TFFVRzdKOFprQVhsYUNCNm83UjBQZGFxVVo1ejJZT3U4QWE4ZHJpR201TGotZnl1dERFX3VyUi1mTEZZbGtsd1QyWVE?oc=5"
+              "name": "hackernews",
+              "url": "https://sophiebits.com/2026/06/25/there-are-no-lossless-transformations-of-natural-language-text"
             }
           ],
           "article": {
-            "background": "Cyclosporiasis is an illness caused by a parasite found in contaminated food. The FDA was investigating an outbreak that affected people across multiple states. The agency initially tested iceberg lettuce from Taylor Farms and found evidence of the parasite.",
-            "what_happened": "The FDA said its test result was wrong. The test had found the parasite in Taylor Farms lettuce, but the agency now calls it a false positive. Even so, the FDA still believes Taylor Farms iceberg lettuce caused the outbreak. The lettuce has been recalled in 27 states.",
-            "why_it_matters": "If you bought iceberg lettuce recently, especially from Taylor Farms, you may have been exposed. Cyclosporiasis causes stomach illness. The outbreak shows how contamination can spread quickly through the food supply and reach people across many states.",
+            "background": "Good writing moves ideas from your brain into someone else's. Sophie Bits works at Clay, a software company. She recently wrote a policy for her team on when engineers can use AI to write.",
+            "what_happened": "Bits published her policy on AI writing use. She argues that AI models today cannot produce finished writing without human editing. She hopes AI tools will improve someday. For now, she worries that using AI to write backfires.",
+            "why_it_matters": "If you use AI to write something, you still need to read and fix it. The AI's words may not match what you mean. Delegating writing does not save you work right now. You end up editing anyway.",
+            "quote": {
+              "text": "Good writing is a tool to clearly communicate ideas from your brain into someone else's.",
+              "attribution": "Sophie Bits",
+              "source_url": "https://sophiebits.com/2026/06/25/there-are-no-lossless-transformations-of-natural-language-text"
+            }
+          }
+        },
+        {
+          "cluster_id": "7e29899969d21d0c3f74027bad894706",
+          "slug": "moonshot-ai-promises-to-release-kimi-k3-model-weights-on",
+          "title": "Moonshot AI promises to release Kimi K3 model weights on July 27",
+          "summary": "Moonshot AI says its 2.8 trillion parameter model will become open if it meets goals.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation"
+            }
+          ],
+          "article": {
+            "background": "Moonshot AI is a Chinese artificial intelligence company. On July 16th, they released Kimi K3, their newest flagship model. K3 is a very large model with 2.8 trillion parameters, built using a structure called MoE that makes it more efficient. The company plans to release the model's weights on July 27th. Open weights mean researchers and developers everywhere can use the model and build new applications without relying on one company's closed system.",
+            "what_happened": "Moonshot AI announced Kimi K3 on July 16th. The company said it would release the model's weights ten days later, on July 27th. K3 is a 2.8 trillion parameter MoE model, making it one of the most capable open models available if Moonshot keeps this promise. The release would change the balance between open and closed AI systems globally.",
+            "why_it_matters": "If Moonshot releases K3's weights as planned, developers outside China gain access to a powerful model they can modify and use freely. This shifts what's possible for people building AI tools who cannot afford closed systems from large companies. The move also changes the competitive dynamic between open and closed models worldwide. For now, this matters mostly to AI researchers and developers, but the tools they build on these models will shape what everyday software can do.",
             "quote": null
           }
         }
@@ -188,9 +126,9 @@
       "stories": [
         {
           "cluster_id": "208040ac2a9ed518095743f835db3c5a",
-          "slug": "judge-blocks-paramount-warner-bros-merger-for-14-days-on",
-          "title": "Judge blocks Paramount-Warner Bros merger for 14 days on antitrust grounds",
-          "summary": "A federal judge granted a temporary restraining order after states argued the deal would raise prices and reduce the number of movies and TV shows available to consumers.",
+          "slug": "federal-judge-blocks-paramount-warner-bros-merger-for-14",
+          "title": "Federal judge blocks Paramount-Warner Bros merger for 14 days",
+          "summary": "A coalition of states says the media deal breaks antitrust law and would raise prices.",
           "score": 7,
           "sources": [
             {
@@ -198,31 +136,39 @@
               "url": "https://variety.com/2026/film/news/judge-paramount-warner-bros-merger-tro-1236815048"
             },
             {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/business/968055/paramount-wbd-merger-pause-tro"
+            },
+            {
               "name": "techcrunch",
               "url": "https://techcrunch.com/2026/07/20/judge-pauses-110b-paramount-warner-bros-merger"
+            },
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/07/20/paramount-wbd-merger-delay.html"
             }
           ],
           "article": {
-            "background": "Paramount and Warner Bros. Discovery are major media companies that make and distribute movies and TV shows. They proposed merging into one larger company. A group of 12 state attorneys general, led by California, sued to stop the deal. They argue the merger would reduce competition and harm consumers.",
-            "what_happened": "A federal judge ordered a 14-day pause on the merger on Monday. Judge Araceli Martinez-Olguin made the decision after hearing arguments from both sides the previous Friday. The states argued the deal would raise prices and reduce the number of movies and TV shows available. The judge found the states had raised serious enough questions to justify the temporary halt.",
-            "why_it_matters": "If the merger goes through, the combined company would control more of what gets made and distributed. That could give it more power to raise prices for cable and streaming services. The pause gives courts time to examine whether the merger would actually harm your choices as a viewer and what you pay.",
+            "background": "Paramount and Warner Bros. Discovery plan to merge into one company. The deal is worth about $110 billion. A group of state attorneys general, led by California, sued to block it. They say the merger would reduce competition in movies and TV.",
+            "what_happened": "A federal judge granted a 14-day pause on Monday. Judge Araceli Martínez-Olguín ruled the states had serious legal questions and could face real harm without the delay. Paramount agreed it can wait until at least the end of September. The coalition of 12 states can ask for another pause when the 14 days end.",
+            "why_it_matters": "If the two studios merge, there would be fewer companies making movies and TV shows. The states argue this could lead to higher prices and fewer choices for viewers. The pause gives the courts time to decide if the deal breaks antitrust law, which protects competition.",
             "quote": null
           }
         },
         {
-          "cluster_id": "43b967ddcde5fc954fdadc643fb2921b",
-          "slug": "european-union-fines-aliexpress-550-million-euros-for",
-          "title": "European Union fines AliExpress 550 million euros for selling illegal products",
-          "summary": "The record penalty under the Digital Services Act targets the platform's failure to prevent sales of counterfeit and unsafe goods to European consumers.",
+          "cluster_id": "bfc4636d3a74660da2e7bc67bc1e6b71",
+          "slug": "european-commission-fines-aliexpress-record-629-million-for",
+          "title": "European Commission fines AliExpress record $629 million for counterfeit goods",
+          "summary": "Investigators found millions of fake products, unsafe toys and risky cosmetics on the platform.",
           "score": 6,
           "sources": [
             {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUmhYRERFUHk2UW1BR09CaTRielRHOG5MYi1KTkl3OEw3YW55OUdzNW1PYzg5a2dxQ21uLVJnQ21WWEdUYUEtOUJjSHpxQXNSRVhxV1h4OXpoLUphV0dtdjZ5azVRd1VjTE9xUXlPZjYxaVFCbHA5NUFxM1hod0tmYnJnRnJGWkZ2T19IYVV1eG1zUzFoYklkcmdzMWRzVHZHNDRlZzBfak9Cc1ZpUTJXRWdIYlJyNFZ2MjdBNU1R?oc=5"
-            },
-            {
               "name": "hackernews",
               "url": "https://www.engadget.com/2218530/aliexpress-hit-with-record-629-million-fine-for-selling-counterfeit-and-illegal-products"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cp8714286dpo?at_medium=RSS&at_campaign=rss"
             },
             {
               "name": "arstechnica",
@@ -230,28 +176,56 @@
             }
           ],
           "article": {
-            "background": "AliExpress is a Chinese online marketplace where sellers from around the world sell products to customers globally. The European Union has a law called the Digital Services Act that requires online marketplaces to remove illegal and dangerous products from their sites. This is the first major enforcement action under that new law.",
-            "what_happened": "The European Commission fined AliExpress 550 million euros, about $629 million, for failing to remove counterfeit and unsafe goods. Investigators found millions of counterfeit clothing items, unsafe toys, and dangerous cosmetics on the platform. The company did not adequately staff teams to remove these items. Moderators were sometimes given only tens of seconds to review flagged products.",
-            "why_it_matters": "If you buy from AliExpress, this fine signals the EU is now enforcing rules that require the platform to remove dangerous products. The fine creates financial pressure on the company to improve safety controls. Right now, it does not automatically prevent unsafe items from reaching your home, but it sets a precedent that will shape how the platform operates going forward.",
+            "background": "AliExpress is a Chinese online marketplace where people buy goods from sellers worldwide. The Digital Services Act (DSA) is an EU rule that requires large online platforms to actively check for and remove illegal, unsafe, and counterfeit items.",
+            "what_happened": "The European Commission fined AliExpress €550 million ($629 million) for breaking DSA rules. Investigators found millions of counterfeit items, unsafe toys, and dangerous cosmetics for sale on the site. The company did not staff enough teams to remove these products. Moderators sometimes had just tens of seconds to review flagged items.",
+            "why_it_matters": "This fine signals that the EU will enforce its rules against platforms that host dangerous goods. If you shop on AliExpress in Europe, the ruling means the platform must now work harder to keep unsafe products off its site. For everyone else, it shows that large marketplaces face real consequences when they ignore illegal items.",
+            "quote": {
+              "text": "The spread of counterfeit clothing, unsafe toys, dangerous cosmetics and other illegal and harmful products is not an unavoidable cost of shopping online. It is a failure by AliExpress to comply with its obligations.",
+              "attribution": "Henna Virkkunen, EU tech chief",
+              "source_url": "https://www.bbc.co.uk/news/articles/cp8714286dpo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "aeb193e6d18fdb4eef17222f9543d5bf",
+          "slug": "up-to-400-milligrams-of-caffeine-per-day-is-safe-for-most",
+          "title": "Up to 400 milligrams of caffeine per day is safe for most adults",
+          "summary": "The American Heart Association says five cups of coffee daily is safe for your heart.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://newsroom.heart.org/news/coffee-and-heart-health-how-many-cups-of-caffeinated-coffee-are-safe-to-drink-each-day"
+            }
+          ],
+          "article": {
+            "background": "Researchers have long studied how coffee affects heart health. New findings now show that moderate coffee drinking may actually help protect your heart. This statement comes from recent research reviewed by heart health experts.",
+            "what_happened": "Studies show that up to 400 mg of caffeine a day is safe for most adults. That equals about 5 cups of 8-ounce coffee. But energy drinks and energy shots have much higher caffeine levels. Those higher amounts may raise blood pressure or cause irregular heartbeats.",
+            "why_it_matters": "If you drink regular coffee, this means you likely do not need to cut back for your heart's sake. But if you drink energy drinks or take caffeine supplements, you should track how much you consume. This matters most if you have heart problems or high blood pressure.",
             "quote": null
           }
         },
         {
-          "cluster_id": "12d29803aabd9b9d461a74d0c752ba38",
-          "slug": "aclu-releases-toolkit-to-expose-police-surveillance-in",
-          "title": "ACLU releases toolkit to expose police surveillance in criminal cases",
-          "summary": "The online tool helps defense attorneys uncover whether police used facial recognition, license plate readers, or other surveillance technologies to build cases against their clients.",
-          "score": 7,
+          "cluster_id": "4fe2bcefe78055a3eb5cf8b6dd19cc8b",
+          "slug": "fda-says-false-positive-does-not-change-iceberg-lettuce",
+          "title": "FDA says false positive does not change iceberg lettuce outbreak conclusion",
+          "summary": "The FDA corrected a test result but still links cyclospora parasite to Taylor Farms lettuce.",
+          "score": 4,
           "sources": [
             {
-              "name": "hackernews",
-              "url": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets"
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/07/20/cyclosporiasis-fda-taylor-farms-lettuce-false-positive.html"
             }
           ],
           "article": {
-            "background": "Police sometimes use surveillance technology in investigations. These tools include facial recognition systems, automatic license plate readers that scan vehicles, gunshot detection systems, and phone trackers called stingrays. When police use these tools secretly, defendants cannot challenge how the evidence was gathered or whether it was accurate.",
-            "what_happened": "The American Civil Liberties Union of Massachusetts is releasing an online toolkit this week for criminal defense attorneys. The toolkit contains legal motions that, when a judge approves them, force prosecutors to reveal whether police used surveillance technology in a defendant's case. It covers facial recognition, license plate readers, gunshot detectors, stingrays, and location data sold by commercial brokers.",
-            "why_it_matters": "If you are accused of a crime, you have the right to know what evidence police collected and how they collected it. This toolkit helps your lawyer find out if hidden surveillance was used against you. Knowing that could change the outcome of your case or show that police violated your rights.",
+            "background": "Cyclospora is a parasite that causes intestinal illness. In 2026, an outbreak sickened over 1,600 people in the U.S. The FDA investigated the source and pointed to iceberg lettuce from Taylor Farms de Mexico as the likely cause.",
+            "what_happened": "On Sunday, the FDA said a test showing cyclospora in one lettuce shipment was wrong. It was a false positive. But the agency said this does not change its main finding that Taylor Farms lettuce caused the outbreak.",
+            "why_it_matters": "The FDA's reversal created confusion about food safety. The agency clarified that it still believes Taylor Farms lettuce spread the illness, even though one test was incorrect. If you buy lettuce, know that the investigation is ongoing.",
             "quote": null
           }
         }
@@ -264,8 +238,8 @@
           "cluster_id": "4696f89f4516bf22df01a86eaebf763b",
           "slug": "hacker-wipes-romania-s-entire-land-registry-database",
           "title": "Hacker wipes Romania's entire land registry database",
-          "summary": "An attack erased the country's property records, disrupting government operations and leaving citizens unable to access critical real estate documentation.",
-          "score": 7,
+          "summary": "An attacker deleted the country's property records in an active breach affecting national infrastructure.",
+          "score": 8,
           "sources": [
             {
               "name": "hackernews",
@@ -273,40 +247,36 @@
             }
           ],
           "article": {
-            "background": "Romania's cadastre agency maintains the country's land registry. This database records who owns each property and where land boundaries are. A hacker breached the agency and deleted the entire database.",
-            "what_happened": "The attack erased Romania's property records following a failed extortion attempt. The deletion removed the nation's land ownership documentation. Government operations were disrupted by the loss.",
-            "why_it_matters": "Citizens cannot currently prove they own their property without these records. Disputes over land ownership will be hard to resolve until the database is rebuilt. Restoring the records will take time.",
+            "background": "Romania's cadastre agency keeps the country's land registry. This database records who owns each piece of property. A hacker breached the agency and deleted the entire database.",
+            "what_happened": "A hacker accessed Romania's cadastre agency and wiped its land registry database. The attack came after the hacker failed in an extortion attempt. The deleted records affect the country's property system.",
+            "why_it_matters": "Romanians may face delays when buying, selling, or refinancing property until records are restored. The breach disrupts a basic service people rely on for real estate transactions.",
             "quote": null
           }
         },
         {
           "cluster_id": "889b86649cf8d488ce3a8a95b9de1a01",
-          "slug": "hackers-exploit-wordpress-vulnerabilities-affecting-tens-of",
-          "title": "Hackers exploit WordPress vulnerabilities affecting tens of millions of sites",
-          "summary": "Attackers are breaking into websites running unpatched versions of WordPress after the company urged immediate updates for two critical security flaws.",
+          "slug": "hackers-exploit-recently-patched-wordpress-bugs-affecting",
+          "title": "Hackers exploit recently patched WordPress bugs affecting millions of sites",
+          "summary": "Hackers are exploiting two serious WordPress flaws that affect tens of millions of websites.",
           "score": 7,
           "sources": [
             {
               "name": "techcrunch",
               "url": "https://techcrunch.com/2026/07/20/hackers-are-exploiting-recently-patched-wordpress-bugs-putting-millions-of-websites-at-risk"
-            },
-            {
-              "name": "google_news_technology",
-              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNZXdjRTBqRkh2ODFFbXYwaTVZRGZzUDZlVUtJV2JlaGh3aW9uQ3hmemMzbkdWUVlmQUdsbTZKV3RqRC12dHQxS01uaGJIYXdlQ0IxcDJlUldySnFPREZnVEpRRWZXazBIcDExLXAyUjEwZjFyZzhoSnhUbm5nT3lGVFJRdDdzOVN0ZlF3Uzl0aTl4UVpaSFBYdmRjOWFLOFIySHhCSTdOX3FycjVYSnl4ZXllRjBzWnB0ZUtQQmdSZ3pKVXh5?oc=5"
             }
           ],
           "article": {
-            "background": "WordPress is the software that powers roughly 43% of all websites. When WordPress developers discover security flaws, they release patches, which are updates that fix the problems. Last week, WordPress patched two critical security flaws and urged all website owners running the software to update immediately.",
-            "what_happened": "Hackers are now actively breaking into websites that have not yet installed those patches. Three cybersecurity firms, Patchstack, Hexastrike, and WatchTowr, confirmed that attackers are exploiting the vulnerabilities in the wild. As of Monday, tens of millions of WordPress websites remained vulnerable because their owners had not yet applied the fixes.",
-            "why_it_matters": "If your website runs WordPress and you have not updated it, your site could be broken into. Attackers could steal data, insert malware, or take the site offline. Website owners should update immediately to protect themselves.",
+            "background": "WordPress is the software that powers millions of websites around the world. Last week, WordPress found two critical security flaws in its code. These holes let hackers break into sites that hadn't installed the fixes yet.",
+            "what_happened": "Hackers have started exploiting these unpatched WordPress sites. Three cybersecurity firms confirmed the attacks are real and ongoing. One estimate says tens of millions of WordPress websites remain vulnerable as of Monday.",
+            "why_it_matters": "If your website runs WordPress, you need to update it now. Hackers are actively trying to break into sites with the old version. The longer you wait, the higher your risk of being hacked.",
             "quote": null
           }
         },
         {
           "cluster_id": "8e51ee59ed4711fcbe6d4874fd7b3b48",
-          "slug": "healthcare-software-firm-craneware-confirms-data-breach",
-          "title": "Healthcare software firm Craneware confirms data breach affecting hospitals and pharmacies",
-          "summary": "The UK company, whose billing software serves thousands of US healthcare facilities, said hackers stole a significant volume of customer data before being expelled from its systems.",
+          "slug": "healthcare-billing-firm-craneware-confirms-data-breach",
+          "title": "Healthcare billing firm Craneware confirms data breach affecting thousands of hospitals",
+          "summary": "Hackers stole customer data from Craneware, a UK firm that serves US hospitals and pharmacies.",
           "score": 7,
           "sources": [
             {
@@ -315,9 +285,9 @@
             }
           ],
           "article": {
-            "background": "Craneware is a UK company that makes billing and accounting software for healthcare providers. Thousands of clinics, hospitals, and pharmacies across the United States use its systems to manage patient billing and finances.",
-            "what_happened": "Hackers broke into Craneware's systems and stole a significant amount of customer data, the company announced Monday. The breach included employee records, customer information, and partner records, though Craneware did not specify exactly what details were taken. The company said hackers have been removed from its systems, but the investigation is still ongoing.",
-            "why_it_matters": "People who use affected hospitals, clinics, and pharmacies should watch for signs of identity theft. If you think your information was exposed, consider monitoring your credit for unauthorized activity.",
+            "background": "Craneware is a U.K.-based company that makes billing and accounting software. Thousands of hospitals, clinics, and pharmacies across the United States use its systems to manage patient billing and other financial records.",
+            "what_happened": "Hackers broke into Craneware's systems and stole a \"significant volume\" of customer data. The company said the hackers have been removed from its systems. Craneware has not yet said what specific information was taken, only that some employee data, customer data, and partner records were taken. The investigation is still ongoing.",
+            "why_it_matters": "Healthcare organizations that use Craneware's software may hold sensitive patient information like names, insurance details, or billing history. Hospitals and pharmacies using the system may need to notify patients about what data was compromised. The breach affects a wide range of healthcare providers across the country.",
             "quote": null
           }
         }
@@ -326,21 +296,51 @@
   ],
   "briefly": [
     {
-      "title": "US gas prices back up to an average of $4 a gallon again as the US and Iran launch attacks - AP News",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdnQwZTRwYkFHa216RUhGUDBkaUVQQW8xeWk2S180OFo0ZUExYXJPcnZGUW5DQ21QSEpJRlQ1M05tcDNYZ2Z1MXRsNGRSbFFXREw1RWFUZGVhNnEtMnFBRlVsOGNvMk9Pd0NFM0hKRlkwWVhXNDRYY0U5bXd2QkZheTRfOUtLYi1kWXlvb3BsellRQQ?oc=5",
-      "topic": "Finance"
+      "title": "JetBlue wins Spirit slots at LaGuardia Airport, eyes move to Marine Air Terminal as airlines fight for space",
+      "url": "https://www.cnbc.com/2026/07/20/jetblue-spirit-airlines-laguardia-airport-new-york.html",
+      "topic": "Business"
     },
     {
-      "title": "Czechia moves to ban mobile phones in schools from September 2027",
-      "url": "https://www.expats.cz/czech-news/article/czech-news-in-brief-for-july-20-2026-monday-top-afternoon-headlines",
+      "title": "HollowGraph Malware Hides C2 and Stolen Files in Microsoft 365 Events Dated 2050",
+      "url": "https://thehackernews.com/2026/07/hollowgraph-malware-hides-c2-and-stolen.html",
+      "topic": "Cyber"
+    },
+    {
+      "title": "The ACLU Is Arming Lawyers to Expose State Surveillance Secrets",
+      "url": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets",
+      "topic": "Regulation"
+    },
+    {
+      "title": "South East Water hosepipe ban to affect 2.4 million people",
+      "url": "https://www.bbc.co.uk/news/articles/c7vg3geg3qmo?at_medium=RSS&at_campaign=rss",
       "topic": "World"
+    },
+    {
+      "title": "West Africa signs off $25bn mega gas-pipeline plan",
+      "url": "https://www.bbc.co.uk/news/articles/cwyr5rpglngo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "title": "Inference startup Infinity raises $15M from Touring Capital, OpenAI and Anthropic researchers",
+      "url": "https://techcrunch.com/2026/07/20/inference-startup-infinity-raises-15m-from-touring-capital-openai-and-athropic-researchers",
+      "topic": "AI"
+    },
+    {
+      "title": "Electric air taxis go to war",
+      "url": "https://www.theverge.com/transportation/967891/archer-evtol-military-anduril-air-taxi-thunder",
+      "topic": "Tech"
+    },
+    {
+      "title": "Pay up or not? Ransomware surge has victims facing tough choices.",
+      "url": "https://arstechnica.com/security/2026/07/pay-up-or-not-ransomware-surge-has-victims-facing-tough-choices",
+      "topic": "Cyber"
     }
   ],
   "stats": {
-    "items_ingested": 109,
-    "clusters_considered": 104,
-    "stories_run": 13,
-    "sources": 6,
+    "items_ingested": 76,
+    "clusters_considered": 68,
+    "stories_run": 11,
+    "sources": 8,
     "sections_held": 1
   }
 }
