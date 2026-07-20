@@ -6,6 +6,134 @@ deferred.
 
 ---
 
+## Post-M6: the readability gate, and direct publisher feeds
+
+Date: 2026-07-20
+Spec: SPEC 6.5 (readability gate), 6.1 (adapter registry), 6.10; decision #14
+Status: complete, gate green, live and passing
+
+Two fixes in one pass, both prompted by the first editions that had real
+prose in them.
+
+### 1. Readability: 11.9 flagged, now 8.90 passing
+
+**The problem was structural, not stylistic.** Editions published flagged at
+grade 11.9 against the grade-9 target (decision #14). Grading each piece of
+an edition separately showed why:
+
+| text | grade | revised by the pass? |
+|---|---|---|
+| story summaries | 17.02 | no |
+| glance points | 14.26 | no |
+| headline | 12.30 | no |
+| articles | 11.53 | yes |
+
+The gate scores every piece of generated text (`readability.edition_text`),
+but the revision pass only re-called the writer stage. The editor's own
+lines were measured, counted against the average, and then left alone, so
+no amount of article rewriting could pull the edition under the limit. The
+worst text in the edition was the text nothing could touch.
+
+**What was built.** `src/editor/simplify.py` is the missing half of the
+pass. It collects the editor-owned lines that are over the limit, sends
+only those to a small model asking for plainer wording of the same facts,
+and deterministic code puts the results back by id (`headline`,
+`point:<index>`, `summary:<slug>`). The model receives prose and ids and
+nothing else, so ordering, topics, slugs and scores cannot move: curation
+stays where it was decided (rule zero). Validator before prompt, as
+everywhere. Two guards worth naming: a "simplification" that grades harder
+than the original is rejected rather than applied, and an AI failure leaves
+the original text in place and publishes flagged, like every other failure
+in this stage.
+
+**The prompts now carry the arithmetic.** Flesch-Kincaid moves on exactly
+two things, words per sentence and syllables per word, so "write simply"
+was never going to be actionable. `editor_v1.md` caps summaries at 12 to 18
+words and glance points at 20; `writer_v1.md` targets 11 to 13 words a
+sentence; both now list the short-word substitutions the gate rewards
+("use" not "utilize", "about" not "approximately"). The writer's revision
+message states the grade target and the 12-word sentence rule outright
+instead of asking for "more simply". These tighten DESIGN section 8's
+"average under 20 words" rather than contradicting it, so voice.md is
+untouched.
+
+**The pass count is now a budget.** Measured across real editions: one pass
+lands about 9.15, two lands between 8.89 and 9.07, which straddles the limit
+because each generation differs. `readability_max_passes` (config, default
+3) runs the simplify-then-rewrite cycle until the edition passes, and exits
+as soon as it does, so an easy day costs one pass.
+
+**Result on live editions:** 12.34 to 8.68 locally, 8.90 on the published
+edition, publishing unflagged for the first time. Summaries 17.0 to about
+10, articles 11.5 to 8.5.
+
+### 2. Direct publisher feeds replace Google News
+
+The two Google News topic feeds are gone. Their RSS links are opaque JS
+shims carrying neither the publisher URL nor the article text, so the
+enrichment step could never ground them and every story sourced from them
+published as a flat card. They are replaced by The Verge, the Guardian's
+technology feed, BBC Business, and CNBC Business, all verified before
+registration by fetching a real article from each (2,428 to 5,079
+characters extracted).
+
+CNBC rejects the default client string with a 403, so outbound requests now
+send one identifying User-Agent, defined once in `adapters/base.py` and
+shared by the RSS adapters and the enrichment step. Publishers are entitled
+to know who is calling.
+
+Enrichment's hit rate improved as a direct result: 71 of 75 fetched items
+improved (+70,462 chars), against 48 of 53 when half the run was Google
+News.
+
+### How it was verified
+
+**389 tests passing (13 new, all offline).** New coverage: which lines
+`collect_failing` selects and that it orders them hardest first; that
+rewrites land in the right places and leave structure, topics, slugs and
+scores untouched; unknown ids ignored; a harder "simplification" rejected;
+an AI failure keeping the original text; the em-dash ban; and that the
+revision loop exits early once the gate passes rather than spending its
+budget.
+
+```bash
+uv run pytest -q                                          # 389 passed
+uv run python .claude/skills/milestone-verify/verify.py   # GATE PASSED
+```
+
+**Live:** collector, silver, edition, audio, and a forced publish, all
+green. The published page returns 200, the edition grades 8.90, and the
+audio is playable.
+
+One test caught a bad assumption of mine rather than a bug: my "harder
+rewrite" fixture actually graded *lower* than the original, because
+appending a short sentence reduces average words per sentence. The fixture
+is now a genuinely denser single sentence, and the arithmetic is documented
+in the test.
+
+### Proposed spec amendments (rule 1)
+
+1. **SPEC 6.5**: the readability revision pass covers all generated text,
+   not only articles. The editor-owned lines are the ones that graded worst,
+   so a pass that cannot reach them cannot meet the target.
+2. **SPEC 6.5**: "one automatic revision pass" becomes a configured budget
+   (`readability_max_passes`, default 3) that exits early on success. One
+   pass provably could not reach grade 9 on real editions.
+3. **SPEC 6.1**: one identifying User-Agent on every outbound request.
+
+### Notes
+
+- DESIGN section 8 says "average under 20 words" and also sets the grade-9
+  target. On real news vocabulary those two are in tension: 20-word
+  sentences grade around 11 to 12. The stage prompts now aim well under 20,
+  which satisfies both, but the tension is worth resolving in DESIGN 8 the
+  next time it is edited.
+- The published headline still grades high (15.4) because it is a single
+  sentence and the metric is volatile on one line. It is one line among many
+  and barely moves the average, so it is left alone rather than mangled.
+
+---
+
 ## Post-M6: article-text enrichment
 
 Date: 2026-07-20
