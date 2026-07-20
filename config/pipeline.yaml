@@ -7,6 +7,30 @@ collector:
   # cycles backfill themselves and bronze dedups the overlap (SPEC 7).
   since_window_hours: 6
 
+enrich:
+  # SPEC 6.1 body_excerpt. Adapters store the feed's summary, and feed
+  # summaries are one-line blurbs: measured on live data the averages were
+  # 73 chars (arstechnica), 179 (techcrunch), 343 (google news), and 33 for
+  # Hacker News, where the API returns text only for Ask HN posts. All of
+  # that sits under the writer stage's 400-char grounding floor, so nearly
+  # every story published without an article. Fetching the linked page
+  # yields 5,000 to 10,000 characters of real article text instead.
+  enabled: true
+  # Only fetch when the adapter's excerpt is thinner than this. An item that
+  # already carries substantial text is left alone.
+  min_chars: 600
+  timeout_seconds: 10.0
+  max_concurrency: 8
+  # One pathological page must not stall or balloon a run.
+  max_bytes: 2000000
+  skip_hosts:
+    # Google News RSS links are opaque redirect shims. The page is ~580KB of
+    # JavaScript and carries neither the publisher URL nor the article text,
+    # so fetching one costs a request and returns nothing. Those items keep
+    # their feed summary. Replacing these feeds with direct publisher RSS is
+    # the way to make them groundable, and that is a sources.yaml change.
+    - news.google.com
+
 silver:
   # Pinned per SPEC 11's open question. cluster_threshold is calibrated
   # against this specific model, so swapping the model is a re-tuning

@@ -26,6 +26,14 @@ VALID_SOURCES = """
 VALID_PIPELINE = """
 collector:
   since_window_hours: 6
+enrich:
+  enabled: true
+  min_chars: 600
+  timeout_seconds: 10.0
+  max_concurrency: 8
+  max_bytes: 2000000
+  skip_hosts:
+    - news.google.com
 silver:
   embedding_model: BAAI/bge-small-en-v1.5
   embed_chars: 500
@@ -128,6 +136,14 @@ def test_editor_config_loads(tmp_path) -> None:
     pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE))
     assert pipeline.editor.min_grounding_chars == 400
     assert pipeline.editor.editor_model.startswith("claude-sonnet")
+
+
+def test_enrich_config_loads(tmp_path) -> None:
+    pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE))
+    assert pipeline.enrich.enabled is True
+    assert pipeline.enrich.min_chars == 600
+    # Google News links are opaque shims; fetching one returns no article.
+    assert "news.google.com" in pipeline.enrich.skip_hosts
 
 
 def test_audio_config_loads(tmp_path) -> None:

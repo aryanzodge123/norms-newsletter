@@ -31,6 +31,17 @@ const meta = `score ${s.score} · ${nSources} source${nSources === 1 ? '' : 's'}
       <div class="metarow">
         <span class="mono">{meta}</span>
       </div>
+      {/* No article to expand, so the card links out instead. A story the
+          writer stage could not ground still has to reach its origin. */}
+      <div class="sources flat-sources">
+        <span class="src-lead mono">Read at:</span>
+        {s.sources.map((src, i) => (
+          <>
+            {i > 0 && <span class="mid mono">·</span>}
+            <a class="src" href={src.url} rel="noopener">{src.name}</a>
+          </>
+        ))}
+      </div>
     </div>
   ) : (
     <details class="card" id={s.slug}>
@@ -144,6 +155,9 @@ const meta = `score ${s.score} · ${nSources} source${nSources === 1 ? '' : 's'}
     align-items: baseline;
     gap: 6px;
   }
+  /* The flat card's link row sits directly under the meta line, without the
+     expanded article's left rule and indent. */
+  .flat-sources { margin-top: 8px; }
   .src-lead { font-size: 12px; }
   .src { font-size: 12px; font-family: var(--font-mono); }
   .mid { color: var(--muted); }

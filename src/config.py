@@ -66,6 +66,36 @@ class CollectorConfig(Strict):
     since_window_hours: int = Field(gt=0)
 
 
+class EnrichConfig(Strict):
+    """Article-text enrichment (SPEC 6.1 body_excerpt).
+
+    Adapters store the feed's summary, which is a one-line blurb on most
+    sources, leaving the writer stage nothing to ground on (decision #16).
+    This step fetches the item's canonical_url and extracts the main article
+    text so body_excerpt is what SPEC 6.1 says it is. Every failure falls
+    back to the adapter-supplied summary, so enrichment can never fail a
+    collection run.
+    """
+
+    enabled: bool = True
+    # Only fetch when the adapter's excerpt is thinner than this. An item
+    # that already carries real text is left alone.
+    min_chars: int = Field(gt=0)
+    timeout_seconds: float = Field(gt=0)
+    max_concurrency: int = Field(gt=0)
+    # Hard cap on a response body, so one pathological page cannot stall or
+    # balloon a run.
+    max_bytes: int = Field(gt=0)
+    # Hosts that are pointless or harmful to fetch. Google News RSS links are
+    # opaque JS shims that carry no publisher URL and no article text.
+    skip_hosts: tuple[str, ...] = ()
+
+    @field_validator("skip_hosts")
+    @classmethod
+    def _lowercase(cls, value: tuple[str, ...]) -> tuple[str, ...]:
+        return tuple(host.lower() for host in value)
+
+
 class SilverConfig(Strict):
     """Silver processing thresholds and models (SPEC 6.4)."""
 
@@ -151,6 +181,7 @@ class ArchiveConfig(Strict):
 
 class PipelineConfig(Strict):
     collector: CollectorConfig
+    enrich: EnrichConfig
     silver: SilverConfig
     editor: EditorConfig
     audio: AudioConfig

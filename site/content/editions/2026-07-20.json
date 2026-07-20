@@ -2,57 +2,43 @@
   "date": "2026-07-20",
   "edition_number": 43,
   "edition_type": "normal",
-  "headline_of_the_day": "Hacker wipes Romania's land registry database in cyberattack",
+  "headline_of_the_day": "Hackers broke into thousands of US hospitals' billing software and stole patient data",
   "key_points": [
     {
-      "text": "A hacker wiped Romania's land registry database, disrupting property records for the entire country.",
+      "text": "Hackers stole a significant volume of customer data from Craneware, a UK company whose billing software is used by thousands of US hospitals and pharmacies.",
       "topic": "Cyber"
     },
     {
-      "text": "Russian intelligence hijacked security cameras across Europe and Ukraine to monitor NATO military logistics and weapons shipments.",
+      "text": "Hackers are actively exploiting two critical WordPress vulnerabilities patched last week, putting tens of millions of websites at risk.",
       "topic": "Cyber"
     },
     {
-      "text": "Hackers stole a significant amount of data from Craneware, a tech firm used by thousands of US hospitals and pharmacies for billing.",
-      "topic": "Cyber"
+      "text": "AMD shipped its first rack-scale AI system to compete with Nvidia, adding Microsoft as its newest buyer in a long-term partnership expansion.",
+      "topic": "Tech"
     },
     {
-      "text": "The European Union fined AliExpress $629 million for failing to stop sales of illegal and counterfeit products, the largest penalty under new digital services rules.",
+      "text": "A federal judge ordered a 14-day pause to the Paramount-Warner Bros merger after states argued it would violate antitrust law and reduce competition.",
       "topic": "Regulation"
     },
     {
-      "text": "US gas prices returned to an average of $4 per gallon as Middle East tensions drove oil prices higher.",
+      "text": "US gas prices climbed back to an average of four dollars per gallon as tensions between the US and Iran disrupted oil markets.",
       "topic": "Finance"
     }
   ],
   "audio": {
     "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-20.mp3",
-    "duration_seconds": 375,
-    "size_bytes": 4497984
+    "duration_seconds": 391,
+    "size_bytes": 4691808
   },
   "sections": [
     {
       "name": "Technology",
       "stories": [
         {
-          "cluster_id": "4d37c98394e7b048e1a87119e1900df5",
-          "slug": "amazon-breaks-apple-wallet-feature-that-millions-rely-on",
-          "title": "Amazon breaks Apple Wallet feature that millions rely on",
-          "summary": "The company disabled a recently added Wallet integration, disrupting a feature users depend on for storing tickets and passes.",
-          "score": 8,
-          "sources": [
-            {
-              "name": "google_news_technology",
-              "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOZ0ZPNzdRNUFDSnd3Vk9PbGVlZ2JJeDRBTXhtWndtRG4tendLNTZCUUdxU01FZmRGS2ZQb3laV0ttX3ZTVHJYbmNRYUtIY2lqLWgyZF91dnV0WDZJM0dRUWp1dFlsT09SUkpQdUF3eEI3WDNsV1VFLXVVZDBLeFh2UlhkSWdlZmNVX01Zbzl6STlzbjlxSVE?oc=5"
-            }
-          ],
-          "article": null
-        },
-        {
           "cluster_id": "1d666fd42ee3b0b3af79b41934316e5f",
-          "slug": "amd-ships-first-rack-ai-system-to-compete-with-nvidia-adds",
-          "title": "AMD ships first rack AI system to compete with Nvidia, adds Microsoft as customer",
-          "summary": "The Helios system marks AMD's entry into complete rack-scale AI infrastructure with immediate enterprise adoption.",
+          "slug": "amd-launches-first-rack-ai-system-to-rival-nvidia-adds",
+          "title": "AMD launches first rack AI system to rival Nvidia, adds Microsoft as buyer",
+          "summary": "The chip maker shipped Helios, its first complete rack-scale system for AI workloads, with Microsoft deploying the hardware as part of an expanded partnership.",
           "score": 7,
           "sources": [
             {
@@ -61,17 +47,17 @@
             }
           ],
           "article": {
-            "background": "Nvidia makes most of the specialized chips that companies use to train and run artificial intelligence systems. AMD, a competitor, has been working to offer an alternative. This new move expands AMD's lineup and brings a major customer on board.",
-            "what_happened": "AMD announced Helios, its first complete AI system designed for data centers. The system combines AMD's Instinct processors, which handle AI tasks, with AMD EPYC processors, which handle other server functions. Microsoft said it will use these systems in Azure, its cloud service, making it a major customer for AMD's technology.",
-            "why_it_matters": "When multiple companies make AI chips, customers get more choices and typically better pricing. For people using cloud AI services, more competition means lower costs and more options to choose from. AMD's move signals it is ready to challenge Nvidia's dominance in AI infrastructure.",
+            "background": "AMD makes computer chips, including specialized ones for artificial intelligence and data centers. The company competes with Nvidia, which leads the market in AI chips. This is AMD's first complete rack-scale system, a type of hardware setup designed specifically for AI workloads.",
+            "what_happened": "AMD launched Helios, its new AI system. Microsoft agreed to use AMD's next-generation Instinct AI chips and EPYC processors in its Azure cloud service. This expands the partnership between the two companies.",
+            "why_it_matters": "More competitors in AI chips typically means faster innovation and potentially lower prices. If AMD's chips become widely adopted, the companies building AI services may pay less, and those savings could eventually reach consumers through cheaper or better AI tools. For now, most people will not notice a direct change.",
             "quote": null
           }
         },
         {
           "cluster_id": "01a6df89e1a23fec6cf885a20aff3faa",
-          "slug": "electric-air-taxis-move-from-concept-to-military-deployment",
-          "title": "Electric air taxis move from concept to military deployment",
-          "summary": "Archer and Anduril unveiled an autonomous vertical takeoff aircraft designed for both commercial and defense use, backed by military contracts.",
+          "slug": "archer-and-anduril-unveil-autonomous-military-aircraft",
+          "title": "Archer and Anduril unveil autonomous military aircraft",
+          "summary": "The companies jointly developed an electric vertical takeoff aircraft platform for both commercial and defense use, marking a precedent in autonomous military aviation.",
           "score": 7,
           "sources": [
             {
@@ -80,9 +66,28 @@
             }
           ],
           "article": {
-            "background": "Archer Aviation makes electric aircraft designed to carry passengers in cities. The company is now partnering with Anduril, a defense technology company, to build military versions of these aircraft.",
-            "what_happened": "The two companies unveiled Thunder, an autonomous military aircraft they developed together. Thunder is designed to work alongside helicopters as a support drone. Archer's stock price rose 18% after the announcement.",
-            "why_it_matters": "Electric aircraft technology is expanding beyond passenger transport into defense uses. Military contracts can speed up progress on this technology, which may eventually reach commercial markets.",
+            "background": "Archer Aviation makes electric aircraft meant to carry passengers short distances using battery power instead of fuel. Anduril Industries builds autonomous systems, or unmanned technology that operates without a human pilot, for the military. The two companies have partnered to develop aircraft that can serve both civilian and military purposes.",
+            "what_happened": "Anduril and Archer jointly unveiled Thunder, an autonomous military aircraft. The companies developed a shared platform that can be adapted for either commercial air taxi service or military use. Archer's stock price rose 18 percent following the announcement.",
+            "why_it_matters": "Electric aircraft technology is moving from experimental stage into real military use. Military contracts tend to be more stable than consumer markets, which matters for companies trying to build a sustainable business. For people who follow aviation, this signals that electric aircraft are becoming practical tools rather than just prototypes.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a4115b6490df2c548bfad8c935b0a41f",
+          "slug": "youtube-clarifies-policy-to-discourage-ai-generated-low",
+          "title": "YouTube clarifies policy to discourage AI-generated low-quality content",
+          "summary": "The platform updated monetization rules to explicitly bar three types of inauthentic content, including AI slop, from earning ad revenue.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos"
+            }
+          ],
+          "article": {
+            "background": "YouTube lets creators earn money from videos through ads. Last year, the company started blocking revenue on what it calls \"inauthentic content,\" which includes videos made in bulk and repetitive content that AI tools now make easier to produce. Now YouTube is spelling out exactly what counts as inauthentic.",
+            "what_happened": "YouTube updated its monetization policy to name three specific types of videos under \"inauthentic content\" that cannot earn money. The change makes clear which videos will not get ad revenue, discouraging creators from using AI and other tools to pump out low-quality content quickly.",
+            "why_it_matters": "If you use YouTube, you may see fewer low-effort AI videos clogging your recommendations and search results. Creators have less reason to make them when they cannot make money. The change mainly affects channels that rely on volume over quality, but it shows YouTube's direction as AI tools get cheaper and easier to use.",
             "quote": null
           }
         }
@@ -92,65 +97,42 @@
       "name": "Artificial intelligence",
       "stories": [
         {
-          "cluster_id": "89d7e9d3444607efe7a5c1ac1eea1f79",
-          "slug": "trump-administration-moves-to-restrict-access-to-frontier",
-          "title": "Trump administration moves to restrict access to frontier AI models",
-          "summary": "The White House is preparing controls on who can access the most advanced AI systems domestically, citing concerns about Chinese competition.",
+          "cluster_id": "690931ac004117ee13a8a34b9af9646d",
+          "slug": "two-chinese-ai-labs-released-models-matching-leading-us",
+          "title": "Two Chinese AI labs released models matching leading US systems",
+          "summary": "Moonshot Labs' Kimi K3 and Alibaba's Qwen 3.8 reportedly perform close to Anthropic's models and will release their weights publicly in coming weeks.",
           "score": 7,
           "sources": [
             {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9PWTlIa1VpT2FIbVZmcFZOeURoNEtPdEE5MzVib0YxNGhUOWg2cFBncmxoLU1idmN4eXhLX1FxQzZpbjNIck9NdEZZcVBMNlRpaTVlTHNwSi1KYzYweW9xMm1RWGpWT0pyZ216Wk53?oc=5"
+              "name": "hackernews",
+              "url": "https://www.emergingtrajectories.com/lh/frontier-lab-economics"
             }
           ],
-          "article": null
+          "article": {
+            "background": "Foundation models are large artificial intelligence systems trained on vast amounts of data. Companies like Anthropic have kept their most powerful models private, controlling who can use them and charging for access. This approach has let a few companies dominate the frontier of AI capability.",
+            "what_happened": "This week, Moonshot Labs released Kimi K3 and Alibaba released Qwen 3.8, two new foundation models. Both reportedly perform at a level close to Anthropic's latest model. Crucially, both companies plan to publicly release the model weights, the underlying code and parameters that make these systems work. This means other companies and researchers can use and modify them freely.",
+            "why_it_matters": "For years, the companies with the most powerful models have had a huge advantage. Now that advantage is shrinking. Open models let anyone build AI products without paying for access to a closed system. This forces companies like Anthropic to compete on something other than just having the best model, such as products or services built on top of their technology. The shift means the AI market may become more competitive and less controlled by a handful of firms.",
+            "quote": null
+          }
         },
         {
-          "cluster_id": "7efdb78f22363d020af1d55453c581fe",
-          "slug": "ai-system-disproves-87-year-old-math-conjecture-in-hours",
-          "title": "AI system disproves 87-year-old math conjecture in hours",
-          "summary": "A mathematician used Claude to resolve the Jacobian Conjecture, a problem that had remained open since 1939, surprising the mathematics community.",
-          "score": 6,
-          "sources": [
-            {
-              "name": "google_news_technology",
-              "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR3FkbWFVLUsxeGsyZEVIV1luYm9oa2pZTzB6WjhWbHlsQzhZQTgxSTZ1MmgtU0FZY3VCckFmWHNMVzhtQTVwck80Vmh6WjZDdmhUWU1MaVFudDhqTXR0Vk9qdjRLZjhfYktsZWFyYlh3eUZLLUdZTVR4XzBHMUhxTkloT2NNcXNaYjRVdFdmTG1XWUJOZHZxZkdNSWJ5VWVtZGN0WkJsZHJadWtZMXc?oc=5"
-            }
-          ],
-          "article": null
-        }
-      ]
-    },
-    {
-      "name": "Finance",
-      "stories": [
-        {
-          "cluster_id": "dd2bd9b3e81c4446b627139256c670e1",
-          "slug": "us-gas-prices-return-to-4-per-gallon-as-middle-east",
-          "title": "US gas prices return to $4 per gallon as Middle East conflict escalates",
-          "summary": "The national average reached $4 a gallon again after US and Iran launched attacks, pushing oil prices sharply higher.",
+          "cluster_id": "ef1f04eb0bfc00e43348645395e06618",
+          "slug": "china-s-open-weights-ai-strategy-gains-ground-against-us",
+          "title": "China's open-weights AI strategy gains ground against US closed models",
+          "summary": "Chinese companies are taking the lead by releasing high-performing models with publicly available weights, while American labs keep theirs proprietary and locked down.",
           "score": 7,
           "sources": [
             {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdnQwZTRwYkFHa216RUhGUDBkaUVQQW8xeWk2S180OFo0ZUExYXJPcnZGUW5DQ21QSEpJRlQ1M05tcDNYZ2Z1MXRsNGRSbFFXREw1RWFUZGVhNnEtMnFBRlVsOGNvMk9Pd0NFM0hKRlkwWVhXNDRYY0U5bXd2QkZheTRfOUtLYi1kWXlvb3BsellRQQ?oc=5"
+              "name": "hackernews",
+              "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing"
             }
           ],
-          "article": null
-        },
-        {
-          "cluster_id": "0372438359eadffbd8266499c09439c1",
-          "slug": "oil-prices-touch-90-despite-months-of-us-iran-conflict",
-          "title": "Oil prices touch $90 despite months of US-Iran conflict",
-          "summary": "Energy markets have remained relatively stable even as Middle East fighting intensified, with analysts citing ample global supply.",
-          "score": 6,
-          "sources": [
-            {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRWljTmhtaTVPdmZTRkZFLVFDSkpiYlhTWkZidlprdlZhQW1KOW9aY3daeWkxdm5RaVgxX0k1aVY2N3ZWQk9Hald6X29aeE5jdHFuT0RxWXpCbkJCWkJHaHJqZWVXb09aYmFrWHhKZGNfa2pzeTY5RHJkR0lYUTZQbGZXRm50dXVyQjJBbS1ETVFEOUlVR2lwcGk4dWFJTlpyeFUxeVNRNHdCcEVKdWVXLVRJQQ?oc=5"
-            }
-          ],
-          "article": null
+          "article": {
+            "background": "AI models come in two types. Some companies, mainly American ones like OpenAI, keep their models proprietary and locked down. Others, mainly Chinese companies, release models with publicly available weights, meaning anyone can use and modify them. The real competitive advantage in AI is not the model itself but the services built around it: enterprise contracts, system integration, and features tailored to business customers.",
+            "what_happened": "Chinese companies are gaining ground by releasing open-weight AI models while American companies keep theirs proprietary. According to reporting on competitive dynamics, this strategy matters because AI models themselves have little lasting advantage beyond brand loyalty. The moat is in the enterprise services that sit around them, not in the models alone.",
+            "why_it_matters": "If Chinese companies continue to lead in open-weight AI while American companies rely on closed models, it could shift which countries and companies dominate the AI market for years. The economic benefits of leading AI development flow to the country that owns the technology and the companies that control it. This means the proprietary approach may not create the lasting advantage American companies expected.",
+            "quote": null
+          }
         }
       ]
     },
@@ -158,11 +140,34 @@
       "name": "Regulation",
       "stories": [
         {
-          "cluster_id": "43b967ddcde5fc954fdadc643fb2921b",
-          "slug": "eu-fines-aliexpress-629-million-for-selling-illegal-products",
-          "title": "EU fines AliExpress $629 million for selling illegal products",
-          "summary": "The European Commission issued a record penalty after the platform failed to comply with orders to remove counterfeit and unsafe items under new digital services law.",
+          "cluster_id": "208040ac2a9ed518095743f835db3c5a",
+          "slug": "federal-judge-pauses-paramount-warner-bros-merger-on",
+          "title": "Federal judge pauses Paramount-Warner Bros merger on antitrust grounds",
+          "summary": "A 14-day restraining order halts the transaction after a coalition of states argued the deal would lead to higher prices and fewer movies and shows.",
           "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://variety.com/2026/film/news/judge-paramount-warner-bros-merger-tro-1236815048"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/07/20/judge-pauses-110b-paramount-warner-bros-merger"
+            }
+          ],
+          "article": {
+            "background": "Paramount is considering buying Warner Bros. Discovery, two major entertainment companies that produce movies and TV shows. Twelve state attorneys general, led by California, sued to block the deal. They argue it would reduce competition in the entertainment industry, ultimately hurting consumers through higher prices and fewer choices.",
+            "what_happened": "A federal judge issued a temporary 14-day pause on the merger Monday. Judge Araceli Martinez-Olguin made the decision after hearing arguments from both sides on Friday. The judge found the states had raised serious legal questions about whether the deal violates antitrust law, the federal rules that prevent companies from reducing competition in unfair ways.",
+            "why_it_matters": "If these two studios merge, they would control more of what movies and shows get made and distributed. The states claim this could lead to higher prices for viewers and less choice in entertainment. The 14-day pause gives the courts time to weigh whether the combination would harm competition in a way that breaks federal law.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "43b967ddcde5fc954fdadc643fb2921b",
+          "slug": "eu-fines-aliexpress-550-million-euros-over-illegal-product",
+          "title": "EU fines AliExpress 550 million euros over illegal product sales",
+          "summary": "The European Union imposed a record penalty on the e-commerce platform for failing to prevent sales of counterfeit and unsafe goods.",
+          "score": 6,
           "sources": [
             {
               "name": "google_news_business",
@@ -178,63 +183,30 @@
             }
           ],
           "article": {
-            "background": "AliExpress is an online marketplace owned by Alibaba. Third-party sellers use it to sell products around the world. The European Union has a rule called the Digital Services Act that requires online platforms to stop the sale of illegal and counterfeit goods.",
-            "what_happened": "The EU fined AliExpress 550 million euros, or about $629 million. This is the largest penalty under the Digital Services Act so far. The fine came after AliExpress did not remove counterfeit and unsafe items when the EU ordered it to do so.",
-            "why_it_matters": "The fine signals that the EU will enforce its rules against illegal goods sold online. If you buy from AliExpress or similar platforms, the EU is pushing to make those marketplaces safer by removing fake products and items that fail safety standards. The penalty suggests platforms will face serious costs if they ignore these requirements.",
+            "background": "AliExpress is a Chinese online marketplace owned by Alibaba where third-party sellers list products for sale globally. The European Union's Digital Services Act, which took effect in 2024, requires online platforms to check for illegal and counterfeit goods and remove them. This is the first major enforcement action under that new rule.",
+            "what_happened": "The European Commission fined AliExpress €550 million, about $629 million, for breaking these rules. Investigators found millions of counterfeit products, unsafe toys, and dangerous cosmetics on the platform. The company did not hire enough staff to catch these items. Some content reviewers had only tens of seconds to decide if a product was safe.",
+            "why_it_matters": "This is the largest penalty the EU has issued under its new product-safety rule, signaling how strictly it will enforce the law against major platforms. If you buy from AliExpress, the fine does not directly change your risk, but it shows the EU is pushing the company to do better at screening what sellers can list. Other big online marketplaces will likely face similar pressure to improve their safety checks.",
             "quote": null
           }
         },
         {
-          "cluster_id": "5e9a6d99156dadcb61934524ef792018",
-          "slug": "czechia-bans-mobile-phones-in-schools-starting-september",
-          "title": "Czechia bans mobile phones in schools starting September 2027",
-          "summary": "The country set a firm date for a nationwide classroom phone prohibition affecting millions of students.",
-          "score": 6,
+          "cluster_id": "12d29803aabd9b9d461a74d0c752ba38",
+          "slug": "aclu-releases-toolkit-to-uncover-police-surveillance-in",
+          "title": "ACLU releases toolkit to uncover police surveillance in criminal cases",
+          "summary": "The online tool helps defense attorneys discover whether police used facial recognition, license plate readers, or gunshot detection systems to build cases against their clients.",
+          "score": 7,
           "sources": [
             {
               "name": "hackernews",
-              "url": "https://www.expats.cz/czech-news/article/czech-news-in-brief-for-july-20-2026-monday-top-afternoon-headlines"
-            }
-          ],
-          "article": null
-        }
-      ]
-    },
-    {
-      "name": "Science",
-      "stories": [
-        {
-          "cluster_id": "5389c89da20d15be104703d7650b3e3b",
-          "slug": "fda-retracts-test-result-but-maintains-link-between-taylor",
-          "title": "FDA retracts test result but maintains link between Taylor Farms lettuce and parasite outbreak",
-          "summary": "The agency walked back a positive test for cyclospora but still connects the company's lettuce to illnesses across multiple states and restaurant chains.",
-          "score": 6,
-          "sources": [
-            {
-              "name": "google_news_business",
-              "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMXgxNndmUjBPN3E0Vk8wTDZXZkFCUXNZdkhVY3VjOXhyQlNqTUFCaDBPQjRlbGFTM3pjZXpiMXpVOTUzQzFBQmFmUzV1eXlGVmNkMTNvS0tESUFoNmticHFnb3ZkbE5GbHNxdUp2bTRCdVBqSDlDUWs4eDBxd0I1TFFVRzdKOFprQVhsYUNCNm83UjBQZGFxVVo1ejJZT3U4QWE4ZHJpR201TGotZnl1dERFX3VyUi1mTEZZbGtsd1QyWVE?oc=5"
+              "url": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets"
             }
           ],
           "article": {
-            "background": "Cyclosporiasis is a foodborne illness caused by a parasite that can contaminate fresh produce like lettuce. The FDA has been investigating an outbreak linked to lettuce from Taylor Farms, a produce supplier. As part of that investigation, the agency tested samples from the company's products.",
-            "what_happened": "The FDA found cyclospora in one Taylor Farms lettuce sample and initially reported a positive test result. The agency then retracted that test, saying it was a false positive. However, the FDA still connects Taylor Farms lettuce to cyclosporiasis cases across multiple states and restaurant chains, including Taco Bell. Iceberg lettuce has been recalled in 27 states due to potential cyclospora contamination.",
-            "why_it_matters": "If you buy pre-packaged salads or lettuce, especially iceberg lettuce from the recalled areas, this outbreak may have affected the products available to you. The FDA's investigation is still ongoing, so paying attention to recall notices and avoiding products from recalled batches remains important for your health.",
+            "background": "Police use many kinds of surveillance technology to investigate crimes. Facial recognition matches faces in photos to mugshot databases. Automatic license plate readers scan cars and record their locations. Other tools track cell phones or detect gunshots. Often, defendants and their lawyers do not know if police used these technologies to build a case against them.",
+            "what_happened": "The American Civil Liberties Union of Massachusetts is releasing an online toolkit this week for criminal defense attorneys. The toolkit contains legal motions that lawyers can file in court. If a judge approves these motions, prosecutors must reveal whether police used surveillance technology in the case. The toolkit covers facial recognition, license plate readers, gunshot detection systems, phone trackers, and location data from commercial brokers.",
+            "why_it_matters": "Defendants have a right to know what evidence the government used against them. When police hide surveillance technology, it becomes harder for lawyers to challenge whether the investigation was fair or legal. This toolkit gives defense attorneys a standard way to demand those answers from prosecutors.",
             "quote": null
           }
-        },
-        {
-          "cluster_id": "aeb193e6d18fdb4eef17222f9543d5bf",
-          "slug": "five-cups-of-coffee-per-day-confirmed-safe-for-most-adults",
-          "title": "Five cups of coffee per day confirmed safe for most adults",
-          "summary": "A large study validated that up to 400 milligrams of caffeine daily does not pose health risks for the majority of people.",
-          "score": 6,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://newsroom.heart.org/news/coffee-and-heart-health-how-many-cups-of-caffeinated-coffee-are-safe-to-drink-each-day"
-            }
-          ],
-          "article": null
         }
       ]
     },
@@ -242,60 +214,65 @@
       "name": "Cybersecurity",
       "stories": [
         {
-          "cluster_id": "4696f89f4516bf22df01a86eaebf763b",
-          "slug": "hacker-wipes-romania-s-entire-land-registry-database",
-          "title": "Hacker wipes Romania's entire land registry database",
-          "summary": "The attack destroyed property records for the country, with immediate consequences for real estate transactions and ownership verification.",
-          "score": 9,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database"
-            }
-          ],
-          "article": null
-        },
-        {
-          "cluster_id": "ba27ce56811a74ec35daad585355ed24",
-          "slug": "russian-intelligence-hacks-security-cameras-to-spy-on-nato",
-          "title": "Russian intelligence hacks security cameras to spy on NATO military operations",
-          "summary": "Netherlands intelligence services confirmed Russia is systematically hijacking internet-connected cameras across Europe to watch weapons shipments to Ukraine and troop movements.",
-          "score": 8,
-          "sources": [
-            {
-              "name": "the_hacker_news",
-              "url": "https://thehackernews.com/2026/07/russian-intelligence-hacks-ip-cameras.html"
-            }
-          ],
-          "article": null
-        },
-        {
           "cluster_id": "8e51ee59ed4711fcbe6d4874fd7b3b48",
-          "slug": "hackers-breach-tech-firm-used-by-thousands-of-us-hospitals",
-          "title": "Hackers breach tech firm used by thousands of US hospitals and pharmacies",
-          "summary": "Edinburgh-based Craneware confirmed a significant data theft during a cyberattack, potentially exposing health information from its billing software used across the US healthcare system.",
-          "score": 8,
+          "slug": "hackers-breached-healthcare-billing-software-used-by",
+          "title": "Hackers breached healthcare billing software used by thousands of US hospitals",
+          "summary": "UK-based Craneware confirmed hackers stole a significant volume of customer data from systems serving thousands of American hospitals and pharmacies.",
+          "score": 7,
           "sources": [
             {
               "name": "techcrunch",
               "url": "https://techcrunch.com/2026/07/20/hackers-stole-significant-amount-of-data-from-tech-firm-relied-on-by-thousands-of-us-hospitals-and-pharmacies"
             }
           ],
-          "article": null
+          "article": {
+            "background": "Craneware is a U.K.-based company that makes billing and accounting software for healthcare providers. Thousands of clinics, hospitals, and pharmacies across the United States use its system to handle their financial records and administrative work.",
+            "what_happened": "Hackers broke into Craneware's systems and stole what the company describes as a significant amount of data. The breach included some employee records, customer data, and partner information, though Craneware has not said exactly what types of data were taken. The company said the attackers have been removed from its systems, but it is still investigating what happened.",
+            "why_it_matters": "Craneware's software processes sensitive financial and healthcare data for thousands of U.S. medical facilities. A breach of this system could expose billing records, insurance information, and other healthcare details tied to the facilities that use it. Patients and healthcare organizations may face privacy risks, though the company has not yet detailed what specific information was stolen.",
+            "quote": null
+          }
         },
         {
           "cluster_id": "889b86649cf8d488ce3a8a95b9de1a01",
-          "slug": "hackers-exploit-recently-patched-wordpress-bugs-affecting",
-          "title": "Hackers exploit recently patched WordPress bugs affecting millions of websites",
-          "summary": "Two critical flaws in WordPress gave attackers remote takeover access to tens of millions of sites whose owners have not yet updated.",
+          "slug": "hackers-exploit-recently-patched-wordpress-flaws-affecting",
+          "title": "Hackers exploit recently patched WordPress flaws affecting millions of sites",
+          "summary": "Cybersecurity firms report active attacks on WordPress installations that have not yet applied critical security patches released last week.",
           "score": 7,
           "sources": [
             {
               "name": "techcrunch",
               "url": "https://techcrunch.com/2026/07/20/hackers-are-exploiting-recently-patched-wordpress-bugs-putting-millions-of-websites-at-risk"
+            },
+            {
+              "name": "google_news_technology",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNZXdjRTBqRkh2ODFFbXYwaTVZRGZzUDZlVUtJV2JlaGh3aW9uQ3hmemMzbkdWUVlmQUdsbTZKV3RqRC12dHQxS01uaGJIYXdlQ0IxcDJlUldySnFPREZnVEpRRWZXazBIcDExLXAyUjEwZjFyZzhoSnhUbm5nT3lGVFJRdDdzOVN0ZlF3Uzl0aTl4UVpaSFBYdmRjOWFLOFIySHhCSTdOX3FycjVYSnl4ZXllRjBzWnB0ZUtQQmdSZ3pKVXh5?oc=5"
             }
           ],
-          "article": null
+          "article": {
+            "background": "WordPress is the software that powers millions of websites around the world. Last week, WordPress patched two critical security flaws, or bugs that let attackers break in. The flaws were serious enough that WordPress turned on automatic updates for sites that allowed it, rather than waiting for owners to update manually.",
+            "what_happened": "Hackers are now breaking into WordPress websites that have not installed the patches yet. Three cybersecurity firms, Patchstack, Hexastrike, and WatchTowr, say they have seen active attacks happening right now. As of Monday, an estimate put the number of vulnerable WordPress websites at tens of millions.",
+            "why_it_matters": "If your website runs WordPress and you have not updated it, hackers could take it over. A compromised site can expose visitor data, inject malware, or disable your site entirely. You should check that your site is running the latest version, or turn on automatic updates if you have not done so already.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4696f89f4516bf22df01a86eaebf763b",
+          "slug": "hacker-wiped-romania-s-entire-land-registry-database",
+          "title": "Hacker wiped Romania's entire land registry database",
+          "summary": "An attack disrupted critical infrastructure that stores property records for the entire country, with immediate consequences for citizens and government.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database"
+            }
+          ],
+          "article": {
+            "background": "Romania's cadastre agency runs the country's land registry, a database that tracks who owns what property. A hacker breached the agency and deleted the entire database.",
+            "what_happened": "The attacker first tried to extort money from the agency. When that failed, the hacker wiped the records. Romania's government now has to restore the database from backups.",
+            "why_it_matters": "Romanians cannot currently prove who owns land or complete property sales that need these records. Until the database is restored, property disputes will be harder to settle and land deals may be delayed.",
+            "quote": null
+          }
         }
       ]
     }
@@ -307,35 +284,25 @@
       "topic": "Business"
     },
     {
-      "title": "Hugging Face confirms breach affected internal datasets and credentials, urges users to take action",
-      "url": "https://techcrunch.com/2026/07/20/hugging-face-confirms-breach-affected-internal-datasets-and-credentials-urges-users-to-take-action",
-      "topic": "Cyber"
+      "title": "US gas prices back up to an average of $4 a gallon again as the US and Iran launch attacks - AP News",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdnQwZTRwYkFHa216RUhGUDBkaUVQQW8xeWk2S180OFo0ZUExYXJPcnZGUW5DQ21QSEpJRlQ1M05tcDNYZ2Z1MXRsNGRSbFFXREw1RWFUZGVhNnEtMnFBRlVsOGNvMk9Pd0NFM0hKRlkwWVhXNDRYY0U5bXd2QkZheTRfOUtLYi1kWXlvb3BsellRQQ?oc=5",
+      "topic": "Finance"
     },
     {
-      "title": "Pay up or not? Ransomware surge has victims facing tough choices",
-      "url": "https://arstechnica.com/security/2026/07/pay-up-or-not-ransomware-surge-has-victims-facing-tough-choices",
-      "topic": "Cyber"
+      "title": "FDA retracts test result but still links Taylor Farms lettuce to cyclosporiasis - The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMXgxNndmUjBPN3E0Vk8wTDZXZkFCUXNZdkhVY3VjOXhyQlNqTUFCaDBPQjRlbGFTM3pjZXpiMXpVOTUzQzFBQmFmUzV1eXlGVmNkMTNvS0tESUFoNmticHFnb3ZkbE5GbHNxdUp2bTRCdVBqSDlDUWs4eDBxd0I1TFFVRzdKOFprQVhsYUNCNm83UjBQZGFxVVo1ejJZT3U4QWE4ZHJpR201TGotZnl1dERFX3VyUi1mTEZZbGtsd1QyWVE?oc=5",
+      "topic": "Science"
     },
     {
-      "title": "HollowGraph Malware Hides C2 and Stolen Files in Microsoft 365 Events Dated 2050",
-      "url": "https://thehackernews.com/2026/07/hollowgraph-malware-hides-c2-and-stolen.html",
-      "topic": "Cyber"
-    },
-    {
-      "title": "Fable is now included on Max plans (up to 50% of weekly limit)",
-      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
-      "topic": "Tech"
-    },
-    {
-      "title": "Congress Must Stop Enabling Trump’s Crypto Corruption - Rolling Stone",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOeHdIMG41VHcwYnJIUnF0YTRfWHYwZ2ZSdjFWYzh1SVJJUTRveVdpMHZSRnE2RllabkVWeHRhbHlfNzBFLTl4dy1TQWZCenV1TkI1enhVZEtNd193VGpuUl81bUh4RmN3N2dodEtCZmtRcnMtZUlJdGhvNkpIVHU3dEd0eWNwVTJaODA5T3huM2ZTdGZNZ3hNbjRsX25LRlZJajZkeXdadHhQZw?oc=5",
-      "topic": "US Politics"
+      "title": "Czechia moves to ban mobile phones in schools from September 2027",
+      "url": "https://www.expats.cz/czech-news/article/czech-news-in-brief-for-july-20-2026-monday-top-afternoon-headlines",
+      "topic": "World"
     }
   ],
   "stats": {
-    "items_ingested": 102,
-    "clusters_considered": 100,
-    "stories_run": 15,
+    "items_ingested": 109,
+    "clusters_considered": 104,
+    "stories_run": 11,
     "sources": 6,
     "sections_held": 1
   }

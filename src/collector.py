@@ -17,7 +17,7 @@ import sys
 import time
 from datetime import UTC, datetime, timedelta
 
-from . import bronze, health, runlog
+from . import bronze, enrich, health, runlog
 from .adapters.base import RawItem
 from .config import SourceConfig, enabled_sources, get_pipeline, get_settings
 from .storage import get_catalog
@@ -90,11 +90,28 @@ def collect(*, dry_run: bool = False) -> int:
 
     failed_adapters = [name for name, m in metrics.items() if m["errors"]]
 
+    # SPEC 6.1 body_excerpt: adapters store the feed's summary, which is a
+    # one-line blurb on most sources. Fetch the linked article so the text is
+    # stored once, before bronze, and every later stage reads it: clustering
+    # embeds real text, scoring stops being headline-only, and the writer
+    # stage has something to ground on (decision #16). Never fatal: an item
+    # whose fetch fails keeps its original excerpt.
+    items, enrich_metrics = enrich.enrich_items(items, pipeline.enrich)
+    metrics["_enrich"] = enrich_metrics
+
     if dry_run:
         print(f"\nrun_id {run_id} (dry run, nothing written)")
         for name, m in metrics.items():
+            if name == "_enrich":
+                continue
             print(f"  {name:14} {m['items']:3d} items  {m['latency_ms']:5d}ms")
         print(f"  {'total':14} {len(items):3d} items")
+        print(
+            f"  {'enriched':14} {enrich_metrics['enriched']:3d} of "
+            f"{enrich_metrics['fetched']} fetched (+{enrich_metrics['chars_added']} chars)"
+        )
+        grounded = sum(1 for i in items if len(i.body_excerpt.strip()) >= 400)
+        print(f"  {'groundable':14} {grounded:3d} items at or above the 400-char floor")
         for item in items[:5]:
             print(f"\n  {item.item_id}  {item.published_at.isoformat(timespec='seconds')}")
             print(f"  {item.title[:78]}")
