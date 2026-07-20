@@ -1,6 +1,9 @@
 # SPEC.md - Norm's Newsletter
 
-Status: v1.2 (aligned with DESIGN.md v1.0, locked for build)
+Status: v1.3 (aligned with DESIGN.md v1.0, locked for build)
+Changes in v1.3: canonical_url normalization and run_id format (6.1);
+configuration and secrets loading (6.10); ops.run_log table schema
+(section 8).
 Changes in v1.2: deployment identity decisions and the pre-launch
 migration plan (section 13); resolved open questions.
 Owner: Milind
@@ -103,6 +106,7 @@ norms-newsletter/
     voice.md             # DESIGN.md section 8, verbatim, included by all
   src/
     adapters/            # one file per source
+    config.py            # loads config/*.yaml + .env; only reader of env vars
     collector.py
     silver/  dedup.py  cluster.py  score.py
     editor/  run_editor.py  run_writers.py  schema.py  readability.py
@@ -146,6 +150,36 @@ RawItem / bronze schema:
 | fetched_at    | timestamp |                                              |
 | run_id        | string    |                                              |
 | ingest_date   | date      | partition column                             |
+
+**run_id format.** UTC timestamp plus 4 random hex characters:
+`YYYYMMDDTHHMMSSZ-xxxx`, for example `20260719T110003Z-a4f2`. One run_id
+is generated per job run and written to every row that run produces,
+including the ops.run_log row (section 8).
+
+**canonical_url normalization.** `item_id` is
+`sha256(canonical_url + published_at)[:32]`, so bronze dedup is only as
+reliable as this function is deterministic. Two layers:
+
+*Deterministic cleanup, always applied, no network:*
+- lowercase the scheme and host
+- strip `utm_*` parameters and known click IDs (`fbclid`, `gclid`,
+  `msclkid`, `igshid`, `mc_cid`, `mc_eid`)
+- drop the fragment
+- remove a trailing slash from the path
+
+*Redirect resolution, network, conditional:* applied only to URLs whose
+host appears in `shortener_hosts` in config/pipeline.yaml. 3-second
+timeout, maximum 5 hops. On any failure (timeout, error status, hop limit)
+fall back to the cleaned raw URL. The resolved target is then run through
+the deterministic cleanup.
+
+The cleanup rules above are **frozen per spec version**. Changing them
+changes every item_id and breaks dedup against existing bronze rows, so
+they change only with a version bump and a documented migration. The
+`shortener_hosts` list is different: it may change at any time, including
+mid-day. The cost is that the same article fetched before and after the
+change can produce two item_ids, which is an acceptable duplicate, not a
+correctness failure.
 
 Registry entry (config/sources.yaml):
 
@@ -319,6 +353,24 @@ day's edition.json verbatim in gold, drop today's bronze/silver
 partitions, expire snapshots older than 7 days. Gold is the permanent
 record and the writer stage's background retrieval source.
 
+### 6.10 Configuration and secrets
+
+`src/config.py` is the single entry point for all configuration. It loads
+`config/sources.yaml` and `config/pipeline.yaml`, plus `.env` locally
+(Actions secrets in CI), and validates everything with pydantic models at
+import time so a malformed registry or a missing credential fails loudly
+at startup rather than mid-run.
+
+**It is the only module in the codebase that reads environment
+variables.** Every other module imports typed settings from it. A bare
+`os.environ` or `os.getenv` outside `src/config.py` is a bug. No
+credential is ever written to a file, logged, or committed.
+
+`config/sources.yaml` holds the adapter registry (6.1). `config/pipeline.yaml`
+holds operational values: `cluster_threshold`, per-run budgets, schedules,
+and `shortener_hosts` (6.1). Keys are added by the milestone that needs
+them, not speculatively.
+
 ## 7. Failure behavior
 
 | Failure                        | Behavior                                        |
@@ -338,8 +390,31 @@ site never silently skips a day and never shows a broken page.
 
 ## 8. Observability
 
-ops.run_log (Iceberg): one row per job run with status, items in/out,
-per-adapter metrics, AI cost estimate, readability flags. healthchecks.io:
+**`ops.run_log` (Iceberg, partitioned by run_date).** One row per job run.
+Written by every job, including failed ones; a job that cannot write its
+own row is itself a failure surfaced by the dead man's switch.
+
+| field              | type      | notes                                     |
+|--------------------|-----------|-------------------------------------------|
+| run_id             | string    | format per 6.1                            |
+| job                | string    | collector / silver / editor / writer / audio / site / archive |
+| started_at         | timestamp |                                           |
+| ended_at           | timestamp |                                           |
+| status             | string    | success / partial / failed                |
+| items_in           | int       |                                           |
+| items_out          | int       |                                           |
+| adapter_metrics    | string?   | JSON blob: per-adapter items, errors, latency_ms; null for non-collector jobs |
+| ai_cost_estimate_usd | double? | null for non-AI jobs                      |
+| readability_flag   | boolean?  | editor job only, per 6.5                  |
+| notes              | string?   | nullable                                  |
+| run_date           | date      | partition column                          |
+
+`status` is `partial` when the job completed but degraded: an adapter
+failed and was skipped, a story published without an article block, or the
+readability gate was exceeded and the edition published anyway. This is
+the row that makes the weekly review possible.
+
+healthchecks.io:
 one check for 6am publish, one for the collector cadence. Weekly 10-minute
 review: cluster quality, score distribution, readability flags; tune
 cluster_threshold and rubric anchors.
