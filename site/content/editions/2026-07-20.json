@@ -2,63 +2,40 @@
   "date": "2026-07-20",
   "edition_number": 43,
   "edition_type": "normal",
-  "headline_of_the_day": "Hacker wipes Romania's entire land registry database",
+  "headline_of_the_day": "Judge blocks Paramount-Warner Bros merger on antitrust grounds",
   "key_points": [
     {
-      "text": "A hacker deleted Romania's entire land registry database, stopping property records for the whole country.",
-      "topic": "Cyber"
-    },
-    {
-      "text": "A judge paused the Paramount-Warner Bros merger for 14 days while states challenge it as illegal.",
+      "text": "A judge paused the Paramount-Warner Bros merger for 14 days while states argue it will raise prices and cut shows.",
       "topic": "Regulation"
     },
     {
-      "text": "Hackers are exploiting newly patched WordPress bugs that put tens of millions of websites at risk.",
+      "text": "Hackers are exploiting two serious WordPress flaws from last week, putting tens of millions of websites at risk.",
       "topic": "Cyber"
     },
     {
-      "text": "The European Commission fined AliExpress $629 million for selling fake and unsafe products.",
+      "text": "Craneware, which makes hospital software, said hackers stole data from thousands of US hospitals and pharmacies.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "The EU fined AliExpress 550 million euros for selling unsafe toys and fake products on its site.",
       "topic": "Regulation"
     }
   ],
   "audio": {
     "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-20.mp3",
-    "duration_seconds": 488,
-    "size_bytes": 5852448
+    "duration_seconds": 380,
+    "size_bytes": 4562208
   },
   "sections": [
     {
       "name": "Technology",
       "stories": [
         {
-          "cluster_id": "0dec1398fc4f66eb9064b99892081388",
-          "slug": "internal-policy-argues-ai-writing-tools-fail-at-lossless",
-          "title": "Internal policy argues AI writing tools fail at lossless text transformation",
-          "summary": "A software company banned engineers from using AI to write code because the tools lose important meaning.",
-          "score": 6,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://sophiebits.com/2026/06/25/there-are-no-lossless-transformations-of-natural-language-text"
-            }
-          ],
-          "article": {
-            "background": "Sophie Bits works at Clay, a software company. She recently wrote a policy on how engineers should use AI for writing. The question at the center: can AI turn out finished writing that needs no human edits.",
-            "what_happened": "Bits published her policy publicly. She argues that AI models in 2026 cannot produce finished writing without human editing. Even with strong coding skills, AI output does not reliably capture the exact ideas an author intends to convey.",
-            "why_it_matters": "Good writing is how you move ideas from your head into someone else's. If you use AI to write and do not edit it hard, you risk sending ideas you did not actually mean to send. Until AI improves, writing remains a tool that only humans can truly master.",
-            "quote": {
-              "text": "Good writing is a tool to clearly communicate ideas from your brain into someone else's.",
-              "attribution": "Sophie Bits, Clay",
-              "source_url": "https://sophiebits.com/2026/06/25/there-are-no-lossless-transformations-of-natural-language-text"
-            }
-          }
-        },
-        {
           "cluster_id": "164af08088c88db710c2c504b73b982f",
-          "slug": "lg-monitors-silently-install-mcafee-ads-through-windows",
-          "title": "LG monitors silently install McAfee ads through Windows Update",
-          "summary": "Connecting an LG UltraGear monitor to Windows 11 triggers automatic driver and ad installer downloads.",
-          "score": 3,
+          "slug": "lg-monitors-install-mcafee-ads-on-windows-pcs-without-user",
+          "title": "LG monitors install McAfee ads on Windows PCs without user permission",
+          "summary": "Windows Update quietly installs an LG driver and app when a new LG UltraGear monitor plugs into your PC.",
+          "score": 6,
           "sources": [
             {
               "name": "the_verge",
@@ -66,9 +43,28 @@
             }
           ],
           "article": {
-            "background": "LG makes computer monitors, including UltraGear models for gaming. When you connect a new monitor to Windows 11, Windows Update normally installs driver software automatically. This keeps the hardware working without asking the user first.",
-            "what_happened": "A tech reviewer found that connecting an LG UltraGear monitor to Windows 11 triggers an automatic install of LG's Monitor App Installer. Windows Update installs it silently, with no permission request. The app then pushes McAfee antivirus ads to users' screens. It does not offer its own controls. Instead it points to LG's other apps and McAfee.",
-            "why_it_matters": "If you buy an LG monitor and plug it into Windows 11, you may suddenly see ads pop up on your screen without choosing to install anything. You cannot easily control or remove these notifications. Most people expect Windows to update drivers quietly. They do not expect it to install advertising software at the same time.",
+            "background": "LG makes UltraGear monitors. These are high-end displays aimed at gamers and professionals. When you plug one into a Windows 11 PC for the first time, the system automatically installs software updates.",
+            "what_happened": "Windows Update installs LG's driver updates and an app called LG Monitor App Installer without asking permission. The app does not have its own controls. Instead it shows you links to LG's other apps and McAfee antivirus. The app also sends unwanted ad notifications to your screen.",
+            "why_it_matters": "If you own an LG UltraGear monitor on Windows 11, ads will pop up on your screen. You have to find and remove the LG Monitor App Installer yourself to make them stop. The software installs without your consent or knowledge.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "da79b381233b82d1f34b9a927ecd9d91",
+          "slug": "complete-technical-guide-explains-how-new-york-subway",
+          "title": "Complete technical guide explains how New York subway signals work",
+          "summary": "A guide explains the signaling system that NYC subway trains use to stay safe and run on time.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nycsubway.org/wiki/Subway_Signals%3A_A_Complete_Guide"
+            }
+          ],
+          "article": {
+            "background": "The New York City subway uses a signal system called wayside color-light block signalling. Signals sit beside the tracks rather than overhead. They use colored lights to show whether a train can proceed. The system divides tracks into blocks, or sections. Electrical sensors in each block detect when a train is present.",
+            "what_happened": "Nearly all current subway routes use this same classic signalling method. The core principles have stayed the same for many years. The system works by placing signals at the side of tracks. Colored lights tell trains whether the next block is clear.",
+            "why_it_matters": "The signalling system keeps trains safely spaced apart on the tracks. If you ride the subway, this is how operators know where every train is. Understanding how signals work explains why trains sometimes stop or slow down between stations. The system's age means upgrades are ongoing but the basic method remains reliable.",
             "quote": null
           }
         }
@@ -78,136 +74,41 @@
       "name": "Artificial intelligence",
       "stories": [
         {
-          "cluster_id": "2077379db8edc438d3d7b8e63fa1850c",
-          "slug": "commentary-argues-us-ai-labs-should-worry-about-chinese",
-          "title": "Commentary argues US AI labs should worry about Chinese open models",
-          "summary": "A tech analyst says American AI companies should worry about open-source models from China, not ignore them.",
-          "score": 4,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://larrysalibra.com/ben-thompson-is-wrong-us-frontier-labs-are-right-to-be-panicking"
-            }
-          ],
-          "article": {
-            "background": "Ben Thompson is a tech blogger who writes about the AI industry. He recently argued that US AI labs like Anthropic and OpenAI should not worry about Chinese open-source models like Kimi K3. Open-source models are free software that anyone can download and use. Kimi K3 is a Chinese model that performs similarly to the best American models.",
-            "what_happened": "Thompson claimed that US labs should not panic about Chinese competition. He said American labs have the lowest costs for building and running top-quality AI models. They keep costs down through better model design, serving more users, and using tokens efficiently. Thompson also said US labs can make up lost profits through volume, even if Chinese models force prices down.",
-            "why_it_matters": "The debate matters because it shows real pressure on American AI makers from fast-improving global rivals. If Chinese models become as good as American ones and cost less, more people may use them instead. American labs may lose customers or profit. How companies respond will shape which AI tools dominate globally and what that means for American tech leadership.",
-            "quote": null
-          }
-        },
-        {
           "cluster_id": "7e29899969d21d0c3f74027bad894706",
-          "slug": "moonshot-ai-promises-to-release-kimi-k3-model-weights-july",
-          "title": "Moonshot AI promises to release Kimi K3 model weights July 27",
-          "summary": "The Chinese company Moonshot AI announced a large language model and promised to share its code in July.",
+          "slug": "chinese-ai-lab-moonshot-releases-kimi-k3-model-with",
+          "title": "Chinese AI lab Moonshot releases Kimi K3 model with promised open weights",
+          "summary": "Moonshot will release the code for its new Kimi K3 AI model on July 27, intensifying open AI competition.",
           "score": 4,
           "sources": [
             {
               "name": "hackernews",
               "url": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation"
-            }
-          ],
-          "article": {
-            "background": "Moonshot AI is a Chinese company that builds large language models, systems trained on text to understand and generate human language. The company has historically shared its model weights, the numerical values that make models work, with the public. This lets other researchers and developers run the models themselves.",
-            "what_happened": "On July 16th, Moonshot AI released Kimi K3, its latest flagship model. K3 uses 2.8 trillion parameters and a mixture-of-experts design, which activates different specialized sections based on the task. The company plans to release the model's weights on July 27th.",
-            "why_it_matters": "If Moonshot releases the weights as promised, researchers, startups, and other countries can build with K3's capabilities. This could shift the balance between closed models owned by a few companies and open models anyone can use and modify. It also changes how AI development happens across different countries.",
-            "quote": null
-          }
-        }
-      ]
-    },
-    {
-      "name": "US politics",
-      "stories": [
-        {
-          "cluster_id": "6651cbea0fdaf2840b36bde5511a7e23",
-          "slug": "us-military-plans-to-test-troops-testosterone-and-offer",
-          "title": "US military plans to test troops' testosterone and offer replacement therapy",
-          "summary": "Defense Secretary Pete Hegseth said the military will offer testosterone screening and treatment, but gave no details on timing or size.",
-          "score": 3,
-          "sources": [
+            },
             {
-              "name": "cnbc_business",
-              "url": "https://www.cnbc.com/2026/07/20/what-to-know-about-testosterone-replacement-therapy.html"
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be"
             }
           ],
           "article": {
-            "background": "Testosterone replacement therapy, or TRT, adds testosterone to the body. It was once mainly a doctor's office treatment. Now it sits at the center of a large cultural push around men's health, performance, and living longer. Defense Secretary Pete Hegseth announced last week that the military will test service members' testosterone levels and offer replacement therapy to those who qualify.",
-            "what_happened": "The military will begin screening troops' testosterone. Those who qualify will have access to replacement therapy. Hegseth said the goal is to help soldiers operate at their best. The effort also builds on the Trump administration's larger push to expand public access to testosterone replacement therapies.",
-            "why_it_matters": "For regular people, the military's backing may shift how TRT is viewed. It could become seen as a standard tool instead of a treatment for a specific medical problem. This may increase pressure on men to use it, even those who might not need it from a health standpoint.",
+            "background": "Moonshot AI, a Chinese lab, released Kimi K3 on July 16th. K3 is a large language model, the kind of AI that powers chatbots. The model has 2.8 trillion parameters, which are settings that shape how it responds. Moonshot promised to release K3's internal weights, the blueprints that let others run it, on July 27th. This matters because most advanced AI models are closed. Companies like OpenAI keep their blueprints secret.",
+            "what_happened": "Moonshot said it will release K3's weights publicly. This would make a cutting-edge model available to anyone with enough computing power. The announcement sparked debate about open versus closed AI models. OpenAI's head of strategic futures argued the US should create doubt about open models. Other tech leaders, including Yann LeCun, countered that open models drive faster innovation.",
+            "why_it_matters": "If Moonshot releases the weights as promised, the economics of AI shift. Right now, companies charge money to access their best models. With K3's weights public, anyone could run something equally powerful for free. This could reshape who profits from AI and where the best research happens. The debate over open models is really a fight about whether closed companies or the broader research community should lead AI's future.",
             "quote": null
           }
         },
         {
-          "cluster_id": "388a3947583657ae3b9dcb2ad6c22a45",
-          "slug": "uk-prime-minister-burnham-to-announce-cost-of-living",
-          "title": "UK Prime Minister Burnham to announce cost-of-living support Tuesday",
-          "summary": "UK Prime Minister Burnham will announce relief measures that will be funded by tax increases.",
-          "score": 3,
-          "sources": [
-            {
-              "name": "bbc_business",
-              "url": "https://www.bbc.co.uk/news/articles/c9357rlk494o?at_medium=RSS&at_campaign=rss"
-            }
-          ],
-          "article": {
-            "background": "Andy Burnham is the new Prime Minister of the UK. Until now, he has talked about his policies in general terms. Today he moves into detailed governing. Every promise must be paid for somehow: through taxes, spending cuts, or borrowing.",
-            "what_happened": "Burnham promised Tuesday to give people more breathing space on living costs. He said these policies would be fully funded. He also said he would look at the tax-free personal allowance before his first Budget in the autumn. The markets have reacted to reports he may use more flexibility in borrowing rules.",
-            "why_it_matters": "Burnham has said many people cannot afford basics like going out for a drink or taking kids on holiday. His cost of living help could ease that pressure. But if funding comes from taxes or spending cuts, other things will get less money. His early choices will show what he actually prioritizes.",
-            "quote": null
-          }
-        }
-      ]
-    },
-    {
-      "name": "World",
-      "stories": [
-        {
-          "cluster_id": "4b6ae153f196573f9ebaf04fc63a3d82",
-          "slug": "south-east-water-expands-hosepipe-ban-to-2-4-million-people",
-          "title": "South East Water expands hosepipe ban to 2.4 million people",
-          "summary": "The ban now covers parts of Sussex, Surrey, Hampshire, and Berkshire after record heat.",
-          "score": 5,
-          "sources": [
-            {
-              "name": "bbc_business",
-              "url": "https://www.bbc.co.uk/news/articles/c7vg3geg3qmo?at_medium=RSS&at_campaign=rss"
-            }
-          ],
-          "article": {
-            "background": "South East Water serves about 2.4 million people across the south of England. During dry spells, water companies restrict hosepipe use to save water for essential needs like drinking and hygiene. A ban in parts of Kent started on July 3rd.",
-            "what_happened": "South East Water expanded its hosepipe ban to include parts of Sussex, Surrey, Hampshire and Berkshire. This adds 1.5 million more customers to the ban. The company cited record-breaking temperatures and dry weather as the reason.",
-            "why_it_matters": "If you live in the affected areas, you cannot use a hosepipe to water gardens, wash cars, or fill pools. The ban will stay in place until water levels recover. Dry spells like this are becoming more common, so these rules may return.",
-            "quote": {
-              "text": "deeply sorry and incredibly grateful to everyone helping us protect water supplies",
-              "attribution": "Douglas Whitfield, South East Water's water supply director",
-              "source_url": "https://www.bbc.co.uk/news/articles/c7vg3geg3qmo?at_medium=RSS&at_campaign=rss"
-            }
-          }
-        },
-        {
-          "cluster_id": "b568a7ed5389835570fe7e4b36f77ef6",
-          "slug": "west-african-leaders-endorse-nigeria-morocco-gas-pipeline",
-          "title": "West African leaders endorse Nigeria-Morocco gas pipeline plan",
-          "summary": "West African leaders approved a $25 billion pipeline but no start date or funding details emerged.",
+          "cluster_id": "e0362efdb459d7b0deab978add8dbae8",
+          "slug": "ai-system-proves-20-year-old-graph-theory-conjecture-with",
+          "title": "AI system proves 20-year-old graph theory conjecture with ten-line algorithm",
+          "summary": "Researchers used AI to solve a math problem about the best way to match items in a data stream.",
           "score": 4,
           "sources": [
             {
-              "name": "bbc_business",
-              "url": "https://www.bbc.co.uk/news/articles/cwyr5rpglngo?at_medium=RSS&at_campaign=rss"
+              "name": "hackernews",
+              "url": "https://twitter.com/marsxiang_/status/2079276968047153337"
             }
           ],
-          "article": {
-            "background": "West African leaders just approved a massive gas pipeline project. The Nigeria-Morocco Atlantic Gas Pipeline will carry natural gas from Nigeria across 6,000 kilometers along Africa's Atlantic coast. It will pass through 14 African nations and link into Europe's existing gas network through Spain. This is one of Africa's biggest energy infrastructure projects ever attempted.",
-            "what_happened": "West African leaders formally endorsed the pipeline on Sunday in Freetown, Sierra Leone. Julius Maada Bio, the country's president and head of the Ecowas regional bloc, announced the approval at a ceremony. The project has a cost of $25 billion. Construction is now expected to begin.",
-            "why_it_matters": "The pipeline will bring jobs and infrastructure investment to West African nations during construction. Once complete, some countries along the route could get cheaper local gas access. For Europe, the project offers a new source of natural gas as energy security becomes more urgent. Nigeria gains a major buyer for its gas exports.",
-            "quote": {
-              "text": "Don't be surprised when the gas comes your way.",
-              "attribution": "Julius Maada Bio, Sierra Leone's president",
-              "source_url": "https://www.bbc.co.uk/news/articles/cwyr5rpglngo?at_medium=RSS&at_campaign=rss"
-            }
-          }
+          "article": null
         }
       ]
     },
@@ -216,10 +117,10 @@
       "stories": [
         {
           "cluster_id": "208040ac2a9ed518095743f835db3c5a",
-          "slug": "judge-blocks-paramount-warner-bros-merger-for-14-days",
-          "title": "Judge blocks Paramount-Warner Bros merger for 14 days",
-          "summary": "A federal court paused the deal for 14 days while states argue it breaks antitrust law.",
-          "score": 7,
+          "slug": "federal-judge-blocks-paramount-warner-bros-merger-on",
+          "title": "Federal judge blocks Paramount-Warner Bros merger on antitrust grounds",
+          "summary": "A judge stopped the merger for 14 days after states said the deal would raise prices and cut TV shows.",
+          "score": 8,
           "sources": [
             {
               "name": "hackernews",
@@ -239,23 +140,19 @@
             }
           ],
           "article": {
-            "background": "Paramount and Warner Bros. Discovery agreed to merge in a deal worth $110 billion. Twelve state attorneys general, led by California's Rob Bonta, sued to block it. They say the merger would hurt competition in movies and TV.",
-            "what_happened": "A federal judge issued a 14-day pause on Monday. Judge Araceli Martínez-Olguín ruled that the states showed serious legal questions. The judge also found the states could suffer real harm without the delay. Paramount had already agreed not to close the deal before July 22.",
-            "why_it_matters": "The states argue the merged company would control too much of the market. This could lead to higher prices for viewers and fewer movie and TV choices. The 14-day pause buys time to decide if the deal can go forward.",
+            "background": "Paramount and Warner Bros. Discovery want to merge into one company. The deal is worth about $110 billion. A group of state attorneys general, led by California's Rob Bonta, sued to block it. They say the merger would break antitrust law, the rule that stops companies from merging in ways that hurt competition.",
+            "what_happened": "Federal Judge Araceli Martínez-Olguín ordered a 14-day pause on Monday. She ruled after hearing arguments on Friday. The judge said the states raised serious questions about whether the merger would break antitrust law. She also said the states would face harm without the pause. Paramount had already agreed not to close the deal before July 22.",
+            "why_it_matters": "If the merger happens, the combined company would control a huge share of movies and TV shows. The judge said she believes the deal could violate antitrust law and harm competition. That could mean fewer choices and higher prices for viewers. The states can ask for another pause after 14 days if needed.",
             "quote": null
           }
         },
         {
-          "cluster_id": "bfc4636d3a74660da2e7bc67bc1e6b71",
-          "slug": "european-commission-fines-aliexpress-record-629-million",
-          "title": "European Commission fines AliExpress record $629 million",
-          "summary": "The European Commission fined AliExpress 629 million euros for selling fake and unsafe goods.",
+          "cluster_id": "d0ea75fd552ac1ca3a9d91782f95bb98",
+          "slug": "european-union-fines-aliexpress-record-550-million-euros",
+          "title": "European Union fines AliExpress record 550 million euros for illegal goods",
+          "summary": "The EU fined AliExpress 550 million euros for failing to stop sales of unsafe toys and counterfeit goods.",
           "score": 6,
           "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://www.engadget.com/2218530/aliexpress-hit-with-record-629-million-fine-for-selling-counterfeit-and-illegal-products"
-            },
             {
               "name": "bbc_business",
               "url": "https://www.bbc.co.uk/news/articles/cp8714286dpo?at_medium=RSS&at_campaign=rss"
@@ -266,52 +163,9 @@
             }
           ],
           "article": {
-            "background": "AliExpress is a Chinese online marketplace where people buy goods from sellers around the world. The European Union has a law called the Digital Services Act. It requires large online platforms to find and remove illegal or unsafe items. AliExpress is one of the largest shopping sites in Europe.",
-            "what_happened": "The European Commission fined AliExpress €550 million, or about $629 million. This is the largest fine ever under the Digital Services Act. Investigators found millions of fake products on the site. They also found unsafe toys and dangerous cosmetics. The commission said AliExpress did not staff enough people to catch these items. Content moderators sometimes had only tens of seconds to check if products met safety rules.",
-            "why_it_matters": "If you buy from AliExpress in Europe, you now know regulators are enforcing safety rules against major marketplaces. The fine signals that the EU will punish platforms that let dangerous goods spread. For sellers on AliExpress, the company will likely spend more to check what people list. This could slow down how fast items appear on the site.",
-            "quote": null
-          }
-        }
-      ]
-    },
-    {
-      "name": "Science",
-      "stories": [
-        {
-          "cluster_id": "aeb193e6d18fdb4eef17222f9543d5bf",
-          "slug": "up-to-five-cups-of-coffee-daily-is-safe-for-most-adults",
-          "title": "Up to five cups of coffee daily is safe for most adults",
-          "summary": "Research shows 400 milligrams of caffeine per day is safe for healthy people.",
-          "score": 5,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://newsroom.heart.org/news/coffee-and-heart-health-how-many-cups-of-caffeinated-coffee-are-safe-to-drink-each-day"
-            }
-          ],
-          "article": {
-            "background": "A new statement from heart experts summarizes recent findings on caffeine and heart health. Doctors have long warned that coffee might harm the heart, but newer research tells a different story for most people.",
-            "what_happened": "The latest research shows that up to 400 mg of caffeine per day (about 5 cups of 8-ounce coffee) is safe for most adults. In fact, this amount appears linked to lower risk of heart failure, heart disease, and stroke in some people. However, higher amounts of caffeine found in energy drinks and energy shots may raise the risk of high blood pressure and irregular heartbeat.",
-            "why_it_matters": "If you drink regular coffee, this is good news. You can enjoy up to five cups daily without worry for your heart health, and may even gain some benefit. Energy drinks are different and riskier, so those come with more caution.",
-            "quote": null
-          }
-        },
-        {
-          "cluster_id": "4fe2bcefe78055a3eb5cf8b6dd19cc8b",
-          "slug": "fda-reverses-on-lettuce-test-but-still-blames-iceberg-for",
-          "title": "FDA reverses on lettuce test but still blames iceberg for outbreak",
-          "summary": "A test sample that showed a cyclospora parasite was actually a false positive, the FDA said Monday.",
-          "score": 4,
-          "sources": [
-            {
-              "name": "cnbc_business",
-              "url": "https://www.cnbc.com/2026/07/20/cyclosporiasis-fda-taylor-farms-lettuce-false-positive.html"
-            }
-          ],
-          "article": {
-            "background": "Cyclosporiasis is a stomach illness caused by a parasite. It spreads through tainted food. The FDA has been investigating an outbreak that sickened more than 1,600 people. The agency suspected iceberg lettuce from Taylor Farms de Mexico was the source.",
-            "what_happened": "The FDA said Sunday that a test showing cyclospora in one lettuce sample was wrong. The test was a false positive. But the agency said Monday this finding does not change its main conclusion. It still believes iceberg lettuce from the company caused the outbreak.",
-            "why_it_matters": "The FDA's mixed message creates confusion about food safety. If you buy lettuce, you want to know if it is safe. The agency is still investigating the true source. For now, knowing the FDA is still confident in its main finding may matter more than one reversed test.",
+            "background": "AliExpress is a Chinese online marketplace where sellers list products for sale, similar to eBay or Amazon. The EU has laws requiring platforms to check for illegal or unsafe goods. These include counterfeit clothes and toys that fail safety tests. The Digital Services Act sets strict rules for how platforms must monitor their listings.",
+            "what_happened": "The European Commission fined AliExpress €550 million (£467 million) for breaking these rules. Investigators found the company did not properly assess risks from illegal products. AliExpress failed to build teams dedicated to removing counterfeit and dangerous items. Reviewers were sometimes given only tens of seconds to evaluate flagged products. The company also made it easy for sellers to hide from detection.",
+            "why_it_matters": "If you buy from AliExpress, you may receive unsafe or fake products. The company's weak checks mean dangerous cosmetics, broken toy safety standards, and counterfeit goods can slip through. This fine is the largest yet under EU law. It signals that the EU will hold platforms accountable for what sellers offer on their sites.",
             "quote": null
           }
         }
@@ -321,29 +175,10 @@
       "name": "Cybersecurity",
       "stories": [
         {
-          "cluster_id": "4696f89f4516bf22df01a86eaebf763b",
-          "slug": "hacker-wipes-romania-s-entire-land-registry-database",
-          "title": "Hacker wipes Romania's entire land registry database",
-          "summary": "A hacker deleted Romania's property records, stopping all real estate deals across the country.",
-          "score": 8,
-          "sources": [
-            {
-              "name": "hackernews",
-              "url": "https://news.risky.biz/risky-bulletin-hacker-wipes-romanias-entire-land-registry-database"
-            }
-          ],
-          "article": {
-            "background": "Romania's cadastre agency maintains the country's land registry. This database records who owns each property and allows people to buy, sell, and transfer land legally.",
-            "what_happened": "A hacker breached Romania's cadastre agency and deleted the entire land registry database. The agency is now working to restore it.",
-            "why_it_matters": "Without the registry, people cannot prove they own property. Real estate transactions across Romania have stopped while the database is restored. This takes time and leaves property deals suspended.",
-            "quote": null
-          }
-        },
-        {
           "cluster_id": "889b86649cf8d488ce3a8a95b9de1a01",
-          "slug": "hackers-exploit-wordpress-bugs-affecting-tens-of-millions",
-          "title": "Hackers exploit WordPress bugs affecting tens of millions of sites",
-          "summary": "Attackers are breaking into sites with vulnerable WordPress versions after two critical flaws were patched last week.",
+          "slug": "hackers-exploit-two-critical-wordpress-bugs-affecting-tens",
+          "title": "Hackers exploit two critical WordPress bugs affecting tens of millions of sites",
+          "summary": "WordPress fixed two serious flaws last week and urged users to update quickly as hackers attack the sites.",
           "score": 7,
           "sources": [
             {
@@ -352,17 +187,17 @@
             }
           ],
           "article": {
-            "background": "WordPress is software that millions of websites use to publish content. Last week, WordPress patched two critical security flaws. The company urged people to update right away. The flaws were so serious that WordPress forced updates where it could.",
-            "what_happened": "Hackers are now breaking into websites running old WordPress versions. Cybersecurity firms Patchstack, Hexastrike, and WatchTowr all reported active attacks. One estimate puts vulnerable websites at tens of millions as of Monday.",
-            "why_it_matters": "If you run a WordPress site, an attack could expose your data or lock you out. Update your software now. If your host manages WordPress for you, check that they have patched their servers too.",
+            "background": "WordPress is free software that millions of websites use to publish content and run their sites. Last week, WordPress released patches for two critical security flaws. These bugs were severe enough that WordPress enabled forced updates where possible.",
+            "what_happened": "Hackers are now breaking into websites running the vulnerable software. Three cybersecurity firms, Patchstack, Hexastrike, and WatchTowr, confirmed the attacks are happening. As of Monday, tens of millions of WordPress websites had not yet installed the patches.",
+            "why_it_matters": "If your website runs WordPress, you need to update it now. Hackers can break into unpatched sites without a password or special access. Site owners who delay risk losing control of their site and exposing visitor data.",
             "quote": null
           }
         },
         {
           "cluster_id": "8e51ee59ed4711fcbe6d4874fd7b3b48",
-          "slug": "healthcare-billing-firm-craneware-reports-data-breach",
-          "title": "Healthcare billing firm Craneware reports data breach affecting hospital customers",
-          "summary": "Hackers stole data from Craneware, a UK firm used by thousands of US hospitals and pharmacies.",
+          "slug": "healthcare-billing-software-maker-craneware-discloses",
+          "title": "Healthcare billing software maker Craneware discloses breach affecting hospital data",
+          "summary": "Craneware said hackers stole data from thousands of US hospitals and pharmacies that use its software.",
           "score": 7,
           "sources": [
             {
@@ -371,9 +206,28 @@
             }
           ],
           "article": {
-            "background": "Craneware is a U.K.-based company that makes billing and accounting software. Thousands of U.S. hospitals, clinics, and pharmacies use it to handle their finances. On Monday, the company said hackers broke into its systems and stole data.",
-            "what_happened": "Hackers took a significant amount of customer data from Craneware's systems. Employee records, customer information, and partner records were involved. The company said the hackers have been removed from its systems, but the full investigation is still ongoing.",
-            "why_it_matters": "Because so many healthcare providers depend on Craneware's software, a breach here means sensitive information from hospitals and pharmacies could be exposed. The company has not yet said what kinds of data were taken, so it is not yet clear which patients or providers were affected.",
+            "background": "Craneware is a U.K.-based company that makes billing and accounting software. Thousands of U.S. hospitals, clinics, and pharmacies use it to manage patient billing and financial records.",
+            "what_happened": "Hackers stole a significant amount of customer data from Craneware's systems. The company announced the breach on Monday. Attackers took employee data, customer data, and partner records. Craneware said the hackers have been removed from its systems. The investigation is still ongoing.",
+            "why_it_matters": "A breach like this could expose patient information. It might also disrupt how hospitals and pharmacies handle payments and records. The company has not said exactly what data was stolen.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ae0a502d48af0d228a7ec7780914f33c",
+          "slug": "new-malware-hides-stolen-data-in-microsoft-365-calendar",
+          "title": "New malware hides stolen data in Microsoft 365 calendar events dated to 2050",
+          "summary": "HollowGraph malware hides stolen files in Microsoft 365 calendars to sneak them past security tools.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/hollowgraph-malware-hides-c2-and-stolen.html"
+            }
+          ],
+          "article": {
+            "background": "Researchers at cybersecurity firm Group-IB discovered a new malware called HollowGraph. It hijacks a Microsoft 365 calendar in a compromised account. The malware hides commands and stolen files as attachments on fake calendar events. Those events are dated to the year 2050.",
+            "what_happened": "HollowGraph uses Microsoft's Graph API to move stolen data and commands through normal Microsoft 365 traffic. This makes the activity look like routine calendar use. The malware is a .NET DLL file that only supports two commands: get and send. It never connects to servers owned by the attackers.",
+            "why_it_matters": "Organizations using Microsoft 365 may have this malware moving data and commands through their systems without triggering alerts. Security tools trust Microsoft's legitimate services by default, so activity hidden inside them is harder to spot. The technique shows attackers can hide inside cloud services that most organizations already rely on.",
             "quote": null
           }
         }
@@ -382,21 +236,21 @@
   ],
   "briefly": [
     {
+      "title": "FakeGit Campaign Uses 7,600 GitHub Repositories to Spread SmartLoader Malware",
+      "url": "https://thehackernews.com/2026/07/fakegit-campaign-uses-7600-github.html",
+      "topic": "Cyber"
+    },
+    {
       "title": "The ACLU Is Arming Lawyers to Expose State Surveillance Secrets",
       "url": "https://www.wired.com/story/the-aclu-is-arming-lawyers-to-expose-state-surveillance-secrets",
       "topic": "Regulation"
-    },
-    {
-      "title": "JetBlue wins Spirit slots at LaGuardia Airport, eyes move to Marine Air Terminal as airlines fight for space",
-      "url": "https://www.cnbc.com/2026/07/20/jetblue-spirit-airlines-laguardia-airport-new-york.html",
-      "topic": "Business"
     }
   ],
   "stats": {
     "items_ingested": 76,
     "clusters_considered": 68,
-    "stories_run": 15,
+    "stories_run": 9,
     "sources": 8,
-    "sections_held": 1
+    "sections_held": 0
   }
 }
