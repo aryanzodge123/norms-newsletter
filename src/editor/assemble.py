@@ -20,6 +20,7 @@ from .plan import build_stats, next_edition_number, unique_slugs
 from .run_writers import ArticleResult
 from .schema import (
     FALLBACK_STORIES,
+    MIN_STORIES_PER_SECTION,
     SECTION_NAMES,
     SECTION_ORDER,
     EditorResponse,
@@ -78,10 +79,33 @@ def assemble_edition(
     """
     by_id = {context.cluster_id: context for context in contexts}
 
+    # SPEC 6.5: "Dead sections collapse into briefly". A section the editor
+    # under-filled cannot meet the min-2 budget, so its stories move to
+    # briefly rather than costing the whole edition a fallback. This is code,
+    # not a model instruction, because the API's structured-output subset
+    # cannot express "at least 2 items" (it rejects minItems above 1).
+    kept_sections = []
+    spilled_to_briefly: list[str] = []
+    for section in editor.sections:
+        known = section.name in SECTION_ORDER
+        if known and len(section.stories) >= MIN_STORIES_PER_SECTION:
+            kept_sections.append(section)
+            continue
+        # Unknown name (the model sometimes invents one, including a literal
+        # "briefly" section) or too few stories to meet the budget. Either
+        # way the stories move to briefly rather than costing the edition.
+        spilled_to_briefly.extend(story.cluster_id for story in section.stories)
+        log.info(
+            "dropping section %r (%s, %d stories), moving them to briefly (SPEC 6.5)",
+            section.name,
+            "known" if known else "unknown name",
+            len(section.stories),
+        )
+
     # Slugs are assigned across the whole edition at once so collisions are
     # resolved deterministically in story order (plan.unique_slugs).
     ordered: list[tuple[str, str, str, StoryContext]] = []  # section, title, summary, ctx
-    for section in editor.sections:
+    for section in kept_sections:
         for story in section.stories:
             context = by_id.get(story.cluster_id)
             if context is None:
@@ -126,7 +150,11 @@ def assemble_edition(
         "key_points": [point.model_dump() for point in editor.key_points],
         "audio": None,  # M6 fills this in; nullable per SPEC 6.5.
         "sections": sections,
-        "briefly": _briefly_items(editor.briefly, by_id, used_clusters),
+        # Spilled stories lead the briefly list: they were good enough for a
+        # section, so they outrank what the editor already relegated.
+        "briefly": _briefly_items(
+            spilled_to_briefly + list(editor.briefly), by_id, used_clusters
+        ),
         "stats": build_stats(
             items_ingested=items_ingested,
             clusters_considered=clusters_considered,

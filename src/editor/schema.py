@@ -492,19 +492,20 @@ class EditorStory(Strict):
 
 
 class EditorSection(Strict):
-    name: str
-    stories: list[EditorStory] = Field(
-        min_length=MIN_STORIES_PER_SECTION, max_length=MAX_STORIES_PER_SECTION
-    )
+    """One section as the editor returns it.
 
-    @field_validator("name")
-    @classmethod
-    def _known_section(cls, value: str) -> str:
-        if value not in SECTION_ORDER:
-            raise ValueError(
-                f"unknown section {value!r}, expected one of {list(SECTION_ORDER)}"
-            )
-        return value
+    Deliberately lenient about the two things the API's structured-output
+    subset cannot enforce and the model therefore gets wrong: the section
+    name, and the min-2 story budget (it rejects minItems above 1). Both are
+    normalized deterministically in assemble.py, which drops sections that
+    are unknown, empty, or short and moves their stories to briefly, exactly
+    as SPEC 6.5 prescribes. The final Edition model still enforces the real
+    constraints on the published artifact, so nothing is weakened: the
+    leniency lives only in what the model is allowed to hand back.
+    """
+
+    name: str
+    stories: list[EditorStory] = Field(max_length=MAX_STORIES_PER_SECTION)
 
 
 class EditorResponse(Strict):

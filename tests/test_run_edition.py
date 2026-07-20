@@ -98,6 +98,88 @@ def test_assemble_produces_a_valid_edition(tmp_path):
     assert [s["name"] for s in edition["sections"]] == ["Technology", "Science"]
 
 
+def test_single_story_section_collapses_into_briefly(tmp_path):
+    """SPEC 6.5: a section that cannot field two stories collapses into
+    briefly. The editor cannot be held to this structurally (the API's
+    structured-output subset rejects minItems above 1), so code enforces it
+    and the edition survives instead of falling back."""
+    contexts = [
+        ctx("a" * 32, topic="Tech"),
+        ctx("b" * 32, topic="Tech"),
+        ctx("c" * 32, topic="Science", headline="Lonely science story"),
+    ]
+    editor = editor_response(
+        [
+            {"name": "Technology", "stories": [
+                {"cluster_id": "a" * 32, "title": "First tech story", "summary": "It happened."},
+                {"cluster_id": "b" * 32, "title": "Second tech story", "summary": "So did this."},
+            ]},
+            # Only one story: invalid as a section, must become a briefly item.
+            {"name": "Science", "stories": [
+                {"cluster_id": "c" * 32, "title": "Lonely science story", "summary": "Alone."},
+            ]},
+        ]
+    )
+    edition = assemble.assemble_edition(
+        editor=editor, articles={}, contexts=contexts, edition_type="normal",
+        target_date=TODAY, items_ingested=10, clusters_considered=3,
+        sections_held=0, editions_dir=tmp_path,
+    )
+    validate_edition(edition)
+    assert [s["name"] for s in edition["sections"]] == ["Technology"]
+    assert "Lonely science story" in [b["title"] for b in edition["briefly"]]
+    assert edition["stats"]["stories_run"] == 2
+
+
+def test_invented_section_name_is_dropped_not_fatal(tmp_path):
+    """The model sometimes invents a section name, including a literal
+    "briefly" section. Code drops it and keeps the edition."""
+    contexts = [
+        ctx("a" * 32, topic="Tech"),
+        ctx("b" * 32, topic="Tech"),
+        ctx("c" * 32, topic="Science", headline="Spilled story"),
+    ]
+    editor = editor_response(
+        [
+            {"name": "Technology", "stories": [
+                {"cluster_id": "a" * 32, "title": "First tech story", "summary": "It happened."},
+                {"cluster_id": "b" * 32, "title": "Second tech story", "summary": "So did this."},
+            ]},
+            {"name": "briefly", "stories": [
+                {"cluster_id": "c" * 32, "title": "Spilled story", "summary": "Not a real section."},
+            ]},
+        ]
+    )
+    edition = assemble.assemble_edition(
+        editor=editor, articles={}, contexts=contexts, edition_type="normal",
+        target_date=TODAY, items_ingested=10, clusters_considered=3,
+        sections_held=0, editions_dir=tmp_path,
+    )
+    validate_edition(edition)
+    assert [s["name"] for s in edition["sections"]] == ["Technology"]
+    assert "Spilled story" in [b["title"] for b in edition["briefly"]]
+
+
+def test_empty_section_is_dropped(tmp_path):
+    contexts = [ctx("a" * 32, topic="Tech"), ctx("b" * 32, topic="Tech")]
+    editor = editor_response(
+        [
+            {"name": "Technology", "stories": [
+                {"cluster_id": "a" * 32, "title": "One", "summary": "First."},
+                {"cluster_id": "b" * 32, "title": "Two", "summary": "Second."},
+            ]},
+            {"name": "Science", "stories": []},
+        ]
+    )
+    edition = assemble.assemble_edition(
+        editor=editor, articles={}, contexts=contexts, edition_type="normal",
+        target_date=TODAY, items_ingested=10, clusters_considered=2,
+        sections_held=0, editions_dir=tmp_path,
+    )
+    validate_edition(edition)
+    assert [s["name"] for s in edition["sections"]] == ["Technology"]
+
+
 def test_scores_come_from_the_pipeline_not_the_editor(tmp_path):
     contexts = [ctx("a" * 32, score=9), ctx("b" * 32, score=3)]
     editor = editor_response(

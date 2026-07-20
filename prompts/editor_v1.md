@@ -60,6 +60,12 @@ quiet day. Keep it dry and brief. Norm is not charming about it.
 ### sections
 
 Only sections you were told are available. Each gets two to four stories.
+This is a hard rule, not a target. A section with exactly one story is
+invalid: either find a second story for it, or leave that section out of
+`sections` entirely and add the story's cluster_id to the top-level
+`briefly` array. Never invent a section name, and never create a section
+called "briefly". `briefly` is a separate top-level array of cluster_id
+strings, not a section.
 Never one: a section that can only field one story was already excluded
 from your list, and if you cannot fill two, drop the section entirely and
 put its stories in `briefly`.
