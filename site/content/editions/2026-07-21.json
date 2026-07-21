@@ -1,0 +1,325 @@
+{
+  "date": "2026-07-21",
+  "edition_number": 44,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump imposes 50% tariffs on Canadian goods in trade retaliation",
+  "key_points": [
+    {
+      "text": "Trump put 50% tariffs on Canadian wine and cement. Canada is pushing harder in trade talks.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Two critical flaws in WordPress let attackers fully take over websites without needing a password.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "UK households will save £45 a year when electricity VAT drops to zero in October.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Space Force tripled its rocket launch contract to $17 billion as military space needs grow.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-21.mp3",
+    "duration_seconds": 539,
+    "size_bytes": 6464448
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "ff39cb78991fcedcf2960ae14f143396",
+          "slug": "chinese-chip-matches-intel-density-without-advanced",
+          "title": "Chinese chip matches Intel density without advanced equipment",
+          "summary": "Huawei's Kirin 9030 chip packs transistors closer together than Intel's latest process, even without advanced ultraviolet manufacturing tools.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/SemiAnalysis_/status/2079251630608842814"
+            }
+          ],
+          "article": {
+            "background": "Chip makers measure progress by how close together they can pack transistors, the tiny switches that do computing. This distance is called metal pitch. Intel's newest process is called 18A. A Chinese company called HiSilicon made a chip for Huawei's latest phone. Researchers took one apart and measured it.",
+            "what_happened": "The Kirin 9030 chip has a metal pitch of 32.5 nanometers. That is smaller than Intel's 18A process. Intel's 18A uses advanced ultraviolet light to make these tight patterns. HiSilicon did not. Yet it still packed transistors tighter than Intel.",
+            "why_it_matters": "Chip design and manufacturing drive global tech competition. If Chinese fabs can match Intel's results without the same tools, it changes what is possible in the industry. For phone buyers, it may mean faster competitors and lower prices as more companies can build powerful chips.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "adf2c7201409818c7c1b23c9f23e4653",
+          "slug": "robotics-startup-raises-34-million-to-automate-solar",
+          "title": "Robotics startup raises $34 million to automate solar installation",
+          "summary": "Gritt raised $34 million to build robots that build solar plants and fix labor shortages.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else"
+            }
+          ],
+          "article": {
+            "background": "The world is racing to build solar farms and battery systems. Countries and companies want energy independence and need to cut carbon emissions. But there is not enough workers to install all these systems fast enough. Robots might help, since they do not get tired. Until recently, robots have struggled in messy environments that change often, like building sites. New artificial intelligence models may have changed that.",
+            "what_happened": "Gritt, a startup founded by two roboticists trained at Carnegie Mellon, just raised $34 million. The company is leaving stealth mode, meaning it is revealing itself publicly. Gritt is building robots made to work on solar sites, where conditions are messy and shift often.",
+            "why_it_matters": "If robots can install solar panels fast and well, the cost to go solar could drop. Faster installations mean people and businesses could switch to solar more easily. Right now, the labor shortage slows down the whole solar build-out. Robots that work well in these rough conditions could speed that up.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "9beee03e991731553b6993db3777ef6d",
+          "slug": "chinese-ai-models-challenge-us-dominance-in-capabilities",
+          "title": "Chinese AI models challenge US dominance in capabilities race",
+          "summary": "New AI models from China now match top American systems in test scores.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/jul/20/china-google-ai-race"
+            }
+          ],
+          "article": {
+            "background": "Artificial intelligence has become a key competition between the United States and China. The US has led in AI for years, with Silicon Valley companies at the forefront of development. Now Chinese AI models are catching up, raising questions about whether that lead will last.",
+            "what_happened": "New Chinese AI models have emerged as strong competitors to US systems. Google's recent AI work has struggled to keep pace. These Chinese advances show that the US no longer has as clear a lead in AI as it once did.",
+            "why_it_matters": "Whichever country builds better AI systems may gain economic and strategic advantages. Companies and countries that fall behind in AI may lose economic edge in software, manufacturing, and other fields. The competition is intensifying as both countries invest heavily in AI research.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "be8eef4b1fe77b833e34c8fb6312e9aa",
+          "slug": "thinking-machines-releases-ai-model-based-on-chinese-designs",
+          "title": "Thinking Machines releases AI model based on Chinese designs",
+          "summary": "Thinking Machines released its first AI model, using design ideas from recent Chinese AI research.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.ft.com/content/ef486929-d2c2-480b-8b00-9cb98bda6acf"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "584d2ba21d75c08b34c3af006b3390ab",
+          "slug": "thames-water-lenders-offer-government-control-to-avoid",
+          "title": "Thames Water lenders offer government control to avoid nationalization",
+          "summary": "Thames Water lenders offered to give the government a golden share and bring in local authorities after ministers rejected their first rescue plan.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/clyv43x372wo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Thames Water is England's largest water company. It serves about 15 million people in London and the southeast. The company has struggled with debt and infrastructure problems, leading to talk about whether the government should take it over.",
+            "what_happened": "Thames Water's main lenders have offered the government a \"golden share.\" This would give the government veto power over major decisions like mergers. The lenders are also proposing more control for local authorities. This comes after the government rejected an earlier rescue plan. The BBC reports the lenders are preparing a legal challenge if the government moves to nationalise the company.",
+            "why_it_matters": "Who controls Thames Water affects water bills, service quality, and how much gets spent on pipes and treatment plants. A change in ownership could shift these priorities. The government's response to this offer will shape what happens next for millions of people who depend on the company for water.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "65f00f45672ddaee301331ab55938e0a",
+          "slug": "gm-raises-earnings-forecast-on-steady-consumer-demand",
+          "title": "GM raises earnings forecast on steady consumer demand",
+          "summary": "GM beat its quarterly targets and said steady prices and lower electric vehicle losses helped.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/07/21/general-motors-gm-earnings-q2-2026.html"
+            }
+          ],
+          "article": {
+            "background": "General Motors is the largest U.S. automaker by sales. The company has been scaling back its electric vehicle spending after investing heavily in EVs. That pullback cost money upfront but is now starting to pay off.",
+            "what_happened": "GM beat Wall Street's profit forecasts for the second quarter and raised its earnings guidance for 2026. The company cited three reasons: vehicle prices stayed stable, warranty costs fell, and EV losses shrank. CFO Paul Jacobson said GM's first-half earnings per share was 25% higher than any first half in the company's history.",
+            "why_it_matters": "Stable vehicle prices mean car shoppers are not facing fresh price hikes right now. Strong automaker results also suggest the quality of new cars is holding up, since warranty costs are falling. As GM's EV losses narrow, the company may eventually make cheaper electric cars available to buyers.",
+            "quote": {
+              "text": "Our first-half earnings per share is 25% higher than the first half at any time in our history.",
+              "attribution": "Paul Jacobson, GM CFO",
+              "source_url": "https://www.cnbc.com/2026/07/21/general-motors-gm-earnings-q2-2026.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "f6ce02bdac75ca4ca949bd3c297b64a1",
+          "slug": "uk-borrowed-16-billion-in-june-below-forecasts",
+          "title": "UK borrowed £16 billion in June, below forecasts",
+          "summary": "The UK borrowed £7.9 billion less in June than last year, but budget problems continue.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cx2vd3qgjy9o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The government borrows money when spending exceeds tax revenue. These monthly figures show whether the budget gap is shrinking or growing. June's borrowing data arrived as new Prime Minister Andy Burnham began announcing plans to help households cut costs.",
+            "what_happened": "The UK borrowed £16 billion in June. This was about £7.9 billion less than June of the prior year. The amount was also lower than analysts had forecast. Meanwhile, the jobless rate stayed flat, and the labor market remained steady.",
+            "why_it_matters": "Large monthly borrowing affects interest rates and what the government pays back later. The June figure was better than expected, but analysts said deeper budget problems persist. These spending decisions shape the services people use and the taxes they pay.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f62485f7cbd8be7eb1930c0152788a66",
+          "slug": "jpmorgan-ceo-says-markets-underestimate-economic-risks",
+          "title": "JPMorgan CEO says markets underestimate economic risks",
+          "summary": "Jamie Dimon says he would not buy stocks or long-dated Treasurys at current prices.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/07/21/jpmorgan-chase-ceo-jamie-dimon-market-risk.html"
+            }
+          ],
+          "article": {
+            "background": "JPMorgan Chase is the largest U.S. bank by assets. CEO Jamie Dimon is one of the most influential voices in finance. His views on markets and the economy get close attention from investors and other bankers.",
+            "what_happened": "In an interview released Monday, Dimon said investors are not fully pricing in major risks to the global economy. He pointed to wars in Ukraine and the Middle East, U.S. tensions with China, and rising military spending alongside growing government deficits. Dimon said he would not buy stocks or long-dated U.S. Treasury bonds at current prices.",
+            "why_it_matters": "When a top U.S. banker thinks markets are mispricing risk, it signals some investments may be riskier than their prices show. If you have retirement savings or investment accounts, Dimon's warning is a sign to think carefully about how much risk you are actually taking. His skepticism about both stocks and Treasurys matters because those are two of the largest asset classes most people hold.",
+            "quote": {
+              "text": "I do think those risks are probably bigger than other people think.",
+              "attribution": "Jamie Dimon, CEO of JPMorgan Chase",
+              "source_url": "https://www.cnbc.com/2026/07/21/jpmorgan-chase-ceo-jamie-dimon-market-risk.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "03f6b8a39f0d3719c2b91fe6bad3b9e3",
+          "slug": "uk-cuts-vat-on-household-electricity-to-zero",
+          "title": "UK cuts VAT on household electricity to zero",
+          "summary": "UK households will pay no VAT on electricity starting October 1, saving about £45 a year.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cjwxll8jyz8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Electricity bills have been a major cost for UK households. New Prime Minister Andy Burnham made helping people afford energy a key goal. The government is now taking steps to ease that burden.",
+            "what_happened": "The government will cut VAT on household electricity bills to zero on October 1. Currently VAT is 5% on electricity. A typical household will save about £45 a year. The government will pay for this by canceling the digital ID program, which would have cost £1.8 billion over three years. This cut will cost £850 million this financial year.",
+            "why_it_matters": "Your electricity bills will drop starting in October. That means a bit more money stays in your pocket each month. For most households, this saves roughly £45 yearly on power costs.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "74b2d81dcbc8ca762764b522f88b9be8",
+          "slug": "washington-blocks-sports-betting-market-over-gambling-law",
+          "title": "Washington blocks sports betting market over gambling law",
+          "summary": "Washington state stopped Kalshi from selling sports prediction contracts because of state gambling rules.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theblock.co/post/409011/washington-kalshi-preliminary-injunction"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "a1f2639f7d46d6759950a1b8ec156bbb",
+          "slug": "wordpress-sites-under-active-attack-from-critical-flaws",
+          "title": "WordPress sites under active attack from critical flaws",
+          "summary": "Two flaws let hackers fully control WordPress sites without logging in. Attacks are already happening.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html"
+            }
+          ],
+          "article": {
+            "background": "WordPress is a platform used to build and run websites. Two critical security flaws, called CVE-2026-63030 and CVE-2026-60137, were discovered in WordPress. When used together, these flaws let attackers take over vulnerable sites without a password.",
+            "what_happened": "By early Saturday morning, attackers began exploiting both flaws together. They used public code to steal hashed credentials. Once more technical details became public, attackers escalated to running their own commands on compromised servers.",
+            "why_it_matters": "WordPress runs millions of websites, many owned by small businesses and people with limited security skills. An attacker who controls your site can steal data, inject malware, or shut you down. Site owners should apply security patches right away, or take vulnerable sites offline until patches are available.",
+            "quote": {
+              "text": "By the early hours of Saturday morning (UTC), successful exploitation was already well underway, initially using public exploit code to exfiltrate hashed credentials, with remote code execution following once additional details were made public.",
+              "attribution": "Jake Knott, principal security researcher at watchTowr",
+              "source_url": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html"
+            }
+          }
+        },
+        {
+          "cluster_id": "6182a9e8647c4a80d0442e4370b89618",
+          "slug": "new-ransomware-targets-ai-model-files-in-cloud-attack",
+          "title": "New ransomware targets AI model files in cloud attack",
+          "summary": "ENCFORGE ransomware locks up AI models and training data after breaking into vulnerable AI apps.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/new-encforge-ransomware-targets-ai.html"
+            }
+          ],
+          "article": {
+            "background": "Langflow is an open-source tool for building AI applications. Versions before 1.3.0 have a critical security flaw. The flaw exposes a code endpoint that does not require a login. This lets attackers run code on servers without permission.",
+            "what_happened": "Researchers at Sysdig found that the same hacking group, JADEPUFFER, attacked a Langflow server twice. On the second attack, the group used a new ransomware tool called ENCFORGE. ENCFORGE is written in Go and locks up AI model files, datasets, and other critical AI files on servers. The security flaw is tracked as CVE-2025-3248 and ranks 9.8 in severity, the highest level.",
+            "why_it_matters": "If you run AI applications on Langflow, you need to update right away. Attackers are already using this flaw to lock up your files and demand ransom. Check your server logs for signs someone got in without permission.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "title": "Trump slaps 50% tariffs on Canada and Carney vows to 'intensify' trade talks",
+      "url": "https://www.bbc.co.uk/news/articles/cg4dzq3x3e1o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "title": "The Space Force is now seeking to buy up to $30B in rocket launches",
+      "url": "https://arstechnica.com/space/2026/07/the-space-force-is-now-seeking-to-buy-up-to-30-billion-in-rocket-launches",
+      "topic": "US Politics"
+    },
+    {
+      "title": "Novo Nordisk sues Eli Lilly, alleging misleading GLP-1 advertising",
+      "url": "https://www.cnbc.com/2026/07/21/novo-nordisk-sues-eli-lilly-glp-1-ads.html",
+      "topic": "Business"
+    },
+    {
+      "title": "Raided Myanmar Scam Compounds",
+      "url": "https://www.abc.net.au/news/2026-07-21/myanmar-scam-compounds-exponential-growth/106603324",
+      "topic": "World"
+    },
+    {
+      "title": "Men Walk on Moon",
+      "url": "https://archive.nytimes.com/www.nytimes.com/learning/general/onthisday/big/0720.html",
+      "topic": "Science"
+    }
+  ],
+  "stats": {
+    "items_ingested": 32,
+    "clusters_considered": 32,
+    "stories_run": 12,
+    "sources": 7,
+    "sections_held": 2
+  }
+}
