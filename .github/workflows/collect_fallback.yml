@@ -1,14 +1,16 @@
 # Backup collector (decision #5). The collector normally runs on the mini
-# PC every 3 hours (SPEC 6.2); this is the disabled Actions fallback for
-# when that machine is down. It is manual by default. To turn it into a live
-# fallback, uncomment the schedule below; the collector is idempotent
-# (bronze dedups) so an overlap with the mini PC is harmless.
+# PC every 3 hours (SPEC 6.2); this is the Actions fallback for when that
+# machine is down. The schedule is live so a mini PC outage is covered
+# automatically: on 2026-07-20 the mini PC stopped collecting and, with this
+# fallback disabled, silver went empty and the 2026-07-21 edition degraded to
+# a fallback. The collector is idempotent (bronze dedups), so overlap with a
+# healthy mini PC is harmless. workflow_dispatch still runs it on demand.
 name: collect-fallback
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "0 */3 * * *" # every 3 hours (SPEC 6.2), uncomment to enable
+  schedule:
+    - cron: "0 */3 * * *" # every 3 hours (SPEC 6.2)
 
 permissions:
   contents: read
