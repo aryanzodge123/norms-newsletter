@@ -1,7 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Norm's Newsletter">
   <rect width="1200" height="630" fill="#F6F4EE"/>
+  <svg x="105" y="136" width="118" height="118" viewBox="0 0 128 128" aria-hidden="true">
+    <g fill="none" stroke="#23231F" stroke-width="5" stroke-linecap="round">
+      <path d="M41,50 Q33,38 41,30 Q49,22 41,14" />
+      <path d="M58,50 Q50,36 58,26 Q66,14 58,4" />
+      <path d="M75,50 Q67,38 75,30 Q83,22 75,14" />
+    </g>
+    <path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#23231F" stroke-width="8" stroke-linecap="round" />
+    <rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#23231F" />
+  </svg>
+  <text x="227" y="230" text-anchor="start" font-family="'IBM Plex Sans', sans-serif" font-weight="500" font-size="64" letter-spacing="12" fill="#23231F">NORM'S NEWSLETTER</text>
   <rect x="120" y="250" width="960" height="4" fill="#23231F"/>
   <rect x="120" y="262" width="960" height="2" fill="#23231F"/>
-  <text x="600" y="230" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-weight="500" font-size="72" letter-spacing="14" fill="#23231F">NORM'S NEWSLETTER</text>
   <text x="600" y="330" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="26" fill="#6B6A62">A daily brief, in plain English.</text>
 </svg>

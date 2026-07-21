@@ -294,7 +294,13 @@ the readability gate (SPEC 6.5, run in the 6.8 workflow) enforces it.
 
 - Podcast/feed artwork, 3000x3000 PNG, ledger style (wordmark on paper
   with double rule).
-- Favicon set (an "N." mark in Newsreader on --paper works).
+- Brand mark: the coffee mug. A steaming mug drawn in INK (#23231F), three
+  steam strokes above a rounded mug body with a handle. It ships as the
+  favicon set (favicon.svg and favicon.ico). The SVG carries no
+  prefers-color-scheme rule, so it renders near-black in dark browser chrome.
 - Open Graph image template: paper background, wordmark, date, headline
-  (generated at build per edition with satori or a static fallback in v1).
+  (generated at build per edition with satori). The static fallback,
+  og-default.svg, is the masthead lockup: the coffee-mug mark inline to the
+  left of the wordmark, centered above the double rule, with the tagline
+  below.
 - The methodology page's pipeline SVG.
