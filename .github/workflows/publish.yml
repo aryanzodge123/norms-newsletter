@@ -1,13 +1,15 @@
-# The 6am publish (SPEC 6.8). Two crons fire at 10:00 and 11:00 UTC; the
-# gate job lets exactly one of them through, whichever is 06:00 US Eastern
-# for the day (decision #7, DST-correct). workflow_dispatch with force: true
-# runs it now, for testing and for a manual re-publish.
+# The 6am publish (SPEC 6.8). Two crons open a 05:30 US Eastern window
+# (09:30 UTC during EDT, 10:30 UTC during EST; decision #7, DST-correct). The
+# gate publishes when the window is open and today is not already committed,
+# so a late or repeated cron still publishes exactly once instead of being
+# skipped. The 05:30 open leaves headroom to be live by 06:00.
+# workflow_dispatch with force: true runs it now, for testing and re-publish.
 name: publish
 
 on:
   schedule:
-    - cron: "0 10 * * *" # 06:00 Eastern during EDT
-    - cron: "0 11 * * *" # 06:00 Eastern during EST
+    - cron: "30 9 * * *" # 05:30 Eastern during EDT
+    - cron: "30 10 * * *" # 05:30 Eastern during EST
   workflow_dispatch:
     inputs:
       force:
@@ -29,9 +31,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # SPEC 6.8 scheduling: exit early unless it is 06:00 Eastern today. The
-  # check is src/schedule.py so the DST logic is the same code the tests
-  # pin, not a second copy living in YAML.
+  # SPEC 6.8 scheduling: proceed only when the 05:30 Eastern window is open and
+  # today's edition is not already committed. The window and idempotency logic
+  # is src/schedule.py so the DST behavior is the same code the tests pin, not a
+  # second copy living in YAML. The already-published flag is derived here from
+  # whether today's edition.json exists on the branch (decision #17), which is
+  # what makes a late or repeated cron a safe no-op instead of a second edition.
   gate:
     runs-on: ubuntu-latest
     outputs:
@@ -48,9 +53,15 @@ jobs:
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import os
           from datetime import datetime, timezone
-          from src.schedule import is_publish_time
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          from src.schedule import should_publish
+          today_et = datetime.now(ZoneInfo("America/New_York")).date().isoformat()
+          already = Path(f"site/content/editions/{today_et}.json").exists()
           force = os.environ.get("FORCE") == "true"
-          proceed = force or is_publish_time(datetime.now(timezone.utc))
+          proceed = force or should_publish(
+              datetime.now(timezone.utc), already_published_today=already
+          )
           print("proceed=" + ("true" if proceed else "false"))
           PY
 
