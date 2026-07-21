@@ -10,8 +10,8 @@ follow it. If a command is shown, you can run it.
 **What this guide is not:** it is not the first-time setup guide. Setting up a
 fresh machine (installing Python, uv, Node, and creating the accounts) is
 [`SETUP.md`](SETUP.md). This runbook assumes the system is already deployed and
-running: the collector is on the mini PC, the tables are on Cloudflare R2, the
-site is on GitHub Pages, and monitoring is live.
+running: the collector runs on GitHub Actions, the tables are on Cloudflare R2,
+the site is on GitHub Pages, and monitoring is live.
 
 **The two documents that own the truth** are [`SPEC.md`](SPEC.md) (data, schemas,
 pipeline behavior) and [`DESIGN.md`](DESIGN.md) (the look of the site and the
@@ -53,9 +53,11 @@ See [`scripts/README.md`](scripts/README.md) for the full list.
 
 Norm's Newsletter is a tiny automated newsroom. Two things run on a schedule:
 
-1. **The collector, every 3 hours, on the mini PC.** It fetches news from many
+1. **The collector, every 3 hours, on GitHub Actions.** It fetches news from many
    free sources, cleans it up, and stores it. Right after collecting it runs the
    "silver" step, which groups items into stories and rates them with a small AI.
+   (A local machine can run the same collector as an optional supplement, but the
+   pipeline does not depend on it. See SPEC 6.2 / decision #5.)
 
 2. **The publish run, once a day at 6:00 am US Eastern, on GitHub Actions.** It
    takes the day's rated stories, has AI curate and write the edition, checks the
@@ -85,7 +87,7 @@ machines. Get each one, then confirm it with the check in the last column.
 |---|------|-----------------|--------------------------------|
 | 1 | **The GitHub repo** | The code, the committed editions, and the publish workflow live here | You can see the repo and its Actions tab |
 | 2 | **GitHub Actions secrets** (repo Settings -> Secrets and variables -> Actions) | The daily publish reads all credentials from here | You can see the list of secret names (values are hidden) |
-| 3 | **The mini PC** (SSH login) | The collector runs here every 3 hours | You can SSH in and run `systemctl --user list-timers` |
+| 3 | **(Optional) A local machine** | Only if you also run the collector locally as a supplement; the pipeline does not need it | You can run `uv run python -m src.collector` there |
 | 4 | **Cloudflare R2** (the account with the R2 Data Catalog and the audio bucket) | All the data tables and the daily MP3 live here | Spike 1 below passes |
 | 5 | **Anthropic API** (Claude) | Scoring, editor, writers, audio script | Spike 2 below passes |
 | 6 | **Google AI (Gemini)** | Text-to-speech for the audio | `spikes/check_tts.py` lists TTS models |
@@ -138,7 +140,7 @@ uv run python spikes/check_tts.py           # Gemini key works?
 | One row per job run | `ops.run_log` (Iceberg on R2) | `norm.py runlog` |
 | The daily audio MP3 | An R2 object bucket at `/audio/YYYY-MM-DD.mp3` | The URL is in the edition's `audio.url` |
 | The daily publish | GitHub Actions -> `publish.yml` | The repo's Actions tab |
-| The collector | The mini PC (systemd timer) | SSH in, `systemctl --user list-timers` and `journalctl` |
+| The collector | GitHub Actions -> `collect.yml` (every 3 hours) | The repo's Actions tab, or `gh run list --workflow=collect.yml` |
 | Monitoring | healthchecks.io | The healthchecks dashboard |
 | Traffic | GoatCounter | The GoatCounter dashboard |
 
@@ -347,42 +349,41 @@ it rather than duplicating it.
 **Symptom:** `norm.py status` warns the collector is stale, or healthchecks.io's
 collector check is red.
 
-**Likely causes:** the mini PC is off or offline, its timer is disabled, or it
-cannot reach R2.
+**Likely causes:** the `collect.yml` workflow is failing (a bad secret, R2
+unreachable, or a source outage), or its schedule has been switched off. GitHub
+disables scheduled workflows automatically after 60 days with no repo activity,
+which is the classic silent cause of a collector that "just stopped."
 
-**Check, in order (SSH into the mini PC first):**
+**Check, in order (start in the repo's Actions tab):**
 
-1. Is the machine on and online? Can you SSH in?
-2. Is the timer active?
+1. Look at recent `collect.yml` runs:
    ```bash
-   systemctl --user list-timers          # find the collector timer
-   systemctl --user status <timer-name>  # is it enabled and scheduled?
+   gh run list --workflow=collect.yml --limit 5
    ```
-   (The exact unit name was set during setup, SPEC 6.2 / SETUP.md M5. If you are
-   not sure of the name, `list-timers` shows it.)
-3. Look at the recent logs:
+   If there are no recent runs at all, the schedule is disabled. If runs exist
+   but are red, open the newest one for the error:
    ```bash
-   journalctl --user -u <service-name> -n 100 --no-pager
+   gh run view --log-failed $(gh run list --workflow=collect.yml --limit 1 --json databaseId -q '.[0].databaseId')
    ```
-   The error is usually a network problem or an R2 credential problem.
-4. Run one cycle by hand to see the error live:
+   The error is usually a network problem, an R2 credential problem, or a source
+   returning nothing.
+2. Run one cycle by hand to see the error live locally (needs `.env`):
    ```bash
    uv run python -m src.collector --dry-run   # fetch only, writes nothing
    ```
 
 **Fix:**
 
-- If the timer was stopped: `systemctl --user start <timer-name>` and
-  `systemctl --user enable <timer-name>`.
-- If the mini PC is down and will stay down a while, turn on the **backup
-  collector** in GitHub Actions so collection continues. Edit
-  [`.github/workflows/collect.yml`](.github/workflows/collect.yml)
-  runs the collector on a schedule already, or trigger it manually:
+- If the schedule was disabled, re-enable it: on the workflow's page in the
+  Actions tab choose "Enable workflow", or push any commit to wake it. Then
+  kick a run immediately so you do not wait for the next slot:
   ```bash
   gh workflow run collect.yml
   ```
-  The collector is idempotent, so running the mini PC and the fallback at the same
-  time is harmless (duplicates are dropped).
+- If a run failed on a bad credential, fix the matching GitHub Actions secret
+  (section 7.5) and re-run: `gh workflow run collect.yml`.
+- The collector is idempotent, so triggering it manually while the schedule is
+  also running is harmless (duplicates are dropped).
 
 **Do not panic about a missed cycle.** The collector looks back 6 hours each run
 but only runs every 3, so the windows overlap. One missed cycle is backfilled by
@@ -441,9 +442,9 @@ scores, or a stage's notes mention an Anthropic/authentication error.
    rate-limited.
 2. Check the Anthropic console for billing and rate limits.
 
-**Fix:** correct the key in **both** `.env` (local / mini PC) and the GitHub
-Actions secret `ANTHROPIC_API_KEY`, then re-run the affected stage. If it is a
-rate limit, wait and re-run.
+**Fix:** correct the key in the GitHub Actions secret `ANTHROPIC_API_KEY` (and
+in your local `.env` if you run stages locally), then re-run the affected stage.
+If it is a rate limit, wait and re-run.
 
 **Note:** a single bad scoring call is not an incident. Scoring contains its own
 failures (a cluster that will not score twice is stored with a null score and the
@@ -652,9 +653,10 @@ All of these are safe to run because every stage is idempotent.
 | Run the collector in CI | `gh workflow run collect.yml` |
 | Preview any stage without spending money | add `--dry-run` to any stage command |
 
-**Backfilling after a mini PC outage:** the collector's overlapping window heals
+**Backfilling after a collector outage:** the collector's overlapping window heals
 short gaps by itself. For a longer gap, run the collector a few times manually
-(each run pulls recent items and dedups), then run silver for the affected day.
+(`gh workflow run collect.yml`, or locally `uv run python -m src.collector`; each
+run pulls recent items and dedups), then run silver for the affected day.
 
 **Enabling a keyed source:** put its key in `.env` and the Actions secrets, then
 set `enabled: true` for it in `config/sources.yaml`.
@@ -662,9 +664,9 @@ set `enabled: true` for it in `config/sources.yaml`.
 **Disabling a broken source:** set `enabled: false` for it in
 `config/sources.yaml`. No code change needed.
 
-**Rotating a credential:** change it in **both** `.env` (local and mini PC) and
-the matching GitHub Actions secret, then run the relevant spike in `spikes/` to
-confirm it works.
+**Rotating a credential:** change it in the matching GitHub Actions secret (and
+in your local `.env` if you run stages locally), then run the relevant spike in
+`spikes/` to confirm it works.
 
 ---
 
