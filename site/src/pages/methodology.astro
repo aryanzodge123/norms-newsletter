@@ -20,9 +20,16 @@ const storiesRun = all.reduce((n, e) => {
   heading="How this brief is made"
 >
   <p>
-    Every three hours a collector reads a fixed set of public sources. Twice a
-    day the day's stories are grouped, scored, and written into one brief. A
-    person reviews quality, but no person writes the copy.
+    This is a daily news brief for a general reader. It reads a fixed set of
+    public sources, finds the stories that matter most, and rewrites them in
+    plain English so you can understand the day in about fifteen minutes over
+    coffee. A new edition is published every morning.
+  </p>
+  <p>
+    Every three hours a collector reads the sources. Twice a day the day's
+    stories are grouped, scored, and written into one brief. A person reviews
+    quality, but no person writes the copy. The rest of this page explains how a
+    story gets from a raw headline to a place in the brief.
   </p>
 
   <h2>The pipeline</h2>
@@ -65,14 +72,77 @@ const storiesRun = all.reduce((n, e) => {
     </svg>
   </figure>
 
+  <h2>How stories are scored</h2>
+  <p>
+    On a busy day there can be around two hundred candidate stories and room for
+    only fifteen to twenty. To choose, each story is rated from 1 to 10. The
+    rating answers a single question:
+  </p>
+  <blockquote>
+    If a general reader missed this story entirely, would that be a real gap in
+    their understanding of the week?
+  </blockquote>
+  <p>
+    Not "is this interesting to someone," because almost everything is
+    interesting to someone. The test is whether it matters to an ordinary reader
+    with limited attention and no professional stake. The scale is used in full,
+    from noise to the story of the day.
+  </p>
+
+  <dl class="scale">
+    <dt>1 to 2. Noise.</dt>
+    <dd>Press releases, rumors, and minor updates. You lose nothing by never seeing it.</dd>
+    <dt>3 to 4. Real but narrow.</dt>
+    <dd>A genuine event that matters inside one industry and almost nowhere else.</dd>
+    <dt>5 to 6. Solid.</dt>
+    <dd>A real development with consequences a general reader can recognize. Most legitimate news lands here.</dd>
+    <dt>7 to 8. Strong.</dt>
+    <dd>Changes something concrete for a lot of people, or is the clearest sign yet of a shift worth tracking.</dd>
+    <dt>9 to 10. Lead.</dt>
+    <dd>The story of the day. Skipping it would leave a reader genuinely uninformed.</dd>
+  </dl>
+
+  <p>A score goes <strong>up</strong> when a story:</p>
+  <ul>
+    <li>reaches a lot of people, and reaches them directly;</li>
+    <li>is something that actually happened, such as a rule taking effect, a court ruling, or a number being published, rather than an announcement of intentions;</li>
+    <li>is hard to undo;</li>
+    <li>is the first of its kind, or the moment a long trend becomes undeniable;</li>
+    <li>helps explain an ongoing situation instead of just adding one more update.</li>
+  </ul>
+
+  <p>A score goes <strong>down</strong> when a story is:</p>
+  <ul>
+    <li>speculation, such as "sources say a company is considering" something;</li>
+    <li>a repeat of a continuing situation with nothing new;</li>
+    <li>marketing, such as a product launch or funding round that changes little for ordinary people;</li>
+    <li>a prediction, forecast, or analyst target;</li>
+    <li>coverage of other coverage, such as reaction pieces and commentary.</li>
+  </ul>
+
+  <p>
+    How many outlets covered a story does not raise its score. A single solid
+    report of something consequential outranks eight outlets rewriting the same
+    press release. Along with the score, each story is filed under one topic
+    (Tech, AI, Business, Finance, US Politics, World, Regulation, Science, or
+    Cyber) and given a confidence level, which is an honest measure of how sure
+    the rating is given how thin or clear the sources were.
+  </p>
+  <p>
+    The score is advice, not a verdict. It feeds the editor stage below, which
+    makes the final call on what runs. A high score does not guarantee a slot,
+    and a modest one is not automatically cut.
+  </p>
+
   <h2>Editorial policy</h2>
   <p>
-    Stories are scored on a fixed rubric anchored with worked examples at low,
-    middle, and high marks. Each section runs at least two and at most four
-    stories, with a global ranking across the day. Sections with nothing worth
-    running collapse into a short "Briefly" list, and when several sections are
-    empty the whole edition shrinks. On a genuinely quiet day the brief runs in
-    a shorter format and says so.
+    The scores are anchored to a fixed rubric with worked examples at low,
+    middle, and high marks, so the same story would score the same way on any
+    day. Each section runs at least two and at most four stories, with a global
+    ranking across the day. Sections with nothing worth running collapse into a
+    short "Briefly" list, and when several sections are empty the whole edition
+    shrinks. On a genuinely quiet day the brief runs in a shorter format and
+    says so.
   </p>
   <p>
     Articles paraphrase the sources and always link back to them. Specific
@@ -111,5 +181,34 @@ const storiesRun = all.reduce((n, e) => {
     width: 100%;
     min-width: 640px;
     height: auto;
+  }
+  blockquote {
+    margin: 1.25rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--oxide);
+    font-style: italic;
+    color: var(--ink);
+  }
+  .scale {
+    margin: 1.25rem 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.4rem 1rem;
+  }
+  .scale dt {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .scale dd {
+    margin: 0;
+  }
+  @media (max-width: 32rem) {
+    .scale {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+    .scale dd {
+      margin-bottom: 0.6rem;
+    }
   }
 </style>
