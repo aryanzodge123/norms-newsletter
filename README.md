@@ -260,7 +260,7 @@ norms-newsletter/
     content/editions/<- committed edition.json per day (the publication record)
     fixtures/        <- normal/quiet/fallback sample editions for offline dev
 
-  .github/workflows/ <- publish.yml + collect_fallback.yml
+  .github/workflows/ <- publish.yml + collect.yml
   spikes/            <- standalone credential/dependency smoke checks
   tests/             <- pytest suite covering the deterministic layers
   .claude/skills/milestone-verify/ <- the end-of-milestone verification gate

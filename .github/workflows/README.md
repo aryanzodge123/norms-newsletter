@@ -44,14 +44,17 @@ cancelled midway (a half-finished deploy or archive is worse than waiting).
 All credentials come from **GitHub Actions secrets** (the `env:` block maps them
 in); nothing sensitive is in the repo.
 
-## `collect_fallback.yml` - the backup collector
+## `collect.yml` - the collector
 
-The collector normally runs every 3 hours on an always-on "mini PC" (via a
-systemd timer). This workflow is the **disabled** Actions fallback for when that
-machine is down. It is `workflow_dispatch` (manual) by default; the `schedule`
-block is commented out. Because the collector is idempotent (bronze dedups),
-running it here at the same time as the mini PC is harmless. It runs a collect
-cycle and then the silver stage.
+This is the **primary** collector. It runs every 3 hours on GitHub Actions
+(`schedule: 0 */3 * * *`), fetching news into `bronze` and then running the
+`silver` stage, and it pings the collector-cadence healthcheck. It is also
+`workflow_dispatch` (manual) for on-demand runs. Because the collector is
+idempotent (bronze dedups), an optional local machine running the same entry
+point at the same time is harmless. (Until 2026-07-21 this was a disabled
+fallback and a local machine was primary; a sleeping MacBook Air that stopped
+collecting is what motivated moving collection to Actions. See SPEC 6.2 /
+decision #5.)
 
 ## A note on secrets and the pre-launch migration
 

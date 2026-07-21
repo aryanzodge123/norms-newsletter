@@ -74,7 +74,7 @@ norms-newsletter/
     content/editions/    # committed edition.json per day, the publication record
     fixtures/            # normal.json quiet.json fallback.json, drive front-end dev
   spikes/                # credential and dependency smoke checks, not pipeline code
-  .github/workflows/     # publish.yml collect_fallback.yml
+  .github/workflows/     # publish.yml collect.yml
   tests/
 ```
 
@@ -85,7 +85,7 @@ Directories not yet created are created by the milestone that needs them.
 ## Data flow in one screen
 
 ```
-every 3h (mini PC):  sources -> adapters -> bronze.raw_items (Iceberg on R2)
+every 3h (GH Actions): sources -> adapters -> bronze.raw_items (Iceberg on R2)
                      -> dedup -> cluster (local embeddings) -> score (AI)
                      -> silver.story_clusters
 

@@ -376,10 +376,10 @@ cannot reach R2.
   `systemctl --user enable <timer-name>`.
 - If the mini PC is down and will stay down a while, turn on the **backup
   collector** in GitHub Actions so collection continues. Edit
-  [`.github/workflows/collect_fallback.yml`](.github/workflows/collect_fallback.yml)
-  and uncomment its `schedule` block, or trigger it manually:
+  [`.github/workflows/collect.yml`](.github/workflows/collect.yml)
+  runs the collector on a schedule already, or trigger it manually:
   ```bash
-  gh workflow run collect_fallback.yml
+  gh workflow run collect.yml
   ```
   The collector is idempotent, so running the mini PC and the fallback at the same
   time is harmless (duplicates are dropped).
@@ -649,7 +649,7 @@ All of these are safe to run because every stage is idempotent.
 | Re-cluster/score one past day | `uv run python -m src.silver.run_silver --date YYYY-MM-DD` |
 | Re-archive one past day | `uv run python -m src.archive --date YYYY-MM-DD` |
 | Collect once by hand | `uv run python -m src.collector` |
-| Run the backup collector in CI | `gh workflow run collect_fallback.yml` |
+| Run the collector in CI | `gh workflow run collect.yml` |
 | Preview any stage without spending money | add `--dry-run` to any stage command |
 
 **Backfilling after a mini PC outage:** the collector's overlapping window heals
