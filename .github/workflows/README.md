@@ -8,13 +8,18 @@ launcher for the all-day collector.
 This is the workflow that builds and ships the newsletter. It implements the
 publish sequence in SPEC 6.8.
 
-**Scheduling (the DST trick).** GitHub cron runs in UTC and cannot express "6am
-US Eastern," which drifts by an hour twice a year with daylight saving. So the
-workflow fires at **two** times, `0 10 * * *` and `0 11 * * *` UTC, and a small
-`gate` job runs `src.schedule.is_publish_time(...)` to let exactly one of them
-through, whichever is 6:00 am Eastern that day. The DST logic is Python (pinned
-by tests), not YAML, so there is only one copy of it. You can also trigger it
-manually with `force: true` to bypass the gate.
+**Scheduling (DST-correct and delay-tolerant).** GitHub cron runs in UTC and
+cannot express "05:30 US Eastern," which drifts by an hour twice a year with
+daylight saving, and it fires scheduled crons late (never early). So the
+workflow fires at **two** times, `30 9 * * *` and `30 10 * * *` UTC, which open
+a 05:30 Eastern window (one on each side of the DST change), and a small `gate`
+job runs `src.schedule.should_publish(...)`. It proceeds when the window is open
+AND today's `edition.json` is not already committed. That idempotency check, not
+an exact minute, is what enforces one edition per day, so a cron that GitHub
+delays still publishes exactly once and a repeated firing is a no-op. The window
+opens at 05:30 (not 06:00) to leave headroom to be live by 6am. The logic is
+Python (pinned by tests), not YAML, so there is only one copy of it. You can
+also trigger it manually with `force: true` to bypass the gate.
 
 **What the publish job does, in order:**
 

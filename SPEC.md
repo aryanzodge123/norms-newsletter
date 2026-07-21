@@ -346,8 +346,21 @@ gate. 6. Audio build -> upload. 7. Commit edition.json to
 site/content/editions/. 8. Astro build -> deploy Pages. 9. Ping
 healthchecks.io. 10. Archival job.
 
-Scheduling: cron `0 10 * * *` and `0 11 * * *`; the job exits early unless
-US Eastern local time is 06:00 for today's date (correct across DST).
+Scheduling: two crons `30 9 * * *` and `30 10 * * *` open a daily publish
+window at 05:30 US Eastern (DST-correct: exactly one lands on 05:30 ET on
+each side of the change). The gate proceeds when both hold: the current
+Eastern wall-clock time is at or after 05:30 for today's date, AND today's
+edition is not already committed to `site/content/editions/`. The
+already-committed check (the publication record, decision #17), not an
+exact-minute match, is what enforces one edition per day. This is
+deliberate: GitHub fires scheduled crons late as a matter of course, and
+never early, so an exact-minute gate silently skips the day whenever a
+firing is delayed. Under the window plus idempotency rule, whichever firing
+runs first after the window opens publishes, and the other firing, plus any
+manual re-trigger, is a no-op because the day is already published. The
+05:30 open (rather than 06:00) gives headroom for cron delay plus the
+roughly 5 to 9 minute build so the site is live by 06:00 ET.
+`workflow_dispatch` with `force: true` bypasses both conditions.
 
 ### 6.9 Archival job
 
@@ -446,7 +459,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 4  | Gemini multi-speaker TTS behind a swappable interface |
 | 5  | Collectors on mini PC; disabled Actions cron as fallback |
 | 6  | Incremental scoring; re-score only on cluster growth |
-| 7  | Dual cron + Eastern-time check for DST-correct 6am |
+| 7  | Publish window opens 05:30 ET (dual cron, DST-correct) with an idempotency gate: publish only if today is not already committed. Idempotency, not an exact-minute match, prevents a second edition and survives GitHub's late or dropped crons; the earlier open leaves headroom to be live by 6am |
 | 8  | Fallback edition; never skip a day silently |
 | 9  | AI outputs are schema-validated JSON; code renders everything |
 | 10 | Published site stores paraphrases + links, never source prose |
