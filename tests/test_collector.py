@@ -10,7 +10,7 @@ from datetime import UTC, datetime
 import pytest
 
 from src.adapters.base import build_item
-from src.collector import resolve_adapter, run_adapter
+from src.collector import collection_status, resolve_adapter, run_adapter
 from src.config import SourceConfig
 
 SINCE = datetime(2026, 7, 19, 5, 0, tzinfo=UTC)
@@ -86,3 +86,22 @@ def test_a_healthy_adapter_reports_its_metrics(monkeypatch) -> None:
     assert items == [item]
     assert metrics == {"items": 1, "errors": 0, "latency_ms": metrics["latency_ms"]}
     assert metrics["errors"] == 0
+
+
+# collection_status: the healthcheck ping keys off items fetched, so a cycle
+# that fetched nothing from any source fails (a running-but-blind collector,
+# SPEC 8), even when no adapter raised.
+def test_blind_cycle_fails_even_with_no_adapter_errors() -> None:
+    assert collection_status(0, []) == "failed"
+
+
+def test_blind_cycle_fails_when_adapters_also_errored() -> None:
+    assert collection_status(0, ["hackernews"]) == "failed"
+
+
+def test_partial_when_some_fetched_but_an_adapter_failed() -> None:
+    assert collection_status(5, ["hackernews"]) == "partial"
+
+
+def test_success_when_items_fetched_and_no_errors() -> None:
+    assert collection_status(5, []) == "success"

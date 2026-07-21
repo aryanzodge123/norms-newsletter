@@ -398,6 +398,7 @@ them, not speculatively.
 | Failure                        | Behavior                                        |
 |--------------------------------|--------------------------------------------------|
 | One adapter fails              | Log, skip, continue                              |
+| All sources return nothing     | run_log `failed` + healthchecks `/fail` (blind collector) |
 | Missed collector cycles        | Next cycle backfills via `since`; bronze dedups  |
 | One story's article fails 2x   | Story publishes without article block            |
 | Editor output invalid 2x       | Publish fallback edition (edition_type fallback) |
@@ -437,9 +438,12 @@ readability gate was exceeded and the edition published anyway. This is
 the row that makes the weekly review possible.
 
 healthchecks.io:
-one check for 6am publish, one for the collector cadence. Weekly 10-minute
-review: cluster quality, score distribution, readability flags; tune
-cluster_threshold and rubric anchors.
+one check for 6am publish, one for the collector cadence. The collector
+pings `/fail` when a cycle fetches zero items across all sources, not only
+when the bronze write fails, so the cadence check catches a running-but-blind
+collector (a source-wide outage or a datacenter-IP block), not just a stalled
+process or an R2 failure. Weekly 10-minute review: cluster quality, score
+distribution, readability flags; tune cluster_threshold and rubric anchors.
 
 ## 9. Cost budget (monthly, target < $25)
 

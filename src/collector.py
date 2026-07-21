@@ -68,6 +68,20 @@ def run_adapter(
         }
 
 
+def collection_status(fetched_count: int, failed_adapters: list[str]) -> str:
+    """The run_log status for a cycle, which also drives the healthcheck ping.
+
+    A cycle that fetched nothing from any source is a blind collector (every
+    source down or IP-blocked), not a healthy quiet window, so it fails and the
+    cadence check fires (SPEC 8). This keys off items fetched, not items
+    written: a healthy cycle legitimately writes 0 when everything is a
+    duplicate. A bronze write failure is handled separately by the caller.
+    """
+    if fetched_count == 0:
+        return "failed"
+    return "partial" if failed_adapters else "success"
+
+
 def collect(*, dry_run: bool = False) -> int:
     """One collection cycle. Returns the process exit code."""
     run_id = runlog.make_run_id()
@@ -89,6 +103,9 @@ def collect(*, dry_run: bool = False) -> int:
         metrics[source.name] = source_metrics
 
     failed_adapters = [name for name, m in metrics.items() if m["errors"]]
+    # Measured before enrich (which preserves count): the true "collector is
+    # blind" signal is what the sources returned, not what survives dedup.
+    fetched_count = len(items)
 
     # SPEC 6.1 body_excerpt: adapters store the feed's summary, which is a
     # one-line blurb on most sources. Fetch the linked article so the text is
@@ -120,19 +137,19 @@ def collect(*, dry_run: bool = False) -> int:
             print(f"\n  adapters that failed: {', '.join(failed_adapters)}")
         return 0
 
-    # The collector-cadence check (SPEC section 8). Its dead man's switch is
-    # how a stalled mini PC gets noticed; a failed ping never fails the run.
+    # The collector-cadence check (SPEC section 8). Its dead man's switch is how
+    # a stalled or blind collector gets noticed; a failed ping never fails the run.
     collect_url = get_settings().healthchecks_collect_url
     health.ping(collect_url, health.START)
 
     written = 0
-    notes = None
-    status = "partial" if failed_adapters else "success"
+    status = collection_status(fetched_count, failed_adapters)
+    notes = "no items fetched from any source" if fetched_count == 0 else None
     try:
         catalog = get_catalog()
         table = bronze.ensure_table(catalog)
         written, skipped = bronze.append_items(table, items)
-        if failed_adapters:
+        if failed_adapters and status != "failed":
             notes = f"adapters failed: {', '.join(failed_adapters)}"
     except Exception as exc:  # noqa: BLE001
         status = "failed"
