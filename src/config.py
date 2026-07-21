@@ -152,6 +152,13 @@ class AudioConfig(Strict):
     # (publish without audio), not something the model is trusted to hold.
     min_words: int = Field(gt=0)
     max_words: int = Field(gt=0)
+    # Gemini TTS prices, USD per million tokens, so the audio job's run_log
+    # cost covers the render and not just the script call (SPEC 6.7). Prices
+    # live here rather than as code constants because the tts_model they track
+    # already does; a price change is a config edit. Default 0.0 means an
+    # unpriced backend logs render cost as zero rather than crashing.
+    tts_price_input_per_mtok: float = Field(default=0.0, ge=0)
+    tts_price_output_per_mtok: float = Field(default=0.0, ge=0)
 
     @model_validator(mode="after")
     def _word_band_ordered(self) -> AudioConfig:

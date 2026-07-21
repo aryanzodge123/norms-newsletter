@@ -104,6 +104,13 @@ audio:
   # SPEC 6.7: "1,300-1,600 words". Enforced on the validated script.
   min_words: 1300
   max_words: 1600
+  # Gemini TTS prices, USD per 1M tokens, so the audio run_log row carries the
+  # render cost as well as the script call (SPEC 6.7, section 8). Values for
+  # gemini-2.5-flash-preview-tts from Google's pricing page (text input vs
+  # audio output are priced separately); confirm against ai.google.dev/pricing
+  # when the model or its pricing changes.
+  tts_price_input_per_mtok: 0.50
+  tts_price_output_per_mtok: 10.00
 
 archive:
   # SPEC 6.9. The archival job folds each day's bronze + silver into the

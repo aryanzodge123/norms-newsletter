@@ -9,6 +9,7 @@ asserted non-empty.
 from __future__ import annotations
 
 import json
+from types import SimpleNamespace
 
 import pytest
 
@@ -96,23 +97,26 @@ class _Candidate:
 
 
 class _GenResponse:
-    def __init__(self, data):
+    def __init__(self, data, usage=None):
         self.candidates = [_Candidate(data)]
+        if usage is not None:
+            self.usage_metadata = usage
 
 
 class _FakeModels:
-    def __init__(self, data):
+    def __init__(self, data, usage=None):
         self._data = data
+        self._usage = usage
         self.calls = 0
 
     def generate_content(self, **kwargs):
         self.calls += 1
-        return _GenResponse(self._data)
+        return _GenResponse(self._data, self._usage)
 
 
 class FakeGenaiClient:
-    def __init__(self, data):
-        self.models = _FakeModels(data)
+    def __init__(self, data, usage=None):
+        self.models = _FakeModels(data, usage)
 
 
 def a_script():
@@ -142,3 +146,39 @@ def test_gemini_requires_a_key(config, monkeypatch) -> None:
     synth = tts.GeminiSynthesizer(config)  # no injected client
     with pytest.raises(tts.TTSError, match="GEMINI_API_KEY"):
         synth.synthesize(a_script())
+
+
+# --------------------------------------------------------------------------
+# TTS cost estimate (SPEC 6.7)
+# --------------------------------------------------------------------------
+def _priced(config) -> AudioConfig:
+    return config.model_copy(
+        update={"tts_price_input_per_mtok": 0.50, "tts_price_output_per_mtok": 10.00}
+    )
+
+
+def test_estimate_tts_cost_is_priced_per_token(config) -> None:
+    usage = SimpleNamespace(prompt_token_count=2_000, candidates_token_count=5_000)
+    # (2000 * 0.50 + 5000 * 10.00) / 1e6 = 0.051
+    assert tts.estimate_tts_cost_usd(usage, _priced(config)) == pytest.approx(0.051)
+
+
+def test_estimate_tts_cost_handles_missing_usage(config) -> None:
+    priced = _priced(config)
+    assert tts.estimate_tts_cost_usd(None, priced) == 0.0
+    # A usage object missing the token fields prices at 0.0, not a crash.
+    assert tts.estimate_tts_cost_usd(SimpleNamespace(), priced) == 0.0
+
+
+def test_synthesize_prices_the_render(config) -> None:
+    usage = SimpleNamespace(prompt_token_count=1_000, candidates_token_count=1_000)
+    client = FakeGenaiClient(one_second_pcm(), usage=usage)
+    rendered = tts.GeminiSynthesizer(_priced(config), client=client).synthesize(a_script())
+    # (1000 * 0.50 + 1000 * 10.00) / 1e6 = 0.0105
+    assert rendered.cost_usd == pytest.approx(0.0105)
+
+
+def test_synthesize_without_usage_costs_zero(config) -> None:
+    client = FakeGenaiClient(one_second_pcm())  # response carries no usage_metadata
+    rendered = tts.GeminiSynthesizer(_priced(config), client=client).synthesize(a_script())
+    assert rendered.cost_usd == 0.0

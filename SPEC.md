@@ -332,7 +332,11 @@ audio/script.py: one small model call turns edition.json into a two-host
 dialogue (prompts/audio_script_v1.md + voice.md; hosts define terms to
 each other; 1,300-1,600 words). audio/tts.py: multi-speaker TTS (Gemini
 TTS behind a swappable interface). MP3 to R2 at /audio/YYYY-MM-DD.mp3;
-the repo never stores audio.
+the repo never stores audio. The audio job's ai_cost_estimate_usd
+(section 8) is the sum of the script model call and the Gemini TTS render,
+the render estimated from the TTS response's token usage and the per-token
+prices in config/pipeline.yaml (audio.tts_price_input_per_mtok,
+audio.tts_price_output_per_mtok).
 
 ### 6.8 Publish workflow (publish.yml)
 
@@ -404,7 +408,7 @@ own row is itself a failure surfaced by the dead man's switch.
 | items_in           | int       |                                           |
 | items_out          | int       |                                           |
 | adapter_metrics    | string?   | JSON blob: per-adapter items, errors, latency_ms; null for non-collector jobs |
-| ai_cost_estimate_usd | double? | null for non-AI jobs                      |
+| ai_cost_estimate_usd | double? | null for non-AI jobs; the sum of all AI calls in the job (audio: script + TTS render) |
 | readability_flag   | boolean?  | editor job only, per 6.5                  |
 | notes              | string?   | nullable                                  |
 | run_date           | date      | partition column                          |

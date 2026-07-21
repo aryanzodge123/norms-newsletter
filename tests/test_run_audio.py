@@ -182,6 +182,41 @@ def test_script_failure_is_contained(config) -> None:
     assert "script failed" in result.note
 
 
+def _rendered_costing(cost: float) -> Synthesized:
+    return Synthesized(audio_mpeg=b"ID3fakebytes", duration_seconds=540, cost_usd=cost)
+
+
+def test_build_audio_sums_script_and_tts_cost(config) -> None:
+    # A dry run pays only the script call; a full run adds the TTS render cost,
+    # so the difference is exactly the render's cost_usd.
+    script_only = run_audio.build_audio(
+        load_fixture("normal.json"), config, client=ok_client(), dry_run=True
+    )
+    full = run_audio.build_audio(
+        load_fixture("normal.json"), config, client=ok_client(),
+        synthesizer=FakeSynth(_rendered_costing(0.037)),
+        upload=lambda k, d: "https://x.invalid/" + k, exists=lambda key: False,
+    )
+    assert full.cost_usd == pytest.approx(script_only.cost_usd + 0.037)
+    assert "tts $0.0370" in full.note
+
+
+def test_upload_failure_still_counts_tts_cost(config) -> None:
+    def boom(key, data):
+        raise AudioStorageError("bucket missing")
+
+    script_only = run_audio.build_audio(
+        load_fixture("normal.json"), config, client=ok_client(), dry_run=True
+    )
+    full = run_audio.build_audio(
+        load_fixture("normal.json"), config, client=ok_client(),
+        synthesizer=FakeSynth(_rendered_costing(0.037)), upload=boom,
+        exists=lambda key: False,
+    )
+    assert full.audio is None
+    assert full.cost_usd == pytest.approx(script_only.cost_usd + 0.037)
+
+
 # --------------------------------------------------------------------------
 # inject_audio
 # --------------------------------------------------------------------------

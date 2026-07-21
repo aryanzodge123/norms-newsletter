@@ -35,14 +35,33 @@ class TTSError(RuntimeError):
 
 @dataclass(frozen=True)
 class Synthesized:
-    """One rendered dialogue: the MP3 bytes and its exact duration."""
+    """One rendered dialogue: the MP3 bytes, its exact duration, and the
+    estimated USD cost of the TTS render (0.0 for a backend that reports no
+    token usage)."""
 
     audio_mpeg: bytes
     duration_seconds: int
+    cost_usd: float = 0.0
 
     @property
     def size_bytes(self) -> int:
         return len(self.audio_mpeg)
+
+
+def estimate_tts_cost_usd(usage, config: AudioConfig) -> float:
+    """Estimate the render cost from a Gemini usage_metadata object and the
+    per-token prices in config (SPEC 6.7). Mirrors score.estimate_cost_usd:
+    token fields are read defensively, so a missing field or a None usage
+    (a fake client, or a response without metadata) prices at 0.0 rather
+    than crashing the publish."""
+    if usage is None:
+        return 0.0
+    prompt = getattr(usage, "prompt_token_count", 0) or 0
+    output = getattr(usage, "candidates_token_count", 0) or 0
+    return (
+        prompt * config.tts_price_input_per_mtok
+        + output * config.tts_price_output_per_mtok
+    ) / 1_000_000
 
 
 class Synthesizer(Protocol):
@@ -155,4 +174,9 @@ class GeminiSynthesizer:
             raise TTSError("Gemini TTS returned no audio data")
 
         mp3 = pcm_to_mp3(pcm)
-        return Synthesized(audio_mpeg=mp3, duration_seconds=pcm_duration_seconds(pcm))
+        cost = estimate_tts_cost_usd(getattr(response, "usage_metadata", None), self.config)
+        return Synthesized(
+            audio_mpeg=mp3,
+            duration_seconds=pcm_duration_seconds(pcm),
+            cost_usd=cost,
+        )

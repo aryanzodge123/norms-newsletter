@@ -120,10 +120,14 @@ def build_audio(
     except TTSError as exc:
         return AudioResult(None, result.cost_usd, turns, f"TTS failed: {exc}")
 
+    # The TTS render was paid for the moment synthesize() returned, so its
+    # cost counts even if the upload then fails.
+    total_cost = result.cost_usd + rendered.cost_usd
+
     try:
         url = upload(key, rendered.audio_mpeg)
     except AudioStorageError as exc:
-        return AudioResult(None, result.cost_usd, turns, f"upload failed: {exc}")
+        return AudioResult(None, total_cost, turns, f"upload failed: {exc}")
 
     audio = {
         "url": url,
@@ -132,9 +136,10 @@ def build_audio(
     }
     return AudioResult(
         audio,
-        result.cost_usd,
+        total_cost,
         turns,
-        f"audio {rendered.duration_seconds}s, {rendered.size_bytes} bytes{band_note}",
+        f"audio {rendered.duration_seconds}s, {rendered.size_bytes} bytes{band_note} "
+        f"(script ${result.cost_usd:.4f} + tts ${rendered.cost_usd:.4f})",
     )
 
 
