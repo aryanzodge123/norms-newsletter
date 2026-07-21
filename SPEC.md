@@ -75,7 +75,7 @@ Mental model: a tiny automated newsroom.
 ## 4. Architecture at a glance
 
 ```
-ALL DAY (every 3 hours, mini PC):
+ALL DAY (every 3 hours, GitHub Actions):
   Sources -> Adapters -> bronze.raw_items -> silver jobs -> silver.story_clusters
                           (Iceberg on R2)    (dedup, cluster, score)
 
@@ -116,7 +116,7 @@ norms-newsletter/
     src/pages/  src/components/  src/styles/tokens.css
     content/editions/    # committed edition.json per day (publication record)
     fixtures/            # normal.json quiet.json fallback.json for dev
-  .github/workflows/  publish.yml  collect_fallback.yml
+  .github/workflows/  publish.yml  collect.yml
   tests/
 ```
 
@@ -204,8 +204,13 @@ respect max_items_per_run; every run writes per-adapter health metrics.
 
 ### 6.2 Collector runtime
 
-Mini PC, systemd timer, every 3 hours 06:00-03:00 ET. Disabled GitHub
-Actions workflow as backup launcher, same entry point. Fully idempotent.
+GitHub Actions (`collect.yml`), cron `0 */3 * * *`, every 3 hours. Runs
+`src.collector` then `src.silver.run_silver`, writing bronze and silver to
+R2 and pinging the collector-cadence check. Fully idempotent (bronze
+dedups), so overlapping runs are harmless. A local machine may run the same
+entry point as an optional supplement, but the pipeline no longer depends on
+it. (The 2026-07-20 gap was a local MacBook Air that slept while no cloud
+collector was enabled.)
 
 ### 6.3 Bronze: `bronze.raw_items`
 
@@ -457,7 +462,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 2  | Cluster threshold 0.82, config-driven, observed for 2 weeks |
 | 3  | 15-20 stories, 2-4 per section, dead sections -> Briefly |
 | 4  | Gemini multi-speaker TTS behind a swappable interface |
-| 5  | Collectors on mini PC; disabled Actions cron as fallback |
+| 5  | Collector runs on GitHub Actions every 3h (`collect.yml`), same entry point, idempotent. A local machine is an optional supplement, not relied on (a sleeping MacBook Air caused the 2026-07-20 gap) |
 | 6  | Incremental scoring; re-score only on cluster growth |
 | 7  | Publish window opens 05:30 ET (dual cron, DST-correct) with an idempotency gate: publish only if today is not already committed. Idempotency, not an exact-minute match, prevents a second edition and survives GitHub's late or dropped crons; the earlier open leaves headroom to be live by 6am |
 | 8  | Fallback edition; never skip a day silently |
