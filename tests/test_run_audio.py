@@ -279,6 +279,37 @@ def test_run_with_no_audio_leaves_null(monkeypatch, tmp_path, config) -> None:
     assert json.loads(path.read_text())["audio"] is None
 
 
+def test_run_fallback_edition_is_contained_noop(monkeypatch, tmp_path, config) -> None:
+    # A fallback edition has no audio field (FallbackEdition forbids it), so
+    # run() must not inject audio=None: that would fail schema validation, fail
+    # the step, and take the whole publish down with it (SPEC 7 says audio
+    # failure is contained to "publish without an audio row"). Exercised at the
+    # run() level because build_audio already bows out; the crash was in run().
+    edition = load_fixture("fallback.json")
+    original = json.dumps(edition, indent=2, ensure_ascii=False) + "\n"
+    path = tmp_path / "2026-07-21.json"
+    path.write_text(original)
+
+    monkeypatch.setattr(run_audio, "edition_path", lambda d: path)
+    monkeypatch.setattr(run_audio, "get_pipeline", lambda: type("P", (), {"audio": config})())
+    monkeypatch.setattr(run_audio, "get_client", lambda: ok_client())
+    monkeypatch.setattr(
+        run_audio,
+        "build_audio",
+        lambda *a, **k: run_audio.AudioResult(None, 0.0, 0, "fallback edition carries no audio"),
+    )
+    captured = {}
+    monkeypatch.setattr(
+        run_audio, "_log_run", lambda *a, **k: captured.update(status=a[2])
+    )
+
+    rc = run_audio.run(date(2026, 7, 21))
+
+    assert rc == 0  # contained, not failed: the fallback edition still publishes
+    assert captured["status"] == "partial"
+    assert path.read_text() == original  # file untouched, no audio key added
+
+
 def test_run_missing_edition_is_noop(monkeypatch, tmp_path, config) -> None:
     monkeypatch.setattr(run_audio, "edition_path", lambda d: tmp_path / "nope.json")
     monkeypatch.setattr(run_audio, "get_pipeline", lambda: type("P", (), {"audio": config})())
