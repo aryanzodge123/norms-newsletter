@@ -182,14 +182,20 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
             print(f"  {edition_date}: {result.note}")
             return 0
 
-        if result.audio is None:
-            # A contained failure. The edition still publishes, without audio.
+        if edition.get("edition_type") == "fallback":
+            # A fallback edition has no audio field at all (FallbackEdition
+            # forbids it, SPEC 6.5), so there is nothing to inject and injecting
+            # audio=None would fail schema validation. build_audio already bowed
+            # out with the fallback note; treat it as a contained no-op, leave
+            # the file untouched, and let the publish proceed without an audio
+            # row (SPEC 7).
             status = "partial"
-            inject_audio(edition, None)
         else:
+            if result.audio is None:
+                # A contained failure. The edition still publishes, no audio.
+                status = "partial"
             inject_audio(edition, result.audio)
-
-        path.write_text(json.dumps(edition, indent=2, ensure_ascii=False) + "\n")
+            path.write_text(json.dumps(edition, indent=2, ensure_ascii=False) + "\n")
         log.info("%s: %s (est $%.4f)", edition_date, result.note, result.cost_usd)
     except Exception as exc:  # noqa: BLE001
         status = "failed"
