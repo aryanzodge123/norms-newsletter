@@ -432,6 +432,8 @@ def test_committed_registry_loads_and_enabled_adapters_construct() -> None:
         assert adapter.name == s.name
         assert adapter.topic_hint == s.topic_hint
 
-    # Keyed sources ship disabled until their credential exists.
+    # Keyed sources ship disabled until their credential exists. newsapi is
+    # enabled once NEWSAPI_KEY is provisioned (.env and Actions secrets);
+    # finnhub and fred remain disabled pending their keys.
     disabled = {s.name for s in sources if not s.enabled}
-    assert {"newsapi", "finnhub", "fred"} <= disabled
+    assert {"finnhub", "fred"} <= disabled

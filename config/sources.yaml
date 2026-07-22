@@ -81,6 +81,23 @@
   max_items_per_run: 25
   feed_url: "https://www.theguardian.com/uk/technology/rss"
 
+# The world beat. Direct publisher feeds (same hosts as bbc_business and
+# guardian_technology, which ground cleanly), so world stories can field a
+# section of their own instead of falling back to briefly.
+- name: bbc_world
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: world
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+
+- name: guardian_world
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: world
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://www.theguardian.com/world/rss"
+
 - name: bbc_business
   adapter: adapters.rss.RSSAdapter
   topic_hint: business
@@ -135,7 +152,7 @@
 - name: newsapi
   adapter: adapters.newsapi.NewsAPIAdapter
   topic_hint: world
-  enabled: false  # enable once NEWSAPI_KEY is set in .env / Actions secrets
+  enabled: true  # NEWSAPI_KEY present in .env and Actions secrets
   max_items_per_run: 30
 
 - name: finnhub

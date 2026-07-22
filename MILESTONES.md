@@ -6,6 +6,58 @@ deferred.
 
 ---
 
+## Post-M6: staff the world beat (three world sources)
+
+Date: 2026-07-22
+Spec: SPEC 6.1 (adapter registry), 6.5 (topic vocabulary), 6.6 (briefly)
+Status: complete, gate green
+
+### The problem
+
+The 2026-07-21 edition read as hackernews plus bbc, and the bigger stories
+of the day (Trump's Canada tariffs, the Space Force launch buy, Novo
+Nordisk v. Eli Lilly) landed in `briefly` rather than as cards. Cause was
+structural, not a bad day: the enabled roster had zero `world` sources.
+`newsapi` (the one world feed) was disabled pending its key, so the world
+beat was unstaffed while tech carried five feeds and cyber three. The
+editor rule that a section which cannot field two stories collapses into
+`briefly` (SPEC 6.6) then guaranteed every world story was orphaned, since
+none ever had a sibling to form a section with.
+
+### What was built
+
+- `config/sources.yaml`: added `bbc_world` and `guardian_world`, two
+  keyless direct publisher RSS feeds on the same hosts as the already
+  proven `bbc_business` and `guardian_technology`, so they ground and
+  extract by the same reasoning. No `enrich` denylist entry needed.
+- `config/sources.yaml`: flipped `newsapi` to `enabled: true`. Milind
+  confirmed `NEWSAPI_KEY` is in Actions secrets as well as `.env`, so the
+  unattended collector will not error on it.
+- `tests/test_adapters_m6.py`: the "keyed sources ship disabled" invariant
+  now asserts only `{finnhub, fred}`; newsapi is enabled once its key is
+  provisioned.
+
+World now has three enabled feeds, enough to field a section on its own.
+
+### How it was verified
+
+- `milestone-verify`: GATE PASSED. 409 tests pass, 3 fixtures valid, urls
+  derive from astro.config.
+- Live smoke fetch of both new feeds: `bbc_world` returned 28 items,
+  `guardian_world` 45, both HTTP 200, samples were exactly the world and
+  politics stories that had been demoted (Saudi nuclear deal, Trump/Iran,
+  Ebola monitoring).
+
+### Deferred
+
+- Collection health: on 07-21 only 7 of 16 enabled sources delivered (32
+  items vs 76 the prior day), and MEMORY notes an R2 upload timeout plus a
+  SIGSEGV in `collect.yml` on 07-22 that self-healed. That is a collector
+  reliability question, separate from source coverage, and worth a look at
+  the R2 run logs. Adding feeds does not fix feeds that silently no-show.
+- Confirm over the next few editions that world actually forms a two-story
+  section and the big stories stop defaulting to briefly.
+
 ## Post-M6: the readability gate, and direct publisher feeds
 
 Date: 2026-07-20
