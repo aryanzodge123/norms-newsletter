@@ -150,12 +150,41 @@
   max_items_per_run: 25
   feed_url: "https://www.cnbc.com/id/10001147/device/rss/rss.html"
 
+# The science beat. nature_news carried it alone (arxiv is topic_hint 'ai'), so
+# Science risked collapsing into briefly for want of a second story, the same
+# structural gap the world beat had. These add curated general-audience science
+# journalism (Quanta, Science News) plus public-domain agency provenance (NASA),
+# all free keyless RSS with direct publisher article pages that ground cleanly.
+# University presses (MIT, Stanford, etc.), Scientific American, and ScienceDaily
+# were evaluated and left out: the presses are general-institution newsrooms,
+# SciAm meters some articles, and ScienceDaily is a high-volume rewritten-PR wire.
 - name: nature_news
   adapter: adapters.rss.RSSAdapter
   topic_hint: science
   enabled: true
   max_items_per_run: 20
   feed_url: "https://www.nature.com/nature.rss"
+
+- name: quanta_magazine
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: science
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.quantamagazine.org/feed/"
+
+- name: science_news
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: science
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.sciencenews.org/feed"
+
+- name: nasa_news
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: science
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.nasa.gov/news-release/feed/"
 
 - name: krebs_on_security
   adapter: adapters.rss.RSSAdapter

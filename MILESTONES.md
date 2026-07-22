@@ -6,6 +6,76 @@ deferred.
 
 ---
 
+## Post-M6: staff the Science beat (Quanta, Science News, NASA)
+
+Date: 2026-07-22
+Spec: SPEC 6.1 (source adapters, v1 sources), 6.5 (Science section skeleton)
+Status: complete, gate green
+
+### The problem
+
+Science is a first-class edition section (SPEC 6.5 skeleton) but the enabled
+roster staffed it with a single feed, `nature_news`: `arxiv` carries
+`topic_hint: ai`, so in practice one source fed the whole beat. A section that
+cannot field two stories collapses into `briefly` (SPEC 6.6), the same
+structural gap that left the world beat unstaffed until it was fixed earlier
+today. One Nature hiccup and Science had no section.
+
+### What was built
+
+- `config/sources.yaml`: three new entries on the generic `RSSAdapter`, all
+  free/keyless, `enabled: true`, `topic_hint: science`, `max_items_per_run: 20`
+  (matching `nature_news`), grouped under a comment beside it.
+  - `quanta_magazine` (quantamagazine.org/feed), `science_news`
+    (sciencenews.org/feed): curated general-audience science journalism.
+  - `nasa_news` (nasa.gov/news-release/feed): public-domain agency provenance.
+- `SPEC.md` 6.1: appended the three outlets to the descriptive "v1 sources"
+  prose, next to the NPR/PBS note. Documentation parity only: the config file is
+  the authoritative registry (SPEC 6.10), `science` was already in the
+  `topic_hint` vocabulary, and no schema or behavior changed.
+
+No adapter or collector code and no new tests: a plain-RSS source is a pure
+registry addition, and `test_adapters_m6.py::test_committed_registry_loads_and_
+enabled_adapters_construct` already iterates every enabled source, so it covers
+the three new entries automatically.
+
+### What was evaluated and left out
+
+- **University/lab presses** (MIT, Stanford, Harvard, Berkeley, Oxford, Max
+  Planck): general-institution newsrooms (sports, obituaries, arts, grant
+  policy), not science beats, and several (Stanford, Oxford) 403 the fetcher.
+- **Scientific American**: meters some articles, so extraction would fall back
+  to a thin feed summary and publish a flat card. Dropped at Milind's direction.
+- **ScienceDaily**: high-volume rewritten-institutional-PR wire, adjacent to
+  EurekAlert. Dropped at Milind's direction.
+- **EurekAlert!**: terms restrict full-article reproduction to title+summary
+  with a link-back, and it overlaps ScienceDaily. **Science/AAAS news**: 403s
+  automated fetchers, like science.org generally. **PubMed, Semantic Scholar,
+  CORE, DOAJ**: search/discovery APIs, not curated news streams, wrong shape for
+  a daily-card beat. **PLOS, bioRxiv**: primary literature/preprints (dense,
+  not peer-reviewed for bioRxiv), a different beat character.
+
+### How it was verified
+
+- Grounding measured before enabling (repo practice), via the pipeline's own
+  `enrich.fetch_text` on sample articles: quanta 2,058 / 19,991 chars,
+  science_news 3,786 / 3,239, nasa 1,799 / 2,163. All clear the 600-char enrich
+  threshold and the 400-char writer grounding floor with room to spare.
+- Live smoke fetch through the real `RSSAdapter`: quanta 2 items/7d (thin, as
+  expected for its cadence), science_news 19, nasa 10, all with clean dated
+  direct-publisher canonical_urls, not redirect shims.
+- `test_config.py` + `test_adapters_m6.py`: 37 passed; the three new sources
+  load and construct with the collector's kwargs.
+- `milestone-verify`: GATE PASSED. 409 tests, 3 fixtures valid, urls derive.
+
+### Deferred
+
+- Confirm over the next few editions that Science actually forms a two-story
+  section rather than collapsing into `briefly`, and eyeball beat balance now
+  that Science runs four enabled feeds instead of one.
+
+---
+
 ## Post-M6: add NPR and PBS NewsHour (World + US Politics beats)
 
 Date: 2026-07-22
