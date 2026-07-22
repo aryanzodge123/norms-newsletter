@@ -89,6 +89,14 @@ class EnrichConfig(Strict):
     # Hosts that are pointless or harmful to fetch. Google News RSS links are
     # opaque JS shims that carry no publisher URL and no article text.
     skip_hosts: tuple[str, ...] = ()
+    # Run the trafilatura extraction in an isolated child process. trafilatura
+    # wraps native libraries that can segfault on some HTML, and a segfault
+    # kills the whole process before the regex fallback can run. Isolating it
+    # turns the crash into a failed result the parent recovers from.
+    isolate_extraction: bool = True
+    # Hard time budget for one isolated extraction. A crashing or hanging page
+    # costs at most this long before falling back to the regex extractor.
+    extract_timeout_seconds: float = Field(default=8.0, gt=0)
 
     @field_validator("skip_hosts")
     @classmethod

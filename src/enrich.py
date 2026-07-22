@@ -30,7 +30,10 @@ policy (decision #15) is unchanged.
 from __future__ import annotations
 
 import logging
+import multiprocessing
+import queue
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlsplit
 
@@ -44,6 +47,11 @@ log = logging.getLogger(__name__)
 # Only these are worth parsing. A PDF, an image, or a video is a fetch we
 # should not have made and certainly should not try to read as HTML.
 HTML_CONTENT_TYPES = ("text/html", "application/xhtml+xml")
+
+# Fallback time budget for one isolated extraction when a caller does not pass
+# its own (the pipeline passes enrich.extract_timeout_seconds). A crashing or
+# hanging page costs at most this long before the regex fallback runs.
+EXTRACT_TIMEOUT_DEFAULT = 8.0
 
 # Fallback extraction: paragraph text, tags stripped. Proven adequate on the
 # live sources (5,000 to 10,000 characters), and it keeps the module working
@@ -67,16 +75,13 @@ def _strip_paragraphs(html: str) -> str:
     return " ".join(parts)
 
 
-def extract_text(html: str) -> str:
-    """The main article text of one page.
+def _trafilatura_extract(html: str) -> str:
+    """The trafilatura call itself, whitespace normalized.
 
-    trafilatura first, because it strips navigation, boilerplate, and comment
-    sections rather than taking every paragraph on the page. The paragraph
-    scrape is the fallback when trafilatura is not installed or finds nothing
-    it recognizes as an article.
+    Returns "" when trafilatura is unavailable, finds nothing it recognizes as
+    an article, or raises. It does not fall back here: the caller decides. This
+    runs both in-process (isolate=False) and inside the isolation worker.
     """
-    if not html:
-        return ""
     try:
         import trafilatura
 
@@ -89,6 +94,92 @@ def extract_text(html: str) -> str:
         log.debug("trafilatura not installed, using the paragraph fallback")
     except Exception as exc:  # noqa: BLE001 - a parse failure is not fatal
         log.debug("trafilatura failed, using the paragraph fallback: %s", exc)
+    return ""
+
+
+def _extract_worker(html: str, result_queue) -> None:
+    """Run trafilatura in a child process, returning its text via the queue.
+
+    A native segfault in trafilatura kills only this child, not the collector.
+    Any failure yields "", which the parent reads as "use the fallback". If the
+    child crashes before putting anything, the parent sees the process die and
+    falls back instead.
+    """
+    try:
+        result_queue.put(_trafilatura_extract(html))
+    except Exception:  # noqa: BLE001 - the parent falls back on anything
+        result_queue.put("")
+
+
+def _run_isolated(worker, html: str, timeout: float) -> str | None:
+    """Run `worker` in a spawned child and return the text it puts on the queue.
+
+    Returns the child's result (possibly "") on a clean run, or None when the
+    child crashed, was killed, or ran past the timeout. The worker is a
+    parameter so the isolation mechanism can be tested with a crashing or
+    hanging stand-in that does not depend on trafilatura.
+
+    spawn is used rather than fork because enrich_items runs this from a thread
+    pool, and forking a multithreaded parent is unsafe; spawn also behaves the
+    same on macOS and on the Linux Actions runner.
+    """
+    ctx = multiprocessing.get_context("spawn")
+    result_queue = ctx.Queue()
+    proc = ctx.Process(target=worker, args=(html, result_queue), daemon=True)
+    proc.start()
+    result: str | None = None
+    deadline = time.monotonic() + timeout
+    try:
+        # Poll rather than one long blocking get: a crashed child never puts a
+        # result, and get cannot tell the child died, so a plain get would wait
+        # the whole timeout on every crash. Polling lets a dead child fall back
+        # at once while a genuine hang still costs the full budget.
+        while True:
+            try:
+                result = result_queue.get(timeout=0.1)
+                break
+            except queue.Empty:
+                if not proc.is_alive():
+                    # The child exited without a result: it crashed or was
+                    # killed. One last non-blocking read in case it put a result
+                    # and exited between our get and this check.
+                    try:
+                        result = result_queue.get_nowait()
+                    except queue.Empty:
+                        log.debug("isolated extraction process died, using the fallback")
+                    break
+                if time.monotonic() >= deadline:
+                    log.debug("isolated extraction timed out, using the fallback")
+                    break
+    finally:
+        if proc.is_alive():
+            proc.terminate()
+        proc.join(timeout=1.0)
+        result_queue.close()
+    return result
+
+
+def extract_text(
+    html: str, *, isolate: bool = True, timeout: float = EXTRACT_TIMEOUT_DEFAULT
+) -> str:
+    """The main article text of one page.
+
+    trafilatura first, because it strips navigation, boilerplate, and comment
+    sections rather than taking every paragraph on the page. The paragraph
+    scrape is the fallback when trafilatura is unavailable, finds nothing it
+    recognizes as an article, or crashes.
+
+    trafilatura wraps native libraries that can segfault on some HTML, and a
+    segfault cannot be caught in-process. With isolate=True the trafilatura call
+    runs in a child process, so a crash becomes a failed result that the parent
+    recovers from by running the regex fallback here. isolate=False runs it
+    in-process, for tests and callers that have accepted the crash risk.
+    """
+    if not html or not html.strip():
+        return ""
+    text = _run_isolated(_extract_worker, html, timeout) if isolate else _trafilatura_extract(html)
+    if text:
+        return text
     return _strip_paragraphs(html)
 
 
@@ -130,7 +221,11 @@ def fetch_text(url: str, config: EnrichConfig, client: httpx.Client) -> str:
             log.debug("enrich: %s is %d bytes, over the cap", url, len(body))
             return ""
 
-        return extract_text(response.text)
+        return extract_text(
+            response.text,
+            isolate=config.isolate_extraction,
+            timeout=config.extract_timeout_seconds,
+        )
     except Exception as exc:  # noqa: BLE001 - never fatal, per the module docstring
         log.debug("enrich: %s failed: %s", url, type(exc).__name__)
         return ""
