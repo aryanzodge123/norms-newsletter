@@ -6,6 +6,65 @@ deferred.
 
 ---
 
+## Post-M6: isolate trafilatura extraction (collector segfault)
+
+Date: 2026-07-22
+Spec: SPEC 6.10 (configuration: operational knobs in pipeline.yaml)
+Status: complete, gate green
+
+### The problem
+
+The `collect` workflow died with exit 139 (SIGSEGV) on 2026-07-22 (run
+29925206852). The crash was inside `trafilatura.extract`, a native
+library call in `src/enrich.py`, triggered by a `blog.pypi.org` page. A
+segfault is not a Python exception, so `enrich.py`'s existing degrade
+chain (trafilatura, then the regex fallback, then keep the feed summary)
+never got a chance to run: the whole collector process died mid-fetch,
+not just the one item.
+
+### What was built
+
+- `src/enrich.py`: the trafilatura call now runs in an isolated `spawn`
+  child process (`_trafilatura_extract`, `_extract_worker`,
+  `_run_isolated`). A crash now kills only the child, and the parent reads
+  that as a failed result and falls back to the regex extractor, same as
+  any other trafilatura miss. `spawn`, not `fork`, because `enrich_items`
+  calls this from a thread pool and forking a multithreaded parent is
+  unsafe; `spawn` also behaves the same on macOS and the Linux Actions
+  runner. The parent polls the result queue rather than blocking on one
+  `get`, so a dead child falls back immediately instead of waiting out the
+  full timeout; only a genuine hang costs the whole budget.
+- `src/config.py`: two new `EnrichConfig` knobs, `isolate_extraction`
+  (default `true`) and `extract_timeout_seconds` (default `8.0`).
+- `config/pipeline.yaml`: the two knobs, documented against the crash, and
+  `blog.pypi.org` added to `skip_hosts` as a point fix for the specific
+  host (this PR hardens the whole crash class, not just that host).
+
+This is a reliability fix to an existing implementation detail: no
+schema, prompt, or pipeline-contract change, and `body_excerpt` semantics
+are unchanged. The two config keys are SPEC 6.10-style operational knobs.
+
+### How it was verified
+
+- `milestone-verify` gate: PASSED, 409 tests, fixtures valid, self-URLs
+  derive from `astro.config`.
+- New tests in `tests/test_enrich.py` exercise the isolation wrapper
+  directly with crashing, hanging, and successful stand-in workers (so the
+  suite does not depend on trafilatura actually segfaulting), plus a
+  wrapper test confirming a crash still yields the regex fallback's text
+  rather than a process-killing segfault reaching the caller.
+- End-to-end dry run: exit 0, 80 items, 66 of 77 enriched (+65,342 chars),
+  no crash.
+
+### Deferred
+
+- A point fix adding `blog.pypi.org` to `enrich.skip_hosts` landed as part
+  of this same change; no separate follow-up needed for that host.
+- Broader collector reliability (R2 upload timeouts, source no-shows) is
+  tracked separately, flagged in the "staff the world beat" entry below.
+
+---
+
 ## Post-M6: staff the world beat (three world sources)
 
 Date: 2026-07-22
