@@ -6,6 +6,61 @@ deferred.
 
 ---
 
+## Post-M6: add NPR and PBS NewsHour (World + US Politics beats)
+
+Date: 2026-07-22
+Spec: SPEC 6.1 (source adapters, topic_hint vocabulary, v1 sources)
+Status: complete, gate green
+
+### The problem
+
+The newsletter wanted more reliable, low-bias sources. Across AllSides,
+Ad Fontes, and MBFC, the nonprofit public broadcasters NPR and PBS NewsHour
+rate consistently least-biased and are free to ingest via RSS. Two of the
+most-neutral outlets overall, AP and Reuters, have no free access (AP is
+enterprise-contract only; Reuters killed public RSS in 2020, paid LSEG only),
+so they were left out. Separately, the editor's US Politics section (SPEC 6.5
+skeleton) had no dedicated source: politics stories only reached it when a
+general feed happened to carry one.
+
+### What was built
+
+- `config/sources.yaml`: four new entries on the generic `RSSAdapter`, all
+  free/keyless and `enabled: true`, `max_items_per_run: 25`.
+  - `npr_world` (feeds.npr.org/1004), `pbs_world`
+    (pbs.org/newshour/feeds/rss/world), topic_hint `world`.
+  - `npr_politics` (feeds.npr.org/1014, NPR's dedicated Politics feed),
+    `pbs_politics` (pbs.org/newshour/feeds/rss/politics), topic_hint
+    `politics`. These are the first dedicated feeds for the US Politics beat.
+- `SPEC.md` 6.1: added the `topic_hint` vocabulary statement (now nine
+  lowercased section-skeleton values, adding `politics` to match the scorer's
+  TOPICS and the 6.5 skeleton), documented that the hint is advisory
+  provenance only (nothing in silver/scoring reads it; the scorer assigns the
+  real topic), and appended NPR/PBS to the v1 sources prose.
+
+No adapter code and no deterministic-layer change: `topic_hint` is a free
+string in `SourceConfig`, so `politics` needed no validator edit.
+
+### How it was verified
+
+- `load_sources()` parses all 25 sources; the four new ones load with the
+  expected hints, and `politics` hint sources are `[npr_politics,
+  pbs_politics]`.
+- Live `RSSAdapter.fetch` against both politics feeds returned real items
+  (npr_politics 10, pbs_politics 20 over 2 days) with clean dated
+  canonical_urls, not redirect shims.
+- Feed reachability and grounding measured before adding: all four HTTP 200;
+  sample article extraction NPR ~12-15k chars, PBS ~5k, well clear of the
+  grounding floor that got the Google News feeds removed.
+- `milestone-verify`: 409 passed, fixtures valid, urls derive. Gate green.
+
+### Deferred
+
+- Christian Science Monitor and Deutsche Welle: also clean free low-bias RSS,
+  a tier below NPR/PBS in prominence. Candidates for a later breadth pass.
+
+---
+
 ## Post-M6: isolate trafilatura extraction (collector segfault)
 
 Date: 2026-07-22

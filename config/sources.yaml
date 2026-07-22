@@ -1,8 +1,10 @@
 # Adapter registry (SPEC 6.1).
 #
 # adapter: dotted path to the Adapter class, resolved under src/.
-# topic_hint: one of the SPEC 6.5 vocabulary values
-#   (tech / ai / business / finance / world / regulation / science / cyber).
+# topic_hint: one of the SPEC 6.5 vocabulary values, lowercased (tech / ai /
+#   business / finance / politics / world / regulation / science / cyber).
+#   Advisory provenance only: the scorer assigns each story its real topic,
+#   so this is just the feed's dominant beat (SPEC 6.1).
 # max_items_per_run: hard cap enforced by the collector, per SPEC 6.1.
 # enabled: false takes a source out of rotation without deleting its entry.
 # feed_url: per-source feed/endpoint for adapters.rss.RSSAdapter, the one
@@ -97,6 +99,42 @@
   enabled: true
   max_items_per_run: 25
   feed_url: "https://www.theguardian.com/world/rss"
+
+# NPR and PBS NewsHour, neutral nonprofit public broadcasters (least-biased
+# across AllSides / Ad Fontes / MBFC). Free keyless RSS, article pages ground
+# cleanly (NPR ~12-15k chars, PBS ~5k, measured). Dedicated topic feeds so
+# each carries honest provenance.
+- name: npr_world
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: world
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://feeds.npr.org/1004/rss.xml"
+
+- name: pbs_world
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: world
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://www.pbs.org/newshour/feeds/rss/world"
+
+# The US Politics beat. This section had no dedicated source before; these two
+# neutral public-broadcaster politics feeds staff it, the same pattern the
+# world beat uses. topic_hint 'politics' is the hint form of the "US Politics"
+# section (advisory only; the scorer assigns each story's real topic).
+- name: npr_politics
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: politics
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://feeds.npr.org/1014/rss.xml"
+
+- name: pbs_politics
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: politics
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://www.pbs.org/newshour/feeds/rss/politics"
 
 - name: bbc_business
   adapter: adapters.rss.RSSAdapter

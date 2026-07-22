@@ -191,13 +191,26 @@ Registry entry (config/sources.yaml):
   max_items_per_run: 40
 ```
 
+**topic_hint vocabulary.** One of the nine section-skeleton values (6.5),
+lowercased: tech, ai, business, finance, politics, world, regulation,
+science, cyber. (politics is the hint form of the "US Politics" section.)
+The hint is advisory provenance only. It is written to the bronze record
+but nothing in silver or scoring reads it; the scoring stage (6.4c) assigns
+each story its real topic from the article text. So a general or mixed feed
+carries the hint that best describes its dominant beat, and the scorer still
+routes individual stories to their correct section.
+
 v1 sources (all free): Hacker News API; TechCrunch, Ars Technica RSS;
 arXiv API (cs.AI, cs.LG); AI lab blogs (RSS); NewsAPI (existing key,
 non-commercial tier); Finnhub news; FRED releases; Google News topic RSS
 across multiple outlets and viewpoints; Federal Register API; SEC EDGAR
 press RSS; OCC/Fed/FDIC press feeds; Nature news RSS; CISA advisories;
-Krebs; The Hacker News. X/Twitter is OUT of v1 (decision log #1). GDELT
-deferred to v1.1.
+Krebs; The Hacker News; NPR and PBS NewsHour RSS (neutral public
+broadcasters, World and US Politics beats, via the generic RSSAdapter).
+The US Politics section, unstaffed by any dedicated source before, gets its
+first feeds here (npr_politics, pbs_politics), the same way the World beat
+was staffed with direct publisher feeds. X/Twitter is OUT of v1 (decision
+log #1). GDELT deferred to v1.1.
 
 Rules: one adapter failing never fails the run (catch, log, continue);
 respect max_items_per_run; every run writes per-adapter health metrics.
