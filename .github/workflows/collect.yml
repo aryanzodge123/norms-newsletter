@@ -27,6 +27,11 @@ jobs:
       R2_WAREHOUSE: ${{ secrets.R2_WAREHOUSE }}
       R2_TOKEN: ${{ secrets.R2_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # newsapi is enabled in config/sources.yaml, so the job needs its key or
+      # every scheduled run comes back "partial" with newsapi as the lone
+      # failed adapter (the collector caught it and continued). The secret was
+      # already present in the repo; it just was not wired into this job.
+      NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
       HEALTHCHECKS_COLLECT_URL: ${{ secrets.HEALTHCHECKS_COLLECT_URL }}
     steps:
       - uses: actions/checkout@v4
