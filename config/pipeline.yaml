@@ -23,6 +23,14 @@ enrich:
   max_concurrency: 8
   # One pathological page must not stall or balloon a run.
   max_bytes: 2000000
+  # Run trafilatura in an isolated child process. It wraps native libraries
+  # that can segfault on certain HTML (a blog.pypi.org page took the collector
+  # down on 2026-07-22, exit 139), and a segfault kills the process before the
+  # regex fallback can run. Isolation turns that crash into a recoverable
+  # failure. A crashing or hanging page costs at most extract_timeout_seconds
+  # before falling back.
+  isolate_extraction: true
+  extract_timeout_seconds: 8.0
   skip_hosts:
     # Google News RSS links are opaque redirect shims. The page is ~580KB of
     # JavaScript and carries neither the publisher URL nor the article text,
@@ -30,6 +38,9 @@ enrich:
     # their feed summary. Replacing these feeds with direct publisher RSS is
     # the way to make them groundable, and that is a sources.yaml change.
     - news.google.com
+    # blog.pypi.org HTML triggers a trafilatura segfault on certain structures.
+    # Keep feed summary instead of fetching.
+    - blog.pypi.org
 
 silver:
   # Pinned per SPEC 11's open question. cluster_threshold is calibrated

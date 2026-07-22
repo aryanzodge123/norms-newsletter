@@ -38,6 +38,9 @@ def config() -> EnrichConfig:
         max_concurrency=4,
         max_bytes=2_000_000,
         skip_hosts=("news.google.com",),
+        # Run the extraction in-process here so the fetch_text / enrich_items
+        # tests stay fast and hermetic. The isolation wrapper has its own tests.
+        isolate_extraction=False,
     )
 
 
@@ -59,13 +62,13 @@ def html_response(body: str = ARTICLE_HTML, **kwargs) -> httpx.Response:
 # extract_text
 # --------------------------------------------------------------------------
 def test_extracts_article_text() -> None:
-    text = enrich.extract_text(ARTICLE_HTML)
+    text = enrich.extract_text(ARTICLE_HTML, isolate=False)
     assert "regulator approved the device" in text
     assert "without a prescription" in text
 
 
 def test_extraction_drops_scripts_and_styles() -> None:
-    text = enrich.extract_text(ARTICLE_HTML)
+    text = enrich.extract_text(ARTICLE_HTML, isolate=False)
     assert "var tracking" not in text
     assert "display: none" not in text
 
@@ -80,6 +83,51 @@ def test_paragraph_fallback_works_without_trafilatura() -> None:
 
 def test_empty_html_is_empty() -> None:
     assert enrich.extract_text("") == ""
+
+
+def test_whitespace_only_html_is_empty() -> None:
+    assert enrich.extract_text("   \n\t ") == ""
+
+
+# --------------------------------------------------------------------------
+# _run_isolated: trafilatura's segfault cannot be caught in-process, so the
+# call runs in a child. These stand-in workers exercise the isolation without
+# depending on trafilatura. They are top-level so spawn can pickle them.
+# --------------------------------------------------------------------------
+def _worker_returns_text(html: str, result_queue) -> None:
+    result_queue.put("extracted: " + html)
+
+
+def _worker_crashes(html: str, result_queue) -> None:
+    import os
+
+    os._exit(1)  # dies before putting anything, like a segfault
+
+
+def _worker_hangs(html: str, result_queue) -> None:
+    import time
+
+    time.sleep(30)
+
+
+def test_isolated_success_returns_worker_text() -> None:
+    assert enrich._run_isolated(_worker_returns_text, "hi", timeout=10.0) == "extracted: hi"
+
+
+def test_isolated_crash_returns_none() -> None:
+    assert enrich._run_isolated(_worker_crashes, "hi", timeout=10.0) is None
+
+
+def test_isolated_timeout_returns_none() -> None:
+    assert enrich._run_isolated(_worker_hangs, "hi", timeout=0.5) is None
+
+
+def test_isolated_crash_falls_back_to_paragraphs(monkeypatch) -> None:
+    """A crashing extraction still yields the regex fallback's text, never a
+    process-killing segfault reaching the caller."""
+    monkeypatch.setattr(enrich, "_extract_worker", _worker_crashes)
+    text = enrich.extract_text(ARTICLE_HTML, isolate=True, timeout=10.0)
+    assert "regulator approved the device" in text
 
 
 # --------------------------------------------------------------------------
