@@ -209,7 +209,11 @@ Krebs; The Hacker News; NPR and PBS NewsHour RSS (neutral public
 broadcasters, World and US Politics beats, via the generic RSSAdapter).
 The US Politics section, unstaffed by any dedicated source before, gets its
 first feeds here (npr_politics, pbs_politics), the same way the World beat
-was staffed with direct publisher feeds. X/Twitter is OUT of v1 (decision
+was staffed with direct publisher feeds. The Science section, carried by
+Nature alone (arXiv is topic_hint ai), is expanded with Quanta Magazine,
+Science News, and NASA (quanta_magazine, science_news, nasa_news), curated
+general-audience science journalism plus a public-domain agency feed, all
+free keyless RSS via the generic RSSAdapter. X/Twitter is OUT of v1 (decision
 log #1). GDELT deferred to v1.1.
 
 Rules: one adapter failing never fails the run (catch, log, continue);
