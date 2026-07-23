@@ -6,6 +6,99 @@ deferred.
 
 ---
 
+## Post-M6: staff the Business and Economics beat (six sources)
+
+Date: 2026-07-23
+Spec: SPEC 6.1 (source adapters, v1 sources), 6.5 (Business/Economics section)
+Status: complete, gate green
+
+### The problem
+
+The business beat ran on `bbc_business` and `cnbc_business`, two general
+market-news desks, and the `finance` hint on `sec_edgar_press` and
+`federal_reserve_press`. Nothing in the roster carried primary economic data
+(GDP, personal income, trade, energy prices), nothing carried a non-US central
+bank, and nothing carried economics analysis outside the market-news register.
+Two same-shaped feeds is also the thin-section risk that the world and science
+beats had.
+
+### What was built
+
+`config/sources.yaml`: six entries on the generic `RSSAdapter`, all free,
+keyless, `enabled: true`, grouped under a comment beside `cnbc_business`.
+
+- Primary sources: `bea_news` (apps.bea.gov, US statistical agency),
+  `eia_today` (Today in Energy, public-domain federal energy analysis),
+  `ecb_press` (`topic_hint: finance`, the non-US counterpart to
+  `federal_reserve_press`).
+- Journalism: `npr_economy` (feed 1017), `pbs_economy`, and
+  `the_conversation_business`, the last being nonprofit academic-authored
+  explainers rated Least Biased / Very High factual by Media Bias/Fact Check
+  with no failed fact checks (AllSides rates it Lean Left).
+
+`SPEC.md` 6.1: appended the six to the descriptive "v1 sources" prose.
+Documentation parity only; the config file is the authoritative registry
+(SPEC 6.10), both hints were already in the vocabulary, no behavior changed.
+
+No adapter or collector code and no new tests: a plain-RSS source is a pure
+registry addition, and `test_adapters_m6.py::test_committed_registry_loads_and_
+enabled_adapters_construct` iterates every enabled source already.
+
+### What was evaluated and left out
+
+- **MarketWatch, CBO, GAO**: article pages extract to 43 to 101 characters
+  (consent walls, stub landing pages). That is the flat-card failure the Google
+  News feeds had, so they were rejected on grounding, not on quality.
+- **Marketplace (APM)**: episode pages run 359 to 1,001 chars, mostly under the
+  600-char enrich threshold.
+- **Yahoo Finance, Investing.com, Seeking Alpha**: syndicated or user-generated
+  wires. Provenance is not the publisher, the same objection as Google News.
+- **The Economist**: paywalled, extraction would fall back to a feed blurb.
+- **bbc/economy, cnbc/economy, cnbc/finance**: subfeeds of feeds already
+  enabled, they would duplicate rather than widen.
+- **Guardian business**: grounds fine (3,557 / 5,438 / 2,464 chars), but
+  AllSides moved The Guardian from Lean Left to Left (-3.5) in chart v10.1, and
+  the roster already runs two Guardian feeds. Left out to avoid concentrating
+  one editorial voice on a third beat. Flagged for Milind rather than decided.
+- **Fortune**: Ad Fontes rates bias -3.03 (Middle), the most centrist of the
+  journalism candidates, but reliability 36.99 sits on the "Generally
+  Reliable / Analysis OR Other Issues" boundary and the feed carries a lot of
+  aggregated hot-take content. Held back on the ScienceDaily/SciAm precedent.
+- **BLS, IMF, OECD, Treasury, AP**: 403 or 404 to our `USER_AGENT`, with no
+  working keyless alternative found. BLS is the CPI and jobs-report source and
+  would be the single most valuable addition here; its WAF blocks us.
+
+### How it was verified
+
+- Grounding measured before enabling via the pipeline's own
+  `enrich.extract_text` on three live article pages per feed: bea 6,783 /
+  3,543 / 6,505 chars, eia 1,439 / 1,942 / 2,407, ecb 4,081 / 30,201 / 2,703,
+  npr_economy 5,855 / 10,628 / 5,523, pbs_economy 7,947 / 8,236 / 11,703,
+  the_conversation 6,178 / 7,891 / 7,785. All clear the 600-char enrich
+  threshold and the 400-char writer grounding floor.
+- Live smoke fetch through the real `RSSAdapter` (7-day window): bea 1 item,
+  eia 2, ecb 7, npr_economy 5, pbs_economy 10, the_conversation 12, all with
+  dated direct-publisher canonical_urls, not redirect shims.
+- `milestone-verify`: GATE PASSED. 409 tests, 3 fixtures valid, urls derive.
+
+### Notes
+
+- ECB entry links carry a double slash (`ecb.europa.eu//press/...`). The host
+  serves them correctly and the form is stable, so `item_id` and dedup are
+  unaffected. The URL cleanup rules are frozen per spec version (SPEC 6.1), so
+  it was left as the publisher emits it rather than special-cased.
+- `bea_news` is a release-cadence feed, quiet between releases (1 item in the
+  last 7 days). Expected, not a fault.
+
+### Deferred
+
+- Confirm over the next few editions that Business/Economics forms a real
+  section and that the primary-source feeds (release-day GDP, ECB decisions)
+  actually score into it rather than sinking to `briefly`.
+- Revisit BLS if a keyless path that does not 403 turns up.
+
+---
+
 ## Post-M6: staff the Science beat (Quanta, Science News, NASA)
 
 Date: 2026-07-22
