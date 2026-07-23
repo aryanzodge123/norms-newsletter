@@ -165,10 +165,10 @@
     }
   ],
   "briefly": [
-    {"title": "A popular note-taking app added end-to-end encryption", "url": "https://arstechnica.invalid/notes-encryption", "topic": "Tech"},
-    {"title": "A central bank held interest rates steady for the third meeting", "url": "https://arstechnica.invalid/rates-hold", "topic": "Finance"},
-    {"title": "A space agency delayed its next crewed launch by two weeks", "url": "https://arstechnica.invalid/launch-delay", "topic": "Science"},
-    {"title": "A large retailer will close 40 underperforming stores", "url": "https://arstechnica.invalid/store-closures", "topic": "Business"}
+    {"cluster_id": "1a2b3c4d5e6f1a2b3c4d5e6f1a2b3c4d", "title": "A popular note-taking app added end-to-end encryption", "url": "https://arstechnica.invalid/notes-encryption", "topic": "Tech"},
+    {"cluster_id": "2b3c4d5e6f1a2b3c4d5e6f1a2b3c4d5e", "title": "A central bank held interest rates steady for the third meeting", "url": "https://arstechnica.invalid/rates-hold", "topic": "Finance"},
+    {"cluster_id": "3c4d5e6f1a2b3c4d5e6f1a2b3c4d5e6f", "title": "A space agency delayed its next crewed launch by two weeks", "url": "https://arstechnica.invalid/launch-delay", "topic": "Science"},
+    {"cluster_id": "4d5e6f1a2b3c4d5e6f1a2b3c4d5e6f1a", "title": "A large retailer will close 40 underperforming stores", "url": "https://arstechnica.invalid/store-closures", "topic": "Business"}
   ],
   "stats": {
     "items_ingested": 214,

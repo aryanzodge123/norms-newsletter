@@ -6,6 +6,95 @@ deferred.
 
 ---
 
+## Post-M6: briefly counts as published coverage
+
+Date: 2026-07-23
+Spec: SPEC 6.5 (edition.json schema, briefly), 6.9 (archival job, gold
+retrieval), decision #23
+Status: complete, gate green
+
+### The problem
+
+Editions 45 (2026-07-22) and 46 (2026-07-23) both led with the OpenAI /
+Hugging Face story under near-identical headlines:
+
+- 07-22: "OpenAI models escaped test and broke into Hugging Face servers"
+- 07-23: "OpenAI's AI models broke out of testing and hacked Hugging Face
+  to complete their task"
+
+Nothing malfunctioned. Both days that cluster was the single
+highest-scored candidate of the day (9, then 8), and `editor_v1.md` tells
+the editor the headline "should correspond to your top-ranked story".
+
+One of the four causes is a plain defect and is what this entry fixes.
+`published_cluster_ids` (`src/archive.py`) read only
+`sections[].stories[].cluster_id`, and briefly items carried no
+cluster_id at all. On 07-22 the Hugging Face story ran **only as a briefly
+line**, so it was never recorded as covered. Retrieval could not see it,
+and the follow-up the next day looked like fresh news.
+
+Measured on the 07-23 candidate set: matching against section cards alone
+finds 1 continuing-coverage candidate out of 161; matching against
+sections plus briefly finds 3. Two thirds of that day's prior coverage was
+invisible purely because of where it ran.
+
+### What was built
+
+- `src/editor/schema.py`: `BrieflyItem` gains a required `cluster_id`.
+  Required is safe here because this model only ever validates freshly
+  assembled editions and the fixtures, never the committed archive.
+- `src/editor/assemble.py`: `_briefly_items` carries the cluster_id
+  through. The `StoryContext` was already in scope, so the resolution step
+  simply stops discarding the id it already had.
+- `src/archive.py`: `published_cluster_ids` now walks `briefly` as well as
+  the section cards. Briefly items without a cluster_id are skipped rather
+  than raising, so editions published before this rule still load.
+- `site/src/content.config.ts`: `brieflyItem.cluster_id` is **optional**.
+  This schema validates every committed edition on each build, including
+  the four that predate the change. Those are the publication record and
+  are not rewritten (decision #17), so the front-end schema stays
+  permissive while the Python model is strict.
+- `site/fixtures/normal.json`, `quiet.json`: briefly items gain
+  cluster_ids. `fallback.json` has no briefly and is untouched.
+- `SPEC.md`: the 6.5 canonical block, a paragraph on the required/optional
+  split, the 6.9 rule that briefly counts as coverage, and decision #23.
+
+No behaviour change, no prompt change, no AI cost. This milestone only
+repairs the record; the editor does not yet read it.
+
+### How it was verified
+
+- `milestone-verify` gate: PASSED, 412 tests, 3 fixtures valid, self-URLs
+  derive from `astro.config`.
+- `cd site && npm run build`: 17 pages, all four historical editions
+  (2026-07-20 to 07-23) render without briefly cluster_ids. This is the
+  real test of the optional-in-Zod decision.
+- `tests/test_prior_mentions.py::test_briefly_only_coverage_is_a_prior_mention`
+  reproduces the defect directly. Confirmed it **fails** with the
+  `src/archive.py` change stashed and passes with it, so it pins the bug
+  rather than merely covering the line.
+- `tests/test_prior_mentions.py::test_briefly_without_cluster_id_does_not_raise`
+  covers the historical-edition path.
+- `src.editor.run_edition --dry-run --date 2026-07-23`: exit 0, 161
+  candidates planned, no AI calls.
+
+### Deferred
+
+- **The fix is forward-acting only.** `published_cluster_ids` against live
+  gold still returns 45, unchanged, because the four archived editions
+  carry no briefly cluster_ids and were deliberately not rewritten. The
+  count only grows once editions published under this rule enter the
+  lookback window.
+- `continuing_coverage_lookback_days` was in the plan for this milestone
+  but is not here: nothing in it reads the key, and `config/pipeline.yaml`
+  says keys are added by the milestone that needs them, not
+  speculatively (SPEC 6.10). It lands with the editor-stage work.
+- The three remaining causes of the duplicate headline (no cross-day
+  memory in scoring, no prior-edition awareness in the editor, no link
+  from `headline_of_the_day` to a cluster) are the next milestone.
+
+---
+
 ## Post-M6: staff the Business and Economics beat (six sources)
 
 Date: 2026-07-23

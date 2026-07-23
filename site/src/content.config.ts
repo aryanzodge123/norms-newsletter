@@ -59,8 +59,14 @@ const keyPoint = z
   })
   .strict();
 
+// cluster_id is optional here and required in src/editor/schema.py. This
+// schema validates every committed edition on each build, including the ones
+// published before briefly carried a cluster_id; those are the publication
+// record and are never rewritten (decision #17, #23). The Python model only
+// sees freshly assembled editions, so it can require the field.
 const brieflyItem = z
   .object({
+    cluster_id: z.string().optional(),
     title: z.string(),
     url: z.string().url(),
     topic: z.string(),

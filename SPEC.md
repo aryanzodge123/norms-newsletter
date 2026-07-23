@@ -322,7 +322,8 @@ but the flag is reviewed).
                        "source_url": "string"}
           }
         } ] } ],
-  "briefly": [ {"title": "string", "url": "string", "topic": "string"} ],
+  "briefly": [ {"cluster_id": "string", "title": "string",
+                 "url": "string", "topic": "string"} ],
   "stats": {"items_ingested": 0, "clusters_considered": 0,
              "stories_run": 0, "sources": 0, "sections_held": 0}
 }
@@ -334,6 +335,14 @@ points normal, 3 quiet; a quiet edition may include one point in Norm's
 voice tagged topic "norm". Fallback editions carry only date,
 edition_number, edition_type, and a ranked top-10 stories list (title,
 score, primary source link).
+
+`cluster_id` on briefly items is required for every edition from the first
+one published after this rule landed. It is what makes briefly coverage
+findable again by gold retrieval (6.9); without it a story that ran only in
+briefly is invisible to any later lookup. Readers of historical editions
+treat a missing briefly cluster_id as absent rather than as an error, so
+editions published before the rule keep validating and are never rewritten
+(decision #17).
 
 ### 6.6 Site build (no AI)
 
@@ -397,6 +406,12 @@ gold.history (Iceberg, compacted Parquet, partitioned by month), store the
 day's edition.json verbatim in gold, drop today's bronze/silver
 partitions, expire snapshots older than 7 days. Gold is the permanent
 record and the writer stage's background retrieval source.
+
+A cluster counts as covered if it appeared in `sections[].stories[]` **or**
+in `briefly`. A briefly line is thinner coverage than a card, but it is
+coverage: a story the newsletter has already mentioned is not new to the
+reader. Retrieval that reads only the section cards under-reports what was
+published and will re-offer a story the reader has already seen.
 
 ### 6.10 Configuration and secrets
 
@@ -507,6 +522,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 20 | Public launch and podcast directory submission happen only AFTER the migration, so feed and episode URLs never change once subscribers exist |
 | 21 | Contact email for the About page and feed metadata: aryanzodge1@gmail.com (interim; migration may move this to a project-owned address) |
 | 22 | OBA/BD preclearance is a launch gate, not a build gate; repo stays private and the site unpublished until cleared |
+| 23 | Briefly counts as published coverage. Briefly items carry a `cluster_id` so gold retrieval can find them; editions published before this rule keep validating without one and are never rewritten |
 
 ## 11. Remaining open questions
 

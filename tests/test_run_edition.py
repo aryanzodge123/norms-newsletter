@@ -245,8 +245,15 @@ def test_briefly_resolves_ids_to_links(tmp_path):
         target_date=TODAY, items_ingested=1, clusters_considered=3,
         sections_held=0, editions_dir=tmp_path,
     )
+    # cluster_id is carried through, not consumed: briefly is published
+    # coverage and gold retrieval needs the id to find it again (decision #23).
     assert edition["briefly"] == [
-        {"title": "Headline " + "e" * 32, "url": "https://x.invalid/e", "topic": "Finance"}
+        {
+            "cluster_id": "e" * 32,
+            "title": "Headline " + "e" * 32,
+            "url": "https://x.invalid/e",
+            "topic": "Finance",
+        }
     ]
 
 

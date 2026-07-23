@@ -245,6 +245,12 @@ class KeyPoint(Strict):
 
 
 class BrieflyItem(Strict):
+    # Required here but optional in the front-end schema. This model only
+    # ever sees freshly assembled editions and the fixtures, so requiring it
+    # cannot break an edition that is already published; the Astro schema
+    # validates the whole committed archive, including editions that predate
+    # the rule (SPEC 6.5, decision #23).
+    cluster_id: str = Field(min_length=1)
     title: str = Field(min_length=1)
     url: str = Field(min_length=1)
     topic: str

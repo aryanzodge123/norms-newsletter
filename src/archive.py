@@ -208,6 +208,16 @@ def published_cluster_ids(catalog: Catalog, start: date, end: date) -> set[str]:
     A prior mention is prior *coverage*, so a cluster that was scored but
     never published does not count. The edition JSON is the record of what
     was published, so this reads the cluster_ids out of it.
+
+    Both placements count: a section card and a briefly line (SPEC 6.9,
+    decision #23). A briefly line is thinner coverage than a card, but it is
+    coverage, and a story the reader has already been shown is not new. This
+    used to read section cards only, which under-reported what was published
+    and let a briefly-only story come back the next day as if fresh.
+
+    Briefly items published before that rule carry no cluster_id. They are
+    skipped rather than treated as an error, so historical editions still
+    load (SPEC 6.5).
     """
     table = _load(catalog, EDITIONS)
     if table is None:
@@ -224,6 +234,10 @@ def published_cluster_ids(catalog: Catalog, start: date, end: date) -> set[str]:
                 cid = story.get("cluster_id")
                 if cid:
                     published.add(cid)
+        for item in edition.get("briefly", []) or []:
+            cid = item.get("cluster_id") if isinstance(item, dict) else None
+            if cid:
+                published.add(cid)
     return published
 
 

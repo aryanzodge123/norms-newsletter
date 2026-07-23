@@ -33,11 +33,15 @@ log = logging.getLogger(__name__)
 def _briefly_items(
     briefly_ids: list[str], by_id: dict[str, StoryContext], used: set[str]
 ) -> list[dict]:
-    """Resolve the editor's briefly cluster ids to {title, url, topic}.
+    """Resolve the editor's briefly cluster ids to {cluster_id, title, url, topic}.
 
     Ids that are unknown, that name a story already placed in a section, or
     that carry no section topic are dropped. The editor works from cluster
     ids and the renderer needs URLs, so this is where the two meet.
+
+    The cluster_id is carried through rather than consumed here: briefly is
+    published coverage, and gold retrieval can only find it again if the
+    edition records which cluster it was (SPEC 6.9, decision #23).
     """
     items: list[dict] = []
     seen: set[str] = set()
@@ -50,6 +54,7 @@ def _briefly_items(
         seen.add(cluster_id)
         items.append(
             {
+                "cluster_id": cluster_id,
                 "title": context.headline,
                 "url": context.primary_url,
                 "topic": context.topic,
