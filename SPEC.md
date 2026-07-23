@@ -213,7 +213,13 @@ was staffed with direct publisher feeds. The Science section, carried by
 Nature alone (arXiv is topic_hint ai), is expanded with Quanta Magazine,
 Science News, and NASA (quanta_magazine, science_news, nasa_news), curated
 general-audience science journalism plus a public-domain agency feed, all
-free keyless RSS via the generic RSSAdapter. X/Twitter is OUT of v1 (decision
+free keyless RSS via the generic RSSAdapter. The Business and Economics
+beat, carried by two market-news desks (bbc_business, cnbc_business), is
+expanded with three primary sources (bea_news, eia_today, ecb_press: the
+US statistical agency, the US energy agency, and the non-US central bank
+counterpart to federal_reserve_press) and three neutral-rated journalism
+feeds (npr_economy, pbs_economy, the_conversation_business), again all free
+keyless RSS via the generic RSSAdapter. X/Twitter is OUT of v1 (decision
 log #1). GDELT deferred to v1.1.
 
 Rules: one adapter failing never fails the run (catch, log, continue);

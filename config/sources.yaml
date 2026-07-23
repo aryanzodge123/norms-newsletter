@@ -150,6 +150,89 @@
   max_items_per_run: 25
   feed_url: "https://www.cnbc.com/id/10001147/device/rss/rss.html"
 
+# The business and economics beat. bbc_business and cnbc_business carried it
+# alone, both general market-news desks, so the section had no primary
+# economic data and no non-market economics. These six add three primary
+# sources (statistical agency, energy agency, central bank) and three
+# neutral-rated journalism feeds. All free, keyless, direct publisher pages.
+#
+# Measured before enabling (chars extracted from three live article pages
+# each, against the 600-char enrich threshold and the 400-char writer floor):
+# bea 6,783/3,543/6,505, eia 1,439/1,942/2,407, ecb 4,081/30,201/2,703,
+# npr_economy 5,855/10,628/5,523, pbs_economy 7,947/8,236/11,703,
+# the_conversation 6,178/7,891/7,785.
+#
+# Evaluated and left out: MarketWatch, CBO, and GAO article pages extract to
+# 43 to 101 characters (consent walls and stub landing pages), which is the
+# flat-card failure the Google News feeds had; Marketplace episode pages run
+# 359 to 1,001 chars, mostly under the floor; Yahoo Finance, Investing.com,
+# and Seeking Alpha are syndicated or user-generated wires with no publisher
+# provenance; The Economist is paywalled; bbc/economy and cnbc/economy are
+# subfeeds of feeds already enabled above. BLS, IMF, OECD, Treasury, and AP
+# return 403 or 404 to our User-Agent and have no working keyless feed.
+
+# US Bureau of Economic Analysis. Primary source for GDP, personal income,
+# and the trade balance. Release-cadence feed, so it is quiet between
+# releases (1 item in the last 7 days, measured) and lands on release days.
+- name: bea_news
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: business
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://apps.bea.gov/rss/rss.xml"
+
+# US Energy Information Administration, Today in Energy. Public-domain
+# federal analysis of energy prices and supply, the commodity side of the
+# economy that no enabled source covered.
+- name: eia_today
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: business
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.eia.gov/rss/todayinenergy.xml"
+
+# European Central Bank press releases. Primary central-bank source, the
+# non-US counterpart to federal_reserve_press. Its entry links carry a
+# double slash (ecb.europa.eu//press/...); the host serves them correctly
+# and the form is stable, so item_id and dedup are unaffected. The URL
+# cleanup rules are frozen per spec version (SPEC 6.1), so this is left as
+# the publisher emits it rather than special-cased.
+- name: ecb_press
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: finance
+  enabled: true
+  max_items_per_run: 20
+  feed_url: "https://www.ecb.europa.eu/rss/press.html"
+
+# NPR and PBS NewsHour economy desks, the business-beat counterparts to the
+# world and politics feeds already enabled above, on the same neutrality
+# rationale and the same hosts that ground cleanly.
+- name: npr_economy
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: business
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://feeds.npr.org/1017/rss.xml"
+
+- name: pbs_economy
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: business
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://www.pbs.org/newshour/feeds/rss/economy"
+
+# The Conversation, US business section. Nonprofit, academic-authored
+# explainers, edited by professional journalists. Media Bias/Fact Check
+# rates it Least Biased with Very High factual reporting and no failed fact
+# checks; AllSides rates it Lean Left. Carries the analysis register the
+# market-news desks do not.
+- name: the_conversation_business
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: business
+  enabled: true
+  max_items_per_run: 25
+  feed_url: "https://theconversation.com/us/business/articles.atom"
+
 # The science beat. nature_news carried it alone (arxiv is topic_hint 'ai'), so
 # Science risked collapsing into briefly for want of a second story, the same
 # structural gap the world beat had. These add curated general-audience science
