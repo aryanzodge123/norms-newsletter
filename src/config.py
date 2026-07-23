@@ -194,6 +194,13 @@ class ArchiveConfig(Strict):
     # match is semantic, over this window, against clusters that were
     # actually published.
     prior_mention_lookback_days: int = Field(gt=0)
+    # How far back the editor's continuing-coverage check and the headline
+    # gate look (SPEC 6.5). Shorter than the writer's window on purpose.
+    continuing_coverage_lookback_days: int = Field(gt=0)
+    # Cosine similarity at or above which two headlines count as the same
+    # sentence (SPEC 6.5). Only half of the gate's test; the other half is
+    # whether the two headlines are about the same story.
+    headline_repeat_threshold: float = Field(gt=0.0, le=1.0)
     # SPEC 6.9: expire snapshots older than this many days on the tables the
     # archival job touches, so metadata does not grow without bound as daily
     # partitions are dropped.

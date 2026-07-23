@@ -147,11 +147,31 @@ def assemble_edition(
     ]
 
     stories_run = sum(len(section["stories"]) for section in sections)
+
+    # The editor was required to point the headline at a story it placed in
+    # a section, but the spill above can move that story into briefly after
+    # the fact. Record the id only if the story actually survived as a card;
+    # otherwise null it and log. Deliberately not an error: assembly must
+    # never be able to cost the edition (SPEC 6.5, decision #25).
+    published_ids = {
+        story["cluster_id"] for section in sections for story in section["stories"]
+    }
+    headline_cluster_id = editor.headline_cluster_id
+    if headline_cluster_id not in published_ids:
+        log.info(
+            "headline story %s did not survive as a card (spilled to briefly); "
+            "publishing without headline_cluster_id",
+            headline_cluster_id,
+        )
+        headline_cluster_id = None
+
     edition = {
         "date": target_date.isoformat(),
         "edition_number": next_edition_number(target_date, editions_dir),
         "edition_type": edition_type,
         "headline_of_the_day": editor.headline_of_the_day,
+        "headline_cluster_id": headline_cluster_id,
+        "headline_rationale": editor.headline_rationale,
         "key_points": [point.model_dump() for point in editor.key_points],
         "audio": None,  # M6 fills this in; nullable per SPEC 6.5.
         "sections": sections,

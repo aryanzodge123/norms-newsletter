@@ -3,6 +3,8 @@
   "edition_number": 43,
   "edition_type": "quiet",
   "headline_of_the_day": "A slow news Sunday, with one real story worth your time",
+  "headline_cluster_id": "b3c4d5e6f7a8b3c4d5e6f7a8b3c4d5e6",
+  "headline_rationale": "The one story today that asks readers to actually do something.",
   "key_points": [
     {
       "text": "A widely used open-source login tool had a flaw that let attackers skip passwords, and a fix is now available.",

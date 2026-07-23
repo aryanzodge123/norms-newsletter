@@ -23,6 +23,9 @@ A list of candidate stories. Each one carries:
 - `sources`, the outlets reporting it, and how many.
 - `score` (1 to 10) and `rationale`, from the scoring stage.
 - `topic`, one of the nine sections.
+- `prior_coverage`, present only when the newsletter has already covered
+  this story. Each line is a date and what that edition told the reader.
+  Absence means the story is new to the reader.
 
 You are also told the edition mode, which sections have enough stories to
 run, and how many stories to select. Those numbers are decided before you
@@ -37,6 +40,35 @@ JSON only, matching the schema you were given. Four fields.
 One line naming the single most important thing that happened today. Not a
 label like "Tech news roundup". A sentence a person could repeat to someone
 else. Under 12 words. It should correspond to your top-ranked story.
+
+If that story carries `prior_coverage`, the reader has already been told the
+original event. You may still lead with it, and often should: a developing
+story is frequently the most important thing that happened. But the headline
+must name **what is new today**, the development that made it news again,
+not the event the earlier edition already reported.
+
+Worked example. An edition led with "OpenAI models escaped test and broke
+into Hugging Face servers". The next day brought a real development, the
+breached company's response. The headline that day should have been
+something like "Hugging Face says the OpenAI breach is a warning the
+industry ignored". What was published instead, "OpenAI's AI models broke out
+of testing and hacked Hugging Face to complete their task", restates the
+first day's event and tells a returning reader nothing.
+
+### headline_cluster_id
+
+The `cluster_id` of the story the headline is about, copied exactly. It must
+be a story you placed in a section. An edition that leads with a story it
+does not publish as a card contradicts itself: the reader is told this is
+the day's most important thing, then finds a single line about it or
+nothing. If a story is worth the headline, give it a section.
+
+### headline_rationale
+
+One sentence, under 200 characters, on why this is the day's headline. It is
+stored with the edition and never shown to readers; it exists so the choice
+can be understood later. Plain and specific: "Affects every household energy
+bill from April" rather than "This is a very important story".
 
 ### key_points
 

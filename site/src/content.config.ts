@@ -88,6 +88,12 @@ const fullEdition = {
   date: DATE,
   edition_number: z.number(),
   headline_of_the_day: z.string(),
+  // Both optional for the same reason as briefly's cluster_id: this schema
+  // validates every committed edition, including those published before the
+  // fields existed. headline_rationale is stored for the record and is
+  // deliberately never rendered (SPEC 6.5, decision #25).
+  headline_cluster_id: z.string().nullable().optional(),
+  headline_rationale: z.string().nullable().optional(),
   key_points: z.array(keyPoint),
   audio: z
     .object({

@@ -6,6 +6,130 @@ deferred.
 
 ---
 
+## Post-M6: continuing coverage and the headline repetition gate
+
+Date: 2026-07-23
+Spec: SPEC 6.5 (continuing coverage, headline gate, edition schema), 6.9,
+section 7 (failure table), section 8 (observability), decisions #24, #25
+Status: complete, gate green
+
+### The problem
+
+The second half of the 2026-07-22 / 07-23 duplicate headline. The briefly
+fix repaired the coverage record; this makes the editor read it.
+
+Three causes remained. The scorer has no cross-day memory, so a follow-up
+scores on absolute newsworthiness (9 on 07-22, 8 on 07-23, top of the day
+both times). The editor had no prior-edition awareness at all:
+`retrieve_prior_mentions` existed but was called only from the writer
+stage. And nothing linked `headline_of_the_day` to a cluster, so nothing
+could catch 07-22 leading with a story it then put in briefly.
+
+Measured on the real corpus: continuing coverage is rare, 1 to 2 candidates
+a day out of 32 to 161, but in **all three** day transitions the continuing
+story is a follow-up to the previous day's headline. The newsletter's own
+lead generates tomorrow's follow-up every single day.
+
+Also measured, and the sharpest finding: the redundancy is created by the
+editor's rewrite, not present in the source. The raw source headline for
+07-23's story scores 0.779 against 07-22's published headline, below any
+threshold. The editor's rewrite scores 0.888. The material was genuinely
+fresh; the editor rewrote a distinct follow-up back into a restatement.
+
+### What was built
+
+- `src/editor/context.py`: `retrieve_prior_mentions_batch`, one gold scan
+  and one embedding pass for the whole candidate set. The single-story
+  function is now a thin wrapper over it. It was previously called per
+  story inside `write_one` and again per failing story on every readability
+  pass, so a twelve-story edition ran a dozen scans over nearly the same
+  rows. Now one, shared by both stages.
+- `src/editor/headline_gate.py` (new): reads `headline_of_the_day` from the
+  committed editions on disk, mirroring `plan.next_edition_number`. No
+  catalog, so it is testable offline. Excludes the target date (a re-run
+  must not flag an edition against itself) and skips fallback editions
+  (they carry no headline).
+- `src/editor/run_edition.py`: computes continuing coverage once before the
+  editor call, runs the gate, retries once with the offending headline
+  named, then publishes either way and flags.
+- `src/editor/schema.py`: `EditorResponse` gains `headline_cluster_id` and
+  `headline_rationale`, with the "headline must name a published card" rule
+  enforced there. `Edition` carries both as nullable.
+- `src/editor/assemble.py`: nulls `headline_cluster_id` and logs when the
+  section spill claims the headline's own story.
+- `src/runlog.py`: `headline_repeat_flag`, a guarded in-place migration,
+  and `write_row` projecting onto the table's real columns.
+- `prompts/editor_v1.md`, `config/pipeline.yaml`, `src/config.py`,
+  `site/src/content.config.ts`, fixtures, `SPEC.md`.
+
+### What stress testing changed
+
+Three design decisions came from testing the plan rather than reasoning
+about it, and all three were corrections to what had been approved.
+
+**The gate is a conjunction, not a text comparison.** Headline text alone
+is not safe at any threshold. Measured on the pinned model: "judge blocks a
+merger" vs "judge approves a merger" scores **0.836**, tariff headlines
+about different countries **0.844**, different mergers **0.838**. The
+embedding captures a headline's shape, not its event, and news runs on
+recurring templates. The gate now also requires that the story behind
+today's headline is continuing coverage of the story behind the earlier
+one, which kills the whole class at no extra cost.
+
+**The headline rule is enforced on the editor response, never on the
+assembled edition.** Driving the real pipeline with an `Edition` validator
+firing produced exit code 1 and **no edition file at all**, not even the
+fallback decision #8 promises, because `run_edition`'s outer handler sets
+`edition = None` before `_write_edition` runs. On the response the same
+rule is retryable.
+
+**The migration guard checks the end state, not the exception type.**
+`add_column` raises `ValueError` on a double add, but the real race, a job
+holding a handle from before another job migrated, raises
+`CommitFailedException`. A guard written against either name misses the
+other. Confirmed by narrowing the guard to `ValueError` and watching
+`test_a_stale_handle_losing_the_race_is_not_an_error` fail with the exact
+`CommitFailedException`.
+
+`headline_repeat_threshold` is 0.80, the centre of the measured safe band:
+the restatement scores 0.888 and the headline that should have shipped
+scores 0.729, so 0.75 to 0.85 separates them, 0.70 wrongly blocks the good
+rewrite and 0.90 lets the restatement through.
+
+### How it was verified
+
+- `milestone-verify` gate: PASSED, 436 tests, fixtures valid, self-URLs
+  derive from `astro.config`.
+- `cd site && npm run build`: 17 pages, all historical editions still
+  render.
+- Replayed the real failure against the implemented gate: what shipped
+  fires at 0.888, the headline that should have shipped passes at 0.729.
+- Every real published headline pair, assuming every pair is continuing
+  coverage (the most permissive possible test of the text half): 1 of 6
+  fires, and it is the right one. Zero false positives.
+- A long-running story that legitimately leads for days: days 2 and 3 pass
+  (0.724, 0.650), an exact restatement of day 1 fires at 1.000. Sustained
+  coverage is not punished; stagnant headlines are.
+- `tests/test_headline_gate.py` (15 tests) uses the real headlines and the
+  real embedding model, since what the model does or does not distinguish
+  is the whole difficulty.
+
+### Deferred
+
+- The gate has never fired in production. The unit tests and the replay
+  stand in for it until a real continuing story arrives.
+- Both new numbers are starting values on a single real pair. Observe for
+  two weeks, per decision #2's posture.
+- The scoring stage still has no cross-day memory. This compensates at the
+  editor, which is the cheaper place, but a follow-up scoring 8 out of 10
+  on its own merits remains a latent oddity.
+- The editor already avoided this trap on 2 of the 3 real transitions
+  unaided (headline proximity 0.475 and 0.659, against 0.868 on the day it
+  failed). This is a safety net for an occasional failure, not a repair of
+  a systematically broken editor.
+
+---
+
 ## Post-M6: briefly counts as published coverage
 
 Date: 2026-07-23

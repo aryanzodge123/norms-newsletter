@@ -24,8 +24,8 @@ from .. import bronze, runlog
 from ..config import REPO_ROOT, get_pipeline
 from ..storage import get_catalog
 from ..silver import table as silver_table
-from . import assemble, readability, run_editor, run_writers, simplify
-from .context import build_contexts
+from . import assemble, headline_gate, readability, run_editor, run_writers, simplify
+from .context import build_contexts, retrieve_prior_mentions_batch
 from .llm import AIFailure, get_client
 from .plan import choose_edition_type, plan_sections
 from .schema import SECTION_NAMES, validate_edition
@@ -64,7 +64,8 @@ def _held_section_count(contexts, plan) -> int:
 
 
 def _revise_for_readability(
-    client, edition: dict, contexts_by_id, config, system_prompt, target_date, catalog=None
+    client, edition: dict, contexts_by_id, config, system_prompt, target_date,
+    catalog=None, prior_mentions=None,
 ) -> tuple[dict, float, bool]:
     """SPEC 6.5's revision pass. Returns (edition, added_cost, flag).
 
@@ -126,7 +127,8 @@ def _revise_for_readability(
                 readability.revisable_text(story)
             )
             result = run_writers.write_one(
-                client, context, config, system_prompt, target_date, failing_sentences, catalog
+                client, context, config, system_prompt, target_date,
+                failing_sentences, catalog, prior_mentions,
             )
             added_cost += result.cost_usd
             if result.article is not None:
@@ -142,6 +144,68 @@ def _revise_for_readability(
             config.readability_max_passes,
         )
     return edition, added_cost, not report.passes
+
+
+def _run_headline_gate(
+    *, client, editor_call, contexts, edition_type, plan, config,
+    editor_system, prior_coverage, target_date,
+):
+    """SPEC 6.5's headline repetition gate. Returns (call, flag, added_cost).
+
+    One retry naming the offending headline, then publish either way. The
+    readability gate has the same posture (line ~137): availability beats
+    perfection, and a repeated headline is a quality defect rather than a
+    correctness one. Failing an edition over it would be a worse trade.
+
+    A retry that itself fails validation keeps the first response rather
+    than costing the edition, so the gate can only ever change the headline
+    or flag it, never remove the newsletter.
+    """
+    pipeline = get_pipeline()
+    archive_cfg = pipeline.archive
+    prior = headline_gate.recent_headlines(
+        target_date, archive_cfg.continuing_coverage_lookback_days
+    )
+    if not prior:
+        return editor_call, False, 0.0
+
+    def _verdict(call):
+        return headline_gate.check(
+            call.value.headline_of_the_day,
+            prior,
+            threshold=archive_cfg.headline_repeat_threshold,
+            model_name=pipeline.silver.embedding_model,
+            prior_coverage=prior_coverage.get(call.value.headline_cluster_id, []),
+        )
+
+    result = _verdict(editor_call)
+    if not result.repeated:
+        return editor_call, False, 0.0
+
+    log.warning(
+        "headline restates %s (%.3f), asking the editor for the new development",
+        result.prior.date,
+        result.similarity,
+    )
+
+    added = 0.0
+    try:
+        retry = run_editor.run_editor(
+            client, contexts, edition_type, plan, config, editor_system,
+            prior_coverage=prior_coverage,
+            repeat_feedback=result.feedback(),
+        )
+    except AIFailure as failure:
+        # The retry was invalid twice. Keep the first, valid response: a
+        # duplicate headline is better than no edition (SPEC section 7).
+        log.warning("headline retry failed validation, keeping the first response")
+        return editor_call, True, failure.cost_usd
+
+    added += retry.cost_usd
+    if _verdict(retry).repeated:
+        log.warning("headline still repeats after one retry, publishing and flagging")
+        return retry, True, added
+    return retry, False, added
 
 
 def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
@@ -202,6 +266,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
     status = "success"
     notes: list[str] = []
     readability_flag = False
+    headline_repeat_flag = False
     edition: dict | None = None
     client = None
 
@@ -218,9 +283,29 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
         else:
             editor_system = run_editor.load_system_prompt()
             writer_system = run_writers.load_system_prompt()
+
+            # Computed once, before the editor call, and shared with the
+            # writer stage and every readability pass (SPEC 6.5). This used
+            # to run per story inside write_one, so a twelve-story edition
+            # scanned gold a dozen times over nearly the same rows.
+            archive_cfg = get_pipeline().archive
+            prior_coverage = retrieve_prior_mentions_batch(
+                contexts,
+                ingest_date,
+                catalog,
+                lookback_days=archive_cfg.continuing_coverage_lookback_days,
+            )
+            if prior_coverage:
+                log.info(
+                    "%d of %d candidates continue a recently published story",
+                    len(prior_coverage),
+                    len(contexts),
+                )
+
             try:
                 editor_call = run_editor.run_editor(
-                    client, contexts, edition_type, plan, config, editor_system
+                    client, contexts, edition_type, plan, config, editor_system,
+                    prior_coverage=prior_coverage,
                 )
                 cost += editor_call.cost_usd
             except AIFailure as failure:
@@ -232,6 +317,22 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                 status = "partial"
                 notes.append("fallback edition: editor output invalid twice (SPEC 7)")
             else:
+                editor_call, headline_repeat_flag, gate_cost = _run_headline_gate(
+                    client=client,
+                    editor_call=editor_call,
+                    contexts=contexts,
+                    edition_type=edition_type,
+                    plan=plan,
+                    config=config,
+                    editor_system=editor_system,
+                    prior_coverage=prior_coverage,
+                    target_date=ingest_date,
+                )
+                cost += gate_cost
+                if headline_repeat_flag:
+                    status = "partial"
+                    notes.append("headline repeated a recent edition (SPEC 6.5)")
+
                 selected_ids = {
                     story.cluster_id
                     for section in editor_call.value.sections
@@ -239,7 +340,8 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                 }
                 selected = [c for c in contexts if c.cluster_id in selected_ids]
                 articles = run_writers.run_writers(
-                    client, selected, config, writer_system, ingest_date, catalog=catalog
+                    client, selected, config, writer_system, ingest_date,
+                    catalog=catalog, prior_mentions=prior_coverage,
                 )
                 cost += sum(result.cost_usd for result in articles.values())
 
@@ -264,7 +366,8 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                     status = "partial"
 
                 edition, revision_cost, readability_flag = _revise_for_readability(
-                    client, edition, contexts_by_id, config, writer_system, ingest_date, catalog
+                    client, edition, contexts_by_id, config, writer_system,
+                    ingest_date, catalog, prior_coverage,
                 )
                 cost += revision_cost
                 if readability_flag:
@@ -288,6 +391,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
             items_out=len(silver_rows),
             cost=cost,
             readability_flag=readability_flag,
+            headline_repeat_flag=headline_repeat_flag,
             notes="; ".join(notes) or None,
         )
 
@@ -303,7 +407,8 @@ def _write_edition(edition: dict, ingest_date: date) -> Path:
 
 
 def _log_run(
-    *, run_id, started_at, status, items_in, items_out, cost, readability_flag, notes
+    *, run_id, started_at, status, items_in, items_out, cost, readability_flag,
+    headline_repeat_flag, notes,
 ) -> None:
     try:
         runlog.write_row(

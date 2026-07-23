@@ -46,6 +46,7 @@ def test_row_has_the_spec_columns() -> None:
         "adapter_metrics",
         "ai_cost_estimate_usd",
         "readability_flag",
+        "headline_repeat_flag",
         "notes",
         "run_date",
     }
@@ -118,3 +119,107 @@ def test_a_partial_run_records_which_adapter_failed(table) -> None:
     assert row["status"] == "partial"
     assert row["notes"] == "adapters failed: arstechnica"
     assert json.loads(row["adapter_metrics"])["arstechnica"]["errors"] == 1
+
+
+# --------------------------------------------------------------------------
+# Adding a column to a live table (SPEC 8)
+# --------------------------------------------------------------------------
+def test_added_column_is_applied_to_an_existing_table(local_catalog):
+    """A table created before the column exists gets it on the next run.
+
+    ensure_table runs immediately before every write_row, so migrating here
+    leaves no window in which new code meets an old table.
+    """
+    table = runlog.ensure_table(local_catalog)
+    assert "headline_repeat_flag" in table.schema().column_names
+
+
+def test_ensure_table_is_idempotent(local_catalog):
+    """add_column itself is not idempotent; ensure_table has to be.
+
+    It runs on every job's every run, so a second call must be a no-op
+    rather than raising "column already exists".
+    """
+    first = runlog.ensure_table(local_catalog)
+    width = len(first.schema().fields)
+    for _ in range(3):
+        again = runlog.ensure_table(local_catalog)
+    assert len(again.schema().fields) == width
+
+
+def _pre_migration_table(catalog):
+    """The table as it existed in production before the column was added."""
+    from pyiceberg.schema import Schema
+
+    from src.storage import ensure_namespace
+
+    ensure_namespace(catalog, runlog.NAMESPACE)
+    added = {name for name, _ in runlog._ADDED_COLUMNS}
+    old = Schema(*[f for f in runlog.SCHEMA.fields if f.name not in added])
+    return catalog.create_table_if_not_exists(
+        runlog.TABLE_NAME, schema=old, partition_spec=runlog.PARTITION_SPEC
+    )
+
+
+def test_a_stale_handle_losing_the_race_is_not_an_error(local_catalog):
+    """The real concurrency case, and it does not raise ValueError.
+
+    The collector runs every 3h and the publish job at 6am, so two jobs can
+    hold handles from before the migration. The loser commits against a
+    changed schema and gets CommitFailedException, not the "already exists"
+    ValueError a same-handle double-add would produce. The guard therefore
+    checks the end state rather than the exception type.
+    """
+    _pre_migration_table(local_catalog)
+    job_a = local_catalog.load_table(runlog.TABLE_NAME)
+    job_b = local_catalog.load_table(runlog.TABLE_NAME)
+    assert "headline_repeat_flag" not in job_a.schema().column_names
+
+    migrated = runlog._ensure_added_columns(local_catalog, job_a)
+    assert "headline_repeat_flag" in migrated.schema().column_names
+
+    # job_b's handle predates that commit, which is the whole point.
+    recovered = runlog._ensure_added_columns(local_catalog, job_b)
+    assert "headline_repeat_flag" in recovered.schema().column_names
+    runlog.write_row(recovered, collector_row())
+    assert len(recovered.scan().to_arrow().to_pylist()) == 1
+
+
+def test_write_row_survives_a_table_that_was_never_migrated(local_catalog):
+    """Defence in depth: the row lands even without the column.
+
+    Losing one field of observability is recoverable. Losing the row is not,
+    because every job writes one in a finally block.
+    """
+    table = _pre_migration_table(local_catalog)
+    runlog.write_row(table, collector_row(headline_repeat_flag=True))
+    rows = table.scan().to_arrow().to_pylist()
+    assert len(rows) == 1
+    assert "headline_repeat_flag" not in rows[0]
+
+
+def test_write_row_projects_onto_the_tables_real_columns(local_catalog):
+    """Logging survives even if a column never reached this table.
+
+    Every job writes its run_log row in a finally block, so losing the row
+    is worse than losing one field of it.
+    """
+    table = runlog.ensure_table(local_catalog)
+    row = collector_row()
+    row["a_column_this_table_does_not_have"] = True
+    runlog.write_row(table, row)
+    rows = table.scan().to_arrow().to_pylist()
+    assert len(rows) == 1
+    assert rows[0]["run_id"] == row["run_id"]
+
+
+def test_flag_round_trips(local_catalog):
+    table = runlog.ensure_table(local_catalog)
+    row = runlog.build_row(
+        run_id=runlog.make_run_id(), job="editor",
+        started_at=datetime.now(UTC), ended_at=datetime.now(UTC),
+        status="partial", items_in=1, items_out=1,
+        headline_repeat_flag=True,
+    )
+    runlog.write_row(table, row)
+    assert table.scan().to_arrow().to_pylist()[0]["headline_repeat_flag"] is True

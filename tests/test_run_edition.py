@@ -17,6 +17,8 @@ from src.config import EditorConfig
 from src.editor import assemble, run_edition
 from src.editor.context import StoryContext
 from src.editor.run_writers import ArticleResult
+from pydantic import ValidationError
+
 from src.editor.schema import EditorResponse, EditionInvalid, validate_edition
 
 from tests.conftest import make_item
@@ -42,9 +44,23 @@ def ctx(cluster_id, *, topic="Tech", score=7, headline=None, url=None, source="h
     )
 
 
-def editor_response(sections, *, headline="The big story today", key_points=None, briefly=None):
+def editor_response(
+    sections, *, headline="The big story today", key_points=None, briefly=None,
+    headline_cluster_id=None,
+):
+    # Defaults to the first story of the first section: the editor must lead
+    # with something it published as a card (SPEC 6.5, decision #25).
+    if headline_cluster_id is None:
+        first = sections[0]
+        stories = first["stories"] if isinstance(first, dict) else first.stories
+        story = stories[0]
+        headline_cluster_id = (
+            story["cluster_id"] if isinstance(story, dict) else story.cluster_id
+        )
     return EditorResponse(
         headline_of_the_day=headline,
+        headline_cluster_id=headline_cluster_id,
+        headline_rationale="The day's most consequential story.",
         key_points=key_points
         or [
             {"text": "Point one about the day.", "topic": "Tech"},
@@ -335,8 +351,21 @@ def wired(monkeypatch, local_catalog, tmp_path):
         min_clusters_for_quiet=2,
     )
 
+    class _Archive:
+        # SPEC 6.5: the continuing-coverage window and the headline gate.
+        continuing_coverage_lookback_days = 7
+        headline_repeat_threshold = 0.80
+        prior_mention_lookback_days = 30
+        snapshot_expiry_days = 7
+
+    class _Silver:
+        embedding_model = "BAAI/bge-small-en-v1.5"
+        cluster_threshold = 0.82
+
     class _Pipeline:
         editor = cfg
+        archive = _Archive()
+        silver = _Silver()
 
     monkeypatch.setattr(run_edition, "get_pipeline", lambda: _Pipeline())
     return local_catalog, editions
@@ -375,6 +404,8 @@ def test_full_run_writes_a_normal_edition(wired, monkeypatch):
 
     editor_json = json.dumps({
         "headline_of_the_day": "The big story of the day here",
+        "headline_cluster_id": "a" * 32,
+        "headline_rationale": "It changes the most for the most people.",
         "key_points": [
             {"text": "A first plain point about today.", "topic": "Tech"},
             {"text": "A second plain point about today.", "topic": "Tech"},
@@ -563,3 +594,86 @@ def test_dry_run_writes_nothing_and_makes_no_calls(wired, monkeypatch):
     rc = run_edition.run(TODAY, dry_run=True)
     assert rc == 0
     assert not (editions / f"{TODAY.isoformat()}.json").exists()
+
+
+# --------------------------------------------------------------------------
+# The headline names a story the edition actually publishes (decision #25)
+# --------------------------------------------------------------------------
+def test_editor_headline_must_name_a_section_story():
+    """On 2026-07-22 the edition led with a story it put in briefly.
+
+    Enforced on the editor response, never on the assembled Edition: a
+    rejected Edition writes no file at all, not even a fallback.
+    """
+    with pytest.raises(ValidationError):
+        EditorResponse(
+            headline_of_the_day="A headline about a story we did not run",
+            headline_cluster_id="z" * 32,
+            headline_rationale="Nothing published points at this.",
+            key_points=[
+                {"text": "Point one about the day.", "topic": "Tech"},
+                {"text": "Point two about the day.", "topic": "Tech"},
+                {"text": "Point three about the day.", "topic": "Science"},
+            ],
+            sections=[{"name": "Technology", "stories": [
+                {"cluster_id": "a" * 32, "title": "One", "summary": "First."},
+                {"cluster_id": "b" * 32, "title": "Two", "summary": "Second."},
+            ]}],
+            briefly=[],
+        )
+
+
+def test_headline_cluster_id_nulled_when_its_story_spills_to_briefly(tmp_path):
+    """Assembly can invalidate a choice that was valid when made.
+
+    A section that cannot field two stories spills into briefly. If that
+    claims the headline's own story, code nulls the id and logs it rather
+    than failing the edition, which would cost the whole day.
+    """
+    contexts = [
+        ctx("a" * 32, topic="Tech", url="https://x.invalid/a"),
+        ctx("b" * 32, topic="Tech", url="https://x.invalid/b"),
+        ctx("c" * 32, topic="Science", url="https://x.invalid/c"),
+    ]
+    editor = editor_response(
+        [
+            {"name": "Technology", "stories": [
+                {"cluster_id": "a" * 32, "title": "One", "summary": "First thing."},
+                {"cluster_id": "b" * 32, "title": "Two", "summary": "Second thing."},
+            ]},
+            # One story only, so this whole section spills to briefly.
+            {"name": "Science", "stories": [
+                {"cluster_id": "c" * 32, "title": "Lonely", "summary": "A single find."},
+            ]},
+        ],
+        headline_cluster_id="c" * 32,
+    )
+    edition = assemble.assemble_edition(
+        editor=editor, articles={}, contexts=contexts, edition_type="normal",
+        target_date=TODAY, items_ingested=3, clusters_considered=3,
+        sections_held=0, editions_dir=tmp_path,
+    )
+    validate_edition(edition)
+    assert edition["headline_cluster_id"] is None
+    assert any(b["cluster_id"] == "c" * 32 for b in edition["briefly"])
+
+
+def test_headline_cluster_id_survives_when_its_story_is_published(tmp_path):
+    contexts = [
+        ctx("a" * 32, topic="Tech", url="https://x.invalid/a"),
+        ctx("b" * 32, topic="Tech", url="https://x.invalid/b"),
+    ]
+    editor = editor_response(
+        [{"name": "Technology", "stories": [
+            {"cluster_id": "a" * 32, "title": "One", "summary": "First thing."},
+            {"cluster_id": "b" * 32, "title": "Two", "summary": "Second thing."},
+        ]}],
+        headline_cluster_id="b" * 32,
+    )
+    edition = assemble.assemble_edition(
+        editor=editor, articles={}, contexts=contexts, edition_type="normal",
+        target_date=TODAY, items_ingested=2, clusters_considered=2,
+        sections_held=0, editions_dir=tmp_path,
+    )
+    assert edition["headline_cluster_id"] == "b" * 32
+    assert edition["headline_rationale"]
