@@ -21,7 +21,7 @@ from ..config import REPO_ROOT, EditorConfig
 from . import llm
 from .context import StoryContext
 from .plan import SectionPlan
-from .schema import EDITOR_RESPONSE_SCHEMA, EditorResponse
+from .schema import EDITOR_RESPONSE_SCHEMA, TOPICS, EditorResponse
 
 log = logging.getLogger(__name__)
 
@@ -50,6 +50,17 @@ def _mode_line(edition_type: str, plan: SectionPlan) -> str:
         "Available sections (use only these, two to four stories each, in "
         f"this order): {', '.join(plan.available) or 'none'}.",
     ]
+    if edition_type == "normal":
+        # The 20 ceiling lives in the schema, but the model counts against
+        # the section list here. Without a total stated at the point of
+        # decision it fills every available section toward four and overshoots
+        # (2026-07-24: 23 stories on a 9-section day). Decision #29.
+        lines.append(
+            "Across all sections combined, select 15 to 20 stories in total, "
+            "never more than 20. Most sections carry two or three; reserve four "
+            "for the busiest. When the day is thin, a shorter edition is "
+            "correct: do not pad to reach 15."
+        )
     if plan.held:
         lines.append(
             "Sections that could not fill two stories, put their stories in "
@@ -60,6 +71,14 @@ def _mode_line(edition_type: str, plan: SectionPlan) -> str:
             "Several sections are dead today. Keep the edition tight rather "
             "than padding it to hit a story count."
         )
+    # key_point topics are the short codes shown on each candidate, not the
+    # section display names listed above. The mismatch (a section shown as
+    # "Cybersecurity" tagged as a key_point topic) cost a retry on 2026-07-24.
+    lines.append(
+        "Tag each glance point with a topic code, not a section display name. "
+        f"The codes are: {', '.join(TOPICS)}. Each is the `topic` shown on the "
+        "candidate story the point is about."
+    )
     return "\n".join(lines)
 
 
