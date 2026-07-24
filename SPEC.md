@@ -269,7 +269,13 @@ via DuckDB. Applies editorial policy (prompts/editor_v1.md, which includes
 prompts/voice.md):
 - Section skeleton: Tech, AI, Business, Finance, US Politics, World,
   Regulation, Science, Cyber (optional).
-- Budget 15-20 stories, min 2 / max 4 per section, global ranking.
+- Budget 15-20 stories, min 2 / max 4 per section, global ranking. The
+  upper bound of 20 is enforced on the editor *response* (retryable),
+  mirroring the headline-names-a-section rule, so an over-count retries
+  once with the error rather than degrading straight to a fallback. The
+  assembled `Edition` re-checks the same ceiling as the authority on the
+  published artifact; it is defense-in-depth, not the first line of
+  enforcement.
 - Dead sections collapse into "briefly"; 3+ dead sections -> shrink the
   edition; broadly quiet day -> edition_type "quiet" with a 3-point glance.
 - Outputs the edition core: metadata, key_points, per-story title +
@@ -658,6 +664,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 25 | The edition names the cluster its headline is about and records why. Enforced on the editor response, never on the assembled edition, because a rejected response is retryable while a rejected edition degrades to a fallback |
 | 26 | Any failure after candidate selection produces a published edition, never an empty day. A stage that has not yet produced an edition degrades to the fallback; a stage that already holds a valid one publishes it unrevised. Enforced at the orchestration points rather than at each failure site, so a future required field on the edition schema can cost quality but never the day |
 | 27 | `run_log.status` is too coarse to alert on (`partial` is the editor's normal state), so `run_log` carries a closed set of enumerated `reasons` codes (section 8). "Degraded" is a derived query over a degraded subset, not a stored flag, so it cannot drift. A degraded publication is alerted by reddening the GitHub Actions run after a successful deploy, never by healthchecks, which stays a pure published-or-not signal |
+| 28 | The 15-20 story budget's upper bound (20) is enforced on the editor response, not only on the assembled Edition. On 2026-07-24 the editor curated 23 stories; the ceiling lived only on the non-retryable Edition, so a self-correctable over-count degraded the day to `assembly_fallback`. Enforcing it on the retryable response lets `call_validated` return the error and trim on retry; a second failure still falls to `editor_invalid_fallback`. Extends decision #25's rule to the story count |
 
 ## 11. Remaining open questions
 
