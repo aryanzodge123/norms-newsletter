@@ -55,6 +55,7 @@ SCHEMA = Schema(
     NestedField(10, "readability_flag", BooleanType(), required=False),
     NestedField(11, "notes", StringType(), required=False),
     NestedField(12, "run_date", DateType(), required=True),
+    NestedField(13, "headline_repeat_flag", BooleanType(), required=False),
 )
 
 PARTITION_SPEC = PartitionSpec(
@@ -77,6 +78,7 @@ ARROW_SCHEMA = pa.schema(
         pa.field("readability_flag", pa.bool_(), nullable=True),
         pa.field("notes", pa.string(), nullable=True),
         pa.field("run_date", pa.date32(), nullable=False),
+        pa.field("headline_repeat_flag", pa.bool_(), nullable=True),
     ]
 )
 
@@ -92,9 +94,53 @@ def make_run_id(now: datetime | None = None) -> str:
 
 def ensure_table(catalog: Catalog) -> Table:
     ensure_namespace(catalog, NAMESPACE)
-    return catalog.create_table_if_not_exists(
+    table = catalog.create_table_if_not_exists(
         TABLE_NAME, schema=SCHEMA, partition_spec=PARTITION_SPEC
     )
+    return _ensure_added_columns(catalog, table)
+
+
+# Columns added to SCHEMA after the table was first created in production.
+# create_table_if_not_exists returns the existing table untouched, so an
+# added column has to be applied to a live table explicitly.
+_ADDED_COLUMNS: tuple[tuple[str, BooleanType], ...] = (
+    ("headline_repeat_flag", BooleanType()),
+)
+
+
+def _ensure_added_columns(catalog: Catalog, table: Table) -> Table:
+    """Bring a live table up to SCHEMA. Idempotent and concurrency-safe.
+
+    Runs on every job's every run, because every job calls ensure_table
+    immediately before write_row. That placement is deliberate: it leaves no
+    window in which new code meets an old table.
+
+    The guard checks the end state rather than the exception type, which
+    matters more than it looks. `add_column` raises ValueError when the
+    column already exists on this handle, but the real race, a job holding a
+    handle from before another job migrated, raises CommitFailedException
+    instead. Catching either by name would miss the other, so any failure is
+    followed by a re-read: if the column is there now, someone else did the
+    work, and if it is not, the failure was real and must surface.
+    """
+    missing = [
+        (name, kind)
+        for name, kind in _ADDED_COLUMNS
+        if name not in table.schema().column_names
+    ]
+    if not missing:
+        return table
+    for name, kind in missing:
+        try:
+            with table.update_schema() as update:
+                update.add_column(name, kind, required=False)
+        except Exception:
+            fresh = catalog.load_table(TABLE_NAME)
+            if name not in fresh.schema().column_names:
+                raise
+            log.info("run_log column %s was added by another job", name)
+        table = catalog.load_table(TABLE_NAME)
+    return table
 
 
 def build_row(
@@ -109,6 +155,7 @@ def build_row(
     adapter_metrics: dict | None = None,
     ai_cost_estimate_usd: float | None = None,
     readability_flag: bool | None = None,
+    headline_repeat_flag: bool | None = None,
     notes: str | None = None,
 ) -> dict:
     """Validate and shape one run_log row (SPEC section 8)."""
@@ -130,11 +177,23 @@ def build_row(
         else None,
         "ai_cost_estimate_usd": ai_cost_estimate_usd,
         "readability_flag": readability_flag,
+        "headline_repeat_flag": headline_repeat_flag,
         "notes": notes,
         "run_date": started_at.astimezone(UTC).date(),
     }
 
 
 def write_row(table: Table, row: dict) -> None:
-    table.append(pa.table({k: [v] for k, v in row.items()}, schema=ARROW_SCHEMA))
+    """Append one row, using whatever columns the table actually has.
+
+    Projecting onto the live schema rather than assuming ARROW_SCHEMA is the
+    second half of the migration safety net. If a column in SCHEMA has not
+    reached this table yet, the row still lands without it. Losing one field
+    of observability is recoverable; losing the row is not, and every job
+    writes one of these in a finally block.
+    """
+    present = set(table.schema().column_names)
+    projected = {k: v for k, v in row.items() if k in present}
+    schema = pa.schema([f for f in ARROW_SCHEMA if f.name in present])
+    table.append(pa.table({k: [v] for k, v in projected.items()}, schema=schema))
     log.info("run_log: %s %s %s", row["job"], row["run_id"], row["status"])

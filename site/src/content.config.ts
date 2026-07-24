@@ -59,8 +59,14 @@ const keyPoint = z
   })
   .strict();
 
+// cluster_id is optional here and required in src/editor/schema.py. This
+// schema validates every committed edition on each build, including the ones
+// published before briefly carried a cluster_id; those are the publication
+// record and are never rewritten (decision #17, #23). The Python model only
+// sees freshly assembled editions, so it can require the field.
 const brieflyItem = z
   .object({
+    cluster_id: z.string().optional(),
     title: z.string(),
     url: z.string().url(),
     topic: z.string(),
@@ -82,6 +88,12 @@ const fullEdition = {
   date: DATE,
   edition_number: z.number(),
   headline_of_the_day: z.string(),
+  // Both optional for the same reason as briefly's cluster_id: this schema
+  // validates every committed edition, including those published before the
+  // fields existed. headline_rationale is stored for the record and is
+  // deliberately never rendered (SPEC 6.5, decision #25).
+  headline_cluster_id: z.string().nullable().optional(),
+  headline_rationale: z.string().nullable().optional(),
   key_points: z.array(keyPoint),
   audio: z
     .object({

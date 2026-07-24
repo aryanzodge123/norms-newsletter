@@ -64,9 +64,24 @@ def _mode_line(edition_type: str, plan: SectionPlan) -> str:
 
 
 def build_user_message(
-    contexts: list[StoryContext], edition_type: str, plan: SectionPlan
+    contexts: list[StoryContext],
+    edition_type: str,
+    plan: SectionPlan,
+    prior_coverage: dict[str, list[dict]] | None = None,
+    repeat_feedback: str | None = None,
 ) -> str:
-    """The candidate list and the constraints, as the editor sees them."""
+    """The candidate list and the constraints, as the editor sees them.
+
+    `prior_coverage` is the edition-wide map of stories the newsletter has
+    already covered, computed by code before this call (SPEC 6.5). Only
+    candidates that have prior coverage carry a block, so on a normal day
+    this adds a handful of lines: measured on 2026-07-23, 3 of 161.
+
+    `repeat_feedback` is set on the headline gate's one retry and explains
+    which earlier headline was restated. It mirrors how the writer stage
+    takes `revision_sentences` on the readability gate's revision pass.
+    """
+    prior_coverage = prior_coverage or {}
     parts = [_mode_line(edition_type, plan), "", "Candidate stories:", ""]
     for context in contexts:
         sources = ", ".join(sorted({m.source for m in context.members}))
@@ -78,6 +93,12 @@ def build_user_message(
         excerpt = context.summary_seed.strip().replace("\n", " ")
         if excerpt:
             parts.append(f"  excerpt: {excerpt[:400]}")
+        for mention in prior_coverage.get(context.cluster_id, []):
+            summary = (mention.get("summary") or "").strip().replace("\n", " ")
+            parts.append(f"  prior_coverage: {mention.get('date')}: {summary[:200]}")
+        parts.append("")
+    if repeat_feedback:
+        parts.append(repeat_feedback)
         parts.append("")
     return "\n".join(parts)
 
@@ -89,9 +110,13 @@ def run_editor(
     plan: SectionPlan,
     config: EditorConfig,
     system_prompt: str,
+    prior_coverage: dict[str, list[dict]] | None = None,
+    repeat_feedback: str | None = None,
 ) -> llm.Call:
     """One editor call. Raises llm.AIFailure if it is invalid twice."""
-    user_message = build_user_message(contexts, edition_type, plan)
+    user_message = build_user_message(
+        contexts, edition_type, plan, prior_coverage, repeat_feedback
+    )
     return llm.call_validated(
         client,
         model=config.editor_model,

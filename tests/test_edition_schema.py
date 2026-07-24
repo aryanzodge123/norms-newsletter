@@ -292,13 +292,32 @@ def test_em_dash_in_headline_rejected(normal):
 # --------------------------------------------------------------------------
 def test_briefly_cannot_repeat_a_section_story(normal):
     title = normal["sections"][0]["stories"][0]["title"]
-    normal["briefly"].append({"title": title, "url": "https://x.invalid/a", "topic": "Tech"})
+    normal["briefly"].append(
+        {
+            "cluster_id": "9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f9f",
+            "title": title,
+            "url": "https://x.invalid/a",
+            "topic": "Tech",
+        }
+    )
     with pytest.raises(EditionInvalid):
         validate_edition(normal)
 
 
 def test_unknown_briefly_topic_rejected(normal):
     normal["briefly"][0]["topic"] = "norm"  # norm allowed in key_points, not briefly
+    with pytest.raises(EditionInvalid):
+        validate_edition(normal)
+
+
+def test_briefly_without_a_cluster_id_rejected(normal):
+    """Briefly is published coverage, so it has to name its cluster.
+
+    Without the id, gold retrieval cannot find the story again and a
+    briefly-only item comes back the next day as if it were new
+    (SPEC 6.5, 6.9, decision #23).
+    """
+    del normal["briefly"][0]["cluster_id"]
     with pytest.raises(EditionInvalid):
         validate_edition(normal)
 

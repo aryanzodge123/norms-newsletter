@@ -59,6 +59,8 @@ audio:
   max_words: 1600
 archive:
   prior_mention_lookback_days: 30
+  continuing_coverage_lookback_days: 7
+  headline_repeat_threshold: 0.80
   snapshot_expiry_days: 7
 canonical_url:
   shortener_hosts:

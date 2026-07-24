@@ -47,8 +47,14 @@ def fake_embeddings(monkeypatch):
     monkeypatch.setattr(cluster_mod, "embed", _fake_embed)
 
 
-def _seed_and_archive(cat, eds, day, headline, *, published: bool):
-    """Put one scored cluster into gold for `day`, published or not."""
+def _seed_and_archive(cat, eds, day, headline, *, published: bool, placement="section"):
+    """Put one scored cluster into gold for `day`, published or not.
+
+    `placement` picks where a published cluster appears in the edition:
+    "section" for a story card, "briefly" for a briefly line, or
+    "briefly_legacy" for a briefly line with no cluster_id, which is how
+    editions published before decision #23 look.
+    """
     eds.mkdir(parents=True, exist_ok=True)
     bt = bronze.ensure_table(cat)
     item = make_item(
@@ -78,11 +84,17 @@ def _seed_and_archive(cat, eds, day, headline, *, published: bool):
     silver_table.overwrite_partition(st, day, [row])
 
     if published:
-        edition = {
-            "edition_number": 1,
-            "edition_type": "normal",
-            "sections": [{"stories": [{"cluster_id": row["cluster_id"]}]}],
-        }
+        edition = {"edition_number": 1, "edition_type": "normal", "sections": []}
+        if placement == "section":
+            edition["sections"] = [{"stories": [{"cluster_id": row["cluster_id"]}]}]
+        elif placement == "briefly":
+            edition["briefly"] = [
+                {"cluster_id": row["cluster_id"], "title": headline, "url": "u", "topic": "Tech"}
+            ]
+        elif placement == "briefly_legacy":
+            edition["briefly"] = [{"title": headline, "url": "u", "topic": "Tech"}]
+        else:  # pragma: no cover - guards a typo in a test, not a code path
+            raise ValueError(f"unknown placement {placement!r}")
         (eds / f"{day.isoformat()}.json").write_text(json.dumps(edition))
     archive.archive_day(cat, day, now=NOW, editions_dir=eds, snapshot_expiry_days=7)
     return row
@@ -144,6 +156,44 @@ def test_coverage_outside_the_lookback_window_is_excluded(local_catalog, tmp_pat
     mentions = retrieve_prior_mentions(_story("Fed holds rates steady"), TARGET, cat)
 
     assert mentions == []
+
+
+def test_briefly_only_coverage_is_a_prior_mention(local_catalog, tmp_path):
+    """The 2026-07-22 defect (SPEC 6.9, decision #23).
+
+    That day's top story ran only as a briefly line. Retrieval read section
+    cards alone, so the next day's follow-up looked like fresh news and the
+    edition led with a near-identical headline two days running.
+    """
+    cat = local_catalog
+    eds = tmp_path / "editions"
+    _seed_and_archive(
+        cat, eds, date(2026, 7, 18), "Fed raises interest rates",
+        published=True, placement="briefly",
+    )
+
+    mentions = retrieve_prior_mentions(_story("Fed holds rates steady"), TARGET, cat)
+
+    assert len(mentions) == 1
+    assert mentions[0]["date"] == "2026-07-18"
+
+
+def test_briefly_without_cluster_id_does_not_raise(local_catalog, tmp_path):
+    """Editions published before decision #23 have no briefly cluster_id.
+
+    They are the publication record and are never rewritten, so retrieval
+    skips them rather than failing on them.
+    """
+    cat = local_catalog
+    eds = tmp_path / "editions"
+    _seed_and_archive(
+        cat, eds, date(2026, 7, 18), "Fed raises interest rates",
+        published=True, placement="briefly_legacy",
+    )
+
+    # No cluster_id to match on, so it cannot count as coverage, but the
+    # lookup must still complete.
+    assert retrieve_prior_mentions(_story("Fed holds rates steady"), TARGET, cat) == []
 
 
 def test_no_catalog_returns_empty(local_catalog):

@@ -33,11 +33,15 @@ log = logging.getLogger(__name__)
 def _briefly_items(
     briefly_ids: list[str], by_id: dict[str, StoryContext], used: set[str]
 ) -> list[dict]:
-    """Resolve the editor's briefly cluster ids to {title, url, topic}.
+    """Resolve the editor's briefly cluster ids to {cluster_id, title, url, topic}.
 
     Ids that are unknown, that name a story already placed in a section, or
     that carry no section topic are dropped. The editor works from cluster
     ids and the renderer needs URLs, so this is where the two meet.
+
+    The cluster_id is carried through rather than consumed here: briefly is
+    published coverage, and gold retrieval can only find it again if the
+    edition records which cluster it was (SPEC 6.9, decision #23).
     """
     items: list[dict] = []
     seen: set[str] = set()
@@ -50,6 +54,7 @@ def _briefly_items(
         seen.add(cluster_id)
         items.append(
             {
+                "cluster_id": cluster_id,
                 "title": context.headline,
                 "url": context.primary_url,
                 "topic": context.topic,
@@ -142,11 +147,31 @@ def assemble_edition(
     ]
 
     stories_run = sum(len(section["stories"]) for section in sections)
+
+    # The editor was required to point the headline at a story it placed in
+    # a section, but the spill above can move that story into briefly after
+    # the fact. Record the id only if the story actually survived as a card;
+    # otherwise null it and log. Deliberately not an error: assembly must
+    # never be able to cost the edition (SPEC 6.5, decision #25).
+    published_ids = {
+        story["cluster_id"] for section in sections for story in section["stories"]
+    }
+    headline_cluster_id = editor.headline_cluster_id
+    if headline_cluster_id not in published_ids:
+        log.info(
+            "headline story %s did not survive as a card (spilled to briefly); "
+            "publishing without headline_cluster_id",
+            headline_cluster_id,
+        )
+        headline_cluster_id = None
+
     edition = {
         "date": target_date.isoformat(),
         "edition_number": next_edition_number(target_date, editions_dir),
         "edition_type": edition_type,
         "headline_of_the_day": editor.headline_of_the_day,
+        "headline_cluster_id": headline_cluster_id,
+        "headline_rationale": editor.headline_rationale,
         "key_points": [point.model_dump() for point in editor.key_points],
         "audio": None,  # M6 fills this in; nullable per SPEC 6.5.
         "sections": sections,

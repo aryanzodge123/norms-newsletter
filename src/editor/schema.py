@@ -245,6 +245,12 @@ class KeyPoint(Strict):
 
 
 class BrieflyItem(Strict):
+    # Required here but optional in the front-end schema. This model only
+    # ever sees freshly assembled editions and the fixtures, so requiring it
+    # cannot break an edition that is already published; the Astro schema
+    # validates the whole committed archive, including editions that predate
+    # the rule (SPEC 6.5, decision #23).
+    cluster_id: str = Field(min_length=1)
     title: str = Field(min_length=1)
     url: str = Field(min_length=1)
     topic: str
@@ -314,6 +320,17 @@ class Edition(_EditionBase):
 
     edition_type: Literal["normal", "quiet"]
     headline_of_the_day: str = Field(min_length=1)
+    # Descriptive, not prescriptive, and nullable for two reasons. The rule
+    # that the headline names a published card is enforced on EditorResponse
+    # where it is retryable; enforcing it again here could only ever turn a
+    # model slip into a day with no edition at all (decision #25). And
+    # assembly itself can invalidate a valid choice: a section that cannot
+    # field two stories spills into briefly, which may claim the headline's
+    # own story. When that happens code nulls this and logs, rather than
+    # failing the edition.
+    headline_cluster_id: str | None = None
+    # The editor's one-line reason for the choice. Stored, never rendered.
+    headline_rationale: str | None = Field(default=None, max_length=200)
     key_points: list[KeyPoint]
     audio: Audio | None = None
     sections: list[Section]
@@ -523,14 +540,42 @@ class EditorResponse(Strict):
     """
 
     headline_of_the_day: str = Field(min_length=1)
+    headline_cluster_id: str = Field(min_length=1)
+    headline_rationale: str = Field(min_length=1, max_length=200)
     key_points: list[KeyPoint] = Field(min_length=3, max_length=6)
     sections: list[EditorSection] = Field(min_length=1)
     briefly: list[str] = Field(default_factory=list)
 
-    @field_validator("headline_of_the_day")
+    @field_validator("headline_of_the_day", "headline_rationale")
     @classmethod
     def _clean(cls, value: str) -> str:
         return _no_em_dash(value.strip())
+
+    @model_validator(mode="after")
+    def _headline_names_a_section_story(self) -> EditorResponse:
+        """The edition leads with a story it actually publishes as a card.
+
+        On 2026-07-22 the editor made a score-9 story the headline and then
+        put it in briefly, so the edition led with something it never
+        covered. Nothing linked the headline to a cluster, so nothing could
+        catch it.
+
+        This lives on the editor *response*, deliberately, and not on the
+        assembled Edition. An Edition that fails validation is caught by
+        run_edition's outer handler, which writes no file at all, not even
+        a fallback: a model slip there would silently cost a day
+        (decision #8, #25). Here the same rule is retryable, and a second
+        failure lands on the existing fallback path.
+        """
+        placed = {story.cluster_id for section in self.sections for story in section.stories}
+        if self.headline_cluster_id not in placed:
+            raise ValueError(
+                f"headline_cluster_id {self.headline_cluster_id!r} is not one of the "
+                "stories you placed in a section. The edition must lead with a story "
+                "it publishes as a card, so either give that story a section or "
+                "choose a headline about one you did."
+            )
+        return self
 
 
 class WriterResponse(Strict):

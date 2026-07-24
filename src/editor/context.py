@@ -149,6 +149,90 @@ def build_contexts(
     return contexts
 
 
+def retrieve_prior_mentions_batch(
+    contexts: list[StoryContext],
+    target_date: date,
+    catalog=None,
+    *,
+    lookback_days: int | None = None,
+) -> dict[str, list[dict]]:
+    """Prior published coverage for many stories, in one pass.
+
+    Same semantics as `retrieve_prior_mentions` for each story, but the gold
+    scan and the embedding both happen once for the whole set rather than
+    once per story. The single-story function was called per story inside
+    the writer stage and again per failing story in each readability pass,
+    so a twelve-story edition ran a dozen scans over nearly the same rows.
+
+    Returns cluster_id -> mentions, with an entry only for stories that have
+    prior coverage. Callers treat a missing key as "no prior coverage".
+
+    `lookback_days` defaults to the writer stage's window
+    (`prior_mention_lookback_days`); the editor stage passes its own,
+    shorter one (SPEC 6.5).
+    """
+    if catalog is None or not contexts:
+        return {}
+
+    from ..config import get_pipeline
+    from ..silver import cluster
+    from .. import archive
+
+    pipeline = get_pipeline()
+    lookback = lookback_days or pipeline.archive.prior_mention_lookback_days
+    model_name = pipeline.silver.embedding_model
+    threshold = pipeline.silver.cluster_threshold
+
+    start = target_date - timedelta(days=lookback)
+    candidates = archive.clusters_in_window(catalog, start, target_date)
+    if not candidates:
+        return {}
+
+    published = archive.published_cluster_ids(catalog, start, target_date)
+    candidates = [c for c in candidates if c["cluster_id"] in published]
+    if not candidates:
+        return {}
+
+    story_texts = [_match_text(c.headline, c.summary_seed) for c in contexts]
+    candidate_texts = [_match_text(c["headline"], c["summary_seed"]) for c in candidates]
+
+    vectors = cluster.embed([*story_texts, *candidate_texts], model_name)
+    story_vecs = vectors[: len(story_texts)]
+    candidate_vecs = vectors[len(story_texts) :]
+    scores = story_vecs @ candidate_vecs.T
+
+    out: dict[str, list[dict]] = {}
+    for i, context in enumerate(contexts):
+        matches = [
+            (candidates[j], float(scores[i][j]))
+            for j in range(len(candidates))
+            if float(scores[i][j]) >= threshold
+        ]
+        if not matches:
+            continue
+        matches.sort(key=lambda m: (m[0]["ingest_date"], m[1]), reverse=True)
+        out[context.cluster_id] = [
+            {
+                "date": row["ingest_date"].isoformat(),
+                "summary": (row["summary_seed"] or row["headline"]).strip(),
+                "cluster_id": row["cluster_id"],
+            }
+            for row, _ in matches
+        ]
+    return out
+
+
+def _match_text(headline: str, summary: str | None) -> str:
+    """What a story looks like to the matcher: headline plus its summary.
+
+    The body matters. Headline text alone conflates stories that share a
+    shape, which is why the headline gate needs story identity as a second
+    test rather than relying on text similarity (SPEC 6.5).
+    """
+    summary = (summary or "").strip()
+    return f"{headline}\n{summary}" if summary else headline
+
+
 def retrieve_prior_mentions(
     context: StoryContext, target_date: date, catalog=None
 ) -> list[dict]:
@@ -165,53 +249,11 @@ def retrieve_prior_mentions(
     what the offline writer-stage tests rely on: the prompt already renders
     a prior-mentions block, so nothing about the writer changes when gold
     starts feeding it (the block is simply no longer always empty).
+
+    One story's slice of `retrieve_prior_mentions_batch`. Prefer the batch
+    form when handling more than one story: it shares the gold scan and the
+    embedding pass across the whole set.
     """
-    if catalog is None:
-        return []
-
-    import numpy as np
-
-    from ..config import get_pipeline
-    from ..silver import cluster
-    from .. import archive
-
-    pipeline = get_pipeline()
-    lookback = pipeline.archive.prior_mention_lookback_days
-    model_name = pipeline.silver.embedding_model
-    threshold = pipeline.silver.cluster_threshold
-
-    start = target_date - timedelta(days=lookback)
-    candidates = archive.clusters_in_window(catalog, start, target_date)
-    if not candidates:
-        return []
-
-    published = archive.published_cluster_ids(catalog, start, target_date)
-    candidates = [c for c in candidates if c["cluster_id"] in published]
-    if not candidates:
-        return []
-
-    def _text(headline: str, summary: str) -> str:
-        summary = (summary or "").strip()
-        return f"{headline}\n{summary}" if summary else headline
-
-    story_text = _text(context.headline, context.summary_seed)
-    candidate_texts = [_text(c["headline"], c["summary_seed"]) for c in candidates]
-
-    vectors = cluster.embed([story_text, *candidate_texts], model_name)
-    query = vectors[0]
-    scores = vectors[1:] @ query
-
-    matches = [
-        (candidates[i], float(scores[i]))
-        for i in range(len(candidates))
-        if float(scores[i]) >= threshold
-    ]
-    matches.sort(key=lambda m: (m[0]["ingest_date"], m[1]), reverse=True)
-
-    return [
-        {
-            "date": row["ingest_date"].isoformat(),
-            "summary": (row["summary_seed"] or row["headline"]).strip(),
-        }
-        for row, _ in matches
-    ]
+    return retrieve_prior_mentions_batch([context], target_date, catalog).get(
+        context.cluster_id, []
+    )

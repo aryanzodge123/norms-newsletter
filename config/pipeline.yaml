@@ -134,6 +134,33 @@ archive:
   # gets a different id each day; the match is semantic over this window,
   # restricted to clusters that were actually published.
   prior_mention_lookback_days: 30
+  # SPEC 6.5. How far back the editor's continuing-coverage check and the
+  # headline gate look. Deliberately shorter than the writer's 30 days: a
+  # story resurfacing after three weeks is a fresh lead and a reader will
+  # not experience it as a repeat, while a headline echoing last Tuesday's
+  # will. Starting value, observed for two weeks before it is trusted, the
+  # same posture decision #2 took with cluster_threshold.
+  continuing_coverage_lookback_days: 7
+  # SPEC 6.5. Cosine similarity between today's headline and a recent
+  # edition's headline at or above which the two count as the same
+  # sentence. Distinct from cluster_threshold: that asks whether two
+  # stories are the same story, this asks whether two sentences say the
+  # same thing, and the two are expected to be tuned in opposite
+  # directions.
+  #
+  # Set below cluster_threshold on purpose. The gate fires only on a
+  # conjunction (same sentence AND same story), so story identity carries
+  # the discrimination and this number does not have to be brittle. Text
+  # alone is not safe at any threshold: measured on the pinned model,
+  # "judge blocks a merger" and "judge approves a merger" score 0.836,
+  # because the embedding captures a headline's shape rather than its event.
+  #
+  # 0.80 is the centre of the measured safe band. On the real 2026-07-22 /
+  # 07-23 pair the restatement scores 0.888 and the headline that should
+  # have shipped scores 0.729; anything from 0.75 to 0.85 separates them,
+  # 0.70 wrongly blocks the good rewrite and 0.90 lets the restatement
+  # through.
+  headline_repeat_threshold: 0.80
   # SPEC 6.9: expire snapshots older than this on the gold tables the job
   # touches. Gold is the permanent record, but its snapshot history does
   # not need to be.

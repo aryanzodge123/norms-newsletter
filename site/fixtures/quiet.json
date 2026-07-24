@@ -3,6 +3,8 @@
   "edition_number": 43,
   "edition_type": "quiet",
   "headline_of_the_day": "A slow news Sunday, with one real story worth your time",
+  "headline_cluster_id": "b3c4d5e6f7a8b3c4d5e6f7a8b3c4d5e6",
+  "headline_rationale": "The one story today that asks readers to actually do something.",
   "key_points": [
     {
       "text": "A widely used open-source login tool had a flaw that let attackers skip passwords, and a fix is now available.",
@@ -58,9 +60,9 @@
     }
   ],
   "briefly": [
-    {"title": "A central bank hinted at one rate cut before year end", "url": "https://arstechnica.invalid/rate-cut-hint", "topic": "Finance"},
-    {"title": "A carmaker recalled 90,000 cars over a software bug", "url": "https://arstechnica.invalid/car-recall", "topic": "Business"},
-    {"title": "A telescope shared its first deep-field image of the year", "url": "https://arstechnica.invalid/telescope-image", "topic": "Science"}
+    {"cluster_id": "5e6f1a2b3c4d5e6f1a2b3c4d5e6f1a2b", "title": "A central bank hinted at one rate cut before year end", "url": "https://arstechnica.invalid/rate-cut-hint", "topic": "Finance"},
+    {"cluster_id": "6f1a2b3c4d5e6f1a2b3c4d5e6f1a2b3c", "title": "A carmaker recalled 90,000 cars over a software bug", "url": "https://arstechnica.invalid/car-recall", "topic": "Business"},
+    {"cluster_id": "0a1b2c3d4e5f0a1b2c3d4e5f0a1b2c3d", "title": "A telescope shared its first deep-field image of the year", "url": "https://arstechnica.invalid/telescope-image", "topic": "Science"}
   ],
   "stats": {
     "items_ingested": 61,

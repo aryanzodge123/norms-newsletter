@@ -8,43 +8,74 @@ SPEC-governed (models are pinned in SPEC 6.5, budgets live in
 
 ## TL;DR
 
-The first real per-edition cost, pulled from `ops.run_log`, is **~$3.42 in
-Anthropic spend**, roughly 3-4x an earlier back-of-envelope guess. Almost all of
-it is the `editor` job at **$2.72**. Projected naively at 30 editions/month that
-is **~$100/month** of Claude spend, plus Gemini TTS on top.
+**Corrected 2026-07-23.** The headline figure below was wrong by about 4x, and
+the ranked drivers were wrong too. Both errors have the same cause.
 
-Two reasons not to act on this yet:
+Per-edition Anthropic spend is **~$0.85**, not $3.42. At 30 editions/month that
+is **~$25/month**, which lands on the SPEC 9 target rather than 4x over it.
 
-1. **n = 1.** This is one edition (2026-07-20). The monthly figure is `avg x 30`
-   off a single data point. Gather ~14 editions before trusting an average.
-2. **The $2.72 is not yet attributable.** The `editor` run_log row bundles three
-   sub-stages (see below), so we cannot see which one dominates. The first real
-   work here is instrumentation, not tuning.
+**Why the old number was wrong.** It came from 2026-07-20, which has **14
+editor runs and 16 audio runs** in `ops.run_log`. That was a development day of
+re-runs, not one edition. Summing a day's rows silently summed the re-runs. Per
+*run* that day the editor was ~$0.195, which matches the clean days exactly.
+
+Two reasons still not to over-tune:
+
+1. **Small n.** Two clean production days. Gather ~14 before trusting an
+   average, and count the editor runs per day when you do.
+2. **The editor row still bundles three sub-stages**, so it is not fully
+   attributable. Instrumentation before tuning still holds.
 
 ## The measurement
 
 Query: `scratchpad/runlog_costs.py` (reads `ops.run_log.ai_cost_estimate_usd`
 via the R2 Data Catalog; needs `R2_CATALOG_URI` / `R2_WAREHOUSE` / `R2_TOKEN`).
+**Group by run_date *and* count rows per job**: a day with more than one editor
+row is not an edition.
 
-Per-edition Anthropic cost, 2026-07-20:
+Per-day Anthropic cost, all four days on record:
 
-| job (run_log)        | cost    | what it actually covers                         |
-|----------------------|---------|-------------------------------------------------|
-| silver (scoring)     | $0.3429 | Haiku scoring, one call per cluster             |
-| editor               | $2.7245 | editor curation + writer stage + readability loop |
-| writer               | $0.0000 | not real: writer spend is inside the editor row |
-| audio (script)       | $0.3558 | Haiku dialogue script only (no TTS, see below)  |
-| **total / edition**  | **$3.4232** |                                             |
+| run_date   | editor runs | silver  | editor  | audio   | total   |
+|------------|-------------|---------|---------|---------|---------|
+| 2026-07-20 | **14**      | $0.3429 | $2.7245 | $0.3558 | $3.4232 |
+| 2026-07-21 | 2           | $0.1816 | $0.1865 | $0.1756 | $0.5437 |
+| 2026-07-22 | **1**       | $0.3723 | $0.2927 | $0.1524 | **$0.8174** |
+| 2026-07-23 | **1**       | $0.3977 | $0.3150 | $0.1595 | **$0.8722** |
 
-Caveats baked into these numbers:
+Only the last two are single-edition days. 07-20 is the contaminated one the
+old TL;DR was built on; 07-21 was a thin day (32 items, 7 sources).
+
+Per clean edition, roughly:
+
+| stage                                  | cost          | share |
+|----------------------------------------|---------------|-------|
+| silver (scoring, one Haiku call/cluster) | $0.37-0.40  | ~45%  |
+| editor (curation + writers + readability) | $0.29-0.32 | ~36%  |
+| audio (script + Gemini TTS)             | $0.15-0.16   | ~19%  |
+| collector, site, archive                | $0.00         | no AI |
+
+Caveats that still apply:
 
 - **`writer` = $0.00 is a reporting artifact.** Edition generation runs under a
   single `JOB = "editor"` row (`src/editor/run_edition.py:35`), so curation,
   writers, and readability all land in the editor figure.
-- **Audio is script-only.** The historical row predates the change that folds
-  Gemini TTS into the audio cost. Going forward the audio figure will include
-  the render; it is still uncommitted at the time of writing.
-- **n = 1**, as above.
+- **Audio now includes the render.** The 07-23 row reads
+  `audio 456s, 5475168 bytes (script $0.0445 + tts $0.1150)`. The change that
+  folds Gemini TTS into `ai_cost_estimate_usd` has landed; it does not backfill
+  past rows, so 07-20's audio figure is script-only.
+
+## Measured directly, not from run_log
+
+The editor **curation call alone** was measured against the real 2026-07-23
+edition by rebuilding its user message from gold and counting tokens with
+`messages.count_tokens`:
+
+- 161 scored candidates, 29,706 input tokens of user message
+- 1,851 tokens of system prompt, ~1,251 tokens of JSON out
+- **$0.115** at Sonnet 4.5 rates
+
+So curation is about a tenth of the old $2.72 story, and writers plus
+readability account for roughly $0.20 of a clean editor row.
 
 ## The AI call sites
 
@@ -72,17 +103,28 @@ Model ids and budgets: `config/pipeline.yaml` (`scoring_model`, `editor_model`,
 `writer_model`, `script_model`, `writer_concurrency: 6`,
 `readability_max_passes: 3`, `min_clusters_for_normal: 12`).
 
-## Cost drivers, ranked (hypotheses, pending attribution)
+## Cost drivers, ranked (revised 2026-07-23)
 
-1. **The readability loop.** Up to 3 passes, each a whole-edition Haiku simplify
-   call plus a re-write of every failing story (`src/editor/run_edition.py:66`).
-   This is the largest call-count multiplier and the least visible, because it is
-   buried in the editor row. Prime suspect for the size of the $2.72.
-2. **Editor Sonnet context.** A single Sonnet call carrying every scored cluster
-   with excerpts in the un-cached user message. Sonnet at $3/$15 makes its input
-   size matter more than any Haiku stage.
-3. **Scoring volume.** Cheap per call, but one Haiku call per cluster across 8
-   collections/day; total scales with how many clusters form.
+The old ranking put the readability loop first. That was an artifact of the
+bundled re-runs: on clean days silver outspends the entire editor row.
+
+1. **Scoring volume.** The largest single line, $0.37-0.40, ahead of everything
+   else. Cheap per call, but one Haiku call per cluster across 8 collections a
+   day, and it scales with how many clusters form: 161 clusters on 07-23 against
+   32 on the thin 07-21. This is where the money actually is.
+2. **Editor Sonnet context.** $0.115 of the editor row, measured. A single
+   Sonnet call carrying every scored cluster in an un-cached user message, so
+   its input size matters more than any Haiku stage. Note it scales with cluster
+   count too, which means adding sources raises both this and scoring.
+3. **The readability loop.** Real but smaller than assumed: writers plus
+   readability come to roughly $0.20 of a clean editor row. Still the largest
+   call-count multiplier and still the least visible, so still worth
+   instrumenting, just not the prime suspect.
+4. **Audio.** $0.15-0.16, of which the TTS render is $0.115 and the script call
+   $0.045.
+
+The common thread in 1 and 2 is cluster count. Both grow as sources are added,
+which makes cluster volume the lever with the widest effect.
 
 ## Candidate levers
 
@@ -110,13 +152,28 @@ Each needs measurement first and a SPEC decision. None are recommended yet.
 - **Pre-filter clusters before scoring.** Drop obviously low-signal clusters with
   deterministic heuristics before paying for a Haiku scoring call.
 
+## Non-AI costs
+
+Effectively free, with one line worth watching:
+
+- **GitHub Actions.** About 35.5 min/day of job wall time across all jobs,
+  measured from `ops.run_log` start/end timestamps on 07-22 and 07-23, so
+  ~1,065 min/month before workflow overhead (checkout, `uv` install, the Astro
+  build). The private-repo free tier is 2,000 min/month on Free and 3,000 on
+  Pro. Inside it, but not by a wide margin, and this is the line that grows as
+  sources are added. Overage is $0.008/min on Linux.
+- **R2.** Audio is ~5.5MB/day and the Iceberg tables are small. Well inside the
+  10GB / 1M Class A / 10M Class B free tier, and egress is free.
+- **Pages, healthchecks.io.** Free tiers.
+
 ## Next steps
 
-1. Let ~14 editions accrue, then re-run `scratchpad/runlog_costs.py` for a real
-   average and a meaningful "last 14 avg" instead of an n=1 projection.
-2. Land per-sub-stage cost instrumentation so the editor row is decomposable.
+1. Let ~14 clean editions accrue, then re-run `scratchpad/runlog_costs.py`,
+   **counting editor runs per day** so a re-run day cannot contaminate the
+   average the way 2026-07-20 did.
+2. Land per-sub-stage cost instrumentation so the editor row is decomposable
+   (curation is now measured directly, writers and readability are not).
 3. Only then evaluate the levers above, spec-first, one at a time, against the
-   readability and voice quality bars in DESIGN.md / SPEC 6.5.
-
-The pending audio change (Gemini TTS folded into `ai_cost_estimate_usd`) makes
-the audio figure complete from here on; it does not backfill past rows.
+   readability and voice quality bars in DESIGN.md / SPEC 6.5. Given the revised
+   ranking, cluster volume is the first place to look, not the readability loop.
+4. Watch the Actions minutes as sources are added.

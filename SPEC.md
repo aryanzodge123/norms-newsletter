@@ -275,6 +275,24 @@ prompts/voice.md):
 - Outputs the edition core: metadata, key_points, per-story title +
   one-line summary + sources, briefly list.
 
+**Continuing coverage (code, before the editor call).** A candidate cluster
+is *continuing coverage* if it semantically matches a cluster published in
+gold within `continuing_coverage_lookback_days`, using the M2 embedding
+model at `cluster_threshold`. Same retrieval as stage 2, reusing
+`retrieve_prior_mentions`; the difference is that it now runs before stage 1
+as well, over all candidates rather than only selected stories. It is
+computed once per edition and shared by both stages.
+
+Prior coverage is a retrieval fact, not a model judgment, so it is computed
+by deterministic code and handed to the editor (rule zero). Each candidate
+carries a `prior_coverage` block: the dates it was covered, and the headline
+as published on each.
+
+The editor may still lead with continuing coverage. A developing story is
+often the most important thing that happened. What it may not do is restate
+the original event: when the top-ranked story is continuing coverage,
+`headline_of_the_day` must name what is new today.
+
 **Stage 2, Writer stage (one small call per story, parallel).** Input: the
 story's cluster excerpts plus relevant prior mentions retrieved from
 gold.history. Output: the `article` block. Grounding rules:
@@ -295,6 +313,31 @@ automatic revision pass with failing sentences listed; if still over,
 publish anyway and flag in the run log (availability beats perfection,
 but the flag is reviewed).
 
+**Headline repetition gate (code, editor/headline_gate.py).** Today's
+`headline_of_the_day` is compared against the headline of every edition
+published in the previous `continuing_coverage_lookback_days`. The gate
+fires only on a **conjunction**: the two headlines are similar at or above
+`headline_repeat_threshold`, **and** the story behind today's headline is
+continuing coverage of the story behind the earlier one.
+
+Both halves are required because headline text alone is not sufficient
+evidence. The embedding captures a headline's shape and topic rather than
+its event, so "judge blocks a merger" and "judge approves a merger" score
+0.836 against each other. Requiring story identity as well distinguishes a
+restatement from a structurally similar but unrelated headline, at no extra
+cost: the continuing-coverage map is already computed.
+
+The comparison excludes the target date itself, so re-running a published
+date never flags an edition against its own headline, and skips fallback
+editions, which carry no `headline_of_the_day`.
+
+On a fire: one editor retry with the offending headline and the reason
+included, per rule zero. If the second response also fires, publish anyway
+and set `headline_repeat_flag` in the run log. This mirrors the readability
+gate: availability beats perfection, and the flag is reviewed. A repeated
+headline is a quality defect, not a correctness defect, and is not worth
+failing an edition over.
+
 **edition.json (canonical schema, JSON Schema in editor/schema.py):**
 
 ```json
@@ -303,6 +346,8 @@ but the flag is reviewed).
   "edition_number": 1,
   "edition_type": "normal | quiet | fallback",
   "headline_of_the_day": "string",
+  "headline_cluster_id": "string | null",
+  "headline_rationale": "string | null, <= 200 chars, never rendered",
   "key_points": [ {"text": "string", "topic": "string"} ],
   "audio": {"url": "string", "duration_seconds": 564} ,
   "sections": [
@@ -322,7 +367,8 @@ but the flag is reviewed).
                        "source_url": "string"}
           }
         } ] } ],
-  "briefly": [ {"title": "string", "url": "string", "topic": "string"} ],
+  "briefly": [ {"cluster_id": "string", "title": "string",
+                 "url": "string", "topic": "string"} ],
   "stats": {"items_ingested": 0, "clusters_considered": 0,
              "stories_run": 0, "sources": 0, "sections_held": 0}
 }
@@ -334,6 +380,28 @@ points normal, 3 quiet; a quiet edition may include one point in Norm's
 voice tagged topic "norm". Fallback editions carry only date,
 edition_number, edition_type, and a ranked top-10 stories list (title,
 score, primary source link).
+
+`headline_cluster_id` names the cluster the edition leads with, and
+`headline_rationale` is the editor's one-line reason for the choice. The
+rationale is stored in gold and never rendered on the site or read by a
+later stage; it exists so a headline decision is answerable after the fact.
+
+The rule that the headline names a story published as a card is enforced on
+the **editor response**, not on the assembled edition. An assembled edition
+that fails validation writes no file at all, not even a fallback, so a model
+slip there would silently cost a day (decision #8). On the response the same
+rule is retryable. Both fields are nullable on the edition because
+assembly can move a section into `briefly` when it cannot field two stories;
+if that claims the headline's own story, code nulls the id and logs it
+rather than failing the edition. Fallback editions carry neither field.
+
+`cluster_id` on briefly items is required for every edition from the first
+one published after this rule landed. It is what makes briefly coverage
+findable again by gold retrieval (6.9); without it a story that ran only in
+briefly is invisible to any later lookup. Readers of historical editions
+treat a missing briefly cluster_id as absent rather than as an error, so
+editions published before the rule keep validating and are never rewritten
+(decision #17).
 
 ### 6.6 Site build (no AI)
 
@@ -398,6 +466,12 @@ day's edition.json verbatim in gold, drop today's bronze/silver
 partitions, expire snapshots older than 7 days. Gold is the permanent
 record and the writer stage's background retrieval source.
 
+A cluster counts as covered if it appeared in `sections[].stories[]` **or**
+in `briefly`. A briefly line is thinner coverage than a card, but it is
+coverage: a story the newsletter has already mentioned is not new to the
+reader. Retrieval that reads only the section cards under-reports what was
+published and will re-offer a story the reader has already seen.
+
 ### 6.10 Configuration and secrets
 
 `src/config.py` is the single entry point for all configuration. It loads
@@ -427,6 +501,7 @@ them, not speculatively.
 | Editor output invalid 2x       | Publish fallback edition (edition_type fallback) |
 | Zero/near-zero data at 6am     | Publish quiet edition                            |
 | Readability gate fails 2x      | Publish, flag in run log                         |
+| Headline repeats a recent one 2x | Publish, flag in run log                       |
 | TTS fails                      | Publish without audio row; log                   |
 | Deploy fails                   | healthchecks.io alert (missing ping)             |
 
@@ -452,6 +527,7 @@ own row is itself a failure surfaced by the dead man's switch.
 | adapter_metrics    | string?   | JSON blob: per-adapter items, errors, latency_ms; null for non-collector jobs |
 | ai_cost_estimate_usd | double? | null for non-AI jobs; the sum of all AI calls in the job (audio: script + TTS render) |
 | readability_flag   | boolean?  | editor job only, per 6.5                  |
+| headline_repeat_flag | boolean? | editor job only, per 6.5 (gate fired twice) |
 | notes              | string?   | nullable                                  |
 | run_date           | date      | partition column                          |
 
@@ -507,6 +583,9 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 20 | Public launch and podcast directory submission happen only AFTER the migration, so feed and episode URLs never change once subscribers exist |
 | 21 | Contact email for the About page and feed metadata: aryanzodge1@gmail.com (interim; migration may move this to a project-owned address) |
 | 22 | OBA/BD preclearance is a launch gate, not a build gate; repo stays private and the site unpublished until cleared |
+| 23 | Briefly counts as published coverage. Briefly items carry a `cluster_id` so gold retrieval can find them; editions published before this rule keep validating without one and are never rewritten |
+| 24 | Continuing coverage is surfaced to the editor, not suppressed. Leading with a developing story is allowed; restating yesterday's headline is not. The gate fires only on same-sentence AND same-story, and flags rather than fails |
+| 25 | The edition names the cluster its headline is about and records why. Enforced on the editor response, never on the assembled edition, because a rejected edition publishes nothing at all |
 
 ## 11. Remaining open questions
 

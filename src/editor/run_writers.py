@@ -136,6 +136,7 @@ def write_one(
     target_date: date,
     revision_sentences: list[str] | None = None,
     catalog=None,
+    prior_mentions: dict[str, list[dict]] | None = None,
 ) -> ArticleResult:
     """Write one article, or decline to. Never raises.
 
@@ -143,6 +144,12 @@ def write_one(
     revision pass (SPEC 6.5), not a first draft. The grounding gate is not
     re-checked: a story that cleared it to get an article the first time
     still has that article, and the pass only simplifies the prose.
+
+    `prior_mentions` is the edition-wide map computed once before the editor
+    call. Passing it avoids a gold scan and an embedding pass per story, and
+    per failing story on every readability pass. Without it this falls back
+    to retrieving for the one story, which is what the offline writer tests
+    exercise.
     """
     if revision_sentences is None and context.grounding_chars < config.min_grounding_chars:
         log.info(
@@ -153,7 +160,10 @@ def write_one(
         )
         return ArticleResult(context.cluster_id, None, 0.0, "skipped_grounding")
 
-    prior = retrieve_prior_mentions(context, target_date, catalog)
+    if prior_mentions is not None:
+        prior = prior_mentions.get(context.cluster_id, [])
+    else:
+        prior = retrieve_prior_mentions(context, target_date, catalog)
     user_message = build_user_message(context, prior, revision_sentences)
     source_urls = {source["url"] for source in context.sources}
 
@@ -193,12 +203,15 @@ def run_writers(
     system_prompt: str,
     target_date: date,
     catalog=None,
+    prior_mentions: dict[str, list[dict]] | None = None,
 ) -> dict[str, ArticleResult]:
     """Write every selected story's article, in parallel, keyed by cluster_id.
 
     Ordering does not matter: each call is independent (SPEC 6.5), so a
     thread pool is the whole of the parallelism. Failures are already
     contained inside write_one, so the pool never sees an exception.
+
+    `prior_mentions` is the shared map from the editor stage; see write_one.
     """
     if not contexts:
         return {}
@@ -206,7 +219,8 @@ def run_writers(
     with ThreadPoolExecutor(max_workers=workers) as pool:
         results = pool.map(
             lambda ctx: write_one(
-                client, ctx, config, system_prompt, target_date, catalog=catalog
+                client, ctx, config, system_prompt, target_date,
+                catalog=catalog, prior_mentions=prior_mentions,
             ),
             contexts,
         )
