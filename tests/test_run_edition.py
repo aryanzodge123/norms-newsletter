@@ -313,6 +313,24 @@ def test_fallback_takes_top_ten_by_score(tmp_path):
     assert scores == sorted(scores, reverse=True)
 
 
+def test_fallback_sorts_its_own_contexts(tmp_path):
+    """Decision #26 makes assemble_fallback the recovery every other failure
+    path lands on, so it may not depend on an invariant it does not enforce.
+    FallbackEdition rejects stories that are not descending by score, and an
+    unsorted caller used to raise EditionInvalid out of the recovery itself.
+    """
+    unsorted = [ctx(f"{i:032d}", score=s) for i, s in enumerate([3, 9, 5, 8, 1, 7, 9])]
+
+    edition = assemble.assemble_fallback(
+        contexts=unsorted, target_date=TODAY, notice="n", editions_dir=tmp_path
+    )
+
+    validate_edition(edition)
+    scores = [story["score"] for story in edition["stories"]]
+    assert scores == sorted(scores, reverse=True)
+    assert scores[0] == 9
+
+
 def test_fallback_with_no_stories_is_valid(tmp_path):
     """SPEC 7 / decision #8: never skip a day silently. With nothing usable
     at all the page is the notice alone, rather than a failed publish."""
@@ -704,7 +722,7 @@ def test_headline_cluster_id_survives_when_its_story_is_published(tmp_path):
 
 
 # --------------------------------------------------------------------------
-# Neither new stage may cost the edition (SPEC 7, decision #25)
+# No stage may cost the edition (SPEC 7, decisions #25 and #26)
 # --------------------------------------------------------------------------
 def test_a_broken_headline_gate_still_publishes(wired, monkeypatch):
     """The gate runs inside run()'s try, where an exception publishes nothing.
@@ -757,3 +775,112 @@ def test_unreachable_gold_still_publishes(wired, monkeypatch):
 
     assert rc == 0
     assert (editions / f"{TODAY.isoformat()}.json").exists()
+
+
+def _four_clusters(catalog):
+    _seed_partitions(catalog, TODAY, [
+        ctx("a" * 32, topic="Tech", url="https://x.invalid/a"),
+        ctx("b" * 32, topic="Tech", url="https://x.invalid/b"),
+        ctx("c" * 32, topic="Science", url="https://x.invalid/c"),
+        ctx("d" * 32, topic="Science", url="https://x.invalid/d"),
+    ])
+
+
+def _full_edition_client(monkeypatch):
+    monkeypatch.setattr(
+        run_edition, "get_client",
+        lambda: FakeClient([EDITOR_JSON_FULL] + [valid_article() for _ in range(4)]),
+    )
+
+
+def test_assembly_failure_publishes_a_fallback(wired, monkeypatch):
+    """Decision #26, tier one. assemble_edition's docstring always called a
+    raise "the caller's signal to fall back", but the caller used to let it
+    reach run()'s outer handler, which nulls the edition and writes nothing.
+    """
+    catalog, editions = wired
+    _four_clusters(catalog)
+    _full_edition_client(monkeypatch)
+    monkeypatch.setattr(
+        run_edition.assemble, "assemble_edition",
+        lambda **k: (_ for _ in ()).throw(EditionInvalid("sections: field required")),
+    )
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 0
+    edition = json.loads((editions / f"{TODAY.isoformat()}.json").read_text())
+    validate_edition(edition)
+    assert edition["edition_type"] == "fallback"
+    # A real ranked page, not an empty shell.
+    assert len(edition["stories"]) == 4
+
+
+def test_a_fallback_never_overwrites_a_published_edition(wired, monkeypatch):
+    """Decision #17. run()'s guard only covers a re-run whose partitions were
+    archived. With its data still present a re-run rebuilds, so without this
+    a failure would replace a good page with a link list.
+    """
+    catalog, editions = wired
+    _four_clusters(catalog)
+    editions.mkdir(parents=True, exist_ok=True)
+    published = editions / f"{TODAY.isoformat()}.json"
+    published.write_text(
+        json.dumps({"edition_type": "normal", "marker": "the real edition"})
+    )
+
+    _full_edition_client(monkeypatch)
+    monkeypatch.setattr(
+        run_edition.assemble, "assemble_edition",
+        lambda **k: (_ for _ in ()).throw(EditionInvalid("assembly bug")),
+    )
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 0
+    kept = json.loads(published.read_text())
+    assert kept["marker"] == "the real edition"
+    assert kept["edition_type"] == "normal"
+
+
+def test_readability_failure_publishes_the_assembled_edition(wired, monkeypatch):
+    """Decision #26, tier two. By this point a validated edition exists, so
+    degrading to the fallback would be worse than publishing it unrevised.
+    """
+    catalog, editions = wired
+    _four_clusters(catalog)
+    _full_edition_client(monkeypatch)
+    monkeypatch.setattr(
+        run_edition, "_revise_for_readability",
+        lambda *a, **k: (_ for _ in ()).throw(RuntimeError("simplify blew up")),
+    )
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 0
+    edition = json.loads((editions / f"{TODAY.isoformat()}.json").read_text())
+    validate_edition(edition)
+    assert edition["edition_type"] == "normal"
+    assert edition["stats"]["stories_run"] == 4
+
+
+def test_a_run_that_cannot_build_anything_still_fails(wired, monkeypatch):
+    """The floor. Decision #26 is not "swallow everything": if even the
+    fallback cannot be built there is nothing to publish, and the run says so.
+    """
+    catalog, editions = wired
+    _four_clusters(catalog)
+    _full_edition_client(monkeypatch)
+    monkeypatch.setattr(
+        run_edition.assemble, "assemble_edition",
+        lambda **k: (_ for _ in ()).throw(EditionInvalid("assembly bug")),
+    )
+    monkeypatch.setattr(
+        run_edition.assemble, "assemble_fallback",
+        lambda **k: (_ for _ in ()).throw(RuntimeError("nothing left to build with")),
+    )
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 1
+    assert not (editions / f"{TODAY.isoformat()}.json").exists()

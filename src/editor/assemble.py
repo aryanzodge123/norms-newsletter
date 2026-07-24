@@ -204,10 +204,17 @@ def assemble_fallback(
 
     Top ten usable clusters by score, titles and links only. Built from the
     same contexts the editor would have seen, so a total editor failure
-    still yields a real, ranked page rather than a blank one. Contexts
-    arrive already sorted by score (context.build_contexts).
+    still yields a real, ranked page rather than a blank one.
+
+    Sorted here rather than trusted from the caller. Contexts do arrive
+    ordered (context.build_contexts uses this same key), but FallbackEdition
+    rejects stories that are not descending by score, so an unsorted caller
+    would raise EditionInvalid out of the one function every other failure
+    path falls back to. Decision #26 makes that recovery load bearing, and a
+    recovery must not depend on an invariant it does not enforce itself.
     """
-    ranked = contexts[:FALLBACK_STORIES]
+    ranked = sorted(contexts, key=lambda c: (-(c.score or 0), c.cluster_id))
+    ranked = ranked[:FALLBACK_STORIES]
     stories = [
         {
             "rank": index + 1,

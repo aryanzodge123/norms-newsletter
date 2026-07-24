@@ -387,10 +387,11 @@ rationale is stored in gold and never rendered on the site or read by a
 later stage; it exists so a headline decision is answerable after the fact.
 
 The rule that the headline names a story published as a card is enforced on
-the **editor response**, not on the assembled edition. An assembled edition
-that fails validation writes no file at all, not even a fallback, so a model
-slip there would silently cost a day (decision #8). On the response the same
-rule is retryable. Both fields are nullable on the edition because
+the **editor response**, not on the assembled edition. On the response the
+rule is retryable, so a model slip costs one retry. On the assembled edition
+it would cost the day its full page and degrade it to a fallback (section 7),
+which is a real page but a much thinner one. Both fields are nullable on the
+edition because
 assembly can move a section into `briefly` when it cannot field two stories;
 if that claims the headline's own story, code nulls the id and logs it
 rather than failing the edition. Fallback editions carry neither field.
@@ -499,6 +500,8 @@ them, not speculatively.
 | Missed collector cycles        | Next cycle backfills via `since`; bronze dedups  |
 | One story's article fails 2x   | Story publishes without article block            |
 | Editor output invalid 2x       | Publish fallback edition (edition_type fallback) |
+| Edition assembly raises        | Publish fallback edition; run_log `partial`      |
+| Readability revision raises    | Publish the edition as assembled; run_log `partial` |
 | Zero/near-zero data at 6am     | Publish quiet edition                            |
 | Readability gate fails 2x      | Publish, flag in run log                         |
 | Headline repeats a recent one 2x | Publish, flag in run log                       |
@@ -508,6 +511,17 @@ them, not speculatively.
 The fallback edition is a real page (DESIGN.md NoticeBanner + RankedList):
 notice in Norm's voice, top 10 clusters by score, titles and links. The
 site never silently skips a day and never shows a broken page.
+
+Decision #8 is a floor, not a best effort. Once the pipeline has candidate
+contexts for the day, every path out of edition generation ends in a written
+edition. A normal or quiet edition that cannot be assembled publishes the
+fallback instead; a revision stage that raises publishes the edition as
+assembled, because an already validated edition is strictly better than the
+fallback that would replace it. Code records the exception type in the run
+log and marks the run `partial`. A fallback never overwrites an already
+published normal or quiet edition for the same date (decision #17). Exactly
+two conditions still leave a day unpublished: no candidate contexts at all,
+and a failure to write the file itself.
 
 ## 8. Observability
 
@@ -585,7 +599,8 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 22 | OBA/BD preclearance is a launch gate, not a build gate; repo stays private and the site unpublished until cleared |
 | 23 | Briefly counts as published coverage. Briefly items carry a `cluster_id` so gold retrieval can find them; editions published before this rule keep validating without one and are never rewritten |
 | 24 | Continuing coverage is surfaced to the editor, not suppressed. Leading with a developing story is allowed; restating yesterday's headline is not. The gate fires only on same-sentence AND same-story, and flags rather than fails |
-| 25 | The edition names the cluster its headline is about and records why. Enforced on the editor response, never on the assembled edition, because a rejected edition publishes nothing at all |
+| 25 | The edition names the cluster its headline is about and records why. Enforced on the editor response, never on the assembled edition, because a rejected response is retryable while a rejected edition degrades to a fallback |
+| 26 | Any failure after candidate selection produces a published edition, never an empty day. A stage that has not yet produced an edition degrades to the fallback; a stage that already holds a valid one publishes it unrevised. Enforced at the orchestration points rather than at each failure site, so a future required field on the edition schema can cost quality but never the day |
 
 ## 11. Remaining open questions
 
