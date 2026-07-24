@@ -47,6 +47,7 @@ def test_row_has_the_spec_columns() -> None:
         "ai_cost_estimate_usd",
         "readability_flag",
         "headline_repeat_flag",
+        "reasons",
         "notes",
         "run_date",
     }

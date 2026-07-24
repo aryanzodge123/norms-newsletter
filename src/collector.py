@@ -151,6 +151,7 @@ def collect(*, dry_run: bool = False) -> int:
 
         rec.status = collection_status(fetched_count, failed_adapters)
         if fetched_count == 0:
+            rec.reason(runlog.REASON_NO_ITEMS)
             rec.note("no items fetched from any source")
 
         # Inner try so a bronze write failure keeps its specific note; the
@@ -161,9 +162,11 @@ def collect(*, dry_run: bool = False) -> int:
             written, _skipped = bronze.append_items(table, items)
             rec.items_out = written
             if failed_adapters and rec.status != "failed":
+                rec.reason(runlog.REASON_ADAPTERS_FAILED)
                 rec.note(f"adapters failed: {', '.join(failed_adapters)}")
         except Exception as exc:  # noqa: BLE001
             rec.status = "failed"
+            rec.reason(runlog.REASON_WRITE_FAILED)
             rec.note(f"bronze write failed: {type(exc).__name__}: {exc}")
             log.error(rec.notes[-1])
 

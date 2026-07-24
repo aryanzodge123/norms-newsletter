@@ -318,6 +318,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                     contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
                 )
                 rec.status = "partial"
+                rec.reason(runlog.REASON_THIN_DAY_FALLBACK)
                 rec.note("fallback edition: too little usable data for a normal or quiet day")
             else:
                 editor_system = run_editor.load_system_prompt()
@@ -361,6 +362,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                         contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
                     )
                     rec.status = "partial"
+                    rec.reason(runlog.REASON_EDITOR_INVALID_FALLBACK)
                     rec.note("fallback edition: editor output invalid twice (SPEC 7)")
                 else:
                     editor_call, headline_repeat_flag, gate_cost = _run_headline_gate(
@@ -377,6 +379,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                     cost += gate_cost
                     if headline_repeat_flag:
                         rec.status = "partial"
+                        rec.reason(runlog.REASON_HEADLINE_REPEAT)
                         rec.note("headline repeated a recent edition (SPEC 6.5)")
 
                     # Tier one of decision #26. Nothing between here and the end
@@ -414,8 +417,10 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                         skipped = sum(1 for r in articles.values() if r.status == "skipped_grounding")
                         failed = sum(1 for r in articles.values() if r.status == "failed_validation")
                         if skipped:
+                            rec.reason(runlog.REASON_THIN_GROUNDING)
                             rec.note(f"{skipped} stories published without an article (thin grounding)")
                         if failed:
+                            rec.reason(runlog.REASON_ARTICLE_VALIDATION_FAILED)
                             rec.note(f"{failed} stories' articles failed validation twice")
                         if skipped or failed:
                             rec.status = "partial"
@@ -425,6 +430,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                             contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
                         )
                         rec.status = "partial"
+                        rec.reason(runlog.REASON_ASSEMBLY_FALLBACK)
                         rec.note(
                             f"fallback edition: {type(exc).__name__} during assembly ({exc})"
                         )
@@ -457,17 +463,20 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                             )
                             edition = pristine
                             readability_flag = True
+                            rec.reason(runlog.REASON_READABILITY_RAISED)
                             rec.note(
                                 f"readability revision raised {type(exc).__name__}: {exc}"
                             )
                         if readability_flag:
                             rec.status = "partial"
+                            rec.reason(runlog.REASON_READABILITY_EXCEEDED)
                             rec.note("readability gate exceeded after revision (SPEC 6.5)")
 
             written = _write_edition(edition, ingest_date)
             log.info("wrote %s (%s), est $%.4f", written, edition_type, cost)
         except Exception as exc:  # noqa: BLE001
             rec.status = "failed"
+            rec.reason(runlog.REASON_RUN_FAILED)
             rec.note(f"edition run failed: {type(exc).__name__}: {exc}")
             log.error(rec.notes[-1])
             edition = None

@@ -6,6 +6,87 @@ deferred.
 
 ---
 
+## Post-M6: reason codes on run_log, and a degraded-publication alert
+
+Date: 2026-07-24
+Spec: SPEC section 8 (reasons column, degraded definition, two-signal model),
+section 7 (degraded reddens the workflow), decision #27
+Status: complete, gate green
+
+### The problem (Finding 3)
+
+`run_log.status` was too coarse to alert on. `partial` covered everything
+from one story missing an article to the whole edition collapsing to a link
+list, and healthchecks pinged green on all of them. Measured: 16 of 18 editor
+runs on record are `partial`, so it is the normal state, not an exception.
+The failure this hid is real, not hypothetical: the editor-invalid fallback
+(readers get a bare list of links) fired twice in production on 2026-07-20,
+every signal green.
+
+### What was built
+
+The direction was settled earlier this session: keep healthchecks a pure
+published-or-not signal, add enumerated reason codes, make "degraded" a query
+over them, and alert via a red GitHub Actions run.
+
+- **`src/runlog.py`**: a closed set of 15 reason-code constants, a
+  `DEGRADED_REASONS` frozenset (`editor_invalid_fallback`,
+  `assembly_fallback`), and `is_degraded()` accepting a list or the stored
+  JSON string. `RunRecord` gained a `reasons` list and `reason(code)`, the
+  sibling the PR #15 design reserved. `build_row` serializes sorted,
+  de-duplicated codes into a new nullable `reasons` string column and rejects
+  an unknown code. The column rides the existing migration machinery
+  (`_ADDED_COLUMNS`, broadened from boolean-only), so a not-yet-migrated table
+  drops the field exactly as `headline_repeat_flag` did.
+- **The five jobs**: a `rec.reason(CODE)` beside each existing `rec.note(...)`.
+  Deliberate exclusion: a fallback edition carrying no audio gets no
+  `audio_missing` code, because that is expected, not a failure of the audio
+  stage.
+- **`src/degraded_check.py`** (new): reads today's editor row from run_log and
+  exits non-zero only when it is degraded. Read-only, no AI, no row written.
+  Takes the latest editor row by start time, so a clean re-run over an earlier
+  degraded attempt reads as not degraded.
+- **`.github/workflows/publish.yml`**: a final `Flag degraded publication`
+  step after Archive, deliberately not `continue-on-error`. It runs after the
+  deploy and the green healthcheck, so only the Actions run reddens.
+
+### The test-isolation bug this uncovered
+
+Chasing where the degraded signal reads from surfaced a real regression from
+PR #15. `logged_run` resolves `runlog.get_catalog` at call time, and
+`get_catalog` reads live R2 credentials from `.env`. So since #15, every test
+that ran a job's `run()` had been writing a junk row straight into the
+production `ops.run_log`. Confirmed: today's live table held bursts of test
+rows ("RuntimeError: nothing left to build", items_in=4) at the exact minutes
+the suite ran. Going forward those junk rows would have carried real
+`assembly_fallback` reason codes and poisoned the very signal this milestone
+builds. Fixed with an autouse `conftest.py` guard that points run_log writes
+at a throwaway local catalog, restoring the isolation the conftest docstring
+already promised. Side effect: the suite dropped from ~87s to ~11s, because
+the editor tests no longer round-trip to R2. The pre-existing junk rows in
+prod are left for a separate decision (deleting prod rows is outward-facing).
+
+### Verification
+
+`milestone-verify` green, 489 tests (up from 462: reason codes, degraded
+check, editor emission, workflow, minus the isolation speedup). All four dry
+runs clean. `src.degraded_check --date 2026-07-23` reads the real clean editor
+row and exits 0.
+
+Load-bearing checks, each verified by reverting:
+
+- Dropping `assembly_fallback` from `DEGRADED_REASONS` flips both the
+  degraded-check test and the editor-emission test.
+- `test_degraded_check.py` covers the boundary: `assembly_fallback` and
+  `editor_invalid_fallback` exit 1; `thin_day_fallback` and a clean partial
+  exit 0; no editor row exits 0; the latest row decides on a re-run.
+- `test_workflows.py` pins the step last and fail-fast.
+
+This completes Findings 1, 2, and 3. Findings 4 through 7 remain in
+`STRESS_TEST_FINDINGS.md`.
+
+---
+
 ## Post-M6: every job records its run, every built edition survives
 
 Date: 2026-07-24

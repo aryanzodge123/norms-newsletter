@@ -370,6 +370,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
             )
             if metrics.get("edition_missing"):
                 rec.status = "partial"
+                rec.reason(runlog.REASON_NO_EDITION)
                 rec.note("no edition.json to archive for this date")
     return 1 if rec.status == "failed" else 0
 

@@ -884,3 +884,65 @@ def test_a_run_that_cannot_build_anything_still_fails(wired, monkeypatch):
 
     assert rc == 1
     assert not (editions / f"{TODAY.isoformat()}.json").exists()
+
+
+# --------------------------------------------------------------------------
+# Reason codes on the editor row (Finding 3, SPEC section 8)
+# --------------------------------------------------------------------------
+def _editor_row(catalog):
+    from src import runlog
+    rows = runlog.ensure_table(catalog).scan().to_arrow().to_pylist()
+    return max((r for r in rows if r["job"] == "editor"), key=lambda r: r["started_at"])
+
+
+def test_assembly_fallback_records_a_degraded_reason(wired, monkeypatch):
+    from src import runlog
+    catalog, editions = wired
+    _four_clusters(catalog)
+    _full_edition_client(monkeypatch)
+    monkeypatch.setattr(runlog, "get_catalog", lambda: catalog)
+    monkeypatch.setattr(
+        run_edition.assemble, "assemble_edition",
+        lambda **k: (_ for _ in ()).throw(EditionInvalid("sections: field required")),
+    )
+
+    run_edition.run(TODAY)
+
+    row = _editor_row(catalog)
+    assert runlog.REASON_ASSEMBLY_FALLBACK in json.loads(row["reasons"])
+    assert runlog.is_degraded(row["reasons"]) is True
+
+
+def test_editor_invalid_fallback_records_a_degraded_reason(wired, monkeypatch):
+    from src import runlog
+    catalog, editions = wired
+    contexts = [ctx(f"{i:032d}", score=9 - i) for i in range(5)]
+    _seed_partitions(catalog, TODAY, contexts)
+    monkeypatch.setattr(runlog, "get_catalog", lambda: catalog)
+    monkeypatch.setattr(run_edition, "get_client", lambda: FakeClient(["nope", "still nope"]))
+
+    run_edition.run(TODAY)
+
+    row = _editor_row(catalog)
+    assert runlog.REASON_EDITOR_INVALID_FALLBACK in json.loads(row["reasons"])
+    assert runlog.is_degraded(row["reasons"]) is True
+
+
+def test_thin_day_fallback_is_recorded_but_not_degraded(wired, monkeypatch):
+    from src import runlog
+    catalog, editions = wired
+    _seed_partitions(catalog, TODAY, [ctx("a" * 32)])  # one cluster: a thin day
+    monkeypatch.setattr(runlog, "get_catalog", lambda: catalog)
+
+    class Boom(FakeClient):
+        def __init__(self):
+            super().__init__([])
+
+    monkeypatch.setattr(run_edition, "get_client", lambda: Boom())
+
+    run_edition.run(TODAY)
+
+    row = _editor_row(catalog)
+    assert runlog.REASON_THIN_DAY_FALLBACK in json.loads(row["reasons"])
+    # The whole point of the boundary: a thin day is not a degraded publication.
+    assert runlog.is_degraded(row["reasons"]) is False

@@ -27,6 +27,7 @@ from pyiceberg.types import (
     DoubleType,
     IntegerType,
     NestedField,
+    PrimitiveType,
     StringType,
     TimestamptzType,
 )
@@ -42,6 +43,69 @@ JOBS = frozenset(
     {"collector", "silver", "editor", "writer", "audio", "site", "archive"}
 )
 STATUSES = frozenset({"success", "partial", "failed"})
+
+# Enumerated reason codes for a partial or failed run (SPEC section 8). Closed
+# set: a new cause adds a constant here, it does not go to free text. `notes`
+# keeps the human-readable detail beside the codes.
+REASON_EDITOR_INVALID_FALLBACK = "editor_invalid_fallback"
+REASON_ASSEMBLY_FALLBACK = "assembly_fallback"
+REASON_THIN_DAY_FALLBACK = "thin_day_fallback"
+REASON_HEADLINE_REPEAT = "headline_repeat"
+REASON_THIN_GROUNDING = "thin_grounding"
+REASON_ARTICLE_VALIDATION_FAILED = "article_validation_failed"
+REASON_READABILITY_EXCEEDED = "readability_exceeded"
+REASON_READABILITY_RAISED = "readability_raised"
+REASON_ADAPTERS_FAILED = "adapters_failed"
+REASON_NO_ITEMS = "no_items"
+REASON_NULL_SCORES = "null_scores"
+REASON_NO_EDITION = "no_edition"
+REASON_AUDIO_MISSING = "audio_missing"
+REASON_WRITE_FAILED = "write_failed"
+REASON_RUN_FAILED = "run_failed"
+
+REASONS = frozenset(
+    {
+        REASON_EDITOR_INVALID_FALLBACK,
+        REASON_ASSEMBLY_FALLBACK,
+        REASON_THIN_DAY_FALLBACK,
+        REASON_HEADLINE_REPEAT,
+        REASON_THIN_GROUNDING,
+        REASON_ARTICLE_VALIDATION_FAILED,
+        REASON_READABILITY_EXCEEDED,
+        REASON_READABILITY_RAISED,
+        REASON_ADAPTERS_FAILED,
+        REASON_NO_ITEMS,
+        REASON_NULL_SCORES,
+        REASON_NO_EDITION,
+        REASON_AUDIO_MISSING,
+        REASON_WRITE_FAILED,
+        REASON_RUN_FAILED,
+    }
+)
+
+# A degraded run is one where readers got materially less than the day's data
+# supported: a fallback link-list where a real edition was possible. A
+# thin-day fallback is deliberately excluded, because too little news is
+# correct behavior, not a defect (SPEC section 8, decision #27).
+DEGRADED_REASONS = frozenset(
+    {REASON_EDITOR_INVALID_FALLBACK, REASON_ASSEMBLY_FALLBACK}
+)
+
+
+def is_degraded(reasons: "list[str] | str | None") -> bool:
+    """True if any of a row's reasons is in the degraded subset.
+
+    Accepts the parsed list, the stored JSON string, or None, so it works both
+    on a live RunRecord and on a row read back from run_log.
+    """
+    if not reasons:
+        return False
+    if isinstance(reasons, str):
+        try:
+            reasons = json.loads(reasons)
+        except ValueError:
+            return False
+    return any(code in DEGRADED_REASONS for code in reasons)
 
 RUN_ID_FORMAT = "%Y%m%dT%H%M%SZ"
 
@@ -59,6 +123,7 @@ SCHEMA = Schema(
     NestedField(11, "notes", StringType(), required=False),
     NestedField(12, "run_date", DateType(), required=True),
     NestedField(13, "headline_repeat_flag", BooleanType(), required=False),
+    NestedField(14, "reasons", StringType(), required=False),
 )
 
 PARTITION_SPEC = PartitionSpec(
@@ -82,6 +147,7 @@ ARROW_SCHEMA = pa.schema(
         pa.field("notes", pa.string(), nullable=True),
         pa.field("run_date", pa.date32(), nullable=False),
         pa.field("headline_repeat_flag", pa.bool_(), nullable=True),
+        pa.field("reasons", pa.string(), nullable=True),
     ]
 )
 
@@ -106,8 +172,9 @@ def ensure_table(catalog: Catalog) -> Table:
 # Columns added to SCHEMA after the table was first created in production.
 # create_table_if_not_exists returns the existing table untouched, so an
 # added column has to be applied to a live table explicitly.
-_ADDED_COLUMNS: tuple[tuple[str, BooleanType], ...] = (
+_ADDED_COLUMNS: tuple[tuple[str, PrimitiveType], ...] = (
     ("headline_repeat_flag", BooleanType()),
+    ("reasons", StringType()),
 )
 
 
@@ -159,6 +226,7 @@ def build_row(
     ai_cost_estimate_usd: float | None = None,
     readability_flag: bool | None = None,
     headline_repeat_flag: bool | None = None,
+    reasons: list[str] | None = None,
     notes: str | None = None,
 ) -> dict:
     """Validate and shape one run_log row (SPEC section 8)."""
@@ -166,6 +234,10 @@ def build_row(
         raise ValueError(f"unknown job {job!r}, expected one of {sorted(JOBS)}")
     if status not in STATUSES:
         raise ValueError(f"unknown status {status!r}, expected one of {sorted(STATUSES)}")
+    if reasons:
+        unknown = set(reasons) - REASONS
+        if unknown:
+            raise ValueError(f"unknown reason code(s) {sorted(unknown)}")
 
     return {
         "run_id": run_id,
@@ -181,6 +253,8 @@ def build_row(
         "ai_cost_estimate_usd": ai_cost_estimate_usd,
         "readability_flag": readability_flag,
         "headline_repeat_flag": headline_repeat_flag,
+        # Sorted and de-duplicated so equal reason sets produce identical rows.
+        "reasons": json.dumps(sorted(set(reasons))) if reasons else None,
         "notes": notes,
         "run_date": started_at.astimezone(UTC).date(),
     }
@@ -224,6 +298,9 @@ class RunRecord:
     readability_flag: bool | None = None
     headline_repeat_flag: bool | None = None
     notes: list[str] = field(default_factory=list)
+    # Enumerated codes for why this run was partial or failed (SPEC section 8).
+    # Sits beside `notes`: the code drives queries, the note carries the detail.
+    reasons: list[str] = field(default_factory=list)
     # An idempotent no-op (the editor re-running an already-published, already
     # archived date) writes no row today. Set this to keep that true, so the
     # per-day editor-run count COST_ANALYSIS.md relies on is not inflated.
@@ -231,6 +308,12 @@ class RunRecord:
 
     def note(self, message: str) -> None:
         self.notes.append(message)
+
+    def reason(self, code: str) -> None:
+        """Record an enumerated reason code, de-duplicated. Order does not
+        matter; build_row sorts before storing."""
+        if code not in self.reasons:
+            self.reasons.append(code)
 
 
 @contextmanager
@@ -266,6 +349,7 @@ def logged_run(
         yield rec
     except Exception as exc:  # noqa: BLE001
         rec.status = "failed"
+        rec.reason(REASON_RUN_FAILED)
         rec.note(f"{job} run failed: {type(exc).__name__}: {exc}")
         log.error(rec.notes[-1])
     finally:
@@ -285,6 +369,7 @@ def logged_run(
                         ai_cost_estimate_usd=rec.ai_cost_estimate_usd,
                         readability_flag=rec.readability_flag,
                         headline_repeat_flag=rec.headline_repeat_flag,
+                        reasons=rec.reasons or None,
                         notes="; ".join(rec.notes) or None,
                     ),
                 )

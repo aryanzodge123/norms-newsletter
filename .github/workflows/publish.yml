@@ -168,3 +168,11 @@ jobs:
       - name: Archive to gold
         continue-on-error: true
         run: uv run python -m src.archive
+
+      # SPEC section 8 / decision #27: the degraded signal. Reads today's
+      # editor run_log row and fails the job if a fallback was published when a
+      # real edition was possible. Runs last, so the deploy is done and
+      # healthchecks is already green: this reddens the Actions run only, which
+      # is the second, independent signal. Deliberately NOT continue-on-error.
+      - name: Flag degraded publication
+        run: uv run python -m src.degraded_check

@@ -528,6 +528,13 @@ the one such stage today, must never fail the workflow. A non-zero exit from
 it publishes the edition without that stage's contribution (SPEC 7's "publish
 without audio row"), rather than stranding an edition that is already built.
 
+A degraded publication, a fallback published when a real edition was possible
+(section 8's degraded reasons), is the one thing that reddens the publish
+workflow after a successful deploy. This is a signal, not a failure of the
+publish: the site is live and healthchecks is green, and the red Actions run
+exists only to alert that the day's edition was thinner than its data
+allowed. It never affects the published page.
+
 ## 8. Observability
 
 **`ops.run_log` (Iceberg, partitioned by run_date).** One row per job run.
@@ -549,13 +556,55 @@ itself a failure surfaced by the dead man's switch.
 | ai_cost_estimate_usd | double? | null for non-AI jobs; the sum of all AI calls in the job (audio: script + TTS render) |
 | readability_flag   | boolean?  | editor job only, per 6.5                  |
 | headline_repeat_flag | boolean? | editor job only, per 6.5 (gate fired twice) |
+| reasons            | string?   | JSON array of enumerated reason codes (below); null when there is nothing to report |
 | notes              | string?   | nullable                                  |
 | run_date           | date      | partition column                          |
 
-`status` is `partial` when the job completed but degraded: an adapter
-failed and was skipped, a story published without an article block, or the
-readability gate was exceeded and the edition published anyway. This is
-the row that makes the weekly review possible.
+`status` is `partial` when the job completed but something was less than
+ideal. That covers a wide range, from a single story missing its article to
+the whole edition collapsing to a link list, so `status` alone cannot be
+alerted on: in production it is the editor's normal state. The `reasons`
+column is what makes `partial` legible.
+
+**Reason codes.** `reasons` holds a JSON array of codes from a closed set,
+stored the same way `adapter_metrics` stores JSON in a string column. `notes`
+keeps the human-readable detail beside it. The set is closed on purpose: a
+new cause of a `partial` or `failed` run adds a code here, it does not go to
+free text. A run may carry more than one code.
+
+| code | meaning | degraded |
+|------|---------|----------|
+| `editor_invalid_fallback` | the editor's output failed validation twice, so a fallback published in place of a real edition | yes |
+| `assembly_fallback` | edition assembly raised, so a fallback published (decision #26) | yes |
+| `thin_day_fallback` | too little usable data for a normal or quiet edition | no |
+| `headline_repeat` | the headline gate fired (6.5) | no |
+| `thin_grounding` | one or more stories published without a full article | no |
+| `article_validation_failed` | one or more articles failed validation twice | no |
+| `readability_exceeded` | the readability gate was still over the limit after revision | no |
+| `readability_raised` | the readability revision stage raised and the edition published as assembled | no |
+| `adapters_failed` | one or more source adapters errored and were skipped | no |
+| `no_items` | a collection cycle fetched zero items across all sources | no |
+| `null_scores` | one or more clusters were stored with a null score | no |
+| `no_edition` | audio or archive found no edition.json for the date | no |
+| `audio_missing` | the script or TTS produced no audio; the edition published without it | no |
+| `write_failed` | the Iceberg write raised | no |
+| `run_failed` | a setup failure or unhandled error, logged by the run wrapper | no |
+
+**Degraded.** A run is *degraded* when its `reasons` intersect the degraded
+subset, `{editor_invalid_fallback, assembly_fallback}`. A degraded
+publication is one where readers received materially less than the day's data
+supported: a bare list of links where a full edition was possible. A
+thin-day fallback is deliberately not degraded, because too little news is
+correct behavior rather than a defect. "Was today degraded" is therefore a
+query over `reasons`, not a separate stored flag that could drift from it.
+
+**Two independent signals.** healthchecks answers one question, "did the site
+publish," and nothing else is layered onto it: a red check means the site did
+not publish, a green check means it did. Whether a published edition was
+degraded is answered separately, by a failed GitHub Actions run at the end of
+the publish workflow (6.8): the deploy has already happened and healthchecks
+is already green, so only the Actions run goes red, which alerts by email
+without touching the published page or the dead man's switch.
 
 healthchecks.io:
 one check for 6am publish, one for the collector cadence. The collector
@@ -608,6 +657,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 24 | Continuing coverage is surfaced to the editor, not suppressed. Leading with a developing story is allowed; restating yesterday's headline is not. The gate fires only on same-sentence AND same-story, and flags rather than fails |
 | 25 | The edition names the cluster its headline is about and records why. Enforced on the editor response, never on the assembled edition, because a rejected response is retryable while a rejected edition degrades to a fallback |
 | 26 | Any failure after candidate selection produces a published edition, never an empty day. A stage that has not yet produced an edition degrades to the fallback; a stage that already holds a valid one publishes it unrevised. Enforced at the orchestration points rather than at each failure site, so a future required field on the edition schema can cost quality but never the day |
+| 27 | `run_log.status` is too coarse to alert on (`partial` is the editor's normal state), so `run_log` carries a closed set of enumerated `reasons` codes (section 8). "Degraded" is a derived query over a degraded subset, not a stored flag, so it cannot drift. A degraded publication is alerted by reddening the GitHub Actions run after a successful deploy, never by healthchecks, which stays a pure published-or-not signal |
 
 ## 11. Remaining open questions
 
