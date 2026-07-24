@@ -10,6 +10,7 @@ from datetime import UTC, datetime, timedelta
 
 import numpy as np
 import pytest
+from pyiceberg.exceptions import CommitFailedException
 
 from src.silver import table as silver_table
 from src.silver.cluster import Cluster
@@ -115,6 +116,59 @@ def test_an_empty_result_leaves_the_partition_untouched(table) -> None:
     )
     assert silver_table.overwrite_partition(table, FETCHED.date(), []) == 0
     assert row_count(table) == 1
+
+
+def test_overwrite_retries_after_a_lost_commit_race(table, monkeypatch) -> None:
+    """SPEC 6.4 / decision #30: a lost commit race reloads and retries.
+
+    The first commit raises as if a concurrent writer had moved the snapshot;
+    the retry refreshes the handle and lands the rows.
+    """
+    monkeypatch.setattr(silver_table.time, "sleep", lambda _s: None)
+
+    real_overwrite = table.overwrite
+    real_refresh = table.refresh
+    calls = {"overwrite": 0, "refresh": 0}
+
+    def flaky_overwrite(*args, **kwargs):
+        calls["overwrite"] += 1
+        if calls["overwrite"] == 1:
+            raise CommitFailedException("Branch or tag `main`'s snapshot has changed")
+        return real_overwrite(*args, **kwargs)
+
+    def counting_refresh(*args, **kwargs):
+        calls["refresh"] += 1
+        return real_refresh(*args, **kwargs)
+
+    monkeypatch.setattr(table, "overwrite", flaky_overwrite)
+    monkeypatch.setattr(table, "refresh", counting_refresh)
+
+    rows = [silver_table.build_row(a_cluster("https://example.com/a"), SCORED)]
+    written = silver_table.overwrite_partition(table, FETCHED.date(), rows)
+
+    assert written == 1
+    assert calls["overwrite"] == 2
+    assert calls["refresh"] == 1
+    assert row_count(table) == 1
+
+
+def test_overwrite_reraises_when_retries_are_exhausted(table, monkeypatch) -> None:
+    """Every attempt loses the race, so write_failed stays reachable in run_silver."""
+    monkeypatch.setattr(silver_table.time, "sleep", lambda _s: None)
+
+    calls = {"overwrite": 0}
+
+    def always_conflicts(*args, **kwargs):
+        calls["overwrite"] += 1
+        raise CommitFailedException("Branch or tag `main`'s snapshot has changed")
+
+    monkeypatch.setattr(table, "overwrite", always_conflicts)
+
+    rows = [silver_table.build_row(a_cluster("https://example.com/a"), SCORED)]
+    with pytest.raises(CommitFailedException):
+        silver_table.overwrite_partition(table, FETCHED.date(), rows)
+
+    assert calls["overwrite"] == silver_table.OVERWRITE_MAX_ATTEMPTS
 
 
 def test_stored_columns_match_the_spec_schema(table) -> None:

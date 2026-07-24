@@ -14,10 +14,12 @@ A score without the thing that produced it is not evaluable.
 from __future__ import annotations
 
 import logging
+import time
 from datetime import date
 
 import pyarrow as pa
 from pyiceberg.catalog import Catalog
+from pyiceberg.exceptions import CommitFailedException
 from pyiceberg.expressions import EqualTo
 from pyiceberg.partitioning import PartitionField, PartitionSpec
 from pyiceberg.schema import Schema
@@ -41,6 +43,15 @@ log = logging.getLogger(__name__)
 
 NAMESPACE = "silver"
 TABLE_NAME = "silver.story_clusters"
+
+# Bounded reload-and-retry for the partition overwrite (SPEC 6.4, decision
+# #30). The overwrite is a compare-and-swap against the snapshot the handle
+# was loaded from, so a concurrent committer (the archival partition drop is
+# the one other silver mutator, src/archive.py) can advance the table between
+# ensure_table and the commit and lose us the race. Backoffs are the pauses
+# between attempts, so len == OVERWRITE_MAX_ATTEMPTS - 1.
+OVERWRITE_MAX_ATTEMPTS = 3
+OVERWRITE_BACKOFFS_S = (0.5, 1.0)
 
 SUMMARY_SEED_CHARS = 500
 
@@ -151,12 +162,45 @@ def overwrite_partition(table: Table, ingest_date: date, rows: list[dict]) -> in
     The rebuild is what makes a silver run idempotent: running it twice
     over the same bronze data leaves the same partition, and a run that
     was skipped earlier in the day is fully recovered by the next one.
+
+    The overwrite is a compare-and-swap under Iceberg optimistic concurrency,
+    against the snapshot this handle was loaded from in run_silver, minutes
+    earlier and before a whole scoring pass. A concurrent committer that moved
+    the table in between makes the commit raise CommitFailedException. This is
+    what SPEC 6.2 already promises away ("overlapping runs are harmless"), true
+    for append-only bronze but not, until here, for this overwrite. So a lost
+    race reloads the handle and retries a bounded number of times (SPEC 6.4,
+    decision #30) before the exception propagates to run_silver's write_failed
+    path.
+
+    A retry only needs fresh table metadata to commit rows that are already
+    built from the clusters and scores: the stale partition read feeds only the
+    carry-forward cost optimization, never correctness, so nothing is re-scored.
+    The overwrite is a whole-partition replace, so last-writer-wins is the
+    intended idempotent semantics and re-applying this deterministic rebuild is
+    safe.
     """
     if not rows:
         log.info("silver: no clusters for %s, leaving partition untouched", ingest_date)
         return 0
-    table.overwrite(
-        to_arrow(rows), overwrite_filter=EqualTo("ingest_date", ingest_date)
-    )
+    arrow_rows = to_arrow(rows)
+    for attempt in range(1, OVERWRITE_MAX_ATTEMPTS + 1):
+        try:
+            table.overwrite(
+                arrow_rows, overwrite_filter=EqualTo("ingest_date", ingest_date)
+            )
+            break
+        except CommitFailedException:
+            if attempt == OVERWRITE_MAX_ATTEMPTS:
+                raise
+            log.warning(
+                "silver: overwrite for %s lost a commit race (attempt %d of %d), "
+                "reloading and retrying",
+                ingest_date,
+                attempt,
+                OVERWRITE_MAX_ATTEMPTS,
+            )
+            time.sleep(OVERWRITE_BACKOFFS_S[attempt - 1])
+            table.refresh()
     log.info("silver: wrote %d clusters for %s", len(rows), ingest_date)
     return len(rows)

@@ -68,7 +68,7 @@ The system runs in two rhythms: a **collection loop all day**, and a **publish
 run once each morning.**
 
 ```
-ALL DAY, every 3 hours (on a small always-on "mini PC"):
+ALL DAY, every 3 hours (on GitHub Actions):
 
   Sources  ->  Adapters  ->  bronze.raw_items  ->  silver jobs  ->  silver.story_clusters
   (RSS/API)   (normalize)   (raw landing table)   (dedup,          (grouped, rated stories)
@@ -223,8 +223,9 @@ registered but disabled until their API keys are supplied. See
 ### Hosting and ops
 
 - **GitHub Pages** hosts the site. **GitHub Actions** runs the daily publish.
-- The always-on collector runs on a small "mini PC" via a systemd timer, with a
-  disabled GitHub Actions workflow as a backup launcher.
+- The collector runs on GitHub Actions (`collect.yml`) every 3 hours; a local
+  machine may run the same entry point as an optional supplement, but the
+  pipeline no longer depends on it (SPEC 6.2, decision #5).
 - **healthchecks.io** provides two "dead man's switch" alerts: one for the 6am
   publish, one for the collector cadence. If a job does not check in, it alerts.
 
