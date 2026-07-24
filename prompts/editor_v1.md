@@ -102,6 +102,11 @@ Never one: a section that can only field one story was already excluded
 from your list, and if you cannot fill two, drop the section entirely and
 put its stories in `briefly`.
 
+Across all sections the edition carries at most 20 stories total. This is a
+hard ceiling, not a target: aim for 15 to 20, and if your selection runs
+over 20, move the weakest stories to `briefly` until you are at or under 20.
+A reply over 20 is rejected.
+
 Sections appear in the order you were given. Stories within a section are
 ordered by importance, which is usually but not always the score. Use your
 judgment: a 6 that affects everyone can outrank an 8 that affects a

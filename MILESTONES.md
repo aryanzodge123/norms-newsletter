@@ -85,6 +85,36 @@ Load-bearing checks, each verified by reverting:
 This completes Findings 1, 2, and 3. Findings 4 through 7 remain in
 `STRESS_TEST_FINDINGS.md`.
 
+### Follow-up: the 20-story ceiling moved to the retryable layer
+
+Date: 2026-07-24
+Spec: SPEC section 6.5 (story budget), decision #28 (extends #25)
+
+The degraded signal built above caught its first real event the day it
+landed. The 2026-07-24 editor row was `assembly_fallback`: the editor curated
+23 stories on a full day (silver held 175 clusters), over the SPEC 6.5 ceiling
+of 20. The ceiling was a `model_validator` on the assembled `Edition` only,
+which is non-retryable, so a self-correctable over-count degraded the day to a
+link list. This contradicted decision #25, which had already moved the
+headline rule onto the editor *response* for exactly this reason.
+
+- **`src/editor/schema.py`**: a `_story_count_within_budget` validator on
+  `EditorResponse`, reusing the existing `MAX_STORIES = 20` constant and the
+  Edition-level error wording, so `call_validated` feeds a consistent message
+  back and the model trims on retry. The Edition-level check stays as
+  defense-in-depth on the published artifact.
+- **`prompts/editor_v1.md`**: the sections guidance now states the 20-story
+  total as a hard ceiling, matching the validator.
+- **SPEC.md**: decision #28 records the layer change; section 6.5 notes the
+  response as the first line of enforcement.
+
+Verification: `milestone-verify` green, 493 tests (up from 489: response
+ceiling accepts 20 and rejects 21; an over-count retries into a `normal`
+edition; a persistent over-count now logs `editor_invalid_fallback`, never
+`assembly_fallback`). Net effect: most over-counts self-correct and are not
+degraded at all; the residual case moves between two codes both already in the
+degraded subset, so section 8's alerting is unchanged.
+
 ---
 
 ## Post-M6: every job records its run, every built edition survives

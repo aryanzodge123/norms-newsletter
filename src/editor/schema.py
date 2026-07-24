@@ -577,6 +577,27 @@ class EditorResponse(Strict):
             )
         return self
 
+    @model_validator(mode="after")
+    def _story_count_within_budget(self) -> EditorResponse:
+        """The SPEC 6.5 ceiling of 20 stories, enforced here rather than only
+        on the assembled Edition (decision #28).
+
+        On 2026-07-24 the editor curated 23 stories. The ceiling lived only on
+        the non-retryable Edition, so a self-correctable over-count degraded the
+        day to a fallback. Enforced on the response, an over-count instead lands
+        as a validation error that call_validated feeds back for one retry; only
+        a second failure falls to the fallback path. The Edition re-checks the
+        same ceiling as the authority on the published artifact.
+        """
+        total = sum(len(section.stories) for section in self.sections)
+        if total > MAX_STORIES:
+            raise ValueError(
+                f"{total} stories exceeds the SPEC 6.5 ceiling of {MAX_STORIES}. "
+                f"Drop the weakest stories to briefly until you are at or under "
+                f"{MAX_STORIES}."
+            )
+        return self
+
 
 class WriterResponse(Strict):
     """One article (SPEC 6.5 stage 2). Same shape as Article."""

@@ -97,6 +97,48 @@ EDITOR_JSON_FULL = json.dumps({
 })
 
 
+def _sections_totaling(n, per=3):
+    """Section dicts holding exactly `n` stories, `per` each (last may be short).
+
+    Cluster ids are unique and structurally valid, so the only thing wrong with
+    an over-count response is the count itself (decision #28).
+    """
+    sections = []
+    made = 0
+    idx = 0
+    while made < n:
+        take = min(per, n - made)
+        sections.append({
+            "name": f"Section {idx}",
+            "stories": [
+                {"cluster_id": f"{made + j:032d}",
+                 "title": f"Story {made + j}",
+                 "summary": "A clear thing happened."}
+                for j in range(take)
+            ],
+        })
+        made += take
+        idx += 1
+    return sections
+
+
+def _editor_json_totaling(n):
+    """EDITOR_JSON_FULL shaped, but carrying `n` stories across its sections."""
+    sections = _sections_totaling(n)
+    return json.dumps({
+        "headline_of_the_day": "The big story of the day here",
+        "headline_cluster_id": sections[0]["stories"][0]["cluster_id"],
+        "headline_rationale": "It changes the most for the most people.",
+        "key_points": [
+            {"text": "A first plain point about today.", "topic": "Tech"},
+            {"text": "A second plain point about today.", "topic": "Tech"},
+            {"text": "A third plain point about today.", "topic": "Science"},
+        ],
+        "sections": sections,
+        "briefly": [],
+    })
+
+
 # --------------------------------------------------------------------------
 # assemble_edition
 # --------------------------------------------------------------------------
@@ -665,6 +707,20 @@ def test_editor_headline_must_name_a_section_story():
         )
 
 
+def test_editor_response_rejects_over_twenty_stories():
+    """The SPEC 6.5 ceiling of 20 is enforced on the response (decision #28).
+
+    On 2026-07-24 the editor curated 23 stories and the ceiling lived only on
+    the non-retryable Edition, so a self-correctable over-count degraded the day.
+    Enforced here, the same error is what call_validated feeds back for a retry.
+    """
+    with pytest.raises(ValidationError) as exc:
+        editor_response(_sections_totaling(21))
+    assert "exceeds the SPEC 6.5 ceiling of 20" in str(exc.value)
+    # Exactly 20 is within budget: the ceiling rejects, it does not clip the target.
+    editor_response(_sections_totaling(20))
+
+
 def test_headline_cluster_id_nulled_when_its_story_spills_to_briefly(tmp_path):
     """Assembly can invalidate a choice that was valid when made.
 
@@ -816,6 +872,30 @@ def test_assembly_failure_publishes_a_fallback(wired, monkeypatch):
     assert len(edition["stories"]) == 4
 
 
+def test_editor_over_count_retries_and_publishes_a_real_edition(wired, monkeypatch):
+    """An over-count reply is rejected on the response and retried (decision #28).
+
+    The retry lands a valid edition, so a slip that used to degrade the day now
+    self-corrects and publishes a normal edition, not a fallback.
+    """
+    catalog, editions = wired
+    _four_clusters(catalog)
+    monkeypatch.setattr(
+        run_edition, "get_client",
+        lambda: FakeClient(
+            [_editor_json_totaling(21), EDITOR_JSON_FULL]
+            + [valid_article() for _ in range(4)]
+        ),
+    )
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 0
+    edition = json.loads((editions / f"{TODAY.isoformat()}.json").read_text())
+    validate_edition(edition)
+    assert edition["edition_type"] == "normal"
+
+
 def test_a_fallback_never_overwrites_a_published_edition(wired, monkeypatch):
     """Decision #17. run()'s guard only covers a re-run whose partitions were
     archived. With its data still present a re-run rebuilds, so without this
@@ -925,6 +1005,31 @@ def test_editor_invalid_fallback_records_a_degraded_reason(wired, monkeypatch):
 
     row = _editor_row(catalog)
     assert runlog.REASON_EDITOR_INVALID_FALLBACK in json.loads(row["reasons"])
+    assert runlog.is_degraded(row["reasons"]) is True
+
+
+def test_persistent_over_count_is_editor_invalid_not_assembly(wired, monkeypatch):
+    """An over-count that survives the retry now fails at response validation,
+    so the reason is editor_invalid_fallback, never assembly_fallback.
+
+    This is the behavioral proof of the 2026-07-24 fix (decision #28): the
+    same 21-story reply that used to reach assembly and log assembly_fallback
+    is now caught one stage earlier.
+    """
+    from src import runlog
+    catalog, editions = wired
+    contexts = [ctx(f"{i:032d}", score=9 - i) for i in range(5)]
+    _seed_partitions(catalog, TODAY, contexts)
+    monkeypatch.setattr(runlog, "get_catalog", lambda: catalog)
+    over = _editor_json_totaling(21)
+    monkeypatch.setattr(run_edition, "get_client", lambda: FakeClient([over, over]))
+
+    run_edition.run(TODAY)
+
+    row = _editor_row(catalog)
+    reasons = json.loads(row["reasons"])
+    assert runlog.REASON_EDITOR_INVALID_FALLBACK in reasons
+    assert runlog.REASON_ASSEMBLY_FALLBACK not in reasons
     assert runlog.is_degraded(row["reasons"]) is True
 
 
