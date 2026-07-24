@@ -84,92 +84,77 @@ def build_clusters(items, config) -> list[clustering.Cluster]:
 
 def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
     """One silver cycle. Returns the process exit code."""
-    run_id = runlog.make_run_id()
-    started_at = datetime.now(UTC)
-    config = get_pipeline().silver
-    ingest_date = target_date or started_at.date()
+    with runlog.logged_run(JOB, dry_run=dry_run) as rec:
+        config = get_pipeline().silver
+        ingest_date = target_date or rec.started_at.date()
 
-    catalog = get_catalog()
-    items = bronze.read_partition(bronze.ensure_table(catalog), ingest_date)
-    log.info("run %s: %d bronze items for %s", run_id, len(items), ingest_date)
+        # Catalog connect, bronze read, and the whole scoring loop used to run
+        # outside the try whose finally logged the row, so any failure there
+        # (an unreachable catalog most likely) left no row (SPEC section 8).
+        catalog = get_catalog()
+        items = bronze.read_partition(bronze.ensure_table(catalog), ingest_date)
+        rec.items_in = len(items)
+        log.info("run %s: %d bronze items for %s", rec.run_id, len(items), ingest_date)
 
-    clusters = build_clusters(items, config)
+        clusters = build_clusters(items, config)
 
-    if dry_run:
-        print(f"\nrun_id {run_id} (dry run, no AI calls, nothing written)")
-        print(f"  {len(items)} items -> {len(clusters)} clusters for {ingest_date}\n")
-        for c in sorted(clusters, key=lambda c: -len(c.members))[:15]:
-            print(f"  [{len(c.members)}] {c.seed.title[:72]}")
-            if len(c.members) > 1:
-                for other in c.members[1:]:
-                    print(f"      + {other.source}: {other.title[:64]}")
-        return 0
+        if dry_run:
+            print(f"\nrun_id {rec.run_id} (dry run, no AI calls, nothing written)")
+            print(f"  {len(items)} items -> {len(clusters)} clusters for {ingest_date}\n")
+            for c in sorted(clusters, key=lambda c: -len(c.members))[:15]:
+                print(f"  [{len(c.members)}] {c.seed.title[:72]}")
+                if len(c.members) > 1:
+                    for other in c.members[1:]:
+                        print(f"      + {other.source}: {other.title[:64]}")
+            return 0
 
-    table = silver_table.ensure_table(catalog)
-    previous = silver_table.read_partition(table, ingest_date)
+        table = silver_table.ensure_table(catalog)
+        previous = silver_table.read_partition(table, ingest_date)
 
-    rows: list[dict] = []
-    cost = 0.0
-    scored = 0
-    null_scores = 0
-    client = None
-    system_prompt = load_system_prompt()
+        rows: list[dict] = []
+        cost = 0.0
+        scored = 0
+        null_scores = 0
+        client = None
+        system_prompt = load_system_prompt()
 
-    for c in clusters:
-        result = carry_forward(previous, c)
-        if result is None:
-            if client is None:
-                client = scoring.get_client()
-                scoring.ensure_cacheable(client, system_prompt, config.scoring_model)
-            result = scoring.score_cluster(client, c, config, system_prompt)
-            scored += 1
-            cost += result.cost_usd
-            if result.is_null_score:
-                null_scores += 1
-        rows.append(silver_table.build_row(c, result))
+        for c in clusters:
+            result = carry_forward(previous, c)
+            if result is None:
+                if client is None:
+                    client = scoring.get_client()
+                    scoring.ensure_cacheable(client, system_prompt, config.scoring_model)
+                result = scoring.score_cluster(client, c, config, system_prompt)
+                scored += 1
+                cost += result.cost_usd
+                if result.is_null_score:
+                    null_scores += 1
+            rows.append(silver_table.build_row(c, result))
 
-    log.info(
-        "scored %d of %d clusters (%d carried forward), %d null, est $%.4f",
-        scored,
-        len(clusters),
-        len(clusters) - scored,
-        null_scores,
-        cost,
-    )
-
-    written = 0
-    notes = None
-    status = "partial" if null_scores else "success"
-    try:
-        written = silver_table.overwrite_partition(table, ingest_date, rows)
+        rec.ai_cost_estimate_usd = round(cost, 6)
         if null_scores:
-            notes = f"{null_scores} clusters stored with a null score"
-    except Exception as exc:  # noqa: BLE001
-        status = "failed"
-        notes = f"silver write failed: {type(exc).__name__}: {exc}"
-        log.error(notes)
-    finally:
-        try:
-            runlog.write_row(
-                runlog.ensure_table(get_catalog()),
-                runlog.build_row(
-                    run_id=run_id,
-                    job=JOB,
-                    started_at=started_at,
-                    ended_at=datetime.now(UTC),
-                    status=status,
-                    items_in=len(items),
-                    items_out=written,
-                    ai_cost_estimate_usd=round(cost, 6),
-                    notes=notes,
-                ),
-            )
-        except Exception as exc:  # noqa: BLE001
-            # The run happened. A missing run_log row is surfaced by the
-            # dead man's switch (SPEC section 8).
-            log.error("could not write run_log row: %s", exc)
+            rec.status = "partial"
+        log.info(
+            "scored %d of %d clusters (%d carried forward), %d null, est $%.4f",
+            scored,
+            len(clusters),
+            len(clusters) - scored,
+            null_scores,
+            cost,
+        )
 
-    return 1 if status == "failed" else 0
+        # Kept as an inner try so the write failure keeps its specific note.
+        # The outer logged_run would still catch it, but with a generic
+        # message; this preserves the diagnostic wording.
+        try:
+            rec.items_out = silver_table.overwrite_partition(table, ingest_date, rows)
+            if null_scores:
+                rec.note(f"{null_scores} clusters stored with a null score")
+        except Exception as exc:  # noqa: BLE001
+            rec.status = "failed"
+            rec.note(f"silver write failed: {type(exc).__name__}: {exc}")
+            log.error(rec.notes[-1])
+    return 1 if rec.status == "failed" else 0
 
 
 def main(argv: list[str] | None = None) -> int:

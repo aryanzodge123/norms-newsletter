@@ -84,101 +84,92 @@ def collection_status(fetched_count: int, failed_adapters: list[str]) -> str:
 
 def collect(*, dry_run: bool = False) -> int:
     """One collection cycle. Returns the process exit code."""
-    run_id = runlog.make_run_id()
-    started_at = datetime.now(UTC)
-    pipeline = get_pipeline()
-    shortener_hosts = pipeline.canonical_url.shortener_hosts
-    since = started_at - timedelta(hours=pipeline.collector.since_window_hours)
+    # Resolved inside the wrapper; kept out here so the final health ping can
+    # fire after the wrapper has settled the status. None means "never got far
+    # enough to ping", in which case the dead man's switch surfaces the stall.
+    collect_url = None
+    with runlog.logged_run(JOB, dry_run=dry_run) as rec:
+        pipeline = get_pipeline()
+        shortener_hosts = pipeline.canonical_url.shortener_hosts
+        since = rec.started_at - timedelta(hours=pipeline.collector.since_window_hours)
 
-    sources = enabled_sources()
-    log.info(
-        "run %s: %d sources, since %s", run_id, len(sources), since.isoformat(timespec="seconds")
-    )
-
-    items: list[RawItem] = []
-    metrics: dict[str, dict] = {}
-    for source in sources:
-        source_items, source_metrics = run_adapter(source, since, run_id, shortener_hosts)
-        items.extend(source_items)
-        metrics[source.name] = source_metrics
-
-    failed_adapters = [name for name, m in metrics.items() if m["errors"]]
-    # Measured before enrich (which preserves count): the true "collector is
-    # blind" signal is what the sources returned, not what survives dedup.
-    fetched_count = len(items)
-
-    # SPEC 6.1 body_excerpt: adapters store the feed's summary, which is a
-    # one-line blurb on most sources. Fetch the linked article so the text is
-    # stored once, before bronze, and every later stage reads it: clustering
-    # embeds real text, scoring stops being headline-only, and the writer
-    # stage has something to ground on (decision #16). Never fatal: an item
-    # whose fetch fails keeps its original excerpt.
-    items, enrich_metrics = enrich.enrich_items(items, pipeline.enrich)
-    metrics["_enrich"] = enrich_metrics
-
-    if dry_run:
-        print(f"\nrun_id {run_id} (dry run, nothing written)")
-        for name, m in metrics.items():
-            if name == "_enrich":
-                continue
-            print(f"  {name:14} {m['items']:3d} items  {m['latency_ms']:5d}ms")
-        print(f"  {'total':14} {len(items):3d} items")
-        print(
-            f"  {'enriched':14} {enrich_metrics['enriched']:3d} of "
-            f"{enrich_metrics['fetched']} fetched (+{enrich_metrics['chars_added']} chars)"
+        sources = enabled_sources()
+        log.info(
+            "run %s: %d sources, since %s",
+            rec.run_id, len(sources), since.isoformat(timespec="seconds"),
         )
-        grounded = sum(1 for i in items if len(i.body_excerpt.strip()) >= 400)
-        print(f"  {'groundable':14} {grounded:3d} items at or above the 400-char floor")
-        for item in items[:5]:
-            print(f"\n  {item.item_id}  {item.published_at.isoformat(timespec='seconds')}")
-            print(f"  {item.title[:78]}")
-            print(f"  {item.canonical_url[:78]}")
-        if failed_adapters:
-            print(f"\n  adapters that failed: {', '.join(failed_adapters)}")
-        return 0
 
-    # The collector-cadence check (SPEC section 8). Its dead man's switch is how
-    # a stalled or blind collector gets noticed; a failed ping never fails the run.
-    collect_url = get_settings().healthchecks_collect_url
-    health.ping(collect_url, health.START)
+        items: list[RawItem] = []
+        metrics: dict[str, dict] = {}
+        for source in sources:
+            source_items, source_metrics = run_adapter(source, since, rec.run_id, shortener_hosts)
+            items.extend(source_items)
+            metrics[source.name] = source_metrics
 
-    written = 0
-    status = collection_status(fetched_count, failed_adapters)
-    notes = "no items fetched from any source" if fetched_count == 0 else None
-    try:
-        catalog = get_catalog()
-        table = bronze.ensure_table(catalog)
-        written, skipped = bronze.append_items(table, items)
-        if failed_adapters and status != "failed":
-            notes = f"adapters failed: {', '.join(failed_adapters)}"
-    except Exception as exc:  # noqa: BLE001
-        status = "failed"
-        notes = f"bronze write failed: {type(exc).__name__}: {exc}"
-        log.error(notes)
-    finally:
-        health.ping(collect_url, health.SUCCESS if status != "failed" else health.FAIL)
-        try:
-            log_table = runlog.ensure_table(get_catalog())
-            runlog.write_row(
-                log_table,
-                runlog.build_row(
-                    run_id=run_id,
-                    job=JOB,
-                    started_at=started_at,
-                    ended_at=datetime.now(UTC),
-                    status=status,
-                    items_in=len(items),
-                    items_out=written,
-                    adapter_metrics=metrics,
-                    notes=notes,
-                ),
+        failed_adapters = [name for name, m in metrics.items() if m["errors"]]
+        # Measured before enrich (which preserves count): the true "collector is
+        # blind" signal is what the sources returned, not what survives dedup.
+        fetched_count = len(items)
+
+        # SPEC 6.1 body_excerpt: adapters store the feed's summary, which is a
+        # one-line blurb on most sources. Fetch the linked article so the text is
+        # stored once, before bronze, and every later stage reads it: clustering
+        # embeds real text, scoring stops being headline-only, and the writer
+        # stage has something to ground on (decision #16). Never fatal: an item
+        # whose fetch fails keeps its original excerpt.
+        items, enrich_metrics = enrich.enrich_items(items, pipeline.enrich)
+        metrics["_enrich"] = enrich_metrics
+        rec.adapter_metrics = metrics
+        rec.items_in = len(items)
+
+        if dry_run:
+            print(f"\nrun_id {rec.run_id} (dry run, nothing written)")
+            for name, m in metrics.items():
+                if name == "_enrich":
+                    continue
+                print(f"  {name:14} {m['items']:3d} items  {m['latency_ms']:5d}ms")
+            print(f"  {'total':14} {len(items):3d} items")
+            print(
+                f"  {'enriched':14} {enrich_metrics['enriched']:3d} of "
+                f"{enrich_metrics['fetched']} fetched (+{enrich_metrics['chars_added']} chars)"
             )
-        except Exception as exc:  # noqa: BLE001
-            # The run itself already happened. A missing run_log row is
-            # surfaced by the dead man's switch (SPEC section 8).
-            log.error("could not write run_log row: %s", exc)
+            grounded = sum(1 for i in items if len(i.body_excerpt.strip()) >= 400)
+            print(f"  {'groundable':14} {grounded:3d} items at or above the 400-char floor")
+            for item in items[:5]:
+                print(f"\n  {item.item_id}  {item.published_at.isoformat(timespec='seconds')}")
+                print(f"  {item.title[:78]}")
+                print(f"  {item.canonical_url[:78]}")
+            if failed_adapters:
+                print(f"\n  adapters that failed: {', '.join(failed_adapters)}")
+            return 0
 
-    return 1 if status == "failed" else 0
+        # The collector-cadence check (SPEC section 8). Its dead man's switch is
+        # how a stalled or blind collector gets noticed; a failed ping never
+        # fails the run.
+        collect_url = get_settings().healthchecks_collect_url
+        health.ping(collect_url, health.START)
+
+        rec.status = collection_status(fetched_count, failed_adapters)
+        if fetched_count == 0:
+            rec.note("no items fetched from any source")
+
+        # Inner try so a bronze write failure keeps its specific note; the
+        # outer wrapper would still catch it, but generically.
+        try:
+            catalog = get_catalog()
+            table = bronze.ensure_table(catalog)
+            written, _skipped = bronze.append_items(table, items)
+            rec.items_out = written
+            if failed_adapters and rec.status != "failed":
+                rec.note(f"adapters failed: {', '.join(failed_adapters)}")
+        except Exception as exc:  # noqa: BLE001
+            rec.status = "failed"
+            rec.note(f"bronze write failed: {type(exc).__name__}: {exc}")
+            log.error(rec.notes[-1])
+
+    # After the wrapper: status is final, so the cadence check hears the truth.
+    health.ping(collect_url, health.SUCCESS if rec.status != "failed" else health.FAIL)
+    return 1 if rec.status == "failed" else 0
 
 
 def main(argv: list[str] | None = None) -> int:

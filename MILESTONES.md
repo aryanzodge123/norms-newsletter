@@ -6,6 +6,100 @@ deferred.
 
 ---
 
+## Post-M6: every job records its run, every built edition survives
+
+Date: 2026-07-24
+Spec: SPEC section 8 (run_log written even on setup failure), section 7
+(a non-blocking stage must not fail the publish). Both conformance fixes;
+the clarifying sentences restate existing intent.
+Status: complete, gate green
+
+### The problem
+
+A full-project stress test on 2026-07-23 surfaced two high-severity gaps
+that share a theme: work the system did was thrown away at the moment it
+mattered.
+
+**Finding 1.** Every entry point computed `run_id` and `started_at`, then did
+setup (config load, catalog connect, first data read) *outside* the
+try/except/finally whose finally wrote the run_log row. A failure during
+setup, an unreachable R2 at 6am being the likeliest, escaped `run()` as a
+bare traceback before the finally was armed, so `ops.run_log` got no row at
+all. Proved by injecting a failure into each collaborator across all five
+jobs. SPEC 8 already required a row from every job; the code did not honor it.
+
+**Finding 2.** `publish.yml` had zero `continue-on-error`. The Audio build
+step runs after Build edition but before Commit and parsed edition.json
+outside its own try, so a hard audio failure killed the job with the day's
+edition written to disk but never committed. It happened in production: the
+2026-07-21 audio run failed on a schema error and blocked the publish. SPEC 7
+already classed audio failure as non-blocking; the workflow did not.
+
+### What was built
+
+Finding 1 is fixed with one shared helper, not five in-place patches
+(decision this session), so the guarantee lives in a single place and a sixth
+job copying the old shape cannot reintroduce it.
+
+- **`src/runlog.py`**: a `RunRecord` dataclass and a `logged_run` context
+  manager. It wraps a job's whole `run()`, captures `run_id`/`started_at` at
+  entry so a row can always be written, **swallows** any exception (turning a
+  crash into `rec.status = "failed"` and a clean non-zero exit), and writes
+  exactly one row in its finally. `dry_run` and `skip_log` suppress the write;
+  a write that itself fails is logged and dropped (the dead man's switch
+  covers a missing row). `get_catalog` is resolved at call time so tests can
+  point the row at a local catalog.
+- **The five entry points** (`collector`, `silver/run_silver`,
+  `editor/run_edition`, `audio/run_audio`, `archive`) now open with
+  `with runlog.logged_run(JOB, dry_run=dry_run) as rec:`, moving setup inside
+  the net. Each per-job `_log_run` helper and hand-rolled try/finally write is
+  deleted. Inner try blocks that carry a specific note (silver's and
+  collector's "write failed") stay; the wrapper is an outer net over the
+  setup region they never covered.
+- **`.github/workflows/publish.yml`**: `continue-on-error: true` on the Audio
+  build step (Finding 2's required fix) and on Archive to gold (its failure
+  runs after deploy, so it should not redden a published morning).
+- **SPEC 7 and SPEC 8**: one clarifying sentence each.
+
+### Edge cases the helper handles
+
+- **The editor's idempotent no-op** (re-running an already-published, already
+  archived date) returns 0 today with no row. A success row there would
+  inflate the per-day editor count `COST_ANALYSIS.md` relies on, so that path
+  sets `rec.skip_log = True`.
+- **The collector's health pings**: because the wrapper swallows, `rec.status`
+  is known after the `with`, so the final SUCCESS/FAIL cadence ping moved just
+  below it. The URL is `None` if setup died before it was resolved, making
+  that ping a no-op and letting the dead man's switch surface the stall.
+- **A latent bug fixed in passing**: the editor's old `_log_run` accepted
+  `headline_repeat_flag` but never forwarded it to `build_row`, so the flag
+  was silently dropped from every row. The helper forwards it.
+
+### Verification
+
+`milestone-verify` green, 462 tests (was 443; +9 helper, +5 setup-failure,
++4 workflow, +1 audio-corrupt, minus churn). Site builds. All four dry runs
+exit clean and write nothing.
+
+Two new load-bearing test files, each checked by reverting the fix:
+
+- `tests/test_setup_failure_is_logged.py`: injects an unreachable catalog into
+  each of the five jobs and asserts a `failed` row plus a clean non-zero exit.
+  All five fail if `logged_run` is made to re-raise instead of swallow.
+- `tests/test_workflows.py`: asserts audio and archive are `continue-on-error`
+  and Build edition is not, straight from the yaml.
+
+Plus `tests/test_runlog_logged_run.py` for the manager itself and a
+corrupt-edition regression in `test_run_audio.py`.
+
+### Deferred (to STRESS_TEST_FINDINGS.md)
+
+Findings 3 through 7. Finding 3 (the `partial` reason-code column) comes next
+and slots into `RunRecord` as a pure addition: every note already routes
+through `rec.note(...)`, so a `reasons` field sits beside it with no rework.
+
+---
+
 ## Post-M6: assembly failures publish a fallback, not nothing
 
 Date: 2026-07-23

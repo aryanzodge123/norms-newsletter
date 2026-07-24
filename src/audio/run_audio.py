@@ -153,22 +153,22 @@ def inject_audio(edition: dict, audio: dict | None) -> dict:
 
 def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
     """One audio cycle. Returns the process exit code."""
-    run_id = runlog.make_run_id()
-    started_at = datetime.now(UTC)
-    config = get_pipeline().audio
-    edition_date = target_date or started_at.date()
+    with runlog.logged_run(JOB, dry_run=dry_run) as rec:
+        config = get_pipeline().audio
+        edition_date = target_date or rec.started_at.date()
 
-    path = edition_path(edition_date)
-    if not path.exists():
-        log.warning("no edition at %s; nothing to voice", path)
-        _log_run(run_id, started_at, "partial", 0, 0, 0.0, "no edition.json for this date")
-        return 0
+        # Parsing edition.json used to sit outside the try, so a corrupt
+        # edition raised JSONDecodeError straight out of run() with no row and
+        # a non-zero crash that, before the workflow fix, killed the deploy.
+        path = edition_path(edition_date)
+        if not path.exists():
+            log.warning("no edition at %s; nothing to voice", path)
+            rec.status = "partial"
+            rec.note("no edition.json for this date")
+            return 1 if rec.status == "failed" else 0
 
-    edition = json.loads(path.read_text())
+        edition = json.loads(path.read_text())
 
-    status = "success"
-    result = AudioResult(None, 0.0, 0, "")
-    try:
         # The script call runs even on a dry run: inspecting the generated
         # dialogue and its length is the point of it. Only TTS and the upload
         # (the cost and the side effects) are skipped. The editor stage's own
@@ -176,9 +176,14 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
         # thing being checked.
         client = get_client()
         result = build_audio(edition, config, client=client, dry_run=dry_run)
+        rec.items_in = result.turns
+        rec.items_out = 1 if result.audio else 0
+        rec.ai_cost_estimate_usd = round(result.cost_usd, 6)
+        if result.note:
+            rec.note(result.note)
 
         if dry_run:
-            print(f"\nrun_id {run_id} (dry run, no TTS, nothing written)")
+            print(f"\nrun_id {rec.run_id} (dry run, no TTS, nothing written)")
             print(f"  {edition_date}: {result.note}")
             return 0
 
@@ -189,50 +194,15 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
             # out with the fallback note; treat it as a contained no-op, leave
             # the file untouched, and let the publish proceed without an audio
             # row (SPEC 7).
-            status = "partial"
+            rec.status = "partial"
         else:
             if result.audio is None:
                 # A contained failure. The edition still publishes, no audio.
-                status = "partial"
+                rec.status = "partial"
             inject_audio(edition, result.audio)
             path.write_text(json.dumps(edition, indent=2, ensure_ascii=False) + "\n")
         log.info("%s: %s (est $%.4f)", edition_date, result.note, result.cost_usd)
-    except Exception as exc:  # noqa: BLE001
-        status = "failed"
-        result = AudioResult(None, result.cost_usd, result.turns, f"audio run failed: {exc}")
-        log.error(result.note)
-    finally:
-        _log_run(
-            run_id,
-            started_at,
-            status,
-            result.turns,
-            1 if result.audio else 0,
-            result.cost_usd,
-            result.note or None,
-        )
-
-    return 1 if status == "failed" else 0
-
-
-def _log_run(run_id, started_at, status, items_in, items_out, cost, notes) -> None:
-    try:
-        runlog.write_row(
-            runlog.ensure_table(get_catalog()),
-            runlog.build_row(
-                run_id=run_id,
-                job=JOB,
-                started_at=started_at,
-                ended_at=datetime.now(UTC),
-                status=status,
-                items_in=items_in,
-                items_out=items_out,
-                ai_cost_estimate_usd=round(cost, 6),
-                notes=notes,
-            ),
-        )
-    except Exception as exc:  # noqa: BLE001
-        log.error("could not write run_log row: %s", exc)
+    return 1 if rec.status == "failed" else 0
 
 
 def main(argv: list[str] | None = None) -> int:

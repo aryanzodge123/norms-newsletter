@@ -10,6 +10,7 @@ from datetime import date
 
 import pytest
 
+from src import runlog
 from src.config import REPO_ROOT, AudioConfig
 from src.audio import run_audio
 from src.audio.schema import validate_script
@@ -244,7 +245,7 @@ def test_inject_audio_without_size_is_rejected() -> None:
 # --------------------------------------------------------------------------
 # run(): file IO + status, with build_audio and the run_log stubbed
 # --------------------------------------------------------------------------
-def _wire_run(monkeypatch, tmp_path, config, audio_result):
+def _wire_run(monkeypatch, tmp_path, config, audio_result, local_catalog):
     edition = load_fixture("normal.json")
     edition["audio"] = None
     path = tmp_path / "2026-07-19.json"
@@ -254,32 +255,38 @@ def _wire_run(monkeypatch, tmp_path, config, audio_result):
     monkeypatch.setattr(run_audio, "get_pipeline", lambda: type("P", (), {"audio": config})())
     monkeypatch.setattr(run_audio, "get_client", lambda: ok_client())
     monkeypatch.setattr(run_audio, "build_audio", lambda *a, **k: audio_result)
-    logged = {}
-    monkeypatch.setattr(run_audio, "_log_run", lambda *a, **k: logged.setdefault("called", True))
-    return path, logged
+    # The run_log row now lands via logged_run; point it at the local catalog.
+    monkeypatch.setattr(runlog, "get_catalog", lambda: local_catalog)
+    return path
 
 
-def test_run_writes_audio_block(monkeypatch, tmp_path, config) -> None:
+def _audio_rows(local_catalog):
+    return runlog.ensure_table(local_catalog).scan().to_arrow().to_pylist()
+
+
+def test_run_writes_audio_block(monkeypatch, tmp_path, config, local_catalog) -> None:
     result = run_audio.AudioResult(
         {"url": "https://x.invalid/a.mp3", "duration_seconds": 540, "size_bytes": 999}, 0.01, 12, "ok"
     )
-    path, logged = _wire_run(monkeypatch, tmp_path, config, result)
+    path = _wire_run(monkeypatch, tmp_path, config, result, local_catalog)
     rc = run_audio.run(date(2026, 7, 19))
     assert rc == 0
     written = json.loads(path.read_text())
     assert written["audio"]["size_bytes"] == 999
-    assert logged["called"]
+    rows = _audio_rows(local_catalog)
+    assert len(rows) == 1 and rows[0]["status"] == "success"
 
 
-def test_run_with_no_audio_leaves_null(monkeypatch, tmp_path, config) -> None:
+def test_run_with_no_audio_leaves_null(monkeypatch, tmp_path, config, local_catalog) -> None:
     result = run_audio.AudioResult(None, 0.01, 0, "TTS failed")
-    path, _ = _wire_run(monkeypatch, tmp_path, config, result)
+    path = _wire_run(monkeypatch, tmp_path, config, result, local_catalog)
     rc = run_audio.run(date(2026, 7, 19))
     assert rc == 0  # partial, not failed: the edition still publishes
     assert json.loads(path.read_text())["audio"] is None
+    assert _audio_rows(local_catalog)[0]["status"] == "partial"
 
 
-def test_run_fallback_edition_is_contained_noop(monkeypatch, tmp_path, config) -> None:
+def test_run_fallback_edition_is_contained_noop(monkeypatch, tmp_path, config, local_catalog) -> None:
     # A fallback edition has no audio field (FallbackEdition forbids it), so
     # run() must not inject audio=None: that would fail schema validation, fail
     # the step, and take the whole publish down with it (SPEC 7 says audio
@@ -298,20 +305,38 @@ def test_run_fallback_edition_is_contained_noop(monkeypatch, tmp_path, config) -
         "build_audio",
         lambda *a, **k: run_audio.AudioResult(None, 0.0, 0, "fallback edition carries no audio"),
     )
-    captured = {}
-    monkeypatch.setattr(
-        run_audio, "_log_run", lambda *a, **k: captured.update(status=a[2])
-    )
+    monkeypatch.setattr(runlog, "get_catalog", lambda: local_catalog)
 
     rc = run_audio.run(date(2026, 7, 21))
 
     assert rc == 0  # contained, not failed: the fallback edition still publishes
-    assert captured["status"] == "partial"
+    assert _audio_rows(local_catalog)[0]["status"] == "partial"
     assert path.read_text() == original  # file untouched, no audio key added
 
 
-def test_run_missing_edition_is_noop(monkeypatch, tmp_path, config) -> None:
+def test_run_missing_edition_is_noop(monkeypatch, tmp_path, config, local_catalog) -> None:
     monkeypatch.setattr(run_audio, "edition_path", lambda d: tmp_path / "nope.json")
     monkeypatch.setattr(run_audio, "get_pipeline", lambda: type("P", (), {"audio": config})())
-    monkeypatch.setattr(run_audio, "_log_run", lambda *a, **k: None)
+    monkeypatch.setattr(runlog, "get_catalog", lambda: local_catalog)
     assert run_audio.run(date(2026, 7, 19)) == 0
+    # A missing edition still records a partial row (SPEC section 8).
+    assert _audio_rows(local_catalog)[0]["status"] == "partial"
+
+
+def test_run_corrupt_edition_is_contained(monkeypatch, tmp_path, config, local_catalog) -> None:
+    # The in-code half of Finding 2. Parsing edition.json used to sit outside
+    # the try, so a corrupt file raised JSONDecodeError straight out of run().
+    # Combined with the workflow's fail-fast posture, that killed the publish
+    # with the edition already built. Now it is a logged failure and a clean
+    # exit; the workflow's continue-on-error does the rest.
+    path = tmp_path / "2026-07-19.json"
+    path.write_text("{ this is not valid json")
+    monkeypatch.setattr(run_audio, "edition_path", lambda d: path)
+    monkeypatch.setattr(run_audio, "get_pipeline", lambda: type("P", (), {"audio": config})())
+    monkeypatch.setattr(run_audio, "get_client", lambda: ok_client())
+    monkeypatch.setattr(runlog, "get_catalog", lambda: local_catalog)
+
+    rc = run_audio.run(date(2026, 7, 19))
+
+    assert rc == 1  # honest non-zero exit, but no traceback escaped
+    assert _audio_rows(local_catalog)[0]["status"] == "failed"
