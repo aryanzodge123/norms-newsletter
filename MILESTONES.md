@@ -59,6 +59,13 @@ fresh; the editor rewrote a distinct follow-up back into a restatement.
   section spill claims the headline's own story.
 - `src/runlog.py`: `headline_repeat_flag`, a guarded in-place migration,
   and `write_row` projecting onto the table's real columns.
+- Both new stages are contained. The continuing-coverage lookup and the
+  gate each run inside `run()`'s try, where an unhandled exception sets
+  `edition = None` and skips `_write_edition`, publishing nothing at all.
+  Both are wrapped so a failure logs and the edition ships: unreachable
+  gold means the editor works as it did before the feature existed, and a
+  broken gate means the editor's own headline is published. Same reasoning
+  that kept the headline rule off the Edition validator.
 - `prompts/editor_v1.md`, `config/pipeline.yaml`, `src/config.py`,
   `site/src/content.config.ts`, fixtures, `SPEC.md`.
 
@@ -114,10 +121,36 @@ rewrite and 0.90 lets the restatement through.
   real embedding model, since what the model does or does not distinguish
   is the whole difficulty.
 
+**Live replay against a real model.** The real 07-23 candidates rebuilt
+from gold (201 items, 161 scored), with 07-22's coverage supplied as
+retrieval will return it once briefly carries cluster_ids. Two runs, and
+they did not agree, which is the most useful thing they produced:
+
+| Run | First attempt | Gate | Outcome |
+|-----|---------------|------|---------|
+| 1 | 0.746 | passed | no retry, $0.1246 |
+| 2 | **0.893** | **fired** | retry 0.751, passes, $0.2430 |
+
+Run 2's first attempt scored 0.893, *worse* than the 0.888 that actually
+shipped, even with the prior-coverage block in front of it. So the prompt
+alone is not reliable and the gate is load-bearing. After the retry the
+editor produced "Hugging Face calls OpenAI breach a wake-up call the
+industry ignored", which names the new development rather than restating
+the escape. The measured $0.2430 for a gate-fires day matches the $0.23
+predicted.
+
+An interim reading of run 1 alone suggested the prompt did the work and
+the gate was a quiet backstop. Run 2 contradicted that. Both layers stay.
+
 ### Deferred
 
-- The gate has never fired in production. The unit tests and the replay
-  stand in for it until a real continuing story arrives.
+- The gate has fired once against a live model in replay, never yet in a
+  real scheduled run. Two runs on one story is enough to show both layers
+  matter and nowhere near enough to give a fire rate.
+- The double-failure path, where the retry also fires and the edition
+  publishes flagged, has still never run against a live model.
+- The `ops.run_log` migration has been exercised only against local sqlite
+  catalogs. It runs against the real table on the next job of any kind.
 - Both new numbers are starting values on a single real pair. Observe for
   two weeks, per decision #2's posture.
 - The scoring stage still has no cross-day memory. This compensates at the

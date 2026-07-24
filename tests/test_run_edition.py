@@ -73,6 +73,30 @@ def editor_response(
     )
 
 
+EDITOR_JSON_FULL = json.dumps({
+    "headline_of_the_day": "The big story of the day here",
+    "headline_cluster_id": "a" * 32,
+    "headline_rationale": "It changes the most for the most people.",
+    "key_points": [
+        {"text": "A first plain point about today.", "topic": "Tech"},
+        {"text": "A second plain point about today.", "topic": "Tech"},
+        {"text": "A third plain point about today.", "topic": "Science"},
+        {"text": "A fourth plain point about today.", "topic": "Science"},
+    ],
+    "sections": [
+        {"name": "Technology", "stories": [
+            {"cluster_id": "a" * 32, "title": "First tech story", "summary": "A clear thing."},
+            {"cluster_id": "b" * 32, "title": "Second tech story", "summary": "Another clear thing."},
+        ]},
+        {"name": "Science", "stories": [
+            {"cluster_id": "c" * 32, "title": "First science story", "summary": "A find."},
+            {"cluster_id": "d" * 32, "title": "Second science story", "summary": "A second find."},
+        ]},
+    ],
+    "briefly": [],
+})
+
+
 # --------------------------------------------------------------------------
 # assemble_edition
 # --------------------------------------------------------------------------
@@ -677,3 +701,59 @@ def test_headline_cluster_id_survives_when_its_story_is_published(tmp_path):
     )
     assert edition["headline_cluster_id"] == "b" * 32
     assert edition["headline_rationale"]
+
+
+# --------------------------------------------------------------------------
+# Neither new stage may cost the edition (SPEC 7, decision #25)
+# --------------------------------------------------------------------------
+def test_a_broken_headline_gate_still_publishes(wired, monkeypatch):
+    """The gate runs inside run()'s try, where an exception publishes nothing.
+
+    A quality check must never be able to do that. Same reasoning that kept
+    the headline rule off the Edition validator.
+    """
+    catalog, editions = wired
+    _seed_partitions(catalog, TODAY, [
+        ctx("a" * 32, topic="Tech", url="https://x.invalid/a"),
+        ctx("b" * 32, topic="Tech", url="https://x.invalid/b"),
+        ctx("c" * 32, topic="Science", url="https://x.invalid/c"),
+        ctx("d" * 32, topic="Science", url="https://x.invalid/d"),
+    ])
+    monkeypatch.setattr(
+        run_edition.headline_gate, "recent_headlines",
+        lambda *a, **k: (_ for _ in ()).throw(RuntimeError("embedding model gone")),
+    )
+    monkeypatch.setattr(
+        run_edition, "get_client",
+        lambda: FakeClient([EDITOR_JSON_FULL] + [valid_article() for _ in range(4)]),
+    )
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 0
+    edition = json.loads((editions / f"{TODAY.isoformat()}.json").read_text())
+    assert edition["edition_type"] == "normal"
+
+
+def test_unreachable_gold_still_publishes(wired, monkeypatch):
+    """Continuing coverage is an enhancement, not a precondition."""
+    catalog, editions = wired
+    _seed_partitions(catalog, TODAY, [
+        ctx("a" * 32, topic="Tech", url="https://x.invalid/a"),
+        ctx("b" * 32, topic="Tech", url="https://x.invalid/b"),
+        ctx("c" * 32, topic="Science", url="https://x.invalid/c"),
+        ctx("d" * 32, topic="Science", url="https://x.invalid/d"),
+    ])
+    monkeypatch.setattr(
+        run_edition, "retrieve_prior_mentions_batch",
+        lambda *a, **k: (_ for _ in ()).throw(OSError("R2 unreachable")),
+    )
+    monkeypatch.setattr(
+        run_edition, "get_client",
+        lambda: FakeClient([EDITOR_JSON_FULL] + [valid_article() for _ in range(4)]),
+    )
+
+    rc = run_edition.run(TODAY)
+
+    assert rc == 0
+    assert (editions / f"{TODAY.isoformat()}.json").exists()

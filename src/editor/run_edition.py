@@ -160,7 +160,30 @@ def _run_headline_gate(
     A retry that itself fails validation keeps the first response rather
     than costing the edition, so the gate can only ever change the headline
     or flag it, never remove the newsletter.
+
+    The whole body is wrapped for the same reason. This runs inside
+    run()'s try, where an unhandled exception sets edition = None and skips
+    _write_edition, publishing nothing at all. A quality check must never be
+    able to do that, which is the same reasoning that kept the headline rule
+    off the Edition validator (decision #25). If the gate itself breaks, the
+    edition ships with the headline the editor wrote.
     """
+    try:
+        return _headline_gate_inner(
+            client=client, editor_call=editor_call, contexts=contexts,
+            edition_type=edition_type, plan=plan, config=config,
+            editor_system=editor_system, prior_coverage=prior_coverage,
+            target_date=target_date,
+        )
+    except Exception as exc:  # noqa: BLE001
+        log.warning("headline gate failed, publishing the editor's headline: %s", exc)
+        return editor_call, False, 0.0
+
+
+def _headline_gate_inner(
+    *, client, editor_call, contexts, edition_type, plan, config,
+    editor_system, prior_coverage, target_date,
+):
     pipeline = get_pipeline()
     archive_cfg = pipeline.archive
     prior = headline_gate.recent_headlines(
@@ -289,12 +312,19 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
             # to run per story inside write_one, so a twelve-story edition
             # scanned gold a dozen times over nearly the same rows.
             archive_cfg = get_pipeline().archive
-            prior_coverage = retrieve_prior_mentions_batch(
-                contexts,
-                ingest_date,
-                catalog,
-                lookback_days=archive_cfg.continuing_coverage_lookback_days,
-            )
+            try:
+                prior_coverage = retrieve_prior_mentions_batch(
+                    contexts,
+                    ingest_date,
+                    catalog,
+                    lookback_days=archive_cfg.continuing_coverage_lookback_days,
+                )
+            except Exception as exc:  # noqa: BLE001
+                # Gold being unreachable must not cost the edition. Without
+                # the map the editor simply works as it did before this
+                # feature existed, and the gate stays quiet.
+                log.warning("continuing-coverage lookup failed, continuing: %s", exc)
+                prior_coverage = {}
             if prior_coverage:
                 log.info(
                     "%d of %d candidates continue a recently published story",
