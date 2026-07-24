@@ -241,243 +241,241 @@ def _headline_gate_inner(
 
 def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
     """One edition cycle. Returns the process exit code."""
-    run_id = runlog.make_run_id()
-    started_at = datetime.now(UTC)
-    config = get_pipeline().editor
-    ingest_date = target_date or started_at.date()
+    with runlog.logged_run(JOB, dry_run=dry_run) as rec:
+        config = get_pipeline().editor
+        ingest_date = target_date or rec.started_at.date()
 
-    catalog = get_catalog()
-    bronze_items = bronze.read_partition(bronze.ensure_table(catalog), ingest_date)
-    silver_rows = silver_table.read_partition(silver_table.ensure_table(catalog), ingest_date)
+        # Catalog connect and the two partition reads used to run outside the
+        # try whose finally wrote the row, so an unreachable catalog escaped
+        # run() with no row at all (SPEC section 8). logged_run now covers them.
+        catalog = get_catalog()
+        bronze_items = bronze.read_partition(bronze.ensure_table(catalog), ingest_date)
+        silver_rows = silver_table.read_partition(silver_table.ensure_table(catalog), ingest_date)
+        rec.items_in = len(bronze_items)
+        rec.items_out = len(silver_rows)
 
-    contexts = build_contexts(silver_rows, bronze_items)
-    edition_type = choose_edition_type(contexts, config)
-    plan = plan_sections(contexts)
+        contexts = build_contexts(silver_rows, bronze_items)
+        edition_type = choose_edition_type(contexts, config)
+        plan = plan_sections(contexts)
 
-    # SPEC 6.9 drops the day's bronze and silver partitions once the archival
-    # job has folded them into gold, so any re-run of an already-published
-    # date sees an empty day. Without this guard the re-run would replace a
-    # real edition with an empty fallback, which is the opposite of what
-    # decision #17 means by "the committed editions are the publication
-    # record". An already-published date with nothing left to read keeps what
-    # it published.
-    existing = OUTPUT_DIR / f"{ingest_date.isoformat()}.json"
-    if not contexts and existing.exists():
-        log.info(
-            "no usable clusters for %s and %s already exists (its partitions "
-            "were archived); keeping the published edition",
-            ingest_date,
-            existing.name,
-        )
-        return 0
-
-    log.info(
-        "run %s: %d items, %d clusters, %d usable -> %s edition",
-        run_id,
-        len(bronze_items),
-        len(silver_rows),
-        len(contexts),
-        edition_type,
-    )
-
-    if dry_run:
-        print(f"\nrun_id {run_id} (dry run, no AI calls, nothing written)")
-        print(f"  {ingest_date}: {edition_type} edition")
-        print(f"  {len(contexts)} usable clusters, sections available: "
-              f"{', '.join(plan.available) or 'none'}")
-        if plan.held:
-            print(f"  sections held (to briefly): {', '.join(plan.held)}")
-        for context in contexts[:20]:
-            grounded = "article" if context.grounding_chars >= config.min_grounding_chars else "collapsed"
-            print(f"  [{context.score}] {SECTION_NAMES.get(context.topic, context.topic)}: "
-                  f"{context.headline[:60]} ({grounded})")
-        return 0
-
-    cost = 0.0
-    status = "success"
-    notes: list[str] = []
-    readability_flag = False
-    headline_repeat_flag = False
-    edition: dict | None = None
-    client = None
-
-    try:
-        client = get_client()
-        contexts_by_id = {c.cluster_id: c for c in contexts}
-
-        if edition_type == "fallback":
-            edition = assemble.assemble_fallback(
-                contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
+        # SPEC 6.9 drops the day's bronze and silver partitions once the archival
+        # job has folded them into gold, so any re-run of an already-published
+        # date sees an empty day. Without this guard the re-run would replace a
+        # real edition with an empty fallback, which is the opposite of what
+        # decision #17 means by "the committed editions are the publication
+        # record". An already-published date with nothing left to read keeps what
+        # it published.
+        existing = OUTPUT_DIR / f"{ingest_date.isoformat()}.json"
+        if not contexts and existing.exists():
+            log.info(
+                "no usable clusters for %s and %s already exists (its partitions "
+                "were archived); keeping the published edition",
+                ingest_date,
+                existing.name,
             )
-            status = "partial"
-            notes.append("fallback edition: too little usable data for a normal or quiet day")
-        else:
-            editor_system = run_editor.load_system_prompt()
-            writer_system = run_writers.load_system_prompt()
+            # An idempotent no-op writes no row: a success row here would
+            # inflate the per-day editor-run count COST_ANALYSIS.md relies on.
+            rec.skip_log = True
+            return 0
 
-            # Computed once, before the editor call, and shared with the
-            # writer stage and every readability pass (SPEC 6.5). This used
-            # to run per story inside write_one, so a twelve-story edition
-            # scanned gold a dozen times over nearly the same rows.
-            archive_cfg = get_pipeline().archive
-            try:
-                prior_coverage = retrieve_prior_mentions_batch(
-                    contexts,
-                    ingest_date,
-                    catalog,
-                    lookback_days=archive_cfg.continuing_coverage_lookback_days,
-                )
-            except Exception as exc:  # noqa: BLE001
-                # Gold being unreachable must not cost the edition. Without
-                # the map the editor simply works as it did before this
-                # feature existed, and the gate stays quiet.
-                log.warning("continuing-coverage lookup failed, continuing: %s", exc)
-                prior_coverage = {}
-            if prior_coverage:
-                log.info(
-                    "%d of %d candidates continue a recently published story",
-                    len(prior_coverage),
-                    len(contexts),
-                )
+        log.info(
+            "run %s: %d items, %d clusters, %d usable -> %s edition",
+            rec.run_id,
+            len(bronze_items),
+            len(silver_rows),
+            len(contexts),
+            edition_type,
+        )
 
-            try:
-                editor_call = run_editor.run_editor(
-                    client, contexts, edition_type, plan, config, editor_system,
-                    prior_coverage=prior_coverage,
-                )
-                cost += editor_call.cost_usd
-            except AIFailure as failure:
-                cost += failure.cost_usd
-                log.error("editor failed twice, publishing fallback: %s", failure)
+        if dry_run:
+            print(f"\nrun_id {rec.run_id} (dry run, no AI calls, nothing written)")
+            print(f"  {ingest_date}: {edition_type} edition")
+            print(f"  {len(contexts)} usable clusters, sections available: "
+                  f"{', '.join(plan.available) or 'none'}")
+            if plan.held:
+                print(f"  sections held (to briefly): {', '.join(plan.held)}")
+            for context in contexts[:20]:
+                grounded = "article" if context.grounding_chars >= config.min_grounding_chars else "collapsed"
+                print(f"  [{context.score}] {SECTION_NAMES.get(context.topic, context.topic)}: "
+                      f"{context.headline[:60]} ({grounded})")
+            return 0
+
+        cost = 0.0
+        readability_flag = False
+        headline_repeat_flag = False
+        edition: dict | None = None
+        client = None
+
+        # Inner try keeps the specific "edition run failed" note. The outer
+        # logged_run would catch anything this misses (the setup above), so a
+        # failure anywhere still yields a row and a clean exit.
+        try:
+            client = get_client()
+            contexts_by_id = {c.cluster_id: c for c in contexts}
+
+            if edition_type == "fallback":
                 edition = assemble.assemble_fallback(
                     contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
                 )
-                status = "partial"
-                notes.append("fallback edition: editor output invalid twice (SPEC 7)")
+                rec.status = "partial"
+                rec.note("fallback edition: too little usable data for a normal or quiet day")
             else:
-                editor_call, headline_repeat_flag, gate_cost = _run_headline_gate(
-                    client=client,
-                    editor_call=editor_call,
-                    contexts=contexts,
-                    edition_type=edition_type,
-                    plan=plan,
-                    config=config,
-                    editor_system=editor_system,
-                    prior_coverage=prior_coverage,
-                    target_date=ingest_date,
-                )
-                cost += gate_cost
-                if headline_repeat_flag:
-                    status = "partial"
-                    notes.append("headline repeated a recent edition (SPEC 6.5)")
+                editor_system = run_editor.load_system_prompt()
+                writer_system = run_writers.load_system_prompt()
 
-                # Tier one of decision #26. Nothing between here and the end
-                # of assembly holds an edition yet, so the only recovery is
-                # the fallback. assemble_edition raises when the editor names
-                # a cluster it was not offered, or when the assembled object
-                # misses the canonical schema; structured output constrains
-                # the model's shape, not its values, so both stay reachable.
-                # Without this the outer handler nulls the edition and skips
-                # _write_edition, publishing nothing at all (SPEC section 7).
+                # Computed once, before the editor call, and shared with the
+                # writer stage and every readability pass (SPEC 6.5). This used
+                # to run per story inside write_one, so a twelve-story edition
+                # scanned gold a dozen times over nearly the same rows.
+                archive_cfg = get_pipeline().archive
                 try:
-                    selected_ids = {
-                        story.cluster_id
-                        for section in editor_call.value.sections
-                        for story in section.stories
-                    }
-                    selected = [c for c in contexts if c.cluster_id in selected_ids]
-                    articles = run_writers.run_writers(
-                        client, selected, config, writer_system, ingest_date,
-                        catalog=catalog, prior_mentions=prior_coverage,
+                    prior_coverage = retrieve_prior_mentions_batch(
+                        contexts,
+                        ingest_date,
+                        catalog,
+                        lookback_days=archive_cfg.continuing_coverage_lookback_days,
                     )
-                    cost += sum(result.cost_usd for result in articles.values())
-
-                    edition = assemble.assemble_edition(
-                        editor=editor_call.value,
-                        articles=articles,
-                        contexts=contexts,
-                        edition_type=edition_type,
-                        target_date=ingest_date,
-                        items_ingested=len(bronze_items),
-                        clusters_considered=len(silver_rows),
-                        sections_held=_held_section_count(contexts, plan),
-                    )
-
-                    skipped = sum(1 for r in articles.values() if r.status == "skipped_grounding")
-                    failed = sum(1 for r in articles.values() if r.status == "failed_validation")
-                    if skipped:
-                        notes.append(f"{skipped} stories published without an article (thin grounding)")
-                    if failed:
-                        notes.append(f"{failed} stories' articles failed validation twice")
-                    if skipped or failed:
-                        status = "partial"
                 except Exception as exc:  # noqa: BLE001
-                    log.error("edition assembly failed, publishing fallback: %s", exc)
+                    # Gold being unreachable must not cost the edition. Without
+                    # the map the editor simply works as it did before this
+                    # feature existed, and the gate stays quiet.
+                    log.warning("continuing-coverage lookup failed, continuing: %s", exc)
+                    prior_coverage = {}
+                if prior_coverage:
+                    log.info(
+                        "%d of %d candidates continue a recently published story",
+                        len(prior_coverage),
+                        len(contexts),
+                    )
+
+                try:
+                    editor_call = run_editor.run_editor(
+                        client, contexts, edition_type, plan, config, editor_system,
+                        prior_coverage=prior_coverage,
+                    )
+                    cost += editor_call.cost_usd
+                except AIFailure as failure:
+                    cost += failure.cost_usd
+                    log.error("editor failed twice, publishing fallback: %s", failure)
                     edition = assemble.assemble_fallback(
                         contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
                     )
-                    status = "partial"
-                    notes.append(
-                        f"fallback edition: {type(exc).__name__} during assembly ({exc})"
-                    )
-                    edition_type = "fallback"
+                    rec.status = "partial"
+                    rec.note("fallback edition: editor output invalid twice (SPEC 7)")
                 else:
-                    # Tier two, and only on the path that actually produced a
-                    # normal or quiet edition. A fallback has no sections to
-                    # measure or revise. Measured: it survives the revision
-                    # today, because readability.assess finds nothing failing
-                    # and the loop never runs. That is luck, not design, so
-                    # the else keeps the fallback out rather than relying on
-                    # it.
-                    #
-                    # From here an edition exists and has already passed
-                    # validate_edition, so the fallback would be a downgrade
-                    # rather than a rescue. The copy is what makes that
-                    # recovery safe: simplify_edition and the per-story loop
-                    # both rewrite the edition in place, so a raise partway
-                    # through can leave the live object half revised.
-                    pristine = copy.deepcopy(edition)
+                    editor_call, headline_repeat_flag, gate_cost = _run_headline_gate(
+                        client=client,
+                        editor_call=editor_call,
+                        contexts=contexts,
+                        edition_type=edition_type,
+                        plan=plan,
+                        config=config,
+                        editor_system=editor_system,
+                        prior_coverage=prior_coverage,
+                        target_date=ingest_date,
+                    )
+                    cost += gate_cost
+                    if headline_repeat_flag:
+                        rec.status = "partial"
+                        rec.note("headline repeated a recent edition (SPEC 6.5)")
+
+                    # Tier one of decision #26. Nothing between here and the end
+                    # of assembly holds an edition yet, so the only recovery is
+                    # the fallback. assemble_edition raises when the editor names
+                    # a cluster it was not offered, or when the assembled object
+                    # misses the canonical schema; structured output constrains
+                    # the model's shape, not its values, so both stay reachable.
+                    # Without this the outer handler nulls the edition and skips
+                    # _write_edition, publishing nothing at all (SPEC section 7).
                     try:
-                        edition, revision_cost, readability_flag = _revise_for_readability(
-                            client, edition, contexts_by_id, config, writer_system,
-                            ingest_date, catalog, prior_coverage,
+                        selected_ids = {
+                            story.cluster_id
+                            for section in editor_call.value.sections
+                            for story in section.stories
+                        }
+                        selected = [c for c in contexts if c.cluster_id in selected_ids]
+                        articles = run_writers.run_writers(
+                            client, selected, config, writer_system, ingest_date,
+                            catalog=catalog, prior_mentions=prior_coverage,
                         )
-                        cost += revision_cost
+                        cost += sum(result.cost_usd for result in articles.values())
+
+                        edition = assemble.assemble_edition(
+                            editor=editor_call.value,
+                            articles=articles,
+                            contexts=contexts,
+                            edition_type=edition_type,
+                            target_date=ingest_date,
+                            items_ingested=len(bronze_items),
+                            clusters_considered=len(silver_rows),
+                            sections_held=_held_section_count(contexts, plan),
+                        )
+
+                        skipped = sum(1 for r in articles.values() if r.status == "skipped_grounding")
+                        failed = sum(1 for r in articles.values() if r.status == "failed_validation")
+                        if skipped:
+                            rec.note(f"{skipped} stories published without an article (thin grounding)")
+                        if failed:
+                            rec.note(f"{failed} stories' articles failed validation twice")
+                        if skipped or failed:
+                            rec.status = "partial"
                     except Exception as exc:  # noqa: BLE001
-                        log.error(
-                            "readability revision failed, publishing as assembled: %s", exc
+                        log.error("edition assembly failed, publishing fallback: %s", exc)
+                        edition = assemble.assemble_fallback(
+                            contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
                         )
-                        edition = pristine
-                        readability_flag = True
-                        notes.append(
-                            f"readability revision raised {type(exc).__name__}: {exc}"
+                        rec.status = "partial"
+                        rec.note(
+                            f"fallback edition: {type(exc).__name__} during assembly ({exc})"
                         )
-                    if readability_flag:
-                        status = "partial"
-                        notes.append("readability gate exceeded after revision (SPEC 6.5)")
+                        edition_type = "fallback"
+                    else:
+                        # Tier two, and only on the path that actually produced a
+                        # normal or quiet edition. A fallback has no sections to
+                        # measure or revise. Measured: it survives the revision
+                        # today, because readability.assess finds nothing failing
+                        # and the loop never runs. That is luck, not design, so
+                        # the else keeps the fallback out rather than relying on
+                        # it.
+                        #
+                        # From here an edition exists and has already passed
+                        # validate_edition, so the fallback would be a downgrade
+                        # rather than a rescue. The copy is what makes that
+                        # recovery safe: simplify_edition and the per-story loop
+                        # both rewrite the edition in place, so a raise partway
+                        # through can leave the live object half revised.
+                        pristine = copy.deepcopy(edition)
+                        try:
+                            edition, revision_cost, readability_flag = _revise_for_readability(
+                                client, edition, contexts_by_id, config, writer_system,
+                                ingest_date, catalog, prior_coverage,
+                            )
+                            cost += revision_cost
+                        except Exception as exc:  # noqa: BLE001
+                            log.error(
+                                "readability revision failed, publishing as assembled: %s", exc
+                            )
+                            edition = pristine
+                            readability_flag = True
+                            rec.note(
+                                f"readability revision raised {type(exc).__name__}: {exc}"
+                            )
+                        if readability_flag:
+                            rec.status = "partial"
+                            rec.note("readability gate exceeded after revision (SPEC 6.5)")
 
-        written = _write_edition(edition, ingest_date)
-        log.info("wrote %s (%s), est $%.4f", written, edition_type, cost)
+            written = _write_edition(edition, ingest_date)
+            log.info("wrote %s (%s), est $%.4f", written, edition_type, cost)
+        except Exception as exc:  # noqa: BLE001
+            rec.status = "failed"
+            rec.note(f"edition run failed: {type(exc).__name__}: {exc}")
+            log.error(rec.notes[-1])
+            edition = None
 
-    except Exception as exc:  # noqa: BLE001
-        status = "failed"
-        notes.append(f"edition run failed: {type(exc).__name__}: {exc}")
-        log.error(notes[-1])
-        edition = None
-    finally:
-        _log_run(
-            run_id=run_id,
-            started_at=started_at,
-            status=status,
-            items_in=len(bronze_items),
-            items_out=len(silver_rows),
-            cost=cost,
-            readability_flag=readability_flag,
-            headline_repeat_flag=headline_repeat_flag,
-            notes="; ".join(notes) or None,
-        )
-
-    return 1 if status == "failed" else 0
+        rec.ai_cost_estimate_usd = round(cost, 6)
+        rec.readability_flag = readability_flag
+        rec.headline_repeat_flag = headline_repeat_flag
+    return 1 if rec.status == "failed" else 0
 
 
 def _write_edition(edition: dict, ingest_date: date) -> Path:
@@ -509,30 +507,6 @@ def _write_edition(edition: dict, ingest_date: date) -> Path:
             return path
     path.write_text(json.dumps(edition, indent=2, ensure_ascii=False) + "\n")
     return path
-
-
-def _log_run(
-    *, run_id, started_at, status, items_in, items_out, cost, readability_flag,
-    headline_repeat_flag, notes,
-) -> None:
-    try:
-        runlog.write_row(
-            runlog.ensure_table(get_catalog()),
-            runlog.build_row(
-                run_id=run_id,
-                job=JOB,
-                started_at=started_at,
-                ended_at=datetime.now(UTC),
-                status=status,
-                items_in=items_in,
-                items_out=items_out,
-                ai_cost_estimate_usd=round(cost, 6),
-                readability_flag=readability_flag,
-                notes=notes,
-            ),
-        )
-    except Exception as exc:  # noqa: BLE001
-        log.error("could not write run_log row: %s", exc)
 
 
 def main(argv: list[str] | None = None) -> int:

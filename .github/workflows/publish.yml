@@ -107,7 +107,14 @@ jobs:
       # TTS; the MP3 goes to R2 and the audio block is injected into the
       # committed edition.json. Every failure is contained to "publish
       # without an audio row" (SPEC 7), so this never blocks the deploy.
+      #
+      # continue-on-error enforces that. Audio runs between Build edition and
+      # Commit, so before this a hard audio failure (a corrupt edition, an
+      # inject_audio raise) killed the job with the day's edition still
+      # uncommitted on the runner, and the site was never published. Audio is
+      # non-blocking by spec; a failure of it must not cost the edition.
       - name: Audio build
+        continue-on-error: true
         run: uv run python -m src.audio.run_audio
 
       # SPEC 6.8 step 7: commit the edition.json publication record
@@ -154,5 +161,10 @@ jobs:
       # bronze and silver partitions. Runs after the deploy so a failure
       # here never costs the published edition; it records its own run_log
       # row for the weekly review.
+      #
+      # continue-on-error so an archive failure does not turn a green publish
+      # red after the site is already live and pinged. The failure is still on
+      # record in its own run_log row; the weekly review is where it surfaces.
       - name: Archive to gold
+        continue-on-error: true
         run: uv run python -m src.archive

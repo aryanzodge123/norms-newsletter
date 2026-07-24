@@ -355,55 +355,23 @@ def archive_day(
 
 
 def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
-    run_id = runlog.make_run_id()
-    started_at = datetime.now(UTC)
-    ingest_date = target_date or started_at.date()
-
-    catalog = get_catalog()
-    status = "success"
-    notes: list[str] = []
-    metrics: dict = {}
-    try:
-        metrics = archive_day(catalog, ingest_date, now=started_at, dry_run=dry_run)
-        if dry_run:
-            return 0
-        if metrics.get("edition_missing"):
-            status = "partial"
-            notes.append("no edition.json to archive for this date")
-    except Exception as exc:  # noqa: BLE001
-        status = "failed"
-        notes.append(f"archive failed: {type(exc).__name__}: {exc}")
-        log.error(notes[-1])
-    finally:
+    with runlog.logged_run(JOB, dry_run=dry_run) as rec:
+        ingest_date = target_date or rec.started_at.date()
+        # get_catalog used to run outside the try, so an unreachable catalog
+        # escaped run() with no row (SPEC section 8). Now it is covered.
+        catalog = get_catalog()
+        metrics = archive_day(catalog, ingest_date, now=rec.started_at, dry_run=dry_run)
         if not dry_run:
-            _log_run(run_id, started_at, status, metrics, "; ".join(notes) or None)
-
-    return 1 if status == "failed" else 0
-
-
-def _log_run(run_id, started_at, status, metrics, notes) -> None:
-    try:
-        items_in = metrics.get("bronze", 0) + metrics.get("silver", 0)
-        items_out = (
-            metrics.get("raw_written", 0)
-            + metrics.get("clusters_written", 0)
-            + metrics.get("editions_written", 0)
-        )
-        runlog.write_row(
-            runlog.ensure_table(get_catalog()),
-            runlog.build_row(
-                run_id=run_id,
-                job=JOB,
-                started_at=started_at,
-                ended_at=datetime.now(UTC),
-                status=status,
-                items_in=items_in,
-                items_out=items_out,
-                notes=notes,
-            ),
-        )
-    except Exception as exc:  # noqa: BLE001
-        log.error("could not write run_log row: %s", exc)
+            rec.items_in = metrics.get("bronze", 0) + metrics.get("silver", 0)
+            rec.items_out = (
+                metrics.get("raw_written", 0)
+                + metrics.get("clusters_written", 0)
+                + metrics.get("editions_written", 0)
+            )
+            if metrics.get("edition_missing"):
+                rec.status = "partial"
+                rec.note("no edition.json to archive for this date")
+    return 1 if rec.status == "failed" else 0
 
 
 def main(argv: list[str] | None = None) -> int:

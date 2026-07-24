@@ -523,11 +523,18 @@ published normal or quiet edition for the same date (decision #17). Exactly
 two conditions still leave a day unpublished: no candidate contexts at all,
 and a failure to write the file itself.
 
+A stage the publish workflow classes as non-blocking, the audio build being
+the one such stage today, must never fail the workflow. A non-zero exit from
+it publishes the edition without that stage's contribution (SPEC 7's "publish
+without audio row"), rather than stranding an edition that is already built.
+
 ## 8. Observability
 
 **`ops.run_log` (Iceberg, partitioned by run_date).** One row per job run.
-Written by every job, including failed ones; a job that cannot write its
-own row is itself a failure surfaced by the dead man's switch.
+Written by every job, including failed ones, and including a job that fails
+during setup before its main work: an unreachable catalog is a logged
+`failed` row, never a missing one. A job that cannot write its own row is
+itself a failure surfaced by the dead man's switch.
 
 | field              | type      | notes                                     |
 |--------------------|-----------|-------------------------------------------|

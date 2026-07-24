@@ -10,6 +10,9 @@ from __future__ import annotations
 import json
 import logging
 import secrets
+from collections.abc import Iterator
+from contextlib import contextmanager
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 
 import pyarrow as pa
@@ -28,7 +31,7 @@ from pyiceberg.types import (
     TimestamptzType,
 )
 
-from .storage import ensure_namespace
+from .storage import ensure_namespace, get_catalog
 
 log = logging.getLogger(__name__)
 
@@ -197,3 +200,95 @@ def write_row(table: Table, row: dict) -> None:
     schema = pa.schema([f for f in ARROW_SCHEMA if f.name in present])
     table.append(pa.table({k: [v] for k, v in projected.items()}, schema=schema))
     log.info("run_log: %s %s %s", row["job"], row["run_id"], row["status"])
+
+
+@dataclass
+class RunRecord:
+    """The mutable state of one job run, filled in as the job proceeds.
+
+    A job's `run()` sets the fields it knows (`items_in`, cost, flags, one or
+    more `note`s) and `logged_run` turns the final state into exactly one
+    run_log row. `run_id` and `started_at` are captured at construction, so
+    they exist even if the job dies before doing anything, which is the whole
+    point: the row can always be written (SPEC section 8).
+    """
+
+    run_id: str
+    job: str
+    started_at: datetime
+    status: str = "success"
+    items_in: int = 0
+    items_out: int = 0
+    ai_cost_estimate_usd: float | None = None
+    adapter_metrics: dict | None = None
+    readability_flag: bool | None = None
+    headline_repeat_flag: bool | None = None
+    notes: list[str] = field(default_factory=list)
+    # An idempotent no-op (the editor re-running an already-published, already
+    # archived date) writes no row today. Set this to keep that true, so the
+    # per-day editor-run count COST_ANALYSIS.md relies on is not inflated.
+    skip_log: bool = False
+
+    def note(self, message: str) -> None:
+        self.notes.append(message)
+
+
+@contextmanager
+def logged_run(
+    job: str, *, dry_run: bool = False, catalog_factory=None
+) -> Iterator[RunRecord]:
+    """Wrap a job's whole `run()` so exactly one run_log row is always written.
+
+    The pattern every entry point used before this put config load, catalog
+    connection, and the first data read *outside* the try whose finally wrote
+    the row. A failure there, an unreachable R2 at 6am being the likeliest,
+    escaped as a bare traceback and left no row at all: the record you need
+    most, missing exactly when a real failure hits. This manager closes that
+    gap by covering setup as well as work.
+
+    It **swallows** the exception rather than re-raising: the caller reads
+    `rec.status` after the `with` and returns `1 if failed else 0`, so a crash
+    becomes a clean non-zero exit with a logged reason instead of a traceback.
+    Inner try/except blocks a job already has (a specific "write failed" note,
+    for instance) still work: they set `rec.status` without raising, so this
+    outer handler never fires for a case the body handled.
+
+    A `dry_run` writes nothing, matching every job's existing dry run. So does
+    a run the body marks `skip_log`. A failure writing the row itself is
+    logged and dropped: the run already happened, and a missing row is caught
+    by the healthchecks dead man's switch (SPEC section 8).
+    """
+    # Resolved at call time, not bound as a default, so a test can point the
+    # write at a local catalog by patching runlog.get_catalog.
+    catalog_factory = catalog_factory or get_catalog
+    rec = RunRecord(run_id=make_run_id(), job=job, started_at=datetime.now(UTC))
+    try:
+        yield rec
+    except Exception as exc:  # noqa: BLE001
+        rec.status = "failed"
+        rec.note(f"{job} run failed: {type(exc).__name__}: {exc}")
+        log.error(rec.notes[-1])
+    finally:
+        if not dry_run and not rec.skip_log:
+            try:
+                write_row(
+                    ensure_table(catalog_factory()),
+                    build_row(
+                        run_id=rec.run_id,
+                        job=rec.job,
+                        started_at=rec.started_at,
+                        ended_at=datetime.now(UTC),
+                        status=rec.status,
+                        items_in=rec.items_in,
+                        items_out=rec.items_out,
+                        adapter_metrics=rec.adapter_metrics,
+                        ai_cost_estimate_usd=rec.ai_cost_estimate_usd,
+                        readability_flag=rec.readability_flag,
+                        headline_repeat_flag=rec.headline_repeat_flag,
+                        notes="; ".join(rec.notes) or None,
+                    ),
+                )
+            except Exception as exc:  # noqa: BLE001
+                # The run happened. A missing row is surfaced by the dead
+                # man's switch (SPEC section 8), never by losing the row here.
+                log.error("could not write run_log row: %s", exc)
