@@ -149,9 +149,11 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
         try:
             rec.items_out = silver_table.overwrite_partition(table, ingest_date, rows)
             if null_scores:
+                rec.reason(runlog.REASON_NULL_SCORES)
                 rec.note(f"{null_scores} clusters stored with a null score")
         except Exception as exc:  # noqa: BLE001
             rec.status = "failed"
+            rec.reason(runlog.REASON_WRITE_FAILED)
             rec.note(f"silver write failed: {type(exc).__name__}: {exc}")
             log.error(rec.notes[-1])
     return 1 if rec.status == "failed" else 0

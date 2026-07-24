@@ -164,6 +164,7 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
         if not path.exists():
             log.warning("no edition at %s; nothing to voice", path)
             rec.status = "partial"
+            rec.reason(runlog.REASON_NO_EDITION)
             rec.note("no edition.json for this date")
             return 1 if rec.status == "failed" else 0
 
@@ -193,12 +194,16 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
             # audio=None would fail schema validation. build_audio already bowed
             # out with the fallback note; treat it as a contained no-op, leave
             # the file untouched, and let the publish proceed without an audio
-            # row (SPEC 7).
+            # row (SPEC 7). No audio_missing code: a fallback carrying no audio
+            # is expected, not a failure of this stage; the degradation, if any,
+            # is already recorded on the editor row.
             rec.status = "partial"
         else:
             if result.audio is None:
-                # A contained failure. The edition still publishes, no audio.
+                # A contained failure: the script or TTS produced no audio. The
+                # edition still publishes, without it (SPEC 7).
                 rec.status = "partial"
+                rec.reason(runlog.REASON_AUDIO_MISSING)
             inject_audio(edition, result.audio)
             path.write_text(json.dumps(edition, indent=2, ensure_ascii=False) + "\n")
         log.info("%s: %s (est $%.4f)", edition_date, result.note, result.cost_usd)

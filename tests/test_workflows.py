@@ -51,3 +51,13 @@ def test_audio_runs_before_commit():
     # future edit moves commit before audio, this guard is worth revisiting.
     names = [s.get("name") for s in _steps()]
     assert names.index("Audio build") < names.index("Commit edition")
+
+
+def test_degraded_check_is_last_and_fail_fast():
+    # Finding 3: the degraded signal must run after the deploy and the
+    # healthcheck ping (so the site is live and green first), and it must NOT
+    # be continue-on-error, because a red exit is the whole alert.
+    names = [s.get("name") for s in _steps()]
+    assert names[-1] == "Flag degraded publication"
+    assert names.index("Flag degraded publication") > names.index("Ping healthchecks")
+    assert _step("Flag degraded publication").get("continue-on-error") is not True

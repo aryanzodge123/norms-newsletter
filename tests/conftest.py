@@ -69,3 +69,32 @@ def local_catalog(tmp_path) -> SqlCatalog:
         uri=f"sqlite:///{tmp_path}/catalog.db",
         warehouse=f"file://{warehouse}",
     )
+
+
+@pytest.fixture(scope="session")
+def _runlog_guard_catalog(tmp_path_factory) -> SqlCatalog:
+    """A throwaway catalog for run_log writes that no test inspects."""
+    warehouse = tmp_path_factory.mktemp("runlog_guard")
+    return SqlCatalog(
+        "runlog_guard",
+        uri=f"sqlite:///{warehouse}/catalog.db",
+        warehouse=f"file://{warehouse}",
+    )
+
+
+@pytest.fixture(autouse=True)
+def _isolate_run_log(monkeypatch, _runlog_guard_catalog):
+    """Never let a test write a run_log row to production R2.
+
+    `runlog.logged_run` resolves `runlog.get_catalog` at call time, and
+    `get_catalog` reads real R2 credentials from `.env`. So any test that runs
+    a job's `run()` would otherwise write a junk row (and, since Finding 3, a
+    junk reason code) straight into the live `ops.run_log`, which the docstring
+    above promises never happens and which the degraded-publication signal
+    reads. This autouse guard points that write at a throwaway local catalog.
+    A test that wants to read the row back overrides this by patching
+    `runlog.get_catalog` to its own `local_catalog` after this fixture runs.
+    """
+    from src import runlog
+
+    monkeypatch.setattr(runlog, "get_catalog", lambda: _runlog_guard_catalog)
