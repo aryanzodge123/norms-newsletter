@@ -262,6 +262,16 @@ headline, summary_seed, member_ids, member_count, sources, score,
 rationale, model_version, prompt_version, scored_at. Every decision
 logged; this table is the future eval dataset.
 
+The partition write is a full-partition overwrite, a compare-and-swap under
+Iceberg optimistic concurrency against the snapshot the handle was loaded
+from before the scoring pass. A concurrent committer (the archival partition
+drop in 6.9 is the one other mutator of this table) can advance the snapshot
+in that window and make the commit raise `CommitFailedException`. On a lost
+race the write reloads the table and retries a bounded number of times, and
+only then surfaces `write_failed` (section 8). This is what makes 6.2's
+"overlapping runs are harmless" true for the silver overwrite, not only for
+the append-only bronze table.
+
 ### 6.5 Edition generation (two AI stages + gate)
 
 **Stage 1, Editor agent (Sonnet-class, one call).** Reads today's clusters
@@ -275,7 +285,12 @@ prompts/voice.md):
   once with the error rather than degrading straight to a fallback. The
   assembled `Edition` re-checks the same ceiling as the authority on the
   published artifact; it is defense-in-depth, not the first line of
-  enforcement.
+  enforcement. The 15-20 target and the hard 20 ceiling are stated in the
+  per-call editor message, not only in the static policy, so the model
+  counts against a concrete total while it fills the available sections.
+  key_point topics use the short topic codes (the same code shown on each
+  candidate story), which differ from the section display names; the editor
+  is told this explicitly.
 - Dead sections collapse into "briefly"; 3+ dead sections -> shrink the
   edition; broadly quiet day -> edition_type "quiet" with a 3-point glance.
 - Outputs the edition core: metadata, key_points, per-story title +
@@ -504,6 +519,7 @@ them, not speculatively.
 | One adapter fails              | Log, skip, continue                              |
 | All sources return nothing     | run_log `failed` + healthchecks `/fail` (blind collector) |
 | Missed collector cycles        | Next cycle backfills via `since`; bronze dedups  |
+| Silver write loses a commit race | Reload table, retry bounded; only then run_log `write_failed` |
 | One story's article fails 2x   | Story publishes without article block            |
 | Editor output invalid 2x       | Publish fallback edition (edition_type fallback) |
 | Edition assembly raises        | Publish fallback edition; run_log `partial`      |
@@ -593,7 +609,7 @@ free text. A run may carry more than one code.
 | `null_scores` | one or more clusters were stored with a null score | no |
 | `no_edition` | audio or archive found no edition.json for the date | no |
 | `audio_missing` | the script or TTS produced no audio; the edition published without it | no |
-| `write_failed` | the Iceberg write raised | no |
+| `write_failed` | the Iceberg write raised (for the silver overwrite, after its bounded retry was exhausted) | no |
 | `run_failed` | a setup failure or unhandled error, logged by the run wrapper | no |
 
 **Degraded.** A run is *degraded* when its `reasons` intersect the degraded
@@ -665,6 +681,8 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 26 | Any failure after candidate selection produces a published edition, never an empty day. A stage that has not yet produced an edition degrades to the fallback; a stage that already holds a valid one publishes it unrevised. Enforced at the orchestration points rather than at each failure site, so a future required field on the edition schema can cost quality but never the day |
 | 27 | `run_log.status` is too coarse to alert on (`partial` is the editor's normal state), so `run_log` carries a closed set of enumerated `reasons` codes (section 8). "Degraded" is a derived query over a degraded subset, not a stored flag, so it cannot drift. A degraded publication is alerted by reddening the GitHub Actions run after a successful deploy, never by healthchecks, which stays a pure published-or-not signal |
 | 28 | The 15-20 story budget's upper bound (20) is enforced on the editor response, not only on the assembled Edition. On 2026-07-24 the editor curated 23 stories; the ceiling lived only on the non-retryable Edition, so a self-correctable over-count degraded the day to `assembly_fallback`. Enforcing it on the retryable response lets `call_validated` return the error and trim on retry; a second failure still falls to `editor_invalid_fallback`. Extends decision #25's rule to the story count |
+| 29 | The editor is given the per-edition story budget (15-20 target, hard 20 ceiling) and the valid key_point topic codes in the per-call message, not only in the static policy. On 2026-07-24 a busy day with no total-story anchor over-produced 23 stories, and a separate key_point topic slip (`Cybersecurity` for `Cyber`) consumed the other attempt, so a self-correctable over-count fell to a fallback. The prompt now anchors the count where the model decides it and points topic tagging at the short code each candidate already carries. Complements #28, which made the ceiling retryable |
+| 29 | The silver partition write is a full-partition overwrite, not append-only, so unlike bronze it can lose an Iceberg optimistic-concurrency race. On 2026-07-24 a `collect` run scored all 103 clusters and then raised `CommitFailedException` on the commit (the archival partition drop the likely counterparty). The overwrite now reloads the table and retries a bounded number of times before surfacing `write_failed`, which makes decision #5's idempotent-overlap promise (SPEC 6.2) true for the silver overwrite and not only for the append-only bronze table. Scoped to the silver overwrite: bronze and run_log are append-only and rarely conflict, and the closed reason-code set is unchanged (`write_failed` now means the write raised and retries were exhausted) |
 
 ## 11. Remaining open questions
 

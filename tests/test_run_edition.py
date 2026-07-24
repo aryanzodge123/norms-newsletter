@@ -14,11 +14,13 @@ from datetime import UTC, date, datetime
 import pytest
 
 from src.config import EditorConfig
-from src.editor import assemble, run_edition
+from src.editor import assemble, run_edition, run_editor
 from src.editor.context import StoryContext
+from src.editor.plan import SectionPlan
 from src.editor.run_writers import ArticleResult
 from pydantic import ValidationError
 
+from src.editor import schema
 from src.editor.schema import EditorResponse, EditionInvalid, validate_edition
 
 from tests.conftest import make_item
@@ -1051,3 +1053,58 @@ def test_thin_day_fallback_is_recorded_but_not_degraded(wired, monkeypatch):
     assert runlog.REASON_THIN_DAY_FALLBACK in json.loads(row["reasons"])
     # The whole point of the boundary: a thin day is not a degraded publication.
     assert runlog.is_degraded(row["reasons"]) is False
+
+
+# --------------------------------------------------------------------------
+# The per-call editor message: total-story budget and key_point topic codes
+# (decision #29). The 20 ceiling is retryable (decision #28), but the model
+# counts against the section list in this message, so the total must be stated
+# here, not only in the static policy.
+# --------------------------------------------------------------------------
+_BUSY_PLAN = SectionPlan(
+    available=("Technology", "Artificial intelligence", "World", "Cybersecurity"),
+    held=(),
+)
+
+
+def test_mode_line_states_the_total_story_budget_on_a_normal_day():
+    line = run_editor._mode_line("normal", _BUSY_PLAN)
+    assert "15 to 20 stories in total" in line
+    assert "never more than 20" in line
+    # It must not read as a floor to pad up to.
+    assert "do not pad to reach 15" in line
+
+
+def test_mode_line_omits_the_story_budget_on_a_quiet_day():
+    # A quiet edition is deliberately short; a 15-to-20 target would contradict it.
+    line = run_editor._mode_line("quiet", _BUSY_PLAN)
+    assert "15 to 20" not in line
+
+
+def test_mode_line_lists_key_point_topic_codes_from_the_schema():
+    line = run_editor._mode_line("normal", _BUSY_PLAN)
+    # The codes come straight from schema.TOPICS, in order, so they cannot drift
+    # from the validator and are the short forms, not the display names.
+    assert ", ".join(schema.TOPICS) in line
+    assert "not a section display name" in line
+
+
+def test_mode_line_topic_instruction_uses_the_code_not_the_display_name():
+    # The 2026-07-24 slip: a section shown as "Cybersecurity" tagged as a
+    # key_point topic. The available-sections line still shows display names,
+    # but the topic-code instruction must offer "Cyber", never "Cybersecurity".
+    line = run_editor._mode_line("normal", _BUSY_PLAN)
+    topic_instruction = line.rsplit("Tag each glance point", 1)[1]
+    assert "Cyber" in topic_instruction
+    assert "Cybersecurity" not in topic_instruction
+    assert "Artificial intelligence" not in topic_instruction
+
+
+def test_mode_line_keeps_the_do_not_pad_guidance_when_sections_are_dead():
+    shrink_plan = SectionPlan(
+        available=("Technology", "World"),
+        held=("Finance", "Science", "Regulation"),  # 3 dead -> shrink
+    )
+    assert shrink_plan.shrink is True
+    line = run_editor._mode_line("normal", shrink_plan)
+    assert "Keep the edition tight" in line
