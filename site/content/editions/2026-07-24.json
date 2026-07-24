@@ -1,0 +1,78 @@
+{
+  "date": "2026-07-24",
+  "edition_number": 47,
+  "edition_type": "fallback",
+  "notice": "Today's brief is a short one. The usual edition could not be built, so here are the stories that ranked highest, with links to the sources. Full service resumes tomorrow.",
+  "stories": [
+    {
+      "rank": 1,
+      "title": "Middle East crisis is ‘getting out of control’, UN chief warns, as US launches another round of strikes on Iran – live updates",
+      "score": 8,
+      "url": "https://www.theguardian.com/world/live/2026/jul/23/us-iran-war-live-updates-strikes-houthis-red-sea-saudi-nuclear-deal-middle-east-crisis-latest-news",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 2,
+      "title": "US and Iran trade more strikes in Gulf as fears of escalation mount",
+      "score": 8,
+      "url": "https://www.bbc.co.uk/news/articles/c05ql5llj4do?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_world"
+    },
+    {
+      "rank": 3,
+      "title": "Four Palestinians and one Israeli killed during West Bank settler attack",
+      "score": 8,
+      "url": "https://www.theguardian.com/world/2026/jul/24/palestinians-israeli-killed-west-bank-shooting",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 4,
+      "title": "Trump to impose double-digit tariffs on dozens of countries",
+      "score": 8,
+      "url": "https://www.npr.org/2026/07/23/g-s1-135388/trump-tariffs-trade-country",
+      "source": "npr_politics"
+    },
+    {
+      "rank": 5,
+      "title": "The Ever-Receding Pocket",
+      "score": 8,
+      "url": "https://zhenyi.gibber.blog/the-ever-receding-pocket",
+      "source": "hackernews"
+    },
+    {
+      "rank": 6,
+      "title": "In a first, Chinese woman wins the prestigious Fields Medal",
+      "score": 7,
+      "url": "https://www.npr.org/2026/07/23/g-s1-135032/in-a-first-chinese-woman-wins-the-prestigious-fields-medal",
+      "source": "hackernews"
+    },
+    {
+      "rank": 7,
+      "title": "Police Keep Losing Their Jobs for Using Flock Cameras to Stalk People",
+      "score": 7,
+      "url": "https://www.motherjones.com/politics/2026/07/police-losing-jobs-flock-cameras-alprs",
+      "source": "hackernews"
+    },
+    {
+      "rank": 8,
+      "title": "Former U.S. diplomat breaks down Houthi attacks on Red Sea shipping",
+      "score": 7,
+      "url": "https://www.pbs.org/newshour/show/former-u-s-diplomat-breaks-down-houthi-attacks-on-red-sea-shipping",
+      "source": "pbs_world"
+    },
+    {
+      "rank": 9,
+      "title": "U.S. military launches 13th night strikes on Iran as clashes escalate over shipping routes",
+      "score": 7,
+      "url": "https://www.pbs.org/newshour/world/u-s-military-launches-13th-night-strikes-on-iran-as-clashes-escalate-over-shipping-routes",
+      "source": "pbs_world"
+    },
+    {
+      "rank": 10,
+      "title": "AMD's Instinct MI455X: Aiming for the Sun",
+      "score": 7,
+      "url": "https://chipsandcheese.com/p/amds-instinct-mi455x-aiming-for-the",
+      "source": "hackernews"
+    }
+  ]
+}
