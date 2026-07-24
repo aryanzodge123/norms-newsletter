@@ -23,7 +23,11 @@
       "topic": "Cyber"
     }
   ],
-  "audio": null,
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-24.mp3",
+    "duration_seconds": 421,
+    "size_bytes": 5048064
+  },
   "sections": [
     {
       "name": "Business",
