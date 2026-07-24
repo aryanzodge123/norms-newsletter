@@ -424,8 +424,11 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                 else:
                     # Tier two, and only on the path that actually produced a
                     # normal or quiet edition. A fallback has no sections to
-                    # measure or revise, which is why this is an else rather
-                    # than a plain continuation.
+                    # measure or revise. Measured: it survives the revision
+                    # today, because readability.assess finds nothing failing
+                    # and the loop never runs. That is luck, not design, so
+                    # the else keeps the fallback out rather than relying on
+                    # it.
                     #
                     # From here an edition exists and has already passed
                     # validate_edition, so the fallback would be a downgrade

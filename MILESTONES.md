@@ -68,9 +68,20 @@ no Iceberg migration.
 - **Tier one.** The writer stage and assembly run in a try that degrades to
   `assemble_fallback` on any exception, mirroring the existing
   editor-failure handler. Written as `try/except/else` so a fallback does
-  not then flow into the readability stage, which indexes
-  `edition["sections"]` and would `KeyError` on a fallback. That flaw was
-  present in the first draft of the edit and caught before running.
+  not then flow into the readability stage, which has no sections to
+  measure. Stress testing corrected the justification here: a fallback
+  actually survives the revision today, because `readability.assess` finds
+  nothing failing and the loop that would `KeyError` on
+  `edition["sections"]` never runs. That is luck rather than design, so the
+  `else` stays, described as defensive rather than load bearing.
+- **`assemble_fallback` now sorts its own contexts.** It documented that
+  callers pass them already ordered, and `FallbackEdition` rejects stories
+  that are not descending by score. So an unsorted caller raised
+  `EditionInvalid` out of the one function every other failure path falls
+  back to. Not reachable today (`build_contexts` sorts, verified against
+  the real 07-23 candidates), but decision #26 makes this function the
+  recovery, and a recovery must not depend on an invariant it does not
+  enforce itself.
 - **Tier two.** The readability revision keeps a `copy.deepcopy` taken
   before the call and restores it on failure. The copy is load-bearing:
   `simplify_edition` and the per-story loop both rewrite the edition in
@@ -101,7 +112,47 @@ disabling the thing it guards and confirming it fails:
 The fourth is a floor pin rather than a guard test: it passes with the
 guards removed, which is correct, so its negative control is the over-broad
 handler it exists to catch. All four are load-bearing against the specific
-mistake each defends.
+mistake each defends. A fifth test pins the `assemble_fallback` sort and
+fails without it.
+
+Stress tested afterwards, in the same way as the headline gate:
+
+- The no-downgrade guard was run over a full matrix of what is on disk
+  against what is being written: nine combinations covering normal, quiet,
+  fallback, absent, corrupt, and typeless. Only fallback-over-real is
+  refused; upgrades and good re-runs still write.
+- Replayed against the real 2026-07-23 morning rebuilt from gold, 201 items
+  and 161 candidates. The fallback validates, ranks 10 stories 8 down to 7,
+  every row clickable, and the guard kept the genuine published edition when
+  a fallback was written over it.
+- A real fallback edition was committed and the site built: 18 pages, the
+  abbreviated page renders the notice and 12 source links, and the OG image
+  generates. No committed edition had ever been a fallback before, so this
+  path was previously unexercised outside fixtures.
+- `readability.assess` and `_revise_for_readability` were both run directly
+  against a fallback edition, which is what corrected the `else` claim above.
+- Audio already short-circuits on `edition_type == "fallback"`.
+
+### The finding this does not fix
+
+The change trades a loud failure for a quiet one. Before, an assembly
+failure exited non-zero, the publish job failed, healthchecks got no ping,
+and the dead man's switch alerted. Now the job succeeds, the ping fires
+green, and the only record is `ops.run_log` status `partial` with the
+exception type in `notes`.
+
+Measured: 16 of 18 editor rows on record are already `partial` (thin
+grounding, the readability flag, the thin-day fallback). `partial` is the
+normal state, so it cannot carry an alert. An assembly bug could therefore
+publish a link list every morning with nothing sounding.
+
+This is the pre-existing posture for the editor-failure fallback, which
+SPEC 7 has always specified as "publish fallback edition" with no alert, so
+the change is consistent rather than novel. But it does remove an alert
+that existed for this particular trigger, and that is a real cost.
+Surfaced for a decision rather than fixed here: distinguishing a degraded
+publication from a healthy one is a SPEC 8 observability question and needs
+its own spec addition under working rule 1.
 
 The real confirmation is the next scheduled run publishing a normal edition
 with `status success`, proving the wrappers are inert on the happy path.

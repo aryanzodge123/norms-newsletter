@@ -313,6 +313,24 @@ def test_fallback_takes_top_ten_by_score(tmp_path):
     assert scores == sorted(scores, reverse=True)
 
 
+def test_fallback_sorts_its_own_contexts(tmp_path):
+    """Decision #26 makes assemble_fallback the recovery every other failure
+    path lands on, so it may not depend on an invariant it does not enforce.
+    FallbackEdition rejects stories that are not descending by score, and an
+    unsorted caller used to raise EditionInvalid out of the recovery itself.
+    """
+    unsorted = [ctx(f"{i:032d}", score=s) for i, s in enumerate([3, 9, 5, 8, 1, 7, 9])]
+
+    edition = assemble.assemble_fallback(
+        contexts=unsorted, target_date=TODAY, notice="n", editions_dir=tmp_path
+    )
+
+    validate_edition(edition)
+    scores = [story["score"] for story in edition["stories"]]
+    assert scores == sorted(scores, reverse=True)
+    assert scores[0] == 9
+
+
 def test_fallback_with_no_stories_is_valid(tmp_path):
     """SPEC 7 / decision #8: never skip a day silently. With nothing usable
     at all the page is the notice alone, rather than a failed publish."""
