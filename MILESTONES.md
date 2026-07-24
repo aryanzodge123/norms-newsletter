@@ -6,6 +6,121 @@ deferred.
 
 ---
 
+## Post-M6: assembly failures publish a fallback, not nothing
+
+Date: 2026-07-23
+Spec: SPEC 6.5 (headline enforcement rationale), section 7 (failure table
+and the decision #8 floor), decisions #25 reworded and #26 added
+Status: complete, gate green
+
+### The problem
+
+`assemble_edition` has always said in its docstring that raising
+`EditionInvalid` is "the caller's signal to fall back". The caller did not
+fall back. The call sat inside `run()`'s try, whose handler sets
+`edition = None` and never reaches `_write_edition`, so the day produced no
+edition file at all. Proved last session with a throwaway probe: exit code
+1, empty output dir.
+
+`run_edition` exiting non-zero fails the "Build edition" step in
+`publish.yml`, and every later step is in the same job. Audio, the commit,
+the Astro build, and the Pages deploy were all skipped. The site kept
+showing yesterday and the archive got a hole. healthchecks alerts, so it
+was not silent, but the day was lost. That contradicted decision #8.
+
+Never fired in production. What armed it is a pattern we keep repeating:
+every new required field on the `Edition` schema makes an assembly bug cost
+the whole day. Two such fields landed the previous day, and decision #25's
+validator had to be routed onto `EditorResponse` specifically to dodge this
+hole. Working around it a third time was worse than closing it.
+
+Two other live triggers were already in the code: `assemble.py` raises when
+the editor names a cluster it was not offered (structured output constrains
+the model's shape, not its values), and `_revise_for_readability` calls
+`validate_edition` inside its loop.
+
+### What planning found
+
+Three things came out of reading the code, and each changed the design from
+the one sketched in prose beforehand.
+
+1. **A readability failure must not degrade to a fallback.** By the time
+   revision runs, an edition already exists that passed `validate_edition`.
+   Replacing it with a ranked link list would be strictly worse than
+   publishing it unrevised. It needed its own recovery, not the fallback.
+2. **A fallback must never overwrite a published real edition.** The
+   idempotency guard in `run()` only fires when `contexts` is empty. On a
+   same-day re-run whose partitions are not yet archived, contexts exist, so
+   naively adding a fallback would have overwritten a good page. The change
+   would have shipped as a regression against decision #17.
+3. **SPEC 6.5 documented the hole as intended behavior.** It read "An
+   assembled edition that fails validation writes no file at all, not even a
+   fallback", and decision #25 ended "because a rejected edition publishes
+   nothing at all". Both became false. The conclusion still stands, for a
+   better reason: on the response the rule is retryable.
+
+### What was built
+
+Two recovery tiers in `src/editor/run_edition.py`, the only source file
+changed. No config, no prompts, no schema, no site files, no new AI calls,
+no Iceberg migration.
+
+- **Tier one.** The writer stage and assembly run in a try that degrades to
+  `assemble_fallback` on any exception, mirroring the existing
+  editor-failure handler. Written as `try/except/else` so a fallback does
+  not then flow into the readability stage, which indexes
+  `edition["sections"]` and would `KeyError` on a fallback. That flaw was
+  present in the first draft of the edit and caught before running.
+- **Tier two.** The readability revision keeps a `copy.deepcopy` taken
+  before the call and restores it on failure. The copy is load-bearing:
+  `simplify_edition` and the per-story loop both rewrite the edition in
+  place, so a raise partway through can leave the live object half revised.
+- **The no-downgrade guard** in `_write_edition`: a fallback never replaces
+  an existing `normal` or `quiet` edition for the same date. Placed at the
+  write rather than at each fallback site, so the pre-existing
+  editor-failure path gets it too. An unreadable existing file falls through
+  to writing rather than blocking.
+- `SPEC.md`: two failure-table rows, the decision #8 floor paragraph, the
+  6.5 rewording, decision #25 reworded, decision #26 added.
+
+### Verification
+
+`milestone-verify` green, 442 tests passing, site builds, dry run against
+2026-07-23 makes no AI calls and writes nothing.
+
+Four new tests in `tests/test_run_edition.py`, and each was checked by
+disabling the thing it guards and confirming it fails:
+
+| Test | Negative control | Result |
+|------|------------------|--------|
+| assembly failure publishes a fallback | tier-1 except narrowed | fails |
+| a fallback never overwrites a published edition | write guard disabled | fails |
+| readability failure publishes the assembled edition | tier-2 except narrowed | fails |
+| a run that cannot build anything still fails | exit code forced to 0 | fails |
+
+The fourth is a floor pin rather than a guard test: it passes with the
+guards removed, which is correct, so its negative control is the over-broad
+handler it exists to catch. All four are load-bearing against the specific
+mistake each defends.
+
+The real confirmation is the next scheduled run publishing a normal edition
+with `status success`, proving the wrappers are inert on the happy path.
+Nothing here changes behavior when nothing raises.
+
+### Deferred
+
+- The fallback notice is one fixed string for every trigger, so a reader
+  cannot tell an editor failure from an assembly failure. The run log
+  distinguishes them, which is enough for now; a per-cause notice is a
+  DESIGN.md question rather than a SPEC one.
+- Cost accumulated inside a raising `_revise_for_readability` is lost,
+  because `revision_cost` is only returned on success. At most one simplify
+  plus a few writer calls, roughly $0.05, and only in a scenario that has
+  never occurred. Recorded rather than fixed, since preserving it would mean
+  restructuring that function's cost accounting.
+
+---
+
 ## Post-M6: continuing coverage and the headline repetition gate
 
 Date: 2026-07-23

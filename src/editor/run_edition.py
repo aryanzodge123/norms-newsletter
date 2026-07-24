@@ -7,6 +7,13 @@ contained at the smallest scope: a story loses its article, and only a
 total editor failure costs the whole edition, which then publishes as a
 fallback rather than not at all (decision #8).
 
+Decision #26 makes that a floor rather than a best effort. Once there are
+contexts, every path out of this module writes an edition, in two tiers.
+A stage that has not produced an edition yet (the editor, the writers,
+assembly) degrades to the fallback. A stage that already holds a validated
+edition (the readability revision) publishes it unrevised, because the
+fallback would be strictly worse than what is already in hand.
+
 Committing edition.json to site/content/editions/ is M5's job (SPEC 6.8
 step 7). This milestone writes it to disk and stops there.
 """
@@ -14,6 +21,7 @@ step 7). This milestone writes it to disk and stops there.
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import logging
 import sys
@@ -363,46 +371,87 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
                     status = "partial"
                     notes.append("headline repeated a recent edition (SPEC 6.5)")
 
-                selected_ids = {
-                    story.cluster_id
-                    for section in editor_call.value.sections
-                    for story in section.stories
-                }
-                selected = [c for c in contexts if c.cluster_id in selected_ids]
-                articles = run_writers.run_writers(
-                    client, selected, config, writer_system, ingest_date,
-                    catalog=catalog, prior_mentions=prior_coverage,
-                )
-                cost += sum(result.cost_usd for result in articles.values())
+                # Tier one of decision #26. Nothing between here and the end
+                # of assembly holds an edition yet, so the only recovery is
+                # the fallback. assemble_edition raises when the editor names
+                # a cluster it was not offered, or when the assembled object
+                # misses the canonical schema; structured output constrains
+                # the model's shape, not its values, so both stay reachable.
+                # Without this the outer handler nulls the edition and skips
+                # _write_edition, publishing nothing at all (SPEC section 7).
+                try:
+                    selected_ids = {
+                        story.cluster_id
+                        for section in editor_call.value.sections
+                        for story in section.stories
+                    }
+                    selected = [c for c in contexts if c.cluster_id in selected_ids]
+                    articles = run_writers.run_writers(
+                        client, selected, config, writer_system, ingest_date,
+                        catalog=catalog, prior_mentions=prior_coverage,
+                    )
+                    cost += sum(result.cost_usd for result in articles.values())
 
-                edition = assemble.assemble_edition(
-                    editor=editor_call.value,
-                    articles=articles,
-                    contexts=contexts,
-                    edition_type=edition_type,
-                    target_date=ingest_date,
-                    items_ingested=len(bronze_items),
-                    clusters_considered=len(silver_rows),
-                    sections_held=_held_section_count(contexts, plan),
-                )
+                    edition = assemble.assemble_edition(
+                        editor=editor_call.value,
+                        articles=articles,
+                        contexts=contexts,
+                        edition_type=edition_type,
+                        target_date=ingest_date,
+                        items_ingested=len(bronze_items),
+                        clusters_considered=len(silver_rows),
+                        sections_held=_held_section_count(contexts, plan),
+                    )
 
-                skipped = sum(1 for r in articles.values() if r.status == "skipped_grounding")
-                failed = sum(1 for r in articles.values() if r.status == "failed_validation")
-                if skipped:
-                    notes.append(f"{skipped} stories published without an article (thin grounding)")
-                if failed:
-                    notes.append(f"{failed} stories' articles failed validation twice")
-                if skipped or failed:
+                    skipped = sum(1 for r in articles.values() if r.status == "skipped_grounding")
+                    failed = sum(1 for r in articles.values() if r.status == "failed_validation")
+                    if skipped:
+                        notes.append(f"{skipped} stories published without an article (thin grounding)")
+                    if failed:
+                        notes.append(f"{failed} stories' articles failed validation twice")
+                    if skipped or failed:
+                        status = "partial"
+                except Exception as exc:  # noqa: BLE001
+                    log.error("edition assembly failed, publishing fallback: %s", exc)
+                    edition = assemble.assemble_fallback(
+                        contexts=contexts, target_date=ingest_date, notice=FALLBACK_NOTICE
+                    )
                     status = "partial"
-
-                edition, revision_cost, readability_flag = _revise_for_readability(
-                    client, edition, contexts_by_id, config, writer_system,
-                    ingest_date, catalog, prior_coverage,
-                )
-                cost += revision_cost
-                if readability_flag:
-                    status = "partial"
-                    notes.append("readability gate exceeded after revision (SPEC 6.5)")
+                    notes.append(
+                        f"fallback edition: {type(exc).__name__} during assembly ({exc})"
+                    )
+                    edition_type = "fallback"
+                else:
+                    # Tier two, and only on the path that actually produced a
+                    # normal or quiet edition. A fallback has no sections to
+                    # measure or revise, which is why this is an else rather
+                    # than a plain continuation.
+                    #
+                    # From here an edition exists and has already passed
+                    # validate_edition, so the fallback would be a downgrade
+                    # rather than a rescue. The copy is what makes that
+                    # recovery safe: simplify_edition and the per-story loop
+                    # both rewrite the edition in place, so a raise partway
+                    # through can leave the live object half revised.
+                    pristine = copy.deepcopy(edition)
+                    try:
+                        edition, revision_cost, readability_flag = _revise_for_readability(
+                            client, edition, contexts_by_id, config, writer_system,
+                            ingest_date, catalog, prior_coverage,
+                        )
+                        cost += revision_cost
+                    except Exception as exc:  # noqa: BLE001
+                        log.error(
+                            "readability revision failed, publishing as assembled: %s", exc
+                        )
+                        edition = pristine
+                        readability_flag = True
+                        notes.append(
+                            f"readability revision raised {type(exc).__name__}: {exc}"
+                        )
+                    if readability_flag:
+                        status = "partial"
+                        notes.append("readability gate exceeded after revision (SPEC 6.5)")
 
         written = _write_edition(edition, ingest_date)
         log.info("wrote %s (%s), est $%.4f", written, edition_type, cost)
@@ -429,9 +478,32 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
 
 
 def _write_edition(edition: dict, ingest_date: date) -> Path:
-    """Write edition.json to disk (SPEC 6.8 step 7 commits it; not here)."""
+    """Write edition.json to disk (SPEC 6.8 step 7 commits it; not here).
+
+    A fallback never replaces an already published normal or quiet edition
+    for the same date (decision #17, SPEC section 7). The guard at the top
+    of run() only covers a re-run whose partitions were already archived;
+    a re-run that still has its data would rebuild, and any of the failures
+    decision #26 catches would then overwrite a good page with a link list.
+    Checked here rather than at each fallback site so the editor-failure
+    path gets it too.
+    """
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     path = OUTPUT_DIR / f"{ingest_date.isoformat()}.json"
+    if edition.get("edition_type") == "fallback" and path.exists():
+        try:
+            published = json.loads(path.read_text()).get("edition_type")
+        except (OSError, ValueError):
+            # An unreadable file is not a publication record worth keeping.
+            published = None
+        if published in ("normal", "quiet"):
+            log.warning(
+                "%s already holds a %s edition; keeping it rather than "
+                "overwriting with a fallback (decision #17)",
+                path.name,
+                published,
+            )
+            return path
     path.write_text(json.dumps(edition, indent=2, ensure_ascii=False) + "\n")
     return path
 
