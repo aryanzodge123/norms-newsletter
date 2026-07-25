@@ -65,6 +65,7 @@ archive:
 canonical_url:
   shortener_hosts:
     - t.co
+user_agent: "Mozilla/5.0 (compatible; NormsNewsletter/1.0; +https://example.invalid/)"
 """
 
 
@@ -133,6 +134,28 @@ def test_pipeline_lowercases_shortener_hosts(tmp_path) -> None:
     text = VALID_PIPELINE.replace("- t.co", "- T.CO")
     pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", text))
     assert pipeline.canonical_url.shortener_hosts == ("t.co",)
+
+
+def test_user_agent_loads_and_accessor_reads_it(tmp_path, monkeypatch) -> None:
+    # Finding 6: the User-Agent lives in config, and base.user_agent() reads it,
+    # so the migration updates its URL here rather than in a src/ literal.
+    from src import config as config_mod
+    from src.adapters import base
+
+    pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE))
+    assert "NormsNewsletter" in pipeline.user_agent
+
+    # user_agent() imports get_pipeline lazily from config, so patch it there.
+    monkeypatch.setattr(config_mod, "get_pipeline", lambda: pipeline)
+    assert base.user_agent() == pipeline.user_agent
+
+
+def test_pipeline_requires_user_agent(tmp_path) -> None:
+    text = "\n".join(
+        line for line in VALID_PIPELINE.splitlines() if not line.startswith("user_agent:")
+    )
+    with pytest.raises(ConfigError, match="user_agent"):
+        load_pipeline(write(tmp_path, "pipeline.yaml", text))
 
 
 def test_editor_config_loads(tmp_path) -> None:

@@ -39,7 +39,7 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from .adapters.base import USER_AGENT, RawItem, excerpt
+from .adapters.base import RawItem, excerpt, user_agent
 from .config import EnrichConfig
 
 log = logging.getLogger(__name__)
@@ -205,7 +205,7 @@ def fetch_text(url: str, config: EnrichConfig, client: httpx.Client) -> str:
             url,
             timeout=config.timeout_seconds,
             follow_redirects=True,
-            headers={"User-Agent": USER_AGENT},
+            headers={"User-Agent": user_agent()},
         )
         if response.status_code != 200:
             log.debug("enrich: %s returned %s", url, response.status_code)

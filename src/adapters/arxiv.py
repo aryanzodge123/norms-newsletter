@@ -19,7 +19,7 @@ import feedparser
 import httpx
 
 from .arstechnica import parse_published
-from .base import USER_AGENT, RawItem, build_item
+from .base import RawItem, build_item, user_agent
 from .hackernews import strip_html
 
 log = logging.getLogger(__name__)
@@ -87,7 +87,7 @@ class ArxivAdapter:
             "sortOrder": "descending",
             "max_results": self.max_items,
         }
-        headers = {"Accept": ACCEPT_HEADER, "User-Agent": USER_AGENT}
+        headers = {"Accept": ACCEPT_HEADER, "User-Agent": user_agent()}
         last_exc: Exception | None = None
         for attempt in range(1, MAX_ATTEMPTS + 1):
             try:

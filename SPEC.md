@@ -741,7 +741,10 @@ Migration steps (target: after M6, before launch):
 2. Re-add all Actions secrets in the new repo (secrets do not transfer).
 3. Change astro.config `site` to "https://norms-newsletter.github.io" and
    `base` to "/". Per the URL configuration rule (6.6) this is the only
-   code change.
+   change to the site's rendered self-URLs. One config value carries the old
+   URL outside the site layer and changes with it: the pipeline `user_agent`
+   in config/pipeline.yaml, the contact URL every outbound request advertises.
+   Update its URL to the new project site in the same step.
 4. Update the mini PC collector's git remote.
 5. Rotate any keys being moved to project ownership; verify spikes 5.1
    and 5.2 from SETUP.md still pass with the new credentials.

@@ -215,6 +215,10 @@ class PipelineConfig(Strict):
     audio: AudioConfig
     canonical_url: CanonicalUrlConfig
     archive: ArchiveConfig
+    # The User-Agent every outbound pipeline request sends. Kept here rather
+    # than hardcoded in src/ so the pre-launch migration (SPEC 13) updates its
+    # project URL in config, not in code the URL gate cannot see.
+    user_agent: str = Field(min_length=1)
 
 
 class Settings(Strict):
