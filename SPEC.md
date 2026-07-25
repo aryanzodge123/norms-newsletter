@@ -181,6 +181,14 @@ mid-day. The cost is that the same article fetched before and after the
 change can produce two item_ids, which is an acceptable duplicate, not a
 correctness failure.
 
+**Transient fetch retries.** A source adapter may retry a transient fetch
+failure (a timeout, HTTP 429, or a 5xx) a small bounded number of times with
+backoff before giving up. A give-up is still the "one adapter fails, log and
+skip" path (section 7): the cycle is `partial`, never `failed`, on that
+adapter alone. This is a per-adapter resilience measure, applied where a
+source is observed to be flaky (arXiv's query API times out often), not a
+guarantee every adapter makes.
+
 Registry entry (config/sources.yaml):
 
 ```yaml

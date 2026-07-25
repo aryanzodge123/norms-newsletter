@@ -10,6 +10,8 @@ because it is a query endpoint, not a published feed.
 from __future__ import annotations
 
 import logging
+import random
+import time
 from datetime import datetime
 from typing import Iterable
 
@@ -17,14 +19,23 @@ import feedparser
 import httpx
 
 from .arstechnica import parse_published
-from .base import RawItem, build_item
+from .base import USER_AGENT, RawItem, build_item
 from .hackernews import strip_html
 
 log = logging.getLogger(__name__)
 
 API_ROOT = "http://export.arxiv.org/api/query"
 SEARCH_QUERY = "cat:cs.AI OR cat:cs.LG"
-TIMEOUT_SECONDS = 15.0
+# arXiv's query API is slow and rate-limits hard: measured on prod, 8 of 10
+# collector failures were ReadTimeouts, plus one 429 and one 406. So the
+# timeout is generous and transient failures are retried (SPEC 6.1).
+TIMEOUT_SECONDS = 20.0
+MAX_ATTEMPTS = 3
+BACKOFF_BASE_SECONDS = 2.0
+# The 406 was a content-negotiation miss: arXiv wants an explicit Atom Accept
+# header, which httpx's default `*/*` does not always satisfy.
+ACCEPT_HEADER = "application/atom+xml"
+RETRYABLE_STATUS = frozenset({429, 500, 502, 503, 504})
 
 
 class ArxivAdapter:
@@ -56,20 +67,48 @@ class ArxivAdapter:
             timeout=TIMEOUT_SECONDS, follow_redirects=True
         )
         try:
-            response = client.get(
-                API_ROOT,
-                params={
-                    "search_query": SEARCH_QUERY,
-                    "sortBy": "submittedDate",
-                    "sortOrder": "descending",
-                    "max_results": self.max_items,
-                },
-            )
-            response.raise_for_status()
+            response = self._get_with_retry(client)
             return self.parse(response.text, since)
         finally:
             if owns_client:
                 client.close()
+
+    def _get_with_retry(self, client: httpx.Client) -> httpx.Response:
+        """One GET, retried on transient failure (SPEC 6.1).
+
+        Retries timeouts, transport errors, 429, and 5xx a bounded number of
+        times with backoff and jitter. A non-transient status (a 404, say)
+        raises at once. After the last attempt the final error propagates, so
+        run_adapter records it and the cycle is partial exactly as before.
+        """
+        params = {
+            "search_query": SEARCH_QUERY,
+            "sortBy": "submittedDate",
+            "sortOrder": "descending",
+            "max_results": self.max_items,
+        }
+        headers = {"Accept": ACCEPT_HEADER, "User-Agent": USER_AGENT}
+        last_exc: Exception | None = None
+        for attempt in range(1, MAX_ATTEMPTS + 1):
+            try:
+                response = client.get(API_ROOT, params=params, headers=headers)
+                response.raise_for_status()
+                return response
+            except (httpx.TimeoutException, httpx.TransportError) as exc:
+                last_exc = exc
+            except httpx.HTTPStatusError as exc:
+                if exc.response.status_code not in RETRYABLE_STATUS:
+                    raise
+                last_exc = exc
+            if attempt < MAX_ATTEMPTS:
+                delay = BACKOFF_BASE_SECONDS * attempt + random.uniform(0, 0.5)
+                log.warning(
+                    "%s: transient fetch failure (attempt %d of %d), retrying in %.1fs: %s",
+                    self.name, attempt, MAX_ATTEMPTS, delay, last_exc,
+                )
+                time.sleep(delay)
+        assert last_exc is not None
+        raise last_exc
 
     def parse(self, feed_text: str, since: datetime) -> list[RawItem]:
         """Normalize an Atom body. Split out so tests run without network."""
