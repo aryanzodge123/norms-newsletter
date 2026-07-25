@@ -1,0 +1,365 @@
+{
+  "date": "2026-07-25",
+  "edition_number": 48,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump sets tariffs on over 80 countries covering nearly all US imports",
+  "headline_cluster_id": "3cbfc58ba10959cf5979bfe967b1de66",
+  "headline_rationale": "Sweeping tariffs affecting nearly every US import directly impacts consumer prices and jobs across the economy.",
+  "key_points": [
+    {
+      "text": "Trump's new tariffs on over 80 countries took effect Friday, covering nearly all US imports.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Trump's team canceled $7.5 billion in clean energy grants based on how states voted in 2024.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Over 200,000 people fled or locked down as wildfires swept France and Spain, emptying Cap Ferret.",
+      "topic": "World"
+    },
+    {
+      "text": "Hackers changed hotel Wi-Fi settings to send users to fake Microsoft 365 login pages.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "UK and US AI safety institutes tested Kimi K3's cyber abilities and released a joint assessment.",
+      "topic": "AI"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-25.mp3",
+    "duration_seconds": 513,
+    "size_bytes": 6158304
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "f2d98c801688d425841c087ece2ab29b",
+          "slug": "uk-and-us-safety-institutes-release-preliminary-assessment",
+          "title": "UK and US safety institutes release preliminary assessment of Kimi K3 cyber capabilities",
+          "summary": "UK and US AI safety institutes tested an open-weight model's cyber skills before its July 27 release.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities"
+            }
+          ],
+          "article": {
+            "background": "Moonshot AI released Kimi K3, a new AI model, on July 16, 2026. The company plans to release its weights, the underlying data that makes the model work, on July 27, 2026. When an AI model's weights are public, anyone can run it themselves. Norm covered this release in July.",
+            "what_happened": "Two government agencies tested Kimi K3's cyber skills before the public release. The UK Artificial Intelligence Security Institute and the U.S. Center for AI Standards and Innovation ran the tests together. They used ExploitBench, a tool that measures how well an AI can write cyberattacks. The test worked by giving the model a known computer flaw and seeing if it could build a full attack.",
+            "why_it_matters": "AI models that can help with cyberattacks are a national security concern. When weights become public, anyone anywhere can use them. This test gives officials a snapshot of the risks before that happens. These results help guide how governments should think about releasing powerful AI models.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "dba366b2d69d1601f11d5fc348dd7e71",
+          "slug": "ai-companies-stripping-universities-of-their-best-computer",
+          "title": "AI companies stripping universities of their best computer scientists",
+          "summary": "Anthropic and other firms have poached so many professors it has become an academic meme.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theatlantic.com/technology/2026/07/ai-companies-hiring-academics/688002"
+            }
+          ],
+          "article": {
+            "background": "AI companies like Anthropic are aggressively hiring top computer-science professors from universities. These researchers typically run labs and teach the next generation of scientists. When they leave, universities lose both their expertise and their research output.",
+            "what_happened": "This month, Anthropic hired the chair of UC Berkeley's electrical engineering and computer science department. Anthropic has also recently added a Stanford economist and a theoretical physicist from another university. The departures have become so common that professors joke about it. \"I'm joining Anthropic\" is now a meme in academia.",
+            "why_it_matters": "When universities lose their best researchers, students get fewer world-class professors to learn from. Cutting-edge AI research is also shifting from universities, where findings are published openly, to companies that keep results private. This means less shared knowledge for the broader scientific community.",
+            "quote": {
+              "text": "\"I'm joining Anthropic\" is the new meme right now.",
+              "attribution": "Subbarao Kambhampati, computer-science professor at Arizona State University",
+              "source_url": "https://www.theatlantic.com/technology/2026/07/ai-companies-hiring-academics/688002"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "3cbfc58ba10959cf5979bfe967b1de66",
+          "slug": "trump-sets-tariffs-on-over-80-countries-covering-nearly-all",
+          "title": "Trump sets tariffs on over 80 countries covering nearly all US imports",
+          "summary": "Trump's tariffs took effect Friday and cover nearly every product that enters the US.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/trump-sets-new-tariffs-on-trading-partners-covering-nearly-all-u-s-imports"
+            }
+          ],
+          "article": {
+            "background": "A tariff is a tax on imports. President Trump announced tariffs in a move he called \"liberation day.\" The Supreme Court struck down those tariffs earlier this year. Now Trump has set new tariffs to replace them.",
+            "what_happened": "New tariffs took effect on Friday. They apply to more than 80 countries. They cover virtually all U.S. imports.",
+            "why_it_matters": "These tariffs could make many products Americans buy more expensive. The cost will depend on which products are hit and by how much. Most people who shop for goods may see higher prices at the store.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3d44c85c2e8bdb65e61e30a931e1e78d",
+          "slug": "trump-administration-admits-canceling-clean-energy-grants",
+          "title": "Trump administration admits canceling clean energy grants to Democratic states",
+          "summary": "Court filings show the Trump administration denied $7.5 billion in grants based on 2024 election results.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/jul/24/trump-administration-cancel-clean-energy-grants-democrat-states"
+            }
+          ],
+          "article": {
+            "background": "The Trump administration canceled more than $7.5 billion in federal clean energy grants last October. These grants funded renewable energy projects across the country. States that voted for Kamala Harris and had Democratic leaders lost their funding.",
+            "what_happened": "Court documents released last week show the administration terminated the grants based on political criteria alone. It targeted projects in states that backed Harris in the 2024 election. The administration later claimed the court filings misrepresented what happened.",
+            "why_it_matters": "If federal money was withheld because of how states voted, it changes how funding works. Projects would be chosen based on politics, not merit. This could shift which communities get clean energy investment and set the rule for future grant decisions.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1c5357bdaf62b2796f8896c756625225",
+          "slug": "border-agents-can-search-your-phone-by-hand-at-dulles-no",
+          "title": "Border agents can search your phone by hand at Dulles, no suspicion needed",
+          "summary": "A court ruled that agents can search your phone by hand at the border without a warrant.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.gadgetreview.com/border-agents-can-search-your-phone-by-hand-no-suspicion-needed"
+            }
+          ],
+          "article": {
+            "background": "The Fourth Amendment protects against unreasonable searches. But border searches have always been treated differently. Customs and Border Protection officers work at airports and borders with fewer limits than police elsewhere in the country.",
+            "what_happened": "A federal court in the Fourth Circuit decided U.S. v. Belmonte Cardozo in mid-July 2026. The court ruled that border agents can manually search your phone without a warrant, suspicion, or explanation. They can scroll through texts, photos, and apps. Anything they find can be used as evidence. The ruling applies in Maryland, Virginia, West Virginia, North Carolina, and South Carolina.",
+            "why_it_matters": "If you fly through a major airport in those five states, a customs officer can examine your phone before you enter the country. They need no warrant and no reason to start looking. Anything on your phone is fair game.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "d1855537867435aeeb60dcb5fe3bb668",
+          "slug": "over-200-000-flee-or-lock-down-as-wildfires-sweep-france",
+          "title": "Over 200,000 flee or lock down as wildfires sweep France and Spain",
+          "summary": "Spain declared a national emergency as fires forced Cap Ferret's evacuation by land and sea.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/24/france-evacuation-cap-ferret-peninsula-wildfire"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/czjlenp0xk8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Wildfires spread across southern France and Spain this week. In France, a fire burned through more than 19,000 hectares near Bordeaux on the Atlantic coast. In Spain, three fires west of Madrid merged into one giant blaze. Officials called the Spanish fire the worst in the region's history.",
+            "what_happened": "More than 200,000 people fled or were told to lock down as the fires swept across both countries on Friday and Saturday. France evacuated the Cap Ferret peninsula village by village, using both land and sea routes. Spain's government declared a national emergency and ordered at least 25,000 people to leave. Spanish officials said the Madrid fire was beyond firefighters' power to control.",
+            "why_it_matters": "These fires come during extreme heat across southern Europe. A marine heatwave has made parts of the Mediterranean Sea 5 degrees Celsius hotter than normal. The combination of heat, dry conditions, and wind makes wildfires spread fast and hard to stop. More blazes like these are likely in the coming weeks as temperatures stay high.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "aa53967a93919e36e6ff87fd674e5329",
+          "slug": "saudi-arabia-and-houthis-exchange-fire-as-us-attacks-tanker",
+          "title": "Saudi Arabia and Houthis exchange fire as US attacks tanker in Hormuz Strait",
+          "summary": "Saudi Arabia struck Houthi targets after the group announced a blockade and attacked Saudi ships.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cj9d27v70j1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Houthis are an Iran-backed group based in Yemen. They have clashed with Saudi Arabia for years. In July, Norm covered how the Houthis announced a blockade of ships. The US military began operating in the area to protect tankers.",
+            "what_happened": "On Friday, Saudi Arabia struck Houthi targets in the Yemeni city of Hodeida and a nearby island. The Houthis then fired a missile at the Saudi city of Jizan, claiming it caused fires there. Saudi officials issued emergency alerts for the Jizan region. On Saturday, the US military fired on a tanker ship in the Strait of Hormuz.",
+            "why_it_matters": "The Red Sea and Strait of Hormuz are vital shipping routes. Attacks there can disrupt trade and raise fuel costs. For now, most people may not feel direct effects. But prolonged disruption could drive up prices for goods shipped through these waters.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "016b916c5da69f04006494a241afac0f",
+          "slug": "ten-killed-in-russian-attack-on-drone-exhibition-near-kyiv",
+          "title": "Ten killed in Russian attack on drone exhibition near Kyiv",
+          "summary": "Ballistic missiles hit an exhibition of Ukrainian defense leaders, injuring about 100 people.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cj637zd1k1ko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia has been attacking Ukraine for nearly two years. Drones are remote-controlled aircraft used in combat. Ukrainian defense companies build and improve weapons and military technology. These companies and their leaders are central to Ukraine's war effort.",
+            "what_happened": "Russian ballistic missiles struck a drone exhibition near Kyiv on Friday during daytime hours. Ten people died in the strike. About 100 people were injured at the event. Prominent Ukrainian defense leaders and workers attended the exhibition. Separately, Russian glide bombs killed five more people in the eastern city of Sloviansk.",
+            "why_it_matters": "Russia is deliberately targeting Ukraine's weapons development by hitting the companies and leaders who build military technology. This shows Russia wants to slow Ukraine's ability to create and improve its own arms. Attacks on the defense sector affect how quickly Ukraine can respond to Russian military moves in the war.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "b5104c43c02ec3ec444f96f735520f73",
+          "slug": "fda-committee-approves-manufacture-of-peptides-rfk-jr-uses",
+          "title": "FDA committee approves manufacture of peptides RFK Jr. uses",
+          "summary": "An FDA panel voted to allow four peptides to be made, even though their effects are unproven.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/health/2026/07/rfk-jr-s-hand-picked-committee-approves-manufacture-of-peptides-he-uses"
+            }
+          ],
+          "article": {
+            "background": "Peptides are short chains of amino acids, the building blocks of proteins. The FDA normally requires extensive testing to prove a drug is safe before allowing it to be made for human use. Health and Human Services Secretary Robert F. Kennedy Jr. has pushed to relax these rules for peptides.",
+            "what_happened": "An FDA advisory committee voted Thursday to recommend lifting restrictions on making four peptides. Three more peptides will be voted on today. The votes were close, showing the group was sharply divided. Scientists still lack solid evidence these peptides are safe or effective.",
+            "why_it_matters": "Most people do not yet use peptides. But if the FDA accepts these votes, peptides will become easier to buy and use before their risks are fully known. That means more people could take them without proof they work or are safe.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "11f3e87c7d7425478b2d81cebe4fb9b3",
+          "slug": "paramount-agrees-to-delay-warner-bros-discovery-acquisition",
+          "title": "Paramount agrees to delay Warner Bros. Discovery acquisition to June 2027",
+          "summary": "Paramount delayed its Warner Bros. Discovery deal after state attorneys general sued to block it.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/07/24/paramount-wbd-merger-delay.html"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/07/after-court-loss-paramount-agrees-to-delay-warner-bros-merger-until-trial"
+            }
+          ],
+          "article": {
+            "background": "Paramount Skydance is buying Warner Bros. Discovery, a major media company. The deal is worth about $111 billion. Last week, state attorneys general led by California's Rob Bonta sued to block it. They say it would harm competition in the TV and film business. The Writers Guild also filed its own lawsuit against the deal.",
+            "what_happened": "Paramount agreed Friday to wait before completing the acquisition. The deal will not close until a court rules on the lawsuit or June 1, 2027, whichever comes first. A judge had already issued a temporary restraining order on Monday. This stopped the deal from closing right away. Paramount had said it wanted to finish by the end of September.",
+            "why_it_matters": "The delay means the companies cannot combine their TV channels, streaming services, and film studios for months. This gives the courts time to decide if combining them would reduce consumer choice or raise prices. If the companies do eventually merge, the delay will also raise the price Paramount pays.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "dd2221bf1a172ae6f593438797b86794",
+          "slug": "hackers-hijack-hotel-wi-fi-dns-to-steal-microsoft-365",
+          "title": "Hackers hijack hotel Wi-Fi DNS to steal Microsoft 365 accounts",
+          "summary": "Hackers changed hotel Wi-Fi settings to send users to fake Microsoft 365 login pages.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-hijack-hotel-wi-fi-dns-to-steal-microsoft-365-accounts"
+            }
+          ],
+          "article": {
+            "background": "DNS is the system that directs your web browser to the right website when you type in an address. Hotels and conference centers offer Wi-Fi to guests and business travelers. Hackers can change the DNS settings on Wi-Fi equipment at these locations. When they do, they redirect users to fake login pages.",
+            "what_happened": "Since at least June, hackers have been hijacking Wi-Fi devices at hotels and conference centers. They change the DNS settings to send users to fake Microsoft 365 login pages. Cybersecurity firm ReliaQuest found compromised Wi-Fi gateways in multiple U.S. cities, India, and Saudi Arabia. The affected businesses span financial services, law, health care, energy, and retail.",
+            "why_it_matters": "If you log in at a fake page, hackers steal your Microsoft 365 account credentials. They then access your email, files, and messages. Business travelers who connect to these networks at hotels and conferences are at risk. Hackers could expose sensitive company data and communications.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fc53ae9bec21b62443fc61aa8261e8de",
+          "slug": "us-accuses-american-of-wiping-phone-during-border-search",
+          "title": "US accuses American of wiping phone during border search with duress password",
+          "summary": "The US charges someone for the first time with using a passcode that wipes data at the border.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://techcrunch.com/2026/07/24/us-accuses-american-of-allegedly-wiping-his-phone-using-a-duress-password-during-border-search"
+            }
+          ],
+          "article": {
+            "background": "Some phones have a hidden feature called a duress password. When you enter it, the phone wipes itself clean. It is meant to protect people in dangerous situations. The U.S. Justice Department is now prosecuting an American for allegedly using this feature during a border search.",
+            "what_happened": "Atlanta resident Samuel Tunick allegedly gave border agents a passcode that erased his phone's contents. He was arriving back to the U.S. when Customs and Border Protection seized his phone. Prosecutors say this was illegal destruction of data. They say it is the first known federal case of its kind.",
+            "why_it_matters": "Border agents often search phones at the border. If the government can charge people for using duress passwords, those hidden features lose their protection. For now, this case shows a real disagreement between the government and tech companies about what counts as data destruction.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "4984ad32d7126828ef6497bde057a6f4",
+      "title": "Wildfire forces evacuation of NASA's Deep Space Network complex in Spain",
+      "url": "https://arstechnica.com/space/2026/07/wildfire-forces-evacuation-of-nasas-deep-space-network-complex-in-spain",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "dcd8c032e72b0eec18c48e68b0ef5658",
+      "title": "Moody's says 'unprecedented' AI spending threatens credit quality of Amazon, Meta, Alphabet and others",
+      "url": "https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "0325fc975d8a39a0e9cfea3468830ece",
+      "title": "U.S. military says it fired on another vessel trying to breach its blockade of Iranian ports",
+      "url": "https://www.pbs.org/newshour/world/u-s-military-says-it-fired-on-another-vessel-trying-to-breach-its-blockade-of-iranian-ports",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0c5b498b7d452565d94e844295543aa8",
+      "title": "Trump returns to correspondents' dinner 3 months after shooting",
+      "url": "https://www.npr.org/2026/07/25/nx-s1-5907805/white-house-correspondents-dinner",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "682ebc030f105bd05d2afc90f6617300",
+      "title": "St. Louis Democratic House primary exposes party rifts over Israel",
+      "url": "https://www.npr.org/2026/07/24/nx-s1-5903070/st-louis-democratic-house-primary-exposes-party-rifts-over-israel",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "beb1a2e8e744e3a66a541f9ae76b4af1",
+      "title": "Trump escalates Smithsonian attack with order for signs outside history museum",
+      "url": "https://www.theguardian.com/us-news/2026/jul/24/trump-smithsonian-history-museum",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "cc6d22bb4e1471144a90e3cffbce290c",
+      "title": "Trump vows to investigate EU over fining of US tech companies",
+      "url": "https://www.bbc.co.uk/news/articles/cvgjenp4680o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "da5ac63468a230713886b905bfb22b4d",
+      "title": "ICC member nations vote to remove chief prosecutor",
+      "url": "https://www.npr.org/2026/07/24/nx-s1-5901054/icc-member-nations-vote-to-remove-chief-prosecutor",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8ed40589f1df8d381ae9c38dbd476772",
+      "title": "Amazon cracks down on use of AI images by sellers after New York law",
+      "url": "https://www.cnbc.com/2026/07/23/amazon-makes-sellers-label-ai-generated-people-in-images-after-ny-law.html",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 180,
+    "clusters_considered": 138,
+    "stories_run": 12,
+    "sources": 17,
+    "sections_held": 0
+  }
+}
