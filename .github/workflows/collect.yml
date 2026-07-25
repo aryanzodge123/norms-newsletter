@@ -10,7 +10,13 @@ name: collect
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */3 * * *" # every 3 hours (SPEC 6.2)
+    # Every 3h (SPEC 6.2), at :07 rather than :00. GitHub delays and drops
+    # on-the-hour crons under load: observed three nights running the 21:00
+    # slot fired ~22:02 and the 00:00 slot was skipped, so nights got 7 cycles
+    # not 8. An off-hour minute is less contended. Cadence is unchanged; the
+    # collector backfills via `since` and is idempotent, so this only tightens
+    # coverage, it does not change behavior.
+    - cron: "7 */3 * * *"
 
 permissions:
   contents: read
