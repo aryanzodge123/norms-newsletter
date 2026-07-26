@@ -1,0 +1,463 @@
+{
+  "date": "2026-07-26",
+  "edition_number": 49,
+  "edition_type": "normal",
+  "headline_of_the_day": "Wildfires in France and Spain force more than 300,000 people from their homes",
+  "headline_cluster_id": "22cdd70bd6707e82c3fc3ea1e0d9f6f2",
+  "headline_rationale": "A large-scale developing emergency affecting hundreds of thousands of people across two European countries with worsening conditions reported",
+  "key_points": [
+    {
+      "text": "Over 300,000 people fled wildfires in France and Spain as winds push flames toward Bordeaux.",
+      "topic": "World"
+    },
+    {
+      "text": "A van hit a crowd at Berlin Pride, killing one and injuring 16. The suspect is linked to Islamist groups.",
+      "topic": "World"
+    },
+    {
+      "text": "Human DNA has changed a lot in the last 50,000 years, showing human evolution did not stop.",
+      "topic": "Science"
+    },
+    {
+      "text": "Trump signed a law ending 60 years of federal funding for public radio and TV, forcing big cuts.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Starting in 2027, Motorola will make phones with GrapheneOS security, bringing that protection to more Android users beyond Google Pixels.",
+      "topic": "Tech"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-26.mp3",
+    "duration_seconds": 426,
+    "size_bytes": 5115168
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "4be88dbb411e1a96d33e4af61a0a83d8",
+          "slug": "motorola-to-build-phones-compatible-with-grapheneos",
+          "title": "Motorola to build phones compatible with GrapheneOS security system",
+          "summary": "The partnership will expand secure Android options beyond Google Pixels starting in 2027.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices"
+            }
+          ],
+          "article": {
+            "background": "GrapheneOS is a privacy-focused version of Android that runs on Google Pixel phones. It adds extra security on top of Android's built-in protections. The system uses the most secure hardware available for Android devices. Right now, only Pixels have the hardware security that GrapheneOS needs.",
+            "what_happened": "GrapheneOS developers published details about how the system protects data on locked phones. The system uses disk encryption to guard stored information. Attackers cannot break the encryption directly. Instead, they must either hack the operating system while it is unlocked or guess the PIN or password. Starting in 2027, Motorola and chipmaker Qualcomm will release devices that support GrapheneOS.",
+            "why_it_matters": "If your phone gets stolen or seized, these protections keep your stored data safe. The stronger defenses matter most for people in high-risk situations, like journalists or activists. For most people, this means knowing that Android phones can have serious security if built right. More phone makers supporting these standards in 2027 will give more people a choice.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8e2b862a59e070181465d2478d823630",
+          "slug": "77-year-old-stages-solo-protest-against-license-plate",
+          "title": "77-year-old stages solo protest against license plate surveillance cameras",
+          "summary": "A private company loads every passing car into a database with no warrant or legal order.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cltampa.com/news/a-77-year-old-republican-man-is-staging-a-solo-protest-against-st-petes-flock-cameras"
+            }
+          ],
+          "article": {
+            "background": "Flock operates cameras that photograph passing cars and record their license plates. The cameras feed that data into a searchable database run by a private, for-profit company. Carl Gunn, 77, lives in St. Petersburg, Florida, in a neighborhood called Coquina Key. He spotted one of these cameras mounted on a 12-foot black pole near his home.",
+            "what_happened": "When Gunn learned the camera was collecting license plate data on every passing car, he decided to protest. He taped a sign reading \"DOWN WITH FLOCK CAMERAS\" to his pool skimmer. This past Saturday, he grabbed a camping chair and sat in front of the camera, blocking its view with his sign.",
+            "why_it_matters": "These cameras create a permanent record of where people drive. That data can be searched by police or accessed by others with database credentials. For most people, this means a detailed map of their movements exists in a private company's database with little public notice or input.",
+            "quote": {
+              "text": "This is just another thing to take our information and to spy on us.",
+              "attribution": "Carl Gunn, 77, protesting the camera",
+              "source_url": "https://www.cltampa.com/news/a-77-year-old-republican-man-is-staging-a-solo-protest-against-st-petes-flock-cameras"
+            }
+          }
+        },
+        {
+          "cluster_id": "e15a5ef415891bfac4420419273065b6",
+          "slug": "gm-backs-startup-making-sodium-ion-batteries-for-grid",
+          "title": "GM backs startup making sodium-ion batteries for grid storage",
+          "summary": "Peak Energy will make sodium-ion batteries for power grids where other U.S. companies have not succeeded.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://spectrum.ieee.org/sodium-ion-battery-peak-energy"
+            }
+          ],
+          "article": {
+            "background": "Sodium-ion batteries use cheaper materials than lithium batteries, the dominant technology today. They could store energy for the electrical grid at lower cost. American companies have struggled with this application. Natron Energy and Bedrock Materials shut down their sodium-ion work last year, joining more than a dozen failed Western battery firms.",
+            "what_happened": "Peak Energy, a U.S. startup, says it can succeed where others failed in developing sodium-ion batteries for grid storage. This comes after China's CATL, the world's largest battery maker, announced in April it would supply 60 gigawatt-hours of sodium-ion cells to grid storage provider HyperStrong. General Motors is backing Peak Energy's effort.",
+            "why_it_matters": "Cheaper battery tech could make grid storage more affordable for everyone who pays for electricity. If Peak Energy succeeds, American companies could regain ground in a field where China now leads. That matters because energy storage will shape how quickly and cheaply the U.S. can run on renewable power.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "4f8d9cb30523b9699e154dba16af0611",
+          "slug": "energy-department-announces-300-ai-research-projects-across",
+          "title": "Energy Department announces 300 AI research projects across all states",
+          "summary": "The Genesis Mission picked 300 AI projects to help with energy, science, and national security.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.energy.gov/articles/secretary-energy-chris-wright-announces-first-genesis-mission-projects-selected-accelerate"
+            }
+          ],
+          "article": {
+            "background": "The Genesis Mission is a program to use AI in scientific research. The U.S. Department of Energy announced the first set of selected projects on July 22, 2026. The program is designed to speed up breakthroughs in energy, science, and national security.",
+            "what_happened": "The DOE selected nearly 300 projects from a Request for Applications (RFA). The projects span all 50 states. These research teams will build and test AI tools for scientific work.",
+            "why_it_matters": "The funding reaches institutions across the country. This means more researchers can now use AI to work faster. Quicker scientific progress can lead to advances in energy and other fields that touch your life.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9b1797fe5c2a1c605c52427df774dec9",
+          "slug": "microsoft-launches-its-own-ai-models-cutting-costs-up-to-89",
+          "title": "Microsoft launches its own AI models, cutting costs up to 89 percent",
+          "summary": "Microsoft is making its own AI models instead of relying only on OpenAI.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://venturebeat.com/infrastructure/microsoft-launches-new-in-house-ai-models-it-says-cut-costs-up-to-89-versus-openai"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "2708b19cb91e93d4478bc8dab6c02ac1",
+          "slug": "public-media-survives-first-year-without-federal-funds",
+          "title": "Public media survives first year without federal funds",
+          "summary": "Congress cut nearly all federal funding from public radio and TV stations last year.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/07/26/nx-s1-5884022/pbs-npr-public-radio-tv-funding-trump"
+            }
+          ],
+          "article": {
+            "background": "Public radio and television stations have received federal funding for nearly 60 years. A year ago, President Trump backed a push to cut that money. Congress stripped the stations of nearly all federal funds. When Trump signed the bill into law, he ended decades of bipartisan support for public media.",
+            "what_happened": "More than 500 public media staff members have been laid off since the funding ended. Stations across the country are trying different ways to survive. Some ask listeners to donate more money, a trend called rage-giving. Others are cutting programs and trying new ways to make money.",
+            "why_it_matters": "Many local communities depend on public radio and TV for news and education. Without federal money, the stations that serve your area may offer fewer shows or close entirely. How your local station responds will shape what news and learning resources are available in your community.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2c24a7b88aadd151a1e812626a0cef60",
+          "slug": "trump-promotes-election-fraud-claims-weeks-before-midterms",
+          "title": "Trump promotes election fraud claims weeks before midterms",
+          "summary": "The president told TV audiences that US elections are at risk of being rigged.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/news/ng-interactive/2026/jul/26/trump-undermine-us-midterms"
+            }
+          ],
+          "article": {
+            "background": "Midterm elections, held every two years between presidential contests, traditionally hurt the party in power. Trump is the sitting president. His approval rating is 37%, well below the level that usually lets a party hold ground. Republicans face likely losses in the Senate, House, and state races this November.",
+            "what_happened": "Trump spoke on primetime television last Friday. He repeated claims that the 2020 election, which he lost to Joe Biden, was illegitimate. He said US elections are \"vulnerable to being rigged and stolen.\" He claimed \"the trust of the American people was lost\" when he was defeated.",
+            "why_it_matters": "When a sitting president tells voters elections are rigged, it shapes what people believe about whether their votes count. Low turnout typically decides close races. If voters lose faith that voting works, fewer will show up. That could change results in tight contests this fall.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "22cdd70bd6707e82c3fc3ea1e0d9f6f2",
+          "slug": "wildfires-force-over-300-000-to-flee-in-france-and-spain",
+          "title": "Wildfires force over 300,000 to flee in France and Spain",
+          "summary": "Firefighters battle blazes in southwest France as strong winds push flames toward Bordeaux.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cd7le0d53y2o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/07/25/nx-s1-5907963/wildfires-spain-france-evacuations"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/live/2026/jul/26/europe-wildfires-spain-france-bordeaux-madrid-evacuations"
+            }
+          ],
+          "article": {
+            "background": "Wildfires have swept across southwestern France and Spain over the past week. The blazes are driven by strong winds, high heat, and a marine heatwave that has made the Mediterranean unusually warm. France has already burned 42,000 hectares this week alone, part of 98,000 hectares burned across the country since the year began. Norm covered the first evacuations on July 24, when about 30,000 people fled. The scale has grown dramatically since.",
+            "what_happened": "More than 300,000 people have now fled homes and holiday spots in France and Spain. In France, fires near Bordeaux and in the Gironde region remain uncontained. Firefighters say they are far from having the flames under control. Spain declared a state of emergency. A weather shift has helped firefighters near Madrid, though one person died in a fire in Valencia.",
+            "why_it_matters": "This is one of France's largest civilian evacuations ever in peacetime. Families are being forced from their homes and from vacation destinations during peak summer season. The fires are destroying houses and straining shelters and emergency services across the region. For now, the impact is concentrated in southern France and Spain, but the scale signals how dangerous these conditions have become.",
+            "quote": {
+              "text": "are far from having the fire under control",
+              "attribution": "A French official on wildfire containment efforts",
+              "source_url": "https://www.bbc.co.uk/news/articles/cd7le0d53y2o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "a1a902fc15d7a105f4e90d065f14d62b",
+          "slug": "van-crashes-into-berlin-pride-crowd-killing-one",
+          "title": "Van crashes into Berlin Pride crowd, killing one",
+          "summary": "A van hit a crowd at Berlin Pride. Police say the suspect is tied to Islamist groups.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/25/berlin-pride-march-called-off-after-car-crashes-into-crowd-of-people-near-route"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/07/25/nx-s1-5907997/germany-lgbtq-event-dead-injured"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/c74gzknyyz2o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Berlin Pride is one of Europe's largest annual celebrations. Hundreds of thousands of people gather each year in Tiergarten Park, near the Brandenburg Gate, for the event. Germany has experienced several deadly vehicle and knife attacks in recent years.",
+            "what_happened": "A white vehicle struck people at the Pride event on Saturday night at about 10 p.m. local time. One person was killed and 16 others were injured. Some injured people had severe injuries. Police identified a 21-year-old suspect named Abdul B. He is known to police and has links to Islamist circles. He had not been arrested as of Saturday night. The attack forced organizers to end the celebration early.",
+            "why_it_matters": "This attack hit one of Europe's largest celebrations of LGBTQ+ people and their allies. Germany has faced multiple deadly vehicle and knife attacks in recent years, adding to public concern about safety at large gatherings. The incident shows the risks that such events face from violence.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9cf74d52ff452ab535e6097ec89a340d",
+          "slug": "french-parliament-reauthorizes-pesticides-that-poison-bees",
+          "title": "French parliament reauthorizes pesticides that poison bees",
+          "summary": "Beekeepers say the decision is wrong as bees face climate change and habitat loss.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/26/french-beekeepers-fury-lifting-of-pesticides-ban"
+            }
+          ],
+          "article": {
+            "background": "France banned two pesticides called neonicotinoids in 2018. Scientists said they harm bees. Now parliament has approved a bill to allow them again. Beekeepers and environmentalists are angry about the decision.",
+            "what_happened": "Parliament voted to reauthorise the two banned pesticides. Beekeepers say this will hurt their hives. Bee populations already face pressure from climate change, new parasites, and lost habitat. Now they face chemical risk too.",
+            "why_it_matters": "Neonicotinoids kill bees or reduce their numbers. Fewer bees mean fewer crops pollinated and smaller harvests. If bee populations fall further, food production becomes harder. Most people depend on bees to pollinate the crops they eat.",
+            "quote": {
+              "text": "There are no words to describe the frustration. Bee populations have already been badly compromised by climate change, new parasites and loss of habitat. And now this.",
+              "attribution": "Carolyn Bouguet, a beekeeper in Essonne, greater Paris",
+              "source_url": "https://www.theguardian.com/world/2026/jul/26/french-beekeepers-fury-lifting-of-pesticides-ban"
+            }
+          }
+        },
+        {
+          "cluster_id": "d9b58c1f3067eaa0b8e2f97a5fcc8627",
+          "slug": "stalled-ships-near-strait-of-hormuz-threaten-ecological",
+          "title": "Stalled ships near Strait of Hormuz threaten ecological disaster",
+          "summary": "Over 1,500 idle vessels in the Persian Gulf could spread invasive species, scientists warn.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://abcnews.com/International/scientists-warn-invasive-species-superspreader-event-due-stalling/story?id=135051186"
+            }
+          ],
+          "article": {
+            "background": "The Strait of Hormuz connects the Persian Gulf to the Indian Ocean. About 20% of the world's oil passes through this waterway each year. Since February, conflict in the region has disrupted traffic through the passage. Over 1,500 ships now sit idle in the Persian Gulf. Hundreds more are stalled in the Gulf of Oman.",
+            "what_happened": "Scientists warn that the stalled ships create a risk for invasive species. Ships carry water in their ballast tanks to stay stable. When ships sit in one place for weeks, organisms in that water can adapt to local conditions. If those organisms escape into local waters, they can spread fast and cause ecological damage.",
+            "why_it_matters": "Invasive species can harm native fish and plants by outcompeting them for food and space. A sudden release of invasive species near a major shipping hub could damage the region's marine life for years. The longer ships remain stuck, the higher the risk of this ecological problem becomes.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "b44865387b9d5631c861282cf11b8aed",
+          "slug": "apple-seeks-exemption-to-buy-chips-from-blacklisted-chinese",
+          "title": "Apple seeks exemption to buy chips from blacklisted Chinese firm",
+          "summary": "Apple is asking the White House to let it buy memory chips from ChangXin Memory Technologies.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://fortune.com/2026/06/27/apple-us-approval-chips-blacklisted-cxmt-price-hikes-mac-memory-shortage"
+            }
+          ],
+          "article": {
+            "background": "Apple buys computer memory chips from many suppliers around the world. ChangXin Memory Technologies (CXMT) is a Chinese chip maker. The Pentagon put CXMT on a list called 1260H. That list flags companies with claimed ties to China's military. Apple is not banned from using CXMT right now.",
+            "what_happened": "Apple is asking the Trump administration for permission to keep buying chips from CXMT. The company has lobbied officials in the Commerce Department and elsewhere in the administration. Apple wants a guarantee that CXMT won't be added to the US Entity List, which would block the trade.",
+            "why_it_matters": "Apple wants cheaper chips to control costs. If Apple cannot buy from CXMT reliably, it may face higher costs for memory chips. Those higher costs could eventually raise prices for iPhones and Macs that consumers buy. The decision will show how the Trump administration weighs national security concerns against corporate supply chain needs.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "80e64e9224e61e99a0b4bdd5acd170c2",
+          "slug": "fcc-establishes-new-licensing-regime-for-submarine-cable",
+          "title": "FCC establishes new licensing regime for submarine cable operators",
+          "summary": "New rules give the government more power to check submarine cable equipment for security risks.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "federal_register",
+              "url": "https://www.federalregister.gov/documents/2026/07/27/2026-15123/review-of-submarine-cable-landing-license-rules-and-procedures-to-assess-evolving-national-security"
+            }
+          ],
+          "article": {
+            "background": "Submarine cables carry nearly all international internet and phone traffic between continents. The FCC, a regulatory agency, licenses the equipment that connects these cables to the American network. As cable technology has improved, foreign governments have gained greater ability to interfere with or monitor communications passing through these systems. The FCC is updating its rules to address these risks.",
+            "what_happened": "The FCC adopted new regulations for submarine cable equipment owners and operators. The rules establish a licensing system for companies that own or operate submarine line terminal equipment, called SLTE. The FCC is granting blanket licenses to some current and future SLTE owners. The rules also set reporting requirements for these companies.",
+            "why_it_matters": "The rules affect which companies can build and operate the cables and equipment that carry your international calls, video calls, and data. For now this shapes mostly how the telecom industry works. But it sets standards that future cable projects will follow. The goal is to keep foreign adversaries from gaining access to infrastructure that carries American communications overseas.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "3ae5cab7f40b658c73ce97e78ef7473f",
+          "slug": "research-shows-human-evolution-continued-through-last-50",
+          "title": "Research shows human evolution continued through last 50,000 years",
+          "summary": "New findings show that human DNA kept changing in modern times, not that it stopped.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.harvardmagazine.com/research/harvard-human-evolution-genes-selective-pressure"
+            }
+          ],
+          "article": {
+            "background": "For most of human history, people lived as hunter-gatherers. In the last 50,000 years, humans went to the moon, built the internet, and created artificial intelligence. Many scientists thought our DNA stayed mostly the same during this time. They believed civilization had shielded us from natural selection, the process that drives genetic change.",
+            "what_happened": "New research shows human evolution did not slow down. Scientists found that our genes kept changing even after we built cities and invented technology. Civilization created new pressures on our bodies and brains. These pressures shaped which genes spread through human populations.",
+            "why_it_matters": "Evolution is still happening to us. Our ancestors adapted to farming, cities, and new diets through genetic changes. This means humans today are different from humans just a few thousand years ago. Understanding this helps explain why different groups adapted differently to the world around them.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6249ab801390e15210a9fde64c1f8438",
+          "slug": "scientists-find-first-organism-that-can-pull-nitrogen-from",
+          "title": "Scientists find first organism that can pull nitrogen from air",
+          "summary": "Scientists found a nitrogen-fixing eukaryote, which changes how we understand nutrient cycles in nature.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nature.com/articles/d41586-024-01046-z"
+            }
+          ],
+          "article": {
+            "background": "Most living things cannot pull nitrogen from the air and turn it into a form they can use. Bacteria do this job, called nitrogen fixation. Scientists thought only bacteria could do it. Eukaryotes, the larger cells that make up animals, plants, and most algae, were thought unable to fix nitrogen.",
+            "what_happened": "Researchers discovered the first eukaryote that can fix nitrogen. It is a type of algae. The algae does this using a tiny structure inside its cells. This challenges what scientists believed about which organisms can perform this function.",
+            "why_it_matters": "Nitrogen is essential for life. If more organisms can fix it than we thought, that changes how we understand nutrient cycles in nature. It also suggests eukaryotes may have abilities we did not know about. This could reshape how we think about how life evolved.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "185695b576906188dbba18cc8db170ed",
+          "slug": "meteorite-that-struck-new-jersey-home-contains-alien",
+          "title": "Meteorite that struck New Jersey home contains alien chemistry",
+          "summary": "Researchers say the Hillsborough fragment that fell last year has an unusual chemical makeup.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.seti.org/news/alien-world-chemistry-found-inside-meteorite"
+            }
+          ],
+          "article": {
+            "background": "On July 16, 2024, a meteor created a sonic boom over New York City as it fell to Earth. A fragment of that meteor, weighing more than two pounds, crashed through a house roof in Hillsborough, New Jersey. Scientists now study these pieces to learn what they contain.",
+            "what_happened": "An international team studied the meteorite fragments. They published their findings in the journal Science Advances. The material came from near the surface of a small primitive asteroid. It holds a chemical record of another world, preserved for billions of years.",
+            "why_it_matters": "Meteorites show us how asteroids formed and changed over time. This one carries clues about the early solar system. Understanding these rocks helps scientists learn how planets and their resources came to be.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "3c084b44cabf3fb7273659b4fcf9d61b",
+      "title": "Scottish tax hike for high earners backfires with loss of £22M",
+      "url": "https://www.thetimes.com/uk/scotland/article/scottish-tax-high-earners-22m-3sb2k3wns",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0a9ab8605e45fde0e1ddb41782954a7f",
+      "title": "The hacker who humiliated spyware makers and was never caught",
+      "url": "https://techcrunch.com/2026/07/25/the-hacker-who-humiliated-spyware-makers-and-was-never-caught",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "eb5d6a94686f85446e4fadc7b2d30fea",
+      "title": "Microsoft responds to LG monitors installing McAfee ads on Windows",
+      "url": "https://arstechnica.com/gadgets/2026/07/microsoft-responds-to-lg-monitors-installing-mcafee-ads-on-windows",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "243c96edcf4cad155f60dae6bb1faa9a",
+      "title": "What is happening to jobs? Separating AI hype from reality",
+      "url": "https://siepr.stanford.edu/publications/policy-brief/what-really-happening-jobs-separating-ai-hype-reality",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "f6ead0a4736d888cb633adc047cccd7f",
+      "title": "What will more intelligence do for us?",
+      "url": "https://www.noahpinion.blog/p/what-will-more-intelligence-actually",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "cc82a4190501aa1d80cdff1022e2577b",
+      "title": "Tesla's robotaxis are moving in reverse",
+      "url": "https://techcrunch.com/2026/07/23/teslas-robotaxis-are-moving-in-reverse",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "16d42d88e5467f34dfb1db48b43901ef",
+      "title": "The Rise of the \"Scenario,\" a Trendy Way of Forecasting Our Dystopian Future",
+      "url": "https://www.newyorker.com/culture/the-weekend-essay/the-rise-of-the-scenario-a-trendy-way-of-forecasting-our-dystopian-future",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "a6587f7ba009dfc25dbcbc5167a547ee",
+      "title": "Trump revives old tropes as he pushes warnings of ‘communist menace’",
+      "url": "https://www.theguardian.com/us-news/2026/jul/26/trump-communism-democrats-red-scare",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "0fd0a8e215dbd41efd62ea9ac05318c8",
+      "title": "Venezuela men sue aviation firms who flew them to notorious Salvadorian jail",
+      "url": "https://www.theguardian.com/us-news/2026/jul/26/lawsuit-csi-aviation-globalx-cecot-deportation",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e2b1a819fef488213355c2c2fd453136",
+      "title": "Lebanese displaced by war turn to satellites to check their homes",
+      "url": "https://www.npr.org/2026/07/26/g-s1-124672/lebanon-israel-war-homes-satellite",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 156,
+    "clusters_considered": 124,
+    "stories_run": 16,
+    "sources": 10,
+    "sections_held": 0
+  }
+}
