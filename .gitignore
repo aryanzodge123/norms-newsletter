@@ -6,3 +6,6 @@ __pycache__/
 node_modules/
 dist/
 site/dist/
+# wrangler's local cache (account id, build state). Machine-specific, rewritten
+# on every deploy, and never wanted in the repo.
+.wrangler/

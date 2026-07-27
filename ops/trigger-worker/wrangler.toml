@@ -2,6 +2,12 @@ name = "norms-newsletter-trigger"
 main = "index.js"
 compatibility_date = "2026-07-27"
 
+# No public URL. This Worker has only a `scheduled` handler and no `fetch`
+# handler, so a workers.dev address would serve nothing; it would just be an
+# internet-facing endpoint on the thing holding a GitHub token. Without this
+# line wrangler prompts to register a subdomain on every deploy.
+workers_dev = false
+
 # SPEC 6.11. Three firings a day. The first two are the DST pair, exactly as
 # the GitHub crons are: during EDT 09:35 UTC is 05:35 Eastern, during EST
 # 10:35 UTC is. Whichever one lands at 05:35 publishes, 5 minutes after the
