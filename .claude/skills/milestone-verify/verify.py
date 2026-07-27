@@ -147,13 +147,17 @@ def read_astro_config() -> tuple[str | None, str | None]:
 
 
 def is_self_host(url: str, site_url: str | None) -> bool:
-    """True if the URL points at our own site rather than an external source."""
+    """True if the URL points at our own site rather than an external source.
+
+    When astro.config gives a site host, self means exactly that host. The
+    bare `.github.io` fallback is only for the pre-M4 case where the config is
+    not set yet: matching every `*.github.io` there would wrongly flag an
+    external source that happens to be hosted on Pages (nvlabs.github.io, say).
+    """
     host = url.split("//", 1)[-1].split("/", 1)[0].lower()
-    if host.endswith("github.io"):
-        return True
     if site_url:
         return host == site_url.split("//", 1)[-1].split("/", 1)[0].lower()
-    return False
+    return host.endswith("github.io")
 
 
 def check_urls() -> None:
@@ -186,6 +190,24 @@ def check_urls() -> None:
                         failures.append(
                             f"{rel}:{lineno}: hardcoded self URL {url} "
                             "(derive it from astro.config instead)"
+                        )
+
+        # c) The Python pipeline must not hardcode a self-URL either. The
+        # migration (SPEC 13) changes astro.config and the pipeline user_agent
+        # in config/, so a self-URL literal in src/ would be missed and would
+        # advertise a dead address afterward (Finding 6). config/ is exempt:
+        # that is where such a URL now legitimately lives.
+        py_src = REPO / "src"
+        for path in sorted(py_src.rglob("*.py")) if py_src.is_dir() else []:
+            if not path.is_file():
+                continue
+            for lineno, line in enumerate(path.read_text().splitlines(), 1):
+                for url in URL_RE.findall(line):
+                    if is_self_host(url, site_url):
+                        rel = path.relative_to(REPO)
+                        failures.append(
+                            f"{rel}:{lineno}: hardcoded self URL {url} "
+                            "(move it to config/pipeline.yaml instead)"
                         )
 
         # b) Build output: every self-URL must match the configured prefix.

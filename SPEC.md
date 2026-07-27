@@ -181,6 +181,14 @@ mid-day. The cost is that the same article fetched before and after the
 change can produce two item_ids, which is an acceptable duplicate, not a
 correctness failure.
 
+**Transient fetch retries.** A source adapter may retry a transient fetch
+failure (a timeout, HTTP 429, or a 5xx) a small bounded number of times with
+backoff before giving up. A give-up is still the "one adapter fails, log and
+skip" path (section 7): the cycle is `partial`, never `failed`, on that
+adapter alone. This is a per-adapter resilience measure, applied where a
+source is observed to be flaky (arXiv's query API times out often), not a
+guarantee every adapter makes.
+
 Registry entry (config/sources.yaml):
 
 ```yaml
@@ -733,7 +741,10 @@ Migration steps (target: after M6, before launch):
 2. Re-add all Actions secrets in the new repo (secrets do not transfer).
 3. Change astro.config `site` to "https://norms-newsletter.github.io" and
    `base` to "/". Per the URL configuration rule (6.6) this is the only
-   code change.
+   change to the site's rendered self-URLs. One config value carries the old
+   URL outside the site layer and changes with it: the pipeline `user_agent`
+   in config/pipeline.yaml, the contact URL every outbound request advertises.
+   Update its URL to the new project site in the same step.
 4. Update the mini PC collector's git remote.
 5. Rotate any keys being moved to project ownership; verify spikes 5.1
    and 5.2 from SETUP.md still pass with the new credentials.

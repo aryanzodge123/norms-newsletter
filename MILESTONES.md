@@ -6,6 +6,67 @@ deferred.
 
 ---
 
+## Post-M6: stress-test cleanup (Findings 4-7)
+
+Date: 2026-07-25
+Spec: SPEC 6.1 (adapter transient-retry clause), SPEC 13 (migration checklist)
+Status: complete, gate green. With the prod run_log cleanup below, this
+closes all seven stress-test findings.
+
+The four remaining findings from 2026-07-23, each targeted at its measured
+cause rather than its symptom.
+
+**Finding 7, arxiv flakiness.** Reading prod `adapter_metrics`, arxiv failed
+10 collector cycles, 8 of them `ReadTimeout`, plus one 429 and one 406.
+newsapi's 2 failures were the historical unset `NEWSAPI_KEY`, already wired
+into `collect.yml`, so it was not flaky and got no change. `arxiv.fetch` now
+retries timeouts / transport errors / 429 / 5xx up to 3 times with backoff and
+jitter, sends `Accept: application/atom+xml` (the 406 fix) and the project
+User-Agent (it built a bare client before), and its timeout went 15s to 20s.
+A give-up still re-raises, so the cycle stays `partial` exactly as before.
+SPEC 6.1 gained a transient-retry clause; five offline tests.
+
+**Finding 5, the untested prompt builder.** `src/editor/run_editor.py` had no
+test, including `build_user_message` and the `prior_coverage` block that makes
+continuing coverage work. Seven offline tests now cover the candidate
+rendering, the coverage block appearing only for covered candidates, the mode
+line, and `repeat_feedback`. No source change.
+
+**Finding 4, the dropped nightly cycle.** `collect.yml` moved from `0 */3` to
+`7 */3`: GitHub delayed and dropped the on-the-hour crons under load (three
+nights running, 7 cycles instead of 8). Cadence is unchanged; the collector
+backfills, so nothing was lost, this just tightens coverage.
+
+**Finding 6, the migration-blind User-Agent URL.** `base.py` hardcoded the
+project URL, which SPEC 13's migration would have left stale, and the URL gate
+never scanned Python. The User-Agent moved to `config/pipeline.yaml`, read via
+`base.user_agent()`; SPEC 13 step 3 names it; `check_urls` now scans `src/`
+too. That scan surfaced a pre-existing gate false positive (every `*.github.io`
+host read as ours, flagging external Pages-hosted sources), now fixed to match
+the configured site host exactly.
+
+### Verification
+
+`milestone-verify` green, 514 tests. The arxiv retry, prompt-builder, config,
+and gate scans each verified; the src/ URL scan confirmed load-bearing by
+planting a URL. The arxiv retry's real confirmation is the next few days:
+`adapters_failed: arxiv` (the reason code from the prior milestone) should
+become rarer.
+
+### The prod run_log cleanup (operational, separate from the code PR)
+
+PR #15's isolation bug (fixed by the #16 conftest guard) had written test rows
+into production `ops.run_log` before the guard landed. Investigation confined
+the pollution to exactly 36 editor rows on 2026-07-24 with `items_in <= 5`
+(the fixture seed sizes); the 3 real editor rows that day have `items_in`
+251/323, and no other date or job was affected. The 36 rows were removed by
+run_id via `table.delete`, taking the day's editor rows from 39 to 3. Iceberg
+snapshots retain the prior state as a rollback safety net. 07-20's 14 editor
+rows are legitimate documented dev re-runs and were left alone. Run outside
+the code PR, after review of the identified set.
+
+---
+
 ## Post-M6: reason codes on run_log, and a degraded-publication alert
 
 Date: 2026-07-24

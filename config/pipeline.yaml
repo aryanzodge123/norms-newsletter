@@ -183,3 +183,11 @@ canonical_url:
     - lnkd.in
     - shar.es
     - feedproxy.google.com
+
+# The User-Agent every outbound pipeline request sends (feed fetches, article
+# enrichment, the arXiv API). Publishers are entitled to know who is calling,
+# and several (CNBC among them) reject the default client string. The contact
+# URL lives here, not hardcoded in src/, so the pre-launch migration (SPEC 13)
+# updates it alongside astro.config. At migration, change this URL to the new
+# project site.
+user_agent: "Mozilla/5.0 (compatible; NormsNewsletter/1.0; +https://aryanzodge123.github.io/norms-newsletter/)"

@@ -20,7 +20,7 @@ import feedparser
 import httpx
 
 from .arstechnica import parse_published
-from .base import USER_AGENT, RawItem, build_item
+from .base import RawItem, build_item, user_agent
 from .hackernews import strip_html
 
 log = logging.getLogger(__name__)
@@ -63,7 +63,7 @@ class RSSAdapter:
         try:
             # Identify the caller. Several publishers reject the default
             # client string outright (CNBC returns 403).
-            response = client.get(self.feed_url, headers={"User-Agent": USER_AGENT})
+            response = client.get(self.feed_url, headers={"User-Agent": user_agent()})
             response.raise_for_status()
             return self.parse(response.text, since)
         finally:

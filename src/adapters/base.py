@@ -36,11 +36,13 @@ BODY_EXCERPT_CHARS = 1200
 # One identifying User-Agent for every outbound request the pipeline makes,
 # feeds and article fetches alike. Publishers are entitled to know who is
 # calling, and several (CNBC among them) reject the default client string
-# outright.
-USER_AGENT = (
-    "Mozilla/5.0 (compatible; NormsNewsletter/1.0; "
-    "+https://aryanzodge123.github.io/norms-newsletter/)"
-)
+# outright. The value lives in config/pipeline.yaml, not here, so the
+# pre-launch migration (SPEC 13) updates its project URL where the URL gate
+# can account for it rather than in a hardcoded literal it never scanned.
+def user_agent() -> str:
+    from ..config import get_pipeline
+
+    return get_pipeline().user_agent
 
 
 class RawItem(BaseModel):
