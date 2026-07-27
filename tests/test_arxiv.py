@@ -14,7 +14,7 @@ import pytest
 
 from src.adapters import arxiv
 from src.adapters.arxiv import ArxivAdapter
-from src.adapters.base import USER_AGENT
+from src.adapters.base import user_agent
 
 SINCE = datetime(2020, 1, 1, tzinfo=UTC)
 RUN_ID = "20260719T110003Z-a4f2"
@@ -105,4 +105,4 @@ def test_request_carries_accept_and_user_agent():
     _adapter(_client(handler)).fetch(SINCE)
     req = handler.requests[0]
     assert req.headers["Accept"] == "application/atom+xml"
-    assert req.headers["User-Agent"] == USER_AGENT
+    assert req.headers["User-Agent"] == user_agent()
