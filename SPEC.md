@@ -587,8 +587,27 @@ access token scoped to this repository alone, with a single permission,
 (6.10). Token expiry is a real failure mode: an expired token silently returns
 publication to GitHub's cron timing rather than failing anything, which is why
 sustained lateness is the signal that watches it (section 8). The expiry date
-is recorded in SETUP.md, and the token is reissued during the section 13
-migration along with the other credentials.
+is recorded in SETUP.md, set to the longest lifetime GitHub allows for a
+fine-grained token (verify the current maximum when issuing it, as that policy
+has changed before), and the token is reissued during the section 13 migration
+along with the other credentials.
+
+A GitHub App was considered and rejected for v1. It would not expire, and it
+would survive the section 13 org transfer more cleanly. It was rejected on
+failure modes rather than on principle: JWT signing is authentication plumbing
+and encodes no scheduling rule, so it does not actually conflict with the
+no-logic rule above. The objection is that it puts roughly 40 lines of RS256
+signing into the one component with no test suite, in the one language the
+project does not otherwise use, and it fails with a 401, the same symptom as
+an expired token but harder to diagnose. That trades a predictable failure on
+a known date for an unpredictable one at any time. The expired-token case is
+benign by comparison: the GitHub crons still publish, so the cost is
+punctuality and not the edition.
+
+Revisit at the section 13 migration, which is the point where the org exists,
+the credential is being reissued anyway, and infrastructure stops fronting
+through one personal account. If this ever gains a second maintainer, the App
+becomes the correct shape.
 
 **Expected effect.** The firing that opens the window publishes at roughly
 09:45 UTC, which is 05:45 ET. In the normal case the Worker becomes the
@@ -801,11 +820,6 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 - GDELT adapter in v1.1.
 - Whether the migration (section 13) also moves API keys to a
   project-owned email/account set, and which providers allow it cleanly.
-- Whether the 6.11 Worker authenticates with a fine-grained PAT (simple, but
-  expires) or a GitHub App (no expiry, survives the section 13 org transfer
-  more cleanly, but needs JWT signing inside the Worker and so breaks the
-  rule that the Worker carries no logic). PAT for M5.1; the migration is the
-  natural moment to revisit it, since credentials are reissued anyway.
 - Whether collect gains the same external backup trigger. Approved in
   principle. It needs a staleness check so a redundant firing does not double
   metered Actions minutes, and that check is new tested logic, so it lands as

@@ -10,6 +10,14 @@ on:
   schedule:
     - cron: "30 9 * * *" # 05:30 Eastern during EDT
     - cron: "30 10 * * *" # 05:30 Eastern during EST
+  # The external trigger (SPEC 6.11, decision #31). GitHub's crons above were
+  # created 82 to 192 minutes after their target on every measured day, so they
+  # cannot meet the 06:00 ET goal; a Cloudflare Worker sends this dispatch 5
+  # minutes after the window opens instead. Both stay: the gate makes whichever
+  # arrives second a no-op, so redundancy is free. The Worker carries no logic,
+  # only this POST, which is what keeps the scheduling rules in src/schedule.py.
+  repository_dispatch:
+    types: [publish-window]
   workflow_dispatch:
     inputs:
       force:
@@ -156,6 +164,20 @@ jobs:
       # dead man's switch alerts (SPEC 7, "Deploy fails").
       - name: Ping healthchecks
         run: curl -fsS --retry 3 "${{ secrets.HEALTHCHECKS_PUBLISH_URL }}"
+
+      # SPEC section 8 / 6.11: the `site` run_log row. Runs here, straight
+      # after the ping, so its ended_at is the moment the deploy succeeded and
+      # the site was live. That timestamp is what the timeliness measure is
+      # defined against, and the row's notes record which trigger published,
+      # which is the only way to tell a working external trigger from a dead
+      # one (either scheduler alone still publishes).
+      #
+      # continue-on-error: a run_log write must never redden a publish that is
+      # already live and already green. A failed write shows up as an
+      # unmeasured day in the timeliness report, never as an on-time one.
+      - name: Record site run
+        continue-on-error: true
+        run: uv run python -m src.site_run --trigger "${{ github.event_name }}"
 
       # SPEC 6.8 step 10 / 6.9: fold the day into gold and drop the daily
       # bronze and silver partitions. Runs after the deploy so a failure

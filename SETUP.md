@@ -171,7 +171,37 @@ fred.stlouisfed.org (API keys under My Account).
 **Verify:** run `curl HEALTHCHECKS_PUBLISH_URL` in Terminal, then refresh
 the dashboard; the check shows a recent ping.
 
-### 2.6 GoatCounter (privacy-friendly analytics)
+### 2.6 GitHub token for the publish trigger (SPEC 6.11)
+
+The Cloudflare Worker that starts the 6am publish needs permission to ask
+GitHub to run the workflow. Without this the Worker POSTs into a void and
+every morning quietly reverts to GitHub's own cron timing, which has run
+82 to 192 minutes late.
+
+1. Go to https://github.com/settings/personal-access-tokens and create a
+   **fine-grained** token.
+2. Repository access: **only** `norms-newsletter`.
+3. Repository permissions: `Actions` set to **Read and write**. Nothing
+   else. This token can start a workflow and do nothing more.
+4. Expiry: the longest GitHub offers. Check what that maximum currently is
+   when you create it, since the policy has changed before.
+5. **Record the expiry date here:**
+
+   | Token | Expires | Reissued |
+   |-------|---------|----------|
+   | trigger-worker dispatch PAT | _fill in on creation_ | _at SPEC 13 migration_ |
+
+An expired token fails silently: the dispatch 401s, GitHub's crons still
+publish, and the only symptom is that mornings get late again. That is why
+the expiry is written down rather than remembered, and why sustained
+lateness is the signal that watches it (SPEC section 8).
+
+The token is never stored in this repo. It goes into Cloudflare with
+`wrangler secret put GITHUB_TOKEN` (see `ops/trigger-worker/README.md`), and
+into your local `.env` as `GITHUB_TRIGGER_TOKEN` only if you want to run
+spike 5.6.
+
+### 2.7 GoatCounter (privacy-friendly analytics)
 
 1. Go to https://www.goatcounter.com, sign up free.
 2. Choose a site code, e.g. `norms-newsletter`, giving you
@@ -415,6 +445,24 @@ cd site && npm install && npm run dev
 
 **Pass:** open http://localhost:4321 and see the Astro starter page. Stop
 the server with Ctrl+C. Commit the site folder.
+
+### 5.6 GitHub dispatch (the publish trigger, SPEC 6.11)
+
+Proves the token from 2.6 can actually start a publish. Run it before
+deploying the Worker, and again after the SPEC 13 migration, when both the
+token and the repo path change.
+
+```bash
+GITHUB_TRIGGER_TOKEN=github_pat_... uv run python spikes/check_dispatch.py
+```
+
+**Pass:** prints `OK: dispatched publish-window`. Sending a real dispatch is
+safe, because the publish gate no-ops it unless the window is open and today
+is unpublished.
+
+A 403 usually means the token is missing `Actions: read and write`, or (after
+the migration) that the organization has not enabled fine-grained PAT access,
+which is an org-level policy the repo transfer does not carry.
 
 ---
 
