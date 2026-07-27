@@ -74,6 +74,7 @@ norms-newsletter/
     content/editions/    # committed edition.json per day, the publication record
     fixtures/            # normal.json quiet.json fallback.json, drive front-end dev
   spikes/                # credential and dependency smoke checks, not pipeline code
+  ops/trigger-worker/    # external publish trigger (SPEC 6.11), deploy infra
   .github/workflows/     # publish.yml collect.yml
   tests/
 ```
@@ -128,4 +129,6 @@ approved.
 
 ## Definition of done for v1
 
-14 consecutive days of correct, unattended publication.
+14 consecutive days of correct, unattended publication. *Correct* includes on
+time: a publication that is late under the SPEC section 8 timeliness measure
+breaks the streak, the same as a missed or degraded day.
