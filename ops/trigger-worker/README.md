@@ -56,13 +56,45 @@ GITHUB_TRIGGER_TOKEN=github_pat_... uv run python spikes/check_dispatch.py
 That sends a real dispatch. It is safe: it does not set `force`, so the gate
 no-ops it unless the window is open and today is unpublished.
 
-**3. Deploy.**
+**3. Open the Workers section of the Cloudflare dashboard once**, at
+https://dash.cloudflare.com/<account-id>/workers/workers-and-pages
+
+Do not create anything. Loading the page is enough. It registers the account's
+workers.dev subdomain, which a brand new Cloudflare account does not have.
+
+This step looks skippable and is not. Without it, the script uploads fine and
+the secret attaches fine, and then setting the cron schedules fails with a bare
+`403` that names no cause. The real error only appears if you query the API
+directly:
+
+```
+code 10007: You do not have a workers.dev subdomain.
+```
+
+If wrangler offers to register the subdomain during `deploy`, saying yes does
+the same job. Saying no leaves you with a deployed Worker that never fires,
+which is what happened the first time this was set up on 2026-07-27.
+
+Registering the subdomain does **not** give this Worker a public address.
+That is `workers_dev = false` in `wrangler.toml`, a per-Worker setting. The
+subdomain is account-level. You need the account one; you do not want the
+Worker one.
+
+**4. Deploy.**
 
 ```bash
 cd ops/trigger-worker
 npx wrangler login
 npx wrangler secret put GITHUB_TOKEN     # paste the token, it is never in a file
 npx wrangler deploy
+```
+
+The deploy must end with three `schedule:` lines. If it says
+`No targets deployed`, the code shipped but the alarm did not, and the Worker
+will never run. Confirm from Cloudflare's side rather than the CLI:
+
+```bash
+npx wrangler triggers deploy    # re-runs just the schedules
 ```
 
 ## Checking it works

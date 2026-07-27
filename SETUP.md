@@ -484,6 +484,12 @@ GITHUB_TRIGGER_TOKEN=github_pat_... uv run python spikes/check_dispatch.py
 because it does not set `force`, so the publish gate no-ops it unless the
 window is open and today is unpublished.
 
+**Before deploying the Worker on a new Cloudflare account**, open
+https://dash.cloudflare.com/<account-id>/workers/workers-and-pages once in a
+browser. Loading the page registers the account's workers.dev subdomain. Skip
+it and the Worker deploys but its cron schedules fail with an unexplained
+`403`. See `ops/trigger-worker/README.md`.
+
 A 403 usually means the token is missing `Actions: read and write`, or (after
 the migration) that the organization has not enabled fine-grained PAT access,
 which is an org-level policy the repo transfer does not carry. A 404 usually
