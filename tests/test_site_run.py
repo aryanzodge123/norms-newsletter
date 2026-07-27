@@ -48,7 +48,7 @@ def _rows(catalog, job="site"):
 
 def test_writes_one_site_row(wired, tmp_path):
     _write_edition(tmp_path)
-    assert site_run.run(DAY, trigger="repository_dispatch") == 0
+    assert site_run.run(DAY, trigger="worker") == 0
     (row,) = _rows(wired)
     assert row["job"] == "site"
     assert row["status"] == "success"
@@ -56,17 +56,30 @@ def test_writes_one_site_row(wired, tmp_path):
 
 def test_records_the_trigger_in_notes(wired, tmp_path):
     _write_edition(tmp_path)
-    site_run.run(DAY, trigger="repository_dispatch")
+    site_run.run(DAY, trigger="worker")
     (row,) = _rows(wired)
-    assert "trigger=repository_dispatch" in row["notes"]
+    assert "trigger=worker" in row["notes"]
 
 
-def test_a_cron_trigger_is_recorded_distinctly(wired, tmp_path):
-    # The distinction the migration exit criterion (SPEC 13) turns on.
-    _write_edition(tmp_path)
-    site_run.run(DAY, trigger="schedule")
-    (row,) = _rows(wired)
-    assert "trigger=schedule" in row["notes"]
+def test_the_three_triggers_are_recorded_distinctly(wired, tmp_path):
+    """worker, manual and schedule must never blur together.
+
+    The Worker uses the same workflow_dispatch event a human does (SPEC 6.11,
+    to keep the token at Actions:write), so `manual` and `worker` are only
+    distinguishable by what the workflow passes here. Section 13's exit
+    criterion requires exactly that distinction, and a dead Worker is invisible
+    without it.
+    """
+    for trigger in ("worker", "manual", "schedule"):
+        _write_edition(tmp_path)
+        site_run.run(DAY, trigger=trigger)
+
+    notes = [r["notes"] for r in _rows(wired)]
+    assert sorted(n.split(";")[0] for n in notes) == [
+        "trigger=manual",
+        "trigger=schedule",
+        "trigger=worker",
+    ]
 
 
 def test_missing_trigger_is_recorded_as_unknown(wired, tmp_path):

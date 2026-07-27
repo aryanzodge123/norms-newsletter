@@ -10,20 +10,31 @@ on:
   schedule:
     - cron: "30 9 * * *" # 05:30 Eastern during EDT
     - cron: "30 10 * * *" # 05:30 Eastern during EST
-  # The external trigger (SPEC 6.11, decision #31). GitHub's crons above were
-  # created 82 to 192 minutes after their target on every measured day, so they
-  # cannot meet the 06:00 ET goal; a Cloudflare Worker sends this dispatch 5
-  # minutes after the window opens instead. Both stay: the gate makes whichever
-  # arrives second a no-op, so redundancy is free. The Worker carries no logic,
-  # only this POST, which is what keeps the scheduling rules in src/schedule.py.
-  repository_dispatch:
-    types: [publish-window]
+  # The external trigger (SPEC 6.11, decision #31) comes in here too. GitHub's
+  # crons above were created 82 to 192 minutes after their target on every
+  # measured day, so they cannot meet the 06:00 ET goal; a Cloudflare Worker
+  # calls this same workflow_dispatch through the API, 5 minutes after the
+  # window opens. Both stay: the gate makes whichever arrives second a no-op,
+  # so redundancy is free.
+  #
+  # workflow_dispatch rather than repository_dispatch because the latter is
+  # granted under `Contents: write`, which also permits committing code, while
+  # this one needs only `Actions: write`. That token lives outside GitHub in
+  # Cloudflare, so least privilege decides it (6.11).
   workflow_dispatch:
     inputs:
       force:
         description: "Bypass the 6am-Eastern gate and publish now"
         type: boolean
         default: false
+      # Provenance. The Worker uses the same event a human does, so without
+      # this the two are indistinguishable, and telling them apart is what
+      # makes a dead Worker visible (SPEC section 8) and what section 13's
+      # migration exit criterion turns on.
+      source:
+        description: "Who triggered this run"
+        type: string
+        default: manual
 
 # contents: write commits the edition.json publication record (decision #17).
 # pages + id-token deploy the built site (SPEC 6.8 step 8).
@@ -175,9 +186,14 @@ jobs:
       # continue-on-error: a run_log write must never redden a publish that is
       # already live and already green. A failed write shows up as an
       # unmeasured day in the timeliness report, never as an on-time one.
+      # `source` is set on a dispatch (worker or manual) and empty on a
+      # schedule, where the event name is the honest answer. Three distinct
+      # values reach run_log: worker, manual, schedule.
       - name: Record site run
         continue-on-error: true
-        run: uv run python -m src.site_run --trigger "${{ github.event_name }}"
+        run: |
+          uv run python -m src.site_run \
+            --trigger "${{ github.event.inputs.source || github.event_name }}"
 
       # SPEC 6.8 step 10 / 6.9: fold the day into gold and drop the daily
       # bronze and silver partitions. Runs after the deploy so a failure

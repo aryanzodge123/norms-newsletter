@@ -68,11 +68,21 @@ def test_audio_runs_before_commit():
     assert names.index("Audio build") < names.index("Commit edition")
 
 
-def test_external_trigger_is_wired():
-    # SPEC 6.11: the Cloudflare Worker's dispatch. Without this the Worker
-    # POSTs into a void and every morning silently reverts to GitHub's cron
-    # timing, which is the failure the whole milestone exists to prevent.
-    assert _triggers()["repository_dispatch"]["types"] == ["publish-window"]
+def test_source_input_exists_for_trigger_provenance():
+    # SPEC 6.11: the Worker uses the same workflow_dispatch event a human does,
+    # because that endpoint needs only `Actions: write` while repository
+    # dispatch needs `Contents: write`. This input is the only thing that tells
+    # the two apart, and that distinction is what makes a dead Worker visible
+    # (section 8) and what section 13's exit criterion turns on.
+    source = _triggers()["workflow_dispatch"]["inputs"]["source"]
+    assert source["default"] == "manual"
+
+
+def test_repository_dispatch_is_not_used():
+    # Deliberate: it would require a Contents:write token, which could also
+    # commit code. This credential lives outside GitHub, so least privilege
+    # decides it (6.11). Reintroducing it would silently widen that token.
+    assert "repository_dispatch" not in _triggers()
 
 
 def test_github_crons_are_kept_alongside_it():
@@ -83,12 +93,11 @@ def test_github_crons_are_kept_alongside_it():
     assert crons == ["30 9 * * *", "30 10 * * *"]
 
 
-def test_force_input_stays_on_workflow_dispatch_only():
-    # 6.11: `force` must be unreachable from a dispatch, so an external trigger
-    # can never bypass the window or the idempotency check. It is only a
-    # workflow_dispatch input; github.event.inputs is empty for other events.
-    assert "force" in _triggers()["workflow_dispatch"]["inputs"]
-    assert _triggers()["repository_dispatch"] == {"types": ["publish-window"]}
+def test_force_defaults_to_false():
+    # 6.11: the Worker never sends `force`, so the declared default is what
+    # keeps a dispatch from bypassing the window and the idempotency check.
+    # If this default ever flips, every Worker firing becomes a forced publish.
+    assert _triggers()["workflow_dispatch"]["inputs"]["force"]["default"] is False
 
 
 def test_site_run_is_recorded_after_the_ping_and_is_non_blocking():
@@ -101,9 +110,13 @@ def test_site_run_is_recorded_after_the_ping_and_is_non_blocking():
     assert _step("Record site run")["continue-on-error"] is True
 
 
-def test_site_run_records_the_triggering_event():
-    # The trigger provenance the migration exit criterion (SPEC 13) turns on.
-    assert "${{ github.event_name }}" in _step("Record site run")["run"]
+def test_site_run_records_the_trigger_source():
+    # `source` when a dispatch set one, the event name otherwise, so a cron
+    # records `schedule` rather than an empty string. The migration exit
+    # criterion (SPEC 13) requires distinguishing worker from manual, which the
+    # event name alone cannot do.
+    run = _step("Record site run")["run"]
+    assert "github.event.inputs.source || github.event_name" in run
 
 
 def test_degraded_check_is_last_and_fail_fast():

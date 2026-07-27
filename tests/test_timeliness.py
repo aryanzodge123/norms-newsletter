@@ -26,7 +26,7 @@ def _et(y, m, d, hour, minute=0, second=0) -> datetime:
     return datetime(y, m, d, hour, minute, second, tzinfo=EASTERN)
 
 
-def _seed_site_row(catalog, *, ended_at, started_at=None, trigger="repository_dispatch"):
+def _seed_site_row(catalog, *, ended_at, started_at=None, trigger="worker"):
     started = started_at or ended_at - timedelta(minutes=9)
     runlog.write_row(
         runlog.ensure_table(catalog),
@@ -102,7 +102,7 @@ def test_on_time_day_reads_back_on_time(wired):
     (result,) = timeliness.late_days(wired, date(2026, 7, 20), date(2026, 7, 20))
     assert result.late is False
     assert result.verdict == "on time"
-    assert result.trigger == "repository_dispatch"
+    assert result.trigger == "worker"
 
 
 def test_late_day_reads_back_late(wired):

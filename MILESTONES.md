@@ -36,13 +36,39 @@ the crons arrived at 12:42Z and 13:23Z and correctly no-opped, and decision
 ### What was built
 
 **The external trigger.** `ops/trigger-worker/` holds a Cloudflare Worker
-(`index.js`, `wrangler.toml`) that POSTs `repository_dispatch` with
-`event_type: publish-window` at 09:35, 10:35 and 11:35 UTC. Two cover the DST
-pair as the GitHub crons do; the third is one retry. `publish.yml` gained the
-matching `repository_dispatch` trigger. The GitHub crons stay as backstop.
+(`index.js`, `wrangler.toml`) that calls the workflow dispatch endpoint at
+09:35, 10:35 and 11:35 UTC. Two cover the DST pair as the GitHub crons do; the
+third is one retry. The GitHub crons stay as backstop.
 
-The Worker carries no logic beyond the POST. Owner and repo live in
-`wrangler.toml` vars rather than the JS, so SPEC 13 step 4b is a config edit.
+The Worker carries no logic beyond the POST. Owner, repo, workflow and ref live
+in `wrangler.toml` vars rather than the JS, so SPEC 13 step 4b is a config edit.
+
+**Workflow dispatch, not repository dispatch, and this was a correction.** The
+first draft specified `repository_dispatch`, and SETUP.md told Milind to create
+a token with `Actions: write`. Checking GitHub's fine-grained permission
+reference before he created it showed that is wrong: the repository-dispatch
+endpoint is granted under **`Contents: write`**, which also permits writing and
+deleting files, creating commits and refs, merging pull requests and cutting
+releases. The workflow-dispatch endpoint needs only `Actions: write`.
+
+That difference matters more than a doc typo. This is the one credential held
+outside GitHub, in Cloudflare, and the pipeline it starts runs with the
+Anthropic, Gemini and R2 secrets, so a token able to modify pipeline code would
+be the largest blast radius in the system. Milind chose the narrower token.
+
+The cost is trigger provenance: the Worker now uses the same
+`workflow_dispatch` event a human does, so the event name alone cannot tell
+them apart. `publish.yml` gained a `source` input defaulting to `manual`, which
+the Worker sets to `worker`, and the workflow passes
+`github.event.inputs.source || github.event_name` so three distinct values
+reach run_log: `worker`, `manual`, `schedule`.
+
+One guarantee genuinely weakened and is recorded rather than glossed: with
+repository dispatch, `force` did not exist on that event at all. Now it exists
+with a declared default of `false` that the Worker never overrides, so a stolen
+token could set it. The harm ceiling is a duplicate publish of an
+already-published date, which decision #17 stops from overwriting a real
+edition. That is a far smaller exposure than a `Contents: write` token.
 
 **No gate change**, and 6.11 forbids one. The existing window-plus-idempotency
 gate already handles every case, which the year simulation below proves.

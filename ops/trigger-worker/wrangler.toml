@@ -19,6 +19,8 @@ crons = ["35 9 * * *", "35 10 * * *", "35 11 * * *"]
 [vars]
 GITHUB_OWNER = "aryanzodge123"
 GITHUB_REPO = "norms-newsletter"
+WORKFLOW_FILE = "publish.yml"
+GIT_REF = "main"
 
 # GITHUB_TOKEN is NOT here. It is a secret, set with:
 #   wrangler secret put GITHUB_TOKEN

@@ -12,11 +12,19 @@ healthchecks ping, so the row closes once the deploy has succeeded and the
 dead man's switch is green. `ended_at` is therefore the moment the site was
 live, which is exactly what "late" should be measured against.
 
-The row also carries the triggering event in `notes` as `trigger=<event>`.
-That single field answers two questions: which scheduler published today
-(6.11's whole point, since a dead external trigger is otherwise invisible),
-and section 13's amended migration exit criterion, which requires proving a
-publish was dispatch-triggered rather than cron-triggered.
+The row also carries the trigger in `notes` as `trigger=<source>`. That single
+field answers two questions: which scheduler published today (6.11's whole
+point, since a dead external trigger is otherwise invisible behind a working
+cron), and section 13's migration exit criterion, which requires a publish
+recording `trigger=worker`.
+
+The workflow passes `github.event.inputs.source` when there is one and
+`github.event_name` otherwise, so the three values that reach here are
+`worker` (the Cloudflare Worker), `manual` (a human pressing the button) and
+`schedule` (a GitHub cron). The Worker uses the same `workflow_dispatch` event
+a human does, because that endpoint needs only `Actions: write` while
+repository dispatch would need `Contents: write` (6.11), so the input is the
+only thing that tells them apart.
 
 The trigger arrives as a CLI argument rather than an environment variable
 because `src/config.py` is the only module permitted to read the environment
@@ -113,7 +121,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument(
         "--trigger",
-        help="the GitHub event that started the publish (github.event_name)",
+        help="what started the publish: worker, manual, or schedule",
     )
     parser.add_argument("--dry-run", action="store_true", help="write no row")
     parser.add_argument("--verbose", "-v", action="store_true")

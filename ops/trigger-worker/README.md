@@ -1,8 +1,8 @@
 # trigger-worker
 
 The external publish trigger (SPEC 6.11, decision #31). A Cloudflare Worker
-that POSTs a `repository_dispatch` to this repo three times a morning so the
-publish starts on time instead of whenever GitHub's scheduler gets to it.
+that calls this repo's `workflow_dispatch` endpoint three times a morning so
+the publish starts on time instead of whenever GitHub's scheduler gets to it.
 
 This is deployment infrastructure, not pipeline code. It is never imported by
 `src/`, and pytest does not collect it (`testpaths = ["tests"]`).
@@ -33,6 +33,13 @@ GitHub token.
 
 **1. Create the token.** A fine-grained personal access token, scoped to this
 repository only, with exactly one permission: `Actions: read and write`.
+(`Metadata: Read-only` is added automatically and cannot be removed.)
+
+Deliberately not `Contents: write`, which is what GitHub requires for the
+repository-dispatch endpoint. That permission would also let this token commit
+code, delete files and cut releases. This token lives outside GitHub and the
+workflow it starts runs with every other secret in the project, so it gets the
+narrowest thing that can start a workflow and nothing more (SPEC 6.11).
 
 Set the longest expiry GitHub offers. Check what that maximum currently is when
 you create it, since the policy has changed before. Write the expiry date into
@@ -46,8 +53,8 @@ again.
 GITHUB_TRIGGER_TOKEN=github_pat_... uv run python spikes/check_dispatch.py
 ```
 
-That sends a real dispatch. It is safe: the gate will no-op it unless the
-window is open and today is unpublished.
+That sends a real dispatch. It is safe: it does not set `force`, so the gate
+no-ops it unless the window is open and today is unpublished.
 
 **3. Deploy.**
 
@@ -60,17 +67,20 @@ npx wrangler deploy
 
 ## Checking it works
 
-The morning after deploying, the publish run should show
-`event_name: repository_dispatch` and the site should be live before 06:00 ET.
-Both are visible in one place:
+The morning after deploying, the site should be live before 06:00 ET and the
+run should record `trigger=worker`. Both are visible in one place:
 
 ```bash
 uv run python -m src.timeliness --since 2026-07-28
 ```
 
-`trigger` should read `repository_dispatch` and the verdict `on time`. If it
-reads `schedule`, the Worker is not reaching GitHub and the cron is still doing
-the work.
+`trigger` should read `worker` and the verdict `on time`. If it reads
+`schedule`, the Worker is not reaching GitHub and the cron is still doing the
+work. If it reads `manual`, something dispatched without the `source` input.
+
+The Worker uses the same `workflow_dispatch` event a human does, which is the
+price of the narrower token, so that `source` input is the only thing
+distinguishing them.
 
 Cloudflare's own view:
 

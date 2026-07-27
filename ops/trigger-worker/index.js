@@ -25,10 +25,16 @@ export default {
 };
 
 async function dispatch(env) {
-  // Owner and repo come from wrangler.toml vars rather than being written in
-  // here, because the SPEC 13 migration changes both. Step 4b is then a config
-  // edit, not a code edit.
-  const url = `${API}/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/dispatches`;
+  // Owner, repo, workflow and ref come from wrangler.toml vars rather than
+  // being written in here, because the SPEC 13 migration changes them. Step 4b
+  // is then a config edit, not a code edit.
+  //
+  // The workflow dispatch endpoint, not the repository dispatch one. The
+  // latter is granted under `Contents: write`, which would also let this token
+  // commit code; this one needs only `Actions: write` (SPEC 6.11).
+  const url =
+    `${API}/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}` +
+    `/actions/workflows/${env.WORKFLOW_FILE}/dispatches`;
 
   const response = await fetch(url, {
     method: "POST",
@@ -39,12 +45,19 @@ async function dispatch(env) {
       // GitHub rejects API requests without one.
       "User-Agent": "norms-newsletter-trigger",
     },
-    body: JSON.stringify({ event_type: "publish-window" }),
+    // `source` is what distinguishes this from a human pressing the button,
+    // which is how a dead Worker becomes visible. `force` is deliberately not
+    // sent: the workflow's declared default is false, and this trigger must
+    // never bypass the publish gate.
+    body: JSON.stringify({
+      ref: env.GIT_REF,
+      inputs: { source: "worker" },
+    }),
   });
 
   // A successful dispatch is 204 No Content.
   if (response.ok) {
-    console.log(`dispatched publish-window (${response.status})`);
+    console.log(`dispatched publish (${response.status})`);
     return;
   }
 
