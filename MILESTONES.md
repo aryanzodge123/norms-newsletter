@@ -6,6 +6,142 @@ deferred.
 
 ---
 
+## M5.1 Trigger hardening
+
+Date: 2026-07-27
+Spec: SPEC 6.11 (new), 6.8, section 7, section 8 (timeliness), section 12
+(M5.1 and the definition of done), section 13 (steps 4b, 5, exit criterion),
+decision #31
+Status: code complete, gate green. **Not live**: the Worker needs a token and
+a deploy, both of which are Milind's to do (see Deferred).
+
+### The problem, measured
+
+GitHub's scheduler cannot meet SPEC 6.8's 06:00 ET target. Across 2026-07-21
+to 07-27, `createdAt == startedAt` on every run, so these are firing times and
+not queue wait:
+
+| target | delay |
+|--------|-------|
+| `30 9` (09:30Z) | +140, +115, +115, +108, +82, +92, +192 min |
+| `30 10` (10:30Z) | +111, +99, +97, +88, +69, +71, +173 min |
+
+Every day late. Publication landed 07:15 to 08:52 ET, so "live by 06:00 ET"
+had never once held. **No cron was ever dropped**: all 14 scheduled runs
+arrived. This is a timeliness defect, not a recovery one. An earlier diagnosis
+in this repo's history said 2026-07-27 was never delivered; that was wrong,
+the crons arrived at 12:42Z and 13:23Z and correctly no-opped, and decision
+#31 records the corrected version.
+
+### What was built
+
+**The external trigger.** `ops/trigger-worker/` holds a Cloudflare Worker
+(`index.js`, `wrangler.toml`) that calls the workflow dispatch endpoint at
+09:35, 10:35 and 11:35 UTC. Two cover the DST pair as the GitHub crons do; the
+third is one retry. The GitHub crons stay as backstop.
+
+The Worker carries no logic beyond the POST. Owner, repo, workflow and ref live
+in `wrangler.toml` vars rather than the JS, so SPEC 13 step 4b is a config edit.
+
+**Workflow dispatch, not repository dispatch, and this was a correction.** The
+first draft specified `repository_dispatch`, and SETUP.md told Milind to create
+a token with `Actions: write`. Checking GitHub's fine-grained permission
+reference before he created it showed that is wrong: the repository-dispatch
+endpoint is granted under **`Contents: write`**, which also permits writing and
+deleting files, creating commits and refs, merging pull requests and cutting
+releases. The workflow-dispatch endpoint needs only `Actions: write`.
+
+That difference matters more than a doc typo. This is the one credential held
+outside GitHub, in Cloudflare, and the pipeline it starts runs with the
+Anthropic, Gemini and R2 secrets, so a token able to modify pipeline code would
+be the largest blast radius in the system. Milind chose the narrower token.
+
+The cost is trigger provenance: the Worker now uses the same
+`workflow_dispatch` event a human does, so the event name alone cannot tell
+them apart. `publish.yml` gained a `source` input defaulting to `manual`, which
+the Worker sets to `worker`, and the workflow passes
+`github.event.inputs.source || github.event_name` so three distinct values
+reach run_log: `worker`, `manual`, `schedule`.
+
+One guarantee genuinely weakened and is recorded rather than glossed: with
+repository dispatch, `force` did not exist on that event at all. Now it exists
+with a declared default of `false` that the Worker never overrides, so a stolen
+token could set it. The harm ceiling is a duplicate publish of an
+already-published date, which decision #17 stops from overwriting a real
+edition. That is a far smaller exposure than a `Contents: write` token.
+
+**No gate change**, and 6.11 forbids one. The existing window-plus-idempotency
+gate already handles every case, which the year simulation below proves.
+
+**The `site` run_log row.** `src/site_run.py`, wired in after the healthchecks
+ping. This closed a real gap: section 8 claims run_log holds a row per job and
+lists `site` among them, but nothing had ever written one, which made the new
+timeliness measure unimplementable as merged. `ended_at` on this row is the
+moment the deploy finished, and `notes` carries `trigger=<event>`, which is
+the only way to distinguish a working external trigger from a dead one.
+
+**The timeliness measure.** `src/timeliness.py`, a derived query over run_log
+rather than a stored flag (decision #27). Deliberately not wired into the
+workflow: a late edition is complete, so it must never redden a run. A day
+with no `site` row reports `unknown`, never `on time`.
+
+### How it was verified
+
+`milestone-verify` green: 562 tests pass (48 new), 3 fixtures valid, no
+hardcoded URLs.
+
+The centrepiece is `tests/test_trigger_simulation.py`, which replays all five
+daily triggers against the real gate for every date in 2026 and 2027, with
+GitHub's crons simulated at their **observed** delay rather than as punctual.
+It asserts exactly one publish per day, no day skipped, and every day live
+before 06:00 ET across both DST transitions.
+
+Writing it corrected two of my own assumptions, which is the argument for
+simulating rather than spot-checking:
+
+1. With *punctual* crons the 09:30 firing beats the Worker by five minutes.
+   The Worker wins only because GitHub is late. Now pinned as an explicit
+   counterfactual test, so if GitHub's punctuality ever improves, the evidence
+   that the Worker could be retired is already in the suite.
+2. "Without the Worker every day is late" is false. On standard time a
+   best-case 82-minute delay pushes the 09:30 cron to 05:52 ET, inside the
+   window. It holds for every EDT day, and at the worst observed delay (192
+   min) it holds year-round. All three cases are now separate tests.
+
+Against the real run_log, `--since 2026-07-21` reports seven `unmeasured`
+days, not seven late ones. That is correct and not a bug: the `site` row did
+not exist before today, so the measure cannot see backwards. It also confirms
+the rule that matters, since the summary reads "0 late of 0 measured, 7
+unmeasured" rather than a misleading "0 late". The 82-to-192-minute baseline
+lives in decision #31 and section 8 because it came from GitHub's run list,
+which is the only place it was ever recorded.
+
+`tests/test_workflows.py` gained trigger assertions. Note the trap: YAML 1.1
+parses a bare `on:` as boolean `True`, so `doc["on"]` returns nothing and any
+assertion built on it passes vacuously. The helper asserts `"on" not in doc`
+so a future PyYAML change cannot silently hollow those tests out.
+
+### Deferred
+
+- **Deploy. Not done, and the Worker does nothing until it is.** Create the
+  fine-grained PAT (SETUP.md 2.6), verify with `spikes/check_dispatch.py`
+  (5.6), then `wrangler secret put` and `wrangler deploy`. Both steps need
+  credentials only Milind holds.
+- The collect backup trigger. Approved in principle, recorded in SPEC section
+  11. It needs a staleness check to avoid doubling metered Actions minutes,
+  which is new tested logic, so it lands as its own addition.
+- The 14-day unattended run. Cannot start until the Worker is live: under
+  current timing every day is late, and late now breaks the streak.
+
+### Notes
+
+The `:07` collect cron shift (`6b4da4f`, Finding 4) was criticised during this
+work on the basis of four days of data. That was wrong: it landed 2026-07-25
+17:43Z, leaving one complete day under it (07-26, a clean 8 of 8). Insufficient
+data, not failure. It was left alone.
+
+---
+
 ## Post-M6: stress-test cleanup (Findings 4-7)
 
 Date: 2026-07-25

@@ -1,0 +1,27 @@
+name = "norms-newsletter-trigger"
+main = "index.js"
+compatibility_date = "2026-07-27"
+
+# SPEC 6.11. Three firings a day. The first two are the DST pair, exactly as
+# the GitHub crons are: during EDT 09:35 UTC is 05:35 Eastern, during EST
+# 10:35 UTC is. Whichever one lands at 05:35 publishes, 5 minutes after the
+# window opens; the other is before the window and the gate no-ops it. The
+# 11:35 firing is one retry in case Cloudflare drops a trigger. GitHub's own
+# crons, arriving around 11:30 UTC on a typical day, are the final backstop.
+#
+# The gate makes every firing after the first a no-op, so this costs three
+# short gate jobs a day and nothing else.
+[triggers]
+crons = ["35 9 * * *", "35 10 * * *", "35 11 * * *"]
+
+# The dispatch target. These change at the SPEC 13 migration (step 4b), which
+# is why they live here rather than in index.js.
+[vars]
+GITHUB_OWNER = "aryanzodge123"
+GITHUB_REPO = "norms-newsletter"
+WORKFLOW_FILE = "publish.yml"
+GIT_REF = "main"
+
+# GITHUB_TOKEN is NOT here. It is a secret, set with:
+#   wrangler secret put GITHUB_TOKEN
+# A credential is never written to a file (SPEC 6.10, CLAUDE.md rule 5).

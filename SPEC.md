@@ -492,8 +492,8 @@ manual re-trigger, is a no-op because the day is already published. The
 roughly 5 to 9 minute build so the site is live by 06:00 ET.
 `workflow_dispatch` with `force: true` bypasses both conditions.
 
-A third trigger, `repository_dispatch` with `event_type: publish-window`, is
-sent by an external scheduler per 6.11. It is subject to this same gate with
+An external scheduler also calls `workflow_dispatch` through the API per 6.11,
+setting the `source` input to `worker`. It is subject to this same gate with
 no exceptions, so it changes when the publish is reliably attempted and never
 whether more than one edition can exist for a date. In practice it is the
 trigger that usually publishes, because GitHub's crons do not arrive early
@@ -541,11 +541,22 @@ window were delivered. The defect is lateness, not loss, and it is unbounded
 and not tunable from inside GitHub. Publication landed between 07:15 and 08:52
 ET, so 6.8's "live by 06:00 ET" has never actually held.
 
-The publish workflow therefore accepts a third trigger alongside its two
-crons: `repository_dispatch` with `event_type: publish-window`. A Cloudflare
-Worker Cron Trigger, running on the Cloudflare account that already holds R2,
-sends that dispatch. The two schedulers are independent providers, so the
+A Cloudflare Worker Cron Trigger, running on the Cloudflare account that
+already holds R2, therefore also starts the publish. It calls the workflow
+dispatch endpoint, `POST /repos/{owner}/{repo}/actions/workflows/publish.yml/
+dispatches`, on `main`. The two schedulers are independent providers, so the
 publish now depends on neither one alone.
+
+**Why workflow dispatch and not repository dispatch.** Both would work. The
+deciding factor is the token: GitHub grants the repository-dispatch endpoint
+under `Contents: write`, which also permits writing and deleting files,
+creating commits and refs, merging pull requests and cutting releases. The
+workflow-dispatch endpoint needs only `Actions: write`, which can start
+workflows and nothing else. This credential is the one that lives outside
+GitHub, in a third-party service, and the pipeline it starts runs with the
+Anthropic, Gemini and R2 secrets, so a token able to modify pipeline code is
+the largest blast radius in the system. Least privilege wins, and the cost is
+one workflow input (below).
 
 The Worker fires three times daily, at 09:35, 10:35 and 11:35 UTC. The first
 two cover the DST pair exactly as GitHub's crons do, one of them always
@@ -575,20 +586,52 @@ arrived very late, at 12:42 and 13:23 UTC. Each ran its gate and skipped the
 `publish` job against the already-committed date. Adding a third trigger is
 safe for the same reason a late cron already is.
 
-`force` is not exposed on this path. The gate reads `force` from
-`github.event.inputs`, which is empty for a `repository_dispatch` event, so a
-dispatch can never bypass the window or the idempotency check. Forcing stays a
-deliberate `workflow_dispatch` action.
+**Trigger provenance.** Because the Worker uses the same `workflow_dispatch`
+event a human does, the event name alone cannot tell them apart, and that
+distinction is load-bearing: a dead Worker is otherwise invisible behind a
+working cron (section 8), and section 13's migration exit criterion turns on
+it. The workflow therefore carries a `source` input, defaulting to `manual`,
+which the Worker sets to `worker`. The `site` run_log row records
+`github.event.inputs.source` when present and `github.event_name` otherwise,
+giving three distinct values: `worker`, `manual`, and `schedule`.
+
+**On `force`.** The Worker never sends it, and the input's declared default is
+`false`, so a dispatch does not bypass the window or the idempotency check.
+This is a weaker guarantee than the structural one repository dispatch would
+have given, where the field simply does not exist, and it is worth stating
+plainly rather than glossing: a stolen token could set `force: true`. The harm
+ceiling is a duplicate publish of a date that is already published, which
+decision #17 already prevents from overwriting a real edition. That is a much
+smaller exposure than the `Contents: write` token the alternative required.
 
 **Credential.** The Worker authenticates with a fine-grained GitHub personal
 access token scoped to this repository alone, with a single permission,
-`actions: write`. It is stored as a Cloudflare Worker secret via
+`Actions: read and write`. It is stored as a Cloudflare Worker secret via
 `wrangler secret put` and is never written to a file, committed, or logged
 (6.10). Token expiry is a real failure mode: an expired token silently returns
 publication to GitHub's cron timing rather than failing anything, which is why
 sustained lateness is the signal that watches it (section 8). The expiry date
-is recorded in SETUP.md, and the token is reissued during the section 13
-migration along with the other credentials.
+is recorded in SETUP.md, set to the longest lifetime GitHub allows for a
+fine-grained token (verify the current maximum when issuing it, as that policy
+has changed before), and the token is reissued during the section 13 migration
+along with the other credentials.
+
+A GitHub App was considered and rejected for v1. It would not expire, and it
+would survive the section 13 org transfer more cleanly. It was rejected on
+failure modes rather than on principle: JWT signing is authentication plumbing
+and encodes no scheduling rule, so it does not actually conflict with the
+no-logic rule above. The objection is that it puts roughly 40 lines of RS256
+signing into the one component with no test suite, in the one language the
+project does not otherwise use, and it fails with a 401, the same symptom as
+an expired token but harder to diagnose. That trades a predictable failure on
+a known date for an unpredictable one at any time. The expired-token case is
+benign by comparison: the GitHub crons still publish, so the cost is
+punctuality and not the edition.
+
+Revisit at the section 13 migration, which is the point where the org exists,
+the credential is being reissued anyway, and infrastructure stops fronting
+through one personal account. If this ever gains a second maintainer, the App
+becomes the correct shape.
 
 **Expected effect.** The firing that opens the window publishes at roughly
 09:45 UTC, which is 05:45 ET. In the normal case the Worker becomes the
@@ -792,7 +835,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 29 | The editor is given the per-edition story budget (15-20 target, hard 20 ceiling) and the valid key_point topic codes in the per-call message, not only in the static policy. On 2026-07-24 a busy day with no total-story anchor over-produced 23 stories, and a separate key_point topic slip (`Cybersecurity` for `Cyber`) consumed the other attempt, so a self-correctable over-count fell to a fallback. The prompt now anchors the count where the model decides it and points topic tagging at the short code each candidate already carries. Complements #28, which made the ceiling retryable |
 | 30 | The silver partition write is a full-partition overwrite, not append-only, so unlike bronze it can lose an Iceberg optimistic-concurrency race. On 2026-07-24 a `collect` run scored all 103 clusters and then raised `CommitFailedException` on the commit (the archival partition drop the likely counterparty). The overwrite now reloads the table and retries a bounded number of times before surfacing `write_failed`, which makes decision #5's idempotent-overlap promise (SPEC 6.2) true for the silver overwrite and not only for the append-only bronze table. Scoped to the silver overwrite: bronze and run_log are append-only and rarely conflict, and the closed reason-code set is unchanged (`write_failed` now means the write raised and retries were exhausted) |
 
-| 31 | GitHub's scheduler cannot meet 6.8's 06:00 ET target. Measured 2026-07-21 to 2026-07-27, the publish crons were created 82 to 192 minutes after their target on every single day, so publication landed 07:15 to 08:52 ET and the stated goal never held. No firing was ever dropped: all 14 scheduled runs arrived, so this is a timeliness defect and not a recovery one, and decision #7 already makes lateness safe rather than fatal. The delay is unbounded and not tunable from inside GitHub, so an independent Cloudflare Worker Cron Trigger also sends a `repository_dispatch` (6.11), firing 5 minutes after the window opens. The existing window-plus-idempotency gate handles it with no change, which is what keeps the scheduling rules in tested Python rather than a second copy in JavaScript. Verified live on 2026-07-27, when a manual publish at 12:21 UTC was followed by both crons arriving at 12:42 and 13:23 UTC and each correctly skipping the already-committed date. The GitHub crons are kept rather than replaced, because the gate makes redundancy free and two independent schedulers beat one reliable-looking one |
+| 31 | GitHub's scheduler cannot meet 6.8's 06:00 ET target. Measured 2026-07-21 to 2026-07-27, the publish crons were created 82 to 192 minutes after their target on every single day, so publication landed 07:15 to 08:52 ET and the stated goal never held. No firing was ever dropped: all 14 scheduled runs arrived, so this is a timeliness defect and not a recovery one, and decision #7 already makes lateness safe rather than fatal. The delay is unbounded and not tunable from inside GitHub, so an independent Cloudflare Worker Cron Trigger also calls the workflow dispatch endpoint (6.11), firing 5 minutes after the window opens. It uses workflow dispatch rather than repository dispatch because GitHub grants the latter under `Contents: write`, which also permits committing code, while the former needs only `Actions: write`; this is the one credential held outside GitHub, so least privilege decides it. The existing window-plus-idempotency gate handles the trigger with no change, which is what keeps the scheduling rules in tested Python rather than a second copy in JavaScript. Verified live on 2026-07-27, when a manual publish at 12:21 UTC was followed by both crons arriving at 12:42 and 13:23 UTC and each correctly skipping the already-committed date. The GitHub crons are kept rather than replaced, because the gate makes redundancy free and two independent schedulers beat one reliable-looking one |
 
 ## 11. Remaining open questions
 
@@ -801,11 +844,6 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 - GDELT adapter in v1.1.
 - Whether the migration (section 13) also moves API keys to a
   project-owned email/account set, and which providers allow it cleanly.
-- Whether the 6.11 Worker authenticates with a fine-grained PAT (simple, but
-  expires) or a GitHub App (no expiry, survives the section 13 org transfer
-  more cleanly, but needs JWT signing inside the Worker and so breaks the
-  rule that the Worker carries no logic). PAT for M5.1; the migration is the
-  natural moment to revisit it, since credentials are reissued anyway.
 - Whether collect gains the same external backup trigger. Approved in
   principle. It needs a staleness check so a redundant firing does not double
   metered Actions minutes, and that check is new tested logic, so it lands as
@@ -867,10 +905,11 @@ Migration steps (target: after M6, before launch):
    Update its URL to the new project site in the same step.
 4. Update the mini PC collector's git remote.
 4b. Repoint the external publish trigger (6.11). The Worker posts to
-   `/repos/{owner}/{repo}/dispatches` and the migration changes both halves of
-   that path, so update the Worker's target owner and repo, issue a fresh
-   fine-grained PAT against the new repository with `actions: write`, set it
-   with `wrangler secret put`, and enable fine-grained PAT access in the new
+   `/repos/{owner}/{repo}/actions/workflows/publish.yml/dispatches` and the
+   migration changes both halves of that path, so update the Worker's target
+   owner and repo, issue a fresh fine-grained PAT against the new repository
+   with `Actions: read and write` (and nothing else), set it with
+   `wrangler secret put`, and enable fine-grained PAT access in the new
    organization's settings (an org-level policy, so the repo transfer does not
    carry it). Record the new expiry in SETUP.md. If the Cloudflare account
    itself moved to project ownership, redeploy the Worker there rather than
@@ -882,8 +921,8 @@ Migration steps (target: after M6, before launch):
 7. Flip the repo public, submit the podcast feed to directories, announce.
 
 Exit criterion: one complete unattended 6am publish on the new URL with
-healthchecks green, where the run that published was triggered by the external
-dispatch (6.11) and not by a GitHub cron.
+healthchecks green, where the `site` run_log row for that day records
+`trigger=worker` (6.11) and not `schedule` or `manual`.
 
 The trigger clause is not pedantry. Because either scheduler alone publishes,
 a Worker pointed at the old repo returns 404 and a Worker with an unauthorized
