@@ -1,0 +1,383 @@
+{
+  "date": "2026-07-28",
+  "edition_number": 51,
+  "edition_type": "normal",
+  "headline_of_the_day": "Origin Energy delayed warning 900,000 customers of a data breach.",
+  "headline_cluster_id": "231f3dd1b98c1504b7b414bd00467f9e",
+  "headline_rationale": "A major utility deliberately withheld breach disclosure for three weeks while customers' data was at risk, establishing serious accountability failure at critical infrastructure.",
+  "key_points": [
+    {
+      "text": "Origin Energy admits it waited three weeks to tell 900,000 customers about a hack.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Wildfires in France and Spain force firefighters to work fast before Wednesday's heat returns.",
+      "topic": "World"
+    },
+    {
+      "text": "Meta ignored its own research showing Instagram and Facebook hurt teenagers, Tennessee lawyers told a jury.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Boeing found hundreds of 737 MAX jets with seats installed wrong. The seats could injure passengers during emergencies.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "China uses AI to create fake disaster videos during real floods and typhoons, making rescue harder.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-28.mp3",
+    "duration_seconds": 516,
+    "size_bytes": 6190560
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "f280af16e6609a2ffbeac9b079af85e2",
+          "slug": "amd-software-now-closing-gap-with-nvidia-in-ai-accelerators",
+          "title": "AMD software now closing gap with Nvidia in AI accelerators",
+          "summary": "AMD's AI software and hardware now compete directly with Nvidia's market lead.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing"
+            }
+          ],
+          "article": {
+            "background": "Nvidia dominates AI accelerators, the specialized chips that train and run AI models. Its software, called CUDA, creates a moat: switching costs are high even when AMD's hardware is cheaper or performs better. When we first covered AMD's AI software, we gave it a 0% chance of closing this gap. Software was broken and progress was slow. We submitted dozens of bug reports ourselves.",
+            "what_happened": "AMD has improved its software quality over the past six months. The company is working on better kernel generation, the low-level code that runs on chips. AMD is also offering substantial discounts to major customers like OpenAI. However, AMD still faces challenges. Its internal development systems are unstable. Production delays are hitting its Helios MI455X chips.",
+            "why_it_matters": "If AMD can fix its software and ramp up production, competition would likely bring better products and lower prices for everyone buying AI chips. For now, Nvidia's software advantage keeps most customers locked in. But AMD's improving position could change that equation within the next year or two.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5593dcfc3d82163e16247fd16c8e6e62",
+          "slug": "trump-administration-exempts-starlink-routers-from-federal",
+          "title": "Trump administration exempts Starlink routers from federal foreign-equipment ban",
+          "summary": "SpaceX got Pentagon approval to use foreign-made routers until February 2028.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/07/starlink-gets-exemption-from-fcc-ban-on-routers-made-outside-the-us"
+            }
+          ],
+          "article": {
+            "background": "The FCC made a rule banning routers made outside the US or containing foreign parts. The agency sees these routers as potential security risks. The rule covers all consumer-grade routers and hits most of the market hard.",
+            "what_happened": "Today the Trump administration gave SpaceX's Starlink routers an exemption from the ban. The Department of Defense approved Starlink routers as safe to use. The exemption lasts until February 1, 2028.",
+            "why_it_matters": "Starlink customers can keep their service working without buying new equipment. The exemption shows the government will make exceptions for some companies it trusts. Most other router makers still face the ban's full force.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "4e2ca86e49b231d26f8bbf12e4cb576b",
+          "slug": "netflix-executive-fired-after-revealing-medical-ketamine",
+          "title": "Netflix executive fired after revealing medical ketamine use at company retreat",
+          "summary": "Kevin Baillie says he lost his million-dollar job after revealing drug use in a trust exercise.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://nypost.com/2026/07/26/us-news/netflix-exec-goes-ballistic-after-being-fired-for-stunning-trust-exercise-confession-at-retreat-suit"
+            }
+          ],
+          "article": {
+            "background": "Netflix owns Eyeline Studios, a visual effects company. Kevin Baillie was vice president and head of creative there. He worked on films like Pirates of the Caribbean and Harry Potter. At a work retreat, the company ran a trust exercise. These exercises ask people to share personal details to build team bonds.",
+            "what_happened": "Baillie revealed during the trust exercise that he took medically prescribed ketamine. Netflix launched an investigation into his comments. The company then fired him from his $1.1 million yearly job. Baillie is now suing Netflix over the firing.",
+            "why_it_matters": "This case raises a question about workplace privacy. What you share in a team-building exercise could hurt your job, even if you discuss legal medical treatment. Many people attend retreats where companies ask them to open up. This lawsuit may change how companies handle personal information from these events.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5238484bb814ceba226c54ce3b762df1",
+          "slug": "johnson-johnson-offers-up-to-five-and-a-half-billion",
+          "title": "Johnson & Johnson offers up to five and a half billion dollars to settle talc lawsuits",
+          "summary": "The settlement would resolve tens of thousands of claims linking baby powder to ovarian cancer.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/clyqnz52rp6o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Johnson & Johnson is a healthcare company based in New Jersey. For years, people have sued the company claiming its baby powder caused ovarian cancer, a type of cancer affecting the reproductive system. J&J has denied these claims and changed its baby powder formula.",
+            "what_happened": "J&J offered to pay up to $5.5 billion to settle tens of thousands of lawsuits in the US. The settlement would resolve the long legal battle over talc-based products. The company says the allegations are meritless but is willing to settle.",
+            "why_it_matters": "This settlement ends a costly legal dispute that has hung over J&J for years. If approved, it would resolve claims from many people who say they got cancer from the company's products.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "062dd857cfefc0d88d50fb3da51ff7f6",
+          "slug": "netanyahu-has-shattered-israel-s-standing-in-america",
+          "title": "Netanyahu has shattered Israel's standing in America, analysts say",
+          "summary": "The prime minister's actions have damaged the US-Israel alliance, foreign policy experts say.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theatlantic.com/ideas/2026/07/bibi-netanyahu-israel-failures-antisemitism/688050"
+            }
+          ],
+          "article": {
+            "background": "In 1982, Benjamin Netanyahu worked as a marketing director for a furniture company in Jerusalem. Israel's ambassador in Washington met him at a conference and saw potential. The ambassador asked Netanyahu to move to Washington. His job was to help sell Israel to Americans instead of selling furniture. Netanyahu spoke fluent English with no accent. He soon became the face of Israel on American television.",
+            "what_happened": "Netanyahu built his career on claiming he understood America. He became a regular on shows like Nightline and Larry King Live. Over decades, he used that reputation to lead Israel. But experts say his recent actions have damaged the US-Israel alliance. His standing in America has collapsed.",
+            "why_it_matters": "The US-Israel relationship has long been central to American foreign policy. When Israel's leader loses support among American voters and lawmakers, it weakens both countries. Netanyahu's decline in America affects what help the US will give Israel. It also shapes how Congress and the public view Israeli policy going forward.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "74f2f037d952ed7d8f5664c7d97d91fe",
+          "slug": "zelensky-and-netanyahu-both-visit-washington-to-discuss",
+          "title": "Zelensky and Netanyahu both visit Washington to discuss active conflicts",
+          "summary": "Ukraine's and Israel's leaders meet President Trump separately to discuss their wars.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cd0xlnz2yk1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Senator Lindsey Graham, a longtime Republican, died recently. His funeral is Tuesday in Washington. It is drawing two world leaders to the capital: Ukrainian President Volodymyr Zelensky and Israeli Prime Minister Benjamin Netanyahu. Both leaders plan to meet separately with President Donald Trump at the White House.",
+            "what_happened": "Zelensky and Netanyahu will both attend Graham's funeral Tuesday. Zelensky will discuss the war in Ukraine with Trump. Netanyahu will discuss the conflict involving Iran. The two leaders are meeting Trump on the same day but at different times.",
+            "why_it_matters": "These talks matter because Trump's support shapes US aid to both countries. How Trump responds to each leader will signal what help the US will give. The timing shows how much Graham mattered to both conflicts before his death.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4948dfa0390f5044d0d8d7007b044645",
+          "slug": "more-than-220-000-forced-from-homes-as-french-wildfires",
+          "title": "More than 220,000 forced from homes as French wildfires spread toward Bordeaux",
+          "summary": "Strong winds push flames toward cities as 220,000 people leave their homes before midweek heat hits.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/07/28/nx-s1-5909617/more-than-220-000-people-forced-to-leave-their-homes-due-to-wildfires-in-france"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "3fb908a7ba028d787b0590dea1031552",
+          "slug": "extreme-rainfall-brings-flash-floods-and-typhoons-across",
+          "title": "Extreme rainfall brings flash floods and typhoons across Asia",
+          "summary": "Afghanistan to Taiwan face severe flooding. Thousands of people are displaced and homes destroyed.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/jul/28/extreme-rainfall-asia-flash-floods-typhoons-climate-change"
+            }
+          ],
+          "article": {
+            "background": "Parts of Asia are getting extreme rainfall. From Afghanistan to Taiwan, heavy rains have brought flash floods and typhoons. In rural areas, homes made of stone and mud collapse easily when wet. Rains like these are hitting harder and arriving earlier each year, destroying roads and crops.",
+            "what_happened": "In the remote district of Dur Baba in eastern Afghanistan, rain fell for 10 days and 10 nights without stopping. Construction worker Anar Gul's kitchen collapsed. His neighbor Sayed Afsar Sadat lost a large part of his house.",
+            "why_it_matters": "For people in rural Afghanistan and similar areas, these storms now destroy homes and wash away crops faster than communities can rebuild. The pattern is getting worse. Heavier rains arriving earlier each year means more people will lose their houses and livelihoods.",
+            "quote": {
+              "text": "It rained for 10 days and 10 nights, non-stop – I'd never seen anything like it.",
+              "attribution": "Anar Gul, construction worker in Dur Baba, eastern Afghanistan",
+              "source_url": "https://www.theguardian.com/environment/2026/jul/28/extreme-rainfall-asia-flash-floods-typhoons-climate-change"
+            }
+          }
+        },
+        {
+          "cluster_id": "25213524c1378e9ee3b0c8526e9edf85",
+          "slug": "asia-faces-second-energy-crisis-as-red-sea-oil-blockade",
+          "title": "Asia faces second energy crisis as Red Sea oil blockade worsens",
+          "summary": "Houthi threats close a second Middle East shipping route, leaving only the Suez fully open.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/28/asia-energy-oil-crisis-red-sea-blockade-houthis"
+            }
+          ],
+          "article": {
+            "background": "Asia relies heavily on Middle Eastern oil. Japan, South Korea, Thailand, and the Philippines get up to 90% of their oil imports from that region. Oil travels to Asia through several sea routes. The Strait of Hormuz, between Iran and Oman, closed recently. Now a second route faces trouble: the Bab al-Mandab strait near Yemen.",
+            "what_happened": "Yemen's Houthis launched a blockade of ships carrying Saudi oil through the Bab al-Mandab strait. This is the southern entrance to the Red Sea. The blockade leaves only the Suez Canal completely open for gulf oil to reach Asia. Asian governments are scrambling to secure oil supplies after this second major disruption in six months.",
+            "why_it_matters": "When oil routes close, Asian countries struggle to buy enough fuel. Energy costs rise for electricity and gasoline. Higher fuel prices also increase shipping costs for goods, making them more expensive for consumers. Many Asian nations now have few options left to find oil elsewhere.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "86d65c70e9f4cb5b40c422d9ee04a643",
+          "slug": "tennessee-tells-jury-meta-ignored-its-own-research-on-teen",
+          "title": "Tennessee tells jury Meta ignored its own research on teen harm",
+          "summary": "Tennessee says Meta's own papers prove it knew Instagram and Facebook hurt teens.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/jul/27/meta-tennessee-trial-jury"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Instagram and Facebook, two of the world's largest social media platforms. Teenagers use these apps frequently. Tennessee's state government filed a lawsuit claiming Meta designed its platforms to be addictive and harmful to young users. The trial began Monday in Nashville.",
+            "what_happened": "Tennessee's lawyers told the jury that Meta's own internal research showed the platforms harm teenagers. The state said Meta knew about these harms but ignored them to make more money. Meta's attorneys countered that the company is transparent about how it works. The trial is expected to last seven weeks.",
+            "why_it_matters": "If Tennessee wins, it could force Meta to change how Instagram and Facebook work for teen users. The outcome may set rules about what social media companies can do when their own research shows their platforms cause harm. Other states could file similar cases based on what happens here.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4eb682b09758bee36aa553747e782faf",
+          "slug": "boeing-737-max-seats-incorrectly-installed-on-hundreds-of",
+          "title": "Boeing 737 MAX seats incorrectly installed on hundreds of jets in US",
+          "summary": "Federal regulators say the seats could hurt passengers or block aisles during emergency landings.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.channelnewsasia.com/world/seats-hundreds-boeing-737-max-jets-were-incorrectly-installed-us-aviation-agency-6281886"
+            }
+          ],
+          "article": {
+            "background": "The FAA, or Federal Aviation Administration, oversees safety for planes registered in the US. Boeing makes the 737 MAX, a common commercial jet. Airlines use these planes for short and medium flights.",
+            "what_happened": "On July 27, the FAA said seats on 453 Boeing 737 MAX jets registered in the US were installed wrong. The agency issued a directive requiring airlines to fix them. If not fixed, the seats could hurt passengers during an emergency landing or block the aisle during evacuation.",
+            "why_it_matters": "If you fly on a 737 MAX in the US, you may be on one of the affected planes. Improperly installed seats could fail to work right in an emergency. Airlines must repair them before the planes fly again.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "231f3dd1b98c1504b7b414bd00467f9e",
+          "slug": "origin-energy-delayed-telling-900-000-customers-about-data",
+          "title": "Origin Energy delayed telling 900,000 customers about data breach for three weeks",
+          "summary": "Australia's largest energy company waited three weeks after a hack to tell customers.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/jul/28/about-900000-origin-energy-customers-affected-by-hack-as-company-admits-it-was-warned-weeks-before-public-told"
+            }
+          ],
+          "article": {
+            "background": "Origin Energy is Australia's largest energy retailer. It serves 4.8 million customer accounts. The company sells electricity, gas, LPG, and internet to homes and businesses. On July 23, Norm reported that a hack had exposed customer data.",
+            "what_happened": "Origin admitted it learned of the hack three weeks before telling the public. About 900,000 current and former customers were affected. The exposed data includes names, addresses, birth dates, and phone numbers. It also includes account details and the last four digits of credit cards. The last three digits of bank accounts were also exposed.",
+            "why_it_matters": "If you are or were an Origin customer, the company will notify you if your data was accessed. The delayed disclosure means hackers had weeks of extra time. This matters because the sooner customers know, the sooner they can watch for fraud or identity theft.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "da404d850fb08c49e6d2fdcd9d27e8e1",
+          "slug": "china-faces-wave-of-fake-ai-disaster-videos-during-real",
+          "title": "China faces wave of fake AI disaster videos during real emergencies",
+          "summary": "AI is spreading false rescue information during floods and typhoons across China.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cx27mjvxgg1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Typhoon Noul hit China this past weekend. As the country deals with the storm's damage, officials face a growing problem: fake videos made with artificial intelligence, or AI. Recent storms and floods have brought a flood of false footage to social media. The fake videos show things like dead bodies in floodwaters, severe flooding in areas that were not actually hit, and made-up emergency response scenes.",
+            "what_happened": "Fake AI videos have spread widely across Chinese social media during recent natural disasters. These videos depict scenes that never happened. Some show false flooding in unaffected areas. Others show fabricated emergency response efforts. Officials must now sort real disaster footage from deepfakes while managing the actual crisis.",
+            "why_it_matters": "False videos can spread panic and cause confusion during emergencies. People may act on false information about where help is needed. They may overestimate damage in some places and underestimate it in others. This gets in the way of real relief efforts. As AI tools become easier to use, this problem will likely get worse.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "84b4587425e2a9ad6bfa44eb398efdfb",
+          "slug": "attackers-exploit-maximum-severity-flaw-in-arista-network",
+          "title": "Attackers exploit maximum-severity flaw in Arista network management software",
+          "summary": "A critical flaw in Arista network gear lets attackers run any code they want.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html"
+            }
+          ],
+          "article": {
+            "background": "Arista VeloCloud Orchestrator (VCO) is software that manages network connections for businesses. The on-premises version runs on a company's own servers rather than in the cloud. A maximum-severity flaw in this version is now under active attack.",
+            "what_happened": "The flaw, tracked as CVE-2026-16812, is a command injection bug. It has a CVSS score of 10.0, the highest rating. Remote attackers can exploit it to run code on the VCO host computer. Arista disclosed the flaw in a Monday advisory.",
+            "why_it_matters": "If your company runs VeloCloud Orchestrator on-premises, attackers could breach your network. They could access data flowing through it. Apply Arista's security patches as soon as they are available.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "dd01730e5364e3d9063cfa729568a7c9",
+      "title": "The Cyclospora outbreak was, and still is, a communications failure",
+      "url": "https://www.cidrap.umn.edu/cyclospora/cidrap-op-ed-cyclospora-outbreak-was-and-still-communications-failure",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "695de48cf053c3c6087e747dcf9a3222",
+      "title": "The cocaine superhighway from Ecuador to Europe - BBC reports on the gangs and police fightback",
+      "url": "https://www.bbc.co.uk/news/articles/cdx7n1r54nno?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6f90068be3e661ae19eb644d9ffdad9b",
+      "title": "Gunmen attack a community in Nigeria and kill 30 people, residents say",
+      "url": "https://www.pbs.org/newshour/world/gunmen-attack-a-community-in-nigeria-and-kill-30-people-residents-say",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "9ebac6b0684c7167050021e370190d31",
+      "title": "India's youth-led 'cockroach' protests expose cracks in Modi's government",
+      "url": "https://www.pbs.org/newshour/show/indias-youth-led-cockroach-protests-expose-cracks-in-modis-government",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "99afd2e8f8fd35ee9628736a74e27336",
+      "title": "Trump warns of return to ‘strong military action’ if Iran diplomacy fails",
+      "url": "https://www.theguardian.com/world/2026/jul/27/trump-warns-return-strong-military-action-iran-diplomacy-fails",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "f93bab6c75fff47111435e309d23946c",
+      "title": "Burnham to tell schools in England to adapt teaching to local business needs",
+      "url": "https://www.theguardian.com/politics/2026/jul/27/burnham-to-tell-schools-in-england-to-adapt-teaching-to-local-business-needs",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "68b8faeaa55fbebb1d05db469fdad669",
+      "title": "Number of suspects in fatal Seattle food festival shooting rises to three",
+      "url": "https://www.bbc.co.uk/news/articles/c78gjyx4q2yo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 138,
+    "clusters_considered": 124,
+    "stories_run": 14,
+    "sources": 13,
+    "sections_held": 0
+  }
+}
