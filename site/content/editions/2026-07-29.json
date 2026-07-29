@@ -1,0 +1,472 @@
+{
+  "date": "2026-07-29",
+  "edition_number": 52,
+  "edition_type": "normal",
+  "headline_of_the_day": "Iran fires missiles at US forces in Gulf, breaking pause",
+  "headline_cluster_id": "9d1da4242eab03dca95650240f4c9a1a",
+  "headline_rationale": "Direct armed conflict between Iran and US forces represents an immediate escalation with consequences for global oil markets and regional stability.",
+  "key_points": [
+    {
+      "text": "Iran fired multiple missiles at American forces in the Gulf, breaking a pause.",
+      "topic": "World"
+    },
+    {
+      "text": "Google spent $490 million per day on AI in Q2, its first negative cash quarter.",
+      "topic": "Business"
+    },
+    {
+      "text": "A Japan earthquake killed at least 13 people and injured over 100.",
+      "topic": "World"
+    },
+    {
+      "text": "The Senate confirmed Jay Clayton as director of national intelligence.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "A coordinated cyberattack disrupted water utilities in over 30 Minnesota communities.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "0a7af3fd0b93c8e6730cad01e2fb9e71",
+          "slug": "israel-paying-millions-to-train-ai-chatbots-on-gaza",
+          "title": "Israel paying millions to train AI chatbots on Gaza messaging",
+          "summary": "A former Trump campaign manager ran an operation posting blog posts to train AI.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.dropsitenews.com/p/israel-brad-parscale-ai-chatbots-gaza"
+            }
+          ],
+          "article": {
+            "background": "Israel has been running a campaign to shape how AI systems discuss Gaza and the Israeli-Palestinian conflict. Since October, former Trump campaign manager Brad Parscale has overseen the operation. It posts hundreds of blog posts arguing Israel's positions on Gaza. The goal is to feed these posts into AI training data so the chatbots absorb these narratives.",
+            "what_happened": "Israel paid millions for this campaign. Articles posted under it claim journalists in Gaza have ties to terrorist groups. Other pieces question specific deaths during the conflict. The strategy works if AI systems absorb these arguments without users knowing a funded campaign created the content.",
+            "why_it_matters": "The chatbots you use might sound like they are reporting facts when they are actually repeating arguments designed by one side of a conflict. You will not know the source or the funding behind what an AI tells you about Gaza. This shapes what information reaches people and how they understand major world events.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "aaf1c30bd0fac793cf56bec6aeafe7d0",
+          "slug": "thousands-of-authors-pirated-books-power-generative-ai",
+          "title": "Thousands of authors' pirated books power generative AI training",
+          "summary": "Authors like Stephen King and Zadie Smith's books were used for AI without permission.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theatlantic.com/technology/archive/2023/08/books3-ai-meta-llama-pirated-books/675063"
+            }
+          ],
+          "article": {
+            "background": "Large language models are AI systems that learn to answer questions by processing huge amounts of written material. ChatGPT and similar tools work this way. Training these models requires feeding them vast datasets of text. But much of how this happens stays hidden from the public.",
+            "what_happened": "An investigation found that thousands of copyrighted books were in a dataset called Books3. This dataset trained Meta's large language model. The books included works by Stephen King, Zadie Smith, Michael Pollan, and many other authors. These writers did not consent to their work being used this way.",
+            "why_it_matters": "If your book or writing could be used to train AI without your permission, so can anyone's. Authors lose control over how their work is used and may compete with AI systems trained on their own words. This raises hard questions about who owns what gets put into AI systems and what happens when creators are not asked first.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "53d306d8845726920f627a6659ccebf8",
+          "slug": "google-posts-first-negative-cash-quarter-since-going-public",
+          "title": "Google posts first negative cash quarter since going public",
+          "summary": "Google spent $44.9 billion on AI in three months, more than it earned.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://finance.yahoo.com/technology/ai/articles/google-spent-490-million-day-163000234.html"
+            }
+          ],
+          "article": {
+            "background": "Alphabet, Google's parent company, has been profitable for 22 years since going public in 2004. Every quarter during that time, the company generated more cash than it spent. This streak reflected Google's dominant search business and disciplined spending. But the race to build artificial intelligence systems has changed that equation.",
+            "what_happened": "Between April and June this year, Alphabet spent $44.9 billion on AI infrastructure like chips, servers, and data centers. That is roughly $490 million every single day. The company generated $39.1 billion in cash during the same three months. For the first time as a public company, it burned more cash than it made, losing $5.9 billion.",
+            "why_it_matters": "This shows the enormous cost of competing in AI. Big tech companies are racing to build the most powerful systems, and Alphabet is spending heavily to keep pace. For most people, this does not change what they pay for Google or how it works. But it signals that AI competition is expensive enough to reshape even the most profitable companies on Earth.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0e0ffae714c7948afbec739c32e6aa54",
+          "slug": "johnson-and-johnson-offers-up-to-5-5-billion-to-settle-baby",
+          "title": "Johnson and Johnson offers up to $5.5 billion to settle baby powder lawsuits",
+          "summary": "The proposed settlement aims to close tens of thousands of ovarian cancer claims.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/clyqnz52rp6o"
+            }
+          ],
+          "article": {
+            "background": "Johnson & Johnson is a healthcare company based in New Jersey. It makes baby powder and other consumer products. For years, the company has faced lawsuits from people who claim talcum powder, a mineral in some products, caused ovarian cancer. J&J has denied the claims and changed its baby powder formula.",
+            "what_happened": "J&J offered up to $5.5 billion to settle tens of thousands of US lawsuits. The lawsuits alleged that its baby powder and talc-based products caused ovarian cancer. The company's vice president of litigation, Erik Haas, called the claims meritless but said J&J was willing to settle to end the long legal battle.",
+            "why_it_matters": "This settlement may help people who bought the products and believe they were harmed. The case also raises broader questions about product safety and what companies owe consumers when they think a purchase made them sick.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "28dfd9c43d463eeaae8fbdd519eede74",
+          "slug": "federal-reserve-expected-to-hold-rates-steady-despite",
+          "title": "Federal Reserve expected to hold rates steady despite inflation pressure",
+          "summary": "The Federal Reserve meets Wednesday and might raise rates to fight inflation.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_economy",
+              "url": "https://www.npr.org/2026/07/29/nx-s1-5910558/federal-reserve-expected-to-hold-rates-steady-despite-pressure-to-combat-inflation"
+            }
+          ],
+          "article": {
+            "background": "The Federal Reserve sets interest rates for the US economy. Higher rates make borrowing more expensive for people and businesses. Lower rates make borrowing cheaper. The Fed adjusts rates to control inflation, which is when prices rise too fast.",
+            "what_happened": "Federal Reserve officials met Wednesday to decide on interest rates. They chose to hold rates steady. Officials said they might raise rates at a future meeting if inflation stays high.",
+            "why_it_matters": "Higher rates affect what you pay for a car loan, credit card, or mortgage. They also affect what banks pay you on savings. The Fed's choice matters because inflation is still above its target. If inflation does not fall, the Fed may raise rates soon, which would make borrowing more costly for most people.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c8003632baef211322bfb954087d31b4",
+          "slug": "equities-surpass-real-estate-as-top-us-wealth-driver-for",
+          "title": "Equities surpass real estate as top US wealth driver for first time since World War Two",
+          "summary": "Long-term shift marks historic change in how Americans build and hold wealth.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/business/finance/equities-surpass-real-estate-top-us-wealth-driver-first-time-since-ww2-goldman-2026-07-23"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "9d1da4242eab03dca95650240f4c9a1a",
+          "slug": "iran-launches-missiles-at-us-forces-in-gulf",
+          "title": "Iran launches missiles at US forces in Gulf",
+          "summary": "Iran fired multiple missiles at American forces, ending a pause in fighting.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/iran-launched-multiple-missiles-at-american-forces-u-s-military-says"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/29/iran-missile-attack-us-base-forces"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c70g6y24d76o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The U.S. and Iran have been trading military strikes over control of the Strait of Hormuz, a key waterway for global shipping. Fighting had paused for about two weeks as mediators tried to negotiate a ceasefire. On Tuesday, that pause ended.",
+            "what_happened": "Iran launched multiple ballistic missiles at U.S. forces in the Middle East at 5:45 p.m. ET on Tuesday. U.S. Central Command said all the missiles were intercepted. The U.S. military and Saudi Arabian forces then struck Iran-aligned groups in Iraq in response.",
+            "why_it_matters": "These strikes affect global oil prices and shipping. The Strait of Hormuz is critical for world trade, and fighting there disrupts routes that move energy and goods worldwide. The rapid escalation shows how fragile any ceasefire remains.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "738d7c2da4b1795b00ce4285783c1e9b",
+          "slug": "japan-earthquake-kills-at-least-13-injures-over-100",
+          "title": "Japan earthquake kills at least 13, injures over 100",
+          "summary": "A 6.8 magnitude earthquake hit southern Japan and collapsed a shopping mall.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/28/japan-earthquake-traps-people-collapsed-shopping-mall"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cgewgxlpj3po?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/07/29/nx-s1-5911613/japan-earthquake-updates"
+            }
+          ],
+          "article": {
+            "background": "Japan sits on the Pacific Ring of Fire, where tectonic plates meet. This makes earthquakes common there. On Tuesday afternoon, a 6.8-magnitude earthquake struck Kumamoto prefecture on Kyushu, the southernmost of Japan's main islands.",
+            "what_happened": "At least 13 people died and hundreds were injured. The quake knocked out power to thousands of homes. It damaged roads, bridges, and buildings across the region. Nineteen people went missing at an Aeon shopping mall and a paper factory. Rescuers pulled eight people from the mall overnight, but two women in their 20s were found dead. About 9,800 people evacuated to shelters. Bullet trains and some airport flights remained suspended.",
+            "why_it_matters": "If you live in or travel to Japan, earthquakes disrupt daily life with little warning. They damage homes, cut off power and water, and block roads for days or weeks. This disaster shows why fast rescue matters: each hour that passes reduces the chance of finding survivors trapped in rubble. Even countries with strong building codes and good preparedness still suffer heavy losses.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "21ef4d448b303d5d1f3656c022b1c892",
+          "slug": "netanyahu-and-zelenskyy-meet-trump-on-back-to-back-days",
+          "title": "Netanyahu and Zelenskyy meet Trump on back-to-back days",
+          "summary": "The meetings signal potential shifts in US approach to Israel and Ukraine conflicts.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/what-netanyahu-and-zelenskyy-are-hoping-to-accomplish-after-meetings-with-trump"
+            }
+          ],
+          "article": {
+            "background": "President Trump recently hosted meetings with Israeli Prime Minister Netanyahu and Ukrainian President Zelenskyy. Both leaders seek stronger U.S. support for their countries' military needs. Trump met with each leader separately after attending a memorial service for late Senator Lindsey Graham, who had backed both Israel and Ukraine.",
+            "what_happened": "Netanyahu and Zelenskyy each met with Trump to discuss their countries' goals. Both leaders hope to gain more military aid and diplomatic backing from the U.S. The meetings took place as Trump shapes his approach to conflicts in the Middle East and Eastern Europe.",
+            "why_it_matters": "What the U.S. decides to give these countries affects global stability. American military aid and diplomatic choices can shift the course of these conflicts. For Americans, this matters because large conflicts abroad sometimes pull in U.S. resources or troops.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e62388026cb6cf75153cf82e4057d790",
+          "slug": "france-evacuates-thousands-more-as-wildfires-spread-toward",
+          "title": "France evacuates thousands more as wildfires spread toward Bordeaux",
+          "summary": "New wildfires forced 4,000 more people to leave tourist areas on the Atlantic coast.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/07/29/g-s1-136057/france-wildfires"
+            }
+          ],
+          "article": {
+            "background": "Wildfires have swept southwestern France since late July. Norm covered this story starting July 24, when about 30,000 people fled fires in France and Spain. The evacuation has grown rapidly. By July 26, more than 300,000 had fled. A vast wildfire west of Bordeaux has driven the crisis.",
+            "what_happened": "On Tuesday, French authorities ordered 4,000 more people to leave tourist areas on the Atlantic coast. Fresh flames erupted near Grand Crohot, a popular beach on the Lège-Cap-Ferret peninsula. Firefighters increased their aircraft from 18 to 23 planes and helicopters. They dropped water and fire retardant to stop the flames from spreading.",
+            "why_it_matters": "This may be France's largest peacetime evacuation. For people living or visiting southwestern France, danger continues to grow. Returning heat is making fires harder to control, even as more aircraft arrive to fight them.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "253fffff9bbf82b9ea147391ff48406d",
+          "slug": "us-bans-import-of-foreign-made-robots",
+          "title": "US bans import of foreign-made robots",
+          "summary": "The FCC banned imports of foreign-made humanoid and mobile robots, targeting China.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/972259/us-foreign-robots-power-inverter-ban"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/jul/28/fcc-ban-humanoid-robots-china"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cp9e2ex3ekyo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US government announced a ban on Tuesday on imports of advanced foreign-made robots and power inverters. The robots include humanoid models and four-legged machines. Many are made in China as that country invests heavily in robotics and artificial intelligence.",
+            "what_happened": "The Federal Communications Commission says the banned robots pose risks to national security. The FCC defines them as advanced robotic devices that collect data. Foreign actors could use that data to watch Americans or boost intelligence work. The ban also covers power inverters, devices used in data centers and solar panels.",
+            "why_it_matters": "For now, this mainly affects businesses and research facilities, not everyday people. But it signals a broader US strategy to limit which foreign technologies can enter the country. Companies that use imported robots or power inverters will need to find other suppliers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8e17e6ef0edfa52323c57e3011bbb1ca",
+          "slug": "foreign-solar-inverters-banned-from-us-grid-starting-today",
+          "title": "Foreign solar inverters banned from US grid starting today",
+          "summary": "The FCC banned solar projects in the US that use foreign-made inverters.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://pv-magazine-usa.com/2026/07/28/fcc-bans-foreign-produced-solar-inverters-grid-lockout-begins-today"
+            }
+          ],
+          "article": {
+            "background": "An inverter converts electricity from solar panels and batteries into the form that homes and power grids use. The FCC is a federal agency that regulates communications and electronics. It has been expanding a list of equipment it sees as a security risk to the power grid.",
+            "what_happened": "On July 28, 2026, the FCC added foreign-made inverters to its banned equipment list. Any new solar or battery system using an imported inverter without prior FCC approval cannot legally turn on. There is no grace period, phase-in time, or grandfather clause. Developers must stop placing orders today and find new domestic suppliers.",
+            "why_it_matters": "If you planned to install solar panels or battery storage, your project may face delays. Builders now have to find replacement equipment from domestic vendors instead of using their existing supply chains. This ban has frozen the regulatory pipeline, meaning new systems cannot move forward until equipment sourcing changes.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "91a6949384e64bddc77733a995f2e07f",
+          "slug": "kids-who-own-phones-have-poorer-reading-scores-than-those",
+          "title": "Kids who own phones have poorer reading scores than those who do not",
+          "summary": "A UCLA study found that kids with cellphones have lower reading scores.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://newsroom.ucla.edu/releases/owning-a-cell-phone-associated-with-poorer-reading-comprehension-schoolchildren"
+            }
+          ],
+          "article": {
+            "background": "Parents and teachers worry that cellphones hurt how well kids read. But until now, very little research tested this concern. UCLA psychologists decided to study whether owning a phone affects reading skills in elementary school children.",
+            "what_happened": "The new study found a clear connection between owning a cellphone and lower reading scores. Kids who owned phones had worse reading comprehension than those who did not. The link held even if kids left their phones at home.",
+            "why_it_matters": "If your child owns a phone, this suggests reading ability may suffer. The effect shows up from just owning the device, not only from using it at school. Schools that ban phones might help kids read better, though more research is needed to confirm why.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e7fc3d39e51886359e1f0ed0bd2e2010",
+          "slug": "china-tests-largest-superconducting-fusion-magnets-ever",
+          "title": "China tests largest superconducting fusion magnets ever built",
+          "summary": "The 582-tonne magnets passed key tests at fusion reactor project called artificial sun.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://theprint.in/india/breakthrough-china-artificial-sun-project-6-5-tesla-magnet/2999321"
+            }
+          ],
+          "article": {
+            "background": "Nuclear fusion is the process that powers the sun. It happens when two atoms smash together and release enormous energy. China is building an experimental reactor, called an artificial sun, designed to recreate this process on Earth. The reactor needs superconducting magnets to work. These magnets keep superheated plasma from touching the reactor walls.",
+            "what_happened": "China's superconducting magnets passed key tests at the Institute of Plasma Physics. The largest magnet tested weighs 582 tonnes. It is a core part of China's fusion reactor project. The magnet's job is to hold plasma that is hotter than the sun's core without letting it touch anything.",
+            "why_it_matters": "Fusion could one day power cities without the waste problems that nuclear plants have today. The magnets are a crucial step toward making fusion work. We are still far from fusion plants that generate electricity for homes and businesses. Breakthroughs like this one move the goal closer.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "ea8cdf3210d5ad4725aab4ccf6f26afd",
+          "slug": "cyberattack-disrupts-water-utilities-in-30-minnesota",
+          "title": "Cyberattack disrupts water utilities in 30 Minnesota communities",
+          "summary": "A cyberattack hit water systems over the weekend, affecting tens of thousands.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://statescoop.com/coordinated-cyberattack-disrupts-water-utilities-in-30-minnesota-communities"
+            }
+          ],
+          "article": {
+            "background": "Water utilities provide the water that homes and businesses use daily. More than 30 Minnesota communities saw their water and wastewater systems go offline Sunday and Monday. The state's technology bureau announced the disruptions Tuesday. One affected city was Braham, a community of 1,700 people.",
+            "what_happened": "A coordinated cyberattack took water systems offline across Minnesota on Sunday and Monday. The City of Braham announced Monday morning that its water plant was offline. Officials asked residents to use less water because the city water tower held only a limited supply. The plant came back online later that day.",
+            "why_it_matters": "Water outages disrupt daily life quickly. People rely on water to drink, cook, and bathe. These attacks on multiple systems in one area show that utilities across the country face real threats to the services communities depend on.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "81684e27962e0cc4db9ca599d8dd53a6",
+          "slug": "two-npm-packages-compromised-to-deliver-remote-access-trojan",
+          "title": "Two npm packages compromised to deliver remote access trojan",
+          "summary": "Two joyfill package versions contained hidden code that installs malware when imported.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/two-compromised-joyfill-npm-packages.html"
+            }
+          ],
+          "article": {
+            "background": "npm packages are code libraries developers download and use in their projects. The @joyfill namespace holds packages that provide user interface parts. Beta versions are test releases before official launch.",
+            "what_happened": "Two beta versions of @joyfill packages were hacked. The affected versions are @joyfill/layouts@0.1.2-2773.beta.0 and @joyfill/components@4.0.0-rc24-2773-beta.4. They now carry a remote access trojan (RAT), a tool that lets hackers control infected systems. The malware runs when Node.js loads the packages. It uses encrypted code sent through blockchain networks like Tron, Aptos, and BNB Smart Chain.",
+            "why_it_matters": "If you use these beta packages in your projects, your system could be compromised. The hack is novel because the malware runs at import time, not through the usual npm hooks that many developers watch for. Check your projects for these exact versions and remove them if found.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "209510c91d4236fea7edf4e5d95a5441",
+      "title": "Senate confirms Trump ally Jay Clayton as director of national intelligence",
+      "url": "https://www.theguardian.com/us-news/2026/jul/28/senate-confirms-jay-clayton-national-intelligence-director",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "336db5d3aaa1c29c1069b1cae08f5d0b",
+      "title": "Why doctors say abortion bans are worsening medical care during miscarriages",
+      "url": "https://www.pbs.org/newshour/show/why-doctors-say-abortion-bans-are-worsening-medical-care-during-miscarriages",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "dc66e9a402747d648a52d8b4e018edb4",
+      "title": "A U.S. Citizen Deleted His Phone's Data. Now He Faces a Felony Charge",
+      "url": "https://www.nytimes.com/2026/07/28/us/duress-password-phone-wipe-charge.html",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "0ba59553ea43c1283ec38b16a6aaee1e",
+      "title": "TSMC is accelerating Arizona factory build-out to capitalize on AI 'megatrend'",
+      "url": "https://www.cnbc.com/2026/07/20/tsmc-arizona-fab-capacity-ai-chip-demand.html",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "7b90af2968318e4ad1afe774bf20728a",
+      "title": "Datacentre projects could face fees for grid access to ease connection queue, Ofgem says",
+      "url": "https://www.theguardian.com/uk-news/2026/jul/29/datacentre-projects-fees-grid-access-connection-queue-ofgem",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "2030cc579b3b4bb151d7088be82e8111",
+      "title": "Animal sanctuary facing closure due to hot weather",
+      "url": "https://www.bbc.co.uk/news/articles/c8rng70k711o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "cf91e344c34457e41601d545441514fe",
+      "title": "'No safe options' for thousands sheltering in key Sudan city as RSF fighters advance",
+      "url": "https://www.bbc.co.uk/news/articles/c4gx399l0wyo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "15cb93ecc2ed495e42edc4ccc5fd6959",
+      "title": "How Mexican drug cartels have outsourced meth labs to Nigeria",
+      "url": "https://www.bbc.co.uk/news/articles/crmrnxp4nllo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3f0e43238ac1fb266423c8eb2e06962c",
+      "title": "eBay agrees $56m settlement with bloggers over harassment case",
+      "url": "https://www.bbc.co.uk/news/articles/cj039p238r5o?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "9c4fae8823b39b78b69d8e04753d3008",
+      "title": "Victorian cults inquiry accidentally shares email address of anonymous survivors with group members",
+      "url": "https://www.theguardian.com/australia-news/2026/jul/29/victorian-cults-inquiry-accidentally-shares-email-address-of-anonymous-survivors-with-group-members-ntwnfb",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "caa37e30f269920c4d1fc4d11040037e",
+      "title": "White House teleprompter operator accused over Trump bets no longer in job, official says",
+      "url": "https://www.theguardian.com/us-news/2026/jul/28/white-house-telemprompter-trump-bets",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "9b9377b0806961ab19528d59f0353ea0",
+      "title": "American Airlines flights grounded nationwide due to IT outage: FAA",
+      "url": "https://abcnews.com/US/american-airlines-flights-grounded-nationwide-due-outage-faa/story?id=135172101",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 152,
+    "clusters_considered": 129,
+    "stories_run": 16,
+    "sources": 18,
+    "sections_held": 0
+  }
+}
