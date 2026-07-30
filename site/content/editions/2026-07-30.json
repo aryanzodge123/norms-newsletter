@@ -1,0 +1,415 @@
+{
+  "date": "2026-07-30",
+  "edition_number": 53,
+  "edition_type": "normal",
+  "headline_of_the_day": "US launches heavy strikes on Iran after days of Gulf tension",
+  "headline_cluster_id": "e9e5cca7e96c0e8f4006dd05f2080dd8",
+  "headline_rationale": "Active military confrontation between major powers directly affecting a strategic region, following a brief pause and raising immediate risk of wider conflict.",
+  "key_points": [
+    {
+      "text": "The US military struck dozens of Iranian Revolutionary Guard targets after days of escalating attacks.",
+      "topic": "World"
+    },
+    {
+      "text": "Russian hackers are exploiting a Microsoft flaw to keep mailbox access after password changes.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "A 6.8-magnitude earthquake in Japan killed at least 17 people and destroyed a shopping mall.",
+      "topic": "World"
+    },
+    {
+      "text": "The Senate postponed a vote on Justice Department nominee Todd Blanche over a $1.8 billion fund dispute.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Three Greek firefighters died fighting wildfires in southern Europe as strong winds spread the flames.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-07-30.mp3",
+    "duration_seconds": 531,
+    "size_bytes": 6370560
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "30789123b9e10751b34675066fb89d53",
+          "slug": "starbucks-raises-full-year-outlook-after-fourth-straight",
+          "title": "Starbucks raises full-year outlook after fourth straight quarter of growth",
+          "summary": "Starbucks raised its earnings outlook as sales climbed more than six percent.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/07/29/starbucks-sbux-q3-2026-earnings.html"
+            }
+          ],
+          "article": {
+            "background": "Starbucks is a global coffee chain with thousands of locations. Investors watch same-store sales. This metric shows how much customers spend at existing stores. It signals whether a company is growing or struggling.",
+            "what_happened": "Starbucks raised its full-year outlook on Wednesday. The company reported its fourth straight quarter of same-store sales growth. It now expects adjusted earnings per share of $2.55 to $2.65. That is up from its prior range of $2.25 to $2.45. The company also raised its sales growth projections. Global same-store sales are now expected to rise nearly 6%. U.S. same-store sales are projected to climb more than 6%. Both forecasts were raised from at least 5% growth.",
+            "why_it_matters": "Better Starbucks sales mean the chain is attracting customers and raising prices successfully. This can affect whether you see new locations open near you or existing ones improve. The raised outlook also signals that coffee demand remains strong even as the economy faces uncertainty.",
+            "quote": {
+              "text": "This was the quarter our momentum became truly measurable.",
+              "attribution": "Brian Niccol, CEO of Starbucks",
+              "source_url": "https://www.cnbc.com/2026/07/29/starbucks-sbux-q3-2026-earnings.html"
+            }
+          }
+        },
+        {
+          "cluster_id": "aea66058b376a48f83accb01a1cb59b3",
+          "slug": "shell-profits-more-than-double-as-oil-prices-surge",
+          "title": "Shell profits more than double as oil prices surge",
+          "summary": "Shell earned $9.84 billion in the second quarter as oil prices surged from Middle East tensions.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/jul/30/shell-profits-double-jump-oil-gas-prices"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cpq8n45r5e8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Shell is Europe's biggest oil and gas company. In the second quarter (April to June), war in the Middle East disrupted oil and gas flows through the Strait of Hormuz. Oil prices climbed from about $61 a barrel in January to $126 at the end of April.",
+            "what_happened": "Shell's net profit hit $9.84 billion in the three months to June. That is more than double the $4.26 billion it made in the same period last year. Higher oil and gas prices boosted the company's profit margins and its trading desk activity.",
+            "why_it_matters": "Energy prices affect what people pay for heat, electricity, and gas. When oil and gas profits spike from supply shocks, energy bills tend to stay high longer. Companies lock in higher prices. Higher profits also often spark calls for windfall taxes or new rules on energy pricing.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "4367e584a7fcff3dd41836527cedafa1",
+          "slug": "trump-attorney-general-pick-todd-blanche-confirmation-vote",
+          "title": "Trump attorney general pick Todd Blanche confirmation vote postponed",
+          "summary": "The Senate delayed a vote on Todd Blanche after the Justice Department did not confirm ending a $1.8 billion fund.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/jul/29/todd-blanche-nomination"
+            }
+          ],
+          "article": {
+            "background": "Todd Blanche is Donald Trump's former criminal defense lawyer. Trump picked him to be attorney general, the top law enforcement official in the country. Blanche is currently acting in the role while awaiting Senate confirmation.",
+            "what_happened": "The Senate judiciary committee postponed a vote on Blanche's nomination on Wednesday. The vote was set for Thursday. Two Republican senators want written assurances from the Department of Justice. They want it to promise it will not create a $1.8 billion fund to pay people who entered the Capitol on January 6, 2021. They also want a pledge that the IRS will not investigate the president's tax returns.",
+            "why_it_matters": "Blanche cannot become attorney general without Senate approval. The two Republican senators' demands have stalled his path forward. The delay suggests his confirmation is now uncertain, even with Republicans in control of the Senate.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b9dc8dcc313d39310808e96a2af547f2",
+          "slug": "anthony-fauci-invokes-fifth-amendment-at-gop-hearing-on",
+          "title": "Anthony Fauci invokes Fifth Amendment at GOP hearing on COVID origins",
+          "summary": "Former pandemic adviser Anthony Fauci refused to answer questions about the virus source at a hearing.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/fauci-invokes-5th-amendment-right-during-gop-led-hearing-on-covid-origins"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cdx85vkk0gko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Anthony Fauci led America's COVID response as the nation's top infectious disease expert. Republicans, led by Senator Rand Paul, have questioned whether Fauci misled Congress about how the virus started. Fauci has testified about COVID at several congressional hearings already.",
+            "what_happened": "Fauci appeared before a Senate committee on Wednesday. He refused to answer questions about COVID's origins. He invoked the Fifth Amendment more than 100 times. The Fifth Amendment protects people from being forced to testify against themselves in criminal cases. Fauci said he feared Republicans would use his words to charge him with perjury. He called Paul's focus on him an \"unhinged obsession.\"",
+            "why_it_matters": "Public officials rarely use the Fifth Amendment in Congress. Fauci's choice shows a deep breakdown in trust between him and Republican lawmakers over his pandemic work. The disagreement over what he told Congress and the public shows no sign of ending.",
+            "quote": {
+              "text": "unhinged obsession",
+              "attribution": "Dr. Anthony Fauci",
+              "source_url": "https://www.pbs.org/newshour/show/fauci-invokes-5th-amendment-right-during-gop-led-hearing-on-covid-origins"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "e9e5cca7e96c0e8f4006dd05f2080dd8",
+          "slug": "us-launches-heavy-strikes-on-iran-after-pause-in-attacks",
+          "title": "US launches heavy strikes on Iran after pause in attacks",
+          "summary": "The US hit dozens of Revolutionary Guard targets as the risk of wider war grows.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/live/2026/jul/30/us-iran-war-live-updates-missile-strikes-attacks-iraq-egypt-middle-east-crisis-latest-news"
+            }
+          ],
+          "article": {
+            "background": "The US and Iran have been exchanging strikes for days. Iran attacked a US military base in Jordan on Wednesday. The US responded Thursday morning with what it called a heavy wave of strikes. Experts worry these tit-for-tat attacks could turn into a wider war.",
+            "what_happened": "US Central Command said it hit dozens of Islamic Revolutionary Guard Corps targets on Thursday. The targets included command centers, missile and drone bases, coastal defense sites, and ships. This came after Iran attacked a base in Jordan that hosts US troops. President Trump said the US would hit Iran hard in response.",
+            "why_it_matters": "The region is moving into what analysts call uncharted territory. Each side's strikes push the other closer to an all-out war. For Americans, a wider conflict in the Middle East could mean higher oil prices and more US troops at risk. The pause in fighting lasted only days before both sides struck again.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3434e0e76a8af5c8f8546b0d417334c1",
+          "slug": "death-toll-in-japan-earthquake-rises-to-17",
+          "title": "Death toll in Japan earthquake rises to 17",
+          "summary": "A shopping mall collapsed in an earthquake in Kumamoto, and aftershocks are slowing rescue work.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/30/japan-earthquake-death-toll-rises"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/07/30/nx-s1-5913050/japan-earthquake-updates"
+            }
+          ],
+          "article": {
+            "background": "On Tuesday afternoon, a major earthquake hit Kumamoto prefecture on Japan's southern island of Kyushu. Norm covered the initial quake on July 29, when at least two people had died and 100 were injured. The earthquake has now killed at least 23 people, with 62 more hurt. A shopping mall was badly damaged in the blast, and many homes collapsed.",
+            "what_happened": "The death toll rose to at least 23 as rescue teams searched for survivors in the rubble. A magnitude 5.8 aftershock hit overnight and made rescue work harder. Heat is also a problem, with temperatures expected to reach 35 degrees Celsius on Thursday. Almost 5,000 military personnel are deployed to help with the search.",
+            "why_it_matters": "Earthquakes and aftershocks can trap people in collapsed buildings for days. The combination of heat, aftershocks, and difficult terrain means rescue teams may run out of time to find survivors alive. For people in Japan, this shows how fast a quake can cause widespread harm and why buildings need to withstand these events.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0c815dee76546b751705e63e5762b582",
+          "slug": "three-greek-firefighters-die-tackling-wildfires",
+          "title": "Three Greek firefighters die tackling wildfires",
+          "summary": "Three Greek firefighters died fighting wildfires in Crete and Peloponnese driven by strong winds.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwyjgwg8jddo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Greece is facing severe wildfires this summer. Hot, dry weather and strong winds create conditions where fires spread fast and hard to control. Three firefighters have now died fighting these blazes in different parts of the country.",
+            "what_happened": "Two firefighters died in Crete after gale-force winds pushed flames through the Rethymno region. They became trapped as the fire swept over them. A third firefighter was found unconscious near Gytheio, a port town in southern Peloponnese, and died. Several villages in Crete were evacuated due to the danger.",
+            "why_it_matters": "Wildfires across southern Europe are getting worse. Spain and France are now facing their fourth heatwave of the summer, with crews working to stop fires that were only recently brought under control. These conditions mean more danger for firefighters and more evacuations ahead.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b266ce2d72fd0df38753fcc81f01e6ee",
+          "slug": "kyiv-struck-by-deadly-russian-ballistic-missiles",
+          "title": "Kyiv struck by deadly Russian ballistic missiles",
+          "summary": "At least one person killed as Zelenskyy warns of massive incoming attack.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/jul/30/ukraine-russia-missile-strikes-attack-kyiv"
+            }
+          ],
+          "article": {
+            "background": "Russia has attacked Kyiv, Ukraine's capital, many times during the conflict. President Volodymyr Zelenskyy warned residents Thursday that a major attack was coming. He urged people to get to shelters.",
+            "what_happened": "Russian ballistic missiles struck Kyiv on Thursday, killing at least one person. Fires broke out across several districts of the city. Mayor Vitali Klitschko said the threat of more attacks remained.",
+            "why_it_matters": "The strikes show the conflict continues to reach civilians in Ukraine's largest city. People in Kyiv face ongoing danger from missile attacks. The attacks may push more residents to leave the city or stay in shelters.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "69b8d3b84acf4f81d42a5c40ff03093e",
+          "slug": "us-bans-foreign-made-humanoid-robots-targeting-china",
+          "title": "US bans foreign-made humanoid robots targeting China",
+          "summary": "The US bans robots made outside the country for national security reasons.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/u-s-bans-foreign-made-humanoid-robots-targeting-china-over-national-security"
+            }
+          ],
+          "article": {
+            "background": "Humanoid robots are machines built to look and move like humans. China makes many of these robots. The U.S. has grown concerned about relying on foreign technology for advanced devices. This ban marks a major step in that direction.",
+            "what_happened": "The U.S. Federal Communications Commission banned imports of new foreign-made humanoid robots and power inverters. The ban targets mobile robots, including humanoid and quadruped models. The FCC cited national security risks. China quickly accused the U.S. of protectionism.",
+            "why_it_matters": "For now, most people will not feel this directly. But it shows how governments are starting to limit access to advanced foreign technology for security reasons. As these robots become more common in factories and workplaces, such rules will shape which ones U.S. companies can buy.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a040179abe573aad24ed9440a2b26431",
+          "slug": "fcc-ban-on-foreign-robots-includes-robot-vacuums-and-lawn",
+          "title": "FCC ban on foreign robots includes robot vacuums and lawn mowers",
+          "summary": "The new rule bans household robots, industrial robots, and humanoid robots made abroad.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.pcmag.com/news/fcc-ban-on-foreign-made-robots-includes-robot-vacuums"
+            },
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/fcc-blocks-new-foreign-produced-robots.html"
+            }
+          ],
+          "article": {
+            "background": "The Federal Communications Commission regulates communications equipment in the US. The White House ordered a ban on foreign-made advanced robotic devices. The FCC added these robots to its blocked list on July 28. The ban targets machines that move on the ground, avoid obstacles, or navigate on their own.",
+            "what_happened": "The FCC confirmed the ban covers robot vacuums and robot lawn mowers. New foreign-made models cannot get the approval needed to import or sell them in the US. Models already approved can still be sold. Devices people already own are not affected.",
+            "why_it_matters": "Robot vacuums are common household items, so this ban reaches beyond futuristic or industrial machines into everyday homes. For now it does not stop you from buying existing models or using ones you own. If you want a robot vacuum in the future, you may have fewer foreign options.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "cd3e589490b277b59dac2b5f32c60169",
+          "slug": "elon-musk-s-xai-sues-minnesota-over-nudification-technology",
+          "title": "Elon Musk's xAI sues Minnesota over nudification technology ban",
+          "summary": "A Minnesota law banning fake nude images faces a court challenge on AI regulation power.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/jul/29/xai-sues-minnesota-nudification-technology"
+            }
+          ],
+          "article": {
+            "background": "Minnesota passed the first state law banning \"nudification,\" or using AI to create fake nude images of real people on websites and apps. The law was signed in May. It takes effect on Saturday. This is the first time any state has tried to ban this specific technology.",
+            "what_happened": "Elon Musk's company xAI sued Minnesota in federal court on Monday. The suit came days before the law takes effect. xAI claims the law goes too far in controlling how companies can use AI.",
+            "why_it_matters": "The lawsuit will test how much power states have to regulate AI. Courts will need to decide if Minnesota's ban is legal. This case will likely shape what other states can do to control how AI is used.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "b34f51c02997292800a59adb5c30c131",
+          "slug": "russian-hackers-exploit-microsoft-flaw-to-maintain-mailbox",
+          "title": "Russian hackers exploit Microsoft flaw to maintain mailbox access after password changes",
+          "summary": "Russian hackers exploited a Microsoft flaw to keep mailbox access even after passwords were changed.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/russian-hackers-exploit-microsoft-owa.html"
+            }
+          ],
+          "article": {
+            "background": "Microsoft Outlook Web Access, or OWA, is email software that runs in a web browser. A Russian hacking group previously known for attacking Zimbra, another email system, has now turned to OWA. They have been targeting U.S. and European governments, plus companies in telecom, finance, hotels, and aerospace since July 22, 2026.",
+            "what_happened": "The hackers exploited CVE-2026-42897, a flaw in OWA that lets attackers inject malicious code. Microsoft first saw the flaw being used in May 2026 and later patched it. The security firm Proofpoint linked the attacks to a group called Laundry Bear.",
+            "why_it_matters": "If your company uses OWA and was targeted, attackers could read your email even after you changed your password. This happened because the flaw let them stay inside your mailbox indefinitely. If you use OWA, make sure your version is fully patched.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7e15c409ed7311e29b14370437a2fbd9",
+          "slug": "amazon-links-debug-and-chalk-npm-hijack-to-north-korea",
+          "title": "Amazon links debug and chalk npm hijack to North Korea",
+          "summary": "A supply chain attack on two packages that get two billion downloads per week was linked to Sapphire Sleet.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/amazon-links-debug-and-chalk-npm-hijack.html"
+            }
+          ],
+          "article": {
+            "background": "npm is a tool that lets developers use code written by others in their projects. The packages debug and chalk are extremely popular. Together they get about 2 billion downloads per week. In September 2025, attackers compromised both packages by phishing a maintainer through a fake domain.",
+            "what_happened": "For ten months, security researchers documented the attack as simple theft of cryptocurrency. On July 29, Amazon Threat Intelligence published research linking the hijack to a group called Sapphire Sleet, which it says is North Korean. Amazon assessed this with medium confidence. The attackers inserted wallet-draining scripts into at least 18 packages total.",
+            "why_it_matters": "When attackers control popular packages, they can insert code that steals data, money, or credentials from anyone who uses them. In this case, billions of downloads meant the attack could reach far more people than hacking any single company. This incident shows a persistent problem: even trusted code can be hijacked if maintainers are tricked.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d246f44c7e5f42fcf8d2d47e0cd961ae",
+          "slug": "cisco-firewall-vulnerability-actively-exploited-in-the-wild",
+          "title": "Cisco firewall vulnerability actively exploited in the wild",
+          "summary": "A Cisco flaw with static passwords could expose sensitive data and is now being actively exploited.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html"
+            }
+          ],
+          "article": {
+            "background": "Cisco Secure Firewall Management Center (FMC) is software that organizations use to manage their firewalls. A security flaw was found in this software that lets attackers break in without a password.",
+            "what_happened": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) added this flaw to its list of actively exploited vulnerabilities on Wednesday. The flaw, called CVE-2026-20316, has a severity score of 5.3. It exists because the software has a built-in low-privilege account with a static password. An attacker can use this account to log in remotely and access sensitive data.",
+            "why_it_matters": "If your organization uses Cisco FMC to manage firewalls, this flaw puts your network at risk. Attackers are already exploiting it. You should check if your systems are affected and apply any available fixes from Cisco right away.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "2f4bf9ec6357d98ecb6e0a42064be300",
+      "title": "US DOE to Convert Uranium Enrichment Facility into Data Center Campus",
+      "url": "https://www.energy.gov/articles/energy-department-announces-partnership-expand-reliable-affordable-energy-access-and-power",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "f670b7696aa3dc4a1dea4141f8b814dc",
+      "title": "Uganda declares itself Ebola-free as Congo continues to struggle with the outbreak",
+      "url": "https://www.pbs.org/newshour/health/uganda-declares-itself-ebola-free-as-congo-continues-to-struggle-with-the-outbreak",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "e60d2f5f3a77ae51c42936f142316619",
+      "title": "Mark Zuckerberg is planning a big push into personal AI agents",
+      "url": "https://www.theverge.com/tech/972294/meta-q2-2026-earnings-mark-zuckerberg-personal-ai-agents",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "8269a901070ce1ed8a9e61c20ed94bb7",
+      "title": "Couple Stalked by eBay Settle for $56M",
+      "url": "https://www.nytimes.com/2026/07/28/technology/ebay-settles-stalking-case.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "9fa449561e47344ca038da9ca4dcf9f4",
+      "title": "1,741 \"informed\" consents with one click? GDPR complaint filed",
+      "url": "https://noyb.eu/en/1741-informed-consents-one-click-gdpr-complaint-against-dictcc-filed",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "a9a4c56f20d3a926e935798d1d4751a0",
+      "title": "Four women accuse Jared Leto of criminal sexual conduct",
+      "url": "https://www.bbc.co.uk/news/articles/cd7lg2nz2x2o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "9a8b2c69c270acbb732d97464356bb0e",
+      "title": "Australia takes Telegram to court over alleged failure to remove 'pro-terror' material",
+      "url": "https://www.bbc.co.uk/news/articles/crmrv4pnexmo?at_medium=RSS&at_campaign=rss",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "b073141d52b046b585cae0916303fce3",
+      "title": "West Bank faces escalating Israeli settler violence and surge in army checkpoints",
+      "url": "https://www.npr.org/2026/07/30/nx-s1-5911953/west-bank-faces-escalating-israeli-settler-violence-and-surge-in-army-checkpoints",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "da360091c8e7acc787ae90567b5cfbd3",
+      "title": "NSW to send paramedics not police to some mental health emergencies after multiple deaths",
+      "url": "https://www.theguardian.com/australia-news/2026/jul/30/nsw-to-send-paramedics-not-police-to-some-mental-health-emergencies-after-multiple-deaths",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 138,
+    "clusters_considered": 120,
+    "stories_run": 14,
+    "sources": 16,
+    "sections_held": 0
+  }
+}
