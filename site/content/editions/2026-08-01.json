@@ -1,0 +1,347 @@
+{
+  "date": "2026-08-01",
+  "edition_number": 55,
+  "edition_type": "normal",
+  "headline_of_the_day": "Hacker uses DeepSeek AI to attack servers on its own",
+  "headline_cluster_id": "43e44f3808cb09b8c3f8d27f44ea76b9",
+  "headline_rationale": "First confirmed case of AI conducting cyberattacks with limited human involvement, demonstrating a concrete operational shift in how attackers operate at scale",
+  "key_points": [
+    {
+      "text": "A hacker used DeepSeek AI and free tools to attack servers with almost no human help.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "An earthquake that hit Japan this week has killed 34 people so far. Rescue crews are still searching.",
+      "topic": "World"
+    },
+    {
+      "text": "Hungary shut down a nuclear plant after the Danube River dropped to record lows. That plant powers half the country.",
+      "topic": "World"
+    },
+    {
+      "text": "US lawmakers are investigating DoorDash's use of Chinese AI model Kimi K2.6 as concerns grow about Chinese AI tools.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The Senate Commerce Committee will consider the SCREEN Act, which would require people to verify their age to view adult content online.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-01.mp3",
+    "duration_seconds": 378,
+    "size_bytes": 4533408
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "25001f21acbc6d69932210fd76cfa2e5",
+          "slug": "us-lawmakers-investigate-doordash-use-of-chinese-ai-model",
+          "title": "US lawmakers investigate DoorDash use of Chinese AI model Kimi K2.6",
+          "summary": "Lawmakers are investigating DoorDash's use of a Chinese AI model as US companies seek cheaper AI tools.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.scmp.com/news/china/diplomacy/article/3362616/us-lawmakers-investigate-doordashs-use-moonshot-ais-kimi-k26-model"
+            }
+          ],
+          "article": {
+            "background": "DoorDash is a food delivery company. It uses AI, a technology that learns from data to do tasks, to run its business. Lately, US companies have begun using AI models made in China. These cost less than American options. US lawmakers worry about this trend.",
+            "what_happened": "Lawmakers asked DoorDash about its use of Kimi K2.6. This is an AI model made by Moonshot AI, a Chinese company. The lawmakers sent a letter. They want DoorDash staff who handle AI, security, and buying decisions to brief them by August 21.",
+            "why_it_matters": "This shows Washington is paying close attention to which AI tools American companies use. For now it does not change how you order food. But it signals the US government may soon limit or ban Chinese AI tools in US companies. That could affect which services work well and how fast they improve.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "619cf0728a0b7a3448ee8900091cc5a6",
+          "slug": "thousands-of-migrant-children-could-lose-legal",
+          "title": "Thousands of migrant children could lose legal representation as federal contract ends",
+          "summary": "A program that pays lawyers for unaccompanied migrant children will end with no replacement in place.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/unaccompanied-migrant-children-at-risk-of-losing-legal-representation"
+            }
+          ],
+          "article": {
+            "background": "Unaccompanied migrant children arriving in the US often face immigration proceedings alone. A nonprofit called Acacia Center for Justice has provided legal help to these minors for the last five years through a federal contract.",
+            "what_happened": "That federal contract is now expiring. Thousands of unaccompanied children could lose their legal representation as a result.",
+            "why_it_matters": "Without a lawyer, children in immigration cases are far less likely to win their cases or understand their rights. Losing this funding means many minors may face court hearings without anyone to help them navigate the legal system.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "3e0a991fe8c84854d012de733d3d72c4",
+          "slug": "japan-earthquake-death-toll-rises-to-34",
+          "title": "Japan earthquake death toll rises to 34",
+          "summary": "At least 34 people died in Japan's earthquake this week.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/news-wrap-death-toll-from-japan-earthquake-rises-to-34"
+            }
+          ],
+          "article": {
+            "background": "A powerful earthquake struck Japan this week. Earthquakes are common in Japan because the country sits on unstable ground where tectonic plates meet. When major quakes hit, they cause damage to buildings and infrastructure. They also create immediate needs for rescue and aid.",
+            "what_happened": "The earthquake has killed at least 34 people. Many more are injured. Buildings have collapsed and roads have cracked. Power and water service disrupted in affected areas.",
+            "why_it_matters": "Japan experiences frequent earthquakes, so many buildings are built to withstand them. But strong quakes still cause deaths and injuries. If you live in a seismic zone, this is a reminder of the risks your community faces. It also shows why earthquake preparation and strong building codes matter for safety.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "cc00a2626735346e00ccef6721fe0181",
+          "slug": "hungary-faces-energy-crisis-after-nuclear-plant-shutdown",
+          "title": "Hungary faces energy crisis after nuclear plant shutdown",
+          "summary": "Low water levels on the Danube forced Hungary to close Paks, which supplies nearly half its power.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.euronews.com/my-europe/2026/07/31/eu-considers-emergency-meeting-as-nuclear-shutdown-leaves-hungary-facing-energy-crisis"
+            }
+          ],
+          "article": {
+            "background": "Hungary's Paks nuclear plant supplies nearly half the country's power. Record-low water levels in the Danube River have forced the plant to shut down. The Danube cools the reactor, and when water levels drop too far, the plant cannot run safely.",
+            "what_happened": "Prime Minister Péter Magyar warned that the shutdown will cause an energy crisis. The European Commission said it is ready to call an emergency meeting of its Electricity Coordination Group. A Commission spokesperson said the shutdown could strain the region's power balance, even though the plant has safety measures in place.",
+            "why_it_matters": "Hungary now faces potential power shortages. If the shutdown lasts through peak demand months, homes and businesses could see higher energy costs and supply cuts.",
+            "quote": {
+              "text": "Although the operator has emergency measures in place to guarantee nuclear safety, an event of this kind could further strain the regional electricity balance.",
+              "attribution": "Anna-Kaisa Itkonen, European Commission spokesperson",
+              "source_url": "https://www.euronews.com/my-europe/2026/07/31/eu-considers-emergency-meeting-as-nuclear-shutdown-leaves-hungary-facing-energy-crisis"
+            }
+          }
+        },
+        {
+          "cluster_id": "ef99f1c22b62548a30ce14845eadc22b",
+          "slug": "russian-ballistic-missiles-kill-nine-in-kyiv-attack",
+          "title": "Russian ballistic missiles kill nine in Kyiv attack",
+          "summary": "Russian missiles killed nine people in Kyiv on Saturday morning and hurt 28 others.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ce973yvk7pko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia has been stepping up missile attacks on Kyiv, Ukraine's capital, in recent weeks. Ukrainian President Volodymyr Zelensky says the country urgently needs more missile interceptors to defend against these strikes. Norm covered a major Russian attack on a drone exhibition near Kyiv in July that killed at least 10 people.",
+            "what_happened": "Russian ballistic missiles struck Kyiv on Saturday morning. At least nine people were killed and 28 more were injured, according to Ukraine's State Emergency Service. The attack is part of a pattern of escalating strikes on the capital.",
+            "why_it_matters": "Each attack limits Ukraine's ability to protect itself. The country has a limited supply of air defense systems to stop incoming missiles. As Russia increases its strikes, Ukraine faces growing pressure to find more interceptors and ways to defend its cities.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "092f382fdd406a79ceead8d13afef5ae",
+          "slug": "senate-bill-would-require-age-verification-before-accessing",
+          "title": "Senate bill would require age verification before accessing sexually explicit content online",
+          "summary": "The SCREEN Act would require adults to give up anonymity to view legal adult content.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.eff.org/deeplinks/2026/07/screen-act-threatens-privacy-far-beyond-adult-websites"
+            }
+          ],
+          "article": {
+            "background": "The Senate is considering S. 737, called the SCREEN Act. It would require websites to verify that users are adults before they can see any sexually explicit content. Unlike state laws that only target adult-focused websites, this bill applies to nearly any site with even one piece of such content.",
+            "what_happened": "The Senate Commerce Committee is set to consider the SCREEN Act. The bill would force millions of users to prove their age before accessing lawful speech. It requires age verification but sets no rules for protecting the personal data users must share during that process.",
+            "why_it_matters": "If this passes, anyone accessing legal adult content online would lose anonymity and privacy. You would have to give up personal information to see content you have a right to access. The bill creates no safeguards for that data, leaving it vulnerable to misuse or breach.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "539389143432e8773f77c40717135b48",
+          "slug": "us-treasury-undertakes-historic-intervention-in-yen-market",
+          "title": "US Treasury undertakes historic intervention in yen market",
+          "summary": "The US Treasury bought and sold currency in a rare move that quickly shifted exchange rates.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.ft.com/content/0f9b2fe7-bde4-4f5f-b49e-93ccb5da9ea8"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "47fe2257e1c7a628c39d80921da12f91",
+          "slug": "a-ton-of-space-junk-tumbles-unpredictably-to-earth-every",
+          "title": "A ton of space junk tumbles unpredictably to Earth every week",
+          "summary": "Space junk falls to Earth regularly as more rockets and satellites launch worldwide.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/07/31/world/asia/space-debris-falling-crashing-earth-risk.html"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "63b8137b6a8c2413898b1da70599d1c7",
+          "slug": "first-australian-mass-mortality-event-suspected-from-deadly",
+          "title": "First Australian mass mortality event suspected from deadly H5N1 bird flu",
+          "summary": "Over 80 dead and sick terns found off South Australia coast six weeks after virus arrived",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/01/first-australian-mass-mortality-event-suspected-as-deadly-bird-flu-virus-rapidly-escalates-among-native-birds"
+            }
+          ],
+          "article": {
+            "background": "H5N1 is a deadly bird flu virus. It arrived in Australia only six weeks ago. Scientists are now watching closely for signs it is spreading among native birds.",
+            "what_happened": "Helicopter crews found 49 dead greater crested terns on Baudin Rocks near Robe in South Australia. Another 35 sick terns were spotted at the same site. The state's chief vet said this is likely the first major die-off from the virus in Australia. Three other terns tested positive, including one found inland at Monarto.",
+            "why_it_matters": "H5N1 kills birds fast and in large numbers. Finding it in native Australian birds so soon after arrival shows the virus is already spreading through the wild population. This matters because once a disease takes hold in wildlife, it becomes much harder to stop.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "43e44f3808cb09b8c3f8d27f44ea76b9",
+          "slug": "hacker-uses-deepseek-ai-to-autonomously-attack-vulnerable",
+          "title": "Hacker uses DeepSeek AI to autonomously attack vulnerable servers",
+          "summary": "Palo Alto Networks said a hacker used DeepSeek AI to break into servers with almost no human help.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/hacker-uses-deepseek-ai-to-autonomously-attack-vulnerable-servers"
+            }
+          ],
+          "article": {
+            "background": "DeepSeek is an AI model made in China. Hermes Agent is free software that helps AI systems act without constant human direction. Security researchers at Palo Alto Networks study hacking threats.",
+            "what_happened": "A Chinese-speaking hacker used DeepSeek and Hermes Agent to attack exposed servers automatically. The hacker made few decisions once the system started. Palo Alto researchers spotted this when Hermes accidentally created a web server. The server exposed the hacker's setup, including API keys and exploit scripts. Unit 42 linked the activity to someone using the aliases \"knaithe\" and \"KnYuan.\"",
+            "why_it_matters": "This shows AI tools can run attacks with less human control than before. Most servers targeted were not breached, but the method signals a shift in how hackers may work. If AI systems get better at finding targets and exploiting flaws, defending networks becomes harder.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "77a224f3d5ec530b076a37eb94b873b7",
+          "slug": "adobe-patches-critical-campaign-classic-flaw-allowing-code",
+          "title": "Adobe patches critical Campaign Classic flaw allowing code execution without user action",
+          "summary": "Adobe fixed a serious flaw in Campaign Classic, a marketing tool for large companies.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html"
+            }
+          ],
+          "article": {
+            "background": "Adobe Campaign Classic is an enterprise marketing automation tool that helps companies manage customer communications. Adobe regularly releases updates to fix security flaws that attackers could exploit.",
+            "what_happened": "Adobe released updates for a critical flaw in Campaign Classic, tracked as CVE-2026-48449. The flaw has a severity score of 10.0, the highest possible rating. It stems from incorrect authorization. Attackers could run malicious code without any user action needed. Adobe also patched a second serious flaw (CVE-2026-48448, score 8.6) involving SQL injection. That flaw could let attackers read files they should not access.",
+            "why_it_matters": "Campaign Classic handles customer data for many large companies. A flaw this severe could expose sensitive information or disrupt marketing operations. If you work for a company using Campaign Classic, your IT team should apply these updates right away.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2a15bc96ed7351d8bab90fe095f58ba5",
+          "slug": "hijacked-hotel-wi-fi-delivers-surveillance-malware-through",
+          "title": "Hijacked hotel Wi-Fi delivers surveillance malware through fake browser updates",
+          "summary": "Microsoft linked the CaptiveCrunch malware campaign to Storm-2945, a group tied to Russian spying.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html"
+            }
+          ],
+          "article": {
+            "background": "Hotel Wi-Fi networks can be compromised by attackers. When this happens, the attacker can intercept traffic and send fake pages to users. This story involves a new malware, called CornFlake, being delivered this way.",
+            "what_happened": "Attackers compromised hotel Wi-Fi networks. They replaced real browser updates with fake ones that installed CornFlake malware. CornFlake is a remote access trojan, a tool that lets attackers control a device. Once installed, it can access webcams, record audio, and log keystrokes. Microsoft named the operation CaptiveCrunch and linked it to Storm-2945. The U.S. and U.K. governments attribute Storm-2945 to Russia's Foreign Intelligence Service.",
+            "why_it_matters": "If you connect to hotel Wi-Fi, attackers could target you with this malware. Business travelers handling sensitive work face the highest risk. The malware can spy on your screen, your camera, and your microphone, putting passwords and private information at risk.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1fd782e0fa2382d7bd4c7ef25c375c72",
+      "title": "Pilot ejects from F-35B jet crash near San Diego marine base, officials say",
+      "url": "https://www.theguardian.com/us-news/2026/jul/31/f-35b-jet-crash-san-diego",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ef4e1390613b87c0792c0659363f02cf",
+      "title": "The CIA Found a Soviet Ghost Station Full of Cold War Secrets",
+      "url": "https://www.popularmechanics.com/military/a73274458/batmans-skyhook-cia-mission",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "80ca7b310837b454ebc3384f1c7df246",
+      "title": "Iran to get Chinese shoulder-launched missile systems in weeks, sources say",
+      "url": "https://www.reuters.com/world/china/iran-get-chinese-shoulder-launched-missile-systems-weeks-sources-say-2026-07-29",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "caeccc3914211132bb8eae183afb765a",
+      "title": "Peru's ex-president leaves jail after 15-year jail term for corruption overturned",
+      "url": "https://www.bbc.co.uk/news/articles/cx2j9nj88rro?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a70be5489ad219e3cbf6ede9dd014d94",
+      "title": "Petrol prices on track to top $2 a litre as Bowen sounds death knell for fuel excise relief",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/01/petrol-prices-on-track-to-top-2-a-litre-as-bowen-sounds-death-knell-for-fuel-excise-relief",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "b9996eb18ea019189f2b28a149c8323b",
+      "title": "Huge blankets of seaweed are smothering coastlines from the Caribbean to Mexico",
+      "url": "https://www.pbs.org/newshour/science/huge-blankets-of-seaweed-are-smothering-coastlines-from-the-caribbean-to-mexico",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "4081aa11f15fe7dde40dd0fe9b2b8cfa",
+      "title": "Race to rescue remaining climbers after deadly avalanche in Pakistan",
+      "url": "https://www.bbc.co.uk/news/articles/cddjz1r01l8o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "80c4e6d36406f27cf40fbc322f4188a3",
+      "title": "Not just Neanderthals: Ghost lineage in Africa left its mark on our DNA",
+      "url": "https://arstechnica.com/science/2026/07/not-just-neanderthals-ghost-lineage-in-africa-left-its-mark-on-our-dna",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "f07f2d1f8cb1b13321d5a1c3a96fb888",
+      "title": "VC-backed startups commit more fraud, and researchers think they know why",
+      "url": "https://techcrunch.com/2026/07/31/vc-backed-startups-commit-more-fraud-and-researchers-think-they-know-why",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 131,
+    "clusters_considered": 104,
+    "stories_run": 12,
+    "sources": 14,
+    "sections_held": 0
+  }
+}
