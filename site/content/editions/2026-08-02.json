@@ -1,0 +1,322 @@
+{
+  "date": "2026-08-02",
+  "edition_number": 56,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump cancels planned strikes on Iran, demands rapid deal to open Strait of Hormuz",
+  "headline_cluster_id": "eeee8b7d8efb7e17451282a2a13b58b8",
+  "headline_rationale": "A major military decision by the US affecting regional stability and global energy shipping through a critical chokepoint.",
+  "key_points": [
+    {
+      "text": "Trump canceled planned Iran strikes but demands a deal to open the Strait of Hormuz within days.",
+      "topic": "World"
+    },
+    {
+      "text": "Russia sent military vehicles to Mali on a ship under international sanctions, breaking the rules.",
+      "topic": "World"
+    },
+    {
+      "text": "Nearly half of new cars sold in Australia are now electric or hybrid, a jump in just three months.",
+      "topic": "Tech"
+    },
+    {
+      "text": "DeepMind shut down its AlphaFold team to focus on its Gemini AI project.",
+      "topic": "AI"
+    },
+    {
+      "text": "Water shortages in England are stopping the government from meeting housing goals in the south and east.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-02.mp3",
+    "duration_seconds": 412,
+    "size_bytes": 4949280
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "0e08d62a9201aadbb735ec4802140111",
+          "slug": "electric-and-hybrid-vehicles-approach-half-of-australian",
+          "title": "Electric and hybrid vehicles approach half of Australian new car sales",
+          "summary": "Data shows EVs and hybrids doubled their market share between April and June during fuel crisis.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/aug/02/ev-hybrids-almost-half-australian-new-car-sales-april-june-fuel-crisis"
+            }
+          ],
+          "article": {
+            "background": "Australians have been paying unusually high fuel prices. The federal government cut fuel taxes temporarily to help. Those tax cuts end on Sunday. Prices are expected to rise again and may top $2 a litre.",
+            "what_happened": "Between April and June, Australians bought electric and hybrid vehicles at nearly the same rate as petrol cars. EV sales doubled in the months after fuel prices peaked. Data from the Australian Automobile Association shows this shift.",
+            "why_it_matters": "As petrol gets more expensive, more Australians are switching to electric and hybrid cars. These vehicles cost less to fuel. For drivers who make the switch, this means lower costs at the pump each month.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ac2e5893ed60908d63f1b5dfd92a8568",
+          "slug": "uk-investment-agency-exposed-officials-data-for-40-hours-in",
+          "title": "UK investment agency exposed officials' data for 40 hours in breach",
+          "summary": "Data on 51 government officials, with sensitive details and phone numbers, was publicly visible online for hours.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/aug/02/uk-state-investments-agency-data-breach"
+            }
+          ],
+          "article": {
+            "background": "UK Government Investments, or UKGI, is a government agency that manages the public's stake in various companies. These include Channel 4, the state broadcaster, and the Post Office. The agency oversees billions in public money across dozens of firms.",
+            "what_happened": "A security error left sensitive files openly available online. High-level management information and contact details for 51 government officials stayed public for nearly 40 hours. UKGI discovered the breach and took the data down. The agency said it will now improve its internal security.",
+            "why_it_matters": "When government officials' personal details leak, they face security risks. Hackers or bad actors can use phone numbers and other info to target them. This breach shows why government agencies need strong data protection, especially for staff who handle public money and major decisions.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "795fa92c193f54af5b1ea640959654ce",
+          "slug": "deepmind-disbands-alphafold-team-shifts-resources-to-gemini",
+          "title": "DeepMind disbands AlphaFold team, shifts resources to Gemini project",
+          "summary": "The AI lab shut down its flagship protein-folding research to focus on Gemini.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://unusualwhales.com/news/deepmind-disbands-alphafold-team-gemini-pivot"
+            }
+          ],
+          "article": {
+            "background": "AlphaFold is an AI tool built by DeepMind, a Google-owned lab. It solves a core biology problem: predicting how proteins fold into their 3D shapes. This matters because protein shape determines function in disease and medicine. DeepMind created AlphaFold to tackle this challenge, which had stumped researchers for decades.",
+            "what_happened": "DeepMind has disbanded the AlphaFold team and shifted those researchers to work on Gemini, Google's large language model. The existing AlphaFold software will stay available for scientists to use.",
+            "why_it_matters": "AlphaFold accelerated drug discovery and biological research worldwide. The shutdown signals that DeepMind now prioritizes building general AI systems over specialized tools for specific fields. For researchers relying on AlphaFold, the software continues to work, but future improvements may slow.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "16a3a508715a28517a150051fdc43aa2",
+          "slug": "study-finds-ai-financial-advice-encourages-saving-but",
+          "title": "Study finds AI financial advice encourages saving but mishandles job loss",
+          "summary": "AI advice helps people diversify their investments but fails to protect them from job losses.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions"
+            }
+          ],
+          "article": {
+            "background": "More people are asking AI chatbots for help with money decisions. The question is whether this advice actually works. Researchers studied what happens when people follow AI recommendations on saving, investing, and managing risk as they age.",
+            "what_happened": "AI financial advice does some things well. It pushes people to save more money, spread investments across different types of assets, and take on less risk as they get older. But the advice has real gaps. AI struggles to adjust when life changes suddenly, like a job loss. It also lets investment portfolios drift out of balance instead of actively rebalancing them. The quality of advice varies widely based on how someone phrases their question, their gender, their investing knowledge, and how comfortable they are using AI.",
+            "why_it_matters": "If you use AI for money advice, you should know it works better for some things than others. AI can help you think about saving more and spreading risk over time. But you should not rely on it alone during major life disruptions. For important money decisions, especially after a big change like losing a job, talking to a human financial advisor is still the better choice.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "eeee8b7d8efb7e17451282a2a13b58b8",
+          "slug": "trump-cancels-iran-strikes-demands-rapid-deal-to-open",
+          "title": "Trump cancels Iran strikes, demands rapid deal to open Strait of Hormuz",
+          "summary": "The US president said on Truth Social that he canceled strikes if Iran makes a quick deal.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/02/trump-climbs-down-on-iran-strikes-after-saudi-alarm-and-threats-from-tehran"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/02/nx-s1-5917113/trump-says-hes-cancelling-iran-strikes-deal-pending"
+            }
+          ],
+          "article": {
+            "background": "Tensions between the US and Iran have been high for months. News reports suggested the US and Israel were preparing to strike Iranian energy sites this weekend. Such a strike could have pulled the whole region into a wider conflict. It also could have affected oil prices and shipping in the area.",
+            "what_happened": "President Trump said on Saturday night that he was cancelling the planned strikes. He made the announcement on Truth Social, his social media platform. The cancellation is conditional on Iran agreeing to a deal quickly. Trump said the deal would include opening the Strait of Hormuz, a key shipping route, and ending Iran's nuclear threat. He said Israel agreed with the decision.",
+            "why_it_matters": "A US military strike on Iran could have disrupted oil supplies and drawn other countries into the conflict. Postponing the strikes reduces that immediate risk. Whether this leads to a real deal depends on whether both sides can negotiate fast. For now, the threat of a wider regional war has paused.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e8e1b0b3853148dafa3aff1c67d2b668",
+          "slug": "russian-ship-defies-sanctions-to-deliver-military-vehicles",
+          "title": "Russian ship defies sanctions to deliver military vehicles to Mali",
+          "summary": "BBC verified footage shows armored vehicles arriving in Bamako from a sanctioned cargo ship.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cgk4rdley0ko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia and Mali work together militarily. They face a rebel offensive in northern Mali. Western countries have sanctioned Russia over its invasion of Ukraine, restricting what ships and goods can reach it.",
+            "what_happened": "A sanctioned Russian cargo ship, Mikhail Britnev, docked in Togo on July 9. Armored military vehicles then traveled from that port to Mali's capital, Bamako. Malian state TV broadcast verified footage of the convoy arriving on July 25.",
+            "why_it_matters": "Sanctions aim to weaken Russia and cut off its supplies. A sanctioned Russian ship delivering military gear shows those sanctions have limits. It suggests Russia can move weapons and vehicles around the world despite restrictions meant to stop it.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b0a02fbf7c2660d32980804f52b1663c",
+          "slug": "criminal-networks-recruit-teenagers-as-contract-killers",
+          "title": "Criminal networks recruit teenagers as contract killers across Europe",
+          "summary": "Police documented minors hired to kill people in several countries, with confirmed victims and arrests.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/czrjyevmv61o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/czrjyevmv61o"
+            }
+          ],
+          "article": {
+            "background": "Across Europe, police have documented cases where teenagers were recruited to commit murders for organized crime groups. The Foxtrot Network, a criminal organization with links to the Iranian regime, has become known for hiring young people to carry out killings. These networks target vulnerable youth and use money to push them into violence.",
+            "what_happened": "In a Stockholm suburb last February, 18-year-old Atilla Azimov shot student Murad Abdelkader multiple times, killing him for money. Azimov had been hired by the Foxtrot Network. He killed the wrong man that night, according to police records of the case.",
+            "why_it_matters": "If you live in Europe, this shows how organized crime groups are now targeting teenagers to do their killing. Law enforcement across several countries is racing to stop these networks and protect young people from being pulled into violence. The trend suggests crime groups see minors as easier to recruit and control than adults.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "146c2a12f2d55e801c8aa302d4a40685",
+          "slug": "water-supply-problems-put-england-housing-targets-at-risk",
+          "title": "Water supply problems put England housing targets at risk",
+          "summary": "Half of England is in serious drought, blocking development across the south and east.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/aug/02/we-cannot-magic-up-more-water-the-supply-problems-putting-housing-targets-in-england-at-risk"
+            }
+          ],
+          "article": {
+            "background": "England is in its second straight year of serious drought. Half the country was declared to be in serious drought this week. The Environment Agency warns of dire effects on the economy, nature, and wildlife. The government has promised to build 1.5 million homes by the end of this parliament. These homes are mostly targeted at the south and east of England.",
+            "what_happened": "The areas facing the worst water stress are exactly where the government wants to build the most homes. Some residents in these regions are already under hosepipe bans. Water companies and local leaders say the infrastructure cannot handle both the drought and a major building expansion at the same time.",
+            "why_it_matters": "If homes are built where water is scarce, residents may face restrictions on water use. The government's housing targets and the region's real water limits are now in direct conflict. Without new water sources or infrastructure, one or both goals will have to change.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9186fbc5306c14e984164e59d5bd12d4",
+          "slug": "us-sanctions-iranian-firms-for-bitcoin-maritime-insurance",
+          "title": "US sanctions Iranian firms for Bitcoin maritime insurance scheme",
+          "summary": "The US Treasury sanctioned two companies that help Iran's Revolutionary Guard earn money from shipping through the Strait of Hormuz.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://home.treasury.gov/news/press-releases/sb0581"
+            }
+          ],
+          "article": {
+            "background": "The Strait of Hormuz is a narrow waterway between Iran and Oman. About a third of the world's oil passes through it. Iran's Islamic Revolutionary Guard Corps, a military branch, has been using extortion to profit from ships that transit there.",
+            "what_happened": "The U.S. Treasury's Office of Foreign Assets Control, known as OFAC, sanctioned two Iranian firms today. These firms run a scheme that forces ships to buy mandatory maritime insurance to pass safely through the strait. Iran itself creates most of the risks these policies claim to cover. The operation uses Bitcoin payments and is backed by the Revolutionary Guard.",
+            "why_it_matters": "Ships pay extra for this forced insurance, which raises costs for goods shipped through the strait. Lower shipping costs would help reduce prices for oil and other goods that move through this route to global markets. Disrupting the scheme may eventually make those routes cheaper for consumers.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "80ab263eef59329f1c6e6d3e39d176de",
+          "slug": "drug-reverses-autism-like-brain-changes-in-adult-mice",
+          "title": "Drug reverses autism-like brain changes in adult mice within hours",
+          "summary": "Rapamycin improved brain overactivity, seizure risk, and repetitive behaviors in mice whose mothers had inflammation while pregnant.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.uclahealth.org/news/release/drug-reverses-autism-like-brain-changes-adult-mice-within"
+            }
+          ],
+          "article": {
+            "background": "Inflammation during pregnancy can harm how a baby's brain develops. In a new study, mice born to mothers with inflammation showed autism-like changes in their brains and behavior as adults. These changes lasted into adulthood, suggesting early inflammation leaves lasting marks on brain development.",
+            "what_happened": "Researchers gave these adult mice a single dose of rapamycin, a drug used in some medical treatments. Within hours, the drug reduced brain overactivity. It also lowered seizure risk, eased sensitivity to sounds and touch, and cut repetitive behaviors. The drug even improved how different brain regions worked together.",
+            "why_it_matters": "This is early work in mice, not humans. But it hints that some autism-related brain changes might still be treatable in adults. Rather than only treating symptoms, future treatments might target the underlying biological pathway that causes these changes. That could open new options for people with autism.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7dc7e855788f8fd0f49be342f8aad036",
+          "slug": "uganda-controls-ebola-while-outbreak-worsens-in-neighboring",
+          "title": "Uganda controls Ebola while outbreak worsens in neighboring DR Congo",
+          "summary": "Uganda stopped its Ebola outbreak while Congo's death toll topped fifteen hundred.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/clyemjn44qqo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Democratic Republic of Congo declared an Ebola outbreak in May in its eastern region. Ebola outbreaks happen in Central Africa from time to time. The DRC outbreak is now the second-worst on record. Over 3,300 people have confirmed cases, and officials say more than 1,500 have died. The true death toll is likely much higher.",
+            "what_happened": "Authorities in the DRC confirmed the virus is spreading faster than in past outbreaks. Uganda, which borders the DRC, also reported Ebola cases starting in May. But Uganda's response has been far more effective. The country's health minister recently called it a moment of joy as the outbreak there slowed.",
+            "why_it_matters": "How fast Ebola spreads determines how many people die and whether the virus stays contained or grows across a region. The DRC's faster spread suggests gaps in tracking cases and treating patients. Uganda's success shows that quick action and strong response systems can stop the virus before it takes hold.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "46c4f6aec1f7156462f56be515c95b29",
+      "title": "Capital One says it closed Trump Organization’s accounts after anti-money-laundering review",
+      "url": "https://www.theguardian.com/us-news/2026/aug/01/capital-one-trump-organization-money-laundering",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "30eac09efea319342fbc782c4aba7fa6",
+      "title": "Devolution plans strengthen case for written UK constitution, says Burnham",
+      "url": "https://www.theguardian.com/politics/2026/aug/02/devolution-programme-written-uk-constitution-andy-burnham",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2fd89ad9ce6102c96aed6183962c9eb7",
+      "title": "Tourist plane crashes during flight over Peru’s Nazca Lines, killing 13",
+      "url": "https://www.theguardian.com/world/2026/aug/01/at-least-13-dead-as-tourist-plane-crashes-during-flight-over-perus-nazca-lines",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ad77a577a4b7bac8f04b8ece6053cfa0",
+      "title": "Three killed after bomb detonated at Moscow restaurant, state media say",
+      "url": "https://www.bbc.co.uk/news/articles/c86n4ljxp63o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "2e50fc5477ced9bb9ae33f28eefc0420",
+      "title": "Bessent and the Fed help Japan reverse months of yen losses",
+      "url": "https://www.japantimes.co.jp/business/2026/08/01/economy/us-treasury-yen-support",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 118,
+    "clusters_considered": 85,
+    "stories_run": 11,
+    "sources": 8,
+    "sections_held": 2
+  }
+}
