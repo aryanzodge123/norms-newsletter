@@ -101,8 +101,12 @@ class TestValidator:
             parse_response(json.dumps({**VALID, "score": score}))
 
     def test_rejects_a_topic_outside_the_enum(self) -> None:
+        # "Weather" is outside the enum. This said "Sports" until decision
+        # #32 made Sports a real topic, at which point the assertion broke.
+        # Keep this value genuinely absent from TOPICS.
+        assert "Weather" not in TOPICS
         with pytest.raises(ValueError, match="schema validation"):
-            parse_response(json.dumps({**VALID, "topic": "Sports"}))
+            parse_response(json.dumps({**VALID, "topic": "Weather"}))
 
     def test_topic_matching_is_case_sensitive(self) -> None:
         with pytest.raises(ValueError, match="schema validation"):
@@ -156,7 +160,10 @@ class TestScoreCluster:
         assert len(client.requests) == 2
 
     def test_the_retry_includes_the_validation_error(self) -> None:
-        client = FakeClient(json.dumps({**VALID, "topic": "Sports"}), json.dumps(VALID))
+        # "Weather" is outside the enum, so the first reply fails validation
+        # and forces the retry this test is about. Said "Sports" until
+        # decision #32 made it valid, which silently removed the retry.
+        client = FakeClient(json.dumps({**VALID, "topic": "Weather"}), json.dumps(VALID))
         score_cluster(client, a_cluster(), CONFIG, "RUBRIC")
         retry_text = client.requests[1]["messages"][0]["content"]
         assert "previous reply was rejected" in retry_text
@@ -274,3 +281,18 @@ class TestCostEstimate:
 
     def test_missing_usage_fields_are_treated_as_zero(self) -> None:
         assert estimate_cost_usd(SimpleNamespace(input_tokens=1_000_000)) == pytest.approx(1.00)
+
+
+def test_topics_match_the_editor_schema():
+    """score.TOPICS and editor.schema.TOPICS are duplicated and hand-synced.
+
+    Scoring constrains `topic` to its own tuple; the editor assembles
+    sections by looking topics up in its own. Nothing at runtime compares
+    them, so a topic added to one and not the other would produce clusters
+    the editor silently cannot place. Decision #32 added Sports to both.
+    """
+    from src.editor.schema import SECTION_NAMES
+    from src.editor.schema import TOPICS as EDITOR_TOPICS
+
+    assert TOPICS == EDITOR_TOPICS
+    assert set(TOPICS) == set(SECTION_NAMES)

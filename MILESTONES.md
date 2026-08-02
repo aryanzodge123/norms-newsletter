@@ -6,6 +6,129 @@ deferred.
 
 ---
 
+## Post-M6: Sports, the tenth section
+
+Date: 2026-08-02
+Spec: SPEC 6.1 (topic_hint vocabulary), 6.5 (section skeleton, budget),
+decision #32
+
+### The problem
+
+The topic vocabulary is a closed enum: `Topic` in `src/silver/score.py`,
+mirrored into the response schema sent to the API. The scoring call cannot
+decline a story. A sports item was therefore never going to be dropped, it
+was going to be filed under a wrong topic, most likely World or Business,
+and compete for a real section slot under a false label. Adding sports
+feeds without changing the vocabulary would have polluted existing
+sections rather than failing cleanly, so the spec change had to land first.
+
+Two measurements shaped the design:
+
+- **The edition is under-supplied, not oversubscribed.** Across the first
+  13 editions only 4 to 6 sections were ever alive out of 9, with totals
+  of 9 to 16 stories against a 15-20 target. Sections starve at the 2-story
+  floor and collapse into Briefly. This corrected the earlier assumption
+  that a fixed 20-story ceiling made extra sources pointless.
+- **Ten sections still fit.** `plan_sections` fields a section at 2+
+  stories, so ten sections at the minimum is exactly the 20 ceiling. Legal,
+  with zero headroom, and the all-alive case has never occurred.
+
+### What was built
+
+- **SPEC.md**: 6.1 vocabulary now ten values including `sports`; 6.5
+  skeleton gains `Sports`; a new paragraph in the 6.5 budget section
+  records that an eleventh section needs 22 against a ceiling of 20 and
+  cannot be added without raising the ceiling or the per-section minimum.
+  Decision #32 added.
+- **prompts/scoring_v1.md**: a `### Sports` anchor block in the existing
+  3/6/9 format, four new tiebreakers (Business, World, Science, Regulation
+  against Sports), and the load-bearing rule that routine sport scores 3 or
+  below. The three wave-1 feeds carry roughly 95 items a day against about
+  175 clusters from all 34 prior sources, and most sports volume is
+  fixtures, rumors, betting lines, and fantasy advice. Without the cap that
+  content competes on the same 1-10 scale as monetary policy.
+- **prompts/editor_v1.md**: `Sports` added to the topic-code list. No
+  display-name exception needed; code and section name are identical.
+- **src/silver/score.py** and **src/editor/schema.py**: `Sports` appended
+  to both hand-duplicated `TOPICS` tuples, the `Topic` Literal, and
+  `SECTION_NAMES`. `SECTION_ORDER` and `RESPONSE_SCHEMA` derive and were
+  not touched. Last position in `TOPICS` is what makes Sports render last.
+- **config/sources.yaml**: `bbc_sport`, `guardian_sport`, `npr_sports`, all
+  on the existing generic `RSSAdapter`, at `max_items_per_run: 10` rather
+  than the usual 20-30.
+- **site/src/pages/methodology.astro**: the one hardcoded topic list in the
+  site. DESIGN.md needed no change; it never enumerates sections.
+
+### Two tests that passed for the wrong reason
+
+Three existing tests used the literal `"Sports"` as their example of an
+invalid value. Adding the topic broke two of them loudly and one silently:
+
+- `test_rejects_a_topic_outside_the_enum` and
+  `test_the_retry_includes_the_validation_error` failed outright, the
+  second because its "invalid" first reply now validated and no retry
+  occurred.
+- `test_unknown_section_name_rejected` kept passing, but only because
+  Sports sorts last and so tripped the section *order* rule rather than the
+  unknown-name rule it claims to test.
+
+All three now use `"Weather"`, with an assertion that the name is genuinely
+absent from the vocabulary so the same trap cannot reopen.
+
+### How it was verified
+
+- `uv run pytest`: 569 passed.
+- `milestone-verify`: GATE PASSED (tests, 3 fixtures valid, all self URLs
+  derive from astro.config), after `npm run build` so the dist check was
+  meaningful.
+- Live adapter fetch over a 6-hour window: `bbc_sport` 8 items,
+  `guardian_sport` 3, `npr_sports` 0, all under the cap of 10 and all
+  carrying `topic_hint=sports`. npr_sports is expected to be sparse at
+  roughly 2 items a day.
+- Rubric assembly: 20,352 chars, roughly 5,650 tokens, comfortably above
+  `MIN_CACHEABLE_TOKENS` (4096), so prompt caching still engages.
+- `run_silver --dry-run`: 118 bronze items into 85 clusters, unchanged
+  behavior on existing topics.
+
+New tests: a `TOPICS` sync guard asserting the two duplicated tuples and
+`SECTION_NAMES` agree (nothing compared them at runtime before), Sports
+fielded at 2 stories and held at 1, `SECTION_ORDER[-1] == "Sports"`, and
+the ten-sections-at-minimum case totalling exactly 20 and validating.
+
+### Deliberately not done
+
+The collector was **not** run locally. Writing sports items into production
+bronze before this merges would have had the next CI silver run score them
+with the deployed nine-topic enum, mislabeling them into World or Business,
+which is the exact failure this change prevents. Sports must reach `main`
+before any sports item reaches bronze.
+
+### Deferred
+
+- Wave 2 sports sources (`cbs_sports`, `yahoo_sports`, `sky_sports`,
+  `defector`), all vetted and live, held until the effect of wave 1 on
+  candidate volume is observed.
+- Health as an eleventh section. Needs the 22-vs-20 budget conflict
+  resolved first, and its own tiebreakers, since Health overlaps Science
+  and Regulation heavily.
+- An editor candidate cap. The editor currently receives every scored
+  cluster with no limit, which is the condition behind the 2026-07-24
+  over-count. Separate spec change.
+- Parallelising the sequential adapter loop in `src/collector.py`, which is
+  what actually caps how many sources the collector can carry.
+- ESPN, rejected: its RSS carries no per-item dates, so
+  `src/adapters/rss.py` would skip every entry while the source looked
+  healthy. Its `site.api.espn.com` JSON is dated and works but is
+  undocumented and needs a bespoke adapter.
+
+### Open question raised for the spec
+
+The first live sports scores should be reviewed before the section is
+considered settled. The rubric cap is an untested prediction until real
+match reports come back at 3 or below.
+
+---
+
 ## M5.1 Trigger hardening
 
 Date: 2026-07-27

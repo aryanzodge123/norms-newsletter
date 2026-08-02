@@ -297,6 +297,43 @@
   max_items_per_run: 20
   feed_url: "https://www.federalreserve.gov/feeds/press_all.xml"
 
+# The sports beat, new in decision #32. Wave 1 is three sources, not the six
+# vetted, so the effect on candidate volume is observed before expanding.
+# Held for wave 2: cbs_sports, yahoo_sports, sky_sports, defector.
+#
+# max_items_per_run is 10 here, below the 20-30 used elsewhere, because these
+# feeds are an order of magnitude busier than the rest of the registry. BBC
+# and Guardian publish 51 and 34 items per 24h; the collector runs 8 times a
+# day, and all 34 prior sources together yield roughly 175 clusters a day. An
+# uncapped pair would dominate bronze on volume alone. scoring_v1's "routine
+# sport is not news" rule is the other half of that guard: the cap limits how
+# much arrives, the rubric limits what it can outrank.
+#
+# ESPN was vetted and rejected. Its RSS carries no per-item dates, and
+# src/adapters/rss.py skips entries missing a date, so the source would have
+# looked healthy in this file while collecting nothing. Its site.api.espn.com
+# JSON is dated and works but is undocumented and needs a bespoke adapter.
+- name: bbc_sport
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: sports
+  enabled: true
+  max_items_per_run: 10
+  feed_url: "https://feeds.bbci.co.uk/sport/rss.xml"
+
+- name: guardian_sport
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: sports
+  enabled: true
+  max_items_per_run: 10
+  feed_url: "https://www.theguardian.com/sport/rss"
+
+- name: npr_sports
+  adapter: adapters.rss.RSSAdapter
+  topic_hint: sports
+  enabled: true
+  max_items_per_run: 10
+  feed_url: "https://feeds.npr.org/1055/rss.xml"
+
 # --- Keyed sources: enable once the key is set in .env / Actions secrets
 
 - name: newsapi

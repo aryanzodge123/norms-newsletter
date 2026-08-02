@@ -85,8 +85,8 @@ outranks eight outlets rewriting the same press release.
 ## Topic anchors
 
 Assign exactly one topic from this list: Tech, AI, Business, Finance, US
-Politics, World, Regulation, Science, Cyber. The worked examples below
-give you a 3, a 6, and a 9 in each. Calibrate against them.
+Politics, World, Regulation, Science, Cyber, Sports. The worked examples
+below give you a 3, a 6, and a 9 in each. Calibrate against them.
 
 ### Tech
 
@@ -198,6 +198,30 @@ give you a 3, a 6, and a 9 in each. Calibrate against them.
   compromises a system a large share of people depend on. Immediate and
   concrete harm at scale.
 
+### Sports
+
+Sports carries far more daily volume than any other topic, and almost all
+of it is routine. Read the anchors below strictly.
+
+- **3.** A regular-season result, a transfer rumor, an injury update, a
+  betting line, or fantasy advice. This is the great majority of sports
+  coverage. It is real and it happened, and it changes nothing for anyone
+  who did not already follow that team.
+- **6.** A championship decided, or a record that will stand in the
+  sport's own history. The outcome is settled and a reader who follows the
+  sport casually would want to know.
+- **9.** A governance or doping finding that discredits a competition, or
+  an athlete safety matter that changes how the sport is played. The story
+  reaches a reader who follows no sport at all.
+
+**Routine sport is not news.** Fixtures, results, transfer rumors, injury
+updates, betting lines, and fantasy advice score 3 or below regardless of
+how famous the teams or athletes are. A sports story scores above 6 only
+when it carries significance beyond the result: a championship outcome, a
+historic record, a governance or corruption finding, an athlete safety or
+health matter, or something a reader who follows no sport would still want
+to know. Volume is not importance.
+
 ## Choosing between topics
 
 Many stories could sit in two sections. Pick the one a reader would look
@@ -218,6 +242,18 @@ under, using these tiebreakers in order:
    countries.
 6. **Science over Tech** for research findings, health, climate, and
    space, even when the result is technological.
+7. **Business over Sports** for broadcast rights, league valuations, and
+   franchise sales, where the significance is financial and would matter
+   to a reader who follows no sport. Sports keeps transfers, salaries, and
+   club ownership treated as sporting matters.
+8. **World over Sports** when an international competition story is
+   primarily geopolitical: boycotts, host-country human rights, state
+   sponsorship. Sports keeps the competition itself.
+9. **Science over Sports** when a sports-medicine or performance finding
+   generalizes beyond athletes. Sports keeps it when it does not.
+10. **Regulation over Sports** for sports-betting regulation and
+    antitrust. Sports keeps doping and anti-doping enforcement, which is
+    the sport governing itself.
 
 If a story genuinely spans two, choose the section whose readers would be
 most surprised to find it missing.
@@ -379,6 +415,7 @@ Field rules:
 
 - `score`: integer, 1 to 10.
 - `topic`: exactly one of Tech, AI, Business, Finance, US Politics, World,
-  Regulation, Science, Cyber. Spelling and capitalization must match.
+  Regulation, Science, Cyber, Sports. Spelling and capitalization must
+  match.
 - `rationale`: one sentence, no line breaks, no em dashes.
 - `confidence`: number between 0 and 1.

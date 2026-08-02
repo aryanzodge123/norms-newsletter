@@ -203,9 +203,10 @@ Registry entry (config/sources.yaml):
   max_items_per_run: 40
 ```
 
-**topic_hint vocabulary.** One of the nine section-skeleton values (6.5),
+**topic_hint vocabulary.** One of the ten section-skeleton values (6.5),
 lowercased: tech, ai, business, finance, politics, world, regulation,
-science, cyber. (politics is the hint form of the "US Politics" section.)
+science, cyber, sports. (politics is the hint form of the "US Politics"
+section.)
 The hint is advisory provenance only. It is written to the bronze record
 but nothing in silver or scoring reads it; the scoring stage (6.4c) assigns
 each story its real topic from the article text. So a general or mixed feed
@@ -290,7 +291,7 @@ the append-only bronze table.
 via DuckDB. Applies editorial policy (prompts/editor_v1.md, which includes
 prompts/voice.md):
 - Section skeleton: Tech, AI, Business, Finance, US Politics, World,
-  Regulation, Science, Cyber (optional).
+  Regulation, Science, Cyber (optional), Sports.
 - Budget 15-20 stories, min 2 / max 4 per section, global ranking. The
   upper bound of 20 is enforced on the editor *response* (retryable),
   mirroring the headline-names-a-section rule, so an over-count retries
@@ -303,6 +304,10 @@ prompts/voice.md):
   key_point topics use the short topic codes (the same code shown on each
   candidate story), which differ from the section display names; the editor
   is told this explicitly.
+  The skeleton's size is bounded by this ceiling. Ten sections at the
+  2-story minimum is exactly 20, so the current skeleton fits with zero
+  headroom. An eleventh section would need 22 and cannot be added without
+  first raising the ceiling or the per-section minimum (decision #32).
 - Dead sections collapse into "briefly"; 3+ dead sections -> shrink the
   edition; broadly quiet day -> edition_type "quiet" with a 3-point glance.
 - Outputs the edition core: metadata, key_points, per-story title +
@@ -836,6 +841,8 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 30 | The silver partition write is a full-partition overwrite, not append-only, so unlike bronze it can lose an Iceberg optimistic-concurrency race. On 2026-07-24 a `collect` run scored all 103 clusters and then raised `CommitFailedException` on the commit (the archival partition drop the likely counterparty). The overwrite now reloads the table and retries a bounded number of times before surfacing `write_failed`, which makes decision #5's idempotent-overlap promise (SPEC 6.2) true for the silver overwrite and not only for the append-only bronze table. Scoped to the silver overwrite: bronze and run_log are append-only and rarely conflict, and the closed reason-code set is unchanged (`write_failed` now means the write raised and retries were exhausted) |
 
 | 31 | GitHub's scheduler cannot meet 6.8's 06:00 ET target. Measured 2026-07-21 to 2026-07-27, the publish crons were created 82 to 192 minutes after their target on every single day, so publication landed 07:15 to 08:52 ET and the stated goal never held. No firing was ever dropped: all 14 scheduled runs arrived, so this is a timeliness defect and not a recovery one, and decision #7 already makes lateness safe rather than fatal. The delay is unbounded and not tunable from inside GitHub, so an independent Cloudflare Worker Cron Trigger also calls the workflow dispatch endpoint (6.11), firing 5 minutes after the window opens. It uses workflow dispatch rather than repository dispatch because GitHub grants the latter under `Contents: write`, which also permits committing code, while the former needs only `Actions: write`; this is the one credential held outside GitHub, so least privilege decides it. The existing window-plus-idempotency gate handles the trigger with no change, which is what keeps the scheduling rules in tested Python rather than a second copy in JavaScript. Verified live on 2026-07-27, when a manual publish at 12:21 UTC was followed by both crons arriving at 12:42 and 13:23 UTC and each correctly skipping the already-committed date. The GitHub crons are kept rather than replaced, because the gate makes redundancy free and two independent schedulers beat one reliable-looking one |
+
+| 32 | Sports is the tenth section. The topic vocabulary is a closed enum (`Topic` in `src/silver/score.py`, mirrored in the response schema), so the scoring call cannot decline a story: a sports item is not dropped, it is filed under a wrong topic, most likely World or Business, where it competes for a real section slot under a false label. Adding sports feeds therefore required the vocabulary change first, or the failure mode would have been section pollution rather than clean rejection. No budget constant moved: `plan_sections` fields a section at 2+ stories, so ten sections at the minimum is exactly the 20 ceiling, and measured across the first 13 editions only 4 to 6 sections were ever alive at once, against totals of 9 to 16 stories on a 15-20 target. The edition was under-supplied rather than oversubscribed, which is also why more sources were worth adding. The zero headroom is real though, so an eleventh section (Health was the candidate) needs 22 and must raise the ceiling or the per-section minimum first; that is recorded in 6.5 rather than solved. Sports renders last because `SECTION_ORDER` derives from `TOPICS` order, making the editorial judgment a one-line consequence of the constant. The load-bearing part is the rubric, not the enum: the wave-1 feeds carry roughly 95 items a day against about 175 clusters from all 34 prior sources combined, and most sports volume is fixtures, transfer rumors, betting lines, and fantasy advice, so scoring_v1 caps routine sport at 3 and requires significance beyond the result to clear 6. Without that cap the section would have crowded out news on the shared 1-10 scale. Sources start at three, not the six vetted, so the effect on candidate volume is observed before expanding |
 
 ## 11. Remaining open questions
 

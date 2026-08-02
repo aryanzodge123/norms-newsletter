@@ -43,11 +43,12 @@ TOPICS = (
     "Regulation",
     "Science",
     "Cyber",
+    "Sports",
 )
 
 Topic = Literal[
     "Tech", "AI", "Business", "Finance", "US Politics", "World",
-    "Regulation", "Science", "Cyber",
+    "Regulation", "Science", "Cyber", "Sports",
 ]
 
 # Haiku 4.5 pricing, USD per million tokens. Cache reads are 0.1x input,
