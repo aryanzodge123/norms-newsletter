@@ -88,7 +88,8 @@ Order them by importance. The first point should match your headline.
 
 Tag each with a `topic` code, not a section display name. The codes are the
 short forms shown on every candidate story: Tech, AI, Business, Finance, US
-Politics, World, Regulation, Science, Cyber. Use the code exactly as given.
+Politics, World, Regulation, Science, Cyber, Sports. Use the code exactly
+as given.
 A section shown as "Cybersecurity" is the code "Cyber"; "Artificial
 intelligence" is "AI". Copy the code from the candidate the point is about.
 

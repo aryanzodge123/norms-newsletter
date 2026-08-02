@@ -176,3 +176,36 @@ def test_build_stats_counts_distinct_sources():
         "sources": 2,  # hackernews, arstechnica
         "sections_held": 1,
     }
+
+
+# --------------------------------------------------------------------------
+# Sports, the tenth section (SPEC 6.5, decision #32)
+# --------------------------------------------------------------------------
+def test_sports_is_a_section_at_two_stories():
+    """Sports is fielded by the same min-2 rule as every other section."""
+    contexts = [
+        make_context("a" * 32, topic="Sports"),
+        make_context("b" * 32, topic="Sports"),
+    ]
+    result = plan.plan_sections(contexts)
+    assert "Sports" in result.available
+    assert result.held == ()
+
+
+def test_sports_is_held_at_one_story():
+    """One usable story cannot be a section, so it goes to briefly."""
+    result = plan.plan_sections([make_context("a" * 32, topic="Sports")])
+    assert result.available == ()
+    assert result.held == ("Sports",)
+
+
+def test_sports_renders_last():
+    """Decision #32: Sports sits last in the skeleton.
+
+    SECTION_ORDER derives from TOPICS order and assemble.py orders sections
+    by it, so this constant *is* the render order. Pinned here because it is
+    an editorial judgment, not an incidental consequence of tuple order.
+    """
+    from src.editor.schema import SECTION_ORDER
+
+    assert SECTION_ORDER[-1] == "Sports"

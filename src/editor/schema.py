@@ -44,6 +44,7 @@ TOPICS = (
     "Regulation",
     "Science",
     "Cyber",
+    "Sports",
 )
 
 # DESIGN.md SectionLabel: "Section names render in full ('Artificial
@@ -61,6 +62,10 @@ SECTION_NAMES: dict[str, str] = {
     "Regulation": "Regulation",
     "Science": "Science",
     "Cyber": "Cybersecurity",
+    # Sports needs no expansion: the code and the display name are the same
+    # string, unlike Cyber and AI. It sits last because SECTION_ORDER
+    # derives from TOPICS order, so this position is the render order.
+    "Sports": "Sports",
 }
 
 SECTION_ORDER = tuple(SECTION_NAMES[topic] for topic in TOPICS)

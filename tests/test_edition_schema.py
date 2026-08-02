@@ -138,7 +138,12 @@ def test_quiet_rejects_two_norm_points(quiet):
 # Sections: skeleton names, order, per-section 2-4 (SPEC 6.5)
 # --------------------------------------------------------------------------
 def test_unknown_section_name_rejected(normal):
-    normal["sections"][0]["name"] = "Sports"
+    # "Weather" is not in the skeleton. This used to say "Sports", which
+    # decision #32 made a real section; the assertion still passed, but only
+    # because Sports sorts last and so tripped the order rule instead of the
+    # unknown-name rule. Keep this name genuinely outside SECTION_ORDER.
+    assert "Weather" not in schema.SECTION_ORDER
+    normal["sections"][0]["name"] = "Weather"
     with pytest.raises(EditionInvalid):
         validate_edition(normal)
 
@@ -194,7 +199,7 @@ def test_story_ceiling_enforced(normal):
         counter += 1
         return clone
 
-    # SECTION_ORDER has nine names; six sections of four is 24 stories.
+    # SECTION_ORDER has ten names; six sections of four is 24 stories.
     normal["sections"] = [
         {"name": name, "stories": [story() for _ in range(4)]}
         for name in schema.SECTION_ORDER[:6]
@@ -355,3 +360,37 @@ def test_fallback_needs_a_notice(fallback):
     del fallback["notice"]
     with pytest.raises(EditionInvalid):
         validate_edition(fallback)
+
+
+# --------------------------------------------------------------------------
+# The ten-section budget edge (SPEC 6.5, decision #32)
+# --------------------------------------------------------------------------
+def test_all_ten_sections_at_the_minimum_exactly_fills_the_ceiling(normal):
+    """Ten sections at min 2 is exactly MAX_STORIES, so it must validate.
+
+    This is the zero-headroom case decision #32 records. It has never
+    occurred live (4 to 6 sections alive across the first 13 editions), but
+    it is legal, and an eleventh section would make the same arithmetic 22
+    and illegal. Pinned so that adding a topic without revisiting the budget
+    fails here rather than in production.
+    """
+    template = copy.deepcopy(normal["sections"][0]["stories"][0])
+    counter = 0
+
+    def story():
+        nonlocal counter
+        clone = copy.deepcopy(template)
+        clone["slug"] = f"filler-{counter}"
+        clone["cluster_id"] = f"{counter:032d}"
+        clone["title"] = f"Filler story number {counter}"
+        counter += 1
+        return clone
+
+    assert len(schema.SECTION_ORDER) == 10
+    normal["sections"] = [
+        {"name": name, "stories": [story() for _ in range(schema.MIN_STORIES_PER_SECTION)]}
+        for name in schema.SECTION_ORDER
+    ]
+    total = sum(len(s["stories"]) for s in normal["sections"])
+    assert total == schema.MAX_STORIES == 20
+    validate_edition(normal)
