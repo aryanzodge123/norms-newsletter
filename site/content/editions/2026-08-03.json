@@ -1,0 +1,447 @@
+{
+  "date": "2026-08-03",
+  "edition_number": 57,
+  "edition_type": "normal",
+  "headline_of_the_day": "Eastern Washington fires destroy 600 homes and force 60,000 to evacuate",
+  "headline_cluster_id": "00ebbba2bf93d345c1147a7409697e9c",
+  "headline_rationale": "Active disaster displacing tens of thousands with confirmed large-scale property destruction and ongoing emergency response",
+  "key_points": [
+    {
+      "text": "Eastern Washington fires destroyed 600 structures and forced 60,000 people to leave near Spokane.",
+      "topic": "World"
+    },
+    {
+      "text": "The US and Japan jointly helped the yen after it fell to a 40-year low, the first joint action since 2011.",
+      "topic": "Finance"
+    },
+    {
+      "text": "A bug in Coldcard hardware wallet firmware may have let someone steal 88 million dollars in Bitcoin.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Health Secretary RFK Jr told parents to vaccinate kids as US measles cases hit a 35-year high.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Senate leaders reached a funding deal to prevent a government shutdown.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-03.mp3",
+    "duration_seconds": 457,
+    "size_bytes": 5479488
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "d03dc0ddaac74c07690e7a45a0061f2e",
+          "slug": "apple-engineer-says-he-was-fired-after-refusing-to-send",
+          "title": "Apple engineer says he was fired after refusing to send device IDs to AT&T",
+          "summary": "The employee says he was fired for raising concerns about sharing customer data.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://runtimewire.com/article/exclusive-apple-engineer-says-he-was-fired-after-refusing-to-send-customer-devic"
+            }
+          ],
+          "article": {
+            "background": "Toby Boardman was an engineer at Apple who worked on tech relationships with carriers like AT&T. Three years before his firing, he raised a concern about sharing customer device IDs with AT&T. He said his manager punished him for this. He also asked for job changes to help with anxiety and obsessive-compulsive disorder.",
+            "what_happened": "On June 10, 2024, Boardman returned from a month of medical leave. Apple scheduled a meeting for the next day. Boardman thought it would cover his request for help with his condition and his complaints about his manager. Apple fired him that day instead. The company cited poor performance. Boardman filed a lawsuit saying that reason was false.",
+            "why_it_matters": "The case tests whether companies can fire workers who object to privacy practices. If Boardman's account is right, an engineer who questioned how customer data was shared faced firing instead of a fair hearing. The outcome could affect whether other workers feel safe raising privacy concerns inside their own companies.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "061dff8a62b90c2e44ac88072522b561",
+          "slug": "new-spinning-drone-design-hides-in-plain-sight-using-motion",
+          "title": "New spinning drone design hides in plain sight using motion blur",
+          "summary": "Northwestern engineers used how human eyes work to make a moving drone almost invisible.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.northwestern.edu/stories/2026/07/new-spinning-drone-hides-in-plain-sight"
+            }
+          ],
+          "article": {
+            "background": "For years, engineers have tried to make invisible drones and robots. They used camouflage, clear materials, or optical systems that bend light. Northwestern University researchers took a different path instead.",
+            "what_happened": "The team built a spinning drone called the \"Phantom Twist.\" It spins up to 25 times per second. At that speed, human eyes cannot see it clearly. The drone becomes a ghostly smudge that blends into the background.",
+            "why_it_matters": "This technique uses motion blur, the same effect that makes fast fans seem to vanish. It offers a new way to hide a drone without heavy materials or complex tech. For now, the drone still appears as a smudge rather than true invisibility, so it may not hide from cameras or in close-up work.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "88f80de8064450dfb9c57c4ecb1fb00c",
+          "slug": "ai-generated-thirst-traps-scam-gay-men-on-social-media",
+          "title": "AI-generated thirst traps scam gay men on social media",
+          "summary": "Fake accounts with thousands of followers use AI images to trick and scam victims.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.vox.com/culture/492604/ai-deepfake-gay-influencers-tiktok-thirst-traps"
+            }
+          ],
+          "article": {
+            "background": "AI generated people, called deepfakes, can now look real enough to fool viewers. On social media platforms like TikTok and X, fake accounts using these AI faces post attractive photos and videos. They accumulate large followings by posing as appealing men.",
+            "what_happened": "Fake accounts with AI-generated profiles are targeting gay men on social media. These accounts post shirtless videos and photos that look authentic. One fake account named Derek Lam has over 31,000 TikTok followers and nearly 40,000 on X. The comments on these posts come from real people who believe they are interacting with actual men.",
+            "why_it_matters": "These fake accounts use attraction to scam people out of money or personal information. Knowing these profiles exist helps you spot warning signs. Look for perfect lighting in every video or identical followers across accounts. Be cautious if an attractive profile never replies or asks for money quickly.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0f5a04b379fc0c89acdc8056f3d0e808",
+          "slug": "openai-s-new-model-astra-called-amazing-but-oversold",
+          "title": "OpenAI's new model Astra called amazing but oversold",
+          "summary": "Critics say OpenAI overstated what Astra can do in real tests.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://garymarcus.substack.com/p/openais-amazing-but-vastly-oversold"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "11ee331f16a9a549a4f5a7ce23efd618",
+          "slug": "uk-fuel-theft-jumps-20-percent-since-iran-war-began",
+          "title": "UK fuel theft jumps 20 percent since Iran war began",
+          "summary": "UK drivers stole nearly 200,000 pounds of fuel daily from gas stations as prices rose after February.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cy8mrrlkjppo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "When conflict breaks out in the Middle East, it disrupts the oil supply. Prices at the pump rose sharply in the UK after February 28. That is when the Iran war began and disrupted oil supplies across the region.",
+            "what_happened": "Fuel theft from UK forecourts jumped by a fifth in the five months after the conflict started. Industry data from Forecourt Eye shows nearly £200,000 of fuel now gets stolen daily. The value of stolen fuel rose 48% compared with the same period a year before.",
+            "why_it_matters": "Higher prices push some drivers to steal fuel rather than pay. Petrol stations lose money and may raise prices further to cover the loss. This ripples through the economy as delivery costs rise and affect what people pay for goods.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "004725533d88e9ed5d9de8014dd68f79",
+          "slug": "uk-s-first-super-university-merging-greenwich-and-kent",
+          "title": "UK's first super-university merging Greenwich and Kent launches in September",
+          "summary": "The new school will serve over 50,000 students across four campuses in London and Kent.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/education/2026/aug/03/uk-first-super-university-merger-greenwich-kent-september-launch"
+            }
+          ],
+          "article": {
+            "background": "The University of Greenwich and the University of Kent are two separate schools in southeast England. They are now merging into one larger institution. The new school is called the London and South East University Group, or LASEUG. It will be the third largest university in the UK by student count.",
+            "what_happened": "LASEUG will launch on 7 September, one year after the plan was first announced. The new university will have over 50,000 students across four campuses in London, Medway, and Kent. Greenwich and Kent will keep their own names and run as separate academic divisions. Students will still graduate from their chosen university.",
+            "why_it_matters": "Students at either school will now access a larger institution's resources and facilities. The merger gives both universities more scale to invest in research, programs, and campus life. This kind of merger is new in the UK, so it signals a shift in how higher education institutions are adapting to change.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "272b6256cf07c2c21eca449060b18617",
+          "slug": "us-and-japan-jointly-prop-up-the-yen-in-rare-coordinated",
+          "title": "US and Japan jointly prop up the yen in rare coordinated move",
+          "summary": "Both countries intervened after the yen hit a 40-year low, the first joint action since 2011.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cglj1pr0wjwo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The yen is Japan's currency. When a currency weakens, it means you need more of it to buy things priced in other currencies. Japan and the US last jointly intervened in currency markets in 2011, after an earthquake and tsunami. That intervention aimed to weaken the yen. This week's action is only the second time in over a decade that both countries moved together on this.",
+            "what_happened": "Japan and the US confirmed they jointly intervened last week to stop the yen's decline. The yen had fallen to a fresh 40-year low. US Treasury Secretary Scott Bessent and Japan's finance ministry both said they are willing to do this again if needed.",
+            "why_it_matters": "A weak yen affects what Japanese goods cost to buy from abroad, and can ripple through global trade and markets. When major currencies shift sharply, it can shake confidence in government bonds and financial systems worldwide. The fact that both countries are willing to work together to stabilize the yen signals they take that risk seriously.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "37759b6c6f76cd00f3bbc3d05d512937",
+          "slug": "new-mortgage-policy-changes-may-help-first-time-buyers-in-uk",
+          "title": "New mortgage policy changes may help first-time buyers in UK",
+          "summary": "New rules could make it easier for first-time buyers to get approved for loans.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cp3rkzpl7ngo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Buying a home has become harder for first-time buyers. House prices have risen sharply, reaching around £300,000 on average. Saving for a deposit is difficult when living costs are high, and interest rates on new mortgages have been climbing. Banks have traditionally limited how much they will lend to borrowers.",
+            "what_happened": "Recent rule changes and shifts in lending practices now allow first-time buyers to borrow up to six or seven times their annual income. This is a significant change from previous lending limits. The increased borrowing capacity means more first-time buyers may qualify for mortgages.",
+            "why_it_matters": "If you are saving to buy your first home, this change makes it more possible to get approved for a mortgage. You may now be able to borrow enough to buy a home even if your savings feel short. The trade-off is that larger loans mean larger monthly payments, so you should carefully check what you can actually afford to repay.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "c417547dabdb58708cbdb03581dd03a3",
+          "slug": "health-secretary-rfk-jr-tells-families-to-vaccinate",
+          "title": "Health Secretary RFK Jr tells families to vaccinate children against measles",
+          "summary": "Kennedy dropped years of vaccine opposition as US measles cases hit a 35-year high.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/us-news/2026/aug/02/rfk-jr-measles-vaccination"
+            }
+          ],
+          "article": {
+            "background": "Robert F Kennedy Jr is now the US health secretary. He has long questioned vaccine safety and spread claims against vaccines, including the MMR shot that protects against measles, mumps, and rubella. His past statements have shaped some families' vaccination choices.",
+            "what_happened": "On Sunday, Kennedy told parents to vaccinate their children against measles during a CNN interview. The US has recorded 2,371 measles cases this year. That tops 2025's total of 2,289 cases. It is the highest count in 35 years.",
+            "why_it_matters": "Measles spreads fast and can cause serious illness. When vaccination rates drop, outbreaks grow. Kennedy's call for vaccination may help shift families back toward protecting their kids. His words carry weight as the nation's top health official.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a385f6750c59e278e1a1a9f20e660905",
+          "slug": "senate-leaders-reach-funding-deal-to-avoid-shutdown-during",
+          "title": "Senate leaders reach funding deal to avoid shutdown during campaign season",
+          "summary": "Senate leaders agreed on a funding deal to stop a government shutdown.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/senate-leaders-reach-funding-deal-to-avoid-shutdown-during-campaign-season"
+            }
+          ],
+          "article": {
+            "background": "Congress must pass a spending bill to keep federal agencies open. Without one, a government shutdown stops most services. Senate leaders negotiated a short-term bill on Sunday, August 2.",
+            "what_happened": "The bill would fund federal agencies past the midterm elections and into early December. This timing lets senators campaign without the pressure of an immediate shutdown deadline. The Senate was set to vote on the measure.",
+            "why_it_matters": "A shutdown would cut off services people use daily. National parks would close. Federal benefit payments would stop. By passing this bill, Congress avoids that disruption during the busy campaign season.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "00ebbba2bf93d345c1147a7409697e9c",
+          "slug": "eastern-washington-fires-destroy-600-structures-and-force",
+          "title": "Eastern Washington fires destroy 600 structures and force 60,000 to evacuate",
+          "summary": "Fires near Spokane burned eight square miles and strained federal and local firefighting resources.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/02/eastern-washington-wildfires"
+            }
+          ],
+          "article": {
+            "background": "Spokane is Washington's second largest city. Wildfires are common in the western US during summer months. This year, fires across the region have overwhelmed resources available to fight them.",
+            "what_happened": "Wildfires near Spokane forced 60,000 people to evacuate on Sunday. The fires destroyed at least 600 homes, businesses, and other structures. The blazes burned about 8.2 square miles. Across Washington state, about 390 square miles have burned. Some fires, including those near Spokane, are not yet contained.",
+            "why_it_matters": "These fires show how many blazes can strain firefighting agencies at once. When dozens of fires burn across the western US at the same time, federal and local teams struggle to fight them all. People in fire zones face evacuation orders and risk to their homes.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3fb473322bd4baee83b29dcba001dee8",
+          "slug": "south-korea-records-its-highest-temperature-since",
+          "title": "South Korea records its highest temperature since measurements began",
+          "summary": "Yangsan hit 42.5 degrees Celsius, so authorities shut down all outdoor activities immediately.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/03/south-korea-highest-temperature"
+            }
+          ],
+          "article": {
+            "background": "South Korea has tracked weather since 1904. Heat waves happen most summers, but this year's heat is extreme. The southeastern city of Yangsan has been hit hardest.",
+            "what_happened": "Yangsan hit 42.5 degrees Celsius on Sunday afternoon. That is the hottest temperature ever recorded in South Korea since modern weather tracking began. The city saw temperatures above 40 degrees for five days in a row. Other cities like Daegu and Busan are also in the high 30s.",
+            "why_it_matters": "When heat gets this severe, it can kill. Authorities told people in affected areas to stop all outdoor work and exercise right away. Schools and workplaces may close, and it becomes unsafe to be outside even briefly.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "9c5baab445a5873b5d8a097d796ac370",
+          "slug": "california-data-brokers-must-honor-deletion-requests",
+          "title": "California data brokers must honor deletion requests starting August 1",
+          "summary": "Registered brokers must process requests through the state's Delete Request Opt-out Platform.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcsandiego.com/nbc-7-responds-2/californians-data-deletion-requests-drop-become-enforceable-aug-1/4054771"
+            }
+          ],
+          "article": {
+            "background": "California collects a lot of data about what people do online. Companies called data brokers buy and sell this personal information. Until now, California residents had to contact each broker separately to stop the sales. A new state tool called DROP changes this.",
+            "what_happened": "Starting Aug. 1, California data brokers must honor deletion requests made through DROP, the state's Delete Request Opt-out Platform. The tool lets residents ask all registered brokers to stop selling their data in one place. About 350,000 Californians have already signed up since Jan. 1.",
+            "why_it_matters": "You no longer need to find and email hundreds of companies to protect your data. One request through DROP handles it. This gives you a simpler way to control how much of your personal information gets sold.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a39c550e8383fe8dd7cc0842eba334ae",
+          "slug": "fcc-to-consider-rules-for-unlicensed-devices-communicating",
+          "title": "FCC to consider rules for unlicensed devices communicating with satellites",
+          "summary": "The FCC will explore new frequencies for devices that connect directly to each other, including from Earth to space.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "federal_register",
+              "url": "https://www.federalregister.gov/documents/2026/08/03/2026-15733/sunshine-act-open-commission-meeting-thursday-august-6-2026"
+            }
+          ],
+          "article": {
+            "background": "The FCC allows certain wireless devices to operate without a license under rules called part 15. These devices use specific radio frequencies. The agency is now considering whether to expand these rules to let unlicensed devices talk directly to satellites in orbit.",
+            "what_happened": "On Thursday, August 6, 2026, the FCC will vote on a proposed rulemaking about unlicensed wireless devices and satellite communication. The proposal would let certain unlicensed devices send signals directly to satellites using specific radio frequencies. It would also clarify that these devices can operate inside FCC-approved spacecraft.",
+            "why_it_matters": "Direct satellite communication from consumer devices could expand internet access in areas without cell towers or fixed broadband. Allowing unlicensed devices to reach satellites might reduce the cost and complexity of connecting remote locations. For now this affects mainly the wireless and space industries, but it could eventually change how people in rural or underserved areas get online.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "b75b7b4de0799643b52ada9bca6fafd6",
+          "slug": "t-cells-stay-in-attack-mode-in-long-covid-patients",
+          "title": "T cells stay in attack mode in Long Covid patients",
+          "summary": "Immune cells fighting the virus stay active in people with long COVID symptoms.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(26)00363-0"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "d4dbd804ee7b7b5bcde352dd09469c76",
+          "slug": "study-of-two-million-newborns-confirms-vitamin-k-shot",
+          "title": "Study of two million newborns confirms vitamin K shot prevents bleeding",
+          "summary": "Skipping the routine vitamin K shot increased bleeding risk in babies.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://medicalxpress.com/news/2026-07-million-newborns-vitamin-shot-higher.html"
+            }
+          ],
+          "article": {
+            "background": "Newborns get several routine shots soon after birth. One is prophylactic vitamin K, a shot that helps blood clot. It prevents vitamin K deficiency bleeding (VKDB), a serious condition. More parents are refusing this shot for their children. Swedish researchers wanted to see how often this happens and what effects it has.",
+            "what_happened": "Researchers studied more than 2 million newborns. They tracked vitamin K shots over time. They also tracked infant bleeding diagnoses. Babies whose parents refused the shot had higher rates of bleeding.",
+            "why_it_matters": "If a newborn does not get vitamin K, they face real risk of dangerous bleeding. This study shows the stakes clearly for parents making this choice. The shot is routine and widely used because it works.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "8036987bf7fd2011b618f4bc2b894f92",
+          "slug": "coldcard-wallet-firmware-flaw-linked-to-88-million-bitcoin",
+          "title": "Coldcard wallet firmware flaw linked to $88 million Bitcoin theft",
+          "summary": "A bug in the Coldcard hardware wallet let attackers drain thousands of Bitcoin wallets.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/coldcard-wallet-rng-flaw-likely-linked-to-88-million-bitcoin-theft"
+            }
+          ],
+          "article": {
+            "background": "Coldcard is a hardware wallet, a device that stores the private keys needed to control Bitcoin. In March 2021, Coldcard's firmware had a flaw in how it generated random seeds. These seeds are the starting point for creating keys that control your funds. The flaw made seeds predictable instead of truly random.",
+            "what_happened": "Attackers used the flaw to reproduce the keys from thousands of Coldcard wallets. On July 30, they stole about 1,083 Bitcoin worth $70.2 million from 1,196 addresses in a 41-minute attack. Within days, more attack waves hit. By August, attackers had drained nearly 1,367 Bitcoin (about $89 million) from 4,585 addresses total.",
+            "why_it_matters": "If you generated a Bitcoin seed on the affected Coldcard firmware between March 2021 and when the flaw was disclosed, your funds are at risk. Coldcard has released a fix, but security experts recommend moving your Bitcoin to a new wallet with a properly generated seed. This shows why hardware wallets matter: even devices designed to protect your keys can have hidden flaws.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e39a1bee860863b11e19e36978c5dcfc",
+          "slug": "crypto-miners-stealing-electricity-across-southeast-asia",
+          "title": "Crypto miners stealing electricity across Southeast Asia",
+          "summary": "Malaysian police raided facilities running 71 mining machines on stolen power for about a month.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.dw.com/en/how-crypto-miners-are-stealing-power-in-southeast-asia/a-78175364"
+            }
+          ],
+          "article": {
+            "background": "Cryptocurrency mining uses huge amounts of electricity to process Bitcoin transactions. In Southeast Asia, some miners have started stealing power by bypassing electricity meters. Last week a raid in Malaysia showed how this theft has grown across the region.",
+            "what_happened": "Police in Malaysia's Johor state raided four locations on July 22 and 23. They found 71 mining machines that had been running on stolen power for about a month. Officers arrested three people and seized computers, routers, and vehicles. The stolen electricity cost an estimated €14,500.",
+            "why_it_matters": "When miners steal power, regular people pay higher bills to make up for it. The theft also shows how crypto mining is now tied to organized crime in Southeast Asia. As mining spreads to cheaper areas with less police oversight, the problem will likely grow.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "a0e1d44740f1732908c4a8092aebcb8e",
+      "title": "Europe makes trillion-euro bet to revive its battered industry",
+      "url": "https://www.reuters.com/commentary/reuters-open-interest/europe-makes-trillion-euro-bet-revive-its-battered-industry-2026-07-31",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1c926ffc2d2f662db0d24baf4dc042d6",
+      "title": "Artists, writers and scientists urge UK government to save Jodrell Bank Observatory",
+      "url": "https://www.theguardian.com/science/2026/aug/03/jodrell-bank-observatory-artists-writers-scientists-letter",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "feb41c653da78d15872ca8c0aa035dd2",
+      "title": "Visas: Visa Bond Program",
+      "url": "https://www.federalregister.gov/documents/2026/08/03/2026-15726/visas-visa-bond-program",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "4fbc3ee0cc758688ef1a20d57062934a",
+      "title": "At least five Mohamed Al Fayed abuse survivors confirmed as human-trafficking victims",
+      "url": "https://www.theguardian.com/world/2026/aug/03/mohamed-al-fayed-abuse-survivors-confirmed-human-trafficking-victims",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 97,
+    "clusters_considered": 72,
+    "stories_run": 18,
+    "sources": 10,
+    "sections_held": 0
+  }
+}
