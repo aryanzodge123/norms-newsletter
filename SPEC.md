@@ -1011,6 +1011,10 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 | 47 | Subscriptions are sold through in-app purchase rather than the direct payment path the prototype shows. Apple Guideline 3.1.1 requires IAP for digital content consumed inside the app, and a subscription to the app's own newsletter is not a borderline case. The entitlement of record is the server's, derived from a validated store transaction; a client-held receipt is evidence and never the source of truth, which is the same boundary decision #46 draws for the plan itself. Recording this as a decision rather than an implementation detail is deliberate: a direct payment path is the single most likely cause of a review rejection in the app, it is cheap to choose correctly now, and discovering it at submission costs a review cycle on a binary that has already been built and tested against the wrong assumption |
 
+| 49 | The app's v1 topic menu is the ten topics already in the enum, with nothing added, renamed, merged, or retired. The prototype's twenty are recorded in 14.3 as a deferred expansion rather than adopted. The reason is that a wider menu is not a configuration change: `scoring_v1` carries anchored 3, 6, and 9 example stories for every topic, so thirteen additions are thirteen anchor sets to write and calibrate, and decision #32 is the evidence that those anchors decide outcomes rather than decorate the prompt. The prototype's merge of Business with Finance and its retirement of Regulation and Cyber also touch rows already written to `silver.story_clusters`, converting a menu change into a data migration. Shipping the existing ten costs nothing, is validated by fifteen published editions rather than chosen in the abstract, and leaves 14.4's `general_score` top-up to cover thin coverage, which is what weakens the case for many narrow topics in the first place. `Sports` is kept despite never having produced a section, because that is precisely the reader decision #33 introduced `topic_score` to reach and is therefore the clearest available evidence that the two-score change works |
+
+| 48 | The allocator uses two lookback windows rather than one, and breaks score ties by recency. A single window has to serve a daily reader who wants this morning's news and a returning, newly signed up, or newly re-topiced reader who wants the backlog, and those two want opposite values: 24 hours makes catch-up useless while a week makes daily reading stale. The daily window is set wider than a day on purpose, for the same reason `since_window_hours` is wider than the collector's cadence: the overlap is what stops a drifting read time or a late assembly from falling into a gap. The catch-up window stops at roughly a week because past that point the reader is browsing an archive rather than catching up, and the app offers that separately. Recency joins the ordering because scores do not age: a 9 from four days ago outranks a 6 from this morning for as long as both are eligible, so without a recency tie-break any widening of a window silently ages the newsletter for readers whose topics move slowly, and the previous `story_id` tie-break resolved that by an arbitrary string. Widening a window is close to free, since the stories are already written and stored and no AI call is involved, which is what makes this a question about staleness rather than cost. The catch-up window is bounded by the retention period rather than the reverse, because offering a backlog longer than retention promises data that has already been deleted. This also converts 14.4's existing promises about topic backfill and a new user's first newsletter from aspirations into behavior a window can actually deliver |
+
 ## 11. Remaining open questions
 
 - Whether briefly items get one-line summaries or titles only (v1: titles).
@@ -1035,19 +1039,17 @@ urgent it feels.
   offering Sign in with Apple to any app that offers a third-party social
   login, so supporting Apple and email only avoids the requirement entirely
   rather than satisfying it.
-- **The topic menu itself: which topics the closed list contains (14.3).**
-  Blocks the signup flow, and every stored user preference references it. The
-  cost is larger than picking names. scoring_v1 carries anchored example
-  stories for 3, 6, and 9 in every topic (6.4), so N topics means N sets of
-  anchors, and decision #32 is the evidence that those anchors decide
-  outcomes rather than decorate the prompt. A large taxonomy is therefore a
-  rubric re-calibration, not a configuration change, and 14.4's top-up
-  already covers thin coverage, which weakens the case for many narrow
-  topics.
-- **The allocator constants (14.4).** Mostly closed by decision #45: the
-  budget is now per user and the per-topic minimum and maximum are gone. What
-  remains is the **lookback window** and the top-up rules, both of which
-  `tests/test_allocator.py` needs before it can assert against real numbers.
+- ~~The topic menu~~ **Closed** by decision #49: v1 ships the existing ten.
+  The prototype's twenty are recorded in 14.3 as a deferred expansion, and
+  taking it up later is a rubric re-calibration plus a data migration rather
+  than a configuration change. Not blocking any more.
+- **The allocator constants (14.4).** Largely closed. Decision #45 made the
+  budget per user and removed the per-topic minimum and maximum; decision #48
+  specified two lookback windows with starting values. What remains is the
+  **top-up rules**, which `tests/test_allocator.py` needs before it can assert
+  against real numbers. The window values are starting points to be tuned
+  against `topped_up` and `locked_topics` (14.5) rather than settled in
+  advance, and `lookback_catchup_days` is bounded by retention, below.
 - **The free-tier topic allowance (14.10).** Set to 3 from the prototype.
   It is the single number that decides both how useful the free tier is and
   whether anyone upgrades, and 14.5's `locked_topics` is the instrument for
@@ -1067,6 +1069,8 @@ urgent it feels.
   rule is far cheaper to apply before data accumulates than after. It now also
   gates a Pro benefit: 14.10 cannot sell archive depth until retention decides
   how much archive there is, or the app sells access to data it has deleted.
+  It also bounds `lookback_catchup_days` (14.4, decision #48) for the same
+  reason, so it now constrains two features rather than one.
 
 **Blocking release rather than code.**
 
@@ -1310,6 +1314,7 @@ Postgres, never the lake (decision #36).
 | `read_time_local` | A local wall-clock time, e.g. `06:30`. |
 | `timezone` | IANA name, e.g. `America/New_York`. Supplied by the client from the device zone and stored as last reported. It is never inferred server-side from IP, which is wrong for VPN users and unstable for everyone. |
 | `seen_story_ids` | Drives the already-seen filter in 14.4. |
+| `last_read_at` | When the user last opened a newsletter. Nullable, and null for a user who has never read one. Selects between 14.4's two lookback windows; it is not analytics and is not the feedback telemetry section 11 still calls for. |
 | `push_token` | Nullable; push is opt-in. |
 
 **Weight bands are presentation, not data.** The client renders a weight as one
@@ -1348,8 +1353,55 @@ detect, because there is no fixed vocabulary to audit against.
 
 The menu is drawn from the same `Topic` enum as `primary_topic` and
 `secondary_topics`, so a user's selection is always directly queryable and no
-mapping layer exists to drift. The specific list is an open question (section
-11) and blocks the signup flow.
+mapping layer exists to drift.
+
+**The v1 menu is the ten topics already in the enum** (decision #49). No topic
+is added, renamed, merged, or retired for the app's first release.
+
+| Topic (enum) | Display name | Editions with a section | Stories |
+| --- | --- | ---: | ---: |
+| `World` | World | 13 | 43 |
+| `Cyber` | Cybersecurity | 12 | 28 |
+| `Regulation` | Regulation | 13 | 27 |
+| `Business` | Business | 10 | 22 |
+| `AI` | Artificial intelligence | 9 | 18 |
+| `Science` | Science | 8 | 18 |
+| `Tech` | Technology | 8 | 17 |
+| `US Politics` | US politics | 6 | 13 |
+| `Finance` | Finance | 5 | 10 |
+| `Sports` | Sports | 0 | 0 |
+
+Counts are over the first 15 published editions. Display names come from
+`SECTION_NAMES` and are already the app's labels, so no new copy is needed.
+
+**`Sports` stays in the menu at zero.** It has never produced a section,
+because decision #32 caps routine sport at 3 and the site's editor works from
+`general_score`. That is not a reason to remove it; it is the exact case
+decision #33 introduced `topic_score` to serve, and it is the cleanest
+available test that the two-score change does what it claims. A Sports
+subscriber is reachable in the app and was not reachable on the site.
+
+#### Deferred expansion
+
+The app prototype proposes a 20-topic menu. Those additions are recorded here
+so the work is not rediscovered, and are **not** part of v1:
+
+- **Add (13):** Climate, Health, Culture, Media, Law and courts, Education,
+  Energy, Space, Personal finance, Entertainment, Travel, Food and drink,
+  Housing and real estate.
+- **Rename:** `US Politics` broadened to Politics.
+- **Merge:** `Business` and `Finance` into one Business and markets topic.
+- **Retire:** `Regulation` and `Cyber`, both of which are live sections in
+  shipped editions and would need their existing rows remapped.
+- **Group** the menu under three headings for the picker: the daily spine,
+  technology and science, life and culture.
+
+Each addition costs a set of anchored 3, 6, and 9 example stories in
+`scoring_v1` (6.4), so an expansion is a rubric re-calibration rather than a
+configuration change. Decision #32 is the evidence that those anchors decide
+outcomes. The merge and the two retirements additionally touch stored rows in
+`silver.story_clusters`, which is why they are a separate, later change rather
+than a wider v1.
 
 ### 14.4 Allocator (code, no AI)
 
@@ -1370,7 +1422,8 @@ and had to infer. Where that information exists, the allocator uses it rather
 than overriding it with global constants (decision #45).
 
 Inputs: the user's ordered `topic_prefs[]` with weights, their `length`, their
-`plan`, their `seen_story_ids`, the story table, and the lookback window.
+`plan`, their `seen_story_ids`, their `last_read_at`, the story table, and the
+two lookback windows.
 Output: an ordered list of `story_id`s with the claiming topic for each, plus
 the lead story.
 
@@ -1393,8 +1446,8 @@ Rules, applied in order:
    that no later step can surface a locked topic by any route, including the
    top-up in rule 7.
 2. **Query.** Stories whose `primary_topic` **or** `secondary_topics`
-   intersects the entitled topics, within the lookback window, excluding
-   `seen_story_ids`.
+   intersects the entitled topics, within the applicable lookback window
+   (below), excluding `seen_story_ids`.
 3. **Deduplicate across topics.** A story matching two entitled topics appears
    exactly once, claimed by whichever of them comes **earlier in the user's
    order**. That order is already total, so this needs no secondary tie-break.
@@ -1403,7 +1456,7 @@ Rules, applied in order:
    so the targets sum to exactly `length` with no rounding drift. Remainder
    ties resolve by the user's topic order.
 5. **Fill.** Each topic takes its target, ranked by `topic_score` descending,
-   tie-broken by `story_id` ascending.
+   then `written_at` descending, then `story_id` ascending.
 6. **Reclaim and redistribute.** A topic with fewer candidates than its target
    releases the shortfall. Released slots are redistributed across topics that
    still have unselected candidates, in proportion to their weights, by the
@@ -1416,8 +1469,8 @@ Rules, applied in order:
    error path.
 8. **Lead story** is the highest `general_score` among the selected set.
 9. **Order.** Sections follow the user's `topic_prefs` order. Within a section,
-   `topic_score` descending, `story_id` ascending. Topped-up stories run after
-   the entitled sections.
+   `topic_score` descending, then `written_at` descending, then `story_id`
+   ascending. Topped-up stories run after the entitled sections.
 
 **A topic receiving zero stories is a correct outcome, not a failure.** A
 weight of 1 against a total of 40 at `length` 5 rounds to zero, and the band
@@ -1437,12 +1490,56 @@ earlier "fewer chosen topics means more stories per topic" rule is subsumed.
 
 **Determinism requires every ordering to be total**, so all four tie-break
 points are specified rather than left to sort stability: remainder ties (rule
-4), `topic_score` ties (rule 5), redistribution order (rule 6), and the
-claiming topic (rule 3). This is the reason the allocator is code rather than
-a prompt, so it is asserted directly in the tests below.
+4), score ties (rule 5, resolved by recency then `story_id`), redistribution
+order (rule 6), and the claiming topic (rule 3). This is the reason the
+allocator is code rather than a prompt, so it is asserted directly in the tests
+below.
 
-The lookback window and the top-up rules live in `config/pipeline.yaml`. The
-budget is no longer a constant there; it is per user.
+**Two lookback windows, not one** (decision #48). A single window is asked to
+serve two readers who want opposite things. A regular reader opening the app
+each morning wants today's news, and a wide window shows them Tuesday's story
+on Friday. A reader who has been away, has just signed up, or has just added a
+topic wants the backlog, and a narrow window hands them a thin newsletter at
+the exact moment they are deciding whether to keep the app. Any single value is
+wrong for one of them.
+
+| Window | Applies | Starting value |
+| --- | --- | --- |
+| `lookback_daily_hours` | The ordinary case | 36 |
+| `lookback_catchup_days` | Catch-up, per the triggers below | 7 |
+
+The daily window is deliberately wider than one day. A reader whose read time
+drifts, or whose newsletter is assembled after a late collector run, must never
+fall into a gap between windows. This is the same reasoning already applied to
+`since_window_hours` against the collector's 3-hour cadence: the overlap is
+what lets a missed run heal itself instead of leaving a hole.
+
+The catch-up window applies when, and only when, there is a backlog to serve:
+
+- the user has no previous newsletter, which covers a new signup,
+- a topic was added since their last newsletter, in which case the wider window
+  applies to that topic alone rather than the whole query, or
+- `last_read_at` (14.2) is older than the daily window.
+
+Seven days rather than thirty because beyond roughly a week this stops being
+catch-up and becomes browsing an archive, which the app already offers as its
+own surface.
+
+**Scores do not age, which is why recency is a tie-break rather than an
+afterthought.** A story scoring 9 four days ago outranks one scoring 6 this
+morning for as long as both are eligible. Without rule 5's `written_at`
+ordering, widening any window quietly fills newsletters with older news for
+readers whose topics move slowly, and the previous `story_id` tie-break decided
+that by an arbitrary string. Recency is the honest tie-break and is equally
+deterministic.
+
+**The catch-up window may never exceed the retention period.** Offering seven
+days of backlog over five days of retained stories promises what has already
+been deleted. Retention is still open (section 11), so it constrains this value
+rather than the other way around.
+
+Both windows and the top-up rules live in `config/pipeline.yaml` and land with
+the allocator in M7. The budget is no longer a constant there; it is per user.
 
 **Never an empty newsletter.** Decision #26 guarantees the site never has an
 unpublished day. The per-user equivalent is harder, because a user with two
@@ -1458,6 +1555,10 @@ deciding whether the app is worth keeping. This is a direct consequence of
 write-once storage and is close to impossible to add under per-user
 generation. The same applies to a new signup, whose first newsletter is built
 immediately rather than at their first read time.
+
+The catch-up window is what makes both of those deliverable rather than
+aspirational. Under the daily window alone, "immediately" would mean whatever
+that topic produced today, which for a slow topic is nothing at all.
 
 **Tests (`tests/test_allocator.py`), required before the prompt-free
 implementation lands, per CLAUDE.md working rule 4:**
@@ -1486,8 +1587,17 @@ implementation lands, per CLAUDE.md working rule 4:**
 - A user with zero eligible stories in their topics still receives a
   newsletter (the per-user form of decision #26).
 - Lead story is the highest `general_score` among the selected set.
+- Among stories with equal `topic_score`, the more recently written is selected
+  and ordered first.
+- A user with a previous newsletter and a recent `last_read_at` sees only
+  stories inside the daily window.
+- A user with no previous newsletter, and one whose `last_read_at` predates the
+  daily window, both draw on the catch-up window.
+- A newly added topic draws on the catch-up window while the user's existing
+  topics stay on the daily window in the same run.
 - Identical inputs produce an identical ordered output, including when weights
-  tie and when largest-remainder remainders tie.
+  tie, when largest-remainder remainders tie, and when `topic_score` and
+  `written_at` both tie.
 
 ### 14.5 Newsletter record
 
