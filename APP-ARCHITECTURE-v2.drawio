@@ -1,0 +1,292 @@
+<mxfile host="app.diagrams.net" modified="2026-08-03T00:00:00.000Z" agent="claude-code" version="24.0.0" type="device">
+  <diagram name="Norms Newsletter app architecture v2" id="norms-arch-v2">
+    <mxGraphModel dx="2000" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ============ CONTAINERS (drawn first so they sit behind) ============ -->
+
+        <mxCell id="c_dagster" value="Dagster (pipeline. batch work. nobody is waiting)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=18;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=40;arcSize=3;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1900" height="1010" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_hourly" value="Every hour: collect and cluster" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=14;fontStyle=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="70" y="110" width="560" height="450" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_3hourly" value="Every 3 hours: score, write, render (no Spark)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=14;fontStyle=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="860" y="110" width="840" height="450" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_15min" value="Every 15 minutes: per user assembly (this is the new layer)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=14;fontStyle=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="70" y="620" width="1450" height="400" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_api" value="App API (Cloudflare. separate deploy from Dagster)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=15;fontStyle=1;fillColor=#ffe6cc;strokeColor=#d79b00;opacity=40;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="2010" y="150" width="520" height="430" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c_chat" value="Norm Agent: Anthropic Managed Agents (chat and story tracker). Side branch. NOT the newsletter path." style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=15;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;opacity=40;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="1960" y="620" width="1210" height="440" as="geometry" />
+        </mxCell>
+
+        <!-- ============ HOURLY: COLLECT ============ -->
+
+        <mxCell id="src_api" value="API" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="170" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="src_rss" value="RSS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="240" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="src_sub" value="Substack" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="src_more" value="+ more sources&lt;br&gt;&lt;i&gt;health check and auto quarantine per source&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#ffffff;strokeColor=#666666;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="380" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bronze" value="bronze&lt;br&gt;&lt;i&gt;raw items&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="290" y="250" width="110" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dedup" value="dedup&lt;br&gt;&lt;i&gt;(code)&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="460" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="embed" value="embed&lt;br&gt;&lt;i&gt;bge-small-en-v1.5&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cluster" value="cluster&lt;br&gt;&lt;i&gt;threshold 0.82&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="clusterdb" value="clustering_db&lt;br&gt;&lt;i&gt;embeddings stored, not recomputed&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="285" width="140" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ============ 3 HOURLY: SCORE, WRITE, RENDER ============ -->
+
+        <mxCell id="score" value="&lt;b&gt;Score (Haiku 4.5)&lt;/b&gt;&lt;br&gt;&lt;br&gt;topic_score&lt;br&gt;general_score&lt;br&gt;&lt;br&gt;primary topic&lt;br&gt;secondary topics&lt;br&gt;&lt;br&gt;reason&lt;br&gt;confidence&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;two scores from one call. costs nothing extra&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="890" y="170" width="200" height="350" as="geometry" />
+        </mxCell>
+
+        <mxCell id="write" value="&lt;b&gt;Write story card&lt;/b&gt;&lt;br&gt;(Sonnet 5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="170" width="170" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gate" value="Readability&lt;br&gt;gate&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;code, grade 9&lt;/i&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="300" width="170" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="simplify" value="Simplify (AI)&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;only on failure&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="450" width="170" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tts" value="&lt;b&gt;TTS per story&lt;/b&gt;&lt;br&gt;(Gemini)&lt;br&gt;story clip" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="170" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tts_note" value="One clip per story.&lt;br&gt;Never per user.&lt;br&gt;&lt;br&gt;Segments must be&lt;br&gt;self contained so they&lt;br&gt;can be stitched into&lt;br&gt;a per user playlist." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="300" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ============ STORAGE ============ -->
+
+        <mxCell id="silver" value="silver.stories&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;text, both scores, topics, audio clip URL&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="200" width="150" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gold" value="gold&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;history. R2. the tracker reads it through MCP, never directly&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="410" width="150" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ============ 15 MIN: PER USER ASSEMBLY ============ -->
+
+        <mxCell id="findusers" value="Find users whose&lt;br&gt;read time is near&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;stored as IANA timezone, not UTC&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="110" y="760" width="200" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="allocator" value="&lt;b&gt;ALLOCATOR&lt;/b&gt;&lt;br&gt;&lt;i&gt;deterministic code. no AI.&lt;/i&gt;&lt;br&gt;&lt;br&gt;1. query silver for the user's topics&lt;br&gt;&#160;&#160;&#160;&#160;(primary OR secondary)&lt;br&gt;2. dedup across topics&lt;br&gt;3. drop already seen&lt;br&gt;4. budget 12 to 18 stories&lt;br&gt;5. per topic min and max&lt;br&gt;6. top up quiet topics by general_score&lt;br&gt;7. lead story = highest general_score&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;replaces the AI editor. this is what keeps cost flat as users grow&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;align=left;spacingLeft=12;verticalAlign=top;spacingTop=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="660" width="340" height="310" as="geometry" />
+        </mxCell>
+
+        <mxCell id="intro" value="Personalized intro&lt;br&gt;(1 cheap AI call)&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;cached by hash of the story ID set&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="770" y="760" width="190" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="savenl" value="Save finished&lt;br&gt;newsletter" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="760" width="190" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="push" value="Push notification&lt;br&gt;at their local&lt;br&gt;read time" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="760" width="190" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ============ APP API ============ -->
+
+        <mxCell id="worker" value="&lt;b&gt;API Worker&lt;/b&gt;&lt;br&gt;/v1/&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;versioned from day one. min supported version check&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2050" y="210" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="postgres" value="&lt;b&gt;Postgres&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;accounts, topics, read time and timezone, seen stories, push tokens, finished newsletters&lt;br&gt;&lt;br&gt;deletion is one DELETE (Apple 5.1.1v)&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#ffffff;strokeColor=#d79b00;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="350" width="210" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r2audio" value="R2&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;story audio clips. no egress fees&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#ffffff;strokeColor=#d79b00;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2300" y="350" width="190" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="phone" value="&lt;b&gt;iOS app&lt;/b&gt;&lt;br&gt;(Expo)&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;opens to a pre built newsletter.&lt;br&gt;&lt;br&gt;no AI call on the read path.&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="2620" y="280" width="170" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- ============ CHAT ============ -->
+
+        <mxCell id="agentcfg" value="&lt;b&gt;Agent config&lt;/b&gt;&lt;br&gt;POST /v1/agents&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;Created ONCE and versioned. Holds model, system prompt, tools, MCP servers.&lt;br&gt;&lt;br&gt;Never created per request.&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1990" y="700" width="200" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="session" value="&lt;b&gt;Session&lt;/b&gt;&lt;br&gt;POST /v1/sessions&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;One per conversation. Pins an agent version, so a config change cannot break a running chat.&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=3;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2220" y="700" width="185" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sandbox" value="&lt;b&gt;Anthropic sandbox&lt;/b&gt;&lt;br&gt;&lt;i&gt;one container per session&lt;/i&gt;&lt;br&gt;&lt;br&gt;bash&lt;br&gt;file operations&lt;br&gt;&lt;b&gt;code execution&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;This is where the coverage chart is actually computed and rendered.&lt;br&gt;&lt;br&gt;$0.08 per session hour, active time only.&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2435" y="690" width="230" height="195" as="geometry" />
+        </mxCell>
+
+        <mxCell id="memstore" value="&lt;b&gt;Memory store&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;per user. which stories they are tracking, and what they were already told.&lt;br&gt;&lt;br&gt;this is what makes it a tracker and not just chat.&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#ffffff;strokeColor=#9673a6;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2700" y="690" width="195" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="outputs" value="&lt;b&gt;Session outputs&lt;/b&gt;&lt;br&gt;/mnt/session/outputs/&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;the rendered chart PNG, handed back to the Worker and then to the phone&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2930" y="700" width="200" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mcp" value="&lt;b&gt;Story MCP server&lt;/b&gt;&lt;br&gt;&lt;i&gt;runs on the Worker&lt;/i&gt;&lt;br&gt;&lt;br&gt;search_stories&#160;&#160;get_story&lt;br&gt;coverage_timeseries&lt;br&gt;get_user_topics&lt;br&gt;&lt;br&gt;&lt;b style=&quot;font-size:10px&quot;&gt;THE ONLY DATA DOOR.&lt;/b&gt;&lt;i style=&quot;font-size:10px&quot;&gt; Read only, scoped to one user_id.&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;strokeWidth=3;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1990" y="895" width="240" height="145" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sched" value="&lt;b&gt;Scheduled deployment&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;i style=&quot;font-size:10px&quot;&gt;wakes the tracker on a cron, checks whether a tracked story moved, and pushes only if it did.&lt;br&gt;&lt;br&gt;no client side scheduler&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2270" y="895" width="195" height="145" as="geometry" />
+        </mxCell>
+
+        <mxCell id="secnote" value="&lt;b&gt;Security rules for this box&lt;/b&gt;&lt;br&gt;The sandbox gets &lt;b&gt;no database credentials&lt;/b&gt;. All data arrives through the MCP server, already scoped to one user.&#160;&#160;|&#160;&#160;The client still never sends a prompt. The Worker builds it from user_id.&#160;&#160;|&#160;&#160;Any secret the agent needs goes in a Managed Agents vault, substituted at egress, never visible in the sandbox.&#160;&#160;|&#160;&#160;Managed Agents is &lt;b&gt;public beta&lt;/b&gt;, so pin the beta header and keep this branch behind a feature flag the app can switch off." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=11;align=left;verticalAlign=top;spacingLeft=12;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="2510" y="895" width="620" height="145" as="geometry" />
+        </mxCell>
+
+        <!-- ============ NOTES ============ -->
+
+        <mxCell id="notes" value="&lt;b&gt;Changes from the first diagram&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Removed Spark.&lt;/b&gt; This stage is I/O bound (waiting on Claude and Gemini), not compute bound, at roughly 300 story writes a day. Dagster op concurrency or the Batch API covers it. SPEC line 254 and CLAUDE.md rule 5 also exclude Spark.&lt;br&gt;&lt;b&gt;Removed GCS as the serving layer.&lt;/b&gt; Second cloud, second credential set, and GCS bills egress while R2 does not. Serving phone traffic is pure egress. Also, gold means history, not serving.&lt;br&gt;&lt;b&gt;Added Postgres.&lt;/b&gt; An object store cannot answer &quot;this one user's settings in 50 ms&quot; and cannot do account deletion.&lt;br&gt;&lt;b&gt;Added the allocator.&lt;/b&gt; Nothing previously decided WHICH 15 stories a user gets. Doing that with an LLM per user is the ~$2,500/month path. As code it is flat.&lt;br&gt;&lt;b&gt;Added the readability gate and simplify pass.&lt;/b&gt; SPEC line 354. This is the product differentiator, so it belongs on the diagram.&lt;br&gt;&lt;b&gt;Added dedup, the 15 minute per user loop, and push notifications.&lt;/b&gt;&lt;br&gt;&lt;b&gt;Moved chat off the newsletter path&lt;/b&gt; and made the prompt server side.&lt;br&gt;&lt;b&gt;Chose Anthropic Managed Agents&lt;/b&gt; for the agent, because the story tracker needs code execution, memory across sessions, and a server side scheduler. Those three are the reason, not the price.&lt;br&gt;&lt;br&gt;&lt;i&gt;Cost note: Sonnet 5 for writing is roughly 3x Haiku, about $150/month at 300 stories a day instead of $50. Still flat as users grow, and writing quality is the differentiator, so this is a fair trade.&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1090" width="1900" height="250" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend" value="&lt;b style=&quot;font-size:15px&quot;&gt;How a story travels, from source to phone&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Legend.&lt;/b&gt;&#160;&#160;green = AI call&#160;&#160;|&#160;&#160;white = code or storage&#160;&#160;|&#160;&#160;yellow = the new deterministic core&#160;&#160;|&#160;&#160;dashed = crosses a system boundary&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#3b5f8a&quot;&gt;BLUE STEPS 1 to 9. GLOBAL. Written once, shared by every user.&lt;/b&gt;&lt;br&gt;&lt;b&gt;1&lt;/b&gt;&#160;&#160;Sources land raw in bronze, hourly. Nothing is judged yet.&lt;br&gt;&lt;b&gt;2&lt;/b&gt;&#160;&#160;Dedup drops repeats of the same item.&lt;br&gt;&lt;b&gt;3&lt;/b&gt;&#160;&#160;Embed turns each item into a vector. These are now stored, not recomputed.&lt;br&gt;&lt;b&gt;4&lt;/b&gt;&#160;&#160;Cluster groups every item about the same real world event into one story.&lt;br&gt;&lt;b&gt;5&lt;/b&gt;&#160;&#160;Score (AI). One call returns topic_score, general_score, and primary plus secondary topics.&lt;br&gt;&lt;b&gt;6&lt;/b&gt;&#160;&#160;Write (AI). The story card is written one time, in Norm's voice.&lt;br&gt;&lt;b&gt;7&lt;/b&gt;&#160;&#160;Readability gate (code). If it fails, &lt;b&gt;7a&lt;/b&gt; simplify (AI) rewrites it and the gate runs again.&lt;br&gt;&lt;b&gt;8&lt;/b&gt;&#160;&#160;TTS (AI). One audio clip per story, stored in R2. Never one per user.&lt;br&gt;&lt;b&gt;9&lt;/b&gt;&#160;&#160;The finished story lands in silver. Old rows archive to gold.&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#c07800&quot;&gt;ORANGE STEPS 10 to 15. PER USER. Every 15 minutes. Almost no AI.&lt;/b&gt;&lt;br&gt;&lt;b&gt;10&lt;/b&gt;&#160;Find users whose read time is near, using their stored timezone.&lt;br&gt;&lt;b&gt;11&lt;/b&gt;&#160;Allocator (code) picks their stories: their topics, deduped, unseen, within budget.&lt;br&gt;&lt;b&gt;12&lt;/b&gt;&#160;Intro (AI). One short paragraph for their mix, cached across users with the same stories.&lt;br&gt;&lt;b&gt;13&lt;/b&gt;&#160;The finished newsletter is saved to Postgres.&lt;br&gt;&lt;b&gt;14&lt;/b&gt;&#160;Push fires at their local read time.&lt;br&gt;&lt;b&gt;15&lt;/b&gt;&#160;The phone asks the Worker and gets the pre built newsletter. &lt;b&gt;No AI on this path.&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;The whole point:&lt;/b&gt; steps 1 to 9 cost the same whether there is 1 user or 10,000. Steps 10 to 15 are the only per user work, and step 12 is the only AI call in them.&lt;br&gt;&lt;br&gt;&lt;b style=&quot;color:#9673a6&quot;&gt;PURPLE STEPS 16 to 21. THE AGENT. Opt in, per conversation, priced separately.&lt;/b&gt;&lt;br&gt;&lt;b&gt;16&lt;/b&gt;&#160;The user asks a question in the app. The Worker, not the phone, builds the prompt.&lt;br&gt;&lt;b&gt;17&lt;/b&gt;&#160;The Worker opens a Session against the agent config, which was created once and is versioned.&lt;br&gt;&lt;b&gt;18&lt;/b&gt;&#160;The agent pulls data only through the Story MCP server, read only and scoped to that one user.&lt;br&gt;&lt;b&gt;19&lt;/b&gt;&#160;The sandbox runs real code to compute the trend and render a chart into session outputs.&lt;br&gt;&lt;b&gt;20&lt;/b&gt;&#160;The memory store records what the user is tracking, so the next session already knows.&lt;br&gt;&lt;b&gt;21&lt;/b&gt;&#160;A scheduled deployment wakes the tracker later and pushes only if the story actually moved.&lt;br&gt;&lt;br&gt;&lt;b&gt;Why this is worth a second platform:&lt;/b&gt; steps 19 to 21 are the reason. Charting a month of coverage needs code execution, tracking needs memory across sessions, and &quot;tell me when this develops&quot; needs a server side scheduler. Building those three yourself is the actual cost being avoided, not the $0.08 per session hour." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=16;spacingTop=12;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1960" y="1100" width="1210" height="620" as="geometry" />
+        </mxCell>
+
+        <!-- ============ EDGES ============ -->
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="src_api" target="bronze"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="src_rss" target="bronze"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="src_sub" target="bronze"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="src_more" target="bronze"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bronze" target="dedup"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="dedup" target="embed"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="embed" target="cluster"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="cluster" target="clusterdb"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="clusterdb" target="score"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" edge="1" parent="1" source="score" target="write"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="write" target="gate"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" value="fail" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.25;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="gate" target="simplify"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" value="re check" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.75;exitY=0;entryX=0.75;entryY=1;" edge="1" parent="1" source="simplify" target="gate"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" value="pass" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;verticalAlign=bottom;" edge="1" parent="1" source="gate" target="tts">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1345" y="355" /><mxPoint x="1345" y="215" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="tts" target="silver"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e15" value="archive" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="silver" target="gold"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e16" value="query stories (read only)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=1;entryX=1;entryY=0.25;strokeColor=#d6b656;strokeWidth=2;" edge="1" parent="1" source="silver" target="allocator">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1835" y="615" /><mxPoint x="755" y="615" /><mxPoint x="755" y="738" /></Array></mxGeometry>
+        </mxCell>
+
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="findusers" target="allocator"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="allocator" target="intro"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="intro" target="savenl"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="savenl" target="push"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e21" value="finished newsletter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=1;entryX=0;entryY=0.75;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="savenl" target="postgres">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1115" y="1050" /><mxPoint x="1960" y="1050" /><mxPoint x="1960" y="485" /></Array></mxGeometry>
+        </mxCell>
+
+        <mxCell id="e22" value="read time, topics, seen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0;exitY=0.25;entryX=0.5;entryY=0;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="postgres" target="findusers">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1980" y="395" /><mxPoint x="1980" y="575" /><mxPoint x="210" y="575" /></Array></mxGeometry>
+        </mxCell>
+
+        <mxCell id="e23" value="MP3 per story" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=0;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="tts" target="r2audio">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1470" y="90" /><mxPoint x="2395" y="90" /></Array></mxGeometry>
+        </mxCell>
+
+        <mxCell id="e24" value="user_id + auth" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0;exitY=0.25;entryX=1;entryY=0.5;" edge="1" parent="1" source="phone" target="worker"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e25" value="pre built newsletter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.25;entryX=0;entryY=0.15;" edge="1" parent="1" source="worker" target="phone">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="2570" y="233" /><mxPoint x="2570" y="319" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e26" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="worker" target="postgres"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.75;entryX=0.5;entryY=0;" edge="1" parent="1" source="worker" target="r2audio"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e28" value="create session" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1" source="worker" target="session">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="2150" y="660" /><mxPoint x="2312" y="660" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e29" value="answer + chart" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.15;entryX=1;entryY=0.9;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1" source="session" target="worker">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="2430" y="720" /><mxPoint x="2430" y="600" /><mxPoint x="2290" y="600" /><mxPoint x="2290" y="291" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e30" value="pins a version" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#9673a6;" edge="1" parent="1" source="agentcfg" target="session"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e31" value="tool calls" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.25;exitY=1;entryX=0.75;entryY=0;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="session" target="mcp"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e32" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1" source="session" target="sandbox"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e33" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.25;entryX=0;entryY=0.5;strokeColor=#9673a6;" edge="1" parent="1" source="sandbox" target="memstore"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e34" value="chart file" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.75;entryX=0;entryY=0.75;strokeColor=#9673a6;" edge="1" parent="1" source="sandbox" target="outputs">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="2690" y="836" /><mxPoint x="2690" y="898" /><mxPoint x="2910" y="898" /><mxPoint x="2910" y="798" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e35" value="wakes the tracker" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1" source="sched" target="session"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e36" value="history (read only)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0;exitY=0.5;entryX=0.5;entryY=1;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="mcp" target="gold">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1940" y="968" /><mxPoint x="1835" y="968" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e37" value="topics, seen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;exitX=0.5;exitY=0;entryX=0;entryY=0.9;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="mcp" target="postgres">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="2110" y="600" /><mxPoint x="2020" y="600" /><mxPoint x="2020" y="512" /></Array></mxGeometry>
+        </mxCell>
+
+        <!-- ============ STEP NUMBER BADGES ============ -->
+        <!-- blue = global, written once. orange = per user. -->
+
+        <mxCell id="n1" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="272" y="234" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n2" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="443" y="164" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n3" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="443" y="264" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n4" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="443" y="364" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n5" value="5" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="873" y="154" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n6" value="6" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1123" y="154" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n7" value="7" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1128" y="290" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n7a" value="7a" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1123" y="434" width="38" height="34" as="geometry" /></mxCell>
+        <mxCell id="n8" value="8" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1363" y="154" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="n9" value="9" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3b5f8a;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1743" y="186" width="34" height="34" as="geometry" /></mxCell>
+
+        <mxCell id="n10" value="10" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c07800;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="93" y="744" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n11" value="11" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c07800;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="353" y="644" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n12" value="12" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c07800;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="753" y="744" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n13" value="13" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c07800;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1003" y="744" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n14" value="14" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c07800;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1253" y="744" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n15" value="15" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c07800;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="2033" y="194" width="36" height="34" as="geometry" /></mxCell>
+
+        <mxCell id="n16" value="16" style="ellipse;whiteSpace=wrap;html=1;fillColor=#7e5a9b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="2751" y="262" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n17" value="17" style="ellipse;whiteSpace=wrap;html=1;fillColor=#7e5a9b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="2223" y="684" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n18" value="18" style="ellipse;whiteSpace=wrap;html=1;fillColor=#7e5a9b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1993" y="879" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n19" value="19" style="ellipse;whiteSpace=wrap;html=1;fillColor=#7e5a9b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="2438" y="674" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n20" value="20" style="ellipse;whiteSpace=wrap;html=1;fillColor=#7e5a9b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="2703" y="674" width="36" height="34" as="geometry" /></mxCell>
+        <mxCell id="n21" value="21" style="ellipse;whiteSpace=wrap;html=1;fillColor=#7e5a9b;strokeColor=#ffffff;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="2273" y="879" width="36" height="34" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
