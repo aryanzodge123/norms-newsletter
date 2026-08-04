@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEEBE2;font-family:'IBM Plex Sans',system-ui,sans-serif}
+a{color:#3F6A50;text-decoration:none}
+a:hover{text-decoration:underline}
+@keyframes curl{0%{stroke-dashoffset:0;opacity:.25}45%{opacity:.9}100%{stroke-dashoffset:-46;opacity:.15}}
+@keyframes breathe{0%,100%{opacity:.35;transform:scaleY(.9)}50%{opacity:1;transform:scaleY(1.08)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.4px)}}
+</style>
+</helmet>
+
+<section style="padding:44px 48px 64px;display:flex;flex-direction:column;gap:0;width:1240px;box-sizing:border-box">
+
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:2px solid #23231F;padding-bottom:14px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#23231F">Norm&#8217;s Newsletter &#183; Marks &amp; Type</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62">Sheet 01 &#183; iOS</span>
+</div>
+
+<div style="display:grid;grid-template-columns:340px 1fr;gap:44px;padding:38px 0 44px;border-bottom:1px solid #DDD9CC">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="{{ iconBig }}">
+<svg viewBox="0 0 128 128" style="width:100%;height:100%;display:block">
+<defs><linearGradient id="sf-icon" gradientUnits="userSpaceOnUse" x1="0" y1="52" x2="0" y2="4"><stop offset="0" stop-color="#FFFFFF" stop-opacity="1"></stop><stop offset=".4" stop-color="#FFFFFF" stop-opacity=".82"></stop><stop offset=".72" stop-color="#FFFFFF" stop-opacity=".34"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs>
+<g transform="translate(64,68) scale(1.02) translate(-64,-68)">
+<g fill="none" stroke="url(#sf-icon)" stroke-width="5" stroke-linecap="round" style="animation:bob 3.6s ease-in-out infinite">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1" stroke-dasharray="30 14" style="animation:curl 1.7s ease-in-out infinite"></path>
+<path d="M74,50 C82,42 70,36 76,28" stroke-width="4" style="transform-origin:74px 50px;animation:breathe 1.3s ease-in-out infinite -.4s"></path>
+<path d="M39,50 C32,43 43,37 38,30" stroke-width="4" style="transform-origin:39px 50px;animation:breathe 1.55s ease-in-out infinite -.95s"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#FFFFFF"></rect>
+</g>
+<sc-if value="{{ grid }}" hint-placeholder-val="{{ false }}">
+<g stroke="rgba(255,255,255,.34)" stroke-width=".5" fill="none">
+<rect x="12" y="12" width="104" height="104"></rect>
+<circle cx="64" cy="64" r="52"></circle>
+<line x1="64" y1="0" x2="64" y2="128"></line>
+<line x1="0" y1="64" x2="128" y2="64"></line>
+</g>
+</sc-if>
+</svg>
+</div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:#6B6A62">App icon &#183; 1024&#215;1024 master &#183; mark occupies 64% of the tile, optically centred one unit high.</span>
+
+</div>
+
+<div style="display:flex;flex-direction:column;gap:26px">
+<div>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">The mark</span>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:29px;line-height:1.22;letter-spacing:-.015em;color:#23231F;margin:12px 0 0;max-width:44ch;text-wrap:pretty">A mug and a rising curl of steam &#8212; the morning, before anything else happens.</p>
+<p style="font-size:14.5px;line-height:1.65;color:#44433C;margin:12px 0 0;max-width:56ch;text-wrap:pretty">On the tile the mark is always white on the accent. Everywhere else it is ink on paper. It never sits on a photograph, never carries a shadow, and never rotates.</p>
+</div>
+
+<div style="display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap">
+<sc-for list="{{ sizes }}" as="sz" hint-placeholder-count="5">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="{{ sz.tile }}">
+<svg viewBox="0 0 128 128" style="width:100%;height:100%;display:block">
+<g transform="translate(64,68) scale(1.02) translate(-64,-68)">
+<g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-width="{{ sz.stroke }}">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1"></path>
+<path d="M74,50 C82,42 70,36 76,28"></path>
+<path d="M39,50 C32,43 43,37 38,30"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#FFFFFF"></rect>
+</g>
+</svg>
+</div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6B6A62">{{ sz.label }}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="display:grid;grid-template-columns:minmax(300px,1fr) minmax(280px,1fr);gap:18px">
+<div style="border:1px solid #DDD9CC;background:#FBFAF6;padding:16px 16px 14px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">Animated &#183; norm-mark.gif</span>
+<div style="display:flex;align-items:center;gap:16px;margin-top:12px">
+<img src="norm-mark.gif" alt="Animated Norm mark" style="width:96px;height:96px;display:block;border-radius:21px">
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.7;color:#6B6A62;margin:0">200&#215;200 &#183; 24 frames &#183; 1.44s loop.<br>Steam flows up, the mark breathes.<br>For splash, app store, and the web favicon.</p>
+</div>
+</div>
+<div style="border:1px solid #DDD9CC;background:#23231F;padding:16px 16px 14px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FBF9E">On ink</span>
+<div style="display:flex;align-items:center;gap:16px;margin-top:12px">
+<svg viewBox="0 0 128 128" style="width:64px;height:64px;display:block">
+<g transform="translate(64,68) scale(1.02) translate(-64,-68)">
+<g fill="none" stroke="#F2EFE6" stroke-width="5" stroke-linecap="round">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1"></path>
+<path d="M74,50 C82,42 70,36 76,28"></path>
+<path d="M39,50 C32,43 43,37 38,30"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#F2EFE6" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#F2EFE6"></rect>
+</g>
+</svg>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.7;color:#8C8A80;margin:0">In dark mode the mark is paper<br>#F2EFE6 &#8212; never pure white.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="padding:38px 0 44px;border-bottom:1px solid #DDD9CC">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">In place</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6A62">Home screen, splash, notification</span>
+</div>
+<div style="display:flex;gap:34px;align-items:flex-start;margin-top:22px;flex-wrap:wrap">
+
+<div style="width:206px;border:1px solid #DDD9CC;background:#E7E3D8;padding:22px 18px 18px;border-radius:18px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 20px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="{{ homeTile }}">
+<svg viewBox="0 0 128 128" style="width:100%;height:100%;display:block">
+<defs><linearGradient id="sf-home" gradientUnits="userSpaceOnUse" x1="0" y1="52" x2="0" y2="4"><stop offset="0" stop-color="#FFFFFF" stop-opacity="1"></stop><stop offset=".4" stop-color="#FFFFFF" stop-opacity=".82"></stop><stop offset=".72" stop-color="#FFFFFF" stop-opacity=".34"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs>
+<g transform="translate(64,68) scale(1.02) translate(-64,-68)">
+<g fill="none" stroke="url(#sf-home)" stroke-width="5" stroke-linecap="round">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1"></path>
+<path d="M74,50 C82,42 70,36 76,28"></path>
+<path d="M39,50 C32,43 43,37 38,30"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#FFFFFF"></rect>
+</g>
+</svg>
+</div>
+<span style="font-size:10.5px;color:#44433C">Norm</span>
+</div>
+<sc-for list="{{ blanks }}" as="bl" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:58px;height:58px;border-radius:13px;background:rgba(35,35,31,.07)"></div>
+<span style="width:30px;height:6px;border-radius:3px;background:rgba(35,35,31,.07)"></span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="{{ splash }}">
+<div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+<svg viewBox="0 0 128 128" style="width:76px;height:76px;display:block">
+<defs><linearGradient id="sf-splash" gradientUnits="userSpaceOnUse" x1="0" y1="52" x2="0" y2="4"><stop offset="0" stop-color="#FFFFFF" stop-opacity="1"></stop><stop offset=".4" stop-color="#FFFFFF" stop-opacity=".82"></stop><stop offset=".72" stop-color="#FFFFFF" stop-opacity=".34"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs>
+<g transform="translate(64,68) scale(1.02) translate(-64,-68)">
+<g fill="none" stroke="url(#sf-splash)" stroke-width="5" stroke-linecap="round" style="animation:bob 3.6s ease-in-out infinite">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1" stroke-dasharray="30 14" style="animation:curl 1.7s ease-in-out infinite"></path>
+<path d="M74,50 C82,42 70,36 76,28" stroke-width="4" style="transform-origin:74px 50px;animation:breathe 1.3s ease-in-out infinite -.4s"></path>
+<path d="M39,50 C32,43 43,37 38,30" stroke-width="4" style="transform-origin:39px 50px;animation:breathe 1.55s ease-in-out infinite -.95s"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#FFFFFF"></rect>
+</g>
+</svg>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92)">Norm&#8217;s Newsletter</span>
+</div>
+<span style="position:absolute;bottom:22px;left:0;right:0;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:rgba(255,255,255,.5)">No. 048 &#183; loading</span>
+</div>
+
+<div style="width:290px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:11px;align-items:flex-start;background:rgba(251,250,246,.96);border:1px solid #DDD9CC;border-radius:16px;padding:12px 13px">
+<div style="{{ notifTile }}">
+<svg viewBox="0 0 128 128" style="width:100%;height:100%;display:block">
+<g transform="translate(64,68) scale(1.02) translate(-64,-68)">
+<g fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1"></path>
+<path d="M74,50 C82,42 70,36 76,28"></path>
+<path d="M39,50 C32,43 43,37 38,30"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#FFFFFF"></rect>
+</g>
+</svg>
+</div>
+<div style="flex:1;min-width:0">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;color:#23231F">NORM&#8217;S NEWSLETTER</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A62">now</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-size:14.5px;line-height:1.38;color:#23231F;margin:5px 0 0;text-wrap:pretty">No. 049 is ready &#8212; tariffs land, and a quiet week for the market.</p>
+</div>
+</div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.7;color:#6B6A62">The tile is the only place the mark appears in the product. Inside the app the wordmark is set in Plex Sans, letterspaced &#8212; never the mug.</span>
+</div>
+</div>
+</div>
+
+<div style="padding:38px 0 44px;border-bottom:1px solid #DDD9CC">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">Interface icons</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6A62">One shipped glyph, eleven app additions</span>
+</div>
+<div style="display:flex;align-items:center;gap:18px;margin-top:18px;border:1px solid #DDD9CC;background:#FBFAF6;padding:14px 16px">
+<svg width="18" height="18" viewBox="0 0 18 18" style="display:block;flex:none"><path d="M4 3 L15 9 L4 15 Z" fill="#3F6A50"></path></svg>
+<div>
+<span style="display:block;font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13px;color:#23231F">Play &#8212; the system glyph</span>
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.6;color:#6B6A62;margin-top:3px">18&#215;18 &#183; solid fill &#183; --oxide &#183; from Components &#183; Audio row. Transport controls are filled, never stroked.</span>
+</div>
+</div>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6B6A62;margin:22px 0 0">App additions &#8212; 24&#215;24, 1.6 stroke, round caps, ink</p>
+<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#DDD9CC;border:1px solid #DDD9CC;margin-top:20px">
+
+<div style="{{ cell }}">
+<svg viewBox="0 0 18 18" width="22" height="22"><path d="M4 3 L15 9 L4 15 Z" fill="#3F6A50"></path></svg>
+<span style="{{ cellLabel }}">play</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 18 18" width="22" height="22"><path d="M4 3h3.4v12H4zM10.6 3H14v12h-3.4z" fill="#3F6A50"></path></svg>
+<span style="{{ cellLabel }}">pause</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5A8 8 0 1 1 4 13"></path><path d="M4.5 4.5v5h5"></path></svg>
+<span style="{{ cellLabel }}">back 15</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 9.5A8 8 0 1 0 20 13"></path><path d="M19.5 4.5v5h-5"></path></svg>
+<span style="{{ cellLabel }}">forward 30</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.8 L9.2 18 L20 6.4"></path></svg>
+<span style="{{ cellLabel }}">check</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4 L7.5 12 L15 20"></path></svg>
+<span style="{{ cellLabel }}">back</span>
+</div>
+
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="M15.6 15.6 L20 20"></path></svg>
+<span style="{{ cellLabel }}">search</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 10a5.5 5.5 0 0 1 11 0v4.5l1.8 2.5H4.7l1.8-2.5Z"></path><path d="M10 20.2h4"></path></svg>
+<span style="{{ cellLabel }}">alert</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1Z"></path></svg>
+<span style="{{ cellLabel }}">night</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4h11v16l-5.5-4.2L6.5 20Z"></path></svg>
+<span style="{{ cellLabel }}">save</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11"></path><path d="M8.2 7.3 12 3.5l3.8 3.8"></path><path d="M5 13v7.5h14V13"></path></svg>
+<span style="{{ cellLabel }}">share</span>
+</div>
+<div style="{{ cell }}">
+<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#23231F" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+<span style="{{ cellLabel }}">archive</span>
+</div>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.75;color:#6B6A62;margin:14px 0 0;max-width:70ch">Transport controls (play, pause) are solid --oxide, matching the shipped audio row. Every other glyph is stroked ink and carries no fill. All sit on a 44&#215;44 tap target, optically centred, and never appear without a label in the tab bar.</p>
+</div>
+
+<div style="padding:38px 0 44px;border-bottom:1px solid #DDD9CC">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">Type</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6A62">Three faces, no exceptions</span>
+</div>
+
+<div style="display:grid;grid-template-columns:200px 1fr;gap:30px;padding:26px 0 24px;border-bottom:1px solid #E8E5DA;margin-top:14px">
+<div>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;color:#23231F;margin:0">Newsreader</p>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.8;color:#6B6A62;margin:8px 0 0">Regular 400 &#183; Medium 500<br>Italic 400<br><br>Headlines, story titles, pull quotes, the time display. Never for UI chrome.</p>
+</div>
+<div>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:44px;line-height:1.1;letter-spacing:-.022em;color:#23231F;margin:0;text-wrap:pretty">Trump signs sweeping tariff order</p>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:400;font-style:italic;font-size:19px;line-height:1.45;color:#44433C;margin:12px 0 0">Rates run from ten to fifty percent, and they take effect on the first.</p>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.9;color:#6B6A62;margin:16px 0 0">Headline 27/1.22 &#183; -.015em &#8195; Story title 20/1.32 &#8195; Onboarding H1 32/1.16 &#183; -.02em &#8195; Time display 52/1 &#183; -.03em</p>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:200px 1fr;gap:30px;padding:26px 0 24px;border-bottom:1px solid #E8E5DA">
+<div>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:24px;color:#23231F;margin:0">IBM Plex Sans</p>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.8;color:#6B6A62;margin:8px 0 0">Regular 400 &#183; Medium 500<br><br>Body copy, buttons, list rows, section names, the wordmark.</p>
+</div>
+<div>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;color:#23231F;margin:0">Anthropic ships a coding agent that lives in the terminal</p>
+<p style="font-size:14.5px;line-height:1.65;color:#44433C;margin:10px 0 0;max-width:62ch;text-wrap:pretty">One edition a day, written by a person and sourced from everywhere. When you reach the end, you&#8217;re done &#8212; there is nothing else to scroll.</p>
+<div style="display:flex;gap:10px;margin-top:16px">
+<span style="min-height:44px;display:flex;align-items:center;padding:0 20px;background:#23231F;color:#F6F4EE;font-weight:500;font-size:15px">Get started</span>
+<span style="min-height:44px;display:flex;align-items:center;padding:0 20px;border:1px solid #23231F;color:#23231F;font-weight:500;font-size:15px">Continue with email</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.9;color:#6B6A62;margin:16px 0 0">Body 14.5/1.65 &#8195; List title 15/1.4 &#183; 500 &#8195; Button 15 &#183; 500 &#8195; Wordmark 11.5 &#183; 500 &#183; .18em caps</p>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:200px 1fr;gap:30px;padding:26px 0 0">
+<div>
+<p style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:22px;color:#23231F;margin:0">IBM Plex Mono</p>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.8;color:#6B6A62;margin:8px 0 0">Regular 400 &#183; Medium 500<br><br>Dates, timecodes, scores, source counts, eyebrow labels, every number that is data.</p>
+</div>
+<div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62;margin:0">Saturday, July 25, 2026 &#183; No. 048</p>
+<p style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50;margin:12px 0 0">In this brief</p>
+<div style="display:flex;gap:22px;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#44433C">
+<span>0:00 &#183; 9 min</span><span>Score 94</span><span>3 sources</span><span>&#8630; 15</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.9;color:#6B6A62;margin:16px 0 0">Meta 11.5 &#8195; Section label 12/11.5 &#183; Plex Sans 500 &#183; .14em caps &#8195; Micro 10.5 &#8195; Never below 10.5 on device.</p>
+</div>
+</div>
+</div>
+
+<div style="padding:38px 0 0">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">Colour</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6A62">Light / dark pairs</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.7;color:#6B6A62;margin:12px 0 0">System tokens, as defined in Foundations &#183; Color. Split chips read light on the left, the app&#8217;s dark-mode value on the right.</p>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:16px">
+<sc-for list="{{ swatches }}" as="sw" hint-placeholder-count="13">
+<div>
+<div style="{{ sw.chip }}"></div>
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#23231F;margin-top:8px">{{ sw.name }}</span>
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A62;margin-top:3px">{{ sw.hex }}</span>
+<span style="display:block;font-size:11px;line-height:1.45;color:#44433C;margin-top:4px;text-wrap:pretty">{{ sw.use }}</span>
+</div>
+</sc-for>
+</div>
+<div style="margin-top:30px;border-top:1px solid #E8E5DA;padding-top:18px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6B6A62">App-only extensions &#8212; not system tokens</span>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:14px">
+<sc-for list="{{ extras }}" as="ex" hint-placeholder-count="2">
+<div>
+<div style="{{ ex.chip }}"></div>
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#23231F;margin-top:8px">{{ ex.name }}</span>
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A62;margin-top:3px">{{ ex.hex }}</span>
+<span style="display:block;font-size:11px;line-height:1.45;color:#44433C;margin-top:4px;text-wrap:pretty">{{ ex.use }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3F6A50&quot;,&quot;options&quot;:[&quot;#3F6A50&quot;,&quot;#23231F&quot;,&quot;#8A4B2A&quot;,&quot;#2E4E7E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Mark&quot;},&quot;corner&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;squircle&quot;,&quot;options&quot;:[&quot;squircle&quot;,&quot;rounded&quot;,&quot;square&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Mark&quot;},&quot;grid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mark&quot;}}">
+const SW = [
+  ["--paper", "#F6F4EE", "#1A1A16", "Page background"],
+  ["--paper-raised", "#FBFAF6", "#232320", "Boxed surfaces"],
+  ["--ink", "#23231F", "#F2EFE6", "Primary text, masthead, heavy rules"],
+  ["--ink-soft", "#44433C", "#C7C3B6", "Body and summary text"],
+  ["--ink-2", "#2E2D27", "#E4E0D4", "Glance text, quote text"],
+  ["--muted", "#6B6A62", "#8C8A80", "Mono metadata, captions"],
+  ["--oxide", "#3F6A50", "#8FBF9E", "Accent: labels, links, markers"],
+  ["--rule", "#DDD9CC", "#35342E", "Hairlines, box borders"],
+  ["--rule-faint", "#E8E5DA", "#2B2A25", "Story dividers"],
+  ["--notice-border", "#C9A24B", "", "Notice frame"],
+  ["--notice-bg", "#FAF3E3", "", "Notice fill"],
+  ["--notice-title", "#7A5E1E", "", "Notice heading"],
+  ["--notice-text", "#5C4A1E", "", "Notice body"]
+];
+
+const EXT = [
+  ["--c-clay", "#8A4B2A", "#C99163", "Onboarding numerals and the ready stamp"],
+  ["--c-faint", "#9A968A", "#6E6C64", "Empty-state slugs on the topic picker"]
+];
+
+function chip([name, light, dark, use]) {
+  return {
+    name: name, use: use,
+    hex: dark ? light + " / " + dark : light + " · light only",
+    chip: {
+      height: 54, border: "1px solid #DDD9CC",
+      background: dark
+        ? "linear-gradient(90deg," + light + " 0 50%," + dark + " 50% 100%)"
+        : light
+    }
+  };
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent || "#3F6A50";
+    const corner = this.props.corner || "squircle";
+    const r = (px) => corner === "square" ? 0 : corner === "rounded" ? px * 0.18 : px * 0.2237;
+
+    const tile = (px, extra) => Object.assign({
+      width: px, height: px, background: accent, borderRadius: r(px),
+      display: "flex", alignItems: "center", justifyContent: "center",
+      padding: px * 0.19, boxSizing: "border-box", flex: "none"
+    }, extra || {});
+
+    return {
+      grid: this.props.grid ?? false,
+      iconBig: tile(300, { boxShadow: "0 18px 40px rgba(35,35,31,.16)", padding: 300 * 0.19 }),
+      homeTile: tile(58, { padding: 11 }),
+      notifTile: tile(34, { padding: 6 }),
+      blanks: [1, 2, 3],
+      sizes: [
+        { px: 96, label: "180 pt" }, { px: 68, label: "120 pt" },
+        { px: 50, label: "87 pt" }, { px: 36, label: "60 pt" }, { px: 26, label: "40 pt" }
+      ].map(s => ({
+        label: s.label,
+        stroke: s.px < 40 ? 7 : s.px < 60 ? 6 : 5,
+        tile: tile(s.px, { padding: Math.max(3, s.px * 0.17) })
+      })),
+      splash: {
+        width: 206, height: 380, background: accent, borderRadius: 26,
+        display: "flex", alignItems: "center", justifyContent: "center",
+        position: "relative", flex: "none",
+        boxShadow: "0 18px 40px rgba(35,35,31,.16)"
+      },
+      cell: {
+        background: "#FBFAF6", minHeight: 92, display: "flex", flexDirection: "column",
+        alignItems: "center", justifyContent: "center", gap: 10
+      },
+      cellLabel: {
+        fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, letterSpacing: ".08em",
+        textTransform: "uppercase", color: "#6B6A62"
+      },
+      swatches: SW.map(chip),
+      extras: EXT.map(chip)
+    };
+  }
+}
+
+</script>
+</body>
+</html>

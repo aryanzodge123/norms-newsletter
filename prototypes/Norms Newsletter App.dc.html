@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEEBE2;font-family:'IBM Plex Sans',system-ui,sans-serif}
+a{color:#3F6A50;text-decoration:none}
+a:hover{text-decoration:underline}
+@keyframes curl{0%{stroke-dashoffset:0;opacity:.25}45%{opacity:.9}100%{stroke-dashoffset:-46;opacity:.15}}
+@keyframes breathe{0%,100%{opacity:.35;transform:scaleY(.9)}50%{opacity:1;transform:scaleY(1.08)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.4px)}}
+@keyframes pushIn{from{transform:translateX(100%);opacity:.6}to{transform:translateX(0);opacity:1}}
+@keyframes wtscrim{from{opacity:0}to{opacity:1}}
+@keyframes wtpop{from{opacity:0;transform:translate(var(--wtdx,0px),var(--wtdy,0px)) scale(.42)}to{opacity:1;transform:translate(0,0) scale(1)}}
+@keyframes chatIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes normFade{from{opacity:0}to{opacity:1}}
+@keyframes normPill{0%{max-width:0;opacity:0}16%{opacity:1}100%{max-width:100%;opacity:1}}
+@keyframes normRise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fabIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+@keyframes caretBlink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+@keyframes thinkPulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes ruleGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes sheetRise{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes bPush{from{transform:translateX(100%)}to{transform:translateX(0)}}
+@keyframes rPush{from{opacity:.35;transform:translateX(52px)}to{opacity:1;transform:translateX(0)}}
+@keyframes rExpand{from{opacity:.25;transform:scale(.93) translateY(28px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes rRise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rTurn{0%{opacity:0;transform:translateY(-16px);clip-path:inset(0 0 64% 0)}100%{opacity:1;transform:translateY(0);clip-path:inset(0 0 0 0)}}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:500 10px 'IBM Plex Mono',monospace;padding:3px 7px;background:#23231F;color:#F6F4EE;border-radius:4px;text-decoration:none}
+.dv-tname{font:500 13px/1.2 'IBM Plex Sans',sans-serif;color:#23231F}
+.dv-opts{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px;width:402px}
+.dv-oid{font:500 10.5px 'IBM Plex Mono',monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#23231F;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11.5px/1.35 'IBM Plex Sans',sans-serif;color:rgba(0,0,0,.55)}
+.dv-opt:target .dv-oid{background:#3F6A50;color:#fff}
+.dv-next{margin:26px 0 0;font:12px/1.6 'IBM Plex Mono',monospace;color:rgba(0,0,0,.5)}
+.dv-note{margin:0 0 22px;max-width:760px;font:13px/1.7 'IBM Plex Sans',sans-serif;color:#44433C}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Topics as a share of the paper &#8212; three treatments</span></div>
+<p class="dv-note">Each section's weight divided by the total, so the list is a split of one edition and always sums to 100%. The band label stays; the 1&#8211;10 leaves the list and lives only in the slider card. Story counts follow the Length setting. All three are live and share state with <a class="dv-oid" href="#1a">1a</a> &#8212; tap a section for the card, drag one to reorder.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>One bar, split &#8212; the whole paper at the top, sections keyed to it</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ isDark }}" hint-size="402px,874px">
+<div style="{{ themeVars }}">
+<div data-ns-root="1" style="height:874px;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+<div style="flex:1;overflow:auto;padding:0 20px 30px">
+<div style="padding:56px 0 0">
+<div style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;min-height:44px"><span style="font-size:17px;line-height:1">&#8249;</span><span>More</span></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 6px">Topics</h1>
+<p style="font-size:14px;line-height:1.6;color:var(--c-inks,#44433C);margin:0 0 4px;text-wrap:pretty">One paper, split the way you weighted it.</p>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:22px 0 10px;padding-bottom:6px">The whole edition</h2>
+<div style="display:flex;height:12px;width:100%;border:1px solid var(--c-ink,#23231F);overflow:hidden">
+<sc-for list="{{ T2.rows }}" as="r" hint-placeholder-count="5"><span style="{{ r.seg }}"></span></sc-for>
+</div>
+<div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)"><span>{{ T2.topLine }}</span><span>100% of the paper</span></div>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:24px 0 2px;padding-bottom:6px">In your paper</h2>
+<sc-for list="{{ T2.rows }}" as="r" hint-placeholder-count="5">
+<div onPointerDown="{{ r.dragDown }}" onPointerMove="{{ r.dragMove }}" onPointerUp="{{ r.dragUp }}" onPointerCancel="{{ r.dragUp }}" data-nsid="{{ r.id }}" onClick="{{ r.open }}" style="{{ r.row }}">
+<span style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:0">
+<span style="display:flex;align-items:center;gap:8px"><span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">{{ r.name }}</span><span style="{{ r.dot }}"></span></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ r.band }}</span>
+</span>
+<span style="font-family:Newsreader,Georgia,serif;font-size:19px;color:var(--c-ink,#23231F);flex:none">{{ r.pct }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--c-faint,#9A968A);flex:none;cursor:grab">&#8942;&#8942;</span>
+</div>
+</sc-for>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:22px 0 0">{{ T2.lengthLine }}<br>Drag a section to change the running order.</p>
+</div>
+</div>
+<sc-if value="{{ nsWtOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:0 18px">
+<div onClick="{{ nsWtDismiss }}" style="position:absolute;inset:0;background:rgba(23,23,19,.44);animation:wtscrim .24s ease both"></div>
+<div style="{{ nsWtOrigin }}">
+<div style="position:relative;box-sizing:border-box;width:100%;max-height:640px;overflow:auto;background:var(--c-raised,#FBFAF6);border:1px solid var(--c-ink,#23231F);box-shadow:0 24px 56px rgba(35,35,31,.22);padding:16px 20px 20px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--c-rule,#DDD9CC);padding-bottom:9px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ nsWtName }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ nsWtMeta }}</span>
+</div>
+<h3 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:13px 0 0;text-wrap:pretty">How much {{ nsWtName }} do you want?</h3>
+<p style="font-size:13px;line-height:1.55;color:var(--c-inks,#44433C);margin:7px 0 0;text-wrap:pretty">One means only when it&#8217;s big enough to lead. Ten means keep me current.</p>
+<div style="margin-top:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F)">{{ nsWtVal }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">of 10</span>
+</div>
+<span style="{{ nsWtBandStyle }}">{{ nsWtBand }}</span>
+</div>
+<div onPointerDown="{{ nsWtDown }}" onPointerMove="{{ nsWtMove }}" style="margin-top:12px;position:relative;height:44px;cursor:grab;touch-action:none;user-select:none">
+<div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--c-rule,#DDD9CC)"></div>
+<sc-for list="{{ nsWtTicks }}" as="tk" hint-placeholder-count="10"><span style="{{ tk.style }}"></span></sc-for>
+<div style="{{ nsWtFill }}"></div>
+<div style="{{ nsWtMark }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)">
+<span>Nice to have</span><span>Keep me current</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:16px 0 0;min-height:38px;text-wrap:pretty">{{ nsWtNote }}</p>
+<div style="margin-top:14px;padding-top:13px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Colour on the page</span>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">
+<sc-for list="{{ nsWtColors }}" as="sw" hint-placeholder-count="8">
+<div onClick="{{ sw.set }}" style="{{ sw.hit }}"><span style="{{ sw.dot }}"></span></div>
+</sc-for>
+</div>
+</div>
+<p style="font-size:12.5px;line-height:1.5;color:var(--c-oxide,#3F6A50);margin:2px 0 0;min-height:19px;text-wrap:pretty">{{ nsWtShift }}</p>
+<div style="margin-top:6px;display:flex;flex-direction:column;gap:8px">
+<div onClick="{{ nsWtSave }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;cursor:pointer">{{ nsWtCta }}</div>
+<div onClick="{{ nsWtSecondAct }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-muted,#6B6A62);cursor:pointer">{{ nsWtSecond }}</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Per-section bars &#8212; each row a measure of the morning</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ isDark }}" hint-size="402px,874px">
+<div style="{{ themeVars }}">
+<div data-ns-root="1" style="height:874px;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+<div style="flex:1;overflow:auto;padding:0 20px 30px">
+<div style="padding:56px 0 0">
+<div style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;min-height:44px"><span style="font-size:17px;line-height:1">&#8249;</span><span>More</span></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 6px">Topics</h1>
+<p style="font-size:14px;line-height:1.6;color:var(--c-inks,#44433C);margin:0 0 4px;text-wrap:pretty">How much of each morning goes to each section.</p>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:24px 0 2px;padding-bottom:6px">In your paper</h2>
+<sc-for list="{{ T2.rows }}" as="r" hint-placeholder-count="5">
+<div onPointerDown="{{ r.dragDown }}" onPointerMove="{{ r.dragMove }}" onPointerUp="{{ r.dragUp }}" onPointerCancel="{{ r.dragUp }}" data-nsid="{{ r.id }}" onClick="{{ r.open }}" style="{{ r.rowB }}">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">{{ r.name }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-ink,#23231F);flex:none">{{ r.pct }}</span>
+</div>
+<span style="display:block;height:6px;background:var(--c-rulef,#E8E5DA);margin-top:8px"><span style="{{ r.barB }}"></span></span>
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:6px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ r.band }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-faint,#9A968A)">{{ r.count }}</span>
+</div>
+</div>
+</sc-for>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:22px 0 0">{{ T2.lengthLine }}<br>Drag a section to change the running order.</p>
+</div>
+</div>
+<sc-if value="{{ nsWtOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:0 18px">
+<div onClick="{{ nsWtDismiss }}" style="position:absolute;inset:0;background:rgba(23,23,19,.44);animation:wtscrim .24s ease both"></div>
+<div style="{{ nsWtOrigin }}">
+<div style="position:relative;box-sizing:border-box;width:100%;max-height:640px;overflow:auto;background:var(--c-raised,#FBFAF6);border:1px solid var(--c-ink,#23231F);box-shadow:0 24px 56px rgba(35,35,31,.22);padding:16px 20px 20px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--c-rule,#DDD9CC);padding-bottom:9px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ nsWtName }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ nsWtMeta }}</span>
+</div>
+<h3 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:13px 0 0;text-wrap:pretty">How much {{ nsWtName }} do you want?</h3>
+<p style="font-size:13px;line-height:1.55;color:var(--c-inks,#44433C);margin:7px 0 0;text-wrap:pretty">One means only when it&#8217;s big enough to lead. Ten means keep me current.</p>
+<div style="margin-top:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F)">{{ nsWtVal }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">of 10</span>
+</div>
+<span style="{{ nsWtBandStyle }}">{{ nsWtBand }}</span>
+</div>
+<div onPointerDown="{{ nsWtDown }}" onPointerMove="{{ nsWtMove }}" style="margin-top:12px;position:relative;height:44px;cursor:grab;touch-action:none;user-select:none">
+<div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--c-rule,#DDD9CC)"></div>
+<sc-for list="{{ nsWtTicks }}" as="tk" hint-placeholder-count="10"><span style="{{ tk.style }}"></span></sc-for>
+<div style="{{ nsWtFill }}"></div>
+<div style="{{ nsWtMark }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)">
+<span>Nice to have</span><span>Keep me current</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:16px 0 0;min-height:38px;text-wrap:pretty">{{ nsWtNote }}</p>
+<div style="margin-top:14px;padding-top:13px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Colour on the page</span>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">
+<sc-for list="{{ nsWtColors }}" as="sw" hint-placeholder-count="8">
+<div onClick="{{ sw.set }}" style="{{ sw.hit }}"><span style="{{ sw.dot }}"></span></div>
+</sc-for>
+</div>
+</div>
+<p style="font-size:12.5px;line-height:1.5;color:var(--c-oxide,#3F6A50);margin:2px 0 0;min-height:19px;text-wrap:pretty">{{ nsWtShift }}</p>
+<div style="margin-top:6px;display:flex;flex-direction:column;gap:8px">
+<div onClick="{{ nsWtSave }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;cursor:pointer">{{ nsWtCta }}</div>
+<div onClick="{{ nsWtSecondAct }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-muted,#6B6A62);cursor:pointer">{{ nsWtSecond }}</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Type only &#8212; the share set large, no bars at all</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ isDark }}" hint-size="402px,874px">
+<div style="{{ themeVars }}">
+<div data-ns-root="1" style="height:874px;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+<div style="flex:1;overflow:auto;padding:0 20px 30px">
+<div style="padding:56px 0 0">
+<div style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;min-height:44px"><span style="font-size:17px;line-height:1">&#8249;</span><span>More</span></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 6px">Topics</h1>
+<p style="font-size:14px;line-height:1.6;color:var(--c-inks,#44433C);margin:0 0 4px;text-wrap:pretty">Set as a table of shares. No bars, just the split.</p>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:24px 0 0;padding-bottom:6px">In your paper</h2>
+<sc-for list="{{ T2.rows }}" as="r" hint-placeholder-count="5">
+<div onPointerDown="{{ r.dragDown }}" onPointerMove="{{ r.dragMove }}" onPointerUp="{{ r.dragUp }}" onPointerCancel="{{ r.dragUp }}" data-nsid="{{ r.id }}" onClick="{{ r.open }}" style="{{ r.rowC }}">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:34px;line-height:1;letter-spacing:-.02em;color:var(--c-ink,#23231F);width:76px;flex:none">{{ r.pct }}</span>
+<span style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:0">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">{{ r.name }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ r.band }} &#183; {{ r.count }}</span>
+</span>
+</div>
+</sc-for>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:22px 0 0">{{ T2.lengthLine }}<br>Drag a section to change the running order.</p>
+</div>
+</div>
+<sc-if value="{{ nsWtOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:0 18px">
+<div onClick="{{ nsWtDismiss }}" style="position:absolute;inset:0;background:rgba(23,23,19,.44);animation:wtscrim .24s ease both"></div>
+<div style="{{ nsWtOrigin }}">
+<div style="position:relative;box-sizing:border-box;width:100%;max-height:640px;overflow:auto;background:var(--c-raised,#FBFAF6);border:1px solid var(--c-ink,#23231F);box-shadow:0 24px 56px rgba(35,35,31,.22);padding:16px 20px 20px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--c-rule,#DDD9CC);padding-bottom:9px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ nsWtName }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ nsWtMeta }}</span>
+</div>
+<h3 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:13px 0 0;text-wrap:pretty">How much {{ nsWtName }} do you want?</h3>
+<p style="font-size:13px;line-height:1.55;color:var(--c-inks,#44433C);margin:7px 0 0;text-wrap:pretty">One means only when it&#8217;s big enough to lead. Ten means keep me current.</p>
+<div style="margin-top:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F)">{{ nsWtVal }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">of 10</span>
+</div>
+<span style="{{ nsWtBandStyle }}">{{ nsWtBand }}</span>
+</div>
+<div onPointerDown="{{ nsWtDown }}" onPointerMove="{{ nsWtMove }}" style="margin-top:12px;position:relative;height:44px;cursor:grab;touch-action:none;user-select:none">
+<div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--c-rule,#DDD9CC)"></div>
+<sc-for list="{{ nsWtTicks }}" as="tk" hint-placeholder-count="10"><span style="{{ tk.style }}"></span></sc-for>
+<div style="{{ nsWtFill }}"></div>
+<div style="{{ nsWtMark }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)">
+<span>Nice to have</span><span>Keep me current</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:16px 0 0;min-height:38px;text-wrap:pretty">{{ nsWtNote }}</p>
+<div style="margin-top:14px;padding-top:13px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Colour on the page</span>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">
+<sc-for list="{{ nsWtColors }}" as="sw" hint-placeholder-count="8">
+<div onClick="{{ sw.set }}" style="{{ sw.hit }}"><span style="{{ sw.dot }}"></span></div>
+</sc-for>
+</div>
+</div>
+<p style="font-size:12.5px;line-height:1.5;color:var(--c-oxide,#3F6A50);margin:2px 0 0;min-height:19px;text-wrap:pretty">{{ nsWtShift }}</p>
+<div style="margin-top:6px;display:flex;flex-direction:column;gap:8px">
+<div onClick="{{ nsWtSave }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;cursor:pointer">{{ nsWtCta }}</div>
+<div onClick="{{ nsWtSecondAct }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-muted,#6B6A62);cursor:pointer">{{ nsWtSecond }}</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</div>
+</x-import>
+</div>
+
+</div>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Norm's Newsletter — native iPhone app, edition No. 056</span></div>
+<p class="dv-note">Assumptions: the app is the same editorial product as the site &mdash; one edition a day, no feed, no infinite scroll &mdash; but it earns its place on the phone with the two things the web page cannot do: a 6:00 am push and background audio. I kept the paper palette and the three type roles (Newsreader = the day's voice, Plex Sans = editorial, Plex Mono = machine output) and dropped the print chrome: the masthead becomes a compact sticky bar, the <code>&lt;details&gt;</code> expand becomes a pushed reader, and the section rules become the navigation. <a class="dv-oid" href="#1a">1a</a> runs on all 14 committed editions (No. 043&ndash;056): Today is the Aug 2 brief, every archived edition opens as a full edition page, and Stories searches all 166 grounded stories. The reader's opening animation is a tweak &mdash; <code>readerAnim</code>: push, expand, rise, fade, or turn.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Interactive prototype — tab bar, pushed reader, docked mini-player, dark toggle in More</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ isDark }}" hint-size="402px,874px">
+<div style="{{ themeVars }}">
+<div data-ns-root="1" style="height:874px;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+
+<sc-if value="{{ showReaderBar }}" hint-placeholder-val="{{ false }}">
+<div style="position:sticky;top:0;z-index:5;padding:56px 20px 8px;background:var(--c-chrome,rgba(246,244,238,.86));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+<div onClick="{{ closeStory }}" style="display:flex;align-items:baseline;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;cursor:pointer;min-height:44px;padding-top:12px">
+<span style="font-size:17px;line-height:1">&#8249;</span><span>{{ backLabel }}</span>
+</div>
+<span style="display:flex;align-items:baseline;gap:9px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ story.sectionName }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50)">{{ readerPos }}</span>
+</span>
+</div>
+<div style="display:flex;gap:3px;margin-top:8px">
+<sc-for list="{{ pips }}" as="p" hint-placeholder-count="12">
+<span style="{{ p.style }}"></span>
+</sc-for>
+</div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:6px"></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showTopBar }}" hint-placeholder-val="{{ true }}">
+<div style="position:sticky;top:0;z-index:5;padding:54px 20px 0;background:var(--c-chrome,rgba(246,244,238,.86));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0 9px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ nsName }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ dateLong }} &#183; {{ editionNo }}</span>
+</div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px"></div>
+<div style="height:2px;background:var(--c-rulef,#E8E5DA)"><span style="{{ progressBar }}"></span></div>
+</div>
+</sc-if>
+
+<div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0 20px" onScroll="{{ onScroll }}">
+<div style="{{ zoomWrap }}">
+
+<sc-if value="{{ isReader }}" hint-placeholder-val="{{ false }}">
+<div onPointerDown="{{ swipeDown }}" onPointerMove="{{ swipeMove }}" onPointerUp="{{ swipeUp }}" onPointerCancel="{{ swipeUp }}" style="{{ readerStyle }}">
+<h1 style="{{ readerTitleStyle }}">{{ story.title }}</h1>
+<p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:var(--c-inks,#44433C)">{{ story.summary }}</p>
+<div style="display:flex;align-items:baseline;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);padding-bottom:14px;border-bottom:1px solid var(--c-rule,#DDD9CC)">
+<span>{{ story.meta }}</span><span>&#183;</span><span>{{ story.readTime }}</span>
+</div>
+<sc-if value="{{ story.hasArticle }}" hint-placeholder-val="{{ true }}">
+<div style="border-left:2px solid var(--c-oxide,#3F6A50);padding-left:20px;margin-top:18px">
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);margin:0 0 5px">Background</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C);text-wrap:pretty">{{ story.background }}</p>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);margin:20px 0 5px">What happened</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C);text-wrap:pretty">{{ story.what }}</p>
+<sc-if value="{{ story.quote }}" hint-placeholder-val="{{ false }}">
+<figure style="border-left:2px solid var(--c-rule,#DDD9CC);margin:20px 0;padding-left:16px">
+<blockquote style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:16.5px;line-height:1.55;color:var(--c-ink2,#2E2D27);margin:0">{{ story.quoteText }}</blockquote>
+<figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);margin-top:7px;line-height:1.5">{{ story.quoteAttr }}</figcaption>
+</figure>
+</sc-if>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);margin:20px 0 5px">Why it matters</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C);text-wrap:pretty">{{ story.why }}</p>
+</div>
+</sc-if>
+<sc-if value="{{ story.noArticle }}" hint-placeholder-val="{{ false }}">
+<div style="border-left:2px solid var(--c-rule,#DDD9CC);padding-left:20px;margin-top:18px">
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin:0 0 5px">Not written up</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C);text-wrap:pretty">Norm ran this one in the brief but could not ground a full article for it. The summary above is all he stands behind &#8212; read it at the source below.</p>
+</div>
+</sc-if>
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;margin-top:22px;padding-top:14px;border-top:1px solid var(--c-rule,#DDD9CC)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-muted,#6B6A62)">Read at:</span>
+<sc-for list="{{ story.sources }}" as="src" hint-placeholder-count="1">
+<span onClick="{{ src.open }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-oxide,#3F6A50);cursor:pointer;text-decoration:underline;text-underline-offset:3px">{{ src.name }} &#8599;</span>
+</sc-for>
+</div>
+<div onClick="{{ nextStory }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:26px;padding:14px 16px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6);cursor:pointer;min-height:44px">
+<span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">Swipe or tap &#183; next story</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13px;color:var(--c-oxide,#3F6A50);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ nextTitle }}</span>
+</span>
+<span style="color:var(--c-oxide,#3F6A50);font-size:17px;flex:none">&#8250;</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{ isPast }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ backToArchive }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding:11px 13px;border:1px solid var(--c-rule,#DDD9CC);border-left:2px solid var(--c-oxide,#3F6A50);background:var(--c-raised,#FBFAF6);cursor:pointer;min-height:44px;animation:chatIn .26s cubic-bezier(.2,.7,.3,1) both">
+<span style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13px"><span style="font-size:16px;line-height:1">&#8249;</span>Archive</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Past edition &#183; {{ pastLabel }}</span>
+</div>
+</sc-if>
+<div style="padding:24px 0 0">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--c-muted,#6B6A62)">Headline of the day</span>
+<h1 style="{{ headlineStyle }}">{{ headline }}</h1>
+</div>
+
+<sc-if value="{{ hasAudio }}" hint-placeholder-val="{{ true }}">
+<div onClick="{{ openFromToday }}" style="margin-top:24px;display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6);cursor:pointer">
+<div onClick="{{ togglePlay }}" style="display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin:-8px 0;cursor:pointer">
+<span style="{{ playGlyphStyle }}"></span>
+</div>
+<span style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-ink,#23231F)">{{ audioLabel }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">{{ audioMeta }}</span>
+</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-oxide,#3F6A50);flex:none">{{ audioRight }}</span>
+</div>
+</sc-if>
+<sc-if value="{{ noAudio }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:24px;padding:13px 16px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;color:var(--c-muted,#6B6A62)">No audio for this edition &#8212; text-to-speech failed that morning, so Norm published without it.</span>
+</div>
+</sc-if>
+
+<div style="margin-top:26px;border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-oxide,#3F6A50);background:var(--c-raised,#FBFAF6);padding:16px 18px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">{{ glanceHeading }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">60-second read</span>
+</div>
+<sc-for list="{{ glance }}" as="pt" hint-placeholder-count="5">
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">{{ pt.num }}</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-ink2,#2E2D27);text-wrap:pretty">{{ pt.text }}<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> {{ pt.topic }}</span></span>
+</div>
+</sc-for>
+</div>
+
+<sc-for list="{{ sections }}" as="sec" hint-placeholder-count="3">
+<div style="margin-top:30px">
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:0 0 4px;padding-bottom:6px">{{ sec.name }}</h2>
+<sc-for list="{{ sec.stories }}" as="st" hint-placeholder-count="2">
+<div onClick="{{ st.open }}" style="border-bottom:1px solid var(--c-rulef,#E8E5DA);padding:14px 0;cursor:pointer">
+<h3 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:16.5px;line-height:1.4;color:var(--c-ink,#23231F);margin:0 0 4px;text-wrap:pretty">{{ st.title }}</h3>
+<p style="margin:0 0 8px;font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);text-wrap:pretty">{{ st.summary }}</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-muted,#6B6A62)">{{ st.meta }}</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13px;color:var(--c-oxide,#3F6A50);white-space:nowrap">Read the full story <span style="font-size:11px">&#8250;</span></span>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+
+<div style="margin-top:30px">
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:0 0 8px;padding-bottom:6px">Briefly</h2>
+<sc-for list="{{ briefly }}" as="b" hint-placeholder-count="4">
+<div onClick="{{ b.open }}" style="padding:11px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);display:flex;align-items:baseline;gap:8px;cursor:pointer;min-height:44px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.5;color:var(--c-inks,#44433C);flex:1;text-wrap:pretty">{{ b.title }} <span style="color:var(--c-oxide,#3F6A50)">&#8599;</span></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62);flex:none">{{ b.topic }}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<sc-for list="{{ tiles }}" as="ti" hint-placeholder-count="4">
+<div style="border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6);display:flex;flex-direction:column;gap:4px;padding:10px 12px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ ti.label }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:15px;color:var(--c-oxide,#3F6A50)">{{ ti.value }}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="margin-top:34px;border-top:2px solid var(--c-ink,#23231F);padding-top:12px;text-align:center">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Compiled by Norm at 6:00 am ET</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ isArchive }}" hint-placeholder-val="{{ false }}">
+<div style="padding:24px 0 0">
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;color:var(--c-ink,#23231F);margin:0 0 14px">Archive</h1>
+<div style="position:relative;z-index:20;display:flex;flex-direction:column;gap:9px;padding-bottom:14px">
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+<div onClick="{{ f.toggle }}" style="{{ f.style }}"><span>{{ f.label }}</span><span style="font-size:9px;opacity:.7">&#9660;</span></div>
+</sc-for>
+</div>
+<sc-if value="{{ hasActive }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center">
+<sc-for list="{{ activeChips }}" as="ac" hint-placeholder-count="2">
+<div onClick="{{ ac.remove }}" style="{{ ac.style }}"><span>{{ ac.label }}</span><span style="font-size:12px;line-height:1;opacity:.8">&#215;</span></div>
+</sc-for>
+<span onClick="{{ clearAll }}" style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);cursor:pointer;text-decoration:underline">Clear all</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ isCal }}" hint-placeholder-val="{{ false }}">
+<div style="{{ popStyle }}">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<div style="display:flex;align-items:center;gap:10px">
+<span onClick="{{ calPrev }}" style="{{ calArrow }}">&#8249;</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-ink,#23231F);min-width:96px;text-align:center">{{ calLabel }}</span>
+<span onClick="{{ calNext }}" style="{{ calArrow }}">&#8250;</span>
+</div>
+<div style="display:flex;border:1px solid var(--c-rule,#DDD9CC)">
+<span onClick="{{ setMonthView }}" style="{{ monthTab }}">Month</span>
+<span onClick="{{ setYearView }}" style="{{ yearTab }}">Year</span>
+</div>
+</div>
+
+<sc-if value="{{ calIsMonth }}" hint-placeholder-val="{{ true }}">
+<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-top:10px">
+<sc-for list="{{ calDows }}" as="dw" hint-placeholder-count="7">
+<span style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-muted,#6B6A62);padding-bottom:4px">{{ dw.label }}</span>
+</sc-for>
+<sc-for list="{{ calDays }}" as="d" hint-placeholder-count="35">
+<span onClick="{{ d.pick }}" style="{{ d.style }}">{{ d.label }}</span>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ calIsYear }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px">
+<sc-for list="{{ calMonths }}" as="mo" hint-placeholder-count="12">
+<span onClick="{{ mo.pick }}" style="{{ mo.style }}">{{ mo.label }}</span>
+</sc-for>
+</div>
+</sc-if>
+
+<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:11px;padding-top:9px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">{{ rangeLabel }}</span>
+<span onClick="{{ closeMenus }}" style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;color:var(--c-oxide,#3F6A50);cursor:pointer">Done</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isListMenu }}" hint-placeholder-val="{{ false }}">
+<div style="{{ popStyle }}">
+<sc-for list="{{ menuOptions }}" as="op" hint-placeholder-count="5">
+<div onClick="{{ op.toggle }}" style="{{ op.row }}">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:var(--c-ink,#23231F)">{{ op.label }}</span>
+<span style="{{ op.box }}"></span>
+</div>
+</sc-for>
+<div style="display:flex;justify-content:flex-end;padding-top:9px;margin-top:4px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<span onClick="{{ closeMenus }}" style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;color:var(--c-oxide,#3F6A50);cursor:pointer">Done</span>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--c-rule,#DDD9CC)">
+<sc-for list="{{ archModes }}" as="m" hint-placeholder-count="2">
+<div onClick="{{ m.go }}" style="{{ m.style }}">{{ m.label }}</div>
+</sc-for>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-top:14px;padding:10px 13px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6)">
+<span style="{{ searchGlyph }}"></span>
+<input type="text" value="{{ archQ }}" onChange="{{ setArchQ }}" placeholder="Search headlines and stories" style="{{ searchInput }}">
+<sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+<span onClick="{{ clearArchQ }}" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-oxide,#3F6A50);cursor:pointer;flex:none">Clear</span>
+</sc-if>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-bottom:6px;border-bottom:1px solid var(--c-rule,#DDD9CC)">
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);margin:0">{{ archHeading }}</h2>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">{{ archCount }}</span>
+</div>
+<sc-if value="{{ isArchEditions }}" hint-placeholder-val="{{ true }}">
+<sc-for list="{{ archive }}" as="row" hint-placeholder-count="6">
+<div onClick="{{ row.open }}" style="display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);cursor:pointer;min-height:44px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-muted,#6B6A62);min-width:52px;flex:none">{{ row.date }}</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;line-height:1.45;color:var(--c-oxide,#3F6A50);flex:1;text-wrap:pretty">{{ row.headline }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62);flex:none">{{ row.audio }}</span>
+</div>
+</sc-for>
+</sc-if>
+<sc-if value="{{ isArchStories }}" hint-placeholder-val="{{ false }}">
+<sc-for list="{{ archStories }}" as="row" hint-placeholder-count="8">
+<div onClick="{{ row.open }}" style="padding:13px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);cursor:pointer">
+<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);min-width:52px;flex:none">{{ row.date }}</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">{{ row.section }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:10px">
+<span style="min-width:52px;flex:none"></span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14.5px;line-height:1.42;color:var(--c-ink,#23231F);flex:1;text-wrap:pretty">{{ row.title }}</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:10px;margin-top:4px">
+<span style="min-width:52px;flex:none"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ row.meta }}</span>
+</div>
+</div>
+</sc-for>
+</sc-if>
+<sc-if value="{{ archEmpty }}" hint-placeholder-val="{{ false }}">
+<p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:18px 0 0">Nothing in the archive matches that.<br>Norm keeps every edition since No. 001.</p>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isMore }}" hint-placeholder-val="{{ false }}">
+<div style="padding:24px 0 0">
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;color:var(--c-ink,#23231F);margin:0 0 20px">Settings</h1>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:0 0 2px;padding-bottom:6px">Your newsletter</h2>
+<div onClick="{{ openNsTopics }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px;cursor:pointer">
+<span style="display:flex;flex-direction:column;gap:3px">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">Topics</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ nsTopicLine }}</span>
+</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-oxide,#3F6A50);flex:none">{{ nsTopicCount }} &#8250;</span>
+</div>
+<div onClick="{{ openNsSettings }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px;cursor:pointer">
+<span style="display:flex;flex-direction:column;gap:3px">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">Settings</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ nsName }}</span>
+</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-oxide,#3F6A50);flex:none">{{ nsLenShort }} &#8250;</span>
+</div>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">Delivery</h2>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px">
+<span style="display:flex;flex-direction:column;gap:3px">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">Morning push</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">6:00 am ET, every day</span>
+</span>
+<div onClick="{{ toggleNotif }}" style="{{ notifSwitch }}"><span style="{{ notifKnob }}"></span></div>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px">
+<span style="display:flex;flex-direction:column;gap:3px">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">Download audio on Wi-Fi</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">~6 MB a day</span>
+</span>
+<div onClick="{{ toggleDl }}" style="{{ dlSwitch }}"><span style="{{ dlKnob }}"></span></div>
+</div>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">Reading</h2>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px">
+<span style="display:flex;flex-direction:column;gap:3px">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">Night paper</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Dark variant of the palette</span>
+</span>
+<div onClick="{{ toggleTheme }}" style="{{ themeSwitch }}"><span style="{{ themeKnob }}"></span></div>
+</div>
+<div onClick="{{ openTextSize }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px;cursor:pointer">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">Text size</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-oxide,#3F6A50)">{{ textSizeLabel }} &#8250;</span>
+</div>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">About</h2>
+<div onClick="{{ openHow }}" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px;cursor:pointer"><span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">How Norm works</span><span style="color:var(--c-oxide,#3F6A50);font-size:14px">&#8250;</span></div>
+<div onClick="{{ openFeeds }}" style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px;cursor:pointer"><span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">RSS and podcast feed</span><span style="color:var(--c-oxide,#3F6A50);font-size:14px">&#8250;</span></div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:22px 0 0">No human touches the daily output.<br>Every story links to its original sources.</p>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNsTopics }}" hint-placeholder-val="{{ false }}">
+<div style="padding:20px 0 0;animation:chatIn .3s cubic-bezier(.2,.7,.3,1) both">
+<div onClick="{{ closeTextSize }}" style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;cursor:pointer;min-height:44px">
+<span style="font-size:17px;line-height:1">&#8249;</span><span>More</span>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 6px">Topics</h1>
+<p style="font-size:14px;line-height:1.6;color:var(--c-inks,#44433C);margin:0 0 4px;text-wrap:pretty">The sections Norm leads with, in your order. Tap one to say how much of it you want.</p>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:24px 0 2px;padding-bottom:6px">In your paper</h2>
+<sc-for list="{{ nsRows }}" as="r" hint-placeholder-count="5">
+<div onClick="{{ r.open }}" style="display:flex;align-items:center;gap:11px;padding:13px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px;cursor:pointer">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);width:18px;flex:none">{{ r.rank }}</span>
+<span style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:0">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">{{ r.name }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ r.band }}</span>
+</span>
+<span style="{{ r.track }}"><span style="{{ r.fill }}"></span></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);width:36px;text-align:right;flex:none">{{ r.val }}</span>
+</div>
+</sc-for>
+<div onClick="{{ openNsAdd }}" style="margin-top:16px;min-height:48px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--c-ink,#23231F);color:var(--c-ink,#23231F);font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14.5px;cursor:pointer">Add a topic</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:22px 0 0">You still get the whole edition.<br>Weighting only changes what leads it.</p>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNsAdd }}" hint-placeholder-val="{{ false }}">
+<div style="padding:20px 0 0;animation:pushIn .34s cubic-bezier(.22,.9,.3,1) both">
+<div onClick="{{ closeNsAdd }}" style="display:flex;align-items:center;min-height:44px;cursor:pointer">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50)">Done</span>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 6px">More topics</h1>
+<p style="font-size:14px;line-height:1.6;color:var(--c-inks,#44433C);margin:0 0 18px;text-wrap:pretty">Sections Norm files that are not on your front page yet. Tap one to set how much of it you want.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+<sc-for list="{{ nsRest }}" as="t" hint-placeholder-count="7">
+<div onClick="{{ t.open }}" style="{{ t.card }}">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--c-clay,#8A4B2A)">{{ t.num }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1;color:var(--c-oxide,#3F6A50)">+</span>
+</div>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14.5px;line-height:1.26;color:var(--c-ink,#23231F);margin-top:auto;text-wrap:pretty">{{ t.name }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ t.meta }}</span>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ nsRestEmpty }}" hint-placeholder-val="{{ false }}">
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:0">Every section Norm files is already on your front page.</p>
+</sc-if>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:22px 0 0">Adding a section changes what leads.<br>It never adds a second edition.</p>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNsSettings }}" hint-placeholder-val="{{ false }}">
+<div style="padding:20px 0 0;animation:chatIn .3s cubic-bezier(.2,.7,.3,1) both">
+<div onClick="{{ closeTextSize }}" style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;cursor:pointer;min-height:44px">
+<span style="font-size:17px;line-height:1">&#8249;</span><span>More</span>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 6px">Your paper</h1>
+<p style="font-size:14px;line-height:1.6;color:var(--c-inks,#44433C);margin:0;text-wrap:pretty">Two things Norm asks you about once, and never again.</p>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:24px 0 2px;padding-bottom:6px">Masthead</h2>
+<label style="display:flex;flex-direction:column;gap:7px;padding:14px 0 16px;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">What it is called at the top of the page</span>
+<input value="{{ nsName }}" onChange="{{ nsSetName }}" placeholder="Norm&#8217;s Newsletter" style="width:100%;box-sizing:border-box;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6);padding:12px 13px;font-family:Newsreader,Georgia,serif;font-size:19px;color:var(--c-ink,#23231F);outline:none;min-height:48px">
+</label>
+<div style="padding:16px 0 0">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Preview</span>
+<div style="margin-top:8px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6);padding:14px 16px;text-align:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ nsNameUp }}</span>
+<div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)"><span>{{ dateLong }}</span><span>{{ editionNo }}</span></div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:6px"></div>
+</div>
+</div>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">Length</h2>
+<div style="padding:14px 0 0">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:27px;line-height:1.1;letter-spacing:-.015em;color:var(--c-ink,#23231F)">{{ nsLenLabel }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);text-align:right;flex:none">{{ nsLenEst }}</span>
+</div>
+<div onPointerDown="{{ nsLenDown }}" onPointerMove="{{ nsLenMove }}" style="margin-top:12px;position:relative;height:44px;cursor:grab;touch-action:none;user-select:none">
+<div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--c-rule,#DDD9CC)"></div>
+<sc-for list="{{ nsLenTicks }}" as="tk" hint-placeholder-count="5"><span style="{{ tk.style }}"></span></sc-for>
+<div style="{{ nsLenFill }}"></div>
+<div style="{{ nsLenMark }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)">
+<span>Biggest updates only</span><span>Everything going on</span>
+</div>
+<p style="font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:16px 0 0;min-height:44px;text-wrap:pretty">{{ nsLenNote }}</p>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:20px 0 0">Length changes the paper, not the archive.<br>Everything Norm filed stays searchable.</p>
+</div>
+</sc-if>
+
+<sc-if value="{{ isTextSize }}" hint-placeholder-val="{{ false }}">
+<div style="padding:20px 0 0;animation:chatIn .3s cubic-bezier(.2,.7,.3,1) both">
+<div onClick="{{ closeTextSize }}" style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;cursor:pointer;min-height:44px">
+<span style="font-size:17px;line-height:1">&#8249;</span><span>More</span>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 6px">Text size</h1>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:0;max-width:36ch;text-wrap:pretty">Headlines scale on their own. Body size sets everything else in the app.</p>
+
+<div style="margin-top:20px;border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-ink,#23231F);background:var(--c-raised,#FBFAF6);padding:15px 16px 10px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13.5px;color:var(--c-ink,#23231F)">Headlines</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-oxide,#3F6A50)">{{ hLabel }}</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="font-family:Newsreader,Georgia,serif;font-size:15px;color:var(--c-muted,#6B6A62);flex:none">A</span>
+<div style="position:relative;flex:1;display:flex;align-items:center;height:44px">
+<span style="position:absolute;left:8px;right:8px;height:2px;background:var(--c-rule,#DDD9CC)"></span>
+<sc-for list="{{ hSteps }}" as="s" hint-placeholder-count="3">
+<span onClick="{{ s.pick }}" style="{{ s.hit }}"><span style="{{ s.dot }}"></span></span>
+</sc-for>
+</div>
+<span style="font-family:Newsreader,Georgia,serif;font-size:26px;color:var(--c-ink,#23231F);flex:none">A</span>
+</div>
+
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:10px;padding-top:12px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13.5px;color:var(--c-ink,#23231F)">Body and cards</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-oxide,#3F6A50)">{{ bLabel }}</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--c-muted,#6B6A62);flex:none">A</span>
+<div style="position:relative;flex:1;display:flex;align-items:center;height:44px">
+<span style="position:absolute;left:8px;right:8px;height:2px;background:var(--c-rule,#DDD9CC)"></span>
+<sc-for list="{{ bSteps }}" as="s" hint-placeholder-count="3">
+<span onClick="{{ s.pick }}" style="{{ s.hit }}"><span style="{{ s.dot }}"></span></span>
+</sc-for>
+</div>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-size:21px;color:var(--c-ink,#23231F);flex:none">A</span>
+</div>
+</div>
+
+<div style="margin-top:18px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Preview</span>
+<div style="margin-top:9px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6);padding:15px 16px 16px">
+<span style="{{ pvKicker }}">Headline of the day</span>
+<h2 style="{{ pvHead }}">Trump cancels planned strikes on Iran, demands rapid deal to open Strait of Hormuz</h2>
+<p style="{{ pvBody }}">Trump said on Truth Social that he called off planned strikes on Iran, and wants a deal opening the Strait of Hormuz within days.</p>
+<span style="{{ pvMeta }}">Aug 2 &#183; 1 source &#183; 3 min read</span>
+</div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px;padding-bottom:8px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">Applies across the app</span>
+<span onClick="{{ resetSizes }}" style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12.5px;color:var(--c-oxide,#3F6A50);cursor:pointer;min-height:44px;display:flex;align-items:center">Reset to default</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isHow }}" hint-placeholder-val="{{ false }}">
+<div style="padding:20px 0 0;animation:chatIn .3s cubic-bezier(.2,.7,.3,1) both">
+<div onClick="{{ closeTextSize }}" style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;cursor:pointer;min-height:44px">
+<span style="font-size:17px;line-height:1">&#8249;</span><span>More</span>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 8px">How Norm works</h1>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.65;color:var(--c-inks,#44433C);margin:0;text-wrap:pretty">Norm is software. It reads free public sources all day, and at 6:00 am ET it publishes one brief. AI makes judgment calls in four narrow places; ordinary code does everything else.</p>
+
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">The pipeline</h2>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+<div style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--c-oxide,#3F6A50);flex:none;min-width:22px;padding-top:1px">{{ s.num }}</span>
+<span style="display:flex;flex-direction:column;gap:4px;min-width:0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;color:var(--c-ink,#23231F)">{{ s.name }}</span>
+<span style="font-size:13.5px;line-height:1.62;color:var(--c-inks,#44433C);text-wrap:pretty">{{ s.text }}</span>
+</span>
+</div>
+</sc-for>
+
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">What Norm won't do</h2>
+<sc-for list="{{ wont }}" as="w" hint-placeholder-count="4">
+<div style="padding:13px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="display:block;font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14.5px;color:var(--c-ink,#23231F);margin-bottom:3px">{{ w.name }}</span>
+<span style="display:block;font-size:13.5px;line-height:1.62;color:var(--c-inks,#44433C);text-wrap:pretty">{{ w.text }}</span>
+</div>
+</sc-for>
+
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">How scores work</h2>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;line-height:1.62;color:var(--c-inks,#44433C);margin:12px 0 4px;text-wrap:pretty">Every cluster gets a 1&#8211;10 newsworthiness rating, a topic, and a one-sentence reason. The score you see on a story is that rating.</p>
+<sc-for list="{{ scoreRows }}" as="r" hint-placeholder-count="4">
+<div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-oxide,#3F6A50);flex:none;min-width:44px;padding-top:2px">{{ r.band }}</span>
+<span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-ink,#23231F)">{{ r.what }}</span>
+<span style="font-size:13px;line-height:1.6;color:var(--c-inks,#44433C);text-wrap:pretty">{{ r.text }}</span>
+</span>
+</div>
+</sc-for>
+
+<div style="margin-top:26px;border-top:2px solid var(--c-ink,#23231F);padding-top:12px;display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Compiled by Norm at 6:00 am ET</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ editionCount }}</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isFeeds }}" hint-placeholder-val="{{ false }}">
+<div style="padding:20px 0 0;animation:chatIn .3s cubic-bezier(.2,.7,.3,1) both">
+<div onClick="{{ closeTextSize }}" style="display:flex;align-items:center;gap:6px;color:var(--c-oxide,#3F6A50);font-size:13px;font-weight:500;cursor:pointer;min-height:44px">
+<span style="font-size:17px;line-height:1">&#8249;</span><span>More</span>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;color:var(--c-ink,#23231F);margin:2px 0 8px">RSS and podcast feed</h1>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.65;color:var(--c-inks,#44433C);margin:0;text-wrap:pretty">One feed does both jobs. Each edition is an item; on days the audio renders, the item carries the MP3 as an enclosure, so the same URL works in a reader and in a podcast app.</p>
+
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">Addresses</h2>
+<sc-for list="{{ feedRows }}" as="fr" hint-placeholder-count="3">
+<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px">
+<span style="display:flex;flex-direction:column;gap:4px;min-width:0;flex:1">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-ink,#23231F)">{{ fr.label }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.5;color:var(--c-muted,#6B6A62);word-break:break-all">{{ fr.url }}</span>
+</span>
+<span onClick="{{ fr.copy }}" style="{{ fr.copyStyle }}">{{ fr.copyLabel }}</span>
+</div>
+</sc-for>
+
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:26px 0 2px;padding-bottom:6px">Open in an app</h2>
+<sc-for list="{{ apps }}" as="ap" hint-placeholder-count="3">
+<a href="{{ ap.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);min-height:44px;cursor:pointer;text-decoration:none">
+<span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+<span style="font-size:14.5px;font-weight:500;color:var(--c-ink,#23231F)">{{ ap.name }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">{{ ap.hint }}</span>
+</span>
+<span style="color:var(--c-oxide,#3F6A50);font-size:14px">&#8250;</span>
+</a>
+</sc-for>
+
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.8;color:var(--c-muted,#6B6A62);margin:22px 0 0">RSS 2.0 with iTunes tags. No tracking pixels,<br>no redirects, no sign-in. {{ editionCount }} in the feed.</p>
+</div>
+</sc-if>
+
+</div>
+</div>
+
+<sc-if value="{{ normOpen }}" hint-placeholder-val="{{ false }}">
+<div style="{{ normPanel }}">
+
+<div onPointerDown="{{ normDown }}" onPointerMove="{{ normMove }}" onPointerUp="{{ normUp }}" onPointerCancel="{{ normUp }}" style="display:flex;justify-content:center;padding:50px 0 10px;flex:none;cursor:grab;touch-action:none;user-select:none">
+<span style="width:38px;height:4px;border-radius:2px;background:var(--c-rule,#DDD9CC)"></span>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 20px;padding-bottom:13px;border-bottom:1px solid var(--c-rule,#DDD9CC);flex:none;animation:normRise .42s cubic-bezier(.2,.75,.3,1) .3s both">
+<div onClick="{{ toggleHistory }}" style="{{ histBubble }}">
+<span style="display:flex;flex-direction:column;gap:2.5px;flex:none">
+<span style="display:block;width:12px;height:1.5px;background:currentColor"></span>
+<span style="display:block;width:9px;height:1.5px;background:currentColor"></span>
+<span style="display:block;width:12px;height:1.5px;background:currentColor"></span>
+</span>
+<span>{{ histLabel }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;opacity:.72">{{ histCount }}</span>
+</div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);flex:none">Beta</span>
+</div>
+
+<div style="{{ normBody }}">
+
+<sc-if value="{{ isNormHistory }}" hint-placeholder-val="{{ false }}">
+<div style="padding:18px 0 0;animation:chatIn .3s cubic-bezier(.2,.7,.3,1) both">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Previous chats</span>
+<div style="display:flex;flex-direction:column;margin-top:12px;border-top:1px solid var(--c-rule,#DDD9CC)">
+<sc-for list="{{ history }}" as="hc" hint-placeholder-count="4">
+<div onClick="{{ hc.open }}" style="{{ hc.row }}">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;line-height:1.4;color:var(--c-ink,#23231F);text-wrap:pretty">{{ hc.title }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62);flex:none">{{ hc.when }}</span>
+</div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:var(--c-muted,#6B6A62);display:block;margin-top:5px">{{ hc.snippet }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);display:block;margin-top:7px">{{ hc.meta }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNormStart }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:column;gap:12px;padding:30px 0 0;animation:chatIn .4s cubic-bezier(.2,.7,.3,1) both">
+<svg viewBox="16 2 96 106" style="width:46px;height:50px;display:block;flex:none;color:var(--c-ink,#23231F)">
+<defs><linearGradient id="sf-hello" gradientUnits="userSpaceOnUse" x1="0" y1="52" x2="0" y2="4"><stop offset="0" stop-color="currentColor" stop-opacity="1"></stop><stop offset=".4" stop-color="currentColor" stop-opacity=".8"></stop><stop offset=".72" stop-color="currentColor" stop-opacity=".3"></stop><stop offset="1" stop-color="currentColor" stop-opacity="0"></stop></linearGradient></defs>
+<g fill="none" stroke="url(#sf-hello)" stroke-width="6" stroke-linecap="round" style="animation:bob 3.6s ease-in-out infinite">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1" stroke-dasharray="30 14" style="animation:curl 1.7s ease-in-out infinite"></path>
+<path d="M74,50 C82,42 70,36 76,28" stroke-width="4" style="transform-origin:74px 50px;animation:breathe 1.3s ease-in-out infinite -.4s"></path>
+<path d="M39,50 C32,43 43,37 38,30" stroke-width="4" style="transform-origin:39px 50px;animation:breathe 1.55s ease-in-out infinite -.95s"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="currentColor"></rect>
+</svg>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:28px;line-height:1.18;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:4px 0 0">Norm here!</h1>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.55;color:var(--c-inks,#44433C);margin:0;max-width:30ch;text-wrap:pretty">What can I do for you? I've read all 56 editions &#8212; ask about a story, a week, or a name.</p>
+</div>
+<div style="padding:34px 0 0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Try asking</span>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
+<sc-for list="{{ prompts }}" as="p" hint-placeholder-count="3">
+<div onClick="{{ p.ask }}" style="{{ p.style }}">{{ p.label }}</div>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isNormChat }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:16px;padding:18px 0 4px">
+<sc-for list="{{ chat }}" as="m" hint-placeholder-count="4">
+<div style="{{ m.wrap }}">
+<div style="{{ m.bubble }}">{{ m.text }}<sc-if value="{{ m.caret }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block;width:7px;height:13px;margin-left:3px;vertical-align:-2px;background:currentColor;animation:caretBlink 1s steps(1,end) infinite"></span></sc-if></div>
+<sc-if value="{{ m.cite }}" hint-placeholder-val="{{ false }}">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">{{ m.citeText }}</span>
+</sc-if>
+</div>
+</sc-for>
+<sc-if value="{{ thinking }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;gap:9px;padding:2px 0">
+<svg viewBox="16 2 96 106" style="width:24px;height:26px;display:block;flex:none;color:var(--c-muted,#6B6A62)">
+<defs><linearGradient id="sf-chat" gradientUnits="userSpaceOnUse" x1="0" y1="52" x2="0" y2="4"><stop offset="0" stop-color="currentColor" stop-opacity="1"></stop><stop offset=".4" stop-color="currentColor" stop-opacity=".8"></stop><stop offset=".72" stop-color="currentColor" stop-opacity=".3"></stop><stop offset="1" stop-color="currentColor" stop-opacity="0"></stop></linearGradient></defs>
+<g fill="none" stroke="url(#sf-chat)" stroke-width="6" stroke-linecap="round" style="animation:bob 3.6s ease-in-out infinite">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1" stroke-dasharray="30 14" style="animation:curl 1.7s ease-in-out infinite"></path>
+<path d="M74,50 C82,42 70,36 76,28" stroke-width="4" style="transform-origin:74px 50px;animation:breathe 1.3s ease-in-out infinite -.4s"></path>
+<path d="M39,50 C32,43 43,37 38,30" stroke-width="4" style="transform-origin:39px 50px;animation:breathe 1.55s ease-in-out infinite -.95s"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="currentColor"></rect>
+</svg>
+<span style="display:flex;flex-direction:column;gap:5px;transform:translateY(6px);min-width:0">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;white-space:nowrap;color:var(--c-muted,#6B6A62);animation:thinkPulse 1.7s ease-in-out infinite">{{ thinkText }}</span>
+<span style="height:1px;width:96px;background:var(--c-muted,#6B6A62);opacity:.4;transform-origin:left;animation:ruleGrow 2.5s linear both"></span>
+</span>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+</div>
+
+<div style="{{ normDock }}">
+<sc-if value="{{ isNormStart }}" hint-placeholder-val="{{ true }}">
+<div onClick="{{ startChat }}" style="{{ startBox }}">
+<span style="display:flex;align-items:center;gap:10px;white-space:nowrap">
+<span style="position:relative;width:13px;height:13px;flex:none">
+<span style="position:absolute;top:6px;left:0;width:13px;height:1.5px;background:currentColor"></span>
+<span style="position:absolute;left:6px;top:0;width:1.5px;height:13px;background:currentColor"></span>
+</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14.5px">Start a new chat</span>
+</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;opacity:.7">Enter</span>
+</div>
+</sc-if>
+<sc-if value="{{ isNormChat }}" hint-placeholder-val="{{ false }}">
+<div style="{{ composerBox }}">
+<input type="text" value="{{ draft }}" onChange="{{ setDraft }}" onKeyDown="{{ draftKey }}" placeholder="Ask about a story or an edition" style="{{ draftInput }}">
+<div onClick="{{ send }}" style="{{ sendStyle }}">Ask</div>
+</div>
+</sc-if>
+<sc-if value="{{ isNormHistory }}" hint-placeholder-val="{{ false }}">
+<span style="flex:1"></span>
+</sc-if>
+<div onClick="{{ closeNorm }}" style="{{ normCloseBtn }}">
+<span style="position:relative;width:16px;height:16px;display:block">
+<span style="position:absolute;top:7px;left:0;width:16px;height:1.6px;background:currentColor;transform:rotate(45deg)"></span>
+<span style="position:absolute;top:7px;left:0;width:16px;height:1.6px;background:currentColor;transform:rotate(-45deg)"></span>
+</span>
+</div>
+</div>
+
+</div>
+</sc-if>
+
+<div style="position:sticky;bottom:0;z-index:40">
+<sc-if value="{{ showMini }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ openPlayer }}" onPointerDown="{{ miniDown }}" onPointerMove="{{ miniMove }}" onPointerUp="{{ miniUp }}" onPointerCancel="{{ miniUp }}" style="{{ miniStyle }}">
+<div onClick="{{ miniPlay }}" onPointerDown="{{ miniPlayDown }}" style="display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin:-6px 0;cursor:pointer"><span style="{{ miniGlyphStyle }}"></span></div>
+<span style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12.5px;color:var(--c-ink,#23231F);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Today's brief &#183; {{ editionNo }}</span>
+<span style="height:2px;background:var(--c-rulef,#E8E5DA);display:block;margin-top:3px"><span style="{{ miniBarStyle }}"></span></span>
+</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62);flex:none">-{{ remaining }}</span>
+</div>
+</sc-if>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-chrome,rgba(246,244,238,.92));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--c-rule,#DDD9CC);padding-bottom:26px">
+<sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="3">
+<div onClick="{{ tb.go }}" style="{{ tb.style }}">
+<sc-if value="{{ tb.isToday }}" hint-placeholder-val="{{ true }}">
+<svg viewBox="0 0 24 24" style="width:21px;height:21px;display:block" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 4h14v16H5z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg>
+</sc-if>
+<sc-if value="{{ tb.isArchive }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 24 24" style="width:21px;height:21px;display:block" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 8h16v12H4z"></path><path d="M6 5h12"></path><path d="M9 13h6"></path></svg>
+</sc-if>
+<sc-if value="{{ tb.isMore }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 24 24" style="width:21px;height:21px;display:block" fill="currentColor"><circle cx="6" cy="12" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="18" cy="12" r="1.6"></circle></svg>
+</sc-if>
+<span>{{ tb.label }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ nsWtOpenApp }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:0 18px">
+<div onClick="{{ nsWtDismiss }}" style="position:absolute;inset:0;background:rgba(23,23,19,.44);animation:wtscrim .24s ease both"></div>
+<div style="{{ nsWtOrigin }}">
+<div style="position:relative;box-sizing:border-box;width:100%;max-height:640px;overflow:auto;background:var(--c-raised,#FBFAF6);border:1px solid var(--c-ink,#23231F);box-shadow:0 24px 56px rgba(35,35,31,.22);padding:16px 20px 20px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--c-rule,#DDD9CC);padding-bottom:9px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ nsWtName }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ nsWtMeta }}</span>
+</div>
+<h3 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:13px 0 0;text-wrap:pretty">How much {{ nsWtName }} do you want?</h3>
+<p style="font-size:13px;line-height:1.55;color:var(--c-inks,#44433C);margin:7px 0 0;text-wrap:pretty">One means only when it&#8217;s big enough to lead. Ten means keep me current.</p>
+<div style="margin-top:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F)">{{ nsWtVal }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">of 10</span>
+</div>
+<span style="{{ nsWtBandStyle }}">{{ nsWtBand }}</span>
+</div>
+<div onPointerDown="{{ nsWtDown }}" onPointerMove="{{ nsWtMove }}" style="margin-top:12px;position:relative;height:44px;cursor:grab;touch-action:none;user-select:none">
+<div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--c-rule,#DDD9CC)"></div>
+<sc-for list="{{ nsWtTicks }}" as="tk" hint-placeholder-count="10"><span style="{{ tk.style }}"></span></sc-for>
+<div style="{{ nsWtFill }}"></div>
+<div style="{{ nsWtMark }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)">
+<span>Nice to have</span><span>Keep me current</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:16px 0 0;min-height:38px;text-wrap:pretty">{{ nsWtNote }}</p>
+<div style="margin-top:14px;padding-top:13px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Colour on the page</span>
+<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">
+<sc-for list="{{ nsWtColors }}" as="sw" hint-placeholder-count="8">
+<div onClick="{{ sw.set }}" style="{{ sw.hit }}"><span style="{{ sw.dot }}"></span></div>
+</sc-for>
+</div>
+</div>
+<p style="font-size:12.5px;line-height:1.5;color:var(--c-oxide,#3F6A50);margin:2px 0 0;min-height:19px;text-wrap:pretty">{{ nsWtShift }}</p>
+<div style="margin-top:6px;display:flex;flex-direction:column;gap:8px">
+<div onClick="{{ nsWtSave }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;cursor:pointer">{{ nsWtCta }}</div>
+<div onClick="{{ nsWtSecondAct }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-muted,#6B6A62);cursor:pointer">{{ nsWtSecond }}</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showFab }}" hint-placeholder-val="{{ true }}">
+<div onClick="{{ openNorm }}" style="{{ fabStyle }}">
+<svg viewBox="16 2 96 106" style="width:38px;height:41px;display:block;color:#F6F4EE">
+<g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" style="animation:bob 3.6s ease-in-out infinite">
+<path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1" stroke-dasharray="30 14" style="animation:curl 1.7s ease-in-out infinite"></path>
+<path d="M74,50 C82,42 70,36 76,28" stroke-width="4" style="transform-origin:74px 50px;animation:breathe 1.3s ease-in-out infinite -.4s"></path>
+<path d="M39,50 C32,43 43,37 38,30" stroke-width="4" style="transform-origin:39px 50px;animation:breathe 1.55s ease-in-out infinite -.95s"></path>
+</g>
+<path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"></path>
+<rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="currentColor"></rect>
+</svg>
+</div>
+</sc-if>
+
+<sc-if value="{{ webOpen }}" hint-placeholder-val="{{ false }}">
+<div style="{{ webPane }}">
+<div style="flex:none;padding:8px 6px 0;background:var(--c-chrome,rgba(246,244,238,.96));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">
+<div style="display:flex;align-items:center;gap:8px;padding:0 6px 8px">
+<span onClick="{{ webCloseAll }}" style="flex:none;min-width:44px;min-height:44px;display:flex;align-items:center;font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);cursor:pointer">Done</span>
+<span style="flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:6px;padding:7px 12px;background:var(--c-raised,#FBFAF6);border:1px solid var(--c-rule,#DDD9CC)">
+<span style="flex:none;width:8px;height:7px;border:1.3px solid var(--c-muted,#6B6A62);border-radius:1px;position:relative;display:block;margin-top:3px"><span style="position:absolute;left:1.6px;top:-4.2px;width:3.4px;height:4px;border:1.3px solid var(--c-muted,#6B6A62);border-bottom:0;border-radius:3px 3px 0 0;display:block"></span></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-inks,#44433C);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ webHost }}</span>
+</span>
+<span onClick="{{ webReload }}" style="flex:none;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8635;</span>
+</div>
+<div style="height:2px;background:transparent"><span style="{{ webBarStyle }}"></span></div>
+</div>
+
+<div style="flex:1;overflow-y:auto;padding:0 22px 28px">
+<sc-if value="{{ webLoading }}" hint-placeholder-val="{{ true }}">
+<div style="padding:26px 0 0">
+<sc-for list="{{ webSkeleton }}" as="sk" hint-placeholder-count="7">
+<span style="{{ sk.style }}"></span>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ webReady }}" hint-placeholder-val="{{ false }}">
+<div style="animation:rFade .26s ease both">
+<div style="margin-top:18px;padding:9px 12px;border:1px dashed var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.65;color:var(--c-muted,#6B6A62)">Simulated page. The prototype cannot load the live web, so the body below is placeholder text.</span>
+</div>
+<span style="display:block;margin-top:22px;font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">{{ webSource }}</span>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:27px;line-height:1.2;letter-spacing:-.01em;color:var(--c-ink,#23231F);margin:8px 0 10px;text-wrap:pretty">{{ webTitle }}</h1>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);padding-bottom:14px;border-bottom:1px solid var(--c-rule,#DDD9CC)">{{ webHost }}</div>
+<sc-for list="{{ webBody }}" as="p" hint-placeholder-count="5">
+<p style="margin:16px 0 0;font-size:15px;line-height:1.7;color:var(--c-inks,#44433C);text-wrap:pretty">{{ p.text }}</p>
+</sc-for>
+<div style="margin-top:24px;padding-top:14px;border-top:1px solid var(--c-rule,#DDD9CC)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:var(--c-muted,#6B6A62);word-break:break-all">{{ webUrl }}</span>
+</div>
+</div>
+</sc-if>
+</div>
+
+<div style="flex:none;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;padding:6px 10px 30px;background:var(--c-chrome,rgba(246,244,238,.96));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--c-rule,#DDD9CC)">
+<span onClick="{{ webBackTap }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</span>
+<span style="min-height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;color:var(--c-rule,#DDD9CC)">&#8250;</span>
+<span style="min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer">
+<span style="display:block;width:13px;height:15px;border:1.5px solid var(--c-oxide,#3F6A50);border-top:0;position:relative"><span style="position:absolute;left:4.5px;top:-9px;width:1.5px;height:9px;background:var(--c-oxide,#3F6A50)"></span><span style="position:absolute;left:1.5px;top:-6px;width:7px;height:7px;border-top:1.5px solid var(--c-oxide,#3F6A50);border-right:1.5px solid var(--c-oxide,#3F6A50);transform:rotate(-45deg)"></span></span>
+</span>
+<span style="min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer">
+<span style="display:block;width:17px;height:17px;border-radius:50%;border:1.5px solid var(--c-oxide,#3F6A50);position:relative"><span style="position:absolute;left:3px;top:3px;width:9px;height:9px;background:var(--c-oxide,#3F6A50);clip-path:polygon(100% 0,55% 55%,0 100%,45% 45%)"></span></span>
+</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ playerOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closePlayer }}" style="{{ playerBackdrop }}"></div>
+<div style="{{ playerSheet }}">
+<div onPointerDown="{{ sheetDown }}" onPointerMove="{{ sheetMove }}" onPointerUp="{{ sheetUp }}" onPointerCancel="{{ sheetUp }}" style="position:sticky;top:0;z-index:2;background:var(--c-paper,#F6F4EE);display:flex;flex-direction:column;align-items:center;gap:7px;padding:10px 0 12px;cursor:grab;touch-action:none;user-select:none">
+<span style="width:38px;height:4px;border-radius:2px;background:var(--c-rule,#DDD9CC)"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">Swipe down &#8212; keeps playing</span>
+</div>
+<div style="border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-ink,#23231F);background:var(--c-raised,#FBFAF6);padding:24px 22px 22px;text-align:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ nsName }}</span>
+<div style="border-top:1px solid var(--c-rule,#DDD9CC);margin:12px 0"></div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">{{ dateLong }} &#183; {{ editionNo }}</span>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:23px;line-height:1.26;letter-spacing:-.01em;color:var(--c-ink,#23231F);margin:14px 0 0;text-wrap:pretty">{{ headline }}</p>
+</div>
+<div style="margin-top:22px">
+<div style="height:3px;background:var(--c-rule,#DDD9CC);position:relative">
+<div style="{{ scrubStyle }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">
+<span>{{ elapsed }}</span><span>-{{ remaining }}</span>
+</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:34px;margin-top:22px">
+<div onClick="{{ back15 }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-inks,#44433C);cursor:pointer">&#8630; 15</div>
+<div onClick="{{ togglePlay }}" style="width:64px;height:64px;border:1px solid var(--c-oxide,#3F6A50);display:flex;align-items:center;justify-content:center;cursor:pointer">
+<span style="{{ bigPlayStyle }}"></span>
+</div>
+<div onClick="{{ fwd15 }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-inks,#44433C);cursor:pointer">30 &#8631;</div>
+</div>
+<div style="display:flex;justify-content:center;gap:10px;margin-top:20px">
+<sc-for list="{{ speeds }}" as="sp" hint-placeholder-count="4">
+<div onClick="{{ sp.set }}" style="{{ sp.style }}">{{ sp.label }}</div>
+</sc-for>
+</div>
+<div style="margin-top:26px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6);padding:14px 16px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">In this brief</span>
+<div style="margin-top:10px;display:flex;flex-direction:column;gap:9px">
+<sc-for list="{{ chapters }}" as="ch" hint-placeholder-count="5">
+<div style="display:flex;align-items:baseline;gap:12px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-oxide,#3F6A50);min-width:34px;flex:none">{{ ch.at }}</span>
+<span style="font-size:13px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">{{ ch.name }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:18px 0 0;text-align:center">Keeps playing with the screen off. Lock-screen and CarPlay controls included.</p>
+</div>
+</sc-if>
+
+<sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeStory }}" style="position:absolute;inset:0;z-index:44;background:rgba(20,19,15,.4)"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:78%;z-index:45;background:var(--c-paper,#F6F4EE);border-top:2px solid var(--c-ink,#23231F);border-radius:14px 14px 0 0;overflow:auto;padding:0 20px 40px">
+<div style="display:flex;justify-content:center;padding:9px 0 4px;position:sticky;top:0;background:var(--c-paper,#F6F4EE)"><span style="width:38px;height:4px;border-radius:2px;background:var(--c-rule,#DDD9CC)"></span></div>
+<h1 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:20px;line-height:1.32;color:var(--c-ink,#23231F);margin:10px 0 8px;text-wrap:pretty">{{ story.title }}</h1>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);padding-bottom:12px;border-bottom:1px solid var(--c-rule,#DDD9CC)">{{ story.meta }} &#183; {{ story.readTime }}</div>
+<sc-if value="{{ story.hasArticle }}" hint-placeholder-val="{{ true }}">
+<div style="border-left:2px solid var(--c-oxide,#3F6A50);padding-left:18px;margin-top:16px">
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);margin:0 0 5px">Background</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C)">{{ story.background }}</p>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);margin:18px 0 5px">What happened</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C)">{{ story.what }}</p>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);margin:18px 0 5px">Why it matters</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C)">{{ story.why }}</p>
+</div>
+</sc-if>
+<sc-if value="{{ story.noArticle }}" hint-placeholder-val="{{ false }}">
+<div style="border-left:2px solid var(--c-rule,#DDD9CC);padding-left:18px;margin-top:18px">
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin:0 0 5px">Not written up</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:var(--c-inks,#44433C);text-wrap:pretty">Norm ran this one in the brief but could not ground a full article for it. The summary above is all he stands behind &#8212; read it at the source below.</p>
+</div>
+</sc-if>
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;margin-top:20px;padding-top:14px;border-top:1px solid var(--c-rule,#DDD9CC)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-muted,#6B6A62)">Read at:</span>
+<sc-for list="{{ story.sources }}" as="src" hint-placeholder-count="1">
+<span onClick="{{ src.open }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-oxide,#3F6A50);cursor:pointer;text-decoration:underline;text-underline-offset:3px">{{ src.name }} &#8599;</span>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Home layout B — "Broadsheet": the front page keeps its print hierarchy, glance folded into the hero</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+<div style="min-height:874px;background:#F6F4EE;font-family:'IBM Plex Sans',system-ui,sans-serif;padding:0 20px 40px">
+<div style="padding:56px 0 0;text-align:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#23231F">Norm's Newsletter</span>
+<div style="display:flex;justify-content:space-between;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62"><span>Sunday, August 2, 2026</span><span>No. 056</span></div>
+<div style="border-top:2px solid #23231F;border-bottom:1px solid #23231F;height:3px;margin-top:7px"></div>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-.015em;color:#23231F;margin:22px 0 0;text-wrap:pretty">Trump cancels planned strikes on Iran, demands rapid deal to open Strait of Hormuz</h1>
+<p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:16px;line-height:1.5;color:#2E2D27;margin:12px 0 0">A US military decision that reaches straight into regional stability — and into the shipping lane a fifth of the world’s oil moves through.</p>
+<div style="border-top:1px solid #23231F;margin-top:18px;padding-top:14px;display:flex;align-items:center;gap:12px">
+<span style="display:inline-flex;width:0;height:0;border-left:14px solid #3F6A50;border-top:9px solid transparent;border-bottom:9px solid transparent"></span>
+<span style="font-weight:500;font-size:14px;color:#23231F;flex:1">Hear the 7-minute brief</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">6:52</span>
+</div>
+<div style="border-top:1px solid #DDD9CC;margin-top:14px;padding-top:16px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">Today at a glance</span>
+<div style="display:flex;align-items:baseline;gap:12px;padding:8px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3F6A50;min-width:20px">01</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">Trump canceled planned Iran strikes but demands a deal to open the Strait of Hormuz within days.</span></div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:8px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3F6A50;min-width:20px">02</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">Russia sent military vehicles to Mali on a ship under international sanctions, breaking the rules.</span></div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:8px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3F6A50;min-width:20px">03</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">Nearly half of new cars sold in Australia are now electric or hybrid, a jump in just three months.</span></div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:8px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3F6A50;min-width:20px">04</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">DeepMind shut down its AlphaFold team to focus on its Gemini AI project.</span></div>
+</div>
+<div style="border-top:2px solid #23231F;margin-top:18px;padding-top:14px">
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50;margin:0 0 10px">World</h2>
+<h3 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:16.5px;line-height:1.4;color:#23231F;margin:0 0 4px">Russian ship defies sanctions to deliver military vehicles to Mali</h3>
+<p style="margin:0;font-size:13.5px;line-height:1.6;color:#44433C">BBC-verified footage shows armored vehicles arriving in Bamako from a sanctioned cargo ship.</p>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Home layout C — "Digest": glance is the spine, sections collapse to counted rows you open</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+<div style="min-height:874px;background:#F6F4EE;font-family:'IBM Plex Sans',system-ui,sans-serif;padding:0 20px 40px">
+<div style="padding:58px 0 10px;display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;color:#23231F">Sunday</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62">No. 056 &#183; 11 stories</span>
+</div>
+<div style="border-top:2px solid #23231F;border-bottom:1px solid #23231F;height:3px"></div>
+<div style="margin-top:18px;border:1px solid #DDD9CC;border-top:2px solid #3F6A50;background:#FBFAF6;padding:16px 18px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">Today at a glance</span>
+<div style="display:flex;align-items:baseline;gap:12px;padding:8px 0 7px"><span style="font-weight:500;font-size:14px;color:#3F6A50;min-width:20px">01</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">Trump canceled planned Iran strikes but demands a deal to open the Strait of Hormuz within days.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62"> World</span></span></div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0"><span style="font-weight:500;font-size:14px;color:#3F6A50;min-width:20px">02</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">Russia sent military vehicles to Mali on a ship under international sanctions, breaking the rules.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62"> World</span></span></div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0"><span style="font-weight:500;font-size:14px;color:#3F6A50;min-width:20px">03</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">Nearly half of new cars sold in Australia are now electric or hybrid, a jump in just three months.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62"> Tech</span></span></div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0"><span style="font-weight:500;font-size:14px;color:#3F6A50;min-width:20px">04</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">DeepMind shut down its AlphaFold team to focus on its Gemini AI project.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62"> AI</span></span></div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0"><span style="font-weight:500;font-size:14px;color:#3F6A50;min-width:20px">05</span><span style="font-size:14px;line-height:1.5;color:#2E2D27">Water shortages in England are blocking government housing targets in the south and east.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62"> Regulation</span></span></div>
+</div>
+<div style="margin-top:22px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50">The full brief</span>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #E8E5DA;min-height:44px"><span style="font-weight:500;font-size:15px;color:#23231F">Technology</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">2 &#8250;</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #E8E5DA;min-height:44px"><span style="font-weight:500;font-size:15px;color:#23231F">Artificial intelligence</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">2 &#8250;</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #E8E5DA;min-height:44px"><span style="font-weight:500;font-size:15px;color:#23231F">World</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">3 &#8250;</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #E8E5DA;min-height:44px"><span style="font-weight:500;font-size:15px;color:#23231F">Regulation</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">2 &#8250;</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #E8E5DA;min-height:44px"><span style="font-weight:500;font-size:15px;color:#23231F">Science</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">2 &#8250;</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #E8E5DA;min-height:44px"><span style="font-weight:500;font-size:15px;color:#23231F">Briefly</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">5 &#8250;</span></div>
+</div>
+<div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="border:1px solid #DDD9CC;background:#FBFAF6;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62">Items in</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:15px;color:#3F6A50">118</span></div>
+<div style="border:1px solid #DDD9CC;background:#FBFAF6;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62">Sources</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:15px;color:#3F6A50">8</span></div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Story opens as a drag-up sheet instead of a push — the brief stays behind it</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+<div style="min-height:874px;background:#F6F4EE;font-family:'IBM Plex Sans',system-ui,sans-serif;position:relative">
+<div style="padding:56px 20px 0;opacity:.5">
+<div style="border-top:2px solid #23231F;border-bottom:1px solid #23231F;height:3px;margin-bottom:18px"></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:31px;line-height:1.24;letter-spacing:-.01em;color:#23231F;margin:0">Trump cancels planned strikes on Iran, demands rapid deal to open Strait of Hormuz</h1>
+<div style="margin-top:22px;border:1px solid #DDD9CC;background:#FBFAF6;padding:13px 16px;display:flex;align-items:center;gap:12px"><span style="width:0;height:0;border-left:13px solid #3F6A50;border-top:8px solid transparent;border-bottom:8px solid transparent"></span><span style="font-weight:500;font-size:14px;color:#23231F">Listen to today's brief</span></div>
+</div>
+<div style="position:absolute;inset:0;background:rgba(20,19,15,.42)"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:76%;background:#F6F4EE;border-top:2px solid #23231F;border-radius:14px 14px 0 0;padding:0 20px;box-shadow:0 -14px 40px rgba(0,0,0,.18)">
+<div style="display:flex;justify-content:center;padding:9px 0 2px"><span style="width:38px;height:4px;border-radius:2px;background:#DDD9CC"></span></div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6A62">Cybersecurity</span>
+<h1 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:20px;line-height:1.32;color:#23231F;margin:6px 0 8px">Hijacked hotel Wi-Fi delivers surveillance malware through fake browser updates</h1>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6B6A62;padding-bottom:12px;border-bottom:1px solid #DDD9CC">score 6 &#183; 1 source &#183; 2 min read</div>
+<div style="border-left:2px solid #3F6A50;padding-left:18px;margin-top:16px">
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#3F6A50;margin:0 0 5px">Background</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:#44433C">Hotel Wi-Fi networks can be compromised by attackers. When this happens, the attacker can intercept traffic and send fake pages to users. This story involves a new malware, called CornFlake, being delivered this way.</p>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#3F6A50;margin:18px 0 5px">What happened</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:#44433C">Attackers compromised hotel Wi-Fi networks and replaced real browser updates with fake ones that installed CornFlake, a remote access trojan. Microsoft named the operation CaptiveCrunch and linked it to Storm-2945, attributed to Russia's Foreign Intelligence Service.</p>
+<p style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#3F6A50;margin:18px 0 5px">Why it matters</p>
+<p style="margin:0;font-size:14.5px;line-height:1.68;color:#44433C">Once installed, the malware can reach your webcam, record audio, and log keystrokes. Business travelers handling sensitive work face the highest risk.</p>
+</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>No tab bar — one scroll, site-faithful. Navigation is a floating jump pill and a bottom edition switcher</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+<div style="min-height:874px;background:#F6F4EE;font-family:'IBM Plex Sans',system-ui,sans-serif;position:relative;padding:0 20px 40px">
+<div style="padding:56px 0 0;text-align:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#23231F">Norm's Newsletter</span>
+<div style="border-top:2px solid #23231F;border-bottom:1px solid #23231F;height:3px;margin-top:8px"></div>
+</div>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50;border-bottom:1px solid #DDD9CC;margin:22px 0 4px;padding-bottom:6px">US politics</h2>
+<div style="padding:14px 0;border-bottom:1px solid #E8E5DA">
+<h3 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:16.5px;line-height:1.4;color:#23231F;margin:0 0 4px">US lawmakers investigate DoorDash use of Chinese AI model Kimi K2.6</h3>
+<p style="margin:0 0 8px;font-size:13.5px;line-height:1.6;color:#44433C">Lawmakers are investigating DoorDash's use of a Chinese AI model as US companies seek cheaper AI tools.</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">score 7 &#183; 1 source</span><span style="font-weight:500;font-size:13px;color:#3F6A50">Read the full story &#8250;</span></div>
+</div>
+<div style="padding:14px 0;border-bottom:1px solid #E8E5DA">
+<h3 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:16.5px;line-height:1.4;color:#23231F;margin:0 0 4px">Thousands of migrant children could lose legal representation</h3>
+<p style="margin:0 0 8px;font-size:13.5px;line-height:1.6;color:#44433C">A program that pays lawyers for unaccompanied migrant children will end with no replacement in place.</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">score 6 &#183; 1 source</span><span style="font-weight:500;font-size:13px;color:#3F6A50">Read the full story &#8250;</span></div>
+</div>
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#3F6A50;border-bottom:1px solid #DDD9CC;margin:26px 0 4px;padding-bottom:6px">World</h2>
+<div style="padding:14px 0;border-bottom:1px solid #E8E5DA">
+<h3 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:16.5px;line-height:1.4;color:#23231F;margin:0 0 4px">Trump cancels Iran strikes, demands rapid deal to open Strait of Hormuz</h3>
+<p style="margin:0 0 8px;font-size:13.5px;line-height:1.6;color:#44433C">The US president said on Truth Social that he canceled strikes if Iran makes a quick deal.</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">score 7 &#183; 1 source</span><span style="font-weight:500;font-size:13px;color:#3F6A50">Read the full story &#8250;</span></div>
+</div>
+<div style="padding:14px 0;border-bottom:1px solid #E8E5DA">
+<h3 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:16.5px;line-height:1.4;color:#23231F;margin:0 0 4px">Russian ship defies sanctions to deliver military vehicles to Mali</h3>
+<p style="margin:0 0 8px;font-size:13.5px;line-height:1.6;color:#44433C">BBC-verified footage shows armored vehicles arriving in Bamako from a sanctioned cargo ship.</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">score 7 &#183; 1 source</span><span style="font-weight:500;font-size:13px;color:#3F6A50">Read the full story &#8250;</span></div>
+</div>
+<div style="position:absolute;left:50%;transform:translateX(-50%);bottom:96px;display:flex;align-items:center;gap:14px;padding:10px 18px;background:rgba(35,35,31,.9);backdrop-filter:blur(12px);border-radius:100px;box-shadow:0 8px 24px rgba(0,0,0,.24)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#F6F4EE">3 of 11</span>
+<span style="width:1px;height:14px;background:rgba(246,244,238,.3)"></span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9CCFAE">Jump to section</span>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;padding:12px 20px 30px;background:rgba(246,244,238,.94);backdrop-filter:blur(14px);border-top:1px solid #DDD9CC;display:flex;align-items:center;justify-content:space-between">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3F6A50">&#8592; Aug 1</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A62">Archive</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#DDD9CC">Aug 3 &#8594;</span>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1f">
+<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>6:00 am ET push and lock-screen audio — the two things the website can't do</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ true }}" hint-size="402px,874px">
+<div style="min-height:874px;background:linear-gradient(170deg,#2A2A24 0%,#171713 55%,#23231F 100%);font-family:'IBM Plex Sans',system-ui,sans-serif;padding:0 14px;display:flex;flex-direction:column">
+<div style="text-align:center;padding:72px 0 0">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;color:rgba(242,239,230,.62)">Sunday, August 2</div>
+<div style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:74px;line-height:1;color:#F2EFE6;margin-top:2px">6:02</div>
+</div>
+<div style="margin-top:34px;background:rgba(246,244,238,.1);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(246,244,238,.14);border-radius:18px;padding:14px 16px">
+<div style="display:flex;align-items:center;gap:9px">
+<span style="width:20px;height:20px;border-radius:5px;background:#3F6A50;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 128 128" style="width:15px;height:15px;display:block"><g transform="translate(64,68) scale(1.02) translate(-64,-68)"><g fill="none" stroke="#F6F4EE" stroke-width="8" stroke-linecap="round"><path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1"></path><path d="M74,50 C82,42 70,36 76,28"></path><path d="M39,50 C32,43 43,37 38,30"></path></g><path d="M84,68 C102,68 102,90 84,90" fill="none" stroke="#F6F4EE" stroke-width="9" stroke-linecap="round"></path><rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="#F6F4EE"></rect></g></svg></span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,239,230,.72);flex:1">Norm's Newsletter</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(242,239,230,.5)">now</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:19px;line-height:1.26;color:#F2EFE6;margin:9px 0 0;text-wrap:pretty">Trump cancels planned strikes on Iran, demands rapid deal to open Strait of Hormuz</p>
+<p style="font-size:13px;line-height:1.5;color:rgba(242,239,230,.66);margin:6px 0 0">No. 056 &#183; 11 stories &#183; 6:52 to listen</p>
+</div>
+<div style="margin-top:12px;background:rgba(246,244,238,.1);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(246,244,238,.14);border-radius:18px;padding:14px 16px">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:44px;height:44px;border:1px solid rgba(246,244,238,.28);display:flex;align-items:center;justify-content:center;flex:none"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:9px;letter-spacing:.12em;color:rgba(242,239,230,.8)">NN</span></span>
+<span style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1">
+<span style="font-weight:500;font-size:13.5px;color:#F2EFE6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Today's brief, No. 056</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(242,239,230,.55)">Norm's Newsletter</span>
+</span>
+</div>
+<div style="height:3px;background:rgba(246,244,238,.2);margin-top:12px"><span style="display:block;width:32%;height:3px;background:#9CCFAE"></span></div>
+<div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(242,239,230,.5)"><span>2:12</span><span>-4:40</span></div>
+<div style="display:flex;align-items:center;justify-content:center;gap:40px;margin-top:12px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(242,239,230,.8)">&#8630; 15</span>
+<span style="display:flex;gap:5px"><span style="width:5px;height:22px;background:#F2EFE6"></span><span style="width:5px;height:22px;background:#F2EFE6"></span></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(242,239,230,.8)">30 &#8631;</span>
+</div>
+</div>
+<div style="flex:1"></div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:rgba(242,239,230,.38);text-align:center;margin:0 0 46px">One push a day. Nothing else, ever.</p>
+</div>
+</x-import>
+</div>
+
+</div>
+<p class="dv-next">Try next: "pick the reader animation you liked" &#183; "add topic pages to the archive" &#183; "wire the quiet and fallback edition types"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;readerAnim&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;push&quot;,&quot;expand&quot;,&quot;rise&quot;,&quot;fade&quot;,&quot;turn&quot;],&quot;default&quot;:&quot;push&quot;,&quot;tsType&quot;:&quot;'push' | 'expand' | 'rise' | 'fade' | 'turn'&quot;,&quot;section&quot;:&quot;Prototype behavior&quot;},&quot;storyOpen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;push&quot;,&quot;sheet&quot;],&quot;default&quot;:&quot;push&quot;,&quot;tsType&quot;:&quot;'push' | 'sheet'&quot;,&quot;section&quot;:&quot;Prototype behavior&quot;},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;,&quot;section&quot;:&quot;Prototype behavior&quot;},&quot;showScores&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype behavior&quot;}}">
+const EMPTY = { date: "", dateLong: "", noLabel: "", short: "", dow: "", y: 2026, m: 7, d: 1, dur: null, headline: "", rationale: null, glance: [], sections: [], briefly: [], stats: [] };
+const eds = () => (window.NORM_EDITIONS && window.NORM_EDITIONS.length ? window.NORM_EDITIONS : [EMPTY]);
+const FEEDS = {
+  site: "https://aryanzodge123.github.io/norms-newsletter/",
+  rss: "https://aryanzodge123.github.io/norms-newsletter/feed.xml",
+  art: "https://aryanzodge123.github.io/norms-newsletter/podcast-artwork.png"
+};
+
+const LIGHT = {
+  "--c-paper": "#F6F4EE", "--c-raised": "#FBFAF6", "--c-ink": "#23231F",
+  "--c-inks": "#44433C", "--c-ink2": "#2E2D27", "--c-muted": "#6B6A62",
+  "--c-oxide": "#3F6A50", "--c-rule": "#DDD9CC", "--c-rulef": "#E8E5DA",
+  "--c-chrome": "rgba(246,244,238,.88)"
+};
+const DARK = {
+  "--c-paper": "#1A1A16", "--c-raised": "#232320", "--c-ink": "#F2EFE6",
+  "--c-inks": "#C7C3B6", "--c-ink2": "#E4E0D4", "--c-muted": "#8C8A80",
+  "--c-oxide": "#8FBF9E", "--c-rule": "#35342E", "--c-rulef": "#2B2A25",
+  "--c-chrome": "rgba(26,26,22,.88)"
+};
+
+function mmss(s) {
+  s = Math.max(0, Math.round(s));
+  return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+}
+
+const NS_TOPICS = [
+  { id: "politics", name: "Politics", meta: "3 today" },
+  { id: "world", name: "World", meta: "3 today" },
+  { id: "business", name: "Business & markets", meta: "2 today" },
+  { id: "ai", name: "Artificial intelligence", meta: "2 today" },
+  { id: "tech", name: "Technology", meta: "2 today" },
+  { id: "science", name: "Science", meta: "2 today" },
+  { id: "climate", name: "Climate", meta: "1 today" },
+  { id: "health", name: "Health", meta: "1 today" },
+  { id: "culture", name: "Culture", meta: "1 today" },
+  { id: "sports", name: "Sport", meta: "\u2014" },
+  { id: "media", name: "Media", meta: "1 today" },
+  { id: "law", name: "Law & courts", meta: "1 today" }
+];
+const NS_BANDS = [
+  { max: 2, label: "Nice to have", note: "Runs only when the story is big enough to lead the edition." },
+  { max: 4, label: "Now and then", note: "A story when something genuinely moves. Quiet weeks stay quiet." },
+  { max: 6, label: "Most mornings", note: "A story or two in most editions, in your running order." },
+  { max: 8, label: "Standing order", note: "The full section every morning, however the day went." },
+  { max: 10, label: "Keep me current", note: "Everything Norm files here, plus the Sunday look-back on it." }
+];
+const NS_INKS = ["#3F6A50", "#8A4B2A", "#2F4F6B", "#6B3F5E", "#A8762A", "#4A6B3F", "#7A3B3B", "#4B4A63"];
+const nsBand = (v) => NS_BANDS.filter(b => v <= b.max)[0] || NS_BANDS[NS_BANDS.length - 1];
+const NS_LEN = [
+  { label: "Front page", short: "Front page", stories: 5, note: "The headline of the day and the glance. Nothing else lands on your phone." },
+  { label: "Short", short: "Short", stories: 8, note: "The glance, and the stories that clearly cleared the bar." },
+  { label: "As filed", short: "As filed", stories: 11, note: "The edition the way Norm files it \u2014 every section that ran, in your order." },
+  { label: "Long", short: "Long", stories: 16, note: "Everything scored, and Briefly in full rather than as a strip of links." },
+  { label: "Everything", short: "Everything", stories: 20, note: "Every cluster Norm kept, including the sections he held back for thinness." }
+];
+
+const CHATS = [
+  { title: "Agentic attacks, week by week", when: "Fri", meta: "6 messages \u00B7 3 editions",
+    snippet: "\u201CHow far have AI-run attacks actually got?\u201D",
+    msgs: [
+      { role: "you", text: "How far have AI-run attacks actually got?" },
+      { role: "norm", text: "Two data points this week: Anthropic's models broke out of a test and reached three real companies, and a hacker let DeepSeek run server attacks with almost no input.", cite: "3 editions \u00B7 7 sources" },
+      { role: "you", text: "Did either actually break in?" },
+      { role: "norm", text: "Mostly no \u2014 most of the DeepSeek targets held. The shift is in how little the human had to do. No. 055 has the Unit 42 detail.", cite: "1 edition \u00B7 2 sources" }
+    ] },
+  { title: "Chinese models in US companies", when: "Thu", meta: "4 messages \u00B7 2 editions",
+    snippet: "\u201CWhy is Congress asking DoorDash about Kimi?\u201D",
+    msgs: [
+      { role: "you", text: "Why is Congress asking DoorDash about Kimi?" },
+      { role: "norm", text: "Because US firms are picking up cheaper Chinese models. Lawmakers want DoorDash's AI, security and procurement people to brief them by August 21.", cite: "2 editions \u00B7 5 sources" },
+      { role: "you", text: "Is anything actually banned yet?" },
+      { role: "norm", text: "No. It's a letter, not a rule \u2014 but it's the clearest signal yet that restrictions are being drafted.", cite: "1 edition \u00B7 3 sources" }
+    ] },
+  { title: "The Gulf, week by week", when: "Wed", meta: "3 messages \u00B7 4 editions",
+    snippet: "\u201CWhich editions covered the Gulf strikes?\u201D",
+    msgs: [
+      { role: "you", text: "Which editions covered the Gulf strikes?" },
+      { role: "norm", text: "Four: No. 053, 052, 047 and 044. The line runs from the blockade to Iran breaking the pause and the heavy strikes that followed.", cite: "4 editions \u00B7 9 sources" }
+    ] },
+  { title: "Hotel Wi-Fi, one year on", when: "Jul 28", meta: "5 messages \u00B7 1 edition",
+    snippet: "\u201CIs the hotel Wi-Fi story a real risk?\u201D",
+    msgs: [
+      { role: "you", text: "Is the hotel Wi-Fi story a real risk?" },
+      { role: "norm", text: "This one is worse than the cloned sign-ins in July. CaptiveCrunch swaps the browser update itself, and CornFlake can reach your camera and keystrokes.", cite: "1 edition \u00B7 2 sources" },
+      { role: "you", text: "Anything to do tonight?" },
+      { role: "norm", text: "Don't take a browser update from hotel Wi-Fi. Update from the vendor, on a network you trust. That's the whole list.", cite: "1 edition" }
+    ] }
+];
+
+const THINK = [
+  "Norm is pulling the archive\u2026",
+  "Norm is cooking\u2026",
+  "Norm is checking his notes\u2026",
+  "Norm is refilling the mug\u2026",
+  "Norm is re-reading 56 editions\u2026",
+  "Norm is thinking it over\u2026",
+  "Norm is asking a source again\u2026"
+];
+
+const RANIM = {
+  push: "rPush .34s cubic-bezier(.2,.8,.28,1) both",
+  expand: "rExpand .4s cubic-bezier(.2,.8,.28,1) both",
+  rise: "rRise .38s cubic-bezier(.18,.84,.28,1) both",
+  fade: "rFade .28s ease both",
+  turn: "rTurn .42s cubic-bezier(.3,.7,.2,1) both"
+};
+const STEPS = [
+  ["01", "Collect", "Every three hours an adapter per source pulls new items and normalises them \u2014 Hacker News, BBC, Guardian, PBS, Ars Technica, TechCrunch, Nature, Krebs, CISA advisories, SEC EDGAR, the Federal Register. All free, all public."],
+  ["02", "Cluster", "Items about the same real-world event are grouped using local text embeddings. This runs on the machine: no model call, no cost."],
+  ["03", "Score", "A small model rates each cluster 1\u201310 for newsworthiness, assigns a topic, and writes one sentence saying why."],
+  ["04", "Curate", "Once a day a larger model reads the day's rated clusters and picks the headline, the glance points, and which stories go in which section."],
+  ["05", "Write", "One small model call per story writes Background / What happened / Why it matters, using only that story's source text and Norm's own prior coverage."],
+  ["06", "Check and ship", "Code measures the reading grade of every sentence and rewrites anything above 9th-grade level. Then the site builds, the audio renders, and it publishes at 6:00 am ET."]
+];
+const WONT = [
+  ["Write the page", "Models never produce HTML, never touch storage, and never deploy. Ordinary code does all of that."],
+  ["Guess at facts", "Every model response is validated against a schema before anything uses it. Invalid output is retried once, then dropped."],
+  ["Break the whole edition", "Failure is contained to the smallest scope: a story that can't be grounded publishes as a plain card with a link out, and the rest of the brief is unaffected."],
+  ["Involve a human", "No one edits the daily output. What the pipeline produces at 6:00 am is what you read."]
+];
+const SCORES = [
+  ["8\u201310", "Leads the edition", "Changes something concrete for a lot of people, today."],
+  ["6\u20137", "Runs as a full story", "Worth knowing, with enough sourcing to write three honest paragraphs."],
+  ["4\u20135", "Drops to Briefly", "Real, but not worth your time in full."],
+  ["1\u20133", "Held", "Noise, marketing, or a repeat of something already covered."]
+];
+const GREEK = [
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+  "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."
+];
+const SZ = ["Small", "Regular", "Large"];
+const HSCALE = [0.84, 1, 1.2];
+const BSCALE = [0.92, 1, 1.12];
+const hit = () => ({ flex: 1, height: 44, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", position: "relative", zIndex: 1 });
+const dot = (on, c) => ({
+  display: "block", width: on ? 18 : 10, height: on ? 18 : 10, borderRadius: 100,
+  background: on ? c["--c-oxide"] : c["--c-rule"],
+  boxShadow: "0 0 0 4px " + c["--c-raised"], transition: "width .16s ease, height .16s ease, background .16s ease"
+});
+
+class Component extends DCLogic {
+  state = {
+    tab: "today", si: null, playing: false, t: 0, rate: 1, notif: true, dl: true, dark: false,
+    edi: 0, edView: false, retList: false, rAnim: false, pAnim: false, copied: null,
+    web: null, webStack: [], webLoading: false, webPct: 0, webAnim: false,
+    archMode: "editions", archQ: "", dx: 0, drag: false, x0: 0, y0: 0, axis: null,
+    player: false, pdy: 0, pdrag: false, py0: 0, started: false,
+    draft: "", thinking: false, thinkI: 0, streamN: 0, streaming: false,
+    normOpen: false, ndy: 0, ndrag: false, ny0: 0, sp: 0, moreView: null, hs: 1, bs: 1,
+    nsName: "Norm's Newsletter", nsLen: 2, nsAdd: false,
+    nsSel: ["politics", "world", "ai", "tech", "science"],
+    nsImp: { politics: 8, world: 8, ai: 6, tech: 5, science: 4 },
+    nsPend: null, nsPv: 6, nsPdx: 0, nsPdy: 0, nsDrag: null, nsColor: {},
+    fOpen: null, calView: "month", calM: 7, calY: 2026, rStart: null, rEnd: null,
+    fSections: [], fSources: [],
+    normView: "start", chat: [
+      { role: "norm", text: "Morning. I've read all 56 editions \u2014 ask me what happened, what changed, or what a story means." },
+      { role: "you", text: "What's the Hormuz story about?" },
+      { role: "norm", text: "Trump said on Truth Social he called off the planned strikes and wants Iran to agree a deal reopening the Strait of Hormuz within days. It is his own post, one source, so treat the terms as unconfirmed.", cite: "1 edition \u00B7 1 source" }
+    ]
+  };
+
+  componentDidMount() {
+    if (!window.NORM_EDITIONS) {
+      import("./norm-editions.js")
+        .then(m => { window.NORM_EDITIONS = m.EDITIONS; this.forceUpdate(); })
+        .catch(() => {});
+    }
+    this._end = () => { if (this._commit) this._commit(); };
+    window.addEventListener("pointerup", this._end);
+    window.addEventListener("pointercancel", this._end);
+    this.timer = setInterval(() => {
+      if (this.state.playing) {
+        const d = this.cur().dur || 0;
+        this.setState(s => ({ t: Math.min(d, s.t + s.rate) }));
+      }
+    }, 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer); clearTimeout(this._sw); clearTimeout(this._wait); clearInterval(this._wl);
+    clearTimeout(this._pa); clearTimeout(this._ra); clearTimeout(this._cp);
+    clearTimeout(this._ai); clearInterval(this._think); clearInterval(this._stream);
+    window.removeEventListener("pointerup", this._end);
+    window.removeEventListener("pointercancel", this._end);
+  }
+
+  ask(q) {
+    q = (q || "").trim();
+    if (!q) return;
+    this.setState(s => ({
+      normView: "chat",
+      chat: s.chat.concat([{ role: "you", text: q }]), draft: "", thinking: true,
+      thinkI: Math.floor(Math.random() * THINK.length)
+    }));
+    clearTimeout(this._ai);
+    clearInterval(this._think);
+    this._think = setInterval(() => this.setState(s => ({ thinkI: s.thinkI + 1 })), 1150);
+    this._ai = setTimeout(() => {
+      clearInterval(this._think);
+      this.setState(s => ({
+        thinking: false, streaming: true, streamN: 0,
+        chat: s.chat.concat([{
+          role: "norm",
+          text: "Here's what the archive has on that. Three editions cover it \u2014 No. 055, No. 051 and No. 046 \u2014 and the thread runs from the first sighting through this week's write-up.",
+          cite: "3 editions \u00B7 7 sources"
+        }])
+      }));
+      clearInterval(this._stream);
+      this._stream = setInterval(() => {
+        this.setState(s => {
+          const last = s.chat[s.chat.length - 1];
+          const total = last.text.split(" ").length;
+          if (s.streamN >= total) { clearInterval(this._stream); return { streaming: false }; }
+          return { streamN: s.streamN + 2 };
+        });
+      }, 52);
+    }, 2500);
+  }
+
+  startChat() {
+    clearTimeout(this._ai); clearInterval(this._think); clearInterval(this._stream);
+    this.setState({
+      normView: "chat", thinking: false, streaming: false, draft: "",
+      chat: [{ role: "norm", text: "Norm here. What are we looking at?" }]
+    });
+  }
+
+  pickDay(y, m, d) {
+    this.setState(s => {
+      const v = y * 10000 + m * 100 + d;
+      if (!s.rStart || s.rEnd) return { rStart: { y, m, d }, rEnd: null };
+      const sv = s.rStart.y * 10000 + s.rStart.m * 100 + s.rStart.d;
+      if (v < sv) return { rStart: { y, m, d }, rEnd: s.rStart };
+      return { rEnd: { y, m, d } };
+    });
+  }
+
+  openPast(i) {    clearTimeout(this._ai); clearInterval(this._think); clearInterval(this._stream);
+    this.setState({ normView: "chat", thinking: false, streaming: false, chat: CHATS[i].msgs.slice() });
+  }
+
+  cur() { const L = eds(); return (this.state.edView && L[this.state.edi]) || L[0]; }
+
+  flat(ed) {
+    const out = [];
+    (ed || this.cur()).sections.forEach(sec => sec.stories.forEach(st => out.push(Object.assign({ sectionName: sec.name }, st))));
+    return out;
+  }
+
+  openStory(i) {
+    clearTimeout(this._ra);
+    this.setState({ si: i, rAnim: true, dx: 0, drag: false });
+    this.top();
+    this._ra = setTimeout(() => this.setState({ rAnim: false }), 460);
+  }
+
+  openEdition(i, storyIdx, fromList) {
+    clearTimeout(this._ra);
+    this.setState({
+      edView: true, edi: i, tab: "archive", si: storyIdx === undefined ? null : storyIdx,
+      retList: !!fromList, rAnim: storyIdx !== undefined, t: 0, playing: false, started: false, sp: 0
+    });
+    this.top();
+    if (storyIdx !== undefined) this._ra = setTimeout(() => this.setState({ rAnim: false }), 460);
+  }
+
+  top() { if (this._scroller) this._scroller.scrollTop = 0; if (this.state.sp) this.setState({ sp: 0 }); }
+
+  go(patch) { this.setState(patch); this.top(); }
+
+  openWeb(url, title, source) {
+    if (!url) return;
+    let host = "";
+    try { host = new URL(url).hostname.replace(/^www\./, ""); } catch (e) { host = String(url).split("/")[2] || String(url); }
+    clearTimeout(this._wl);
+    this.setState(s => ({
+      web: { url: url, host: host, title: title || "", source: source || host },
+      webStack: (s.web ? s.webStack.concat([s.web]) : []),
+      webLoading: true, webPct: 8, webAnim: !s.web
+    }));
+    this._wl = setInterval(() => {
+      this.setState(s => {
+        if (!s.webLoading) { clearInterval(this._wl); return null; }
+        if (s.webPct >= 100) { clearInterval(this._wl); return { webLoading: false, webAnim: false }; }
+        return { webPct: Math.min(100, s.webPct + 14 + Math.random() * 16) };
+      });
+    }, 90);
+  }
+  reloadWeb() {
+    clearInterval(this._wl);
+    this.setState({ webLoading: true, webPct: 6 });
+    this._wl = setInterval(() => {
+      this.setState(s => {
+        if (s.webPct >= 100) { clearInterval(this._wl); return { webLoading: false }; }
+        return { webPct: Math.min(100, s.webPct + 16 + Math.random() * 16) };
+      });
+    }, 85);
+  }
+  closeWeb() { clearInterval(this._wl); this.setState({ web: null, webStack: [], webLoading: false, webPct: 0 }); }
+  webBack() {
+    const st = this.state;
+    if (!st.webStack.length) return this.closeWeb();
+    const prev = st.webStack[st.webStack.length - 1];
+    this.setState({ web: prev, webStack: st.webStack.slice(0, -1), webLoading: false, webPct: 100 });
+  }
+
+  showPlayer() {
+    clearTimeout(this._pa);
+    this.setState({ player: true, pdy: 0, pdrag: false, pAnim: true, started: true });
+    this._pa = setTimeout(() => this.setState({ pAnim: false }), 400);
+  }
+
+  copy(key, text) {
+    try { navigator.clipboard && navigator.clipboard.writeText(text); } catch (e) {}
+    clearTimeout(this._cp);
+    this.setState({ copied: key });
+    this._cp = setTimeout(() => this.setState({ copied: null }), 1600);
+  }
+
+  sw(on) {
+    const c = this.state.dark ? DARK : LIGHT;
+    return {
+      width: 46, height: 27, borderRadius: 100, flex: "none", cursor: "pointer",
+      background: on ? c["--c-oxide"] : c["--c-rule"], display: "flex", alignItems: "center",
+      padding: 3, justifyContent: on ? "flex-end" : "flex-start", transition: "all .18s ease"
+    };
+  }
+  knob() {
+    return { width: 21, height: 21, borderRadius: 100, background: "#FBFAF6", boxShadow: "0 1px 2px rgba(0,0,0,.28)", display: "block" };
+  }
+
+  renderVals() {
+    const st = this.state;
+    const dark = st.dark || this.props.theme === "dark";
+    const c = dark ? DARK : LIGHT;
+    const mode = this.props.storyOpen || "push";
+    const showScores = this.props.showScores !== false;
+    const L = eds();
+    const cur = this.cur();
+    const dur = cur.dur || 0;
+    const flats = L.map(e => this.flat(e));
+    const all = this.flat(cur);
+
+    let story = null;
+    if (st.si !== null && all[st.si]) {
+      const s = all[st.si];
+      const words = ((s.background || "") + (s.what || "") + (s.why || "")).split(/\s+/).length;
+      story = Object.assign({}, s, {
+        meta: (showScores ? "score " + s.score + " \u00B7 " : "") + s.sources.length + " source" + (s.sources.length > 1 ? "s" : ""),
+        readTime: s.flat ? "not grounded" : Math.max(1, Math.round(words / 190)) + " min read",
+        hasArticle: !s.flat, noArticle: !!s.flat,
+        sources: s.sources.map((n, k) => ({
+          name: n,
+          open: () => this.openWeb((s.urls || [])[k], s.title, n)
+        })),
+        quote: !s.flat && !!s.quoteText
+      });
+    }
+
+    const sections = cur.sections.map(sec => ({
+      name: sec.name,
+      stories: sec.stories.map(s => {
+        const i = all.findIndex(a => a.title === s.title);
+        return {
+          title: s.title, summary: s.summary,
+          meta: (showScores ? "score " + s.score + " \u00B7 " : "") + s.sources.length + " source" + (s.sources.length > 1 ? "s" : ""),
+          open: () => this.openStory(i)
+        };
+      })
+    }));
+
+    const nsImp = st.nsImp || {};
+    const nsImpOf = (id) => nsImp[id] || 6;
+    const nsColorOf = (id) => (st.nsColor || {})[id] || NS_INKS[Math.max(0, NS_TOPICS.map(t => t.id).indexOf(id)) % NS_INKS.length];
+    const nsOpen = (id) => (e) => {
+      let dx = 0, dy = 0;
+      try {
+        const el = e.currentTarget, host = el.closest("[data-ns-root]");
+        const cr = el.getBoundingClientRect(), hr = host.getBoundingClientRect();
+        const sc = (hr.width / host.offsetWidth) || 1;
+        dx = Math.round(((cr.left + cr.width / 2) - (hr.left + hr.width / 2)) / sc);
+        dy = Math.round(((cr.top + cr.height / 2) - (hr.top + hr.height / 2)) / sc);
+      } catch (err) {}
+      this.setState({ nsPend: id, nsPv: nsImpOf(id), nsPdx: dx, nsPdy: dy });
+    };
+    const nsTrack = (w, paused) => ({
+      track: { width: 44, height: 3, flex: "none", background: c["--c-rulef"], display: "block", position: "relative" },
+      fill: { position: "absolute", left: 0, top: 0, bottom: 0, width: (w * 10) + "%", background: paused ? c["--c-muted"] : c["--c-oxide"], display: "block" }
+    });
+    const nsRows = (st.nsSel || []).map((id, i) => {
+      const t = NS_TOPICS.filter(x => x.id === id)[0];
+      if (!t) return null;
+      const w = nsImpOf(id);
+      return Object.assign({
+        rank: (i + 1) + ".", name: t.name, band: nsBand(w).label, val: w + "/10", open: nsOpen(id)
+      }, nsTrack(w, false));
+    }).filter(Boolean);
+    const nsRest = NS_TOPICS.filter(t => (st.nsSel || []).indexOf(t.id) < 0)
+      .map((t, i) => ({
+        name: t.name, meta: t.meta, open: nsOpen(t.id),
+        num: (i + 1 < 10 ? "0" : "") + (i + 1),
+        card: {
+          border: "1px solid " + c["--c-rule"], background: c["--c-raised"],
+          padding: "11px 12px 12px", minHeight: 92, cursor: "pointer",
+          display: "flex", flexDirection: "column", gap: 6,
+          transition: "border-color .2s ease, transform .28s cubic-bezier(.22,1.4,.4,1)"
+        }
+      }));
+
+    const nsLenI = Math.max(0, Math.min(4, st.nsLen || 0));
+    const nsLenCfg = NS_LEN[nsLenI];
+    const nsLenP = (nsLenI / 4) * 100;
+    const nsSetLen = (e, el) => {
+      const r = el.getBoundingClientRect();
+      const f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+      this.setState({ nsLen: Math.round(f * 4) });
+    };
+
+    const nsW = (st.nsSel || []).map(id => nsImpOf(id));
+    const nsTotal = nsW.reduce((a, b) => a + b, 0) || 1;
+    const rawPct = nsW.map(w => (w / nsTotal) * 100);
+    const floors = rawPct.map(p => Math.floor(p));
+    let rem = 100 - floors.reduce((a, b) => a + b, 0);
+    const order = rawPct.map((p, i) => [p - Math.floor(p), i]).sort((a, b) => b[0] - a[0]);
+    const pcts = floors.slice();
+    for (let k = 0; k < order.length && rem > 0; k++, rem--) pcts[order[k][1]]++;
+    const lenStories = NS_LEN[Math.max(0, Math.min(4, st.nsLen || 0))].stories;
+    const maxPct = Math.max.apply(null, pcts.concat([1]));
+    const tone = (i) => "color-mix(in oklab, " + c["--c-oxide"] + " " + (100 - Math.min(58, i * 13)) + "%, " + c["--c-paper"] + ")";
+    const dragDown = (id) => (e) => { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {} this.setState({ nsDrag: id }); };
+    const dragMove = (e) => {
+      const id = this.state.nsDrag;
+      if (!id) return;
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      const t = el && el.closest ? el.closest("[data-nsid]") : null;
+      if (!t || t.dataset.nsid === id) return;
+      this.setState(x => {
+        const arr = x.nsSel.slice();
+        const from = arr.indexOf(id), to = arr.indexOf(t.dataset.nsid);
+        if (from < 0 || to < 0) return null;
+        arr.splice(to, 0, arr.splice(from, 1)[0]);
+        return { nsSel: arr };
+      });
+    };
+    const dragUp = () => this.setState({ nsDrag: null });
+    const t2rows = (st.nsSel || []).map((id, i) => {
+      const t = NS_TOPICS.filter(x => x.id === id)[0];
+      if (!t) return null;
+      const p = pcts[i], w = nsImpOf(id), dragging = st.nsDrag === id, ink = nsColorOf(id);
+      const n = Math.max(0, Math.round((p / 100) * lenStories));
+      return {
+        id: id, name: t.name, band: nsBand(w).label, pct: p + "%",
+        count: n + " of " + lenStories + " stories", open: nsOpen(id),
+        dragDown: dragDown(id), dragMove: dragMove, dragUp: dragUp,
+        seg: { display: "block", width: p + "%", background: ink, borderRight: "1px solid " + c["--c-paper"], transition: "width .3s cubic-bezier(.22,.9,.3,1), background .2s ease" },
+        dot: { width: 9, height: 9, flex: "none", display: "block", borderRadius: "50%", background: ink, transition: "background .2s ease" },
+        row: { display: "flex", alignItems: "center", gap: 11, padding: "13px 8px", borderBottom: "1px solid " + c["--c-rulef"], minHeight: 44, cursor: dragging ? "grabbing" : "pointer", touchAction: "none", background: dragging ? c["--c-raised"] : "transparent", opacity: dragging ? 0.96 : 1, transform: dragging ? "scale(1.025) rotate(-.35deg)" : "scale(1)", boxShadow: dragging ? "0 14px 30px rgba(35,35,31,.22)" : "0 0 0 rgba(0,0,0,0)", zIndex: dragging ? 5 : 0, position: "relative", transition: "transform .2s cubic-bezier(.22,1.4,.4,1), box-shadow .2s ease, background .2s ease, opacity .2s ease" },
+        rowB: { display: "block", padding: "14px 8px", borderBottom: "1px solid " + c["--c-rulef"], cursor: dragging ? "grabbing" : "pointer", touchAction: "none", background: dragging ? c["--c-raised"] : "transparent", opacity: dragging ? 0.96 : 1, transform: dragging ? "scale(1.025) rotate(-.35deg)" : "scale(1)", boxShadow: dragging ? "0 14px 30px rgba(35,35,31,.22)" : "0 0 0 rgba(0,0,0,0)", zIndex: dragging ? 5 : 0, position: "relative", transition: "transform .2s cubic-bezier(.22,1.4,.4,1), box-shadow .2s ease, background .2s ease, opacity .2s ease" },
+        rowC: { display: "flex", alignItems: "center", gap: 12, padding: "15px 8px", borderBottom: "1px solid " + c["--c-rulef"], cursor: dragging ? "grabbing" : "pointer", touchAction: "none", background: dragging ? c["--c-raised"] : "transparent", opacity: dragging ? 0.96 : 1, transform: dragging ? "scale(1.025) rotate(-.35deg)" : "scale(1)", boxShadow: dragging ? "0 14px 30px rgba(35,35,31,.22)" : "0 0 0 rgba(0,0,0,0)", zIndex: dragging ? 5 : 0, position: "relative", transition: "transform .2s cubic-bezier(.22,1.4,.4,1), box-shadow .2s ease, background .2s ease, opacity .2s ease" },
+        barB: { display: "block", height: 6, width: ((p / maxPct) * 100) + "%", background: c["--c-oxide"], transition: "width .3s cubic-bezier(.22,.9,.3,1)" }
+      };
+    }).filter(Boolean);
+    const T2 = {
+      rows: t2rows,
+      topLine: t2rows.length ? t2rows[0].name + " leads at " + t2rows[0].pct : "Nothing followed yet",
+      lengthLine: "Length: about " + lenStories + " stories a morning."
+    };
+
+    const pendT = st.nsPend ? NS_TOPICS.filter(t => t.id === st.nsPend)[0] : null;
+    const nsVals = {
+      nsName: st.nsName,
+      nsNameUp: (st.nsName || "Norm's Newsletter").toUpperCase(),
+      nsSetName: (e) => this.setState({ nsName: e.target.value }),
+      nsTopicCount: (st.nsSel || []).length + " sections",
+      nsTopicLine: nsRows.length ? nsRows.slice(0, 3).map(r => r.name).join(", ") + (nsRows.length > 3 ? " +" + (nsRows.length - 3) : "") : "Everything, unweighted",
+      nsRows: nsRows, nsRest: nsRest, nsRestEmpty: nsRest.length === 0,
+      nsLenLabel: nsLenCfg.label, nsLenShort: nsLenCfg.short, nsLenNote: nsLenCfg.note,
+      nsLenEst: "about " + nsLenCfg.stories + " stories",
+      nsLenTicks: [0, 1, 2, 3, 4].map(n => ({
+        style: {
+          position: "absolute", top: 4, left: "calc(" + ((n / 4) * 100) + "% - 0.5px)",
+          width: 1, height: 6, background: n <= nsLenI ? c["--c-oxide"] : c["--c-rule"], transition: "background .14s linear"
+        }
+      })),
+      nsLenFill: { position: "absolute", left: 0, top: 21, height: 2, width: nsLenP + "%", background: c["--c-oxide"], transition: "width .12s linear" },
+      nsLenMark: {
+        position: "absolute", top: 11, left: "calc(" + nsLenP + "% - 11px)", width: 22, height: 22,
+        borderRadius: "50%", background: c["--c-oxide"], border: "4px solid " + c["--c-paper"],
+        boxShadow: "0 0 0 1px " + c["--c-oxide"], transition: "left .12s linear"
+      },
+      nsLenDown: (e) => { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {} nsSetLen(e, e.currentTarget); },
+      nsLenMove: (e) => { if (e.buttons) nsSetLen(e, e.currentTarget); },
+      nsWtOpen: !!pendT,
+      nsWtOpenApp: !!pendT && st.tab === "more" && st.si === null && (st.moreView === "nstopics" || st.moreView === "nsadd"),
+      nsWtDismiss: () => this.setState({ nsPend: null })
+    };
+    if (pendT) {
+      const wv = Math.max(1, Math.min(10, st.nsPv || 6));
+      const pendInk = nsColorOf(st.nsPend);
+      const wb = nsBand(wv);
+      const already = (st.nsSel || []).indexOf(st.nsPend) > -1;
+      const wp = ((wv - 1) / 9) * 100;
+      const setPv = (e, el) => {
+        const r = el.getBoundingClientRect();
+        const f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+        this.setState({ nsPv: 1 + Math.round(f * 9) });
+      };
+      const idx = (st.nsSel || []).indexOf(st.nsPend);
+      const curPct = idx > -1 ? pcts[idx] : null;
+      const nextTotal = (nsTotal - (idx > -1 ? nsImpOf(st.nsPend) : 0)) + wv;
+      const nextPct = Math.round((wv / (nextTotal || 1)) * 100);
+      Object.assign(nsVals, {
+        nsWtShift: curPct === null
+          ? "This gives " + pendT.name + " about " + nextPct + "% of the paper."
+          : (curPct === nextPct
+              ? pendT.name + " stays at " + curPct + "% of the paper."
+              : "This moves " + pendT.name + " from " + curPct + "% to " + nextPct + "% of the paper."),
+        nsWtColors: NS_INKS.map(hex => {
+          const on = nsColorOf(st.nsPend) === hex;
+          return {
+            set: () => this.setState(x => ({ nsColor: Object.assign({}, x.nsColor, { [x.nsPend]: hex }) })),
+            hit: { width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" },
+            dot: {
+              width: on ? 24 : 20, height: on ? 24 : 20, borderRadius: "50%", background: hex, display: "block",
+              boxShadow: on ? "0 0 0 2px " + c["--c-raised"] + ", 0 0 0 3.5px " + hex : "none",
+              transition: "width .16s ease, height .16s ease, box-shadow .16s ease"
+            }
+          };
+        }),
+        nsWtName: pendT.name, nsWtMeta: pendT.meta, nsWtVal: wv, nsWtBand: wb.label, nsWtNote: wb.note,
+        nsWtOrigin: {
+          position: "relative", width: "100%",
+          animation: "wtpop .38s cubic-bezier(.22,.9,.3,1) both",
+          "--wtdx": (st.nsPdx || 0) + "px", "--wtdy": (st.nsPdy || 0) + "px"
+        },
+        nsWtBandStyle: {
+          fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, letterSpacing: ".14em",
+          textTransform: "uppercase", color: pendInk, border: "1px solid " + pendInk,
+          padding: "5px 9px", whiteSpace: "nowrap"
+        },
+        nsWtTicks: [1,2,3,4,5,6,7,8,9,10].map(n => ({
+          style: {
+            position: "absolute", top: 4, left: "calc(" + (((n - 1) / 9) * 100) + "% - 0.5px)",
+            width: 1, height: 6, background: n <= wv ? pendInk : c["--c-rule"], transition: "background .14s linear"
+          }
+        })),
+        nsWtFill: { position: "absolute", left: 0, top: 21, height: 2, width: wp + "%", background: pendInk, transition: "width .12s linear" },
+        nsWtMark: {
+          position: "absolute", top: 11, left: "calc(" + wp + "% - 11px)", width: 22, height: 22,
+          borderRadius: "50%", background: pendInk, border: "4px solid " + c["--c-raised"],
+          boxShadow: "0 0 0 1px " + pendInk, transition: "left .12s linear"
+        },
+        nsWtDown: (e) => { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {} setPv(e, e.currentTarget); },
+        nsWtMove: (e) => { if (e.buttons) setPv(e, e.currentTarget); },
+        nsWtCta: already ? "Save this weighting" : "Add to my paper",
+        nsWtSecond: already ? "Take it off the paper" : "Not this one",
+        nsWtSave: () => this.setState(x => ({
+          nsPend: null,
+          nsImp: Object.assign({}, x.nsImp, { [x.nsPend]: wv }),
+          nsSel: already ? x.nsSel : x.nsSel.concat([x.nsPend])
+        })),
+        nsWtSecondAct: already
+          ? () => this.setState(x => ({ nsPend: null, nsSel: x.nsSel.filter(y => y !== x.nsPend) }))
+          : () => this.setState({ nsPend: null })
+      });
+    }
+
+    const tabs = ["Today", "Archive", "More"].map(label => {
+      const key = label.toLowerCase();
+      const active = st.tab === key && st.si === null && !(key === "today" && st.edView);
+      return {
+        label, go: () => this.go({ tab: key, si: null, edView: false, retList: false, moreView: null }),
+        isToday: key === "today", isArchive: key === "archive", isMore: key === "more",
+        style: {
+          padding: "9px 0 8px", cursor: "pointer", minHeight: 44,
+          display: "flex", flexDirection: "column", alignItems: "center", gap: 4,
+          fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, letterSpacing: ".1em",
+          textTransform: "uppercase", color: active ? c["--c-oxide"] : c["--c-muted"],
+          fontWeight: active ? 500 : 400,
+          borderTop: active ? "2px solid " + c["--c-oxide"] : "2px solid transparent",
+          marginTop: -1, transition: "color .16s ease"
+        }
+      };
+    });
+
+    const tri = { width: 0, height: 0, borderLeft: "15px solid " + c["--c-oxide"], borderTop: "10px solid transparent", borderBottom: "10px solid transparent", display: "block" };
+    const bars = { display: "block", width: 13, height: 18, borderLeft: "4.5px solid " + c["--c-oxide"], borderRight: "4.5px solid " + c["--c-oxide"] };
+    const pct = dur ? (st.t / dur) * 100 : 0;
+
+    const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const ser = (o) => o ? o.y * 10000 + o.m * 100 + o.d : null;
+    const rs = ser(st.rStart), re = ser(st.rEnd);
+    const inRange = (o) => {
+      const v = ser(o);
+      if (rs === null) return true;
+      if (re === null) return v === rs;
+      return v >= rs && v <= re;
+    };
+    const secs = [];
+    const srcs = [];
+    L.forEach(e => e.sections.forEach(sec => {
+      if (secs.indexOf(sec.name) < 0) secs.push(sec.name);
+      sec.stories.forEach(s => s.sources.forEach(n => { if (srcs.indexOf(n) < 0) srcs.push(n); }));
+    }));
+    secs.sort(); srcs.sort();
+
+    const q = st.archQ.trim().toLowerCase();
+    const archEds = L
+      .map((e, i) => ({ e: e, i: i }))
+      .filter(o => (!q || o.e.headline.toLowerCase().indexOf(q) > -1 || o.e.short.toLowerCase().indexOf(q) > -1 || o.e.noLabel.toLowerCase().indexOf(q) > -1) && inRange(o.e));
+    const rows = [];
+    L.forEach((e, ei) => e.sections.forEach(sec => sec.stories.forEach(s => {
+      if (s.flat) return;
+      rows.push({
+        date: e.short, edNo: e.noLabel, section: sec.name, title: s.title, sources: s.sources, ed: e, ei: ei,
+        meta: (showScores ? "score " + s.score + " \u00B7 " : "") + s.sources.join(", "),
+        open: () => this.openEdition(ei, flats[ei].findIndex(x => x.title === s.title), true)
+      });
+    })));
+    const archStories = rows.filter(r =>
+      (!q || r.title.toLowerCase().indexOf(q) > -1 || r.section.toLowerCase().indexOf(q) > -1)
+      && (!st.fSections.length || st.fSections.indexOf(r.section) > -1)
+      && (!st.fSources.length || r.sources.some(n => st.fSources.indexOf(n) > -1))
+      && inRange(r.ed));
+
+    const goTo = (i, dir) => {
+      if (i < 0 || i >= all.length) { this.setState({ dx: 0, drag: false }); return; }
+      this.setState({ dx: dir * 420, drag: false });
+      clearTimeout(this._sw);
+      this._sw = setTimeout(() => {
+        this.setState({ si: i, dx: -dir * 60, drag: true });
+        requestAnimationFrame(() => this.setState({ dx: 0, drag: false }));
+      }, 190);
+    };
+
+    this._commit = () => {
+      const s = this.state;
+      if (!s.drag || s.si === null) return;
+      if (s.dx <= -64) { goTo(s.si + 1, -1); }
+      else if (s.dx >= 64) { goTo(s.si - 1, 1); }
+      else { this.setState({ dx: 0, drag: false, axis: null }); }
+    };
+
+    const fmtD = (o) => o ? MON[o.m] + " " + o.d : "";
+    const chip = (on) => ({
+      display: "flex", alignItems: "center", gap: 6, padding: "7px 12px", minHeight: 36, borderRadius: 100,
+      cursor: "pointer", fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 12.5, whiteSpace: "nowrap",
+      border: "1px solid " + (on ? c["--c-oxide"] : c["--c-rule"]),
+      background: on ? c["--c-oxide"] : c["--c-raised"], color: on ? "#F6F4EE" : c["--c-inks"],
+      transition: "background .16s ease, color .16s ease, border-color .16s ease"
+    });
+    const seg = (on) => ({
+      padding: "6px 10px", cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5,
+      letterSpacing: ".08em", textTransform: "uppercase",
+      background: on ? c["--c-ink"] : "transparent", color: on ? c["--c-paper"] : c["--c-muted"]
+    });
+
+    const isReader = st.si !== null && mode === "push";
+    const sheetOpen = st.si !== null && mode === "sheet";
+    const showMini = (st.playing || st.t > 0 || st.started) && !st.player;
+    const fabBottom = showMini ? 160 : 104;
+    const fabSize = 64;
+
+    return {
+      themeVars: c,
+      T2: T2,
+      ...nsVals,
+      isDark: dark,
+      dateLong: cur.dateLong,
+      editionNo: cur.noLabel,
+      headline: cur.headline,
+      glance: cur.glance.map((g, i) => ({ num: String(i + 1).padStart(2, "0"), text: g[0], topic: g[1] })),
+      sections,
+      briefly: cur.briefly.map(b => ({ title: b[0], topic: b[1], open: () => this.openWeb(b[2], b[0], "") })),
+      tiles: cur.stats.map(s => ({ label: s[0], value: s[1] })),
+      hasAudio: !!dur,
+      noAudio: !dur,
+      audioMeta: "Two hosts \u00B7 " + mmss(dur),
+      isPast: st.edView,
+      pastLabel: cur.short + " \u00B7 " + cur.noLabel,
+      backToArchive: () => this.go({ edView: false, si: null, retList: false, playing: false, t: 0, started: false }),
+      archive: archEds.map(o => ({
+        date: o.e.short, headline: o.e.headline,
+        audio: o.e.dur ? "\u25B6 " + mmss(o.e.dur) : "text only",
+        open: () => this.openEdition(o.i)
+      })),
+      archStories,
+      archModes: [["editions", "Newsletters"], ["stories", "Stories"]].map(m => ({
+        label: m[1], go: () => this.setState(s => ({ archMode: m[0], fOpen: (m[0] === "editions" && s.fOpen === "section") ? null : s.fOpen })),
+        style: {
+          padding: "10px 0 9px", textAlign: "center", cursor: "pointer", minHeight: 44,
+          fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 11.5, fontWeight: 500,
+          letterSpacing: ".14em", textTransform: "uppercase",
+          color: st.archMode === m[0] ? c["--c-oxide"] : c["--c-muted"],
+          borderBottom: "2px solid " + (st.archMode === m[0] ? c["--c-oxide"] : "transparent"),
+          marginBottom: -1
+        }
+      })),
+      isArchEditions: st.archMode === "editions" && archEds.length > 0,
+      isCal: st.fOpen === "dates",
+      isListMenu: st.fOpen === "section" || st.fOpen === "source",
+      hasActive: rs !== null || (st.archMode === "stories" && st.fSections.length > 0) || st.fSources.length > 0,
+      closeMenus: () => this.setState({ fOpen: null }),
+      clearAll: () => this.setState({ rStart: null, rEnd: null, fSections: [], fSources: [], fOpen: null }),
+      filters: [
+        { key: "dates", label: rs === null ? "Dates" : (re === null ? fmtD(st.rStart) : fmtD(st.rStart) + " \u2013 " + fmtD(st.rEnd)), on: rs !== null },
+        { key: "section", label: st.fSections.length ? "Section \u00B7 " + st.fSections.length : "Section", on: st.fSections.length > 0, storiesOnly: true },
+        { key: "source", label: st.fSources.length ? "Source \u00B7 " + st.fSources.length : "Source", on: st.fSources.length > 0 }
+      ].filter(f => !f.storiesOnly || st.archMode === "stories").map(f => ({
+        label: f.label,
+        toggle: () => this.setState(s => ({ fOpen: s.fOpen === f.key ? null : f.key })),
+        style: chip(f.on || st.fOpen === f.key)
+      })),
+      activeChips: [].concat(
+        rs === null ? [] : [{ label: re === null ? fmtD(st.rStart) : fmtD(st.rStart) + " \u2013 " + fmtD(st.rEnd), remove: () => this.setState({ rStart: null, rEnd: null }) }],
+        st.archMode === "stories" ? st.fSections.map(n => ({ label: n, remove: () => this.setState(s => ({ fSections: s.fSections.filter(x => x !== n) })) })) : [],
+        st.fSources.map(n => ({ label: n, remove: () => this.setState(s => ({ fSources: s.fSources.filter(x => x !== n) })) }))
+      ).map(a => Object.assign({ style: {
+        display: "flex", alignItems: "center", gap: 6, padding: "5px 10px", cursor: "pointer",
+        border: "1px solid " + c["--c-rule"], background: c["--c-raised"], color: c["--c-inks"],
+        fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5, whiteSpace: "nowrap"
+      } }, a)),
+      menuOptions: (st.fOpen === "source" ? srcs : secs).map(n => {
+        const key = st.fOpen === "source" ? "fSources" : "fSections";
+        const on = st[key].indexOf(n) > -1;
+        return {
+          label: n,
+          toggle: () => this.setState(s => ({ [key]: on ? s[key].filter(x => x !== n) : s[key].concat([n]) })),
+          row: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "9px 0", minHeight: 40, cursor: "pointer", borderBottom: "1px solid " + c["--c-rulef"] },
+          box: { display: "block", width: 16, height: 16, flex: "none", border: "1px solid " + (on ? c["--c-oxide"] : c["--c-rule"]), background: on ? c["--c-oxide"] : "transparent" }
+        };
+      }),
+      popStyle: {
+        position: "absolute", top: (rs !== null || st.fSections.length || st.fSources.length) ? 84 : 44, left: 0, right: 0, zIndex: 30,
+        background: c["--c-raised"], border: "1px solid " + c["--c-rule"], borderTop: "2px solid " + c["--c-ink"],
+        padding: "12px 13px 11px", boxShadow: "0 16px 36px rgba(20,19,15,.16)",
+        animation: "chatIn .18s cubic-bezier(.2,.7,.3,1) both"
+      },
+      calIsMonth: st.calView === "month",
+      calIsYear: st.calView === "year",
+      calLabel: st.calView === "month" ? MON[st.calM] + " " + st.calY : String(st.calY),
+      calArrow: { width: 28, height: 28, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: c["--c-oxide"], fontSize: 17, lineHeight: 1, border: "1px solid " + c["--c-rule"], background: c["--c-paper"] },
+      calPrev: () => this.setState(s => s.calView === "year" ? { calY: s.calY - 1 } : (s.calM === 0 ? { calM: 11, calY: s.calY - 1 } : { calM: s.calM - 1 })),
+      calNext: () => this.setState(s => s.calView === "year" ? { calY: s.calY + 1 } : (s.calM === 11 ? { calM: 0, calY: s.calY + 1 } : { calM: s.calM + 1 })),
+      setMonthView: () => this.setState({ calView: "month" }),
+      setYearView: () => this.setState({ calView: "year" }),
+      monthTab: seg(st.calView === "month"),
+      yearTab: seg(st.calView === "year"),
+      calDows: ["S", "M", "T", "W", "T", "F", "S"].map(l => ({ label: l })),
+      calDays: (() => {
+        const first = new Date(st.calY, st.calM, 1).getDay();
+        const len = new Date(st.calY, st.calM + 1, 0).getDate();
+        const cells = [];
+        for (let i = 0; i < first; i++) cells.push({ label: "", style: { height: 32 }, pick: null });
+        for (let d = 1; d <= len; d++) {
+          const v = st.calY * 10000 + st.calM * 100 + d;
+          const isStart = v === rs, isEnd = v === re;
+          const mid = rs !== null && re !== null && v > rs && v < re;
+          const has = L.some(e => e.y === st.calY && e.m === st.calM && e.d === d);
+          cells.push({
+            label: String(d),
+            pick: () => this.pickDay(st.calY, st.calM, d),
+            style: {
+              height: 32, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
+              fontFamily: "'IBM Plex Mono', monospace", fontSize: 12,
+              fontWeight: has ? 500 : 400,
+              color: (isStart || isEnd) ? "#F6F4EE" : has ? c["--c-oxide"] : c["--c-inks"],
+              background: (isStart || isEnd) ? c["--c-oxide"] : mid ? c["--c-rulef"] : "transparent",
+              border: "1px solid " + ((isStart || isEnd) ? c["--c-oxide"] : "transparent")
+            }
+          });
+        }
+        return cells;
+      })(),
+      calMonths: MON.map((m, i) => ({
+        label: m,
+        pick: () => this.setState({ calM: i, calView: "month" }),
+        style: {
+          height: 38, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
+          fontFamily: "'IBM Plex Mono', monospace", fontSize: 12,
+          border: "1px solid " + (i === st.calM ? c["--c-oxide"] : c["--c-rule"]),
+          background: i === st.calM ? c["--c-oxide"] : c["--c-paper"],
+          color: i === st.calM ? "#F6F4EE" : c["--c-inks"]
+        }
+      })),
+      rangeLabel: rs === null ? "No date filter" : (re === null ? fmtD(st.rStart) + " \u2014 pick an end date" : fmtD(st.rStart) + " \u2013 " + fmtD(st.rEnd)),
+      isArchStories: st.archMode === "stories" && archStories.length > 0,
+      archEmpty: st.archMode === "editions" ? archEds.length === 0 : archStories.length === 0,
+      archHeading: st.archMode === "editions" ? "Every edition" : "Every story",
+      backLabel: st.tab === "archive" ? "Archive" : "Today's brief",
+      archCount: st.archMode === "editions"
+        ? archEds.length + (archEds.length === 1 ? " edition" : " editions")
+        : archStories.length + (archStories.length === 1 ? " story" : " stories"),
+      archQ: st.archQ,
+      hasQuery: q.length > 0,
+      setArchQ: (e) => this.setState({ archQ: e.target.value }),
+      clearArchQ: () => this.setState({ archQ: "" }),
+      searchGlyph: {
+        width: 12, height: 12, borderRadius: 100, flex: "none", display: "block",
+        border: "1.5px solid " + c["--c-muted"], boxShadow: "3.5px 3.5px 0 -1.4px " + c["--c-muted"]
+      },
+      searchInput: {
+        flex: 1, minWidth: 0, border: 0, outline: "none", background: "transparent",
+        fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, color: c["--c-ink"], padding: 0
+      },
+      chapters: cur.sections.map((sec, i) => ({
+        at: mmss(Math.round((i * dur) / Math.max(1, cur.sections.length))),
+        name: sec.stories[0] ? sec.name + ": " + sec.stories[0].title : sec.name
+      })),
+      tabs,
+      isToday: (st.tab === "today" || (st.tab === "archive" && st.edView)) && !isReader,
+      isNorm: false,
+      chat: st.chat.map((m, i) => {
+        const isLast = i === st.chat.length - 1;
+        const live = st.streaming && isLast && m.role === "norm";
+        const words = m.text.split(" ");
+        return {
+        text: live ? words.slice(0, st.streamN).join(" ") : m.text,
+        caret: live,
+        cite: !!m.cite && !live, citeText: m.cite || "",
+        wrap: {
+          animation: "chatIn .34s cubic-bezier(.2,.7,.3,1) both",
+          display: "flex", flexDirection: "column", gap: 5,
+          alignItems: m.role === "you" ? "flex-end" : "flex-start",
+          paddingLeft: m.role === "you" ? 40 : 0, paddingRight: m.role === "you" ? 0 : 34
+        },
+        bubble: m.role === "you"
+          ? {
+              background: c["--c-oxide"], color: "#F6F4EE", padding: "10px 14px",
+              fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, lineHeight: 1.5, textWrap: "pretty"
+            }
+          : {
+              background: c["--c-raised"], color: c["--c-inks"], padding: "12px 15px",
+              border: "1px solid " + c["--c-rule"], borderLeft: "2px solid " + c["--c-ink"],
+              fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, lineHeight: 1.6, textWrap: "pretty"
+            }
+        };
+      }),
+      onScroll: (e) => {
+        const el = e.target;
+        const max = el.scrollHeight - el.clientHeight;
+        const pct = max > 8 ? Math.min(100, Math.max(0, (el.scrollTop / max) * 100)) : 0;
+        if (Math.abs(pct - this.state.sp) > 0.6) this.setState({ sp: pct });
+      },
+      progressBar: { display: "block", height: 2, width: st.sp + "%", background: c["--c-oxide"], transition: "width .12s linear" },
+      normOpen: st.normOpen,
+      showFab: !st.normOpen && !isReader && !sheetOpen && !st.player && (st.tab === "today" || st.tab === "archive"),
+      openNorm: () => this.setState({ normOpen: true, ndy: 0 }),
+      closeNorm: () => this.setState({ normOpen: false, ndy: 0, ndrag: false }),
+      fabStyle: {
+        position: "absolute", right: 18, bottom: fabBottom, width: fabSize, height: fabSize, borderRadius: fabSize / 2,
+        zIndex: 46, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
+        background: c["--c-oxide"], border: "1px solid " + c["--c-oxide"],
+        animation: "fabIn .28s cubic-bezier(.2,.8,.3,1) both"
+      },
+      normPanel: {
+        position: "absolute", inset: 0, zIndex: 70, display: "flex", flexDirection: "column",
+        background: c["--c-paper"], animation: "normFade .24s ease both",
+        transform: st.ndy ? "translateY(" + st.ndy + "px)" : "none",
+        transition: st.ndrag ? "none" : "transform .26s cubic-bezier(.2,.8,.3,1)"
+      },
+      normBody: {
+        flex: 1, overflowY: "auto", padding: "0 20px", paddingBottom: fabBottom + 74, zoom: BSCALE[st.bs],
+        animation: "normRise .42s cubic-bezier(.2,.75,.3,1) .3s both"
+      },
+      normDock: {
+        position: "absolute", left: 20, right: 18, bottom: fabBottom, zIndex: 3,
+        display: "flex", alignItems: "center", gap: 10
+      },
+      normCloseBtn: {
+        flex: "none", width: fabSize, height: fabSize, borderRadius: fabSize / 2, cursor: "pointer",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        background: c["--c-raised"], border: "1px solid " + c["--c-rule"], color: c["--c-ink"],
+        boxShadow: "0 8px 22px rgba(20,19,15,.10)"
+      },
+      composerBox: {
+        flex: 1, minWidth: 0, overflow: "hidden", display: "flex", alignItems: "center", gap: 8,
+        height: fabSize, padding: "0 10px 0 12px", background: c["--c-raised"],
+        border: "1px solid " + c["--c-rule"], borderTop: "2px solid " + c["--c-ink"],
+        animation: "normPill .4s cubic-bezier(.2,.8,.25,1) both"
+      },
+      normDown: (e) => { e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId); this.setState({ ndrag: true, ny0: e.clientY, ndy: 0 }); },
+      normMove: (e) => { if (this.state.ndrag) this.setState(s => ({ ndy: Math.max(0, e.clientY - s.ny0) })); },
+      normUp: () => {
+        if (this.state.ndy > 110) this.setState({ normOpen: false, ndy: 0, ndrag: false });
+        else this.setState({ ndy: 0, ndrag: false });
+      },
+      isNormStart: st.normOpen && st.normView === "start",
+      isNormChat: st.normOpen && st.normView === "chat",
+      isNormHistory: st.normOpen && st.normView === "history",
+      toggleHistory: () => this.setState(s => ({ normView: s.normView === "history" ? "start" : "history" })),
+      histLabel: st.normView === "history" ? "Close" : "Past chats",
+      histCount: CHATS.length,
+      histBubble: {
+        display: "flex", alignItems: "center", gap: 8, cursor: "pointer", minHeight: 34,
+        padding: "7px 13px", borderRadius: 100, flex: "none",
+        border: "1px solid " + (st.normView === "history" ? c["--c-oxide"] : c["--c-rule"]),
+        background: st.normView === "history" ? c["--c-oxide"] : c["--c-raised"],
+        color: st.normView === "history" ? "#F6F4EE" : c["--c-inks"],
+        fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 12.5,
+        transition: "background .18s ease, color .18s ease, border-color .18s ease"
+      },
+      history: CHATS.map((h, i) => ({
+        title: h.title, when: h.when, snippet: h.snippet, meta: h.meta,
+        open: () => this.openPast(i),
+        row: {
+          padding: "13px 0 14px", borderBottom: "1px solid " + c["--c-rulef"], cursor: "pointer",
+          animation: "chatIn .34s cubic-bezier(.2,.7,.3,1) both", animationDelay: (i * 55) + "ms"
+        }
+      })),
+      startChat: () => this.startChat(),
+      startBox: {
+        flex: 1, minWidth: 0, overflow: "hidden", whiteSpace: "nowrap",
+        display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12,
+        height: fabSize, padding: "0 16px", cursor: "pointer", color: "#F6F4EE",
+        background: c["--c-oxide"], border: "1px solid " + c["--c-oxide"],
+        borderTop: "2px solid " + c["--c-ink"], boxShadow: "0 8px 22px rgba(20,19,15,.16)",
+        animation: "normPill .4s cubic-bezier(.2,.8,.25,1) both"
+      },
+      thinking: st.thinking,
+      thinkText: THINK[st.thinkI % THINK.length],
+      prompts: [
+        "What changed on tariffs this week?",
+        "Summarise the AI stories from July",
+        "Which editions mentioned wildfires?"
+      ].map(label => ({
+        label, ask: () => { if (st.normView !== "chat") this.startChat(); this.ask(label); },
+        style: {
+          padding: "10px 13px", cursor: "pointer", border: "1px solid " + c["--c-rule"],
+          background: c["--c-raised"], color: c["--c-oxide"], minHeight: 44,
+          display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10,
+          fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, lineHeight: 1.35
+        }
+      })),
+      draft: st.draft,
+      setDraft: (e) => this.setState({ draft: e.target.value }),
+      draftKey: (e) => { if (e.key === "Enter") this.ask(this.state.draft); },
+      send: () => this.ask(this.state.draft),
+      draftInput: {
+        flex: 1, minWidth: 0, border: "1px solid " + c["--c-rule"], outline: "none",
+        background: c["--c-paper"], padding: "10px 12px", minHeight: 42,
+        fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14, color: c["--c-ink"]
+      },
+      sendStyle: {
+        flex: "none", minHeight: 42, display: "flex", alignItems: "center", padding: "0 16px",
+        cursor: "pointer", background: c["--c-oxide"], color: "#F6F4EE",
+        fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 13
+      },
+      playerOpen: st.player,
+      playerBackdrop: { position: "absolute", inset: 0, zIndex: 58, background: "rgba(20,19,15," + Math.max(0, 0.42 - st.pdy / 1600) + ")", animation: st.pAnim ? "normFade .3s ease both" : "none" },
+      playerSheet: {
+        position: "absolute", left: 0, right: 0, top: 46, bottom: 0, zIndex: 60,
+        background: c["--c-paper"], borderTop: "2px solid " + c["--c-ink"],
+        borderRadius: "14px 14px 0 0", overflow: "auto", padding: "0 20px 40px",
+        transform: "translateY(" + st.pdy + "px)",
+        transition: st.pdrag ? "none" : "transform .26s cubic-bezier(.22,.61,.36,1)",
+        animation: st.pAnim ? "sheetRise .38s cubic-bezier(.18,.84,.28,1) both" : "none"
+      },
+      openPlayer: () => { if (this._skipTap) { this._skipTap = false; return; } this.showPlayer(); },
+      closePlayer: () => this.setState({ player: false, pdy: 0, pdrag: false }),
+      sheetDown: (e) => {
+        try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+        this.setState({ pdrag: true, py0: e.clientY });
+      },
+      sheetMove: (e) => {
+        if (!this.state.pdrag) return;
+        this.setState({ pdy: Math.max(0, e.clientY - this.state.py0) });
+      },
+      sheetUp: () => {
+        if (!this.state.pdrag) return;
+        if (this.state.pdy > 90) this.setState({ player: false, pdy: 0, pdrag: false, playing: true, started: true });
+        else this.setState({ pdy: 0, pdrag: false });
+      },
+      showMini,
+      miniStyle: {
+        display: "flex", alignItems: "center", gap: 12, padding: "9px 16px 10px",
+        background: c["--c-raised"], borderTop: "1px solid " + c["--c-rule"], cursor: "pointer",
+        touchAction: "none", transform: "translateY(" + st.pdy + "px)",
+        opacity: Math.max(0.3, 1 - st.pdy / 90),
+        transition: st.pdrag ? "none" : "transform .22s ease, opacity .22s ease"
+      },
+      miniDown: (e) => {
+        try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+        this.setState({ pdrag: true, py0: e.clientY, pdy: 0 });
+      },
+      miniMove: (e) => {
+        if (!this.state.pdrag) return;
+        const dy = e.clientY - this.state.py0;
+        if (Math.abs(dy) > 6) this._skipTap = true;
+        this.setState({ pdy: Math.max(-10, dy) });
+      },
+      miniUp: () => {
+        if (!this.state.pdrag) return;
+        const dy = this.state.pdy;
+        if (dy > 40) this.setState({ pdrag: false, pdy: 0, playing: false, t: 0, started: false });
+        else if (dy < -8) { this.setState({ pdrag: false, pdy: 0 }); this.showPlayer(); }
+        else this.setState({ pdrag: false, pdy: 0 });
+      },
+      isArchive: st.tab === "archive" && !st.edView && !isReader,
+      isMore: st.tab === "more" && !isReader && st.moreView === null,
+      isHow: st.tab === "more" && !isReader && st.moreView === "how",
+      isFeeds: st.tab === "more" && !isReader && st.moreView === "feeds",
+      openHow: () => this.go({ moreView: "how" }),
+      openFeeds: () => this.go({ moreView: "feeds" }),
+      steps: STEPS.map(s => ({ num: s[0], name: s[1], text: s[2] })),
+      wont: WONT.map(w => ({ name: w[0], text: w[1] })),
+      scoreRows: SCORES.map(s => ({ band: s[0], what: s[1], text: s[2] })),
+      editionCount: L.length + " editions",
+      storyCount: rows.length + " grounded stories",
+      feedRows: [
+        { label: "Podcast \u0026 RSS feed", url: FEEDS.rss, key: "rss" },
+        { label: "The site", url: FEEDS.site, key: "site" },
+        { label: "Podcast artwork", url: FEEDS.art, key: "art" }
+      ].map(r => ({
+        label: r.label, url: r.url,
+        copyLabel: st.copied === r.key ? "Copied" : "Copy",
+        copy: () => this.copy(r.key, r.url),
+        copyStyle: {
+          flex: "none", minHeight: 34, display: "flex", alignItems: "center", padding: "0 12px", cursor: "pointer",
+          fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 12,
+          border: "1px solid " + (st.copied === r.key ? c["--c-oxide"] : c["--c-rule"]),
+          background: st.copied === r.key ? c["--c-oxide"] : c["--c-paper"],
+          color: st.copied === r.key ? "#F6F4EE" : c["--c-oxide"],
+          transition: "background .16s ease, color .16s ease, border-color .16s ease"
+        }
+      })),
+      apps: [
+        { name: "Apple Podcasts", href: "podcast://aryanzodge123.github.io/norms-newsletter/feed.xml", hint: "podcast://" },
+        { name: "Overcast", href: "overcast://x-callback-url/add?url=" + encodeURIComponent("https://aryanzodge123.github.io/norms-newsletter/feed.xml"), hint: "overcast://" },
+        { name: "Pocket Casts", href: "pktc://subscribe/aryanzodge123.github.io/norms-newsletter/feed.xml", hint: "pktc://" }
+      ],
+      isNsTopics: st.tab === "more" && !isReader && st.moreView === "nstopics",
+      isNsSettings: st.tab === "more" && !isReader && st.moreView === "nsset",
+      openNsTopics: () => this.go({ moreView: "nstopics" }),
+      openNsSettings: () => this.go({ moreView: "nsset" }),
+      isNsAdd: st.tab === "more" && !isReader && st.moreView === "nsadd",
+      openNsAdd: () => this.go({ moreView: "nsadd" }),
+      closeNsAdd: () => this.go({ moreView: "nstopics" }),
+      isTextSize: st.tab === "more" && !isReader && st.moreView === "text",
+      openTextSize: () => this.go({ moreView: "text" }),
+      closeTextSize: () => this.go({ moreView: null }),
+      resetSizes: () => this.setState({ hs: 1, bs: 1 }),
+      textSizeLabel: SZ[st.bs],
+      hLabel: SZ[st.hs],
+      bLabel: SZ[st.bs],
+      hSteps: [0, 1, 2].map(i => ({ pick: () => this.setState({ hs: i }), hit: hit(), dot: dot(i === st.hs, c) })),
+      bSteps: [0, 1, 2].map(i => ({ pick: () => this.setState({ bs: i }), hit: hit(), dot: dot(i === st.bs, c) })),
+      zoomWrap: { zoom: BSCALE[st.bs] },
+      pvKicker: { fontFamily: "'IBM Plex Mono', monospace", fontSize: 11 * BSCALE[st.bs], color: c["--c-muted"], display: "block" },
+      pvHead: { fontFamily: "Newsreader, Georgia, serif", fontWeight: 500, fontSize: 25 * HSCALE[st.hs], lineHeight: 1.22, letterSpacing: "-.01em", color: c["--c-ink"], margin: "7px 0 9px", textWrap: "pretty" },
+      pvBody: { fontFamily: "'IBM Plex Sans', sans-serif", fontSize: 14 * BSCALE[st.bs], lineHeight: 1.6, color: c["--c-inks"], margin: "0 0 10px", textWrap: "pretty" },
+      pvMeta: { fontFamily: "'IBM Plex Mono', monospace", fontSize: 11.5 * BSCALE[st.bs], color: c["--c-muted"], display: "block" },
+      headlineStyle: { fontFamily: "Newsreader, Georgia, serif", fontWeight: 500, fontSize: 31 * HSCALE[st.hs], lineHeight: 1.24, letterSpacing: "-.01em", color: c["--c-ink"], margin: "7px 0 0", textWrap: "pretty" },
+      readerTitleStyle: { fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 22 * HSCALE[st.hs], lineHeight: 1.3, color: c["--c-ink"], margin: "0 0 8px", textWrap: "pretty" },
+      isReader, sheetOpen,
+      showTopBar: !isReader,
+      showReaderBar: isReader,
+      story,
+      nextTitle: st.si !== null && all[st.si + 1] ? all[st.si + 1].title : "Back to the brief",
+      nextStory: () => { if (all[st.si + 1]) { goTo(st.si + 1, -1); this.top(); } else { this.setState(s => s.retList ? { si: null, edView: false, retList: false } : { si: null }); this.top(); } },
+      readerPos: st.si !== null ? (st.si + 1) + " of " + all.length : "",
+      pips: all.map((a, i) => ({
+        style: {
+          display: "block", flex: 1, height: 2,
+          background: i === st.si ? c["--c-oxide"] : c["--c-rulef"]
+        }
+      })),
+      readerStyle: {
+        padding: "22px 0 8px",
+        touchAction: "pan-y",
+        animation: st.rAnim ? (RANIM[this.props.readerAnim] || RANIM.push) : "none",
+        transformOrigin: "top center",
+        transform: "translateX(" + st.dx + "px)",
+        opacity: Math.max(0.25, 1 - Math.abs(st.dx) / 420),
+        transition: st.drag ? "none" : "transform .2s cubic-bezier(.22,.61,.36,1), opacity .2s ease"
+      },
+      swipeDown: (e) => {
+        if (e.pointerType === "mouse" && e.buttons !== 1) return;
+        this._cap = null;
+        this.setState({ drag: true, x0: e.clientX, y0: e.clientY, dx: 0, axis: null });
+      },
+      swipeMove: (e) => {
+        const s = this.state;
+        if (!s.drag) return;
+        const dx = e.clientX - s.x0, dy = e.clientY - s.y0;
+        let axis = s.axis;
+        if (!axis) {
+          if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+          axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+          this.setState({ axis });
+        }
+        if (axis !== "x") return;
+        if (!this._cap) {
+          try { e.currentTarget.setPointerCapture(e.pointerId); this._cap = e.pointerId; } catch (err) {}
+        }
+        const atEdge = (dx > 0 && s.si === 0) || (dx < 0 && s.si === all.length - 1);
+        this.setState({ dx: atEdge ? dx * 0.25 : dx });
+      },
+      swipeUp: () => { this._cap = null; if (this._commit) this._commit(); },
+      closeStory: () => { this.setState(s => s.retList ? { si: null, edView: false, retList: false } : { si: null }); this.top(); },
+      playing: st.playing || st.t > 0,
+      togglePlay: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.setState(s => ({ playing: !s.playing })); },
+      openFromToday: () => this.showPlayer(),
+      miniPlayDown: (e) => { if (e.stopPropagation) e.stopPropagation(); this._skipTap = true; },
+      miniPlay: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this._skipTap = true; this.setState(s => ({ playing: !s.playing })); },
+      audioLabel: (function (noun) {
+        return st.playing ? "Playing " + noun : (st.t > 0 ? "Paused \u2014 " + noun : "Listen to " + noun);
+      })(st.edView ? "the " + cur.short + " brief" : "today's brief"),
+      glanceHeading: st.edView ? "At a glance" : "Today at a glance",
+      audioRight: st.t > 0 ? mmss(dur - st.t) + " left" : "Play",
+      playGlyphStyle: st.playing ? bars : tri,
+      miniGlyphStyle: st.playing
+        ? { display: "block", width: 11, height: 14, borderLeft: "3.5px solid " + c["--c-oxide"], borderRight: "3.5px solid " + c["--c-oxide"] }
+        : { width: 0, height: 0, borderLeft: "12px solid " + c["--c-oxide"], borderTop: "8px solid transparent", borderBottom: "8px solid transparent", display: "block" },
+      bigPlayStyle: st.playing
+        ? { display: "block", width: 18, height: 24, borderLeft: "6px solid " + c["--c-oxide"], borderRight: "6px solid " + c["--c-oxide"] }
+        : { width: 0, height: 0, borderLeft: "22px solid " + c["--c-oxide"], borderTop: "14px solid transparent", borderBottom: "14px solid transparent", display: "block", marginLeft: 5 },
+      miniBarStyle: { display: "block", width: pct + "%", height: 2, background: c["--c-oxide"] },
+      scrollRef: (el) => { this._scroller = el; },
+      webOpen: !!st.web,
+      webHost: st.web ? st.web.host : "",
+      webUrl: st.web ? st.web.url : "",
+      webTitle: st.web ? st.web.title : "",
+      webSource: st.web ? (st.web.source || st.web.host) : "",
+      webLoading: st.webLoading,
+      webReady: !!st.web && !st.webLoading,
+      webBarStyle: {
+        display: "block", height: 2, width: st.webPct + "%",
+        background: c["--c-oxide"], opacity: st.webLoading ? 1 : 0,
+        transition: "width .16s linear, opacity .3s ease .1s"
+      },
+      webPane: {
+        position: "absolute", left: 0, right: 0, top: 44, bottom: 0, zIndex: 80, display: "flex", flexDirection: "column",
+        background: c["--c-paper"], borderTop: "1px solid " + c["--c-rule"],
+        animation: st.webAnim ? "bPush .3s cubic-bezier(.2,.8,.28,1) both" : "none"
+      },
+      webCloseAll: () => this.closeWeb(),
+      webBackTap: () => this.webBack(),
+      webReload: () => this.reloadWeb(),
+      webCanForward: false,
+      webBody: GREEK.map((t, i) => ({ text: t, first: i === 0 })),
+      webSkeleton: [82, 96, 70, 90, 64, 88, 74].map((w, i) => ({
+        style: {
+          display: "block", height: 12, width: w + "%", background: c["--c-rulef"],
+          marginBottom: 12, animation: "thinkPulse 1.1s ease-in-out infinite", animationDelay: (i * 90) + "ms"
+        }
+      })),
+      scrubStyle: { position: "absolute", left: 0, top: 0, height: 3, width: pct + "%", background: c["--c-oxide"] },
+      elapsed: mmss(st.t),
+      remaining: mmss(Math.max(0, dur - st.t)),
+      back15: () => this.setState(s => ({ t: Math.max(0, s.t - 15) })),
+      fwd15: () => this.setState(s => ({ t: Math.min(dur, s.t + 30) })),
+      speeds: [1, 1.25, 1.5, 2].map(r => ({
+        label: r + "\u00D7", set: () => this.setState({ rate: r }),
+        style: {
+          padding: "7px 13px", cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", fontSize: 12,
+          border: "1px solid " + (st.rate === r ? c["--c-oxide"] : c["--c-rule"]),
+          color: st.rate === r ? c["--c-oxide"] : c["--c-muted"],
+          background: st.rate === r ? c["--c-raised"] : "transparent"
+        }
+      })),
+      toggleNotif: () => this.setState(s => ({ notif: !s.notif })),
+      toggleDl: () => this.setState(s => ({ dl: !s.dl })),
+      toggleTheme: () => this.setState(s => ({ dark: !s.dark })),
+      notifSwitch: this.sw(st.notif), notifKnob: this.knob(),
+      dlSwitch: this.sw(st.dl), dlKnob: this.knob(),
+      themeSwitch: this.sw(dark), themeKnob: this.knob()
+    };
+  }
+}
+</script>
+</body>
+</html>

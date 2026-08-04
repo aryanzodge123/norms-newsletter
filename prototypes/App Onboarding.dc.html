@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEEBE2;font-family:'IBM Plex Sans',system-ui,sans-serif}
+a{color:#3F6A50;text-decoration:none}
+a:hover{text-decoration:underline}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 18px}
+.dv-tid{font:500 10px 'IBM Plex Mono',monospace;padding:3px 7px;background:#23231F;color:#F6F4EE;border-radius:4px;text-decoration:none}
+.dv-tname{font:500 13px/1.2 'IBM Plex Sans',sans-serif;color:#23231F}
+.dv-note{margin:0 0 24px;max-width:780px;font:13px/1.7 'IBM Plex Sans',sans-serif;color:#44433C}
+.dv-opts{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px;width:402px}
+.dv-oid{font:500 10.5px 'IBM Plex Mono',monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#23231F;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11.5px/1.35 'IBM Plex Sans',sans-serif;color:rgba(0,0,0,.55)}
+.dv-opt:target .dv-oid{background:#3F6A50;color:#fff}
+@keyframes bfloat{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-7px) rotate(-.6deg)}}
+@keyframes bpulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.5)}}
+@keyframes bnotif{0%{transform:translateY(-16px);opacity:0}10%{transform:translateY(0);opacity:1}78%{transform:translateY(0);opacity:1}92%,100%{transform:translateY(-16px);opacity:0}}
+@keyframes bin{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes bsweep{0%{transform:translateX(-100%)}100%{transform:translateX(220%)}}
+@keyframes dup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes ddn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@keyframes dlt{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+@keyframes drt{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
+@keyframes dpop{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:none}}
+@keyframes dtype{from{max-width:0}to{max-width:100%}}
+@keyframes dgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dblink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.dv-replay{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.18);background:rgba(255,255,255,.5);color:#23231F;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:999px;cursor:pointer;user-select:none}
+.dv-replay:hover{background:#23231F;color:#F6F4EE;border-color:#23231F}
+@keyframes wfeed{from{opacity:0;transform:translateY(64px) rotate(.8deg)}to{opacity:1;transform:none}}
+@keyframes wreg1{0%{opacity:0}12%{opacity:.75}100%{opacity:0;transform:none}0%,12%{transform:translate(-9px,-5px)}}
+@keyframes wreg2{0%{opacity:0}12%{opacity:.75}100%{opacity:0;transform:none}0%,12%{transform:translate(8px,4px)}}
+@keyframes wset{from{opacity:0;transform:translateY(7px);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}
+@keyframes wrule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes wgloss{0%{transform:translateX(-120%) skewX(-14deg)}55%,100%{transform:translateX(260%) skewX(-14deg)}}
+@keyframes wgloss2{0%{opacity:0;transform:translateX(-120%) skewX(-14deg)}14%{opacity:1}44%{opacity:1}55%,100%{opacity:0;transform:translateX(260%) skewX(-14deg)}}
+@keyframes wdawn{from{opacity:0;transform:translateY(30px) scaleY(.7)}to{opacity:1;transform:none}}
+@keyframes wsnap{from{opacity:0;letter-spacing:.4em}to{opacity:1;letter-spacing:.12em}}
+@keyframes wmark{from{transform:translateY(0)}to{transform:translateY(var(--wtravel,180px))}}
+@keyframes wcross{from{opacity:0;transform:scale(.4) rotate(-25deg)}to{opacity:.9;transform:none}}
+@keyframes wroll{from{background-position:0 0}to{background-position:0 -22px}}
+@keyframes wword{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes wbreathe{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.35);opacity:1}}
+@keyframes wtscrim{from{opacity:0}to{opacity:1}}
+@keyframes wtpop{from{opacity:0;transform:translate(var(--wtdx,0px),var(--wtdy,0px)) scale(.42)}to{opacity:1;transform:translate(0,0) scale(1)}}
+</style>
+</helmet>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ isDark }}" hint-size="402px,874px">
+<div style="{{ vars }}">
+<div style="position:relative;width:100%;height:874px;overflow:hidden;background:var(--c-paperw,#F7F4EA);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+
+<div style="{{ F.s0 }}">
+<div key="{{ F.kI0 }}" style="flex:1;position:relative;display:flex;flex-direction:column">
+<span style="position:absolute;top:46px;left:16px;width:15px;height:15px;background:linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/1px 100% no-repeat,linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/100% 1px no-repeat;animation:wcross .45s cubic-bezier(.2,1.2,.3,1) 0.05s both"></span>
+<span style="position:absolute;top:46px;right:16px;width:15px;height:15px;background:linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/1px 100% no-repeat,linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/100% 1px no-repeat;animation:wcross .45s cubic-bezier(.2,1.2,.3,1) 0.13s both"></span>
+<span style="position:absolute;bottom:132px;left:16px;width:15px;height:15px;background:linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/1px 100% no-repeat,linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/100% 1px no-repeat;animation:wcross .45s cubic-bezier(.2,1.2,.3,1) 0.21s both"></span>
+<span style="position:absolute;bottom:132px;right:16px;width:15px;height:15px;background:linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/1px 100% no-repeat,linear-gradient(var(--c-oxide,#3F6A50),var(--c-oxide,#3F6A50)) center/100% 1px no-repeat;animation:wcross .45s cubic-bezier(.2,1.2,.3,1) 0.29s both"></span>
+<div style="padding:70px 40px 0;display:flex;align-items:center;justify-content:center;gap:8px;animation:wset .5s ease-out .1s both">
+<span style="width:5px;height:5px;border-radius:50%;background:var(--c-clay,#8A4B2A);animation:wbreathe 2.4s ease-in-out infinite"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-clay,#8A4B2A)">On press &#183; No. 056</span>
+</div>
+<div style="position:relative;margin:26px 26px 0;text-align:center">
+<span style="position:absolute;inset:0;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:31px;line-height:1.05;letter-spacing:-.01em;color:var(--c-clay,#8A4B2A);animation:wreg1 1.15s cubic-bezier(.2,.85,.25,1) .1s both;pointer-events:none">Norm&#8217;s<br>Newsletter</span>
+<span style="position:absolute;inset:0;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:31px;line-height:1.05;letter-spacing:-.01em;color:var(--c-oxide,#3F6A50);animation:wreg2 1.15s cubic-bezier(.2,.85,.25,1) .1s both;pointer-events:none">Norm&#8217;s<br>Newsletter</span>
+<span style="position:relative;display:block;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:31px;line-height:1.05;letter-spacing:-.01em;color:var(--c-ink,#23231F);animation:wset .5s ease-out .55s both">Norm&#8217;s<br>Newsletter</span>
+<div style="height:1px;background:var(--c-ink,#23231F);margin:16px auto 0;transform-origin:center;animation:wrule .7s cubic-bezier(.3,.9,.2,1) .9s both"></div>
+</div>
+<div style="flex:1;display:flex;align-items:center;padding:0 26px">
+<div style="width:100%;border:1px solid var(--c-rule,#DDD9CC);border-top:3px solid var(--c-ink,#23231F);background:var(--c-raisedw,#FCF9F1);box-shadow:0 20px 44px var(--c-shadow,rgba(35,35,31,.12));padding:26px 22px 24px;position:relative;overflow:hidden;animation:wfeed .85s cubic-bezier(.2,.9,.25,1) 1s both">
+<div style="position:absolute;top:0;bottom:0;left:0;width:46%;background:linear-gradient(90deg,rgba(255,255,255,0),var(--c-sweep,rgba(255,255,255,.55)),rgba(255,255,255,0));animation:wgloss2 2.6s ease-out 1.5s both;pointer-events:none"></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:34px;line-height:1.1;letter-spacing:-.022em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty;animation:wset .6s ease-out 1.35s both">A paper, printed for one.</h1>
+<p style="font-size:14.5px;line-height:1.62;color:var(--c-inks,#44433C);margin:14px 0 0;text-wrap:pretty;animation:wset .6s ease-out 1.5s both">Skip the noise of the wires. Build your newsletter with the top stories you follow, explained from the ground up.</p>
+<div style="height:1px;background:var(--c-rule,#DDD9CC);margin:20px 0 0;transform-origin:left;animation:wrule .6s ease-out 1.7s both"></div>
+<div style="display:flex;flex-direction:column;gap:11px;padding-top:14px">
+<div style="display:flex;gap:10px;align-items:baseline;animation:wset .5s ease-out 1.85s both">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);width:62px;flex:none">Politics</span>
+<span style="font-family:Newsreader,Georgia,serif;font-size:14px;line-height:1.35;color:var(--c-inks,#44433C);flex:1">US sanctions two Iranian firms over a Bitcoin shipping-insurance scheme</span>
+</div>
+<div style="display:flex;gap:10px;align-items:baseline;animation:wset .5s ease-out 2s both">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);width:62px;flex:none">AI</span>
+<span style="font-family:Newsreader,Georgia,serif;font-size:14px;line-height:1.35;color:var(--c-inks,#44433C);flex:1">DeepMind disbands the AlphaFold team and moves it onto Gemini</span>
+</div>
+<div style="display:flex;gap:10px;align-items:baseline;animation:wset .5s ease-out 2.15s both">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);width:62px;flex:none">World</span>
+<span style="font-family:Newsreader,Georgia,serif;font-size:14px;line-height:1.35;color:var(--c-inks,#44433C);flex:1">Trump calls off the Iran strikes, demanding a Hormuz deal in days</span>
+</div>
+</div>
+</div>
+</div>
+<div style="padding:0 26px 36px">
+<div style="height:10px;margin-bottom:14px;opacity:.5;background:repeating-linear-gradient(45deg,var(--c-rule,#DDD9CC) 0 1px,transparent 1px 7px);animation:wroll 1.1s linear infinite"></div>
+<div onClick="{{ F.introNext }}" style="min-height:54px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer;transition:transform .12s ease;animation:wset .5s ease-out 2.3s both" style-active="transform:scale(.985)">Next</div>
+<div style="display:flex;justify-content:center;gap:6px;padding-top:16px;animation:wset .5s ease-out 2.4s both">
+<sc-for list="{{ F.iDots }}" as="d" hint-placeholder-count="3"><span style="{{ d.style }}"></span></sc-for>
+</div>
+</div>
+</div>
+</div>
+
+<div style="{{ F.sI1 }}">
+<div key="{{ F.kI1 }}" style="flex:1;display:flex;flex-direction:column">
+<div style="padding:64px 26px 0;display:flex;align-items:center;gap:8px;animation:wset .5s ease-out .05s both">
+<span style="width:5px;height:5px;border-radius:50%;background:var(--c-oxide,#3F6A50);animation:wbreathe 2.2s ease-in-out infinite"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);animation:wsnap .7s ease-out .1s both">The wire is open</span>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--c-faint,#9A968A)">03:12 ET</span>
+</div>
+<div style="padding:22px 26px 0">
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:37px;line-height:1.08;letter-spacing:-.025em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty;animation:wset .65s ease-out .2s both">Your edition is being written right now.</h1>
+<p style="font-size:14.5px;line-height:1.62;color:var(--c-inks,#44433C);margin:14px 0 0;max-width:33ch;text-wrap:pretty;animation:wset .6s ease-out .38s both">Stories are curated and ranked from across the web. We filter the noise so you get only the best ones.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--c-rule,#DDD9CC);margin:26px 26px 0;border:1px solid var(--c-rule,#DDD9CC);animation:wset .6s ease-out .5s both">
+<div style="background:var(--c-raisedw,#FCF9F1);padding:16px 12px 14px">
+<span style="display:block;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:34px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F);font-variant-numeric:tabular-nums">{{ F.nGSources }}</span>
+<span style="display:block;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62)">Sources</span>
+</div>
+<div style="background:var(--c-raisedw,#FCF9F1);padding:16px 12px 14px">
+<span style="display:block;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:34px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F);font-variant-numeric:tabular-nums">{{ F.nGTopics }}</span>
+<span style="display:block;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62)">Topics</span>
+</div>
+<div style="background:var(--c-raisedw,#FCF9F1);padding:16px 12px 14px">
+<span style="display:block;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:34px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F);font-variant-numeric:tabular-nums">{{ F.nGMins }}</span>
+<span style="display:block;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62)">Minutes to read</span>
+</div>
+</div>
+<div style="flex:1;padding:24px 26px 0;overflow:hidden">
+<div style="border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-oxide,#3F6A50);background:var(--c-raised,#FBFAF6);padding:16px 18px;animation:wset .55s cubic-bezier(.2,.9,.3,1) .7s both">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Today at a glance</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">60-second read</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0;animation:wset .5s ease-out .95s both">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">01</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-ink2,#2E2D27);text-wrap:pretty">Trump canceled planned Iran strikes but demands a deal to open the Strait of Hormuz within days.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> World</span></span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0;animation:wset .5s ease-out 1.15s both">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">02</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-ink2,#2E2D27);text-wrap:pretty">Russia sent military vehicles to Mali on a ship under international sanctions.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> World</span></span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0;animation:wset .5s ease-out 1.35s both">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">03</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-ink2,#2E2D27);text-wrap:pretty">DeepMind shut down its AlphaFold team to focus on its Gemini project.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> AI</span></span>
+</div>
+</div>
+</div>
+<div style="padding:16px 26px 36px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<div onClick="{{ F.next }}" style="min-height:54px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer;transition:transform .12s ease;animation:wset .5s ease-out 1.95s both" style-active="transform:scale(.985)">Next</div>
+<div style="display:flex;justify-content:center;gap:6px;padding-top:16px;animation:wset .5s ease-out 2.05s both">
+<sc-for list="{{ F.iDots }}" as="d" hint-placeholder-count="3"><span style="{{ d.style }}"></span></sc-for>
+</div>
+</div>
+</div>
+</div>
+
+<div style="{{ F.sI2 }}">
+<div key="{{ F.kI2 }}" style="flex:1;position:relative;display:flex;flex-direction:column">
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(35,35,31,.028) 0 1px,rgba(0,0,0,0) 1px 3px);pointer-events:none;mix-blend-mode:multiply"></div>
+<div style="position:relative;padding:62px 26px 0;animation:wset .5s ease-out .05s both">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--c-ink,#23231F);padding-bottom:9px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink,#23231F)">Norm&#8217;s Newsletter</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-muted,#6B6A62)">Est. 2025</span>
+</div>
+</div>
+<div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 26px;overflow:hidden">
+<div style="position:absolute;top:0;bottom:0;left:0;width:38%;background:linear-gradient(90deg,rgba(255,255,255,0),var(--c-sweep,rgba(255,255,255,.85)),rgba(255,255,255,0));animation:wgloss2 3s cubic-bezier(.35,.1,.3,1) 1.1s both;pointer-events:none"></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:64px;line-height:.95;letter-spacing:-.04em;color:var(--c-ink,#23231F);margin:0">
+<span style="display:block;animation:wword .7s cubic-bezier(.2,.9,.25,1) .25s both">Read</span>
+<span style="display:block;animation:wword .7s cubic-bezier(.2,.9,.25,1) .42s both">less.</span>
+<span style="display:block;color:var(--c-oxide,#3F6A50);animation:wword .7s cubic-bezier(.2,.9,.25,1) .68s both">Miss</span>
+<span style="display:block;color:var(--c-oxide,#3F6A50);animation:wword .7s cubic-bezier(.2,.9,.25,1) .85s both">nothing.</span>
+</h1>
+<div style="height:2px;background:var(--c-ink,#23231F);margin:26px 0 0;transform-origin:left;animation:wrule .8s cubic-bezier(.3,.9,.2,1) 1.15s both"></div>
+<p style="font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.42;color:var(--c-inks,#44433C);margin:20px 0 0;max-width:29ch;text-wrap:pretty;animation:wset .7s ease-out 1.3s both">Don&#8217;t worry about how it reads. Every story is built from no prior knowledge up to the point where you are informed &#8212; background, what happened, why it matters. All you do is tell us the topics you want to keep up with.</p>
+</div>
+<div style="position:relative;padding:0 26px 36px">
+<div onClick="{{ F.next }}" style="min-height:54px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer;transition:transform .12s ease;animation:wset .5s ease-out 1.65s both" style-active="transform:scale(.985)">Build my edition</div>
+<div style="display:flex;justify-content:center;gap:6px;padding-top:16px;animation:wset .5s ease-out 1.75s both">
+<sc-for list="{{ F.iDots }}" as="d" hint-placeholder-count="3"><span style="{{ d.style }}"></span></sc-for>
+</div>
+</div>
+</div>
+</div>
+
+<div style="{{ F.sName }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:56px 20px 0;min-height:44px">
+<div onClick="{{ F.back }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;font-size:16px;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ F.dotsName }}" as="d" hint-placeholder-count="5"><span style="{{ d.style }}"></span></sc-for>
+</div>
+<div style="min-width:44px"></div>
+</div>
+<div style="flex:1;overflow:auto;padding:20px 24px 8px">
+<div style="{{ F.rNa }}">
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:27px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty">Whose paper is this?</h2>
+<p style="font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:9px 0 0;text-wrap:pretty">Your name goes on the masthead &#8212; nowhere else, and nobody else sees it.</p>
+</div>
+<div style="{{ F.rNb }}">
+<div style="margin-top:26px;border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-ink,#23231F);background:var(--c-raisedw,#FCF9F1);padding:22px 18px 20px;text-align:center;box-shadow:0 12px 26px var(--c-shadow,rgba(35,35,31,.12))">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ F.title }}</span>
+<div style="border-top:1px solid var(--c-rule,#DDD9CC);margin:11px 0"></div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">Sunday, August 2, 2026 &#183; No. 056</span>
+</div>
+<div style="margin-top:28px">
+<label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted,#6B6A62)">First name</label>
+<input type="text" value="{{ F.name }}" onChange="{{ F.setName }}" placeholder="Norm" maxlength="18" style="width:100%;box-sizing:border-box;margin-top:8px;background:transparent;border:none;border-bottom:1px solid var(--c-rule,#DDD9CC);padding:8px 2px 10px;font-family:Newsreader,Georgia,serif;font-size:26px;color:var(--c-ink,#23231F);outline:none">
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:12px 0 0">Change it any time in Settings.</p>
+</div>
+</div>
+</div>
+<div style="padding:14px 24px 34px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<div onClick="{{ F.next }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer">{{ F.nameCta }}</div>
+</div>
+</div>
+
+<div style="{{ F.s1 }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:56px 20px 0;min-height:44px">
+<div onClick="{{ F.back }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;font-size:16px;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ F.dots }}" as="d" hint-placeholder-count="5"><span style="{{ d.style }}"></span></sc-for>
+</div>
+<div style="min-width:44px"></div>
+</div>
+
+<div style="{{ F.r1a }}">
+<div style="padding:16px 24px 0">
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:27px;line-height:1.18;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty">Set your front page.</h2>
+<p style="font-size:13.5px;line-height:1.55;color:var(--c-inks,#44433C);margin:8px 0 0;text-wrap:pretty">Tap a section to say how much of it you want. Three or more &#8212; in the order you add them.</p>
+</div>
+<div style="margin:14px 20px 0;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raisedw,#FCF9F1);padding:13px 14px 12px;min-height:132px;position:relative;overflow:hidden">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--c-rule,#DDD9CC);padding-bottom:7px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">Your No. 056</span>
+<span style="{{ F.counter }}">{{ F.counterText }}</span>
+</div>
+<sc-if value="{{ F.previewEmpty }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;gap:8px;padding:14px 0 12px">
+<div style="height:7px;border:1px dashed var(--c-rule,#DDD9CC);width:74%"></div>
+<div style="height:7px;border:1px dashed var(--c-rule,#DDD9CC);width:58%"></div>
+<div style="height:7px;border:1px dashed var(--c-rule,#DDD9CC);width:66%"></div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-faint,#9A968A);margin-top:2px">Empty for now &#8212; pick a section below</span>
+</div>
+</sc-if>
+<div style="display:flex;flex-direction:column;gap:9px;padding:11px 0 2px">
+<sc-for list="{{ F.previewItems }}" as="pv" hint-placeholder-count="0">
+<div style="display:flex;align-items:center;gap:9px;animation:bin .4s cubic-bezier(.22,.9,.3,1) both">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);width:76px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ pv.name }}</span>
+<span style="flex:1;display:flex;flex-direction:column;gap:3px">
+<span style="{{ pv.l1 }}"></span>
+<span style="{{ pv.l2 }}"></span>
+</span>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ F.hasMore }}" hint-placeholder-val="{{ false }}">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ F.previewMore }}</span>
+</sc-if>
+</div>
+</div>
+
+<div style="flex:1;overflow:auto;padding:16px 20px 8px">
+<div style="{{ F.r1b }}">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+<sc-for list="{{ F.topics }}" as="t" hint-placeholder-count="12">
+<div onClick="{{ t.toggle }}" style="{{ t.card }}">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px">
+<span style="{{ t.num }}">{{ t.index }}</span>
+<span style="{{ t.check }}">&#10003;</span>
+</div>
+<span style="{{ t.label }}">{{ t.name }}</span>
+<span style="{{ t.count }}">{{ t.metaText }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="padding:12px 24px 34px;border-top:1px solid var(--c-rulef,#E8E5DA);background:var(--c-paperw,#F7F4EA)">
+<div style="height:2px;background:var(--c-rulef,#E8E5DA);margin-bottom:12px;overflow:hidden">
+<div style="{{ F.meter }}"></div>
+</div>
+<div onClick="{{ F.next }}" style="{{ F.cta }}">{{ F.ctaLabel }}</div>
+</div>
+
+<sc-if value="{{ F.wtOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:0 18px">
+<div onClick="{{ F.wtDismiss }}" style="position:absolute;inset:0;background:rgba(23,23,19,.44);animation:wtscrim .24s ease both"></div>
+<div style="{{ F.wtOrigin }}">
+<div style="position:relative;box-sizing:border-box;width:100%;max-height:660px;overflow:auto;background:var(--c-raisedw,#FCF9F1);border:1px solid var(--c-ink,#23231F);box-shadow:0 24px 56px var(--c-shadow,rgba(35,35,31,.12));padding:16px 20px 20px">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--c-rule,#DDD9CC);padding-bottom:9px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ F.wtName }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ F.wtMeta }}</span>
+</div>
+<h3 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:25px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:13px 0 0;text-wrap:pretty">How much {{ F.wtName }} do you want?</h3>
+<p style="font-size:13px;line-height:1.55;color:var(--c-inks,#44433C);margin:7px 0 0;text-wrap:pretty">One means only when it&#8217;s big enough to lead. Ten means keep me current.</p>
+<div style="margin-top:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:50px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F)">{{ F.wtVal }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">of 10</span>
+</div>
+<span style="{{ F.wtBandStyle }}">{{ F.wtBand }}</span>
+</div>
+<div onPointerDown="{{ F.wtDown }}" onPointerMove="{{ F.wtMove }}" style="margin-top:12px;position:relative;height:44px;cursor:grab;touch-action:none;user-select:none">
+<div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--c-rule,#DDD9CC)"></div>
+<sc-for list="{{ F.wtTicks }}" as="tk" hint-placeholder-count="10"><span style="{{ tk.style }}"></span></sc-for>
+<div style="{{ F.wtFill }}"></div>
+<div style="{{ F.wtMark }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)">
+<span>Nice to have</span><span>Keep me current</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:16px 0 0;min-height:38px;text-wrap:pretty">{{ F.wtNote }}</p>
+<div style="margin-top:6px;display:flex;flex-direction:column;gap:8px">
+<div onClick="{{ F.wtSave }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;cursor:pointer">{{ F.wtCta }}</div>
+<div onClick="{{ F.wtSecondAct }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-muted,#6B6A62);cursor:pointer">{{ F.wtSecond }}</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+
+<div style="{{ F.s2 }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:56px 20px 0;min-height:44px">
+<div onClick="{{ F.back }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;font-size:16px;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ F.dots2 }}" as="d" hint-placeholder-count="5"><span style="{{ d.style }}"></span></sc-for>
+</div>
+<div onClick="{{ F.next }}" style="{{ F.skipStyle }}">Skip</div>
+</div>
+<div style="flex:1;overflow:auto;padding:20px 24px 8px">
+<div style="{{ F.r2a }}">
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:27px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty">When should it land?</h2>
+<p style="font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:9px 0 0;text-wrap:pretty">The edition is written overnight. Drag to the moment you actually read.</p>
+<div style="margin-top:34px;text-align:center">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:56px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F)">{{ F.time }}</span>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);margin:10px 0 0">{{ F.timeNote }}</p>
+</div>
+</div>
+<div style="{{ F.r2b }}">
+<div onPointerDown="{{ F.slideDown }}" onPointerMove="{{ F.slideMove }}" style="margin-top:30px;position:relative;height:44px;cursor:grab;touch-action:none;user-select:none">
+<div style="position:absolute;left:0;right:0;top:21px;height:2px;background:var(--c-rule,#DDD9CC)"></div>
+<div style="{{ F.timeFill }}"></div>
+<div style="{{ F.timeMark }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-faint,#9A968A)">
+<span>5 am</span><span>12 pm</span><span>8 pm</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:22px 0 0">We&#8217;ll match your phone&#8217;s timezone.</p>
+</div>
+</div>
+<div style="padding:14px 24px 34px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<div onClick="{{ F.next }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer">Continue</div>
+</div>
+</div>
+
+<div style="{{ F.s3 }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:56px 20px 0;min-height:44px">
+<div onClick="{{ F.back }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;font-size:16px;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ F.dots3 }}" as="d" hint-placeholder-count="5"><span style="{{ d.style }}"></span></sc-for>
+</div>
+<div onClick="{{ F.next }}" style="{{ F.skipStyle }}">Skip</div>
+</div>
+<div style="flex:1;overflow:auto;padding:20px 24px 8px">
+<div style="{{ F.r3a }}">
+<div style="height:96px;display:flex;align-items:flex-start;justify-content:center;overflow:hidden">
+<div key="{{ F.nKey }}" style="width:100%;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raisedw,#FCF9F1);padding:13px 14px 12px;box-shadow:0 10px 24px var(--c-shadow,rgba(35,35,31,.12));animation:bnotif 5.4s cubic-bezier(.22,.9,.3,1) infinite">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;color:var(--c-ink,#23231F)">{{ F.title }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ F.time }}</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-size:14.5px;line-height:1.38;color:var(--c-ink,#23231F);margin:7px 0 0;text-wrap:pretty">{{ F.notifText }}</p>
+</div>
+</div>
+</div>
+<div style="{{ F.r3b }}">
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:27px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:20px 0 0;text-wrap:pretty">One nudge a day, at {{ F.time }}.</h2>
+<p style="font-size:14.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:10px 0 0;text-wrap:pretty">That&#8217;s the whole deal. No breaking-news alerts, no re-engagement pokes, no evening reminder that you haven&#8217;t read yet.</p>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:14px 0 0">You can turn this off any time in Settings.</p>
+</div>
+</div>
+<div style="padding:14px 24px 34px;border-top:1px solid var(--c-rulef,#E8E5DA);display:flex;flex-direction:column;gap:10px">
+<div onClick="{{ F.askPerm }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-oxide,#3F6A50);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer">Turn on the daily nudge</div>
+<div onClick="{{ F.next }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--c-muted,#6B6A62);cursor:pointer">Not now</div>
+</div>
+</div>
+
+<div style="{{ F.s4 }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:56px 20px 0;min-height:44px">
+<div onClick="{{ F.back }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;font-size:16px;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ F.dots4 }}" as="d" hint-placeholder-count="5"><span style="{{ d.style }}"></span></sc-for>
+</div>
+<div style="min-width:44px"></div>
+</div>
+<div style="flex:1;overflow:auto;padding:22px 24px 8px">
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:28px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty">Keep your edition across devices?</h2>
+<p style="font-size:14.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:10px 0 0;text-wrap:pretty">An account carries your topics, saved stories and place in the archive to the web and back. Entirely optional &#8212; the paper works without one.</p>
+<div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+<div onClick="{{ F.next }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer">
+<span style="font-size:16px;line-height:1">&#63743;</span><span>Sign in with Apple</span>
+</div>
+<div onClick="{{ F.next }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;border:1px solid var(--c-ink,#23231F);color:var(--c-ink,#23231F);font-weight:500;font-size:15px;cursor:pointer">Continue with email</div>
+</div>
+<div style="margin-top:26px;border-top:1px solid var(--c-rulef,#E8E5DA);padding-top:14px">
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.75;color:var(--c-muted,#6B6A62);margin:0">We never sell your reading history, and there are no third-party trackers in this app.</p>
+</div>
+</div>
+<div style="padding:14px 24px 34px;border-top:1px solid var(--c-rulef,#E8E5DA)">
+<div onClick="{{ F.next }}" style="min-height:48px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--c-oxide,#3F6A50);cursor:pointer">Continue without an account</div>
+</div>
+</div>
+
+<div style="{{ F.sPlan }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:56px 20px 0;min-height:44px">
+<div onClick="{{ F.back }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;font-size:16px;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ F.dotsPlan }}" as="d" hint-placeholder-count="5"><span style="{{ d.style }}"></span></sc-for>
+</div>
+<div style="min-width:44px"></div>
+</div>
+<div style="flex:1;overflow:auto;padding:18px 22px 8px">
+<div style="{{ F.r6a }}">
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:27px;line-height:1.2;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty">Two ways to take the paper.</h2>
+<p style="font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:9px 0 0;text-wrap:pretty">Start free and keep the habit. Go Pro when you want it to dig.</p>
+</div>
+<div style="{{ F.r6b }}">
+<div style="margin-top:18px;border:1px solid var(--c-oxide,#3F6A50);border-top:2px solid var(--c-oxide,#3F6A50);background:var(--c-raisedw,#FCF9F1);padding:16px 16px 14px;box-shadow:0 12px 28px var(--c-shadow,rgba(35,35,31,.12))">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Pro</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-clay,#8A4B2A)">Six weeks free</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:19px;line-height:1.25;color:var(--c-ink,#23231F);margin:8px 0 0">The whole newsroom</p>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);flex:none">&#8212;</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Unlimited sources, sites and topics of your own</span></div>
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);flex:none">&#8212;</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Ask anything of your whole archive, as often as you like</span></div>
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);flex:none">&#8212;</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Create topics of your own <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--c-clay,#8A4B2A);border:1px solid var(--c-clay,#8A4B2A);padding:1px 4px;margin-left:2px;white-space:nowrap">BETA</span></span></div>
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);flex:none">&#8212;</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">The Weekly Insight &#8212; a Sunday read across the whole week, and what to watch next</span></div>
+</div>
+<div style="margin-top:14px;display:flex;gap:8px">
+<div onClick="{{ F.setMonthly }}" style="{{ F.termMonthly }}">
+<span style="{{ F.mLabel }}">Monthly</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">$9.99 / mo</span>
+</div>
+<div onClick="{{ F.setAnnual }}" style="{{ F.termYearly }}">
+<span style="{{ F.yLabel }}">Yearly</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">$100 / yr &#183; $8.33 mo</span>
+</div>
+</div>
+<div onClick="{{ F.pickPro }}" style="margin-top:12px;min-height:48px;display:flex;align-items:center;justify-content:center;background:var(--c-oxide,#3F6A50);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:14.5px;cursor:pointer">{{ F.proBtn }}</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:10px 0 0;text-align:center">Six weeks free first &#183; cancel any time</p>
+</div>
+</div><div style="{{ F.r6c }}">
+<div style="margin-top:14px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raisedw,#FCF9F1);padding:16px 16px 14px">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">Free</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">$0 forever</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:19px;line-height:1.25;color:var(--c-ink,#23231F);margin:8px 0 0">The morning habit</p>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-clay,#8A4B2A);flex:none">&#8212;</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Your top three sections lead the front page</span></div>
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-clay,#8A4B2A);flex:none">&#8212;</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">One edition a day, at the time you picked</span></div>
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-clay,#8A4B2A);flex:none">&#8212;</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Short summaries on every story</span></div>
+</div>
+<div onClick="{{ F.pickFree }}" style="margin-top:16px;min-height:48px;display:flex;align-items:center;justify-content:center;border:1px solid var(--c-ink,#23231F);color:var(--c-ink,#23231F);font-weight:500;font-size:14.5px;cursor:pointer">Start free</div>
+</div>
+</div>
+
+</div>
+
+<div style="{{ F.freeVeil }}" onClick="{{ F.closeFree }}"></div>
+<div style="{{ F.freePanel }}">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Free edition</span>
+<h3 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:25px;line-height:1.2;color:var(--c-ink,#23231F);margin:10px 0 0;text-wrap:pretty">Your three lead sections.</h3>
+<p style="font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);margin:9px 0 0;text-wrap:pretty">These are the three you ranked highest &#8212; they set the front page every morning.</p>
+<div style="margin-top:16px;border-top:1px solid var(--c-rule,#DDD9CC)">
+<sc-for list="{{ F.topRows }}" as="r" hint-placeholder-count="3">
+<div style="display:flex;align-items:center;gap:12px;padding:12px 2px;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="{{ r.num }}">{{ r.rank }}</span>
+<span style="flex:1;font-weight:500;font-size:15px;color:var(--c-ink,#23231F)">{{ r.name }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ r.meta }}</span>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ F.hasLocked }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:14px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-faint,#9A968A)">{{ F.lockedNote }}</span>
+<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">
+<sc-for list="{{ F.lockedRows }}" as="r" hint-placeholder-count="0">
+<span style="display:inline-flex;align-items:center;gap:6px;border:1px dashed var(--c-rule,#DDD9CC);padding:6px 9px;font-size:12.5px;color:var(--c-faint,#9A968A)">{{ r.name }}<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--c-oxide,#3F6A50)">PRO</span></span>
+</sc-for>
+</div>
+</div>
+</sc-if>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:16px 0 0">You can change your three, and their order, any time in Settings.</p>
+<div onClick="{{ F.confirmFree }}" style="margin-top:16px;min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer">That&#8217;s my paper</div>
+<div onClick="{{ F.closeFree }}" style="min-height:40px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);cursor:pointer">Back to the plans</div>
+</div>
+
+</div>
+
+<div style="{{ F.sTrial }}">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:56px 20px 0;min-height:44px">
+<div onClick="{{ F.back }}" style="min-width:44px;min-height:44px;display:flex;align-items:center;font-size:16px;color:var(--c-oxide,#3F6A50);cursor:pointer">&#8249;</div>
+<div style="display:flex;gap:7px">
+<sc-for list="{{ F.dotsTrial }}" as="d" hint-placeholder-count="5"><span style="{{ d.style }}"></span></sc-for>
+</div>
+<div style="min-width:44px"></div>
+</div>
+<div style="flex:1;overflow:auto;padding:26px 26px 8px;display:flex;flex-direction:column">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Before you go</span>
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:31px;line-height:1.14;letter-spacing:-.02em;color:var(--c-ink,#23231F);margin:12px 0 0;text-wrap:pretty">The next six weeks are on us.</h2>
+<p style="font-size:14px;line-height:1.6;color:var(--c-inks,#44433C);margin:12px 0 0;text-wrap:pretty">Forty-two mornings of the full paper, whichever plan you picked. Nothing is charged until week seven.</p>
+<div style="margin-top:20px;position:relative;height:272px;overflow:hidden;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raisedw,#FCF9F1);touch-action:pan-y;cursor:grab" onPointerDown="{{ D.down }}" onPointerUp="{{ D.up }}">
+
+<sc-if value="{{ D.on1 }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;inset:0;padding:16px 16px 14px;display:flex;flex-direction:column;gap:9px">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Ask the archive</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-faint,#9A968A)">142 editions</span>
+</div>
+<div style="align-self:flex-end;max-width:78%;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);padding:10px 12px;font-size:13px;line-height:1.45;animation:dup .42s cubic-bezier(.2,.9,.3,1) both">What have I read about export controls since spring?</div>
+<div style="align-self:flex-start;display:flex;gap:5px;padding:2px 0;animation:dup .3s ease .55s both">
+<span style="width:6px;height:6px;border-radius:50%;background:var(--c-faint,#9A968A);animation:dblink 1s ease .8s infinite"></span>
+<span style="width:6px;height:6px;border-radius:50%;background:var(--c-faint,#9A968A);animation:dblink 1s ease .95s infinite"></span>
+<span style="width:6px;height:6px;border-radius:50%;background:var(--c-faint,#9A968A);animation:dblink 1s ease 1.1s infinite"></span>
+</div>
+<div style="align-self:flex-start;max-width:88%;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-paper,#F6F4EE);padding:11px 12px;animation:dup .5s cubic-bezier(.2,.9,.3,1) 1.5s both">
+<p style="font-size:13px;line-height:1.5;color:var(--c-inks,#44433C);margin:0;text-wrap:pretty">Eleven pieces since March. The through-line: enforcement widened from chips to the tools that make them.</p>
+<div style="margin-top:9px;display:flex;flex-wrap:wrap;gap:5px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.08em;border:1px solid var(--c-oxide,#3F6A50);color:var(--c-oxide,#3F6A50);padding:3px 5px;animation:dpop .3s ease 2s both">No. 031</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.08em;border:1px solid var(--c-oxide,#3F6A50);color:var(--c-oxide,#3F6A50);padding:3px 5px;animation:dpop .3s ease 2.12s both">No. 037</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.08em;border:1px solid var(--c-oxide,#3F6A50);color:var(--c-oxide,#3F6A50);padding:3px 5px;animation:dpop .3s ease 2.24s both">No. 044</span>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ D.on2 }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;padding:16px 16px 14px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Weekly insight</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-oxide,#3F6A50)">Sundays</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-size:18px;line-height:1.22;color:var(--c-ink,#23231F);margin:9px 0 0;animation:dup .45s cubic-bezier(.2,.9,.3,1) both">Week of 28 July</p>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:9px">
+<div style="animation:dup .4s ease .3s both">
+<div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font-size:12.5px;color:var(--c-ink,#23231F)">Export controls</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-muted,#6B6A62)">9 pieces</span></div>
+<div style="margin-top:5px;height:5px;background:var(--c-rulef,#E8E5DA)"><div style="width:82%;height:5px;background:var(--c-oxide,#3F6A50);transform-origin:left;animation:dgrow .6s cubic-bezier(.2,.9,.3,1) .45s both"></div></div>
+</div>
+<div style="animation:dup .4s ease .48s both">
+<div style="display:flex;align-items:baseline;justify-content:space-between"><span style="font-size:12.5px;color:var(--c-ink,#23231F)">Grid buildout</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-muted,#6B6A62)">6 pieces</span></div>
+<div style="margin-top:5px;height:5px;background:var(--c-rulef,#E8E5DA)"><div style="width:58%;height:5px;background:var(--c-oxide,#3F6A50);transform-origin:left;animation:dgrow .6s cubic-bezier(.2,.9,.3,1) .63s both"></div></div>
+</div>
+</div>
+<div style="margin-top:auto;border:1px solid var(--c-oxide,#3F6A50);border-top-width:2px;background:var(--c-paper,#F6F4EE);padding:11px 12px;animation:dup .55s cubic-bezier(.2,.9,.3,1) .82s both">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Across the week</div>
+<p style="font-family:Newsreader,Georgia,serif;font-size:14.5px;line-height:1.35;color:var(--c-ink,#23231F);margin:7px 0 0;text-wrap:pretty">Enforcement widened from chips to the tools that make them. Watch Thursday&#8217;s hearing.</p>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ D.on3 }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;padding:16px 16px 14px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Your front page</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-oxide,#3F6A50);animation:dpop .3s ease 1.5s both">No cap</span>
+</div>
+<div style="margin-top:8px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)"><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-paper,#F6F4EE);background:var(--c-oxide,#3F6A50);padding:3px 5px">01</span><span style="flex:1;font-size:13px;color:var(--c-ink,#23231F)">Artificial intelligence</span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)"><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-paper,#F6F4EE);background:var(--c-oxide,#3F6A50);padding:3px 5px">02</span><span style="flex:1;font-size:13px;color:var(--c-ink,#23231F)">Markets &amp; economy</span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)"><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-paper,#F6F4EE);background:var(--c-oxide,#3F6A50);padding:3px 5px">03</span><span style="flex:1;font-size:13px;color:var(--c-ink,#23231F)">Climate &amp; energy</span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);animation:ddn .4s cubic-bezier(.2,.9,.3,1) .5s both"><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-paper,#F6F4EE);background:var(--c-oxide,#3F6A50);padding:3px 5px">04</span><span style="flex:1;font-size:13px;color:var(--c-ink,#23231F)">Design &amp; typography</span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);animation:ddn .4s cubic-bezier(.2,.9,.3,1) .72s both"><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-paper,#F6F4EE);background:var(--c-oxide,#3F6A50);padding:3px 5px">05</span><span style="flex:1;font-size:13px;color:var(--c-ink,#23231F)">Space &amp; astronomy</span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA);animation:ddn .4s cubic-bezier(.2,.9,.3,1) .94s both"><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-paper,#F6F4EE);background:var(--c-oxide,#3F6A50);padding:3px 5px">06</span><span style="flex:1;font-size:13px;color:var(--c-ink,#23231F)">Books &amp; ideas</span></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 0;animation:ddn .4s cubic-bezier(.2,.9,.3,1) 1.16s both"><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--c-paper,#F6F4EE);background:var(--c-oxide,#3F6A50);padding:3px 5px">07</span><span style="flex:1;font-size:13px;color:var(--c-ink,#23231F)">Local &#8212; Chicago</span></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ D.on4 }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;padding:16px 16px 14px;display:flex;flex-direction:column">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-faint,#9A968A)">Add a topic of your own</span>
+<div style="margin-top:11px;border:1px solid var(--c-ink,#23231F);background:var(--c-paper,#F6F4EE);padding:11px 12px;display:flex;align-items:center;gap:2px">
+<span style="overflow:hidden;white-space:nowrap;font-size:14px;color:var(--c-ink,#23231F);animation:dtype 1.15s steps(24,end) .2s both">semiconductor policy</span>
+<span style="width:1px;height:16px;background:var(--c-oxide,#3F6A50);animation:dblink .9s step-end infinite"></span>
+</div>
+<span style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);animation:dup .35s ease 1.5s both">4 sources attached</span>
+<div style="margin-top:8px;display:flex;flex-direction:column;gap:5px">
+<div style="display:flex;align-items:center;gap:9px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-paper,#F6F4EE);padding:6px 10px;animation:drt .38s cubic-bezier(.2,.9,.3,1) 1.62s both"><span style="width:5px;height:5px;border-radius:50%;background:var(--c-oxide,#3F6A50);flex:none"></span><span style="flex:1;font-size:12.5px;color:var(--c-ink,#23231F)">Federal Register &#8212; trade notices</span></div>
+<div style="display:flex;align-items:center;gap:9px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-paper,#F6F4EE);padding:6px 10px;animation:drt .38s cubic-bezier(.2,.9,.3,1) 1.78s both"><span style="width:5px;height:5px;border-radius:50%;background:var(--c-oxide,#3F6A50);flex:none"></span><span style="flex:1;font-size:12.5px;color:var(--c-ink,#23231F)">Semiconductor trade weekly</span></div>
+<div style="display:flex;align-items:center;gap:9px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-paper,#F6F4EE);padding:6px 10px;animation:drt .38s cubic-bezier(.2,.9,.3,1) 1.94s both"><span style="width:5px;height:5px;border-radius:50%;background:var(--c-oxide,#3F6A50);flex:none"></span><span style="flex:1;font-size:12.5px;color:var(--c-ink,#23231F)">Two reporters you already follow</span></div>
+<div style="display:flex;align-items:center;gap:9px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-paper,#F6F4EE);padding:6px 10px;animation:drt .38s cubic-bezier(.2,.9,.3,1) 2.1s both"><span style="width:5px;height:5px;border-radius:50%;background:var(--c-oxide,#3F6A50);flex:none"></span><span style="flex:1;font-size:12.5px;color:var(--c-ink,#23231F)">Company filings, when they land</span></div>
+</div>
+</div>
+</sc-if>
+
+</div>
+<div style="margin-top:12px;height:38px;display:flex;align-items:flex-start">
+<p style="font-size:13px;line-height:1.45;color:var(--c-inks,#44433C);margin:0;text-wrap:pretty">{{ D.caption }}</p>
+</div>
+<div style="margin-top:2px;display:flex;justify-content:center;gap:6px;min-height:24px;align-items:center">
+<sc-if value="{{ D.on1 }}" hint-placeholder-val="{{ false }}"><span onClick="{{ D.go1 }}" style="flex:none;width:16px;height:5px;border-radius:3px;background:var(--c-oxide,#3F6A50);cursor:pointer"></span></sc-if>
+<sc-if value="{{ D.off1 }}" hint-placeholder-val="{{ true }}"><span onClick="{{ D.go1 }}" style="flex:none;width:5px;height:5px;border-radius:50%;background:var(--c-rule,#DDD9CC);cursor:pointer"></span></sc-if>
+<sc-if value="{{ D.on2 }}" hint-placeholder-val="{{ false }}"><span onClick="{{ D.go2 }}" style="flex:none;width:16px;height:5px;border-radius:3px;background:var(--c-oxide,#3F6A50);cursor:pointer"></span></sc-if>
+<sc-if value="{{ D.off2 }}" hint-placeholder-val="{{ true }}"><span onClick="{{ D.go2 }}" style="flex:none;width:5px;height:5px;border-radius:50%;background:var(--c-rule,#DDD9CC);cursor:pointer"></span></sc-if>
+<sc-if value="{{ D.on3 }}" hint-placeholder-val="{{ false }}"><span onClick="{{ D.go3 }}" style="flex:none;width:16px;height:5px;border-radius:3px;background:var(--c-oxide,#3F6A50);cursor:pointer"></span></sc-if>
+<sc-if value="{{ D.off3 }}" hint-placeholder-val="{{ true }}"><span onClick="{{ D.go3 }}" style="flex:none;width:5px;height:5px;border-radius:50%;background:var(--c-rule,#DDD9CC);cursor:pointer"></span></sc-if>
+<sc-if value="{{ D.on4 }}" hint-placeholder-val="{{ false }}"><span onClick="{{ D.go4 }}" style="flex:none;width:16px;height:5px;border-radius:3px;background:var(--c-oxide,#3F6A50);cursor:pointer"></span></sc-if>
+<sc-if value="{{ D.off4 }}" hint-placeholder-val="{{ true }}"><span onClick="{{ D.go4 }}" style="flex:none;width:5px;height:5px;border-radius:50%;background:var(--c-rule,#DDD9CC);cursor:pointer"></span></sc-if>
+</div>
+<div style="margin-top:14px;display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--c-rulef,#E8E5DA);padding-top:12px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Weeks 1&#8211;6 free</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">{{ F.trialRight }}</span>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;color:var(--c-muted,#6B6A62);margin:10px 0 0">{{ F.trialNote }}</p>
+</div>
+<div style="padding:12px 26px 30px">
+<div onClick="{{ F.startTrial }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer">Start the six weeks</div>
+<div onClick="{{ F.declineTrial }}" style="min-height:46px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--c-muted,#6B6A62);cursor:pointer">{{ F.declineCopy }}</div>
+</div>
+</div>
+
+<div style="{{ F.payVeil }}" onClick="{{ F.closeSheet }}"></div>
+<div style="{{ F.payPanel }}">
+<sc-if value="{{ F.payReady }}" hint-placeholder-val="{{ true }}">
+<div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px 12px;border-bottom:.5px solid var(--c-alertline,rgba(0,0,0,.18))">
+<span style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:13px;color:var(--c-alertsub,#3A3A38)">Apple Account</span>
+<span style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:13px;color:var(--c-alertsub,#3A3A38)">norm@icloud.com</span>
+</div>
+<div style="display:flex;align-items:center;gap:14px;padding:16px">
+<div style="{{ F.payMark }}">N</div>
+<div style="flex:1">
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-weight:600;font-size:15px;color:var(--c-alertink,#111);margin:0">Norm&#8217;s Newsletter Pro</p>
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.4;color:var(--c-alertsub,#3A3A38);margin:3px 0 0">{{ F.payTerms }}</p>
+</div>
+</div>
+<div style="padding:0 16px 8px">
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:11.5px;line-height:1.45;color:var(--c-alertsub,#3A3A38);margin:0">Cancel any time in Settings at least a day before renewal.</p>
+</div>
+<div style="padding:12px 16px 16px">
+<div onClick="{{ F.subscribe }}" style="min-height:50px;display:flex;align-items:center;justify-content:center;background:var(--c-alertbtn,#0A72E8);color:#fff;border-radius:12px;font-family:-apple-system,'IBM Plex Sans',sans-serif;font-weight:600;font-size:16px;cursor:pointer">{{ F.payBtn }}</div>
+<div onClick="{{ F.closeSheet }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:15px;color:var(--c-alertbtn,#0A72E8);cursor:pointer">Cancel</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ F.payAuth }}" hint-placeholder-val="{{ false }}">
+<div style="padding:30px 20px 26px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div style="{{ F.faceRing }}">&#9683;</div>
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-weight:600;font-size:16px;color:var(--c-alertink,#111);margin:0">Double Click to Confirm</p>
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:13px;color:var(--c-alertsub,#3A3A38);margin:0">{{ F.payAuthLine }}</p>
+</div>
+</sc-if>
+<sc-if value="{{ F.payDone }}" hint-placeholder-val="{{ false }}">
+<div style="padding:34px 20px 30px;display:flex;flex-direction:column;align-items:center;gap:12px">
+<span style="width:56px;height:56px;border-radius:50%;background:var(--c-alertbtn,#0A72E8);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;animation:bin .3s ease both">&#10003;</span>
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-weight:600;font-size:16px;color:var(--c-alertink,#111);margin:0">{{ F.payDoneLine }}</p>
+</div>
+</sc-if>
+</div>
+
+<div style="{{ F.s5 }}">
+<div style="flex:1;overflow:auto;padding:70px 24px 0">
+<div style="{{ F.r5a }}">
+<div style="text-align:center">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">All set</span>
+<h2 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:32px;line-height:1.16;letter-spacing:-.02em;color:var(--c-ink,#23231F);margin:12px 0 0;text-wrap:pretty">Your paper is set.</h2>
+</div>
+</div>
+<div style="{{ F.r5b }}">
+<div style="position:relative;margin-top:24px;margin-bottom:26px">
+<div style="border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-ink,#23231F);background:var(--c-raisedw,#FCF9F1);padding:22px 20px 20px;text-align:center;box-shadow:0 14px 30px var(--c-shadow,rgba(35,35,31,.12))">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ F.title }}</span>
+<div style="border-top:1px solid var(--c-rule,#DDD9CC);margin:11px 0"></div>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Sunday, August 2, 2026 &#183; No. 056</span>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:21px;line-height:1.28;color:var(--c-ink,#23231F);margin:12px 0 0;text-wrap:pretty">Trump cancels planned strikes on Iran, demands rapid deal to open Strait of Hormuz</p>
+</div>
+<div style="{{ F.stamp }}">Ready<br>to read</div>
+</div>
+</div>
+<div style="{{ F.r5c }}">
+<div style="margin-top:24px;border-top:1px solid var(--c-rule,#DDD9CC)">
+<div style="padding:12px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Following</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-faint,#9A968A)">{{ F.followCount }}</span>
+</div>
+<sc-if value="{{ F.followEmpty }}" hint-placeholder-val="{{ false }}">
+<span style="display:block;margin-top:7px;font-size:13.5px;color:var(--c-ink,#23231F)">Everything, for now</span>
+</sc-if>
+<div style="margin-top:9px;display:flex;flex-direction:column;gap:8px">
+<sc-for list="{{ F.weightRows }}" as="w" hint-placeholder-count="3">
+<div style="{{ w.row }}">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--c-oxide,#3F6A50);width:15px;flex:none">{{ w.rank }}</span>
+<span style="flex:1;font-size:13.5px;color:var(--c-ink,#23231F);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ w.name }}</span>
+<span style="{{ w.track }}"><span style="{{ w.fill }}"></span></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62);width:34px;text-align:right;flex:none">{{ w.val }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Delivered</span>
+<span style="font-size:13.5px;color:var(--c-ink,#23231F)">{{ F.deliveryLine }}</span>
+</div>
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Account</span>
+<span style="font-size:13.5px;color:var(--c-ink,#23231F)">{{ F.accountLine }}</span>
+</div>
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Plan</span>
+<span style="font-size:13.5px;color:var(--c-ink,#23231F)">{{ F.planLine }}</span>
+</div>
+</div>
+</div>
+</div>
+<div style="padding:14px 24px 34px">
+<div onClick="{{ F.next }}" style="min-height:52px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer">Read today&#8217;s brief</div>
+<div onClick="{{ F.restart }}" style="min-height:40px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);cursor:pointer">Run the flow again</div>
+</div>
+</div>
+
+<div style="{{ F.sReady }}">
+<div key="{{ F.kReady }}" style="flex:1;position:relative;display:flex;flex-direction:column">
+<div style="position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(0deg,var(--c-dawn,rgba(196,126,66,.2)),var(--c-dawnm,rgba(196,126,66,.05)) 46%,rgba(255,255,255,0));transform-origin:bottom;animation:wdawn 2.2s cubic-bezier(.25,.9,.25,1) .5s both;pointer-events:none"></div>
+<div style="position:absolute;left:-60px;bottom:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--c-dawn2,rgba(224,168,104,.3)),rgba(255,255,255,0) 70%);animation:wdawn 2.6s ease-out .8s both;pointer-events:none"></div>
+
+<div style="position:relative;padding:66px 26px 0;display:flex;align-items:center;gap:8px;animation:wset .5s ease-out .05s both">
+<span style="width:5px;height:5px;border-radius:50%;background:var(--c-clay,#8A4B2A);animation:wbreathe 3s ease-in-out infinite"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-clay,#8A4B2A)">Ready to read</span>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--c-faint,#9A968A)">No. 056</span>
+<span onClick="{{ F.next }}" style="width:26px;height:26px;margin-right:-6px;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;color:var(--c-faint,#9A968A);cursor:pointer;border-radius:50%;transition:color .15s ease,background .15s ease" style-hover="color:var(--c-ink,#23231F);background:var(--c-rulef,#E8E5DA)">&#215;</span>
+</div>
+
+<div style="position:relative;padding:30px 26px 0">
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:40px;line-height:1.06;letter-spacing:-.028em;color:var(--c-ink,#23231F);margin:0;max-width:12ch;text-wrap:pretty;animation:wset .7s ease-out .2s both">Here is today&#8217;s newsletter.</h1>
+<p style="font-size:14.5px;line-height:1.64;color:var(--c-inks,#44433C);margin:16px 0 0;max-width:34ch;text-wrap:pretty;animation:wset .6s ease-out .4s both">An ordinary Sunday. Eleven stories worth keeping, nothing that needs to be read twice, seven minutes end to end.</p>
+</div>
+
+<div style="position:relative;flex:1;padding:38px 26px 0">
+<div style="position:relative;padding-left:26px">
+<div style="position:absolute;left:3px;top:5px;bottom:16px;width:1px;background:var(--c-rule,#DDD9CC);transform-origin:top;animation:wrule 1.1s ease-out .6s both"></div>
+<span style="position:absolute;left:0;top:1px;width:7px;height:7px;border-radius:50%;background:var(--c-clay,#8A4B2A);box-shadow:0 0 0 4px var(--c-clayhalo,rgba(138,75,42,.13));--wtravel:237px;animation:wmark 2.4s cubic-bezier(.5,0,.5,1) 1s both"></span>
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="animation:wset .55s ease-out .95s both">
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62)">Items in this edition</span>
+<span style="display:block;margin-top:6px;font-family:Newsreader,Georgia,serif;font-size:24px;line-height:1.24;color:var(--c-ink,#23231F)">118 items</span>
+</div>
+<div style="animation:wset .55s ease-out 1.35s both">
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62)">Stories that ran</span>
+<span style="display:block;margin-top:6px;font-family:Newsreader,Georgia,serif;font-size:24px;line-height:1.24;color:var(--c-ink,#23231F)">11 stories</span>
+</div>
+<div style="animation:wset .55s ease-out 1.75s both">
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62)">Sources read overnight</span>
+<span style="display:block;margin-top:6px;font-family:Newsreader,Georgia,serif;font-size:24px;line-height:1.24;color:var(--c-ink,#23231F)">8 sources</span>
+</div>
+<div style="animation:wset .55s ease-out 2.15s both">
+<span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Estimated read</span>
+<span style="display:block;margin-top:6px;font-family:Newsreader,Georgia,serif;font-size:24px;line-height:1.24;color:var(--c-ink,#23231F)">~7 min</span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="position:relative;padding:0 26px 36px">
+<div onClick="{{ F.next }}" style="min-height:54px;display:flex;align-items:center;justify-content:center;background:var(--c-ink,#23231F);color:var(--c-paper,#F6F4EE);font-weight:500;font-size:15px;cursor:pointer;transition:transform .12s ease;animation:wset .55s ease-out 2.4s both" style-active="transform:scale(.985)">Start reading</div>
+</div>
+</div>
+</div>
+
+<div style="{{ F.s6 }}">
+<div style="padding:54px 20px 0;background:var(--c-paperw,#F7F4EA)">
+<div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0 9px">
+<sc-if value="{{ F.isPro }}" hint-placeholder-val="{{ false }}">
+<span style="position:absolute;right:0;top:8px;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;letter-spacing:.18em;color:var(--c-oxide,#3F6A50)">PRO</span>
+</sc-if>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">{{ F.title }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">Sunday, August 2, 2026 &#183; No. 056</span>
+</div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px"></div>
+<div style="height:2px;background:var(--c-rulef,#E8E5DA)"><span style="display:block;height:2px;width:4%;background:var(--c-oxide,#3F6A50)"></span></div>
+</div>
+
+<div style="flex:1;overflow:auto;padding:0 20px 30px">
+<div style="padding:24px 0 0">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--c-muted,#6B6A62)">Headline of the day</span>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:31px;line-height:1.24;letter-spacing:-.01em;color:var(--c-ink,#23231F);margin:8px 0 0;text-wrap:pretty">Trump cancels planned strikes on Iran, demands rapid deal to open Strait of Hormuz</h1>
+</div>
+
+<div style="margin-top:24px;display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--c-rule,#DDD9CC);background:var(--c-raised,#FBFAF6)">
+<span style="width:0;height:0;border-left:13px solid var(--c-oxide,#3F6A50);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px"></span>
+<span style="display:flex;flex-direction:column;gap:2px;min-width:0;flex:1">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-ink,#23231F)">Listen to today&#8217;s brief</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-muted,#6B6A62)">Two hosts &#183; 8:33</span>
+</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-oxide,#3F6A50);flex:none">Play</span>
+</div>
+
+<div style="margin-top:26px;border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-oxide,#3F6A50);background:var(--c-raised,#FBFAF6);padding:16px 18px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Today at a glance</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)">60-second read</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">01</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Trump canceled planned Iran strikes but demands a deal to open the Strait of Hormuz within days.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> World</span></span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">02</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Russia sent military vehicles to Mali on a ship under international sanctions, breaking the rules.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> World</span></span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">03</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Nearly half of new cars sold in Australia are now electric or hybrid, a jump in three months.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> Tech</span></span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">04</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">DeepMind shut down its AlphaFold team to focus on its Gemini AI project.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> AI</span></span>
+</div>
+<div style="display:flex;align-items:baseline;gap:12px;padding:7px 0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;color:var(--c-oxide,#3F6A50);min-width:20px;flex:none">05</span>
+<span style="font-size:14px;line-height:1.5;color:var(--c-inks,#44433C);text-wrap:pretty">Water shortages in England are blocking government housing targets in the south and east.<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);white-space:nowrap"> Regulation</span></span>
+</div>
+</div>
+
+<sc-for list="{{ F.homeSections }}" as="sec" hint-placeholder-count="3">
+<div style="margin-top:30px">
+<h2 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);border-bottom:1px solid var(--c-rule,#DDD9CC);margin:0 0 4px;padding-bottom:6px">{{ sec.name }}</h2>
+<sc-for list="{{ sec.stories }}" as="st" hint-placeholder-count="2">
+<div style="border-bottom:1px solid var(--c-rulef,#E8E5DA);padding:14px 0">
+<h3 style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:16.5px;line-height:1.4;color:var(--c-ink,#23231F);margin:0 0 4px;text-wrap:pretty">{{ st.title }}</h3>
+<p style="margin:0 0 8px;font-size:13.5px;line-height:1.6;color:var(--c-inks,#44433C);text-wrap:pretty">{{ st.summary }}</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--c-muted,#6B6A62)">{{ st.meta }}</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:13px;color:var(--c-oxide,#3F6A50);white-space:nowrap">Read the full story <span style="font-size:11px">&#8250;</span></span>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+
+<div onClick="{{ F.restart }}" style="margin-top:26px;min-height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--c-rule,#DDD9CC);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62);cursor:pointer">Prototype ends here &#8212; run onboarding again</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-paperw,#F7F4EA);border-top:1px solid var(--c-rule,#DDD9CC);padding-bottom:26px">
+<div style="padding:9px 0 8px;min-height:44px;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.04em;color:var(--c-oxide,#3F6A50)">
+<svg viewBox="0 0 24 24" style="width:21px;height:21px;display:block" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 4h14v16H5z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg>
+<span>Today</span>
+</div>
+<div style="padding:9px 0 8px;min-height:44px;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.04em;color:var(--c-muted,#6B6A62)">
+<svg viewBox="0 0 24 24" style="width:21px;height:21px;display:block" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 8h16v12H4z"></path><path d="M6 5h12"></path><path d="M9 13h6"></path></svg>
+<span>Archive</span>
+</div>
+<div style="padding:9px 0 8px;min-height:44px;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.04em;color:var(--c-muted,#6B6A62)">
+<svg viewBox="0 0 24 24" style="width:21px;height:21px;display:block" fill="currentColor"><circle cx="6" cy="12" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="18" cy="12" r="1.6"></circle></svg>
+<span>More</span>
+</div>
+</div>
+</div>
+
+<sc-if value="{{ F.dialog }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;inset:0;z-index:90;background:rgba(20,19,15,.34);display:flex;align-items:center;justify-content:center;padding:0 42px">
+<div style="width:100%;background:var(--c-alert,rgba(250,249,246,.96));border-radius:14px;overflow:hidden;animation:bin .22s ease both">
+<div style="padding:20px 18px 16px;text-align:center">
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;line-height:1.35;color:var(--c-alertink,#111);margin:0;text-wrap:pretty">&#8220;{{ F.title }}&#8221; Would Like to Send You Notifications</p>
+<p style="font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:12.5px;line-height:1.4;color:var(--c-alertsub,#3A3A38);margin:6px 0 0;text-wrap:pretty">One notification a day, when your edition is ready.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;border-top:.5px solid var(--c-alertline,rgba(0,0,0,.18))">
+<div onClick="{{ F.denyPerm }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:-apple-system,'IBM Plex Sans',sans-serif;font-size:15px;color:var(--c-alertbtn,#0A72E8);border-right:.5px solid var(--c-alertline,rgba(0,0,0,.18));cursor:pointer">Don&#8217;t Allow</div>
+<div onClick="{{ F.allowPerm }}" style="min-height:44px;display:flex;align-items:center;justify-content:center;font-family:-apple-system,'IBM Plex Sans',sans-serif;font-weight:600;font-size:15px;color:var(--c-alertbtn,#0A72E8);cursor:pointer">Allow</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+</div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;light&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Style&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3F6A50&quot;,&quot;options&quot;:[&quot;#3F6A50&quot;,&quot;#8A4B2A&quot;,&quot;#2E4E7E&quot;,&quot;#23231F&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Style&quot;},&quot;minTopics&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:3,&quot;min&quot;:1,&quot;max&quot;:6,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Flow&quot;},&quot;showSkip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Flow&quot;}}">
+const LIGHT = {
+  paper: "#F6F4EE", raised: "#FBFAF6", paperw: "#F7F4EA", raisedw: "#FCF9F1",
+  ink: "#23231F", inks: "#44433C", muted: "#6B6A62", faint: "#9A968A",
+  rule: "#DDD9CC", rulef: "#E8E5DA", oxide: "#3F6A50", clay: "#8A4B2A",
+  shadow: "rgba(35,35,31,.12)", sweep: "rgba(255,255,255,.55)",
+  dawn: "rgba(196,126,66,.20)", dawnm: "rgba(196,126,66,.05)",
+  dawn2: "rgba(224,168,104,.30)", clayhalo: "rgba(138,75,42,.13)",
+  alert: "rgba(250,249,246,.96)", alertink: "#111111", alertsub: "#3A3A38",
+  alertline: "rgba(0,0,0,.18)", alertbtn: "#0A72E8",
+  onsub: "rgba(246,244,238,.74)", onfaint: "rgba(246,244,238,.6)"
+};
+const DARK = {
+  paper: "#1A1A16", raised: "#232320", paperw: "#181813", raisedw: "#242320",
+  ink: "#F2EFE6", inks: "#C7C3B6", muted: "#8C8A80", faint: "#6E6C64",
+  rule: "#35342E", rulef: "#2B2A25", oxide: "#8FBF9E", clay: "#C99163",
+  shadow: "rgba(0,0,0,.55)", sweep: "rgba(255,255,255,.05)",
+  dawn: "rgba(201,145,99,.34)", dawnm: "rgba(201,145,99,.09)",
+  dawn2: "rgba(232,183,120,.30)", clayhalo: "rgba(201,145,99,.16)",
+  alert: "rgba(44,44,40,.96)", alertink: "#F2EFE6", alertsub: "#B9B5A9",
+  alertline: "rgba(255,255,255,.14)", alertbtn: "#4E9BFF",
+  onsub: "rgba(20,20,16,.68)", onfaint: "rgba(20,20,16,.55)"
+};
+
+const BANDS = [
+  { max: 2, label: "Nice to have", note: "Runs only when the story is big enough to lead the edition." },
+  { max: 4, label: "Now and then", note: "A story when something genuinely moves. Quiet weeks stay quiet." },
+  { max: 6, label: "Most mornings", note: "A story or two in most editions, in your running order." },
+  { max: 8, label: "Standing order", note: "The full section every morning, however the day went." },
+  { max: 10, label: "Keep me current", note: "Everything we file here, plus the Sunday look-back on it." }
+];
+const bandOf = (v) => BANDS.filter(b => v <= b.max)[0] || BANDS[BANDS.length - 1];
+
+const TOPICS = [
+  { id: "politics", name: "Politics", meta: "3 today", group: "The daily spine" },
+  { id: "world", name: "World", meta: "2 today", group: "The daily spine" },
+  { id: "business", name: "Business & markets", meta: "2 today", group: "The daily spine" },
+  { id: "ai", name: "Artificial intelligence", meta: "2 today", group: "Technology & science" },
+  { id: "tech", name: "Technology", meta: "1 today", group: "Technology & science" },
+  { id: "science", name: "Science", meta: "1 today", group: "Technology & science" },
+  { id: "climate", name: "Climate", meta: "1 today", group: "Technology & science" },
+  { id: "health", name: "Health", meta: "1 today", group: "Life & culture" },
+  { id: "culture", name: "Culture", meta: "1 today", group: "Life & culture" },
+  { id: "sports", name: "Sport", meta: "\u2014", group: "Life & culture" },
+  { id: "media", name: "Media", meta: "1 today", group: "Life & culture" },
+  { id: "law", name: "Law & courts", meta: "1 today", group: "Life & culture" },
+  { id: "education", name: "Education", meta: "1 today", group: "Life & culture" },
+  { id: "energy", name: "Energy", meta: "1 today", group: "Technology & science" },
+  { id: "space", name: "Space", meta: "1 today", group: "Technology & science" },
+  { id: "money", name: "Personal finance", meta: "1 today", group: "Life & culture" },
+  { id: "entertainment", name: "Entertainment", meta: "1 today", group: "Life & culture" },
+  { id: "travel", name: "Travel", meta: "\u2014", group: "Life & culture" },
+  { id: "food", name: "Food & drink", meta: "\u2014", group: "Life & culture" },
+  { id: "housing", name: "Housing & real estate", meta: "1 today", group: "Life & culture" }
+];
+
+const NOTIFS = [
+  "No. 056 is ready \u2014 Trump calls off the Iran strikes, and DeepMind folds AlphaFold.",
+  "No. 057 is ready \u2014 The Fed holds rates, and Europe\u2019s grid plan clears its first vote.",
+  "No. 058 is ready \u2014 A quiet Tuesday: nine stories, six minutes, nothing urgent.",
+  "No. 059 is ready \u2014 Export controls widen again, and Australia\u2019s EV share jumps."
+];
+
+const TIMES = [
+  { id: "6", time: "6:00 am", note: "Before anyone else is up" },
+  { id: "730", time: "7:30 am", note: "With coffee, or on the train" },
+  { id: "12", time: "12:00 pm", note: "Read it over lunch" },
+  { id: "18", time: "6:00 pm", note: "Catch up on the way home" }
+];
+
+const fmtTime = (m) => {
+  const h = Math.floor(m / 60), mm = m % 60;
+  const ap = h < 12 ? "am" : "pm";
+  const hh = ((h + 11) % 12) + 1;
+  return hh + ":" + (mm < 10 ? "0" : "") + mm + " " + ap;
+};
+const noteFor = (m) => {
+  if (m < 390) return "Before anyone else is up";
+  if (m < 540) return "With coffee, or on the train";
+  if (m < 660) return "Mid-morning, once you\u2019ve landed";
+  if (m < 840) return "Read it over lunch";
+  if (m < 1020) return "The afternoon lull";
+  if (m < 1140) return "Catch up on the way home";
+  return "After dinner, unhurried";
+};
+
+const FEED = [
+  { section: "Politics", title: "US sanctions two Iranian firms over a Bitcoin shipping-insurance scheme" },
+  { section: "AI", title: "DeepMind disbands the AlphaFold team and moves it onto Gemini" },
+  { section: "World", title: "Trump calls off the Iran strikes, demanding a Hormuz deal in days" },
+  { section: "Business", title: "Bessent and the Fed help Japan reverse months of yen losses" }
+];
+
+class Component extends DCLogic {
+  state = {
+    a: { step: 0, sel: [], time: "6", perm: null, acct: null, dialog: false },
+    b: { step: 0, sel: [], imp: {}, pend: null, pv: 6, time: "730", mins: 450, name: "", perm: null, acct: null, dialog: false, plan: null, pay: null, planOverlay: false, term: "monthly", payMode: "direct", intent: null },
+    c: { step: 0, sel: [], imp: {}, pend: null, pv: 6, time: "730", mins: 450, name: "", perm: null, acct: null, dialog: false, plan: null, pay: null, planOverlay: false, term: "monthly", payMode: "direct", intent: null },
+    cn: [0, 0, 0],
+    nx: 0,
+    d: { i: 0, stop: false },
+    w: { ka: 1, kb: 1, kc: 1, kd: 1, ke: 1, k5a: 1, k5b: 1, k5c: 1, k5d: 1, e: 0, n: [0, 0, 0], en: [0, 0, 0] }
+  };
+
+  replay(which) {
+    this.setState(s => ({ w: Object.assign({}, s.w, { ["k" + which]: s.w["k" + which] + 1 }) }));
+    if (which === "b") this.startCount(700);
+  }
+
+  goE(step) {
+    this.setState(s => ({ w: Object.assign({}, s.w, { e: step, ke: s.w.ke + 1, en: step === 1 ? [0, 0, 0] : s.w.en }) }));
+    if (step === 1) this.countE(700);
+  }
+
+  countE(delay) {
+    cancelAnimationFrame(this._ecr);
+    clearTimeout(this._ect);
+    const T = [12, 41, 9], DUR = 1250;
+    this._ect = setTimeout(() => {
+      const t0 = performance.now();
+      const step = (t) => {
+        const p = Math.min(1, (t - t0) / DUR);
+        const e = 1 - Math.pow(1 - p, 3);
+        this.setState(s => ({ w: Object.assign({}, s.w, { en: T.map(v => Math.round(v * e)) }) }));
+        if (p < 1) this._ecr = requestAnimationFrame(step);
+      };
+      this._ecr = requestAnimationFrame(step);
+    }, delay || 600);
+  }
+
+  startCount(delay) {
+    cancelAnimationFrame(this._cr);
+    clearTimeout(this._ct);
+    const T = [12, 41, 9], DUR = 1250;
+    this.setState(s => ({ w: Object.assign({}, s.w, { n: [0, 0, 0] }) }));
+    this._ct = setTimeout(() => {
+      const t0 = performance.now();
+      const step = (t) => {
+        const p = Math.min(1, (t - t0) / DUR);
+        const e = 1 - Math.pow(1 - p, 3);
+        this.setState(s => ({ w: Object.assign({}, s.w, { n: T.map(v => Math.round(v * e)) }) }));
+        if (p < 1) this._cr = requestAnimationFrame(step);
+      };
+      this._cr = requestAnimationFrame(step);
+    }, delay || 600);
+  }
+
+  set(k, patch) {
+    this.setState(s => ({ [k]: Object.assign({}, s[k], patch) }));
+  }
+
+  componentDidMount() {
+    this.startCount(900);
+    this._t = setInterval(() => {
+      const d = this.state.d;
+      if (!d || d.stop) return;
+      this.setState(s => ({ d: { i: (s.d.i + 1) % 4, stop: false } }));
+    }, 3500);
+    this._nt = setInterval(() => this.setState(s => ({ nx: (s.nx || 0) + 1 })), 5400);
+  }
+
+  countC(delay) {
+    cancelAnimationFrame(this._ccr);
+    clearTimeout(this._cct);
+    const T = [100, 12, 15], DUR = 1250;
+    this.setState({ cn: [0, 0, 0] });
+    this._cct = setTimeout(() => {
+      const t0 = performance.now();
+      const step = (t) => {
+        const q = Math.min(1, (t - t0) / DUR);
+        const e = 1 - Math.pow(1 - q, 3);
+        this.setState({ cn: T.map(v => Math.round(v * e)) });
+        if (q < 1) this._ccr = requestAnimationFrame(step);
+      };
+      this._ccr = requestAnimationFrame(step);
+    }, delay || 600);
+  }
+
+  componentWillUnmount() { clearInterval(this._t); clearInterval(this._nt); }
+
+  carousel() {
+    const C = this.theme();
+    const d = this.state.d || { i: 0, stop: false };
+    const CAPS = [
+      "Ask anything of every edition you have ever been sent.",
+      "Sundays: the whole week read across the stories, and what to watch next.",
+      "Every section you ranked runs \u2014 not only the first three.",
+      "Name any topic and the sources attach themselves."
+    ];
+    const go = (i) => this.setState({ d: { i: (i + 4) % 4, stop: true } });
+    return {
+      caption: CAPS[d.i],
+      off1: d.i !== 0, off2: d.i !== 1, off3: d.i !== 2, off4: d.i !== 3,
+      go1: () => go(0), go2: () => go(1), go3: () => go(2), go4: () => go(3),
+      on1: d.i === 0, on2: d.i === 1, on3: d.i === 2, on4: d.i === 3,
+      down: (e) => { this._x = e.clientX; },
+      up: (e) => {
+        const dx = e.clientX - (this._x ?? e.clientX);
+        if (Math.abs(dx) > 34) go(d.i + (dx < 0 ? 1 : -1));
+      }
+    };
+  }
+
+  flow(k, layout) {
+    const st = this.state[k];
+    const C = this.theme();
+    const min = this.props.minTopics ?? 3;
+    const tint = this.props.accent || "#3F6A50";
+    const accent = tint === "#3F6A50" ? C.oxide : tint;
+    const skips = this.props.showSkip ?? true;
+    const step = st.step;
+    const isWarm = layout === "warm" || layout === "warm3";
+    const off = layout === "warm3" ? 2 : 0;
+    const last = isWarm ? 10 + off : 6;
+    const topicsStep = isWarm ? 2 + off : 1;
+    const W = (i) => (!isWarm || i === 0) ? i : (i >= 6 ? i + 4 + off : (i >= 5 ? i + 3 + off : i + 1 + off));
+    const S = (i) => screen(W(i));
+
+    const screen = (i) => {
+      const off = i - step;
+      return {
+        position: "absolute", inset: 0, display: "flex", flexDirection: "column",
+        background: C.paper, overflow: "hidden", zIndex: 10 + i,
+        transform: "translateX(" + (off > 0 ? 100 : off < 0 ? -26 : 0) + "%)",
+        opacity: off < 0 ? 0.35 : 1,
+        pointerEvents: off === 0 ? "auto" : "none",
+        boxShadow: off > 0 && !isWarm ? "-10px 0 26px " + C.shadow : "none",
+        transition: "transform .40s cubic-bezier(.32,.72,0,1), opacity .40s cubic-bezier(.32,.72,0,1)"
+      };
+    };
+
+    const dots = (active) => [0, 1, 2, 3, 4].map(i => ({
+      style: {
+        width: i === active ? 18 : 6, height: 6, borderRadius: 3,
+        background: i === active ? C.ink : C.rule,
+        transition: "width .3s ease, background .3s ease"
+      }
+    }));
+
+    const enough = st.sel.length >= min;
+    const picked = st.sel.length
+      ? TOPICS.filter(t => st.sel.indexOf(t.id) > -1).map(t => t.name).join(", ")
+      : "Everything, for now";
+    const timeObj = TIMES.filter(t => t.id === st.time)[0] || TIMES[0];
+
+    const go = (d) => this.set(k, { step: Math.max(0, Math.min(last, st.step + d)) });
+
+    const base = {
+      s0: S(0), s1: S(1), s2: S(2), s3: S(3),
+      s4: S(4), s5: S(5), s6: S(6), sName: screen(1 + off),
+      dots: dots(isWarm ? 1 : 0), dots2: dots(isWarm ? 2 : 1),
+      dots3: dots(isWarm ? 3 : 2), dots4: dots(isWarm ? 4 : 3),
+      dotsName: dots(0),
+      next: () => go(1),
+      back: () => go(-1),
+      finish: () => this.set(k, { step: last }),
+      restart: () => this.set(k, { step: 0, sel: [], imp: {}, pend: null, pv: 6, pdx: 0, pdy: 0, name: "", perm: null, acct: null, dialog: false, plan: null, pay: null, planOverlay: false, term: "monthly", payMode: "direct", intent: null }),
+      dialog: st.dialog,
+      askPerm: () => this.set(k, { dialog: true }),
+      allowPerm: () => this.set(k, { dialog: false, perm: true, step: st.step + 1 }),
+      denyPerm: () => this.set(k, { dialog: false, perm: false, step: st.step + 1 }),
+      time: timeObj.time,
+      picked: picked,
+      deliveryLine: st.perm ? timeObj.time + ", pushed" : timeObj.time + ", in app",
+      accountLine: "Reading as a guest",
+      ctaLabel: enough ? "Continue" : (min - st.sel.length) + " more to go",
+      cta: {
+        minHeight: 52, display: "flex", alignItems: "center", justifyContent: "center",
+        background: enough ? C.ink : C.rulef, color: enough ? C.paper : C.muted,
+        fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 15,
+        cursor: enough ? "pointer" : "default",
+        transition: "background .2s ease, color .2s ease"
+      },
+      times: TIMES.map(t => ({
+        time: t.time, note: t.note,
+        pick: () => this.set(k, { time: t.id }),
+        row: {
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "15px 2px", borderBottom: "1px solid " + C.rulef, cursor: "pointer", minHeight: 48
+        },
+        label: {
+          fontFamily: "Newsreader, Georgia, serif", fontSize: 19,
+          color: st.time === t.id ? C.ink : C.inks,
+          fontWeight: st.time === t.id ? 500 : 400
+        },
+        tick: {
+          fontSize: 14, color: accent, opacity: st.time === t.id ? 1 : 0,
+          transition: "opacity .18s ease"
+        }
+      })),
+      skipStyle: {
+        minWidth: 44, minHeight: 44, display: "flex", alignItems: "center", justifyContent: "flex-end",
+        fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: C.muted,
+        cursor: skips ? "pointer" : "default",
+        visibility: skips ? "visible" : "hidden",
+        pointerEvents: skips ? "auto" : "none"
+      },
+      feed: FEED.map(f => {
+        const on = st.sel.length > 0 && st.sel.indexOf(f.section.toLowerCase()) > -1;
+        return {
+          section: f.section, title: f.title,
+          sec: {
+            display: "inline-block",
+            fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5, letterSpacing: ".12em",
+            textTransform: "uppercase", color: on ? accent : C.muted,
+            borderBottom: on ? "1px solid " + accent : "1px solid transparent",
+            paddingBottom: 2
+          }
+        };
+      })
+    };
+
+    const toggle = (id) => () => this.set(k, {
+      sel: st.sel.indexOf(id) > -1 ? st.sel.filter(x => x !== id) : st.sel.concat([id])
+    });
+
+    if (!enough) base.next = () => { if (st.step !== topicsStep) go(1); };
+
+    if (layout === "grid") {
+      base.topics = TOPICS.map(t => {
+        const on = st.sel.indexOf(t.id) > -1;
+        return {
+          name: t.name, meta: t.meta, metaText: t.meta, toggle: toggle(t.id),
+          card: {
+            border: "1px solid " + (on ? accent : C.rule),
+            background: on ? accent : C.raised,
+            padding: "14px 13px 12px", minHeight: 74, cursor: "pointer",
+            display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 8,
+            transition: "background .16s ease, border-color .16s ease"
+          },
+          label: {
+            fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 14.5,
+            lineHeight: 1.28, color: on ? C.paper : C.ink, textWrap: "pretty"
+          },
+          count: {
+            fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5,
+            color: on ? C.onsub : C.muted
+          }
+        };
+      });
+    } else {
+      const CLAY = C.clay, CREAM = C.raisedw, WPAPER = C.paperw;
+      const rev = (i, d) => ({
+        opacity: step === W(i) ? 1 : 0,
+        transform: step === W(i) ? "translateY(0)" : "translateY(18px)",
+        transition: "opacity .5s ease " + d + "ms, transform .6s cubic-bezier(.22,.9,.3,1) " + d + "ms"
+      });
+      base.r0a = rev(0, 60); base.r0b = rev(0, 160); base.r0c = rev(0, 280);
+      base.r1a = rev(1, 40); base.r1b = rev(1, 160);
+      base.r2a = rev(2, 40); base.r2b = rev(2, 170);
+      base.r3a = rev(3, 40); base.r3b = rev(3, 170);
+      base.r5a = rev(5, 60); base.r5b = rev(5, 180); base.r5c = rev(5, 320);
+      base.rNa = { opacity: step === 1 + off ? 1 : 0, transform: step === 1 + off ? "translateY(0)" : "translateY(18px)", transition: "opacity .5s ease 60ms, transform .6s cubic-bezier(.22,.9,.3,1) 60ms" };
+      base.rNb = { opacity: step === 1 + off ? 1 : 0, transform: step === 1 + off ? "translateY(0)" : "translateY(18px)", transition: "opacity .5s ease 200ms, transform .6s cubic-bezier(.22,.9,.3,1) 200ms" };
+
+      for (let i = 0; i <= 6; i++) base["s" + i].background = WPAPER;
+      base.sName.background = WPAPER;
+
+      if (off) {
+        base.sI1 = screen(1); base.sI1.background = WPAPER;
+        base.sI2 = screen(2); base.sI2.background = C.paper;
+        base.kI0 = step === 0 ? "on" : "off";
+        base.kI1 = step === 1 ? "on" : "off";
+        base.kI2 = step === 2 ? "on" : "off";
+        base.nStories = this.state.cn[0];
+        base.nSources = this.state.cn[1];
+        base.nMins = this.state.cn[2];
+        base.nGSources = this.state.cn[0] + "+";
+        base.nGTopics = String(this.state.cn[1]);
+        base.nGMins = "\u003C" + this.state.cn[2];
+        base.introNext = () => { this.set(k, { step: 1 }); this.countC(650); };
+        base.iDots = [0, 1, 2].map(i => ({
+          style: {
+            width: i === step ? 16 : 5, height: 5, borderRadius: 3,
+            background: i === step ? C.ink : C.rule,
+            transition: "width .3s ease, background .3s ease"
+          }
+        }));
+      }
+
+      const nm = (st.name || "").trim();
+      base.name = st.name || "";
+      base.title = (nm || "Norm") + "\u2019s Newsletter";
+      base.setName = (e) => this.set(k, { name: e.target.value.slice(0, 18) });
+      base.nameCta = nm ? "Continue" : "Skip \u2014 call it Norm\u2019s";
+      base.notifText = NOTIFS[(this.state.nx || 0) % NOTIFS.length];
+      base.nKey = "n" + ((this.state.nx || 0) % NOTIFS.length);
+
+      const setMins = (e, el) => {
+        const r = el.getBoundingClientRect();
+        const f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+        this.set(k, { mins: 300 + Math.round((f * 900) / 30) * 30 });
+      };
+      base.slideDown = (e) => {
+        try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+        setMins(e, e.currentTarget);
+      };
+      base.slideMove = (e) => { if (e.buttons) setMins(e, e.currentTarget); };
+      const pct = ((st.mins - 300) / 900) * 100;
+      base.time = fmtTime(st.mins);
+      base.timeNote = noteFor(st.mins);
+      base.deliveryLine = (st.perm ? fmtTime(st.mins) + ", pushed" : fmtTime(st.mins) + ", in app");
+      base.timeFill = {
+        position: "absolute", left: 0, top: 21, height: 2,
+        width: pct + "%", background: accent, transition: "width .14s linear"
+      };
+
+      const imp = st.imp || {};
+      const impOf = (id) => imp[id] || 6;
+      const openTopic = (id) => (e) => {
+        let dx = 0, dy = 0;
+        try {
+          const el = e.currentTarget;
+          let host = el.parentElement;
+          while (host && window.getComputedStyle(host).position !== "absolute") host = host.parentElement;
+          const cr = el.getBoundingClientRect(), hr = host.getBoundingClientRect();
+          const sc = (hr.width / host.offsetWidth) || 1;
+          dx = Math.round(((cr.left + cr.width / 2) - (hr.left + hr.width / 2)) / sc);
+          dy = Math.round(((cr.top + cr.height / 2) - (hr.top + hr.height / 2)) / sc);
+        } catch (err) {}
+        this.set(k, { pend: id, pv: impOf(id), pdx: dx, pdy: dy });
+      };
+
+      base.topics = TOPICS.map((t, i) => {
+        const rank = st.sel.indexOf(t.id);
+        const on = rank > -1;
+        return {
+          name: t.name, meta: t.meta,
+          metaText: on ? t.meta + " \u00b7 " + impOf(t.id) + "/10" : t.meta,
+          toggle: openTopic(t.id),
+          index: on ? "No. " + (rank + 1) : (i + 1 < 10 ? "0" : "") + (i + 1),
+          card: {
+            border: "1px solid " + (on ? accent : C.rule),
+            background: on ? accent : CREAM,
+            padding: "11px 12px 12px", minHeight: 92, cursor: "pointer",
+            display: "flex", flexDirection: "column", gap: 6,
+            transform: on ? "translateY(-2px)" : "none",
+            boxShadow: on ? "0 8px 18px rgba(35,35,31,.14)" : "0 0 0 rgba(0,0,0,0)",
+            transition: "background .22s ease, border-color .22s ease, transform .28s cubic-bezier(.22,1.4,.4,1), box-shadow .28s ease"
+          },
+          num: {
+            fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, letterSpacing: ".1em",
+            color: on ? C.paper : CLAY, fontWeight: on ? 500 : 400, transition: "color .22s ease"
+          },
+          check: {
+            width: 16, height: 16, display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 10, lineHeight: 1, color: accent, background: C.paper, borderRadius: "50%",
+            opacity: on ? 1 : 0, transform: on ? "scale(1)" : "scale(.4)",
+            transition: "opacity .2s ease, transform .3s cubic-bezier(.22,1.5,.4,1)"
+          },
+          label: {
+            fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 14.5,
+            lineHeight: 1.26, color: on ? C.paper : C.ink, marginTop: "auto", textWrap: "pretty",
+            transition: "color .22s ease"
+          },
+          count: {
+            fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5,
+            color: on ? C.onsub : C.muted, transition: "color .22s ease"
+          }
+        };
+      });
+
+      const chosen = st.sel.map(id => TOPICS.filter(t => t.id === id)[0]).filter(Boolean);
+      base.previewEmpty = chosen.length === 0;
+      base.hasMore = chosen.length > 4;
+      base.previewMore = "+" + Math.max(0, chosen.length - 4) + " more section" + (chosen.length - 4 === 1 ? "" : "s");
+      base.previewItems = chosen.slice(0, 4).map((t, i) => {
+        const w = impOf(t.id);
+        const j = [92, 78, 86, 70][i % 4];
+        return {
+          name: (i + 1) + ". " + t.name,
+          l1: { height: 5, background: C.rule, width: Math.min(100, Math.round(j * (0.5 + w * 0.055))) + "%", display: "block", transition: "width .3s cubic-bezier(.22,.9,.3,1)" },
+          l2: { height: 5, background: C.rulef, width: Math.min(100, Math.round(j * 0.68 * (0.44 + w * 0.06))) + "%", display: "block", transition: "width .3s cubic-bezier(.22,.9,.3,1)" }
+        };
+      });
+
+      const pendT = st.pend ? TOPICS.filter(t => t.id === st.pend)[0] : null;
+      base.wtOpen = !!pendT;
+      base.wtDismiss = () => this.set(k, { pend: null });
+      if (pendT) {
+        const v = Math.max(1, Math.min(10, st.pv || 6));
+        const b = bandOf(v);
+        const already = st.sel.indexOf(st.pend) > -1;
+        const p = ((v - 1) / 9) * 100;
+        base.wtName = pendT.name;
+        base.wtMeta = pendT.meta;
+        base.wtOrigin = {
+          position: "relative", width: "100%",
+          animation: "wtpop .38s cubic-bezier(.22,.9,.3,1) both",
+          "--wtdx": (st.pdx || 0) + "px",
+          "--wtdy": (st.pdy || 0) + "px"
+        };
+        base.wtVal = v;
+        base.wtBand = b.label;
+        base.wtNote = b.note;
+        base.wtBandStyle = {
+          fontFamily: "'IBM Plex Mono', monospace", fontSize: 9.5, letterSpacing: ".14em",
+          textTransform: "uppercase", color: accent, border: "1px solid " + accent,
+          padding: "5px 9px", whiteSpace: "nowrap"
+        };
+        base.wtTicks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({
+          style: {
+            position: "absolute", top: 4, left: "calc(" + (((n - 1) / 9) * 100) + "% - 0.5px)",
+            width: 1, height: 6, background: n <= v ? accent : C.rule,
+            transition: "background .14s linear"
+          }
+        }));
+        base.wtFill = {
+          position: "absolute", left: 0, top: 21, height: 2,
+          width: p + "%", background: accent, transition: "width .12s linear"
+        };
+        base.wtMark = {
+          position: "absolute", top: 11, left: "calc(" + p + "% - 11px)",
+          width: 22, height: 22, borderRadius: "50%", background: accent,
+          border: "4px solid " + CREAM, boxShadow: "0 0 0 1px " + accent + ", 0 3px 8px " + C.shadow,
+          transition: "left .12s linear"
+        };
+        const setPv = (e, el) => {
+          const r = el.getBoundingClientRect();
+          const f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+          this.set(k, { pv: 1 + Math.round(f * 9) });
+        };
+        base.wtDown = (e) => {
+          try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+          setPv(e, e.currentTarget);
+        };
+        base.wtMove = (e) => { if (e.buttons) setPv(e, e.currentTarget); };
+        base.wtCta = already ? "Save this weighting" : "Add to my front page";
+        base.wtSecond = already ? "Take it off the page" : "Not this one";
+        base.wtSave = () => this.set(k, {
+          pend: null,
+          imp: Object.assign({}, imp, { [st.pend]: v }),
+          sel: already ? st.sel : st.sel.concat([st.pend])
+        });
+        base.wtSecondAct = already
+          ? () => this.set(k, { pend: null, sel: st.sel.filter(x => x !== st.pend) })
+          : () => this.set(k, { pend: null });
+      }
+
+      base.counterText = st.sel.length + " of " + min;
+      base.counter = {
+        fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5,
+        color: enough ? accent : C.muted, transition: "color .25s ease"
+      };
+      base.meter = {
+        height: "100%", background: enough ? accent : CLAY,
+        width: Math.min(100, (st.sel.length / min) * 100) + "%",
+        transition: "width .38s cubic-bezier(.22,.9,.3,1), background .3s ease"
+      };
+
+      base.timeMark = {
+        position: "absolute", top: 11, left: "calc(" + pct + "% - 11px)",
+        width: 22, height: 22, borderRadius: "50%", background: accent,
+        border: "4px solid " + WPAPER, boxShadow: "0 0 0 1px " + accent + ", 0 3px 8px " + C.shadow,
+        transition: "left .14s linear"
+      };
+
+      base.stamp = {
+        position: "absolute", right: -4, bottom: -34, width: 78, height: 78, borderRadius: "50%",
+        border: "2px solid " + CLAY, color: CLAY, display: "flex", alignItems: "center",
+        justifyContent: "center", textAlign: "center", background: WPAPER, zIndex: 3,
+        fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5, lineHeight: 1.35,
+        letterSpacing: ".08em", textTransform: "uppercase",
+        opacity: step === W(5) ? 1 : 0,
+        transform: step === W(5) ? "rotate(-8deg) scale(1)" : "rotate(-20deg) scale(1.6)",
+        transition: "opacity .3s ease 480ms, transform .55s cubic-bezier(.2,1.35,.35,1) 480ms"
+      };
+
+      base.sPlan = screen(6 + off);
+      base.sPlan.background = WPAPER;
+      base.dotsPlan = dots(4);
+      const revRaw = (raw, d) => ({
+        opacity: step === raw ? 1 : 0,
+        transform: step === raw ? "translateY(0)" : "translateY(18px)",
+        transition: "opacity .5s ease " + d + "ms, transform .6s cubic-bezier(.22,.9,.3,1) " + d + "ms"
+      });
+      base.r6a = revRaw(6 + off, 40); base.r6b = revRaw(6 + off, 150); base.r6c = revRaw(6 + off, 260);
+      const annualTerm = st.term === "annual";
+      base.isPro = st.plan === "pro" || st.plan === "trial";
+      base.planLine = st.plan === "trial" ? (annualTerm ? "Pro \u00b7 six weeks free, then $100 a year" : "Pro \u00b7 six weeks free, then $9.99 a month")
+        : st.plan === "pro" ? (st.term === "annual" ? "Pro \u00b7 $100 a year" : "Pro \u00b7 $9.99 a month")
+        : st.plan === "free" ? "Free \u00b7 three lead sections" : "Not chosen yet";
+
+      base.sReady = screen(9 + off);
+      base.sReady.background = WPAPER;
+      base.kReady = step === 9 + off ? "on" : "off";
+
+      base.sTrial = screen(7 + off);
+      base.sTrial.background = WPAPER;
+      base.dotsTrial = dots(4);
+      base.t7a = revRaw(7 + off, 60); base.t7b = revRaw(7 + off, 200); base.t7c = revRaw(7 + off, 340);
+
+      const annual = st.term === "annual";
+      base.termAnnual = annual;
+      base.proBtn = annual ? "Go Pro \u2014 $100 a year" : "Go Pro \u2014 $9.99 a month";
+      const termBox = (on) => ({
+        flex: 1, cursor: "pointer", padding: "10px 11px",
+        border: "1px solid " + (on ? C.oxide : C.rule),
+        background: on ? "rgba(63,106,80,.07)" : "transparent",
+        display: "flex", flexDirection: "column", gap: 2,
+        transition: "border-color .2s ease, background .2s ease"
+      });
+      base.termMonthly = termBox(!annual);
+      base.termYearly = termBox(annual);
+      base.trialGreeting = (st.name || "").trim()
+        ? "Dear " + st.name.trim() + ","
+        : "Dear reader,";
+      base.setMonthly = () => this.set(k, { term: "monthly" });
+      base.setAnnual = () => this.set(k, { term: "annual" });
+      base.mLabel = { fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 13.5, color: !annual ? C.oxide : C.inks };
+      base.yLabel = { fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 500, fontSize: 13.5, color: annual ? C.oxide : C.inks };
+
+      const advance = (patch) => this.set(k, Object.assign({ step: Math.min(last, st.step + 1) }, patch));
+      base.pickFree = () => this.set(k, { planOverlay: true });
+      base.closeFree = () => this.set(k, { planOverlay: false });
+      base.confirmFree = () => advance({ plan: "free", intent: "free", planOverlay: false });
+      base.pickPro = () => advance({ intent: "pro" });
+      base.startTrial = () => this.set(k, { pay: "sheet", payMode: "trial" });
+      base.declineTrial = () => st.intent === "pro"
+        ? this.set(k, { pay: "sheet", payMode: "direct" })
+        : this.set(k, { step: 8 + off });
+      base.closeSheet = () => this.set(k, { pay: null });
+      base.subscribe = () => {
+        const trial = st.payMode === "trial";
+        this.set(k, { pay: "auth" });
+        setTimeout(() => {
+          this.set(k, { pay: "done" });
+          setTimeout(() => this.set(k, { pay: null, plan: trial ? "trial" : "pro", step: 8 + off }), 950);
+        }, 1300);
+      };
+      base.trialRight = annual ? "Week 7 \u00b7 $100 a year" : "Week 7 \u00b7 $9.99 a month";
+      base.trialNote = st.intent === "pro"
+        ? "Your card isn\u2019t touched until the seventh week, and cancelling takes one tap."
+        : "We write on the last day. Staying free after that means changing your billing then.";
+      base.declineCopy = st.intent === "pro" ? "No thanks \u2014 start billing today" : "Start with the free edition";
+      base.payTrial = st.payMode === "trial";
+      base.payDirect = st.payMode !== "trial";
+      base.payTerms = st.payMode === "trial"
+        ? (annual ? "Six weeks free, then $100 per year" : "Six weeks free, then $9.99 per month")
+        : annual ? "$100 per year, renews yearly" : "$9.99 per month, renews monthly";
+      base.payBtn = st.payMode === "trial" ? "Start Free Trial" : "Subscribe";
+      base.payAuthLine = st.payMode === "trial" ? "Norm\u2019s Newsletter Pro \u00b7 $0.00 today"
+        : annual ? "Norm\u2019s Newsletter Pro \u00b7 $100.00" : "Norm\u2019s Newsletter Pro \u00b7 $9.99";
+      base.payDoneLine = st.payMode === "trial" ? "Trial started" : "Subscribed";
+
+      base.freeOpen = !!st.planOverlay;
+      base.freeVeil = {
+        position: "absolute", inset: 0, zIndex: 80, background: "rgba(20,19,15,.32)",
+        opacity: st.planOverlay ? 1 : 0, pointerEvents: st.planOverlay ? "auto" : "none",
+        transition: "opacity .28s ease"
+      };
+      base.freePanel = {
+        position: "absolute", left: 0, right: 0, bottom: 0, zIndex: 81, background: WPAPER,
+        borderTop: "2px solid " + C.ink, padding: "24px 24px 34px",
+        boxShadow: "0 -18px 40px " + C.shadow,
+        transform: st.planOverlay ? "translateY(0)" : "translateY(102%)",
+        transition: "transform .44s cubic-bezier(.32,.72,0,1)",
+        display: "flex", flexDirection: "column"
+      };
+      const rankedAll = st.sel.map((id, i) => {
+        const t = TOPICS.filter(x => x.id === id)[0];
+        return t ? { id: id, name: t.name, meta: t.meta, rank: i + 1 } : null;
+      }).filter(Boolean);
+      const keepers = rankedAll.slice(0, 3), locked = rankedAll.slice(3);
+      base.followEmpty = rankedAll.length === 0;
+      base.followCount = rankedAll.length
+        ? rankedAll.length + " section" + (rankedAll.length === 1 ? "" : "s")
+        : "";
+      base.weightRows = rankedAll.map((r, i) => {
+        const w = impOf(r.id);
+        const paused = st.plan === "free" && i > 2;
+        return {
+          rank: r.rank + ".", name: r.name,
+          val: paused ? "paused" : w + "/10",
+          row: { display: "flex", alignItems: "center", gap: 9, opacity: paused ? 0.42 : 1 },
+          track: { width: 46, height: 3, flex: "none", background: C.rulef, display: "block", position: "relative" },
+          fill: {
+            position: "absolute", left: 0, top: 0, bottom: 0,
+            width: (w * 10) + "%", background: paused ? C.muted : accent, display: "block"
+          }
+        };
+      });
+      base.topRows = keepers.map(r => ({
+        name: r.name, meta: r.meta, rank: "No. " + r.rank,
+        num: {
+          fontFamily: "'IBM Plex Mono', monospace", fontSize: 10.5, letterSpacing: ".1em",
+          color: C.paper, background: accent, padding: "4px 7px", flex: "none"
+        }
+      }));
+      base.lockedRows = locked.map(r => ({ name: r.name }));
+      base.hasLocked = locked.length > 0;
+      base.lockedNote = locked.length === 1
+        ? "One more section waits on Pro."
+        : locked.length + " more sections wait on Pro.";
+
+      base.paySheet = !!st.pay;
+      base.payReady = st.pay === "sheet";
+      base.payAuth = st.pay === "auth";
+      base.payDone = st.pay === "done";
+      base.payVeil = {
+        position: "absolute", inset: 0, zIndex: 92, background: "rgba(0,0,0,.42)",
+        opacity: st.pay ? 1 : 0, pointerEvents: st.pay ? "auto" : "none",
+        transition: "opacity .26s ease"
+      };
+      base.payPanel = {
+        position: "absolute", left: 8, right: 8, bottom: 8, zIndex: 93,
+        background: C.alert, borderRadius: 14, overflow: "hidden",
+        fontFamily: "-apple-system, 'IBM Plex Sans', sans-serif",
+        backdropFilter: "blur(20px)",
+        transform: st.pay ? "translateY(0)" : "translateY(112%)",
+        transition: "transform .46s cubic-bezier(.32,.72,0,1)"
+      };
+      base.payMark = {
+        width: 56, height: 56, borderRadius: 12, flex: "none", background: C.ink,
+        color: C.paper, display: "flex", alignItems: "center", justifyContent: "center",
+        fontFamily: "Newsreader, Georgia, serif", fontSize: 26, lineHeight: 1
+      };
+      base.faceRing = {
+        width: 62, height: 62, borderRadius: 14, border: "2px solid " + C.alertbtn,
+        display: "flex", alignItems: "center", justifyContent: "center",
+        color: C.alertbtn, fontSize: 24,
+        animation: "bpulse 1.4s ease-in-out infinite"
+      };
+
+      const HOME = {
+        politics: { name: "US politics", stories: [
+          { title: "US sanctions Iranian firms for Bitcoin maritime insurance scheme", summary: "The Treasury sanctioned two companies helping the Revolutionary Guard earn money from shipping.", meta: "1 source \u00b7 3 min" },
+          { title: "Capital One closed Trump Organization accounts after money-laundering review", summary: "The bank says the closures followed its own anti-money-laundering checks.", meta: "1 source \u00b7 2 min" }
+        ]},
+        world: { name: "World", stories: [
+          { title: "Trump cancels Iran strikes, demands rapid deal to open Strait of Hormuz", summary: "The US president said on Truth Social that he canceled strikes if Iran makes a quick deal.", meta: "1 source \u00b7 3 min" },
+          { title: "Russian ship defies sanctions to deliver military vehicles to Mali", summary: "BBC-verified footage shows armored vehicles arriving in Bamako from a sanctioned cargo ship.", meta: "1 source \u00b7 3 min" }
+        ]},
+        ai: { name: "Artificial intelligence", stories: [
+          { title: "DeepMind disbands AlphaFold team, shifts resources to Gemini project", summary: "The lab shut down its flagship protein-folding research to focus on Gemini.", meta: "1 source \u00b7 3 min" },
+          { title: "Study finds AI financial advice encourages saving but mishandles job loss", summary: "The advice helps people diversify, and fails them when income stops.", meta: "1 source \u00b7 4 min" }
+        ]},
+        business: { name: "Business & markets", stories: [
+          { title: "Bessent and the Fed help Japan reverse months of yen losses", summary: "A coordinated intervention pulled the yen back from its lowest run this year.", meta: "1 source \u00b7 3 min" }
+        ]},
+        tech: { name: "Technology", stories: [
+          { title: "Electric and hybrid vehicles approach half of Australian new car sales", summary: "EVs and hybrids doubled their share between April and June during the fuel crisis.", meta: "1 source \u00b7 3 min" }
+        ]},
+        law: { name: "Law & courts", stories: [
+          { title: "UK investment agency exposed officials' data for 40 hours in breach", summary: "Details on 51 government officials sat publicly visible online for most of two days.", meta: "1 source \u00b7 3 min" }
+        ]},
+        climate: { name: "Climate", stories: [
+          { title: "Water supply problems put England housing targets at risk", summary: "Half of England is in serious drought, blocking development across the south and east.", meta: "1 source \u00b7 4 min" }
+        ]},
+        health: { name: "Health", stories: [
+          { title: "Uganda controls Ebola while outbreak worsens in neighboring DR Congo", summary: "Uganda stopped its outbreak as Congo's death toll passed fifteen hundred.", meta: "1 source \u00b7 3 min" }
+        ]},
+        science: { name: "Science", stories: [
+          { title: "Drug reverses autism-like brain changes in adult mice within hours", summary: "Rapamycin improved overactivity, seizure risk and repetitive behavior in affected mice.", meta: "1 source \u00b7 4 min" }
+        ]},
+        culture: { name: "Culture", stories: [
+          { title: "Nothing ran in Culture today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        media: { name: "Media", stories: [
+          { title: "Nothing ran in Media today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        sports: { name: "Sport", stories: [
+          { title: "Nothing ran in Sport today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        education: { name: "Education", stories: [
+          { title: "Nothing ran in Education today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        energy: { name: "Energy", stories: [
+          { title: "Nothing ran in Energy today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        space: { name: "Space", stories: [
+          { title: "Nothing ran in Space today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        money: { name: "Personal finance", stories: [
+          { title: "Nothing ran in Personal finance today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        entertainment: { name: "Entertainment", stories: [
+          { title: "Nothing ran in Entertainment today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        travel: { name: "Travel", stories: [
+          { title: "Nothing ran in Travel today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        food: { name: "Food & drink", stories: [
+          { title: "Nothing ran in Food & drink today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]},
+        housing: { name: "Housing & real estate", stories: [
+          { title: "Nothing ran in Housing & real estate today", summary: "Norm only files a section when a story clears the bar. Tomorrow, maybe.", meta: "\u2014" }
+        ]}
+      };
+      const homeOrder = (rankedAll.length ? rankedAll.map(r => r.id) : ["politics", "ai", "world"]).slice(0, 3);
+      base.homeSections = homeOrder.map(id => HOME[id]).filter(Boolean);
+
+      const nameList = rankedAll.map(r => r.name);
+      base.picked = st.plan === "free"
+        ? (keepers.length ? keepers.map(r => r.name).join(", ") + (locked.length ? " +" + locked.length + " paused" : "") : "Everything, for now")
+        : (nameList.length ? nameList.join(", ") : "Everything, for now");
+    }
+
+    return base;
+  }
+
+  theme() {
+    return (this.props.theme || "light") === "dark" ? DARK : LIGHT;
+  }
+
+  renderVals() {
+    const C = this.theme();
+    const tint = this.props.accent || "#3F6A50";
+    const vars = { display: "contents" };
+    Object.keys(C).forEach(k => { vars["--c-" + k] = C[k]; });
+    if (tint !== "#3F6A50") vars["--c-oxide"] = tint;
+    const dark = (this.props.theme || "light") === "dark";
+    const rgb = (hex) => {
+      const m = /^#?([0-9a-f]{6})$/i.exec(String(hex).trim());
+      if (!m) return "196,126,66";
+      const n = parseInt(m[1], 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255].join(",");
+    };
+    const t = rgb(tint);
+    vars["--c-dawn"] = "rgba(" + t + "," + (dark ? .42 : .26) + ")";
+    vars["--c-dawnm"] = "rgba(" + t + "," + (dark ? .12 : .07) + ")";
+    vars["--c-dawn2"] = "rgba(" + t + "," + (dark ? .34 : .30) + ")";
+    return {
+      vars: vars,
+      isDark: (this.props.theme || "light") === "dark",
+      A: this.flow("a", "grid"),
+      B: this.flow("b", "warm"),
+      F: this.flow("c", "warm3"),
+      D: this.carousel(),
+      W: {
+        ka: this.state.w.ka, kb: this.state.w.kb, kc: this.state.w.kc, kd: this.state.w.kd,
+        nStories: this.state.w.n[0], nSources: this.state.w.n[1], nMins: this.state.w.n[2],
+        replayA: () => this.replay("a"), replayB: () => this.replay("b"),
+        replayC: () => this.replay("c"), replayD: () => this.replay("d"),
+        ke: this.state.w.ke,
+        k5a: this.state.w.k5a, k5b: this.state.w.k5b, k5c: this.state.w.k5c, k5d: this.state.w.k5d,
+        r5a: () => this.replay("5a"), r5b: () => this.replay("5b"),
+        r5c: () => this.replay("5c"), r5d: () => this.replay("5d"),
+        e0: this.state.w.e === 0, e1: this.state.w.e === 1, e2: this.state.w.e === 2,
+        eStories: this.state.w.en[0], eSources: this.state.w.en[1], eMins: this.state.w.en[2],
+        eNext: () => this.goE(Math.min(2, this.state.w.e + 1)),
+        eRestart: () => this.goE(0),
+        eDots: [0, 1, 2].map(i => ({
+          style: "width:" + (i === this.state.w.e ? "16px" : "5px") + ";height:5px;border-radius:3px;background:" + (i === this.state.w.e ? "var(--c-ink,#23231F)" : "var(--c-rule,#DDD9CC)") + ";transition:width .3s ease,background .3s ease"
+        }))
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -5,7 +5,39 @@ authoritative. Nothing in this file governs the build until it is folded into
 SPEC.md and approved. This document exists to explain the plan in plain
 English so anyone joining the project can understand it quickly.
 
-Written 2026-08-03.
+Written 2026-08-03. Reconciled with SPEC.md section 14 on 2026-08-04.
+
+---
+
+## Read this first: what has changed since this was written
+
+Everything below was written as a proposal. Most of it is now specified in
+**SPEC.md section 14**, and in several places the specification went a
+different way after the app prototype was read against it. **SPEC.md wins
+everywhere.** The reconciliation:
+
+| This document said | The spec decided | Where |
+| --- | --- | --- |
+| Store the embeddings | They are a cache keyed by `(item_id, model_version)`. A miss just recomputes | #35 |
+| Allocator has a per-topic minimum and maximum, budget 12 to 18 | The reader sets the length and a weight per topic; stories split in proportion to the weights. No minimum or maximum | #45, SPEC 14.4 |
+| One lookback window | Two: 36 hours normally, 7 days for catch-up. Score ties break by recency | #48 |
+| 30 to 50 curated topics | Ten: exactly the topics already in the enum | #49, SPEC 14.3 |
+| Two-host audio dialogue | A single voice reading self-contained per-story segments | #44 |
+| Nothing on money | Free tier is a cap of three ranked topics; Pro is $9.99 a month or $100 a year, through in-app purchase | #46, #47, SPEC 14.10 |
+| Nothing on sign-in | Sign in with Apple plus email magic links. No social logins, no passwords | #50, SPEC 14.2 |
+| "Instrument feedback telemetry" as a warning | Four events, specified and shipping in v1 | #51, SPEC 14.11 |
+| Nothing on retention | 12 months for stories, newsletters and seen-story history; 13 for telemetry | #55, SPEC 14.12 |
+| Nothing on top-up limits | Floor of 6 on `general_score`, and at most half the budget | #56 |
+
+Two things the spec added that this document never considered: push
+notification copy comes from deterministic templates and never from a model
+(#52), because a generated notification would be a second AI call on the
+per-user path; and the app has no edition number at all (#53), because the
+site's sequential numbering is a fact about the site rather than about any
+reader.
+
+Section 15 below is kept as a record of what was open on 2026-08-03. Every
+item in it is now closed.
 
 ---
 
@@ -151,10 +183,12 @@ The app calls an API, the API reads a pre-built newsletter, done. Fast.
 
 1. **Put `user_id` on things immediately**, even while testing with a single
    account. Adding it later means migrating everything.
-2. **Start saving the embeddings.** Right now the pipeline recalculates them
-   on every run because it is cheap at the current size. Once we are matching
-   stories against user interests we will use those vectors constantly. Store
-   them instead of recomputing them.
+2. ~~Start saving the embeddings.~~ **Superseded by decision #35.** The
+   instinct was right but storing them would have given up a property worth
+   keeping: because nothing is stored, changing the embedding model costs a
+   threshold re-calibration and no data migration. They are a **cache** keyed
+   by `(item_id, model_version)` instead. A miss recomputes exactly as before,
+   and a model change invalidates by version rather than needing a migration.
 
 ---
 
@@ -306,48 +340,80 @@ All four are improvements over a prompt.
 
 ### The rules the allocator needs
 
-1. **A total budget per newsletter.** Say 12 to 18 stories.
-2. **A minimum and maximum per topic**, so one busy topic cannot eat the
-   whole newsletter.
-3. **Fewer topics means more stories per topic**, so a user who picked one
-   topic still gets a full read.
+> **Superseded by decision #45. SPEC 14.4 is authoritative.** The rules below
+> assumed the system chooses the budget and guards each topic with a minimum
+> and a maximum. The app prototype showed a better answer: the **reader**
+> chooses the length and gives each topic a weight, and stories split in
+> proportion to those weights. A minimum and a user-set weight do the same job,
+> and the minimum wins silently, so the reader's setting appears to work and
+> does not. The rules that survive are 4, 5, 6 and 7 below; rules 1 to 3 are
+> replaced by the weights.
+
+1. ~~A total budget per newsletter, say 12 to 18 stories.~~ The reader picks a
+   length: 5, 8, 11, 16 or 20, defaulting to 11.
+2. ~~A minimum and maximum per topic.~~ Each topic carries a weight from 1 to
+   10, and gets that share of the length. A topic can legitimately get zero,
+   and the app says so in the label the reader sees.
+3. ~~Fewer topics means more stories per topic.~~ This is now arithmetic
+   rather than a rule: one topic means a share of 1.0 and the whole length.
 4. **Remove duplicates.** With secondary topics (section 6), the same story
    can now appear under several of a user's topics. Show it once, and record
-   which topic claimed it.
+   which topic claimed it. The topic earliest in the reader's own order wins.
 5. **Skip anything they have already seen.**
 6. **Top up from general news** if their topics are quiet, using
-   `general_score`.
+   `general_score`. Bounded since decision #56: nothing below 6, and never
+   more than half the newsletter.
 7. **Pick the lead story** as the highest `general_score` among the stories
    selected.
 
 ### A worked example
 
-User subscribes to: Tech, AI, Sports. Budget is 15 stories.
+Updated for the weighted allocator. A reader on Pro picks Tech at weight 8,
+AI at 5, Sports at 2, and a length of 11 ("As filed").
 
 ```
-Step 1  Query stories for Tech, AI, Sports (primary OR secondary topic),
-        from the last 24 hours, excluding already-seen.
-        Result: 62 candidate stories.
+Step 1  Entitlement. Pro, so all three topics run. On the free tier
+        only the first three ranked topics would, which here is all
+        of them anyway.
 
-Step 2  Remove duplicates. A story tagged both Tech and AI appears once.
-        Result: 54 stories.
+Step 2  Query Tech, AI, Sports (primary OR secondary), inside the
+        36-hour daily window, excluding already-seen.
+        Result: 47 candidates.
 
-Step 3  Allocate. 3 topics, budget 15, max 6 per topic:
-          Tech   -> top 6 by topic_score
-          AI     -> top 6 by topic_score
-          Sports -> top 3 by topic_score  (only 3 cleared the bar today)
-        Result: 15 stories.
+Step 3  Dedup. A story tagged both Tech and AI appears once, claimed
+        by whichever the reader ranked higher.
+        Result: 41 stories.
 
-Step 4  Sports came up short? No, budget is filled. If it had come up short,
-        top up with the highest general_score stories not already selected.
+Step 4  Targets. Weights total 15, so shares are 8/15, 5/15, 2/15
+        of 11 stories = 5.87, 3.67, 1.47.
+        Floors are 5, 3, 1 = 9. Two seats left, given to the two
+        largest remainders (Tech .87, AI .67).
+          Tech   -> 6
+          AI     -> 4
+          Sports -> 1        total 11
 
-Step 5  Lead story = highest general_score of the 15.
+Step 5  Fill by topic_score, breaking ties by which is newer.
+        Tech and AI fill. Sports has nothing today, as usual.
 
-Step 6  Generate the intro from the 15 one-line summaries.
+Step 6  Reclaim. Sports releases its 1 seat. It goes to Tech, which
+        has the larger weight and unselected candidates left.
+          Tech 7, AI 4, Sports 0     total 11
+
+Step 7  Top up. Not needed, the budget is full. If it were short,
+        general news scoring 6 or better would fill it, up to half
+        the newsletter and no further.
+
+Step 8  Lead story = highest general_score of the 11.
+
+Step 9  Generate the intro from the 11 one-line summaries.
         (Cache it by the hash of the story ID set.)
 ```
 
-Every step above is plain code. No AI except step 6.
+Every step above is plain code. No AI except step 9.
+
+Note what step 6 does for the Sports subscriber. Sports produces nothing on
+most days, so its seat goes to a topic that does. The reader still sees Sports
+whenever something clears, which is exactly what the weight of 2 asked for.
 
 ---
 
@@ -355,8 +421,13 @@ Every step above is plain code. No AI except step 6.
 
 There are two ways to let users pick topics.
 
-**A fixed menu.** Say 30 to 50 curated topics, and the user checks boxes.
-Simple, predictable, and our existing scoring already works this way.
+**A fixed menu.** Curated topics, and the user checks boxes. Simple,
+predictable, and our existing scoring already works this way. This document
+guessed 30 to 50; **decision #49 settled on ten, which is exactly the topics
+already in the enum.** Each topic carries anchored 3, 6 and 9 example stories
+in the scoring prompt, so thirteen extra topics means thirteen more anchor sets
+to write and calibrate. The app prototype's twenty are recorded in SPEC 14.3 as
+a deferred expansion.
 
 **Free text.** The user types anything ("Formula 1", "my city council"),
 matched by meaning using embeddings. Flexible, but harder, and it fails badly
@@ -450,12 +521,17 @@ flat as users are added.
 
 ### This constrains the audio format
 
-Our two-host dialogue only stitches cleanly if **each story is a
-self-contained segment** with its own beginning and end. A dialogue that flows
-continuously across stories cannot be recombined per user.
+Audio only stitches cleanly if **each story is a self-contained segment** with
+its own beginning and end. A dialogue that flows continuously across stories
+cannot be recombined per user.
 
-Decide this before building M6. It is an audio format decision, not an
-engineering one, and it is much cheaper to decide now.
+**Decided by #44: a single voice, not two.** The two changes turned out to be
+one decision rather than two. A two-host dialogue flows across story
+boundaries and cannot be recut, which is precisely what made per-story clips
+impossible, so choosing one voice is what unblocked reuse. It also resolved an
+inconsistency, since decision #11 makes Norm the editor persona and two hosts
+meant Norm plus an unnamed second party. Clips render lazily on first request,
+because most stories are never listened to. The rework lands in M8.
 
 ---
 
@@ -628,16 +704,16 @@ product.
 
 ## 15. Decisions still open
 
-These are all schema or contract decisions, which means they are cheap today
-and painful in six months. They should go into SPEC.md before code is written.
+**All five are now closed.** This table is kept as a record of what was open on
+2026-08-03, and of the prediction that these were the expensive ones to defer.
 
-| # | Decision | Why it is urgent |
+| # | Decision | Closed by |
 | --- | --- | --- |
-| 1 | Two scores per story (`topic_score`, `general_score`) and what the rubric means for each | Changing later means re-scoring all history |
-| 2 | Primary plus secondary topics, replacing the single-topic field | Schema change, affects every stored cluster |
-| 3 | The allocator rules: budget, per-topic min and max, dedup, seen-filtering, quiet-topic top-up | Replaces the AI editor. Needs tests. |
-| 4 | The audio segment format (self-contained per story) | Blocks M6 |
-| 5 | The fixed topic list itself (which 30 to 50 topics) | Blocks the signup flow |
+| 1 | Two scores per story (`topic_score`, `general_score`) | #33, SPEC 6.4 |
+| 2 | Primary plus secondary topics, replacing the single-topic field | #34, SPEC 6.4 |
+| 3 | The allocator rules | #45, #48, #56, SPEC 14.4. Went a different way: the reader sets the budget and the weights |
+| 4 | The audio segment format (self-contained per story) | #44, SPEC 6.7. Also settled the voice, which turned out to be the same decision |
+| 5 | The fixed topic list | #49, SPEC 14.3. Ten, not 30 to 50 |
 
 Settled already:
 
@@ -646,6 +722,62 @@ Settled already:
 - Users choose their own read time.
 - Serverless for the app API; Dagster+ Serverless for the pipeline with
   Hybrid as the fallback.
+
+---
+
+## 15b. Notes on the app prototype
+
+Observations from reading the Claude Design export in `prototypes/`, kept here
+because they are about a prototype rather than about the system. **Nothing here
+governs anything**, and the app's visual system is still unspecified: DESIGN.md
+covers the site only.
+
+### Where the prototype and the spec now agree
+
+The prototype's story fields map one to one onto the story record in SPEC 14.1:
+`background`, `what`, `why` and the quote fields become the `article` block.
+The `flat: true` flag on stories that failed the readability gate twice is
+already load-bearing in the UI, which is the same path SPEC 14.1 describes.
+The archive tab is already labelled "Newsletters" rather than "Editions".
+
+### What the prototype supplied that the spec then adopted
+
+The weighted allocator, the five length presets, the topic weights with their
+five band labels, and the whole monetization model came from reading this
+prototype. It is the source for decisions #45 through #47 and part of #56.
+
+### Things that do not survive the port to React Native
+
+The prototype is HTML, CSS and JS. Four things in it have no direct equivalent
+and need a decision when the client is built:
+
+- **`color-mix(in oklab, ...)`** drives the per-topic tone ramps. Not
+  supported in React Native. Precompute the ramp into token values instead.
+- **`text-wrap: pretty`** is used on headlines throughout. No equivalent.
+- **Drag to reorder topics, and the weight sliders**, use raw pointer events
+  including `setPointerCapture` and `elementFromPoint`. These need
+  `react-native-gesture-handler` with `reanimated`, and `elementFromPoint` has
+  no analogue, so hit testing has to work from measured layout rectangles.
+- **The fonts** (Newsreader, IBM Plex Sans, IBM Plex Mono) load from Google at
+  runtime in the prototype. They must be bundled with `expo-font`, which makes
+  them a **native** change: fonts cannot ship as an over-the-air update
+  (SPEC 14.9).
+
+The `LIGHT` and `DARK` token maps in the prototype are complete and parallel,
+which maps cleanly onto NativeWind's `dark:` variant backed by CSS variables.
+
+### Prototype features that are deliberately not in v1
+
+- **Saved chat history.** The prototype has a past-chats list. Deferred by
+  decision #54, because a stored transcript is a table of agent output and
+  decision #41 forbids exactly that. The agent ships without it.
+- **Free-text topics** ("name any topic and the sources attach themselves"),
+  offered as a Pro benefit. Out of scope on both tiers, SPEC 14.3.
+- **The Sunday retrospective.** A second assembly on a weekly cadence with its
+  own AI call. Named in SPEC 14.10 and not specified.
+- **The edition number.** The prototype's "No. 056" runs through the masthead,
+  the push copy and the agent's opening line. Removed by decision #53: it is a
+  fact about the site, not about any reader.
 
 ---
 

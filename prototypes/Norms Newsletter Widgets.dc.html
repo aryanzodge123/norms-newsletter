@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEEBE2;font-family:'IBM Plex Sans',system-ui,sans-serif}
+a{color:#3F6A50;text-decoration:none}
+a:hover{text-decoration:underline}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 18px}
+.dv-tid{font:500 10px 'IBM Plex Mono',monospace;padding:3px 7px;background:#23231F;color:#F6F4EE;border-radius:4px;text-decoration:none}
+.dv-tname{font:500 13px/1.2 'IBM Plex Sans',sans-serif;color:#23231F}
+.dv-note{margin:0 0 24px;max-width:820px;font:13px/1.7 'IBM Plex Sans',sans-serif;color:#44433C}
+.dv-opts{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px;width:402px}
+.dv-opt.wide{width:auto;max-width:1240px}
+.dv-oid{font:500 10.5px 'IBM Plex Mono',monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#23231F;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11.5px/1.35 'IBM Plex Sans',sans-serif;color:rgba(0,0,0,.55)}
+.dv-opt:target .dv-oid{background:#3F6A50;color:#fff}
+.dv-tog{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.18);background:rgba(255,255,255,.5);color:#23231F;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px;cursor:pointer;user-select:none}
+.dv-tog:hover{background:#23231F;color:#F6F4EE;border-color:#23231F}
+@keyframes wzoom{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+@keyframes wbreathe{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@keyframes wbar1{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+@keyframes wbar2{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.4)}}
+@keyframes wbar3{0%,100%{transform:scaleY(.6)}50%{transform:scaleY(.9)}}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">iOS widgets &#8212; Norm&#8217;s Newsletter, edition No. 048</span></div>
+<p class="dv-note">The widget family, built from the same paper, ink and oxide as the app. One rule holds the whole set together: <strong>a widget is a printed slip, not a dashboard.</strong> Masthead micro-rule at the top, one job per widget, hairlines instead of cards, no gradients and no icons inside the surface. The only radius in the system is the one iOS forces on the container &#8212; everything inside stays square. <a href="#1a">1a</a> is the home screen with a swipeable stack; <a href="#1b">1b</a> is the lock screen with the audio Live Activity; <a href="#1c">1c</a> is the family at true point size; <a href="#1d">1d</a> covers StandBy and the Dynamic Island; <a href="#1e">1e</a> is the app icon. Play buttons work, the stack swipes (drag it or tap the dots), and tapping the top widget on the home screen opens the app.</p>
+<div style="display:flex;gap:10px;margin:-8px 0 22px"><span class="dv-tog" onClick="{{ toggleTheme }}">&#9680; {{ themeLabel }}</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Home screen &#8212; medium headline slip, a swipeable stack, and the audio small</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ isDark }}" hint-size="402px,874px">
+<div style="{{ vars }}">
+<div style="position:relative;width:100%;height:874px;overflow:hidden;font-family:-apple-system,'IBM Plex Sans',system-ui,sans-serif">
+<div style="{{ wallStyle }}"></div>
+
+<div style="position:relative;height:100%;display:flex;flex-direction:column;padding:0 26px">
+
+<div style="height:62px;flex:none"></div>
+
+<!-- MEDIUM: today's headline -->
+<div onClick="{{ openApp }}" style="width:350px;height:170px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 10px 26px var(--c-wsh,rgba(35,35,31,.18));cursor:pointer;transition:transform .14s ease" style-active="transform:scale(.978)">
+<div style="height:100%;box-sizing:border-box;padding:15px 18px 14px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink,#23231F)">Norm&#8217;s Newsletter</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.06em;color:var(--c-muted,#6B6A62)">No. 048</span>
+</div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:7px;flex:none"></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:19.5px;line-height:1.16;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:11px 0 0;text-wrap:pretty;flex:none;max-height:68px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden">Trump sets tariffs on over 80 countries covering nearly all US imports</h1>
+<span style="flex:1"></span>
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--c-rulef,#E8E5DA);padding-top:8px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.06em;color:var(--c-muted,#6B6A62)">12 stories &#183; 60-second read</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.06em;color:var(--c-oxide,#3F6A50)">Open &#8250;</span>
+</div>
+</div>
+</div>
+
+<div style="height:20px;flex:none"></div>
+
+<!-- SMALL ROW: stack + audio -->
+<div style="display:flex;gap:16px">
+
+<div onPointerDown="{{ stackDown }}" onPointerMove="{{ stackMove }}" onPointerUp="{{ stackUp }}" onPointerLeave="{{ stackUp }}" style="position:relative;width:167px;height:167px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 10px 26px var(--c-wsh,rgba(35,35,31,.18));touch-action:none;cursor:grab;user-select:none">
+
+<div style="{{ stkA }}">
+<div style="height:100%;box-sizing:border-box;padding:14px 15px;display:flex;flex-direction:column;border-top:2px solid var(--c-oxide,#3F6A50);font-family:'IBM Plex Sans',system-ui,sans-serif">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">At a glance</span>
+<div style="display:flex;gap:8px;align-items:baseline;margin-top:10px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);flex:none">01</span>
+<span style="font-size:11.5px;line-height:1.42;color:var(--c-ink2,#2E2D27);text-wrap:pretty;max-height:82px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden">Tariffs on 80+ countries took effect Friday, covering nearly all US imports.</span>
+</div>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">5 points &#183; 60 sec</span>
+</div>
+</div>
+
+<div style="{{ stkB }}">
+<div style="height:100%;box-sizing:border-box;padding:14px 15px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">This edition</span>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:6px"></div>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:44px;line-height:.95;letter-spacing:-.035em;color:var(--c-ink,#23231F);margin-top:14px;font-variant-numeric:tabular-nums">12</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin-top:6px">Stories kept</span>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">from 41 sources</span>
+</div>
+</div>
+
+<div style="{{ stkC }}">
+<div style="height:100%;box-sizing:border-box;padding:14px 15px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">Next edition</span>
+<div style="border-top:1px solid var(--c-rule,#DDD9CC);margin-top:7px"></div>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:32px;line-height:1;letter-spacing:-.03em;color:var(--c-ink,#23231F);margin-top:13px;font-variant-numeric:tabular-nums">6:00</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin-top:5px">am ET tomorrow</span>
+<span style="flex:1"></span>
+<div style="display:flex;align-items:center;gap:6px">
+<span style="width:4px;height:4px;border-radius:50%;background:var(--c-oxide,#3F6A50);animation:wbreathe 2.4s ease-in-out infinite"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-oxide,#3F6A50)">No. 049 on the wire</span>
+</div>
+</div>
+</div>
+
+<div style="position:absolute;top:0;bottom:0;right:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;z-index:3">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="3">
+<span onClick="{{ d.set }}" style="{{ d.style }}"></span>
+</sc-for>
+</div>
+</div>
+
+<div style="width:167px;height:167px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 10px 26px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:14px 15px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">Today&#8217;s brief</span>
+<div style="border-top:1px solid var(--c-rule,#DDD9CC);margin-top:7px"></div>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:14.5px;line-height:1.22;color:var(--c-ink,#23231F);margin-top:11px;text-wrap:pretty;flex:none;max-height:54px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden">Two hosts read the whole edition aloud</span>
+<span style="flex:1"></span>
+<div style="display:flex;align-items:center;gap:10px">
+<div onClick="{{ togglePlay }}" style="width:44px;height:44px;flex:none;border:1px solid var(--c-oxide,#3F6A50);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .14s ease" style-active="transform:scale(.94)">
+<sc-if value="{{ isPlaying }}" hint-placeholder-val="{{ false }}">
+<span style="display:flex;gap:3px;align-items:flex-end;height:13px">
+<span style="width:2.5px;height:13px;background:var(--c-oxide,#3F6A50);transform-origin:bottom;animation:wbar1 .9s ease-in-out infinite"></span>
+<span style="width:2.5px;height:13px;background:var(--c-oxide,#3F6A50);transform-origin:bottom;animation:wbar2 .9s ease-in-out infinite"></span>
+<span style="width:2.5px;height:13px;background:var(--c-oxide,#3F6A50);transform-origin:bottom;animation:wbar3 .9s ease-in-out infinite"></span>
+</span>
+</sc-if>
+<sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}">
+<span style="width:0;height:0;border-left:11px solid var(--c-oxide,#3F6A50);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px"></span>
+</sc-if>
+</div>
+<div style="min-width:0;display:flex;flex-direction:column;gap:3px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--c-ink,#23231F);font-variant-numeric:tabular-nums">{{ timeLeft }}</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">{{ audioState }}</span>
+</div>
+</div>
+<div style="height:2px;background:var(--c-rulef,#E8E5DA);margin-top:10px"><div style="{{ barSmall }}"></div></div>
+</div>
+</div>
+
+</div>
+
+<div style="height:26px;flex:none"></div>
+
+<!-- APP GRID -->
+<div style="display:grid;grid-template-columns:repeat(4,60px);justify-content:space-between;row-gap:20px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="{{ iconStyle }}"><span style="{{ iconGlyphStyle }}">N</span><span style="{{ iconRuleStyle }}"></span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Norm&#8217;s</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#6E7B72,#4F5A53);box-shadow:0 3px 8px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:16px;border:1.6px solid rgba(255,255,255,.9)"></span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Mail</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:60px;height:60px;border-radius:22.4%;background:#FBFAF6;box-shadow:0 3px 8px rgba(0,0,0,.16);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px"><span style="font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#B4483C">Sat</span><span style="font-family:Newsreader,Georgia,serif;font-size:26px;line-height:1;color:#23231F">25</span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Calendar</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#3B3B36,#22221E);box-shadow:0 3px 8px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center"><span style="width:20px;height:20px;border-radius:50%;border:1.6px solid rgba(255,255,255,.85)"></span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Camera</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#C9BFA6,#A79C82);box-shadow:0 3px 8px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center"><span style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.85)"></span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Photos</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:60px;height:60px;border-radius:22.4%;background:#F3EFE3;box-shadow:0 3px 8px rgba(0,0,0,.16);display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 12px;box-sizing:border-box"><span style="height:1.5px;background:#B9B2A0"></span><span style="height:1.5px;background:#B9B2A0"></span><span style="height:1.5px;background:#B9B2A0;width:60%"></span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Notes</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#7E8C7F,#56604F);box-shadow:0 3px 8px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center"><span style="width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:18px solid rgba(255,255,255,.9)"></span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Maps</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#8C8A80,#63615A);box-shadow:0 3px 8px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center"><span style="width:18px;height:18px;border-radius:50%;border:1.6px solid rgba(255,255,255,.85);position:relative"><span style="position:absolute;inset:6px;border-radius:50%;background:rgba(255,255,255,.85)"></span></span></div>
+<span style="font-size:10.5px;color:var(--c-wlabel,#33322C);text-shadow:0 1px 2px rgba(0,0,0,.16)">Settings</span>
+</div>
+</div>
+
+<span style="flex:1"></span>
+
+<div style="display:flex;justify-content:center;gap:6px;padding-bottom:12px">
+<span style="width:6px;height:6px;border-radius:50%;background:var(--c-wdot,rgba(35,35,31,.85))"></span>
+<span style="width:6px;height:6px;border-radius:50%;background:var(--c-wdotf,rgba(35,35,31,.3))"></span>
+</div>
+
+<div style="margin:0 -8px 22px;height:82px;border-radius:32px;background:var(--c-wdock,rgba(255,255,255,.28));backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border:.5px solid var(--c-wdockb,rgba(255,255,255,.4));display:flex;align-items:center;justify-content:space-around;padding:0 14px;box-sizing:border-box">
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#6E7B72,#4F5A53);display:flex;align-items:center;justify-content:center"><span style="width:24px;height:16px;border:1.6px solid rgba(255,255,255,.9)"></span></div>
+<div style="{{ dockIconStyle }}"><span style="{{ iconGlyphStyle }}">N</span><span style="{{ iconRuleStyle }}"></span></div>
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#B4483C,#8E3A31);display:flex;align-items:center;justify-content:center"><span style="width:0;height:0;border-left:14px solid rgba(255,255,255,.92);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:3px"></span></div>
+<div style="width:60px;height:60px;border-radius:22.4%;background:linear-gradient(160deg,#4A6B57,#33503F);display:flex;align-items:center;justify-content:center"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:22px;color:rgba(255,255,255,.92)">&#9906;</span></div>
+</div>
+
+</div>
+
+<sc-if value="{{ appOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeApp }}" style="position:absolute;inset:0;z-index:80;background:var(--c-paper,#F6F4EE);animation:wzoom .28s cubic-bezier(.2,.9,.3,1) both;padding:58px 22px 0;box-sizing:border-box;cursor:pointer;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="text-align:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--c-ink,#23231F)">Norm&#8217;s Newsletter</span>
+<div style="display:flex;justify-content:space-between;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--c-muted,#6B6A62)"><span>Saturday, July 25, 2026</span><span>No. 048</span></div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:7px"></div>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:31px;line-height:1.14;letter-spacing:-.02em;color:var(--c-ink,#23231F);margin:20px 0 0;text-wrap:pretty">Trump sets tariffs on over 80 countries covering nearly all US imports</h1>
+<p style="font-size:14px;line-height:1.62;color:var(--c-inks,#44433C);margin:12px 0 0;text-wrap:pretty">The tariffs took effect Friday and cover nearly every product that enters the US. Rates run 10&#8211;50% by country.</p>
+<div style="margin-top:22px;border:1px solid var(--c-rule,#DDD9CC);border-top:2px solid var(--c-oxide,#3F6A50);background:var(--c-raised,#FBFAF6);padding:15px 17px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Today at a glance</span>
+<div style="display:flex;gap:12px;align-items:baseline;padding:8px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--c-oxide,#3F6A50);min-width:20px">01</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-ink2,#2E2D27)">Tariffs on 80+ countries took effect Friday, covering nearly all US imports.</span></div>
+<div style="display:flex;gap:12px;align-items:baseline;padding:7px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--c-oxide,#3F6A50);min-width:20px">02</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-ink2,#2E2D27)">$7.5bn in clean energy grants canceled on how states voted in 2024.</span></div>
+<div style="display:flex;gap:12px;align-items:baseline;padding:7px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--c-oxide,#3F6A50);min-width:20px">03</span><span style="font-size:13.5px;line-height:1.5;color:var(--c-ink2,#2E2D27)">Over 200,000 fled as wildfires swept France and Spain.</span></div>
+</div>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-muted,#6B6A62);text-align:center;margin:26px 0 0">Tap anywhere to go back</p>
+</div>
+</sc-if>
+
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Lock screen &#8212; inline, rectangular and circular widgets, plus the audio Live Activity</div>
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" dark="{{ true }}" hint-size="402px,874px">
+<div style="position:relative;width:100%;height:874px;overflow:hidden;font-family:-apple-system,'IBM Plex Sans',system-ui,sans-serif">
+<div style="position:absolute;inset:0;background:linear-gradient(168deg,#2C2C25 0%,#181815 52%,#23231F 100%)"></div>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:0 26px">
+
+<div style="height:64px;flex:none"></div>
+
+<div style="display:flex;align-items:center;justify-content:center;gap:7px">
+<span style="width:4px;height:4px;border-radius:50%;background:#8FBF9E"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:rgba(242,239,230,.72)">No. 048 &#183; 12 stories &#183; 8:33</span>
+</div>
+
+<div style="text-align:center;margin-top:2px">
+<div style="font-family:-apple-system,system-ui,sans-serif;font-weight:200;font-size:82px;line-height:1.02;letter-spacing:-.02em;color:#F2EFE6;font-variant-numeric:tabular-nums">6:02</div>
+<div style="font-family:-apple-system,system-ui,sans-serif;font-size:13px;color:rgba(242,239,230,.62);margin-top:-2px">Saturday, July 25</div>
+</div>
+
+<div style="display:flex;gap:12px;align-items:stretch;margin-top:18px">
+<div style="flex:1;min-width:0;border-radius:16px;background:rgba(246,244,238,.13);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:.5px solid rgba(246,244,238,.16);padding:9px 12px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#8FBF9E">Front page</span>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:13px;line-height:1.22;color:#F2EFE6;margin-top:4px;text-wrap:pretty;flex:none;max-height:32px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden">Tariffs now cover nearly all US imports</span>
+</div>
+<div style="width:72px;height:72px;flex:none;border-radius:50%;background:rgba(246,244,238,.13);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1.5px solid rgba(143,191,158,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px;line-height:1;color:#F2EFE6;font-variant-numeric:tabular-nums">12</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,239,230,.6)">unread</span>
+</div>
+<div onClick="{{ togglePlay }}" style="width:72px;height:72px;flex:none;border-radius:50%;background:rgba(246,244,238,.13);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:.5px solid rgba(246,244,238,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer">
+<sc-if value="{{ isPlaying }}" hint-placeholder-val="{{ false }}">
+<span style="display:flex;gap:2.5px;align-items:flex-end;height:14px">
+<span style="width:2.5px;height:14px;background:#8FBF9E;transform-origin:bottom;animation:wbar1 .9s ease-in-out infinite"></span>
+<span style="width:2.5px;height:14px;background:#8FBF9E;transform-origin:bottom;animation:wbar2 .9s ease-in-out infinite"></span>
+<span style="width:2.5px;height:14px;background:#8FBF9E;transform-origin:bottom;animation:wbar3 .9s ease-in-out infinite"></span>
+</span>
+</sc-if>
+<sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}">
+<span style="width:0;height:0;border-left:13px solid #8FBF9E;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px"></span>
+</sc-if>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.06em;color:rgba(242,239,230,.6);font-variant-numeric:tabular-nums">{{ timeLeft }}</span>
+</div>
+</div>
+
+<sc-if value="{{ showLive }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:16px;border-radius:26px;background:rgba(246,244,238,.11);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);border:.5px solid rgba(246,244,238,.15);padding:15px 17px 16px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:8px">
+<span style="width:22px;height:22px;flex:none;border:1px solid rgba(242,239,230,.35);display:flex;align-items:center;justify-content:center;font-family:Newsreader,Georgia,serif;font-size:13px;color:#F2EFE6">N</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.04em;color:rgba(242,239,230,.8)">Today&#8217;s brief, No. 048</span>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FBF9E">{{ liveTag }}</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:17px;line-height:1.24;color:#F2EFE6;margin:11px 0 0;text-wrap:pretty">Part 2 of 5 &#183; The tariff order and the two suits filed against it</p>
+<div style="display:flex;align-items:center;gap:14px;margin-top:14px">
+<div onClick="{{ togglePlay }}" style="width:44px;height:44px;flex:none;border:1px solid rgba(143,191,158,.7);display:flex;align-items:center;justify-content:center;cursor:pointer" style-active="transform:scale(.94)">
+<sc-if value="{{ isPlaying }}" hint-placeholder-val="{{ false }}">
+<span style="display:flex;gap:3px"><span style="width:3px;height:14px;background:#8FBF9E"></span><span style="width:3px;height:14px;background:#8FBF9E"></span></span>
+</sc-if>
+<sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}">
+<span style="width:0;height:0;border-left:12px solid #8FBF9E;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px"></span>
+</sc-if>
+</div>
+<div style="flex:1;min-width:0">
+<div style="height:3px;background:rgba(242,239,230,.18)"><div style="{{ barLive }}"></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:rgba(242,239,230,.55);font-variant-numeric:tabular-nums"><span>{{ elapsed }}</span><span>&#8722;{{ timeLeft }}</span></div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<span style="flex:1"></span>
+
+<div style="display:flex;justify-content:space-between;padding:0 8px 40px">
+<span style="width:48px;height:48px;border-radius:50%;background:rgba(246,244,238,.13);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:center"><span style="width:11px;height:17px;border:1.6px solid rgba(242,239,230,.8);border-radius:2px"></span></span>
+<span style="width:48px;height:48px;border-radius:50%;background:rgba(246,244,238,.13);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:center"><span style="width:18px;height:14px;border:1.6px solid rgba(242,239,230,.8);border-radius:3px;position:relative"><span style="position:absolute;left:5px;top:3px;width:7px;height:7px;border-radius:50%;border:1.4px solid rgba(242,239,230,.8)"></span></span></span>
+</div>
+
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt wide" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>The family at true point size &#8212; small, medium, large, extra large, lock screen</div>
+<div style="{{ vars }}">
+<div style="background:var(--c-board,#E4E0D4);border:1px solid var(--c-bboard,rgba(35,35,31,.12));padding:30px 32px 34px;display:flex;flex-direction:column;gap:34px">
+
+<div style="display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:9px;width:167px">
+<div style="width:167px;height:167px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:14px 15px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">Norm&#8217;s</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--c-muted,#6B6A62)">048</span>
+</div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:6px"></div>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:15px;line-height:1.18;letter-spacing:-.012em;color:var(--c-ink,#23231F);margin-top:10px;text-wrap:pretty;flex:none;max-height:89px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden">Trump sets tariffs on over 80 countries covering nearly all US imports</span>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">6:00 am ET</span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Small &#183; Front page</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">170 &#215; 170 pt<br>Headline clamps at 5 lines</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px;width:167px">
+<div style="width:167px;height:167px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:14px 15px;display:flex;flex-direction:column;border-top:2px solid var(--c-oxide,#3F6A50);font-family:'IBM Plex Sans',system-ui,sans-serif">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">At a glance</span>
+<div style="display:flex;gap:8px;align-items:baseline;margin-top:10px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--c-oxide,#3F6A50);flex:none">01</span>
+<span style="font-size:11.5px;line-height:1.42;color:var(--c-ink2,#2E2D27);max-height:82px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden">Tariffs on 80+ countries took effect Friday, covering nearly all US imports.</span>
+</div>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">5 points &#183; 60 sec</span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Small &#183; At a glance</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">170 &#215; 170 pt<br>Point 01 only; oxide top rule</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px;width:167px">
+<div style="width:167px;height:167px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:14px 15px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-ink,#23231F)">This edition</span>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:6px"></div>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:44px;line-height:.95;letter-spacing:-.035em;color:var(--c-ink,#23231F);margin-top:14px;font-variant-numeric:tabular-nums">12</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin-top:6px">Stories kept</span>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">from 41 sources</span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Small &#183; Count
+</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">170 &#215; 170 pt<br>One number, no chrome</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px;width:350px">
+<div style="width:350px;height:170px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:15px 18px 14px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink,#23231F)">Norm&#8217;s Newsletter</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">No. 048</span>
+</div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:7px"></div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:19.5px;line-height:1.16;letter-spacing:-.015em;color:var(--c-ink,#23231F);margin:11px 0 0;text-wrap:pretty;flex:none;max-height:68px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden">Trump sets tariffs on over 80 countries covering nearly all US imports</h1>
+<span style="flex:1"></span>
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--c-rulef,#E8E5DA);padding-top:8px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--c-muted,#6B6A62)">12 stories &#183; 60-second read</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--c-oxide,#3F6A50)">Open &#8250;</span>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Medium &#183; Front page</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">364 &#215; 170 pt &#183; the default widget<br>Deep link: today&#8217;s brief</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px;width:350px">
+<div style="width:350px;height:170px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:15px 18px 14px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink,#23231F)">The wire</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">4 sections</span>
+</div>
+<div style="border-top:1px solid var(--c-ink,#23231F);margin-top:7px"></div>
+<div style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);width:56px;flex:none">Politics</span>
+<span style="font-family:Newsreader,Georgia,serif;font-size:13.5px;line-height:1.3;color:var(--c-ink,#23231F);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Trade groups sue over the tariff order</span>
+</div>
+<div style="display:flex;gap:11px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--c-rulef,#E8E5DA)">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);width:56px;flex:none">AI</span>
+<span style="font-family:Newsreader,Georgia,serif;font-size:13.5px;line-height:1.3;color:var(--c-ink,#23231F);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">A joint safety read on Kimi K3</span>
+</div>
+<div style="display:flex;gap:11px;align-items:baseline;padding:9px 0">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c-oxide,#3F6A50);width:56px;flex:none">World</span>
+<span style="font-family:Newsreader,Georgia,serif;font-size:13.5px;line-height:1.3;color:var(--c-ink,#23231F);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Wildfires empty the French coast</span>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Medium &#183; By section</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">364 &#215; 170 pt<br>Three rows max, one line each</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px;width:350px">
+<div style="width:350px;height:170px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:15px 18px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink,#23231F)">Today&#8217;s brief</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--c-muted,#6B6A62)">Two hosts &#183; 8:33</span>
+</div>
+<div style="border-top:1px solid var(--c-rule,#DDD9CC);margin-top:7px"></div>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:17px;line-height:1.22;color:var(--c-ink,#23231F);margin-top:11px;text-wrap:pretty">Part 2 of 5 &#183; The tariff order and the suits against it</span>
+<span style="flex:1"></span>
+<div style="display:flex;align-items:center;gap:14px">
+<div onClick="{{ togglePlay }}" style="width:44px;height:44px;flex:none;border:1px solid var(--c-oxide,#3F6A50);display:flex;align-items:center;justify-content:center;cursor:pointer" style-active="transform:scale(.94)">
+<sc-if value="{{ isPlaying }}" hint-placeholder-val="{{ false }}">
+<span style="display:flex;gap:3px"><span style="width:3px;height:14px;background:var(--c-oxide,#3F6A50)"></span><span style="width:3px;height:14px;background:var(--c-oxide,#3F6A50)"></span></span>
+</sc-if>
+<sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}">
+<span style="width:0;height:0;border-left:12px solid var(--c-oxide,#3F6A50);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px"></span>
+</sc-if>
+</div>
+<div style="flex:1;min-width:0">
+<div style="height:2px;background:var(--c-rulef,#E8E5DA)"><div style="{{ barMed }}"></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:7px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--c-muted,#6B6A62);font-variant-numeric:tabular-nums"><span>{{ elapsed }}</span><span>&#8722;{{ timeLeft }}</span></div>
+</div>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Medium &#183; Audio brief</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">364 &#215; 170 pt &#183; interactive<br>Play runs in the widget, no app launch</span></div>
+</div>
+
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:9px;width:350px">
+<div style="width:350px;height:370px;border-radius:24px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:18px 20px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="text-align:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink,#23231F)">Norm&#8217;s Newsletter</span>
+<div style="display:flex;justify-content:space-between;margin-top:5px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--c-muted,#6B6A62)"><span>Saturday, July 25</span><span>No. 048</span></div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:6px"></div>
+</div>
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:22px;line-height:1.14;letter-spacing:-.018em;color:var(--c-ink,#23231F);margin:14px 0 0;text-wrap:pretty;flex:none;max-height:76px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden">Trump sets tariffs on over 80 countries covering nearly all US imports</h1>
+<div style="border-top:1px solid var(--c-rule,#DDD9CC);margin-top:14px;padding-top:11px">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Today at a glance</span>
+<div style="display:flex;gap:10px;align-items:baseline;padding:7px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">01</span><span style="font-size:11.5px;line-height:1.44;color:var(--c-ink2,#2E2D27);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Tariffs on 80+ countries took effect Friday</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:6px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">02</span><span style="font-size:11.5px;line-height:1.44;color:var(--c-ink2,#2E2D27);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">$7.5bn in clean energy grants canceled by vote</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:6px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">03</span><span style="font-size:11.5px;line-height:1.44;color:var(--c-ink2,#2E2D27);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">200,000 flee wildfires in France and Spain</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:6px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">04</span><span style="font-size:11.5px;line-height:1.44;color:var(--c-ink2,#2E2D27);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Hotel Wi-Fi hijacked for fake M365 logins</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:6px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">05</span><span style="font-size:11.5px;line-height:1.44;color:var(--c-ink2,#2E2D27);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">A joint UK–US safety read on Kimi K3</span></div>
+</div>
+<span style="flex:1"></span>
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--c-rulef,#E8E5DA);padding-top:9px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--c-muted,#6B6A62)">41 sources read &#183; 12 kept</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--c-oxide,#3F6A50)">8:33 to listen &#9654;</span>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Large &#183; The whole glance</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">364 &#215; 382 pt &#183; the flagship<br>Full masthead; all five points, one line each</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px;width:730px">
+<div style="width:730px;height:340px;border-radius:26px;overflow:hidden;background:var(--c-wsurf,#FBFAF6);box-shadow:0 8px 20px var(--c-wsh,rgba(35,35,31,.18))">
+<div style="height:100%;box-sizing:border-box;padding:22px 26px;display:flex;flex-direction:column;font-family:'IBM Plex Sans',system-ui,sans-serif">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c-ink,#23231F)">Norm&#8217;s Newsletter</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--c-muted,#6B6A62)">Saturday, July 25, 2026 &#183; No. 048</span>
+</div>
+<div style="border-top:2px solid var(--c-ink,#23231F);border-bottom:1px solid var(--c-ink,#23231F);height:3px;margin-top:8px"></div>
+<div style="flex:1;display:grid;grid-template-columns:1.35fr 1px 1fr;gap:24px;padding-top:18px;min-height:0">
+<div style="display:flex;flex-direction:column;min-height:0">
+<h1 style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:29px;line-height:1.1;letter-spacing:-.022em;color:var(--c-ink,#23231F);margin:0;text-wrap:pretty">Trump sets tariffs on over 80 countries covering nearly all US imports</h1>
+<p style="font-size:13px;line-height:1.6;color:var(--c-inks,#44433C);margin:12px 0 0;text-wrap:pretty">Took effect Friday, covering virtually every product that enters the country. Rates run 10&#8211;50% by country; two trade groups filed suit within hours.</p>
+<span style="flex:1"></span>
+<div style="display:flex;gap:26px;border-top:1px solid var(--c-rule,#DDD9CC);padding-top:12px">
+<div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1;color:var(--c-ink,#23231F)">12</span><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin-top:5px">Stories kept</span></div>
+<div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1;color:var(--c-ink,#23231F)">41</span><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin-top:5px">Sources read</span></div>
+<div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:26px;line-height:1;color:var(--c-ink,#23231F)">8:33</span><span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted,#6B6A62);margin-top:5px">To listen</span></div>
+</div>
+</div>
+<div style="background:var(--c-rule,#DDD9CC)"></div>
+<div style="display:flex;flex-direction:column;min-height:0">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-oxide,#3F6A50)">Today at a glance</span>
+<div style="display:flex;gap:10px;align-items:baseline;padding:9px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">01</span><span style="font-size:12px;line-height:1.45;color:var(--c-ink2,#2E2D27)">Tariffs on 80+ countries took effect Friday.</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:7px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">02</span><span style="font-size:12px;line-height:1.45;color:var(--c-ink2,#2E2D27)">$7.5bn in clean energy grants canceled on how states voted.</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:7px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">03</span><span style="font-size:12px;line-height:1.45;color:var(--c-ink2,#2E2D27)">200,000 fled wildfires in France and Spain.</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:7px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">04</span><span style="font-size:12px;line-height:1.45;color:var(--c-ink2,#2E2D27)">Hotel Wi-Fi hijacked for fake Microsoft 365 logins.</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:7px 0 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--c-oxide,#3F6A50);min-width:16px;flex:none">05</span><span style="font-size:12px;line-height:1.45;color:var(--c-ink2,#2E2D27)">A joint UK&#8211;US safety read on Kimi K3.</span></div>
+<span style="flex:1"></span>
+<div style="display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--c-rulef,#E8E5DA);padding-top:11px">
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-muted,#6B6A62);border:1px solid var(--c-rule,#DDD9CC);padding:3px 7px">Politics 4</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-muted,#6B6A62);border:1px solid var(--c-rule,#DDD9CC);padding:3px 7px">AI 3</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-muted,#6B6A62);border:1px solid var(--c-rule,#DDD9CC);padding:3px 7px">World 3</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-muted,#6B6A62);border:1px solid var(--c-rule,#DDD9CC);padding:3px 7px">Cyber 2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Extra large &#183; iPad front page</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Two columns divided by one hairline &#8212; the only widget that gets a rule down the middle</span></div>
+</div>
+
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;border-top:1px solid var(--c-bboard,rgba(35,35,31,.12));padding-top:30px">
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="background:linear-gradient(168deg,#2C2C25,#181815);padding:20px;border-radius:16px;display:flex;gap:12px;align-items:center">
+<div style="width:170px;height:72px;border-radius:16px;background:rgba(246,244,238,.13);border:.5px solid rgba(246,244,238,.16);padding:9px 12px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#8FBF9E">Front page</span>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:13px;line-height:1.22;color:#F2EFE6;margin-top:4px">Tariffs now cover nearly all US imports</span>
+</div>
+<div style="width:72px;height:72px;border-radius:50%;background:rgba(246,244,238,.13);border:1.5px solid rgba(143,191,158,.55);display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px;line-height:1;color:#F2EFE6">12</span><span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,239,230,.6)">unread</span></div>
+<div style="width:72px;height:72px;border-radius:50%;background:rgba(246,244,238,.13);border:.5px solid rgba(246,244,238,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px"><span style="width:0;height:0;border-left:13px solid #8FBF9E;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:rgba(242,239,230,.6)">8:33</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Lock screen &#183; rectangular + circular</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Vibrant material only &#8212; no paper fill survives here.<br>Oxide lifts to #8FBF9E for contrast on glass.</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="background:linear-gradient(168deg,#2C2C25,#181815);padding:20px;border-radius:16px;display:flex;align-items:center;justify-content:center;min-height:112px">
+<div style="display:flex;align-items:center;gap:7px"><span style="width:4px;height:4px;border-radius:50%;background:#8FBF9E"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:rgba(242,239,230,.72)">No. 048 &#183; 12 stories &#183; 8:33</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Lock screen &#183; inline</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">One line above the clock, mono only.<br>Never a headline &#8212; it truncates badly.</span></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="dv-opt wide" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>StandBy on the nightstand, and the Live Activity in the Dynamic Island</div>
+<div style="{{ vars }}">
+<div style="background:var(--c-board,#E4E0D4);border:1px solid var(--c-bboard,rgba(35,35,31,.12));padding:30px 32px 34px;display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="width:600px;height:300px;border-radius:34px;background:#0A0A08;box-shadow:0 18px 40px rgba(0,0,0,.3);padding:14px;box-sizing:border-box">
+<div style="height:100%;border-radius:22px;overflow:hidden;background:linear-gradient(120deg,#141410,#1D1D18);display:flex;gap:1px">
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 34px">
+<div style="font-family:-apple-system,system-ui,sans-serif;font-weight:200;font-size:96px;line-height:1;letter-spacing:-.03em;color:#F2EFE6;font-variant-numeric:tabular-nums">6:02</div>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,239,230,.5);margin-top:12px">Sat 25 July &#183; 18&#176;</div>
+</div>
+<div style="width:1px;background:rgba(242,239,230,.14)"></div>
+<div style="flex:1;display:flex;flex-direction:column;padding:26px 30px;box-sizing:border-box">
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,239,230,.85)">Norm&#8217;s Newsletter</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(242,239,230,.45)">No. 048</span>
+</div>
+<div style="border-top:2px solid rgba(242,239,230,.85);border-bottom:1px solid rgba(242,239,230,.85);height:3px;margin-top:7px"></div>
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:21px;line-height:1.16;color:#F2EFE6;margin-top:14px;text-wrap:pretty;flex:none;max-height:74px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden">Tariffs now cover nearly all US imports</span>
+<span style="flex:1"></span>
+<div style="display:flex;align-items:center;gap:8px;border-top:1px solid rgba(242,239,230,.14);padding-top:11px">
+<span style="width:4px;height:4px;border-radius:50%;background:#8FBF9E;animation:wbreathe 2.6s ease-in-out infinite"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:rgba(242,239,230,.55)">No. 049 lands at 6:00 am ET</span>
+</div>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px;max-width:600px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">StandBy &#183; nightstand, landscape</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Two panes divided by a hairline. Paper inverts to ink ground &#8212; a lit paper rectangle at 2am is unusable. Read from two metres: nothing under 9pt except the metadata line.</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:22px">
+
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="background:#0A0A08;border-radius:20px;padding:26px 30px;display:flex;justify-content:center">
+<div style="height:37px;border-radius:24px;background:#000;display:flex;align-items:center;gap:10px;padding:0 14px;min-width:200px">
+<span style="width:19px;height:19px;flex:none;border:1px solid rgba(242,239,230,.5);display:flex;align-items:center;justify-content:center;font-family:Newsreader,Georgia,serif;font-size:12px;color:#F2EFE6">N</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(242,239,230,.75);font-variant-numeric:tabular-nums">{{ timeLeft }}</span>
+<span style="flex:1"></span>
+<span style="display:flex;gap:2.5px;align-items:flex-end;height:13px">
+<span style="width:2.5px;height:13px;background:#8FBF9E;transform-origin:bottom;animation:wbar1 .9s ease-in-out infinite"></span>
+<span style="width:2.5px;height:13px;background:#8FBF9E;transform-origin:bottom;animation:wbar2 .9s ease-in-out infinite"></span>
+<span style="width:2.5px;height:13px;background:#8FBF9E;transform-origin:bottom;animation:wbar3 .9s ease-in-out infinite"></span>
+</span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px;max-width:330px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Dynamic Island &#183; compact</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Time remaining left, waveform right. The N mark carries the brand at 19pt &#8212; the wordmark can&#8217;t.</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px">
+<div style="background:#0A0A08;border-radius:20px;padding:26px 22px;display:flex;justify-content:center">
+<div style="width:330px;border-radius:26px;background:#000;padding:16px 18px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:9px">
+<span style="width:24px;height:24px;flex:none;border:1px solid rgba(242,239,230,.4);display:flex;align-items:center;justify-content:center;font-family:Newsreader,Georgia,serif;font-size:14px;color:#F2EFE6">N</span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:rgba(242,239,230,.85)">Today&#8217;s brief, No. 048</span>
+<span style="flex:1"></span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FBF9E">{{ liveTag }}</span>
+</div>
+<p style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:15px;line-height:1.24;color:#F2EFE6;margin:11px 0 0;text-wrap:pretty">Part 2 of 5 &#183; The tariff order and the suits against it</p>
+<div style="display:flex;align-items:center;gap:12px;margin-top:13px">
+<div onClick="{{ togglePlay }}" style="width:40px;height:40px;flex:none;border:1px solid rgba(143,191,158,.7);display:flex;align-items:center;justify-content:center;cursor:pointer">
+<sc-if value="{{ isPlaying }}" hint-placeholder-val="{{ false }}">
+<span style="display:flex;gap:3px"><span style="width:3px;height:13px;background:#8FBF9E"></span><span style="width:3px;height:13px;background:#8FBF9E"></span></span>
+</sc-if>
+<sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}">
+<span style="width:0;height:0;border-left:11px solid #8FBF9E;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px"></span>
+</sc-if>
+</div>
+<div style="flex:1;min-width:0">
+<div style="height:3px;background:rgba(242,239,230,.18)"><div style="{{ barLive }}"></div></div>
+<div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(242,239,230,.5);font-variant-numeric:tabular-nums"><span>{{ elapsed }}</span><span>&#8722;{{ timeLeft }}</span></div>
+</div>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px;max-width:330px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">Live Activity &#183; expanded</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Part number instead of a progress percentage &#8212; the edition has five segments and readers navigate by them.</span></div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="dv-opt wide" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>App icon &#8212; four directions, all typographic</div>
+<div style="{{ vars }}">
+<div style="background:var(--c-board,#E4E0D4);border:1px solid var(--c-bboard,rgba(35,35,31,.12));padding:30px 32px 34px;display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:11px;width:150px">
+<div style="width:120px;height:120px;border-radius:22.4%;background:#F6F4EE;box-shadow:0 8px 20px rgba(35,35,31,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:58px;line-height:.8;color:#23231F">N</span>
+<span style="width:44px;height:0;border-top:2px solid #3F6A50"></span>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">A &#183; Paper, used above</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Reads as a page. Oxide rule does the identifying at 40pt.</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:11px;width:150px">
+<div style="width:120px;height:120px;border-radius:22.4%;background:#23231F;box-shadow:0 8px 20px rgba(35,35,31,.2);display:flex;align-items:center;justify-content:center">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:64px;line-height:.8;color:#F6F4EE">N</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">B &#183; Ink</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Strongest on a light wallpaper, disappears on a dark one.</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:11px;width:150px">
+<div style="width:120px;height:120px;border-radius:22.4%;background:#F6F4EE;box-shadow:0 8px 20px rgba(35,35,31,.2);display:flex;flex-direction:column;justify-content:center;padding:0 16px;box-sizing:border-box;gap:9px">
+<span style="border-top:4px solid #23231F;border-bottom:2px solid #23231F;height:5px"></span>
+<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:19px;letter-spacing:.14em;color:#23231F;text-align:center">NN</span>
+<span style="border-top:2px solid #23231F"></span>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">C &#183; Masthead rules</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">The most on-brand and the least legible on a busy screen.</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:11px;width:150px">
+<div style="width:120px;height:120px;border-radius:22.4%;background:#3F6A50;box-shadow:0 8px 20px rgba(35,35,31,.2);display:flex;align-items:center;justify-content:center">
+<span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:64px;line-height:.8;color:#F6F4EE">N</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">D &#183; Oxide</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">Findable in a full grid, but spends the accent colour on the icon.</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:11px;width:214px">
+<div style="display:flex;gap:14px;align-items:flex-end">
+<div style="width:60px;height:60px;border-radius:22.4%;background:#F6F4EE;box-shadow:0 3px 8px rgba(35,35,31,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:29px;line-height:.8;color:#23231F">N</span><span style="width:22px;height:0;border-top:1.5px solid #3F6A50"></span></div>
+<div style="width:40px;height:40px;border-radius:22.4%;background:#F6F4EE;box-shadow:0 3px 8px rgba(35,35,31,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px"><span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:20px;line-height:.8;color:#23231F">N</span><span style="width:15px;height:0;border-top:1px solid #3F6A50"></span></div>
+<div style="width:26px;height:26px;border-radius:22.4%;background:#F6F4EE;box-shadow:0 3px 8px rgba(35,35,31,.2);display:flex;align-items:center;justify-content:center"><span style="font-family:Newsreader,Georgia,serif;font-weight:500;font-size:14px;line-height:.8;color:#23231F">N</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:11px;color:var(--c-ink,#23231F)">A at 60, 40 and 26 pt</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;line-height:1.5;color:var(--c-muted,#6B6A62)">The rule drops below 30pt &#8212; the serif N alone still reads.</span></div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<sc-if value="{{ showSpec }}" hint-placeholder-val="{{ true }}">
+<div style="margin:30px 0 0;max-width:900px;border-top:1px solid rgba(0,0,0,.12);padding-top:20px;display:flex;flex-direction:column;gap:11px">
+<span style="font:500 11px 'IBM Plex Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#3F6A50">Rules for the set</span>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 34px;font:12.5px/1.65 'IBM Plex Sans',sans-serif;color:#44433C">
+<p style="margin:0"><strong>One job per widget.</strong> Front page, glance, count, next drop, audio. A widget that does two of them does neither at 170pt.</p>
+<p style="margin:0"><strong>The radius is the system&#8217;s, not ours.</strong> 24pt on the container; every rule, tile and divider inside stays square, as on the site.</p>
+<p style="margin:0"><strong>Type floor is 8.5pt mono / 11.5pt sans.</strong> Below that the metadata line goes first &#8212; never the headline.</p>
+<p style="margin:0"><strong>Clamp, don&#8217;t shrink.</strong> Headlines keep their size and cut at 3 lines (medium) or 5 (small). No auto-fit type.</p>
+<p style="margin:0"><strong>Lock screen inverts.</strong> Paper fill is replaced by vibrant glass and oxide lifts to #8FBF9E; that pairing is lock-screen and StandBy only.</p>
+<p style="margin:0"><strong>Refresh on the edition, not the clock.</strong> One timeline entry at the 6:00 am ET drop; the countdown small is the only widget that ticks.</p>
+</div>
+</div>
+</sc-if>
+
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;\&quot;light\&quot; | \&quot;dark\&quot;&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;iconDir&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;paper&quot;,&quot;ink&quot;,&quot;oxide&quot;],&quot;default&quot;:&quot;paper&quot;,&quot;tsType&quot;:&quot;\&quot;paper\&quot; | \&quot;ink\&quot; | \&quot;oxide\&quot;&quot;,&quot;section&quot;:&quot;Home screen&quot;},&quot;wallTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;paper&quot;,&quot;dusk&quot;,&quot;slate&quot;],&quot;default&quot;:&quot;paper&quot;,&quot;tsType&quot;:&quot;\&quot;paper\&quot; | \&quot;dusk\&quot; | \&quot;slate\&quot;&quot;,&quot;section&quot;:&quot;Home screen&quot;},&quot;liveActivity&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Lock screen&quot;},&quot;showSpec&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+const LIGHT = {
+  "--c-paper": "#F6F4EE", "--c-raised": "#FBFAF6", "--c-ink": "#23231F",
+  "--c-inks": "#44433C", "--c-ink2": "#2E2D27", "--c-muted": "#6B6A62",
+  "--c-oxide": "#3F6A50", "--c-rule": "#DDD9CC", "--c-rulef": "#E8E5DA",
+  "--c-wsurf": "#FBFAF6", "--c-wsh": "rgba(35,35,31,.18)", "--c-wlabel": "#33322C",
+  "--c-wdot": "rgba(35,35,31,.85)", "--c-wdotf": "rgba(35,35,31,.3)",
+  "--c-wdock": "rgba(255,255,255,.3)", "--c-wdockb": "rgba(255,255,255,.45)",
+  "--c-board": "#E4E0D4", "--c-bboard": "rgba(35,35,31,.12)"
+};
+const DARK = {
+  "--c-paper": "#1A1A16", "--c-raised": "#232320", "--c-ink": "#F2EFE6",
+  "--c-inks": "#C7C3B6", "--c-ink2": "#E4E0D4", "--c-muted": "#8C8A80",
+  "--c-oxide": "#8FBF9E", "--c-rule": "#35342E", "--c-rulef": "#2B2A25",
+  "--c-wsurf": "#232320", "--c-wsh": "rgba(0,0,0,.4)", "--c-wlabel": "#EDE9DD",
+  "--c-wdot": "rgba(242,239,230,.85)", "--c-wdotf": "rgba(242,239,230,.3)",
+  "--c-wdock": "rgba(120,120,110,.24)", "--c-wdockb": "rgba(242,239,230,.14)",
+  "--c-board": "#26261F", "--c-bboard": "rgba(242,239,230,.14)"
+};
+const WALL = {
+  paper: ["linear-gradient(168deg,#F2EEE2 0%,#E3DECD 52%,#CFC9B6 100%)",
+          "linear-gradient(168deg,#2C2C25 0%,#1A1A15 55%,#242420 100%)"],
+  dusk:  ["linear-gradient(168deg,#EFE7D6 0%,#D8CDB6 50%,#B7AC93 100%)",
+          "linear-gradient(168deg,#332E26 0%,#1E1A15 55%,#2A2520 100%)"],
+  slate: ["linear-gradient(168deg,#E9E9E4 0%,#D1D3CC 50%,#B2B5AC 100%)",
+          "linear-gradient(168deg,#26282A 0%,#15161A 55%,#1F2124 100%)"]
+};
+const ICONS = {
+  paper: { bg: "#F6F4EE", fg: "#23231F", rule: true },
+  ink:   { bg: "#23231F", fg: "#F6F4EE", rule: false },
+  oxide: { bg: "#3F6A50", fg: "#F6F4EE", rule: false }
+};
+const DUR = 513;
+
+function mmss(s) {
+  s = Math.max(0, Math.round(s));
+  return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+}
+
+class Component extends DCLogic {
+  state = { dark: false, idx: 0, dy: 0, drag: false, playing: false, t: 128, appOpen: false };
+
+  componentDidMount() {
+    this._iv = setInterval(() => {
+      if (this.state.playing) this.setState(s => ({ t: s.t >= DUR ? 0 : s.t + 1 }));
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._iv); }
+
+  renderVals() {
+    const st = this.state;
+    const dark = st.dark || this.props.theme === "dark";
+    const c = dark ? DARK : LIGHT;
+    const icon = ICONS[this.props.iconDir || "paper"] || ICONS.paper;
+    const wall = (WALL[this.props.wallTone || "paper"] || WALL.paper)[dark ? 1 : 0];
+    const pct = Math.min(100, (st.t / DUR) * 100);
+
+    const stk = (i) => {
+      const d = i - st.idx;
+      const off = d * 175 + (st.drag ? st.dy : 0);
+      return {
+        position: "absolute", inset: 0,
+        transform: "translateY(" + off + "px)",
+        opacity: d === 0 ? 1 : (st.drag && Math.abs(d) === 1 ? 1 : 0),
+        transition: st.drag ? "none" : "transform .32s cubic-bezier(.2,.85,.25,1), opacity .2s ease",
+        pointerEvents: d === 0 ? "auto" : "none"
+      };
+    };
+
+    const iconBase = {
+      width: 60, height: 60, borderRadius: "22.4%", background: icon.bg,
+      boxShadow: "0 3px 8px rgba(0,0,0,.18)", display: "flex", flexDirection: "column",
+      alignItems: "center", justifyContent: "center", gap: icon.rule ? 4 : 0
+    };
+
+    return {
+      vars: c,
+      isDark: dark,
+      themeLabel: dark ? "Dark" : "Light",
+      toggleTheme: () => this.setState(s => ({ dark: !s.dark })),
+      wallStyle: { position: "absolute", inset: 0, background: wall },
+
+      iconStyle: iconBase,
+      dockIconStyle: iconBase,
+      iconGlyphStyle: {
+        fontFamily: "Newsreader, Georgia, serif", fontWeight: 500,
+        fontSize: 29, lineHeight: .8, color: icon.fg
+      },
+      iconRuleStyle: {
+        display: icon.rule ? "block" : "none",
+        width: 22, height: 0, borderTop: "1.5px solid #3F6A50"
+      },
+
+      stkA: stk(0), stkB: stk(1), stkC: stk(2),
+      dots: [0, 1, 2].map(i => ({
+        set: () => this.setState({ idx: i, dy: 0, drag: false }),
+        style: {
+          width: 5, height: 5, borderRadius: "50%", cursor: "pointer",
+          background: i === st.idx ? c["--c-ink"] : c["--c-rule"],
+          transition: "background .2s ease"
+        }
+      })),
+      stackDown: (e) => { this._y0 = e.clientY; this.setState({ drag: true, dy: 0 }); },
+      stackMove: (e) => { if (st.drag) this.setState({ dy: e.clientY - this._y0 }); },
+      stackUp: () => {
+        if (!st.drag) return;
+        let i = st.idx;
+        if (st.dy <= -26 && i < 2) i += 1;
+        else if (st.dy >= 26 && i > 0) i -= 1;
+        this.setState({ idx: i, dy: 0, drag: false });
+      },
+
+      togglePlay: (e) => {
+        if (e && e.stopPropagation) e.stopPropagation();
+        this.setState(s => ({ playing: !s.playing }));
+      },
+      isPlaying: st.playing,
+      notPlaying: !st.playing,
+      liveTag: st.playing ? "Live" : "Paused",
+      audioState: st.playing ? "playing" : (st.t > 0 ? "paused" : "part 2 of 5"),
+      elapsed: mmss(st.t),
+      timeLeft: mmss(DUR - st.t),
+      barSmall: { height: 2, width: pct + "%", background: c["--c-oxide"] },
+      barMed: { height: 2, width: pct + "%", background: c["--c-oxide"] },
+      barLive: { height: 3, width: pct + "%", background: "#8FBF9E" },
+
+      showLive: this.props.liveActivity !== false,
+      showSpec: this.props.showSpec !== false,
+      appOpen: st.appOpen,
+      openApp: () => this.setState({ appOpen: true }),
+      closeApp: () => this.setState({ appOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
