@@ -11,11 +11,21 @@ distills them.
 - **SPEC.md** owns data, schemas, prompts, and pipeline behavior.
 - **DESIGN.md** owns the visual system, components, page layouts, and the
   voice standard.
-- The `edition.json` schema in **SPEC.md section 6.5** is canonical for
-  both documents.
+- The `edition.json` schema in **SPEC.md section 6.5** is canonical for both
+  documents. It is the **site's** record.
+- The app's records are the story and newsletter schemas in **SPEC.md section
+  14**. DESIGN.md does not yet cover the app's visual system, and the voice
+  standard applies to both.
 
 **If SPEC.md and DESIGN.md conflict, stop and ask Milind. Never resolve a
 conflict yourself, and never pick the more convenient reading.**
+
+**Two publishing paths now exist and neither is downstream of the other**
+(SPEC decision #37). The site edition (6.5) is curated by the AI editor. The
+app newsletter (14.4) is assembled per user by deterministic code. They share
+collection, scoring, the writer stage, the readability gate, and the story
+text. A change to one is not automatically a change to the other, and the
+site keeps publishing while the app is built.
 
 ## The seven working rules
 
@@ -30,14 +40,19 @@ conflict yourself, and never pick the more convenient reading.**
    touches storage, or deploys. **Write the validator before the prompt.**
    On validation failure, retry once with the error included, then fall
    back to a deterministic path. Contain failures at the smallest scope
-   (a story, then the edition), never the whole pipeline.
+   (a story, then the edition or the newsletter), never the whole pipeline.
+   Never an empty day for the site (decision #26), never an empty newsletter
+   for a user (SPEC 14.4).
 4. **Tests cover the deterministic layers**: adapters, dedup, clustering
-   math, edition schema validation, the readability gate, and the DST
-   scheduling check. Fixtures in `site/fixtures/` drive all front-end
-   work. The site must never require the live pipeline to develop.
+   math, edition schema validation, the readability gate, the DST
+   scheduling check, and the allocator (SPEC 14.4 names the assertions).
+   Fixtures in `site/fixtures/` drive all front-end work. The site must
+   never require the live pipeline to develop.
 5. **Stack**: Python 3.12 with uv, PyIceberg for writes, DuckDB for
    reads, no Spark. Site is Astro with zero client JavaScript except the
-   two scripts named in DESIGN.md section 7. Credentials come from `.env`
+   two scripts named in DESIGN.md section 7. User data lives in Postgres,
+   never in the lake (decision #36): bronze, silver, and gold hold only news,
+   so account deletion stays one `DELETE`. Credentials come from `.env`
    locally and Actions secrets in CI. **Never write a key into a file.**
 6. **URLs derive from `astro.config` only.** Build phase values:
    `site: "https://aryanzodge123.github.io"`,
@@ -59,13 +74,16 @@ norms-newsletter/
     sources.yaml         # adapter registry (SPEC 6.1)
     pipeline.yaml        # thresholds, budgets, schedules
   prompts/
-    scoring_v1.md editor_v1.md writer_v1.md audio_script_v1.md
+    scoring_v1.md editor_v1.md writer_v1.md simplify_v1.md
+    audio_script_v1.md
     voice.md             # DESIGN.md section 8 verbatim, included by all
   src/
     adapters/            # one file per source
     collector.py
     silver/   dedup.py cluster.py score.py
     editor/   run_editor.py run_writers.py schema.py readability.py
+              simplify.py
+    app/      allocator.py schema.py   # SPEC 14, per-user path (M7)
     audio/    script.py tts.py
     archive.py runlog.py
   site/                  # Astro (DESIGN.md section 4 component names)
@@ -85,24 +103,43 @@ Directories not yet created are created by the milestone that needs them.
 
 ## Data flow in one screen
 
-```
-every 3h (GH Actions): sources -> adapters -> bronze.raw_items (Iceberg on R2)
-                     -> dedup -> cluster (local embeddings) -> score (AI)
-                     -> silver.story_clusters
+Shared trunk, then two paths that never read each other.
 
-6:00 am ET (Actions): silver -> editor agent (AI, curation) -> edition core
-                      -> writer stage (AI, per story, parallel) -> articles
-                      -> readability gate (code) -> edition.json
-                      -> audio build -> Astro build -> Pages -> healthchecks
-                      -> archival job (bronze + silver -> gold.history)
+```
+SHARED (every 3h, GH Actions):
+  sources -> adapters -> bronze.raw_items (Iceberg on R2)
+          -> dedup -> cluster (local embeddings, cached by model_version)
+          -> score (AI: topic_score, general_score, primary + secondary topics)
+          -> silver.story_clusters
+
+SITE PATH (6:00 am ET, Actions):
+  silver -> editor agent (AI, curation) -> edition core
+         -> writer stage (AI, per story, parallel) -> articles
+         -> readability gate (code) -> simplify pass (AI, only if it fails)
+         -> edition.json -> audio build -> Astro build -> Pages -> healthchecks
+         -> archival job (bronze + silver -> gold.history)
+
+APP PATH (SPEC 14, M7. per user, no editor):
+  silver -> allocator (CODE, per user: topics, dedup, unseen, budget, top-up)
+         -> intro (AI, one call, cached by story-ID-set hash)
+         -> newsletter record (Postgres)
 ```
 
-The only AI calls in the system: scoring, editor, writer, audio script.
-Everything else is deterministic code.
+The only AI calls in the system: scoring, editor, writer, simplify, audio
+script, and the per-user intro. Everything else is deterministic code. (TTS is
+a model call too, but it renders audio rather than returning JSON, so it sits
+outside the rule zero validate-and-retry path the others share.)
+
+**The app path has exactly one AI call, and that is load-bearing.** Story text
+is written once and reused by every user (SPEC 14.1), so cost tracks how much
+news happened rather than how many people are reading. Any new AI call on the
+per-user path breaks that, and is a design defect rather than a feature.
 
 ## Milestone workflow
 
-Build order lives in SPEC.md section 12. Work one milestone at a time:
+**SPEC.md section 12 is authoritative for build order.** The table below is a
+convenience index; if it disagrees with SPEC 12, SPEC 12 wins and this table
+is the thing to fix.
 
 | Milestone | Scope |
 |-----------|-------|
@@ -111,7 +148,12 @@ Build order lives in SPEC.md section 12. Work one milestone at a time:
 | M3 Edition   | editor + writer prompts, schema validation, readability gate, fixtures, fallback path |
 | M4 Site      | Astro build of DESIGN.md against fixtures |
 | M5 Automation| publish.yml with DST logic, Pages deploy, healthchecks, archival, gold |
-| M6 Audio     | dialogue script, TTS, podcast feed, remaining adapters, OG images, tuning |
+| M5.1 Trigger | external publish trigger (SPEC 6.11) + timeliness measure; lands before the 14-day run starts |
+| M6 Audio     | dialogue script, TTS, podcast feed, remaining adapters, OG images, tuning. **Audio format superseded by decision #44**; rework lands in M8 |
+| M7 App data  | SPEC 14 schemas + allocator. Two-score scoring lands first and additively, so the site keeps publishing |
+| M8 Delivery  | read-time scheduling and assembly loop (14.6), app API with versioning and account deletion (14.7), audio rework to single voice + per-story clips (6.7, decision #44) |
+| M9 Mobile    | Expo client and EAS release pipeline (14.9) |
+| M10 Agent    | chat and story tracker on Managed Agents (14.8), Story MCP server, server-side feature flag |
 
 For each milestone:
 
@@ -132,3 +174,34 @@ approved.
 14 consecutive days of correct, unattended publication. *Correct* includes on
 time: a publication that is late under the SPEC section 8 timeliness measure
 breaks the streak, the same as a missed or degraded day.
+
+This is a property of the **site**, and M7 does not gate it. App work must not
+be allowed to break a streak the site is otherwise achieving.
+
+## Four rules that are easy to break by accident
+
+These are specified in SPEC section 14 and are each one line to violate.
+
+1. **No AI call on the per-user path except the intro.** Story text is written
+   once and reused (14.1). A second per-user call makes cost scale with users.
+2. **The client never supplies a prompt or a `user_id`.** Both come from the
+   authenticated identity, server-side (14.7, 14.8).
+3. **Never store a precomputed UTC read time.** Resolve it from
+   `read_time_local` plus IANA `timezone` on every pass (14.6, decision #38).
+4. **Agent output is displayed and discarded.** It never enters a story
+   record, a newsletter record, or any table (14.8, decision #41).
+
+## Not yet specified
+
+Do not build these. Rule 1 applies: propose a spec addition and wait.
+
+- The app's visual system. DESIGN.md covers the site only; the voice standard
+  applies to both.
+- Source health checks and automatic quarantine.
+- Anything in section 11's open questions, which includes the topic menu, the
+  allocator budget constants, and the audio segment format. Each blocks a
+  piece of section 14.
+
+`APP-ARCHITECTURE.md` and `APP-ARCHITECTURE-v2.drawio` describe the intended
+end state in plain English. **They are proposals and govern nothing.** Where
+they disagree with SPEC.md, SPEC.md wins.

@@ -25,7 +25,7 @@ AI groups and rates stories, and at 6am ET the system publishes:
 1. A static webpage on GitHub Pages: headline, audio player, a numbered
    "Today at a glance" summary, and 15-20 stories that each expand into a
    full plain-English article (Background / What happened / Why it matters)
-2. A ~10 minute two-host audio brief (MP3), also served as a podcast feed
+2. A ~10 minute single-voice audio brief (MP3), also served as a podcast feed
 3. A permanent, browsable archive of every past edition
 
 Audience: general readers. Everything is written in plain English per the
@@ -261,19 +261,71 @@ After each collection cycle:
 a) **Dedup (code):** drop existing item_ids and same-day canonical_urls.
 
 b) **Cluster (code):** local sentence-transformers embeddings (zero
-cost); greedy clustering, join best cluster if cosine >= cluster_threshold
-(config, start 0.82); identical canonical_url always merges.
+cost), model `BAAI/bge-small-en-v1.5` (settled before the M2 build, over
+all-MiniLM, which was the other candidate); greedy clustering, join best
+cluster if cosine >= cluster_threshold (config, start 0.82); identical
+canonical_url always merges. cluster_threshold is calibrated against this
+specific model, so changing the model is a re-tuning event and not a config
+tweak. Embeddings are never a stored source of truth: clustering, the
+headline gate, and gold retrieval can each recompute them per run, so a model
+change costs a threshold re-calibration but no data migration.
+
+They may be **cached**, keyed by `(item_id, model_version)`. A cache is not a
+schema: a miss recomputes exactly as before, so nothing downstream may treat a
+stored vector as required input. A model change invalidates the cache by
+version rather than migrating it, which is what preserves the property above.
+`model_version` is stored alongside every vector so a stale entry can never be
+served against a newer model.
+
+The cache exists because the app layer (section 14) matches stories against
+topics continuously rather than once per edition, which makes recomputation
+the dominant cost of a per-user query rather than a negligible one. Storing
+nothing was right when embeddings were used twice a day (decision #35).
 
 c) **Score (AI, Haiku-class):** only new clusters and clusters whose
 member count changed. System prompt prompts/scoring_v1.md: anchored rubric
 with example stories for 3, 6, 9 per topic; prompt caching on. Strict JSON
-out: `{score 1-10, topic, rationale (one sentence), confidence}`. Invalid
-twice -> score=null, editor ignores.
+out:
+
+```
+{ topic_score 1-10, general_score 1-10,
+  primary_topic, secondary_topics[], rationale (one sentence), confidence }
+```
+
+Invalid twice -> both scores null, editor ignores.
+
+**Two scores, one call.** `topic_score` ranks a story against others in its
+own topic. `general_score` ranks it for a general reader. They answer
+different questions and both are true at once: a major transfer is a 9 within
+Sports and a 3 to a general reader. The site edition (6.5) ranks on
+`general_score`, which is what the single `score` always meant. The app's
+per-user allocator (14.4) ranks on `topic_score`, because a subscriber who
+chose one topic is asking what matters *inside* that topic.
+
+This split exists because the rubric that protects a shared edition destroys
+a personalized one. scoring_v1 caps routine sport at 3 (decision #32), which
+is correct when sport competes for 20 shared slots and fatal for a
+Sports-only subscriber, whose every story would then sit under any quality
+floor. Both scores come from the same call, so the split costs nothing
+(decision #33).
+
+**Primary and secondary topics.** `primary_topic` is where a story lives and
+determines section placement. `secondary_topics` are the other topics it
+legitimately reaches: US chip export restrictions is Tech, and also Business,
+US Politics, and Regulation. Both fields draw from the same closed `Topic`
+enum in `src/silver/score.py`; there is no second vocabulary (decision #34).
 
 `silver.story_clusters`: cluster_id, ingest_date (partition), topic,
 headline, summary_seed, member_ids, member_count, sources, score,
-rationale, model_version, prompt_version, scored_at. Every decision
-logged; this table is the future eval dataset.
+rationale, model_version, prompt_version, scored_at, topic_score,
+general_score, primary_topic, secondary_topics. Every decision logged; this
+table is the future eval dataset.
+
+`score` and `topic` are retained and written on every row as
+`score = general_score` and `topic = primary_topic`. They are the columns the
+editor and every stage downstream of it read, so the site path is unchanged
+by this addition. New readers use the new columns; nothing is migrated and no
+published edition is invalidated (decision #17).
 
 The partition write is a full-partition overwrite, a compare-and-swap under
 Iceberg optimistic concurrency against the snapshot the handle was loaded
@@ -286,6 +338,13 @@ only then surfaces `write_failed` (section 8). This is what makes 6.2's
 the append-only bronze table.
 
 ### 6.5 Edition generation (two AI stages + gate)
+
+**Scope.** This section specifies the **site edition**: one edition a day,
+curated by the editor, the same for every reader. It continues unchanged. The
+app's per-user newsletter is specified in section 14; it shares the writer
+stage, the readability gate, and the story text, but replaces the editor with
+a deterministic allocator (14.4). The two paths coexist and neither is
+downstream of the other (decision #37).
 
 **Stage 1, Editor agent (Sonnet-class, one call).** Reads today's clusters
 via DuckDB. Applies editorial policy (prompts/editor_v1.md, which includes
@@ -344,6 +403,41 @@ gold.history. Output: the `article` block. Grounding rules:
 - A story whose article fails validation twice publishes without an
   article block (no expand affordance). Story-sized failure, never
   edition-sized.
+
+**Model class.** Sonnet-class. The writer is the stage that produces the
+product's differentiator (decision #14, DESIGN.md section 8), and it is also
+the stage where a failure is invisible downstream: the readability gate
+measures grade level and schema validation checks shape, so neither catches a
+specific that was never in the grounding. Moving to a Haiku-class model is a
+live question (section 11) and is decided by measured eval against
+`silver.story_clusters`, never by estimate.
+
+**Prompt caching (both paths).** The writer's static prefix, prompts/
+writer_v1.md plus prompts/voice.md, is byte-identical on every call, so it is
+cached exactly as the scoring call's prefix is (6.4). This is a pure saving
+with no behavioral change and applies whether the call is synchronous or
+batched.
+
+**Batch API, where and only where there is no deadline.** The writer stage is
+submitted through the Batch API when it runs outside the publish window, which
+is the continuous story writing that feeds the app (14.1). Nobody is waiting
+on those calls, and the discount is roughly half.
+
+It is **not** used inside the publish window. The site publishes against a
+fixed target (6.8) and the Batch API trades latency for price, returning
+within hours rather than seconds. Batching the stage that a deadline depends
+on would convert a price optimization into a timeliness defect, which section
+8 already measures and decision #31 already shows is the expensive kind of
+failure.
+
+The two are reconciled by reuse rather than by choosing: a story already
+written by the continuous batch path is not rewritten for the edition, so the
+site increasingly draws on work that was already bought at the batch price. A
+story the edition needs that has no article yet is written synchronously. If a
+submitted batch has not returned when the publish window opens, the affected
+stories are re-issued synchronously rather than waited on, so decision #26's
+guarantee that a day always publishes never depends on batch latency
+(decision #43).
 
 **Readability gate (code, editor/readability.py).** Flesch-Kincaid over
 all generated text. Edition average must be grade <= 9. If over: one
@@ -463,15 +557,66 @@ anywhere.
 
 ### 6.7 Audio build
 
-audio/script.py: one small model call turns edition.json into a two-host
-dialogue (prompts/audio_script_v1.md + voice.md; hosts define terms to
-each other; 1,300-1,600 words). audio/tts.py: multi-speaker TTS (Gemini
-TTS behind a swappable interface). MP3 to R2 at /audio/YYYY-MM-DD.mp3;
-the repo never stores audio. The audio job's ai_cost_estimate_usd
-(section 8) is the sum of the script model call and the Gemini TTS render,
-the render estimated from the TTS response's token usage and the per-token
-prices in config/pipeline.yaml (audio.tts_price_input_per_mtok,
-audio.tts_price_output_per_mtok).
+**Single voice, rendered per story.** Audio is one narrator, Norm, reading
+discrete self-contained story segments. It is **not** a two-host dialogue and
+is **not** rendered per edition or per user. This supersedes the multi-speaker
+half of decision #4; Gemini TTS behind a swappable interface is unchanged
+(decision #44).
+
+audio/script.py: one small model call per story adapts the story's `article`
+block for speech (prompts/audio_script_v1.md + voice.md). Whether this call is
+needed at all is an open question (section 11): the article is already written
+in Norm's voice at grade 9, and a narrator may need only mechanical adaptation
+(numbers, dates, and symbols spoken rather than written), which is code.
+
+audio/tts.py: single-speaker TTS, Gemini behind a swappable interface. One
+clip per story, written to R2 and referenced by `audio.url` on the story
+record (14.1). The repo never stores audio.
+
+**A story clip is written once and reused by everyone.** This is 14.1's
+property applied to the most expensive stage in the system. Per-user rendering
+at 1,000 users is roughly forty to seventy times the cost of per-story
+rendering and, unlike it, grows with every user added. Per-user TTS is a
+design defect, not a quality tier.
+
+**Segments must be self-contained.** A clip opens and closes without
+depending on what plays before or after it, because the same clip appears at
+different positions in different listeners' feeds. This is why the format is
+single voice: a dialogue flows across story boundaries and cannot be recut,
+which is the constraint that made per-story clips impossible before.
+
+**Rendering is lazy.** A clip is rendered on first request rather than for
+every written story, since most stories are never listened to. The lead story
+and the highest `general_score` stories are pre-rendered so the common case is
+immediate; the tail renders on demand. A clip that does not exist yet is not
+an error: `audio` is nullable on the story record and the text is always
+readable.
+
+**Cohesion without per-user rendering.** A concatenated feed is assembled from
+three kinds of reusable audio plus the story clips:
+
+- Topic announcements, one pre-rendered clip per topic in the closed `Topic`
+  enum, reused indefinitely.
+- Fixed opening and closing segments.
+- The personalized intro (14.5), which is already generated as text and cached
+  by a hash of the ordered story-ID set. Its audio is cached under the same
+  key, so listeners with the same stories share one render. This is the only
+  per-listener audio, it is a few seconds long, and it inherits an existing
+  cache rather than introducing a new per-user cost.
+
+**Both paths consume the same clips.** The site's daily episode is the
+concatenation of that edition's story clips, published at
+/audio/YYYY-MM-DD.mp3 exactly as before, so the podcast feed and enclosure
+URLs are unchanged and decision #20's promise that subscriber-facing URLs
+never move is unaffected. The app's per-user listen is the same concatenation
+over that user's selected stories.
+
+The audio job's ai_cost_estimate_usd (section 8) is the sum of any script
+model calls and the Gemini TTS renders, each render estimated from the TTS
+response's token usage and the per-token prices in config/pipeline.yaml
+(audio.tts_price_input_per_mtok, audio.tts_price_output_per_mtok). Because
+clips are reused, the per-edition figure counts only renders newly performed
+for that edition, not the audio it replayed.
 
 ### 6.8 Publish workflow (publish.yml)
 
@@ -797,8 +942,8 @@ distribution, readability flags; tune cluster_threshold and rubric anchors.
 | Line item                                   | Estimate |
 |---------------------------------------------|----------|
 | Scoring (Haiku-class, cached)               | $4-8     |
-| Editor + writer stage (per-story articles)  | $6-10    |
-| Audio script + TTS (~10 min/day)            | $3-6     |
+| Editor + writer stage (per-story articles, cached; batched outside the publish window) | $6-10 |
+| Audio: per-story clips, single voice, rendered once and reused | $3-6 for the site edition; see 6.7 for app scaling |
 | Embeddings (local)                          | $0       |
 | R2 + catalog, Actions, Pages, monitoring, trigger Worker | ~$0 |
 | Buffer                                      | $2-4     |
@@ -812,7 +957,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 1  | Multi-source, no X in v1 (cost + redistribution compliance) |
 | 2  | Cluster threshold 0.82, config-driven, observed for 2 weeks |
 | 3  | 15-20 stories, 2-4 per section, dead sections -> Briefly |
-| 4  | Gemini multi-speaker TTS behind a swappable interface |
+| 4  | Gemini multi-speaker TTS behind a swappable interface. **Multi-speaker superseded by #44** (single voice, per-story clips); Gemini behind a swappable interface stands |
 | 5  | Collector runs on GitHub Actions every 3h (`collect.yml`), same entry point, idempotent. A local machine is an optional supplement, not relied on (a sleeping MacBook Air caused the 2026-07-20 gap) |
 | 6  | Incremental scoring; re-score only on cluster growth |
 | 7  | Publish window opens 05:30 ET (dual cron, DST-correct) with an idempotency gate: publish only if today is not already committed. Idempotency, not an exact-minute match, prevents a second edition and survives GitHub's late or dropped crons; the earlier open leaves headroom to be live by 6am |
@@ -844,10 +989,25 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 | 32 | Sports is the tenth section. The topic vocabulary is a closed enum (`Topic` in `src/silver/score.py`, mirrored in the response schema), so the scoring call cannot decline a story: a sports item is not dropped, it is filed under a wrong topic, most likely World or Business, where it competes for a real section slot under a false label. Adding sports feeds therefore required the vocabulary change first, or the failure mode would have been section pollution rather than clean rejection. No budget constant moved: `plan_sections` fields a section at 2+ stories, so ten sections at the minimum is exactly the 20 ceiling, and measured across the first 13 editions only 4 to 6 sections were ever alive at once, against totals of 9 to 16 stories on a 15-20 target. The edition was under-supplied rather than oversubscribed, which is also why more sources were worth adding. The zero headroom is real though, so an eleventh section (Health was the candidate) needs 22 and must raise the ceiling or the per-section minimum first; that is recorded in 6.5 rather than solved. Sports renders last because `SECTION_ORDER` derives from `TOPICS` order, making the editorial judgment a one-line consequence of the constant. The load-bearing part is the rubric, not the enum: the wave-1 feeds carry roughly 95 items a day against about 175 clusters from all 34 prior sources combined, and most sports volume is fixtures, transfer rumors, betting lines, and fantasy advice, so scoring_v1 caps routine sport at 3 and requires significance beyond the result to clear 6. Without that cap the section would have crowded out news on the shared 1-10 scale. Sources start at three, not the six vetted, so the effect on candidate volume is observed before expanding |
 
+| 33 | Scoring returns two scores from one call: `topic_score` (rank within the story's own topic) and `general_score` (rank for a general reader). The single `score` was correct for one shared edition and breaks personalization, because the rubric that protects a shared edition destroys a per-user one. scoring_v1 caps routine sport at 3 and requires significance beyond the result to clear 6 (decision #32), which is right when sport competes for 20 shared slots against real news. For a subscriber who chose Sports and nothing else, every story in their newsletter then scores 3: any quality floor empties their newsletter permanently, and removing the floor degrades quality for everyone else. The two scores are not a compromise between those, they are answers to two different questions, and both are true at once. Both come from the same call against the same rubric, so the split costs no additional tokens. Decided before the app data layer is built because changing it later means re-scoring the entire history rather than adding a field; the cost is a prompt and schema change today against a backfill of every cluster ever scored in six months |
+| 34 | A story cluster carries `primary_topic` plus `secondary_topics[]`, replacing the single `topic`. One topic per story was sufficient when placement was the only consumer: a story goes in exactly one section. Under per-user selection the field also decides reach, and the two are not the same question. US chip export restrictions is genuinely Tech, Business, US Politics, and Regulation; filed as Tech alone, every Business subscriber who wanted it never sees it, and across a few hundred stories a day personalization thins out for no reason other than a schema limit. `primary_topic` keeps its placement meaning unchanged, so section assignment in 6.5 is unaffected. Both fields draw from the same closed `Topic` enum in `src/silver/score.py`, mirrored in the response schema, so the scoring call still cannot invent a topic and decision #32's rejection-versus-pollution reasoning holds for both fields |
+| 35 | Embeddings become a cache keyed by `(item_id, model_version)`, amending 6.4 rather than reversing it. Storing nothing was correct while embeddings were computed twice a day for clustering, the headline gate, and gold retrieval; the property that a model change costs a threshold re-calibration and no data migration is worth keeping, and it survives here. A cache is not a schema: a miss recomputes exactly as before, so no stage may treat a stored vector as required input, and a model change invalidates by version rather than migrating. What changed is the read pattern, not the value of the vectors: the app matches stories against user topics continuously rather than once per edition, which turns recomputation from a negligible cost into the dominant cost of a per-user query. `model_version` is stored with every vector so a stale entry can never be served against a newer model, which is what makes invalidation safe to do by deletion |
+| 36 | Personal data never enters the data lake. Accounts, chosen topics, read time, seen-stories, and push tokens live in Postgres; bronze, silver, and gold hold only news. The performance argument (a lake answers "summarize a million rows", a phone asks "give me this one user's settings in 50 ms") is real but secondary. The deciding one is deletion: Apple Guideline 5.1.1(v) requires in-app account deletion and privacy law requires it to be actual deletion, which is one `DELETE` in Postgres and a genuinely hard problem in an append-only Iceberg table with snapshot time travel, where the old value remains readable in prior snapshots by design. Keeping personal data out entirely avoids the problem rather than solving it, and preserves decision #17's promise that a committed record is never rewritten |
+| 37 | The allocator (14.4) replaces the editor for **app newsletters only**. The editor remains the site's curator and 6.5 is unchanged. The two paths coexist, share the writer stage, the readability gate, and the story text, and neither is downstream of the other. An AI editor call per user is the design this architecture exists to avoid: it scales cost linearly with users while the story writing does not, so at 1,000 users the per-user call dominates the entire bill. As deterministic code the same job is also testable, predictable, and cheaper to reason about, which is rule zero's preference anyway. Keeping the editor rather than porting the site onto the allocator is deliberate: the site is a working, publishing system whose 14-day streak is still being established, and replacing its curator would restart that clock for no product gain |
+
+| 38 | Per-user delivery resolves the next read time from `read_time_local` plus IANA `timezone` on every scheduler pass, and never stores a precomputed UTC instant. A stored UTC timestamp is correct until the next daylight-saving transition and then silently wrong for every affected user, which is the same defect 6.8 already handles for the single publish time, except distributed across the user base and therefore much harder to notice. The two ambiguous cases are specified rather than left to a library default: a read time inside the skipped spring-forward hour delivers at the first valid instant after the gap, and a read time inside the repeated fall-back hour delivers on the first occurrence only. Assembly is idempotent on `(user_id, local_date)`, which is the same window-plus-idempotency shape as 6.8 and is what makes an overlapping or late loop harmless rather than a double delivery. Lateness is explicitly not failure: section 8's timeliness measure is a property of a single scheduled publish and has no meaning when every user has their own deadline |
+| 39 | The app API is versioned under `/v1/` from the first public release, and backward compatibility inside a version is a hard constraint. The site never needed this because both ends shipped together and a browser always loads current code. An App Store binary does not: old clients live in the wild indefinitely and a device that never updates keeps calling this API for months, so a removed or retyped field breaks users who cannot be reached. Within a version, fields may be added or become nullable but never removed, renamed, or redefined; anything else is `/v2/`. A configurable minimum supported version gives a structured upgrade-required response rather than a broken screen, and is configuration rather than code so raising it needs no deploy. Identity is always resolved from the authentication token and never accepted as a request parameter |
+| 40 | The chat and story tracker run on Anthropic Managed Agents, and the Story MCP server is the only path from the agent to any data. The platform is chosen for three capabilities the tracker requires and would otherwise have to be built: code execution to compute and chart how coverage moved, memory persisting across sessions, and a server-side scheduler for "tell me when this develops". Runtime price is not the deciding factor at v1 scale. The MCP boundary is a security decision, not an architectural preference: the sandbox holds no database credentials, every tool is scoped server-side to one `user_id`, and the client never supplies a prompt, because a client-supplied prompt is prompt injection and metered-cost abuse at once. The whole branch sits behind a server-side feature flag, since it depends on a beta API and ships inside an App Store binary that cannot be recalled |
+| 41 | Agent chat output is prose rendered to a human and therefore does not satisfy rule zero's schema-validated-JSON requirement, in the same way TTS does not. The rule's intent is preserved by a boundary instead of a schema: agent output is never written into a story record, a newsletter record, or any table, and is never read by a later pipeline stage. It is displayed and discarded. Tool calls the agent makes are structured and validated normally. This keeps rule zero's actual guarantee intact, which is that no unvalidated model output enters the deterministic data path. A future feature wanting agent output to become stored data is a new spec question and not an extension of this one |
+| 42 | Mobile releases run from GitHub Actions rather than Expo's own pipeline, so that one system answers what shipped and when, alongside the backend that already lives there. `EXPO_TOKEN` is an Actions secret under rule 5. The over-the-air and full-build split is recorded because it changes what "deployed to production" means: JavaScript and asset changes reach users in minutes with no review, while anything touching native code needs a store submission and days of review. Treating those as one release path is how a hotfix gets planned as if it were instant when it is not |
+
+| 43 | The writer stage caches its static prefix and is batched only outside the publish window. Caching is unconditional: prompts/writer_v1.md plus prompts/voice.md are byte-identical on every call, so this is a saving with no behavioral change, matching what 6.4 already does for scoring. Batching is conditional because the Batch API trades latency for roughly half the price, and the site publishes against a fixed target (6.8) that section 8 measures and decision #31 already showed is the expensive thing to miss. Continuous story writing for the app (14.1) has no deadline and takes the discount; the publish window does not. The two paths reconcile by reuse rather than by choosing a side: a story already written by the batch path is not rewritten for the edition, so the edition increasingly consumes work bought at the batch price, and only a story with no article yet is written synchronously. A batch that has not returned when the window opens is re-issued synchronously rather than waited on, so decision #26's never-an-empty-day guarantee never comes to depend on batch latency |
+
+| 44 | Audio is a single voice reading self-contained per-story segments, superseding the multi-speaker half of decision #4. The two changes are one decision, not two: a two-host dialogue flows across story boundaries and cannot be recut, which is precisely what made per-story clips impossible, so choosing one voice is what unblocks reuse. Reuse is the point, because TTS is the most expensive stage in the system and per-user rendering at 1,000 users costs roughly forty to seventy times per-story rendering while also growing with every user added, which is the scaling property 14.1 exists to prevent. Clips render lazily on first request rather than for every written story, since most stories are never listened to, with the lead and highest `general_score` stories pre-rendered so the common case is immediate. Cohesion is recovered without per-listener rendering: topic announcements are one reusable clip per enum topic, opening and closing segments are fixed, and the only per-listener audio is the personalized intro, which is seconds long and inherits the story-ID-set cache key 14.5 already defines. A single voice also resolves an inconsistency rather than creating one: decision #11 makes Norm the editor persona, and a two-host format meant Norm plus an unnamed second party. The site episode remains the concatenation of that edition's clips at the same URL, so decision #20's guarantee that subscriber-facing URLs never move is untouched |
+
 ## 11. Remaining open questions
 
 - Whether briefly items get one-line summaries or titles only (v1: titles).
-- Embedding model choice (candidate: bge-small or all-MiniLM).
 - GDELT adapter in v1.1.
 - Whether the migration (section 13) also moves API keys to a
   project-owned email/account set, and which providers allow it cleanly.
@@ -855,6 +1015,88 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
   principle. It needs a staleness check so a redundant firing does not double
   metered Actions minutes, and that check is new tested logic, so it lands as
   its own addition after 6.11 proves out.
+
+### App layer (section 14)
+
+Grouped by what each one costs to answer late, which is not the same as how
+urgent it feels.
+
+**Blocking the first line of app code.**
+
+- **Authentication.** Nothing user-scoped can be built before this is settled,
+  and no other open question here is reachable without it. It also carries a
+  store constraint that narrows the choice: Apple Guideline 4.8 requires
+  offering Sign in with Apple to any app that offers a third-party social
+  login, so supporting Apple and email only avoids the requirement entirely
+  rather than satisfying it.
+- **The topic menu itself: which topics the closed list contains (14.3).**
+  Blocks the signup flow, and every stored user preference references it. The
+  cost is larger than picking names. scoring_v1 carries anchored example
+  stories for 3, 6, and 9 in every topic (6.4), so N topics means N sets of
+  anchors, and decision #32 is the evidence that those anchors decide
+  outcomes rather than decorate the prompt. A large taxonomy is therefore a
+  rubric re-calibration, not a configuration change, and 14.4's top-up
+  already covers thin coverage, which weakens the case for many narrow
+  topics.
+- **The allocator budget constants (14.4):** total per newsletter, per-topic
+  minimum and maximum, lookback window. Needed before
+  `tests/test_allocator.py` can assert against real numbers. The site's
+  published values (15-20 stories, 2-4 per section, decision #3) are the
+  obvious starting point, since they are validated by every edition shipped
+  so far rather than chosen in the abstract.
+
+**Cannot be added retroactively, which is what makes them urgent.**
+
+- **Feedback telemetry.** With one shared edition, quality was a judgment
+  call. Per user it becomes "was this relevant to *this* reader", and the only
+  evidence is behavior: what was opened, skipped, and finished. Behavior that
+  was not recorded cannot be recovered later, so the instrumentation has to
+  exist in v1 even before its use is decided. Nothing in section 14 currently
+  specifies it.
+- **Data retention.** How long per-user newsletters and seen-story history are
+  kept. It interacts with decision #36's deletion guarantee, and a retention
+  rule is far cheaper to apply before data accumulates than after.
+
+**Blocking release rather than code.**
+
+- **Push notification copy (14.6).** If generated per user by a model, it
+  silently breaks 14.1's property that the per-user path holds exactly one AI
+  call. Deterministic templates preserve it.
+- **Monetization.** Free, paid, or freemium. It changes the App Store review
+  path (Guideline 3.1 governs in-app purchase) and decides whether the agent
+  (14.8) is gated, which is the one component whose cost scales with
+  engagement.
+- **Onboarding.** What a new user sees before any topic is chosen, and how the
+  first newsletter is framed given 14.4 builds it immediately rather than at
+  their first read time.
+- **Content moderation for the agent (14.8).** The agent will be asked about
+  distressing news. Decision #41 keeps its output out of stored data, which
+  bounds the blast radius but does not decide what it should decline to do.
+
+**Decided by measurement rather than argument.**
+
+- Whether the per-story audio script call survives at all (6.7). The article
+  is already written in Norm's voice at grade 9, and a single narrator may
+  need only mechanical adaptation of numbers, dates, and symbols, which is
+  code rather than an AI call. Settling this removes or keeps one model call
+  per story. Decided by listening to both, not by argument.
+- Which voice, and whether it is the same voice for the site episode and the
+  app listen (6.7). Decision #44 settles that there is one voice, not which.
+- Whether the app's per-user newsletters are subject to the same timeliness
+  measure as the site (section 8), given each user has their own deadline and
+  there is no single publish time to be late against. 14.6 currently states
+  that lateness is not failure; a per-user measure would change that.
+- The assembly window: how far ahead of a user's read time the loop assembles
+  (14.6). Too early serves stale news, too late risks missing the deadline.
+- Agent rate limits per user, and whether chat is free or gated (14.8). It is
+  the one cost that scales with engagement rather than news volume.
+- Whether the writer stage stays on a Sonnet-class model or moves to a
+  Haiku-class one (6.5, decision #43 settles caching and batching but not the
+  model). This is a quality-versus-cost tradeoff on the one stage that
+  produces the product's differentiator, so it is decided by measured eval on
+  the `silver.story_clusters` record rather than by estimate. A grounding
+  check does not yet exist and is what the eval most needs, because neither
+  the readability gate nor schema validation can catch an invented specific.
 
 ## 12. Build order
 
@@ -874,6 +1116,28 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
    proceed in parallel.
 6. **M6 Audio + polish:** dialogue script, TTS, podcast feed, remaining
    adapters, OG images, two-week tuning period.
+7. **M7 App data layer:** the section 14 schemas and the allocator. Two-score
+   and multi-topic scoring (6.4), the story record (14.1), the user model
+   (14.2), the allocator plus `tests/test_allocator.py` (14.4), and the
+   newsletter record (14.5). Ordering constraint: the 6.4 scoring change lands
+   first and additively, so the site path (6.5) keeps publishing untouched
+   throughout. M7 does not gate the v1 definition of done below, which remains
+   a property of the site.
+
+8. **M8 App delivery:** read-time scheduling and the assembly loop (14.6),
+   and the app API with versioning and account deletion (14.7). Ordering
+   constraint: M7's schemas land first, since this milestone serves them.
+   Also carries the audio rework that decision #44 requires: single voice,
+   per-story clips, lazy rendering, and concatenation for both the site
+   episode and the per-user listen. M6 delivered a two-host per-edition
+   dialogue and its MILESTONES.md entry is the accurate record of what was
+   built then; #44 supersedes the format rather than rewriting that history.
+9. **M9 Mobile client:** the Expo app and the EAS release pipeline (14.9),
+   including the minimum-supported-version floor from 14.7.
+10. **M10 Agent:** the chat and story tracker (14.8), the Story MCP server,
+   and the server-side feature flag. Last because it is opt-in, is the only
+   component whose cost scales with engagement, and depends on a beta API;
+   nothing else in the system may depend on it.
 
 Definition of done for v1: 14 consecutive days of correct, unattended
 publication. *Correct* includes on time: a publication that is late under the
@@ -938,3 +1202,379 @@ still goes green, and the site still updates. The backup would be dead with
 every signal reading normal, and the next step is flipping the repo public. A
 publish that only the cron could have produced does not demonstrate the backup
 path survived the migration.
+
+## 14. Multi-tenant app layer
+
+**Status.** This section covers the schema and contracts for the per-user app.
+The app API surface, the chat and story-tracker agent, read-time scheduling
+behavior, and mobile release are specified in a later pass and are not yet
+approved for build.
+
+**Scope boundary with section 6.5.** The site edition and the app newsletter
+are two consumers of the same stories. Sections 6.1 through 6.4 are shared
+verbatim: collection, dedup, clustering, and scoring feed both. Section 6.5
+(the site edition) and this section are siblings, not layers. Neither reads
+the other's output (decision #37).
+
+### 14.1 Story record
+
+A **story** is a scored cluster whose article text has been written. It is
+written once, globally, and reused by every user whose topics match it. No
+part of a story is per-reader: the text of a rate-decision story is identical
+whether one person or ten thousand open it.
+
+This is the property the whole architecture rests on. Cost tracks how much
+news happened, not how many people are reading. Any change that makes story
+text depend on the reader breaks it, and should be treated as a design defect
+rather than a feature.
+
+```json
+{
+  "story_id": "string",
+  "cluster_id": "string",
+  "written_at": "2026-08-04T14:03:00Z",
+  "primary_topic": "string",
+  "secondary_topics": ["string"],
+  "topic_score": 9,
+  "general_score": 3,
+  "title": "string",
+  "summary": "string, one sentence",
+  "sources": [ {"name": "string", "url": "string"} ],
+  "article": {
+    "background": "string, one paragraph",
+    "what_happened": "string, one paragraph",
+    "why_it_matters": "string, one paragraph",
+    "quote": {"text": "string", "attribution": "string",
+              "source_url": "string"}
+  },
+  "audio": {"url": "string", "duration_seconds": 42},
+  "model_version": "string",
+  "prompt_version": "string",
+  "readability_grade": 8.4
+}
+```
+
+The `article` block is the same shape as the one in 6.5's `edition.json`, and
+is produced by the same writer stage under the same grounding and quote rules.
+This is deliberate: one writer, one voice standard, one readability gate, two
+renderers. A story that fails the gate twice is written without an `article`
+block exactly as in 6.5, and remains selectable.
+
+`audio` is nullable and is one clip **per story**, never per user (6.7,
+decision #44). A per-user render would reintroduce per-reader cost on the one
+stage where it is most expensive. Per-user audio is assembled by concatenating
+story clips, which is why each segment is self-contained and why the format is
+a single voice: a dialogue flowing across story boundaries cannot be recut.
+
+`audio` is null until a clip has been rendered. Rendering is lazy (6.7), so
+absence means not yet requested rather than failed, and the story is always
+readable regardless.
+
+`topic_score` and `general_score` carry forward from 6.4 unchanged.
+
+### 14.2 User model
+
+Postgres, never the lake (decision #36).
+
+| Field | Notes |
+| --- | --- |
+| `user_id` | Present on every user-scoped row from the first migration, including during single-account testing. Adding it later means migrating everything. |
+| `topics[]` | Chosen from the closed menu (14.3). |
+| `read_time_local` | A local wall-clock time, e.g. `06:30`. |
+| `timezone` | IANA name, e.g. `America/New_York`. |
+| `seen_story_ids` | Drives the already-seen filter in 14.4. |
+| `push_token` | Nullable; push is opt-in. |
+
+**Read time is stored as local time plus IANA timezone, never as UTC.** A
+stored UTC hour silently shifts every user's read time by an hour at each
+daylight-saving transition. The publish workflow already carries this rule for
+one timezone (6.8); here it is per user, so the failure would be silent and
+staggered rather than obvious and global.
+
+**"Today's newsletter" is defined per user, not globally.** A user's
+newsletter is dated in their own timezone and contains the best stories
+available at the moment it was assembled. Two users in different timezones
+seeing different content on the same calendar date is correct behavior. There
+is no global edition date in the app; 6.5's `date` field is the site's, and
+the two must not be conflated.
+
+### 14.3 Topic taxonomy
+
+v1 offers a **fixed, closed menu**. Users select from it; they cannot type
+free text. Custom topics are explicitly out of scope for v1 and are a
+separate feature layered on later.
+
+The reason is decision #32's failure mode. The scoring call cannot decline a
+story: `Topic` is a closed enum, so an unmatched story is not dropped, it is
+filed under the nearest wrong topic where it competes under a false label.
+With free-text topics that failure gets both more frequent and much harder to
+detect, because there is no fixed vocabulary to audit against.
+
+The menu is drawn from the same `Topic` enum as `primary_topic` and
+`secondary_topics`, so a user's selection is always directly queryable and no
+mapping layer exists to drift. The specific list is an open question (section
+11) and blocks the signup flow.
+
+### 14.4 Allocator (code, no AI)
+
+The allocator decides which stories go into one user's newsletter. It is
+deterministic code and replaces the editor for this path only (decision #37).
+
+"The newsletter is a query of the user's topics" is the right shape but
+under-specifies the hard part. If each topic surfaces its top 10 and a user
+picks 8 topics, they get 80 stories, which is a firehose rather than a
+newsletter; a user who picks 1 topic gets 10. Neither is a read. The job the
+editor does for the site (a budget, a spread, a lead) still has to happen, and
+it has to happen without an AI call per user.
+
+Inputs: the user's topics, their `seen_story_ids`, the story table, and the
+budget constants. Output: an ordered list of `story_id`s plus the lead story.
+
+Rules, applied in order:
+
+1. **Query.** Stories whose `primary_topic` **or** `secondary_topics`
+   intersects the user's topics, within the lookback window, excluding
+   `seen_story_ids`.
+2. **Deduplicate across topics.** A story matching two of the user's topics
+   appears exactly once. Record which topic claimed it, so the rendered
+   grouping is stable.
+3. **Allocate** to the per-newsletter budget, ranking within each topic by
+   `topic_score`, subject to a per-topic minimum and maximum so one busy
+   topic cannot consume the newsletter.
+4. **Rebalance.** Fewer chosen topics means more stories per topic, so a
+   single-topic user still receives a full read.
+5. **Top up** from `general_score` when the user's topics are quiet, drawing
+   from stories outside their topics. This is normal behavior, not an error
+   path.
+6. **Lead story** is the highest `general_score` among the selected set.
+
+Budget constants (total per newsletter, per-topic minimum and maximum,
+lookback window) live in `config/pipeline.yaml` and are an open question
+(section 11).
+
+**Never an empty newsletter.** Decision #26 guarantees the site never has an
+unpublished day. The per-user equivalent is harder, because a user with two
+niche topics will hit quiet days routinely, and rule 5 is what discharges it.
+A user with zero eligible stories still receives a newsletter assembled
+entirely from `general_score`.
+
+**Adding a topic backfills immediately.** When a user adds a topic, the last
+few days of that topic are available at once, because the stories already
+exist and this is only a query. The obvious alternative ("you will start
+seeing it tomorrow") puts an empty result at the exact moment a user is
+deciding whether the app is worth keeping. This is a direct consequence of
+write-once storage and is close to impossible to add under per-user
+generation. The same applies to a new signup, whose first newsletter is built
+immediately rather than at their first read time.
+
+**Tests (`tests/test_allocator.py`), required before the prompt-free
+implementation lands, per rule 4:**
+
+- Total selected is within budget.
+- No topic exceeds its per-topic maximum.
+- A single-topic user receives a full newsletter.
+- A story matching two of the user's topics appears exactly once, and the
+  claiming topic is recorded.
+- Stories in `seen_story_ids` are never returned.
+- A user whose topics are entirely quiet receives a full newsletter via
+  `general_score` top-up.
+- Lead story is the highest `general_score` among the selected set.
+- Identical inputs produce an identical ordered output. Determinism is the
+  reason this is code rather than a prompt, so it is asserted directly.
+- A user with zero eligible stories in their topics still receives a
+  newsletter (the per-user form of decision #26).
+
+### 14.5 Newsletter record
+
+The assembled per-user artifact. Distinct from `edition.json`, which remains
+the site's published record (decision #17) and is unaffected.
+
+```json
+{
+  "newsletter_id": "string",
+  "user_id": "string",
+  "local_date": "2026-08-04",
+  "timezone": "America/New_York",
+  "assembled_at": "2026-08-04T10:15:00Z",
+  "intro": "string | null",
+  "lead_story_id": "string",
+  "stories": [ {"story_id": "string", "claimed_by_topic": "string"} ],
+  "stats": {"candidates": 0, "selected": 0, "topped_up": 0}
+}
+```
+
+The newsletter stores `story_id` references, never copies of story text. A
+copy would silently reintroduce per-user storage of shared content and would
+let a corrected story go stale in already-assembled newsletters.
+
+`intro` is the one genuinely per-user AI call, because it is about that user's
+particular mix. It is cached by a hash of the ordered `story_id` set, so users
+who received the same stories share one generated intro. It is nullable: a
+failed intro produces a newsletter without one, never a missing newsletter.
+
+`topped_up` records how many stories came from rule 5 rather than the user's
+topics, which is the signal for whether their topic selection is too narrow to
+sustain a daily read.
+
+### 14.6 Read-time scheduling and delivery
+
+An assembly loop runs every 15 minutes. It finds users whose read time falls
+within the next window, runs the allocator (14.4) for each, generates the
+intro, and writes the newsletter record (14.5). Push fires at the user's read
+time, not at assembly.
+
+**Next-occurrence is computed, never stored.** The scheduler resolves
+`read_time_local` in the user's `timezone` to the next real instant each time
+it runs. Storing a precomputed UTC timestamp reintroduces the drift that 14.2
+exists to prevent, one user at a time and silently.
+
+**Daylight-saving edge cases are specified, not left to the library default:**
+
+- **Spring forward.** A read time inside the skipped hour does not exist that
+  day. Deliver at the first valid instant after the gap.
+- **Fall back.** A read time inside the repeated hour occurs twice. Deliver on
+  the first occurrence, never both.
+
+Both are covered by the DST scheduling check that rule 4 already requires.
+
+**Idempotency.** At most one newsletter exists per `(user_id, local_date)`. A
+re-run, an overlapping loop, or a retry finds the existing record and does
+nothing. This is the same window-plus-idempotency shape as the publish
+workflow (6.8), and it is what makes a duplicated or late loop harmless
+rather than a double delivery.
+
+**Lateness is not failure.** A late loop assembles and delivers anyway. The
+site's timeliness measure (section 8) does not apply here: there is no single
+publish time to be late against, and a newsletter that arrives late is worth
+more than one that does not arrive. Whether the app gets its own timeliness
+measure is an open question (section 11).
+
+**Push is best-effort and never blocks.** A failed or absent push token leaves
+the newsletter readable in the app. Push is opt-in.
+
+**Observability.** The assembly loop writes one `run_log` row per batch with
+counts (users considered, newsletters assembled, skipped as already present,
+failed), not one row per user. Per-user rows would add roughly a thousand
+rows a day at v1 scale and drown the existing signal. Individual failures are
+counted and carry enumerated reason codes, consistent with decision #27.
+
+### 14.7 App API contract
+
+**Versioned from the first public release.** All routes sit under `/v1/`.
+
+**Backward compatibility inside a version is a hard constraint, not a
+preference.** Once the app is on the App Store, old clients live in the wild
+indefinitely, and a device that never updates will call this API for months.
+The site never had this problem because both ends shipped together. Within
+`/v1/`, fields may be added and may become nullable; they may not be removed,
+renamed, or have their type or meaning changed. A change that cannot be made
+additively is `/v2/`.
+
+**Minimum supported version.** Every request carries the client build. A
+client below the floor receives a structured upgrade-required response rather
+than a broken screen. The floor is configuration, not code, so raising it does
+not require a deploy.
+
+**Identity is server-side.** The user is resolved from the request's
+authentication token. No route accepts a `user_id` as a client-supplied
+parameter. This is the same rule that governs the agent (14.8) and exists for
+the same reason: a client-supplied identity is an authorization bypass.
+
+Contract surface, in behavior rather than route shape:
+
+| Capability | Notes |
+| --- | --- |
+| Fetch today's newsletter | Returns the stored record (14.5). No AI call, no assembly on read. |
+| Fetch a story | Serves stored story text (14.1). |
+| Read and update topics | A change takes effect on the next assembly; the backfill in 14.4 applies immediately. |
+| Read and update read time | Stored per 14.2. |
+| Mark stories seen | Feeds the already-seen filter in 14.4. |
+| Delete account | Required by Apple Guideline 5.1.1(v). Deletes the Postgres rows; the lake holds no personal data (decision #36), so there is nothing else to erase. |
+
+The API serves stored records. It never generates a newsletter on the read
+path, because that would put a per-user AI call behind a user waiting on a
+screen and undo 14.1.
+
+### 14.8 Chat and story tracker (Anthropic Managed Agents)
+
+An opt-in agent that answers questions about the user's own stories and tracks
+how coverage of a story develops. It is a **side branch**: it is never part of
+assembling or delivering a newsletter, and the newsletter path must remain
+fully functional with this feature disabled.
+
+**Platform.** Anthropic Managed Agents. Chosen because the tracker needs three
+things that would otherwise have to be built: code execution for computing and
+charting coverage over time, memory that persists across sessions, and a
+server-side scheduler for "tell me when this develops". The runtime charge
+(session-hours) is not the deciding factor at v1 scale; those three
+capabilities are (decision #40).
+
+**Agent config is created once and versioned.** Sessions reference an agent by
+id and pin a version. Creating an agent per request accumulates orphaned
+configs and pays creation latency for nothing.
+
+**The Story MCP server is the only data door.** It runs on the app API and
+exposes read-only tools: story search, single-story fetch, a coverage
+time series, and the user's topics. Every tool is scoped server-side to one
+`user_id`.
+
+- The sandbox receives **no database credentials**. All data arrives through
+  MCP, already scoped.
+- **The client never sends a prompt.** The server builds it from the
+  authenticated identity. A client-supplied prompt is prompt injection and
+  metered-cost abuse in one.
+- Any secret the agent ever needs is held in a Managed Agents vault and
+  substituted at egress, never placed in the sandbox. This is rule 5's
+  never-write-a-key rule applied to a surface that did not exist when it was
+  written.
+
+**Relationship to rule zero (section 2).** Rule zero requires AI calls to emit
+schema-validated JSON. The agent's chat output is prose rendered to a human,
+so it does not fit that shape, in the same way TTS does not. The rule's intent
+is preserved by a hard boundary instead: **agent output is never written into
+a story record, a newsletter record, or any table, and is never read by a
+later pipeline stage.** It is displayed and discarded. Structured tool calls
+the agent makes are validated normally. Any future feature that wants agent
+output to become stored data is a new spec question, not an extension of this
+one (decision #41).
+
+**Feature flag.** The whole branch is switchable off from the server without a
+client release. Managed Agents is a public beta, and the client shipping it is
+an App Store binary that cannot be recalled, so the ability to disable the
+feature remotely is a release requirement rather than a convenience.
+
+**Cost isolation.** The agent is metered per session and is the one part of
+the system whose cost scales with engagement rather than with news volume. It
+is opt-in and rate-limited per user so it cannot compromise the flat-cost
+property that 14.1 establishes for everything else.
+
+### 14.9 Mobile client and release
+
+Expo, released through EAS.
+
+**Two release paths, and the difference is the whole point:**
+
+| Path | Contents | Latency |
+| --- | --- | --- |
+| EAS Update (over the air) | JavaScript and asset changes | Minutes, no review |
+| EAS Build plus submission | Anything touching native code | Days, App Store review |
+
+"Production deploys to the App Store" is therefore only half true. Most
+changes ship immediately; a minority cannot.
+
+| Environment | Artifact |
+| --- | --- |
+| int | Internal distribution build, team only |
+| qa | TestFlight |
+| prod | App Store build, plus over-the-air updates for JavaScript-only changes |
+
+**Released from GitHub Actions**, invoking the Expo CLI, so that one system
+answers what shipped and when. `EXPO_TOKEN` is an Actions secret. Rule 5
+applies unchanged: never write a key into a file.
+
+**App Store review posture.** Apple scrutinizes news aggregators on
+republishing other outlets' content (Guideline 5.2) and on whether an app does
+enough to justify existing (Guideline 4.2). The existing rule of paraphrasing
+and linking rather than reproducing source text (decision #10) is the correct
+posture and is also the honest description of what the writer stage does.
+Account deletion (Guideline 5.1.1(v)) is covered by 14.7.
