@@ -199,9 +199,9 @@ Do not build these. Rule 1 applies: propose a spec addition and wait.
 - The app's visual system. DESIGN.md covers the site only; the voice standard
   applies to both.
 - Source health checks and automatic quarantine.
-- Anything in section 11's open questions, which includes the topic menu, the
-  allocator lookback window, and the free-tier topic allowance. Each blocks a
-  piece of section 14.
+- Anything in section 11's open questions. After decisions #48 to #51 the
+  app-layer remainder is data retention, the allocator top-up rules, the
+  free-tier allowance, and push notification copy.
 - Free-text topics and the Sunday retrospective. Both appear in the app
   prototype as paid features and both are explicitly deferred by 14.10.
 

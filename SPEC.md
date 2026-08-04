@@ -1011,9 +1011,13 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 | 47 | Subscriptions are sold through in-app purchase rather than the direct payment path the prototype shows. Apple Guideline 3.1.1 requires IAP for digital content consumed inside the app, and a subscription to the app's own newsletter is not a borderline case. The entitlement of record is the server's, derived from a validated store transaction; a client-held receipt is evidence and never the source of truth, which is the same boundary decision #46 draws for the plan itself. Recording this as a decision rather than an implementation detail is deliberate: a direct payment path is the single most likely cause of a review rejection in the app, it is cheap to choose correctly now, and discovering it at submission costs a review cycle on a binary that has already been built and tested against the wrong assumption |
 
+| 48 | The allocator uses two lookback windows rather than one, and breaks score ties by recency. A single window has to serve a daily reader who wants this morning's news and a returning, newly signed up, or newly re-topiced reader who wants the backlog, and those two want opposite values: 24 hours makes catch-up useless while a week makes daily reading stale. The daily window is set wider than a day on purpose, for the same reason `since_window_hours` is wider than the collector's cadence: the overlap is what stops a drifting read time or a late assembly from falling into a gap. The catch-up window stops at roughly a week because past that point the reader is browsing an archive rather than catching up, and the app offers that separately. Recency joins the ordering because scores do not age: a 9 from four days ago outranks a 6 from this morning for as long as both are eligible, so without a recency tie-break any widening of a window silently ages the newsletter for readers whose topics move slowly, and the previous `story_id` tie-break resolved that by an arbitrary string. Widening a window is close to free, since the stories are already written and stored and no AI call is involved, which is what makes this a question about staleness rather than cost. The catch-up window is bounded by the retention period rather than the reverse, because offering a backlog longer than retention promises data that has already been deleted. This also converts 14.4's existing promises about topic backfill and a new user's first newsletter from aspirations into behavior a window can actually deliver |
+
 | 49 | The app's v1 topic menu is the ten topics already in the enum, with nothing added, renamed, merged, or retired. The prototype's twenty are recorded in 14.3 as a deferred expansion rather than adopted. The reason is that a wider menu is not a configuration change: `scoring_v1` carries anchored 3, 6, and 9 example stories for every topic, so thirteen additions are thirteen anchor sets to write and calibrate, and decision #32 is the evidence that those anchors decide outcomes rather than decorate the prompt. The prototype's merge of Business with Finance and its retirement of Regulation and Cyber also touch rows already written to `silver.story_clusters`, converting a menu change into a data migration. Shipping the existing ten costs nothing, is validated by fifteen published editions rather than chosen in the abstract, and leaves 14.4's `general_score` top-up to cover thin coverage, which is what weakens the case for many narrow topics in the first place. `Sports` is kept despite never having produced a section, because that is precisely the reader decision #33 introduced `topic_score` to reach and is therefore the clearest available evidence that the two-score change works |
 
-| 48 | The allocator uses two lookback windows rather than one, and breaks score ties by recency. A single window has to serve a daily reader who wants this morning's news and a returning, newly signed up, or newly re-topiced reader who wants the backlog, and those two want opposite values: 24 hours makes catch-up useless while a week makes daily reading stale. The daily window is set wider than a day on purpose, for the same reason `since_window_hours` is wider than the collector's cadence: the overlap is what stops a drifting read time or a late assembly from falling into a gap. The catch-up window stops at roughly a week because past that point the reader is browsing an archive rather than catching up, and the app offers that separately. Recency joins the ordering because scores do not age: a 9 from four days ago outranks a 6 from this morning for as long as both are eligible, so without a recency tie-break any widening of a window silently ages the newsletter for readers whose topics move slowly, and the previous `story_id` tie-break resolved that by an arbitrary string. Widening a window is close to free, since the stories are already written and stored and no AI call is involved, which is what makes this a question about staleness rather than cost. The catch-up window is bounded by the retention period rather than the reverse, because offering a backlog longer than retention promises data that has already been deleted. This also converts 14.4's existing promises about topic backfill and a new user's first newsletter from aspirations into behavior a window can actually deliver |
+| 50 | Authentication is Sign in with Apple plus email magic links, with no social logins and no passwords. Excluding social login is the load-bearing half: Apple Guideline 4.8 obliges an app offering any third-party login to also offer Sign in with Apple, so each provider added is two pieces of work plus the account reconciliation for one human arriving through two providers, while offering none leaves the app outside the guideline rather than compliant with it. Passwords are excluded because they invert the usual cost intuition: they read as the simple default while carrying reset flows, an email delivery dependency, correct hashing, rate limiting, and breach exposure, none of which a one-time link has. Apple is primary because 14.9 ships iOS first, and its private relay address is accepted as given and never resolved, so most users never hand over a real address. Email keeps a later Android release from needing a new identity system. This is the first question in section 14 to settle because everything user-scoped is defined in terms of a `user_id`, and 14.2 requires that column from the first migration rather than retrofitted |
+
+| 51 | Feedback telemetry is instrumented in v1 before its use is decided, because it is the only open question in section 14 whose answer is destroyed by deferral: every other one can be settled later at no cost, while behavior that was not recorded cannot be recovered. Four events are recorded, and `story_skipped` is included deliberately as the negative signal, which is the one most often omitted and the only one that identifies a selection that was wrong rather than merely unread. The events are aggregated and never fed back automatically: no event adjusts a reader's weights, topics, or length, because 14.4 exists so that selection is explainable rather than emergent, and a silent second allocator would undo that. Only behavior is recorded and never subject matter as free text, which is the line between a behavior log and a profile. The rows live in Postgres with the rest of the personal data so decision #36's single-`DELETE` guarantee still holds. The cost is one table and four calls, and it is out of proportion to what it settles: the free-tier allowance, both lookback window values, and the top-up rules are currently arguable and become measurable. 14.5 already stores the other half through `topped_up`, `locked_topics`, and the `allocation` snapshot, so this completes a join rather than starting a new dataset |
 
 ## 11. Remaining open questions
 
@@ -1033,12 +1037,8 @@ urgent it feels.
 
 **Blocking the first line of app code.**
 
-- **Authentication.** Nothing user-scoped can be built before this is settled,
-  and no other open question here is reachable without it. It also carries a
-  store constraint that narrows the choice: Apple Guideline 4.8 requires
-  offering Sign in with Apple to any app that offers a third-party social
-  login, so supporting Apple and email only avoids the requirement entirely
-  rather than satisfying it.
+- ~~Authentication~~ **Closed** by decision #50: Sign in with Apple plus email
+  magic links, no social logins, no passwords. Specified in 14.2.
 - ~~The topic menu~~ **Closed** by decision #49: v1 ships the existing ten.
   The prototype's twenty are recorded in 14.3 as a deferred expansion, and
   taking it up later is a rubric re-calibration plus a data migration rather
@@ -1058,12 +1058,10 @@ urgent it feels.
 
 **Cannot be added retroactively, which is what makes them urgent.**
 
-- **Feedback telemetry.** With one shared edition, quality was a judgment
-  call. Per user it becomes "was this relevant to *this* reader", and the only
-  evidence is behavior: what was opened, skipped, and finished. Behavior that
-  was not recorded cannot be recovered later, so the instrumentation has to
-  exist in v1 even before its use is decided. Nothing in section 14 currently
-  specifies it.
+- ~~Feedback telemetry~~ **Closed** by decision #51 and specified in 14.11:
+  four events, recorded in v1 before their use is decided. What remains open is
+  not whether to collect but what to conclude, and that is answered by the data
+  rather than in advance.
 - **Data retention.** How long per-user newsletters and seen-story history are
   kept. It interacts with decision #36's deletion guarantee, and a retention
   rule is far cheaper to apply before data accumulates than after. It now also
@@ -1307,6 +1305,9 @@ Postgres, never the lake (decision #36).
 | Field | Notes |
 | --- | --- |
 | `user_id` | Present on every user-scoped row from the first migration, including during single-account testing. Adding it later means migrating everything. |
+| `auth_provider` | `apple` or `email`. No other value exists in v1 (decision #50). |
+| `auth_subject` | The provider's stable identifier: Apple's `sub` claim, or the verified address for email. Unique per provider. |
+| `email` | Nullable. Apple's private relay address counts and is stored as given; it is never resolved to a real address. |
 | `topic_prefs[]` | **Ordered.** Each entry is `{topic, weight}`. `topic` comes from the closed menu (14.3); `weight` is an integer 1 to 10, default 6. The list order is the user's running order and is the section order in the rendered newsletter. This replaces a flat `topics[]`: the allocator (14.4) needs both the weight and the position. |
 | `length` | The newsletter budget, chosen by the user from the presets in 14.4. Stored as the story count, never the preset label. |
 | `newsletter_name` | The masthead title, user-editable, defaulting to `Norm's Newsletter`. Display only. It never affects selection, and no pipeline stage reads it. |
@@ -1325,6 +1326,38 @@ and would collapse ten distinct settings into five.
 **`newsletter_name` is not a namespace.** A user has one newsletter. Renaming
 it changes a heading, and nothing keyed on `(user_id, local_date)` in 14.5 or
 14.6 changes with it.
+
+#### Authentication
+
+**Sign in with Apple and email magic links. No social logins, and no
+passwords** (decision #50).
+
+The absence of social login is the deliberate part. Apple Guideline 4.8
+requires an app offering any third-party or social login to also offer Sign in
+with Apple, so adding one provider is really adding two, plus the account
+reconciliation for a user who signs in with Google on Monday and Apple on
+Tuesday. Offering neither leaves the app outside the guideline's scope rather
+than compliant with it, which is strictly less to build and less to maintain.
+
+Passwords are excluded for the same reason inverted: they look like the cheap
+default and are the most expensive credential to own, carrying reset flows, an
+email delivery dependency, hashing that must be correct, rate limiting, and
+breach exposure. A magic link is a one-time token and has none of that.
+
+- **Apple** is the primary path, since 14.9 ships iOS first. Apple's private
+  relay address is accepted as the user's email and never resolved further.
+- **Email magic link** covers anyone declining Apple and keeps a later Android
+  release from requiring a new identity system.
+
+Sign-in creates exactly one row keyed by `(auth_provider, auth_subject)` and
+issues a `user_id`. Everything user-scoped hangs off that `user_id`, which is
+why 14.7 resolves identity from the token on every request and never accepts it
+as a parameter.
+
+**Reading does not require an account.** An unauthenticated reader can be
+served a general newsletter. Signing in is what attaches preferences to a
+person, not what unlocks the content, so nothing about this gate contradicts
+decision #26's never-an-empty-newsletter guarantee.
 
 **Read time is stored as local time plus IANA timezone, never as UTC.** A
 stored UTC hour silently shifts every user's read time by an hour at each
@@ -1715,6 +1748,8 @@ Contract surface, in behavior rather than route shape:
 
 | Capability | Notes |
 | --- | --- |
+| Sign in | Apple or email magic link only (14.2, decision #50). Exchanges a provider credential for a session token. The only unauthenticated write. |
+| Record an event | Accepts the four events in 14.11. Rejected if it names a `user_id`. |
 | Fetch today's newsletter | Returns the stored record (14.5). No AI call, no assembly on read. |
 | Fetch a story | Serves stored story text (14.1). |
 | Read and update topics | A change takes effect on the next assembly; the backfill in 14.4 applies immediately. |
@@ -1876,3 +1911,58 @@ per-user form (14.4) does not acquire a payment-system dependency.
 - **Archive depth as a paywall.** Gating history against a retention rule that
   does not exist yet risks selling access to data that has already been
   deleted. It settles only after data retention does (section 11).
+
+### 14.11 Feedback telemetry
+
+**Instrumented in v1, before its use is decided** (decision #51). This is the
+only part of section 14 where deferring the decision destroys the answer.
+Every other open question can be settled later at no cost. Behavior that was
+not recorded cannot be recovered, so the instrumentation has a deadline that
+the analysis does not.
+
+The need arises from personalization itself. With one shared edition, quality
+was a single judgment about a single artifact. Per user it becomes "was this
+relevant to *this* reader", which is a thousand questions that cannot be
+answered by reading a thousand newsletters.
+
+**Events.**
+
+| Event | Fires when | What it answers |
+| --- | --- | --- |
+| `newsletter_opened` | A newsletter is opened | Whether delivery worked and whether the read time is right |
+| `story_opened` | A story is opened from the newsletter | Which topics and score bands earn attention |
+| `story_completed` | A story is read to the end | Whether opening it was worth it, as distinct from a headline that merely drew a tap |
+| `story_skipped` | A story is scrolled past without being opened | The negative signal, which is the one most often left uninstrumented and the only one that identifies a bad selection |
+
+Each carries `user_id` (server-resolved, never client-supplied), `story_id` or
+`newsletter_id`, and a timestamp. Nothing else.
+
+**Most of the instrumentation already exists on the other side.** 14.5 stores
+`topped_up`, `locked_topics`, and the `allocation` snapshot on every
+newsletter, which is a complete record of what the allocator chose and why.
+These four events supply the missing half, so the two can be joined into "what
+was selected" against "what was read". Neither half is useful alone.
+
+**Three rules keep this from becoming a liability:**
+
+1. **Events are aggregated, never fed back automatically.** No event adjusts
+   any user's weights, topics, or length. The reader sets those, and 14.4
+   exists precisely so that selection is explainable rather than emergent.
+   Telemetry informs decisions about defaults; it does not become a second,
+   invisible allocator.
+2. **Behavior only, never content.** An event records that a `story_id` was
+   opened. It never records subject matter as free text, which is the point
+   at which a behavior log becomes a profile.
+3. **This is not `last_read_at`.** That field (14.2) selects between 14.4's two
+   lookback windows and does one job. It answers none of the questions above,
+   and "reading is already tracked" must not be allowed to close this section.
+
+**Where it lives.** Postgres, keyed by `user_id`, alongside the rest of the
+personal data and never in the lake. Account deletion stays one `DELETE`
+(decision #36), which is only true if these rows start there.
+
+**What it unblocks.** The free-tier allowance (14.10), the two lookback window
+values (14.4), and the top-up rules are all currently open and all currently
+arguable. With these events they become measurable instead, which is why the
+cost of the section, one table and four calls, is out of proportion to what it
+settles.
