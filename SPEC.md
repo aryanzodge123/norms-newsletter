@@ -1025,6 +1025,10 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 | 54 | Chat in v1 is ephemeral, with no saved-conversation history. This follows from decision #41 rather than adding to it: a past-chats list is a table of agent output, which #41 forbids explicitly, so shipping the prototype's history feature would require amending #41 rather than implementing around it. Deferring keeps the rule true as written and keeps the agent shippable, since none of the feature is needed for the agent to answer questions about a reader's own stories. Taking it up later means deciding what a stored transcript is for, how long it is retained, whether decision #36's single-`DELETE` guarantee covers it, and whether the agent may read its own history back, that last one being the point at which unvalidated model output would re-enter the data path that rule zero exists to protect |
 
+| 55 | Stories, newsletters, and seen-story history are retained for 12 months, and telemetry events for 13. Twelve months is chosen as a product decision rather than a storage one: it is what 14.10 can honestly sell as Pro archive depth, namely a reader's first year, in place of the prototype's "every newsletter ever delivered" which was never going to remain true. Storage is not the deciding factor, since stories are text and 14.5 stores identifiers rather than copies of them. The clocks for newsletters and seen-story history are tied to the story clock rather than chosen independently, because a newsletter referencing deleted stories is a broken record and remembering that a deleted story was seen serves nothing. Telemetry runs one month longer so that a full year can be compared against the same month a year earlier, which is most of why the data is worth keeping. Retention is deliberately separated from account deletion: retention is about age and runs on a schedule for everyone, while deletion is about a person, is immediate, and ignores every retention clock. Decision #36 is what keeps deletion to a single operation, and that holds only while every table containing personal data is enumerated, which is why 14.11's event table is named in 14.12 rather than left to be remembered. Deciding this now costs a configuration value and a scheduled job; deciding it after a year of accumulation costs a migration against live data |
+
+| 56 | Top-up is bounded on both sides: a `general_score` floor of 6 and a cap of half the budget. Rule 7 reads as one sentence but decides what the product feels like for the narrowest subscribers, who are also the likeliest to leave, so its constants are specified rather than left to the implementation. The floor never yields and the budget does: when too few stories clear it the newsletter is simply shorter, because `length` is a maximum the reader chose rather than a quota to hit, and a short good newsletter beats a full padded one. Six is the site's own bar, so nothing reaches a reader that would not have reached the site. The cap exists because a full newsletter is not automatically the reader's newsletter: someone who picks Science and Space and receives eleven stories from Politics and World has a full newsletter they did not subscribe to, and at half the budget a top-up is a supplement while past half it is a substitution. Topped-up stories are labelled and grouped last rather than mixed in, because the same story shown unlabelled under a topic the reader never chose reads as a defect rather than an offer. Both values are constants tuned against 14.5's `topped_up` and 14.11's `story_skipped` rather than logic, so lowering the cap is a configuration change. Decision #26's per-user form is unaffected, since it promises a newsletter and not a full one |
+
 ## 11. Remaining open questions
 
 - Whether briefly items get one-line summaries or titles only (v1: titles).
@@ -1049,13 +1053,12 @@ urgent it feels.
   The prototype's twenty are recorded in 14.3 as a deferred expansion, and
   taking it up later is a rubric re-calibration plus a data migration rather
   than a configuration change. Not blocking any more.
-- **The allocator constants (14.4).** Largely closed. Decision #45 made the
-  budget per user and removed the per-topic minimum and maximum; decision #48
-  specified two lookback windows with starting values. What remains is the
-  **top-up rules**, which `tests/test_allocator.py` needs before it can assert
-  against real numbers. The window values are starting points to be tuned
-  against `topped_up` and `locked_topics` (14.5) rather than settled in
-  advance, and `lookback_catchup_days` is bounded by retention, below.
+- ~~The allocator constants~~ **Closed.** Decision #45 made the budget per
+  user and removed the per-topic minimum and maximum, #48 specified the two
+  lookback windows, and #56 specified the top-up floor and cap.
+  `tests/test_allocator.py` now has real numbers to assert against. All of
+  them are constants to be tuned against 14.5's counters and 14.11's events
+  rather than re-derived, so revisiting any is a configuration change.
 - ~~The free-tier topic allowance~~ **Fixed at 3 for v1** (14.10). It ships as
   written rather than staying open, because it is the single number deciding
   both how useful the free tier is and whether anyone upgrades, and neither is
@@ -1069,13 +1072,11 @@ urgent it feels.
   four events, recorded in v1 before their use is decided. What remains open is
   not whether to collect but what to conclude, and that is answered by the data
   rather than in advance.
-- **Data retention.** How long per-user newsletters and seen-story history are
-  kept. It interacts with decision #36's deletion guarantee, and a retention
-  rule is far cheaper to apply before data accumulates than after. It now also
-  gates a Pro benefit: 14.10 cannot sell archive depth until retention decides
-  how much archive there is, or the app sells access to data it has deleted.
-  It also bounds `lookback_catchup_days` (14.4, decision #48) for the same
-  reason, so it now constrains two features rather than one.
+- ~~Data retention~~ **Closed** by decision #55 and specified in 14.12: 12
+  months for stories, newsletters, and seen-story history, 13 for telemetry.
+  This also closes the two features it gated, Pro archive depth (14.10) and
+  `lookback_catchup_days` (14.4), both of which now sit comfortably inside the
+  window.
 
 **Blocking release rather than code.**
 
@@ -1511,15 +1512,53 @@ Rules, applied in order:
    still have unselected candidates, in proportion to their weights, by the
    same largest-remainder rule. Repeat until the budget is filled or no
    entitled topic has candidates left.
-7. **Top up.** If the budget is still short, fill from the highest
-   `general_score` among stories **outside** the user's entitled topics,
-   excluding already-seen and already-selected. These are claimed by their
+7. **Top up.** If the budget is still short, fill from stories **outside** the
+   user's entitled topics scoring at least `topup_floor` on `general_score`,
+   highest first, excluding already-seen and already-selected, and never
+   exceeding `topup_max_share` of the budget. These are claimed by their
    `primary_topic` and flagged as topped up. This is normal behavior, not an
    error path.
 8. **Lead story** is the highest `general_score` among the selected set.
 9. **Order.** Sections follow the user's `topic_prefs` order. Within a section,
    `topic_score` descending, then `written_at` descending, then `story_id`
    ascending. Topped-up stories run after the entitled sections.
+
+**Top-up is bounded on both sides** (decision #56). Rule 7 reads as a single
+sentence but decides what the product feels like for the narrowest
+subscribers, who are also the likeliest to leave, so its two constants are
+specified rather than left to the implementation.
+
+| Constant | Value | Meaning |
+| --- | --- | --- |
+| `topup_floor` | 6 | Minimum `general_score` for a topped-up story |
+| `topup_max_share` | 0.5 | Most of the budget that may come from outside the reader's topics |
+
+**The floor never yields; the budget does.** If stories above `topup_floor`
+cannot fill the newsletter, the newsletter is shorter. It is not padded by
+lowering the bar. `length` is a maximum the reader chose, not a quota to hit,
+and a short good newsletter beats a full weak one. Six is the site's own bar,
+so nothing reaches a reader that would not have reached the site.
+
+**The cap exists because a full newsletter is not automatically the reader's
+newsletter.** Someone who picks Science and Space, receives four of those and
+eleven from Politics and World, has a full newsletter and did not subscribe to
+it. At half the budget the top-up is a supplement; past half it is a
+substitution. When the cap binds, the shortfall simply stands.
+
+**Topped-up stories are labelled, never silent.** Rule 9 already places them
+after the entitled sections; they render as their own closing group. The same
+story shown unlabelled under a topic the reader never chose reads as a defect
+rather than an offer.
+
+Both constants live in `config/pipeline.yaml` and are tuned against 14.5's
+`topped_up` and 14.11's `story_skipped`: if topped-up stories are consistently
+skipped, the cap comes down. That is a configuration change, not a redesign,
+which is the reason both are constants rather than logic.
+
+**Never an empty newsletter is unaffected.** Decision #26's per-user form
+promises a newsletter, not a full one. Rule 7 still always produces something,
+and a reader with nothing above the floor in any topic receives a short
+newsletter rather than none.
 
 **A topic receiving zero stories is a correct outcome, not a failure.** A
 weight of 1 against a total of 40 at `length` 5 rounds to zero, and the band
@@ -1584,8 +1623,10 @@ deterministic.
 
 **The catch-up window may never exceed the retention period.** Offering seven
 days of backlog over five days of retained stories promises what has already
-been deleted. Retention is still open (section 11), so it constrains this value
-rather than the other way around.
+been deleted. Retention is 12 months (14.12, decision #55), so seven days sits
+inside it comfortably and this constraint is satisfied rather than pending.
+Retention still bounds this value rather than the reverse, so shortening
+retention later would require revisiting the catch-up window.
 
 Both windows and the top-up rules live in `config/pipeline.yaml` and land with
 the allocator in M7. The budget is no longer a constant there; it is per user.
@@ -1631,8 +1672,14 @@ implementation lands, per CLAUDE.md working rule 4:**
   including via the top-up path.
 - Shares are computed over entitled topics only, so an entitled prefix sums to
   the full `length` rather than the plan silently shortening the newsletter.
-- A user whose entitled topics are entirely quiet receives a full newsletter
-  via `general_score` top-up.
+- A user whose entitled topics are entirely quiet receives a newsletter via
+  `general_score` top-up, capped at `topup_max_share` of the budget.
+- No topped-up story scores below `topup_floor`, including when that leaves the
+  newsletter short of `length`.
+- When too few stories clear `topup_floor`, the newsletter is shorter and the
+  floor is not lowered.
+- Topped-up stories are flagged, counted in `stats.topped_up`, and ordered
+  after every entitled section.
 - A user with zero eligible stories in their topics still receives a
   newsletter (the per-user form of decision #26).
 - Lead story is the highest `general_score` among the selected set.
@@ -1953,9 +2000,10 @@ per-user form (14.4) does not acquire a payment-system dependency.
   what to watch next" is a second assembly on a weekly cadence with its own
   record and its own AI call. It is not a variation of 14.4 and needs its own
   specification before it is offered.
-- **Archive depth as a paywall.** Gating history against a retention rule that
-  does not exist yet risks selling access to data that has already been
-  deleted. It settles only after data retention does (section 11).
+Archive depth is settled rather than deferred: retention is 12 months (14.12,
+decision #55), so Pro sells a reader's first year. The free tier sees the
+current newsletter and a short recent window. The claim is now bounded by a
+rule that exists, which is what the earlier deferral was waiting for.
 
 ### 14.11 Feedback telemetry
 
@@ -2007,7 +2055,61 @@ personal data and never in the lake. Account deletion stays one `DELETE`
 (decision #36), which is only true if these rows start there.
 
 **What it unblocks.** The free-tier allowance (14.10), the two lookback window
-values (14.4), and the top-up rules are all currently open and all currently
-arguable. With these events they become measurable instead, which is why the
-cost of the section, one table and four calls, is out of proportion to what it
-settles.
+values (14.4), and the top-up constants (14.4) all ship as chosen numbers
+rather than derived ones. With these events they become measurable, which is
+why the cost of the section, one table and four calls, is out of proportion to
+what it settles.
+
+### 14.12 Data retention and deletion
+
+**Retention is about age. Deletion is about a person.** They are separate
+mechanisms and neither substitutes for the other. Retention runs on a schedule
+and removes old rows for everyone; deletion is immediate, is triggered by one
+reader, and ignores every clock below.
+
+**Retention periods** (decision #55):
+
+| Data | Kept | Reason |
+| --- | --- | --- |
+| Stories (14.1) | 12 months | The longest thing anything else depends on, and what the app's archive is made of |
+| Newsletters (14.5) | 12 months | Matched to stories. A newsletter referencing deleted stories is a broken record, so the two clocks cannot diverge |
+| `seen_story_ids` (14.2) | 12 months | Tied to stories. A story that no longer exists cannot be shown again, so remembering that it was seen serves nothing |
+| Telemetry events (14.11) | 13 months | One month past the others on purpose, so a full year can be compared against the same month a year earlier |
+
+**Twelve months is a product decision, not only a technical one.** It is what
+14.10 is able to sell: Pro archive depth is a reader's first year, which is a
+specific and keepable claim, unlike "every newsletter ever delivered". A
+shorter period would be cheaper and would make that claim false.
+
+The storage cost is small enough not to be the deciding factor. Stories are
+text, and 14.5 stores `story_id` references rather than copies (which is
+already required for a different reason), so a year of newsletters is a year of
+identifiers rather than a year of duplicated articles.
+
+**Retention bounds two features rather than being bounded by them.** 14.4's
+`lookback_catchup_days` of 7 and 14.10's archive depth must both sit inside
+this window. At 12 months both do comfortably, which is what makes them
+honest promises rather than aspirations.
+
+**`seen_story_ids` is bounded by this and by nothing else.** Without a
+retention rule it grows for the lifetime of an account and is read on every
+assembly, so the most loyal readers would run the slowest queries. Twelve
+months holds a daily reader at roughly five thousand identifiers, which stays
+a fast indexed lookup indefinitely.
+
+**Account deletion is immediate, complete, and independent of all of the
+above.** It removes every row keyed to that `user_id` in Postgres: the user
+record, their newsletters, their seen-story history, their telemetry events,
+and their push token. It is required in-app by Apple Guideline 5.1.1(v) and is
+covered by 14.7's contract surface.
+
+Decision #36 is what keeps this to one operation: personal data never enters
+the lake, so there is no append-only history to reconcile and no time-travel
+snapshot still holding a deleted reader. That guarantee holds only while every
+table holding personal data is known, which is why 14.11's event table is named
+here explicitly rather than left to be remembered.
+
+**Stories are not personal data and are never deleted by an account
+deletion.** They are global, written once, and shared by every reader (14.1).
+Deleting a reader removes the rows that reference stories, never the stories
+themselves.
