@@ -1,0 +1,378 @@
+{
+  "date": "2026-08-04",
+  "edition_number": 58,
+  "edition_type": "normal",
+  "headline_of_the_day": "FBI confirms cyberattacks on water systems in seven US states",
+  "headline_cluster_id": "8b6c8a7c188b9d45784f8cc3ee3d9c8d",
+  "headline_rationale": "Active attacks on critical infrastructure affecting multiple states and confirmed by federal authorities, with direct implications for public safety.",
+  "key_points": [
+    {
+      "text": "The FBI confirmed cyberattacks on water systems in seven US states that millions of people use.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Ukraine deployed AI drones that track and strike moving targets on their own, without human control.",
+      "topic": "AI"
+    },
+    {
+      "text": "NHS England apologized after admitting Palantir employees can see patient names and details, contradicting its earlier statement.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "A flaw in N-able remote management software is being actively exploited by hackers and tracked by federal authorities.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Mexico's AI exam proctor failed so badly that 58,000 students must retake the entrance test.",
+      "topic": "AI"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-04.mp3",
+    "duration_seconds": 456,
+    "size_bytes": 5478624
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "d079f5c87a7874df8e0580a607837e94",
+          "slug": "ukrainian-military-deploys-ai-enabled-kamikaze-drones-in",
+          "title": "Ukrainian military deploys AI-enabled kamikaze drones in combat",
+          "summary": "Thousands of cheap drones now track and strike moving targets on their own, without human guidance.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/ai/2026/08/ukraines-drones-get-ai-upgrades-for-kamikaze-strikes-future-swarm-attacks"
+            }
+          ],
+          "article": {
+            "background": "Ukraine has used cheap Shrike drones as weapons. These drones cost about $400 and carry explosives. Operators fly them manually to hit Russian targets like tanks and helicopters.",
+            "what_happened": "In mid-July, Ukraine's military started getting upgraded Shrike drones. A US company called Auterion added AI software and hardware to them. This AI lets the drones track and hit moving targets on their own. The two companies plan to deliver 50,000 of these upgraded drones soon.",
+            "why_it_matters": "Drones that aim themselves could help Ukraine fight with fewer pilots. Right now, operators must focus hard on every flight and stay in range. Self-aiming drones mean operators take less risk and can control more of them at once.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c50eda77edc895aac817d0c3b9123a57",
+          "slug": "ai-proctoring-failure-forces-58-000-mexican-students-to",
+          "title": "AI proctoring failure forces 58,000 Mexican students to retake university entrance exam",
+          "summary": "Results from 58,000 Mexican students on an AI-proctored exam bore no resemblance to past patterns.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/culture/2026/08/an-ai-supervised-remote-exam-went-so-badly-that-58000-students-must-retake-it"
+            }
+          ],
+          "article": {
+            "background": "UNAM is Mexico's biggest university. Its entrance exam decides who gets in. For decades, thousands of students took the test in person. This summer was different. Nearly 160,000 applicants took it remotely for the first time. They used a lockdown browser, which blocks access to other programs. AI-powered webcam proctoring software watched them take the test.",
+            "what_happened": "The results were wrong. Between May and early June, students took the exam over several weeks. When scores came back, they looked nothing like past years. Normally, 3.5 percent of test takers score 100 or higher on the 120-question test. This year, 16.3 percent did. At the very top, 5.5 percent scored 110 or higher, compared to 0.9 percent in prior years. The university decided 58,000 students must retake the exam.",
+            "why_it_matters": "If you are a student in Mexico, a flawed exam could change your college options. Right now this is a problem for UNAM applicants alone. But it shows a bigger risk: when schools and employers use automated proctoring, system glitches can break exams for thousands of people at once. What happened at UNAM may happen elsewhere.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "fdfb1e5eae30a277ea367c950871de48",
+          "slug": "palantir-revenue-surges-93-percent-as-ai-demand-accelerates",
+          "title": "Palantir revenue surges 93 percent as AI demand accelerates",
+          "summary": "Palantir reported quarterly revenue jumped 93 percent, well above expectations.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/03/palantir-second-quarter-earnings"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.cnbc.com/2026/08/03/palantir-pltr-earnings-q2-2026.html"
+            }
+          ],
+          "article": {
+            "background": "Palantir is a data analytics company. It helps governments and corporations find patterns in large amounts of information. The tech sector faced broad stock price drops earlier this year over AI concerns. Palantir was caught up in those declines, but its latest results show a sharp turnaround.",
+            "what_happened": "Palantir reported second-quarter revenue of $1.94 billion. That is a 93% increase from a year ago. Wall Street had expected $1.80 billion. The company also reported net income of $1.07 billion, or 41 cents per share, versus 13 cents per share a year earlier. Shares jumped 12% after the earnings release.",
+            "why_it_matters": "Many tech companies disappointed investors this year. Palantir's results show that at least some AI and data companies are finding real customer demand and making substantial profits. For people watching the tech sector, this suggests the AI market has some bright spots even as other firms struggle.",
+            "quote": {
+              "text": "To my knowledge, no businesses at our scale has even grown half this much.",
+              "attribution": "Alex Karp, Palantir CEO",
+              "source_url": "https://www.cnbc.com/2026/08/03/palantir-pltr-earnings-q2-2026.html"
+            }
+          }
+        },
+        {
+          "cluster_id": "08eacd729707c7b6307b2825351c52a0",
+          "slug": "palantir-chief-calls-ai-frontier-labs-untrustworthy-after",
+          "title": "Palantir chief calls AI frontier labs untrustworthy after strong quarter",
+          "summary": "CEO Alex Karp warned companies not to trust major AI research companies over values concerns.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/03/after-killer-quarter-palantir-ceo-alex-karp-calls-ai-industry-marxist"
+            }
+          ],
+          "article": {
+            "background": "Palantir is a data analytics company. It helps organizations understand large amounts of information. CEO Alex Karp studied philosophy and earned a PhD in social theory. On Monday, Palantir reported strong quarterly results.",
+            "what_happened": "In a letter to shareholders, Karp warned again that AI frontier labs are too risky for businesses to trust. He wrote that these labs have \"Marxist overtones and undertones.\" He suggested they aim to control the core technology their partners depend on.",
+            "why_it_matters": "Enterprises increasingly rely on AI tools they do not fully control or understand. Karp's concern signals growing worry in business about this dependence. His warning may push companies to think harder about which AI partners they choose.",
+            "quote": {
+              "text": "Others, including many of those building large language models, intend, knowingly or otherwise, to capture the means of production of their purported partners.",
+              "attribution": "Alex Karp, Palantir CEO",
+              "source_url": "https://techcrunch.com/2026/08/03/after-killer-quarter-palantir-ceo-alex-karp-calls-ai-industry-marxist"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "5e1d68b3aa3cb3c0e2c902b1f014680d",
+          "slug": "acting-attorney-general-blanche-wins-committee-support",
+          "title": "Acting Attorney General Blanche wins committee support after anti-weaponization fund pledge",
+          "summary": "GOP holdouts back confirmation after Blanche vowed to scrap fund they claimed could target political opponents.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/blanche-wins-support-from-gop-holdouts-after-vowing-to-scrap-anti-weaponization-fund"
+            }
+          ],
+          "article": {
+            "background": "Todd Blanche is the acting attorney general, leading the Justice Department. Two Republican senators had said they would block his permanent appointment. Their support was needed for him to keep the job full-time.",
+            "what_happened": "Blanche made a deal with the two GOP senators. He promised in writing to scrap a 1.8 billion dollar fund labeled the \"anti-weaponization\" fund. The deal removes the block to his permanent appointment.",
+            "why_it_matters": "The Justice Department now has a path to stable leadership under Blanche. The fund in question could have paid settlements to Trump allies. Scrapping it means those payments will not happen.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "255a8896aeca91e90bd7d3c12969896d",
+          "slug": "critics-call-blanche-deal-on-trump-slush-fund-completely",
+          "title": "Critics call Blanche deal on Trump slush fund completely hollow",
+          "summary": "Democrats say the attorney general nominee's promises can be easily reversed by the president.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/03/todd-blanche-donald-trump-deal"
+            }
+          ],
+          "article": {
+            "background": "Todd Blanche is the acting attorney general. In May, the Justice Department under his leadership created a $1.8 billion fund. It also gave Trump broad tax immunity. Now Blanche is seeking confirmation as the permanent attorney general.",
+            "what_happened": "On Sunday evening, Blanche posted two documents. He withdrew the May order that created the $1.8 billion fund. He also clarified that Trump's tax immunity applies only to past conduct. It covers Trump, his sons, and their businesses. Blanche made this deal with two Republican senators to secure support for his confirmation.",
+            "why_it_matters": "Democrats and legal experts say the deal is weak. Trump can easily reverse these promises once Blanche is confirmed. The president has the power to undo what Blanche agreed to. So voters concerned about potential misuse of the Justice Department should know these protections may not hold.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "7aa7a29750186aefbfda64f9bcb79004",
+          "slug": "journalist-daphne-caruana-galizia-was-probing-government",
+          "title": "Journalist Daphne Caruana Galizia was probing government corruption when killed, jury told",
+          "summary": "A Malta trial heard murdered reporter Daphne Caruana Galizia was investigating businessman Yorgen Fenech before she died in 2017.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/04/daphne-caruana-galizia-investigating-suspected-corruption-when-killed-jury-told"
+            }
+          ],
+          "article": {
+            "background": "Caruana Galizia was a reporter in Malta who wrote about financial crimes and corruption. In October 2017, she died in a car bombing. Yorgen Fenech, heir to one of Malta's biggest fortunes, is now on trial for her murder. He is accused of paying for her killing.",
+            "what_happened": "At Fenech's trial, a jury heard that Caruana Galizia was investigating Fenech and members of Malta's government when she died. Her son Matthew Caruana Galizia took the stand on Monday. He is a software engineer who helped his mother with her reporting work.",
+            "why_it_matters": "This trial is testing who was behind one of Europe's most high-profile journalist killings. The case centers on whether a wealthy businessman orchestrated the death of someone digging into his finances and ties to the government.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8d68068323bcb6393cd548f4451d7e75",
+          "slug": "ukrainian-drone-strikes-on-russian-resort-and-crimea-kill",
+          "title": "Ukrainian drone strikes on Russian resort and Crimea kill eleven, officials say",
+          "summary": "Seven people including three children died when debris struck beach town, Russia claims.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/03/russia-blames-ukraine-deadly-moscow-restaurant-bombing"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cr7kmnyrdn7o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia's Krasnodar region sits on the Black Sea coast. It is home to beaches and resorts where Russians spend leisure time. Ukraine and Russia are at war. Both sides claim the other targets civilians. Neither admits doing so deliberately.",
+            "what_happened": "A drone struck a beach in Arkhipo-Osipovka on August 3. Seven people died, including three children. About 40 others were hurt, with 17 taken to hospital. Russian officials said four more died in a separate strike on Crimea. Russia also blamed Ukraine for an explosion at a Moscow restaurant that killed five.",
+            "why_it_matters": "The strikes hit places where civilians gather to relax, not military targets. They show the war is reaching far from the front lines into everyday life. Russians visiting a beach or dining out now face risk of attack.",
+            "quote": {
+              "text": "He accused Ukraine of 'a deliberate strike on civilians'.",
+              "attribution": "Veniamin Kondratyev, governor of the Krasnodar region",
+              "source_url": "https://www.bbc.co.uk/news/articles/cr7kmnyrdn7o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "a7b6e7bda3f58419d5bdbda30f40dd22",
+          "slug": "nhs-admits-palantir-staff-access-identifiable-patient-data",
+          "title": "NHS admits Palantir staff access identifiable patient data",
+          "summary": "NHS apologized after saying Palantir employees could see patient data, contradicting what it said earlier.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.publictechnology.net/2026/08/03/health-and-social-care/nhs-apologises-and-admits-palantir-engineers-have-access-to-identifiable-patient-data"
+            }
+          ],
+          "article": {
+            "background": "NHS England runs the main health service for England. It uses systems called data platforms to collect and share patient information across hospitals and clinics. The Federated Data Platform is one such system. NHS England published a Data Protection Impact Assessment, a required document showing how it keeps patient data safe.",
+            "what_happened": "NHS England apologized and admitted that workers from Palantir and other suppliers can access identifiable patient data through the Federated Data Platform. The apology came after the organization acknowledged its transparency document contained false claims. That document had said only NHS staff could see such sensitive information.",
+            "why_it_matters": "Patient data is one of the most sensitive types of information a health system holds. When the NHS said only its own staff could access it, the public had less reason to worry. Now that claim has been proven wrong. The apology shows the NHS is correcting the record, but it raises questions about what oversight exists for outside suppliers who handle patient information.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "063655c2f975db62b9d9512158e63f91",
+          "slug": "twenty-five-states-sue-to-block-trump-tariffs-on-60-trading",
+          "title": "Twenty-five states sue to block Trump tariffs on 60 trading partners",
+          "summary": "Twenty-five states sued to block tariffs of 10 to 12 percent on the UK, China, and others.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cy4kp8jd0ppo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "In July, the Trump administration put new tariffs on goods from 60 countries. A tariff is a tax on imported goods. The administration said these countries have not done enough to stop forced labor. The targeted countries include the UK, China, and the European Union.",
+            "what_happened": "Twenty five US states sued the administration on Monday to block the tariffs. The tariffs are 10% to 12.5% on affected goods. In court documents, the states called the tariffs arbitrary and against the law. A White House spokesman said the US was using its legal authority to protect American workers.",
+            "why_it_matters": "Tariffs raise prices on imported goods. Higher prices can affect what consumers pay for everyday items. The states argue the tariffs harm their economies and businesses that rely on trade. How courts rule on this case could shape US trade policy for years ahead.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "8b6c8a7c188b9d45784f8cc3ee3d9c8d",
+          "slug": "fbi-confirms-cyberattacks-on-water-systems-in-seven-states",
+          "title": "FBI confirms cyberattacks on water systems in seven states",
+          "summary": "The FBI confirmed cyberattacks on water systems in seven states that millions depend on.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/what-we-know-about-the-cyberattacks-on-water-systems-in-7-states"
+            }
+          ],
+          "article": {
+            "background": "Water systems are critical infrastructure that supply drinking water to homes and businesses. Cyberattacks on these systems are dangerous because they can disrupt service or damage equipment. The FBI recently reported attacks on water infrastructure across the country.",
+            "what_happened": "At least seven states have been targeted in cyberattacks on water systems. Federal officials now believe Iran is likely behind the attacks. The FBI is investigating the growing wave of incidents.",
+            "why_it_matters": "Water systems serve millions of people daily. Successful attacks could disrupt access to clean water or compromise water safety. These attacks show that critical services remain vulnerable to foreign threats.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a5133d183f5eca2540595e3b0f04a4a4",
+          "slug": "federal-agency-adds-exploited-n-able-flaw-to-known",
+          "title": "Federal agency adds exploited N-able flaw to known vulnerability catalog",
+          "summary": "A serious flaw in remote management software is being actively exploited and needs immediate action.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/cisa-adds-exploited-n-able-n-central.html"
+            }
+          ],
+          "article": {
+            "background": "N-able N-central is remote management software. IT professionals use it to monitor and control computers and networks across organizations. A serious flaw in the software is being actively exploited by attackers in the wild.",
+            "what_happened": "On Monday, CISA added the flaw to its Known Exploited Vulnerabilities catalog. The flaw, tracked as CVE-2026-18577, has a severity score of 8.2 out of 10. It allows attackers to bypass authentication and take over accounts. The issue stems from incomplete patching of an earlier flaw. N-able released a fix in version 2026.3 HF1.",
+            "why_it_matters": "If your company uses N-central and has not patched to version 2026.3 HF1, attackers can log in as administrators without credentials. This means they could access or steal data from your networks. You should update the software right away if your organization relies on it.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "ab0351c42ec9a7f41b9f9a58250bce1d",
+      "title": "News Wrap: Michigan reports 2 deaths related to cyclosporiasis outbreak",
+      "url": "https://www.pbs.org/newshour/show/news-wrap-michigan-reports-2-deaths-related-to-cyclosporiasis-outbreak",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "6484a1c8ea51c8b28e264bc813bcf5b9",
+      "title": "Testing ultra-thin display film technology in Shenzhen",
+      "url": "https://twitter.com/Rainmaker1973/status/2083469397394374920",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "fa99aec9955656f93383f675e1491153",
+      "title": "BP profits more than double as Iran war sends oil prices soaring",
+      "url": "https://www.theguardian.com/business/2026/aug/04/bp-profits-iran-war-oil-prices-shell",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "5597ef78446556b6337da67082988413",
+      "title": "PM to tighten early release rules but men jailed over PC Harper’s death can be freed",
+      "url": "https://www.theguardian.com/society/2026/aug/03/rapists-child-abusers-and-groomers-will-not-leave-prison-early-says-pm",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2c5527aa067b9d76548dcbc4bee14738",
+      "title": "EU calls for stronger borders after Ceuta migrant crossings",
+      "url": "https://www.bbc.co.uk/news/articles/cyvl84zmgyro?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "20a5cfb07fc749f54af494da2759d87f",
+      "title": "Sportsbet and Tabcorp deny allegations they sourced drugs and sex workers to encourage VIP clients to bet more",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/04/sportsbet-tabcorp-gambling-parliamentary-inquiry-ntwnfb",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "6faccbf0aee3b9a992967808d1f7d2cd",
+      "title": "What is the actual point of agentic commerce?",
+      "url": "https://talkshi.com/blog/actual-point-of-agentic-commerce",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "d9d3856c121bc7647301bb39667b44cf",
+      "title": "Itauma v Hrgovic upgraded to IBF world-title bout",
+      "url": "https://www.bbc.co.uk/sport/boxing/articles/clyxvg8j36go?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "cd53786db6019c1291316b896534141a",
+      "title": "Immigrant being held at Delaney Hall dies, marking 22nd death in ICE custody",
+      "url": "https://www.theguardian.com/us-news/2026/aug/03/ice-delaney-hall-custody-death",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 117,
+    "clusters_considered": 105,
+    "stories_run": 12,
+    "sources": 16,
+    "sections_held": 1
+  }
+}
