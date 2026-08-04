@@ -1019,6 +1019,12 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 | 51 | Feedback telemetry is instrumented in v1 before its use is decided, because it is the only open question in section 14 whose answer is destroyed by deferral: every other one can be settled later at no cost, while behavior that was not recorded cannot be recovered. Four events are recorded, and `story_skipped` is included deliberately as the negative signal, which is the one most often omitted and the only one that identifies a selection that was wrong rather than merely unread. The events are aggregated and never fed back automatically: no event adjusts a reader's weights, topics, or length, because 14.4 exists so that selection is explainable rather than emergent, and a silent second allocator would undo that. Only behavior is recorded and never subject matter as free text, which is the line between a behavior log and a profile. The rows live in Postgres with the rest of the personal data so decision #36's single-`DELETE` guarantee still holds. The cost is one table and four calls, and it is out of proportion to what it settles: the free-tier allowance, both lookback window values, and the top-up rules are currently arguable and become measurable. 14.5 already stores the other half through `topped_up`, `locked_topics`, and the `allocation` snapshot, so this completes a join rather than starting a new dataset |
 
+| 52 | Push notification copy comes from deterministic templates filled from the newsletter record, never from a model. The reason is 14.1's flat-cost property rather than the price of the call: the per-user path holds exactly one AI call, and a generated notification is a second one. It is unusually easy to add by accident because a notification feels too small to count as a model call, which is why this is a decision rather than an implementation note. A generated string would also sit between the assembled newsletter and the reader's lock screen with nothing validating it and no gate reading it, unlike every other piece of text the system emits. Templates are additionally testable, translatable, and identical for two readers who received the same lead story, none of which a generated string is |
+
+| 53 | The app has no edition number. The site's sequential numbering counts what the site published, which is a fact about the site rather than about any reader, and 14.2 already establishes that there is no global edition date in the app. The prototype carries the number into the masthead, the push copy, and the agent's opening line, and in each place it asserts something untrue: two readers opening on the same day did not receive the same numbered artifact. A per-user sequence was considered and rejected as worse than none, because it invents an identifier that means nothing to its owner and cannot be used to refer to anything between two readers. The local date is true, sufficient, and already stored |
+
+| 54 | Chat in v1 is ephemeral, with no saved-conversation history. This follows from decision #41 rather than adding to it: a past-chats list is a table of agent output, which #41 forbids explicitly, so shipping the prototype's history feature would require amending #41 rather than implementing around it. Deferring keeps the rule true as written and keeps the agent shippable, since none of the feature is needed for the agent to answer questions about a reader's own stories. Taking it up later means deciding what a stored transcript is for, how long it is retained, whether decision #36's single-`DELETE` guarantee covers it, and whether the agent may read its own history back, that last one being the point at which unvalidated model output would re-enter the data path that rule zero exists to protect |
+
 ## 11. Remaining open questions
 
 - Whether briefly items get one-line summaries or titles only (v1: titles).
@@ -1050,11 +1056,12 @@ urgent it feels.
   against real numbers. The window values are starting points to be tuned
   against `topped_up` and `locked_topics` (14.5) rather than settled in
   advance, and `lookback_catchup_days` is bounded by retention, below.
-- **The free-tier topic allowance (14.10).** Set to 3 from the prototype.
-  It is the single number that decides both how useful the free tier is and
-  whether anyone upgrades, and 14.5's `locked_topics` is the instrument for
-  answering it, so it should be treated as calibration to be measured rather
-  than a constant to be argued about.
+- ~~The free-tier topic allowance~~ **Fixed at 3 for v1** (14.10). It ships as
+  written rather than staying open, because it is the single number deciding
+  both how useful the free tier is and whether anyone upgrades, and neither is
+  answerable in advance. It is revisited against 14.5's `locked_topics` and
+  14.11's events once there are readers, which is calibration rather than an
+  open specification question.
 
 **Cannot be added retroactively, which is what makes them urgent.**
 
@@ -1072,9 +1079,8 @@ urgent it feels.
 
 **Blocking release rather than code.**
 
-- **Push notification copy (14.6).** If generated per user by a model, it
-  silently breaks 14.1's property that the per-user path holds exactly one AI
-  call. Deterministic templates preserve it.
+- ~~Push notification copy~~ **Closed** by decision #52: deterministic
+  templates filled from the newsletter record. Specified in 14.6.
 - **Monetization** is settled in shape by 14.10 and decisions #46 and #47, and
   is no longer release-blocking. Two pieces of it remain open and are listed
   where they belong rather than here: the free-tier allowance above, and
@@ -1371,6 +1377,16 @@ available at the moment it was assembled. Two users in different timezones
 seeing different content on the same calendar date is correct behavior. There
 is no global edition date in the app; 6.5's `date` field is the site's, and
 the two must not be conflated.
+
+**There is no edition number in the app either** (decision #53). The site's
+sequential "No. 056" counts editions the site published, which is a fact about
+the site and not about any reader. The app prototype carries it into the
+masthead, the push copy, and the agent's opening line, and each of those is a
+claim the app cannot make: two readers opening on the same day did not receive
+the same numbered thing. A per-user sequence was considered and rejected as
+worse, since it invents an identifier that means nothing to anyone and cannot
+be referred to between two readers. The app identifies a newsletter by its
+local date, which is true, sufficient, and already in the record.
 
 ### 14.3 Topic taxonomy
 
@@ -1716,6 +1732,23 @@ measure is an open question (section 11).
 **Push is best-effort and never blocks.** A failed or absent push token leaves
 the newsletter readable in the app. Push is opt-in.
 
+**Push copy comes from deterministic templates, never from a model** (decision
+#52). The templates are filled from fields the newsletter record already holds:
+the lead story's title, the story count, and the audio duration when a clip
+exists. Nothing is generated.
+
+The reason is 14.1's central property rather than the cost of the call itself.
+A per-user generated notification is a second AI call on the per-user path, and
+14.1 holds exactly one. Adding a second is the design defect 14.1 names, not a
+feature, and it is unusually easy to add by accident because a notification
+feels too small to count as a model call. It would also put a model between the
+assembled newsletter and the reader's lock screen, where nothing validates the
+output and no gate reads it.
+
+Templates additionally make push copy testable, translatable, and identical for
+two users who received the same lead story, none of which a generated string
+is.
+
 **Observability.** The assembly loop writes one `run_log` row per batch with
 counts (users considered, newsletters assembled, skipped as already present,
 failed), not one row per user. Per-user rows would add roughly a thousand
@@ -1804,7 +1837,19 @@ the agent makes are validated normally. Any future feature that wants agent
 output to become stored data is a new spec question, not an extension of this
 one (decision #41).
 
-**Feature flag.** The whole branch is switchable off from the server without a
+**v1 chat is ephemeral. There is no saved-conversation history** (decision
+#54). A session lives while it is open and is discarded when it closes. The
+prototype shows a past-chats list with stored titles and transcripts, and that
+is deferred rather than adopted.
+
+This is the direct consequence of #41 rather than a separate restriction. A
+past-chats list is a table of agent output, which #41 forbids in as many words.
+Deferring the feature keeps #41 true as written, and shipping the feature would
+require amending it first. Doing that properly means deciding what a stored
+transcript is for, how long it is kept, whether it is covered by decision #36's
+single-`DELETE` guarantee, and whether the agent may read its own history back,
+which is the point at which unvalidated model output re-enters the data path.
+None of that is needed to ship the agent, so none of it is decided here. The whole branch is switchable off from the server without a
 client release. Managed Agents is a public beta, and the client shipping it is
 an App Store binary that cannot be recalled, so the ability to disable the
 feature remotely is a release requirement rather than a convenience.
