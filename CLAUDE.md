@@ -150,7 +150,7 @@ is the thing to fix.
 | M5 Automation| publish.yml with DST logic, Pages deploy, healthchecks, archival, gold |
 | M5.1 Trigger | external publish trigger (SPEC 6.11) + timeliness measure; lands before the 14-day run starts |
 | M6 Audio     | dialogue script, TTS, podcast feed, remaining adapters, OG images, tuning. **Audio format superseded by decision #44**; rework lands in M8 |
-| M7 App data  | SPEC 14 schemas + allocator. Two-score scoring lands first and additively, so the site keeps publishing |
+| M7 App data  | SPEC 14 schemas + allocator + entitlements (14.10, needed by allocator rule 1). Two-score scoring lands first and additively, so the site keeps publishing |
 | M8 Delivery  | read-time scheduling and assembly loop (14.6), app API with versioning and account deletion (14.7), audio rework to single voice + per-story clips (6.7, decision #44) |
 | M9 Mobile    | Expo client and EAS release pipeline (14.9) |
 | M10 Agent    | chat and story tracker on Managed Agents (14.8), Story MCP server, server-side feature flag |
@@ -184,8 +184,9 @@ These are specified in SPEC section 14 and are each one line to violate.
 
 1. **No AI call on the per-user path except the intro.** Story text is written
    once and reused (14.1). A second per-user call makes cost scale with users.
-2. **The client never supplies a prompt or a `user_id`.** Both come from the
-   authenticated identity, server-side (14.7, 14.8).
+2. **The client never supplies a prompt, a `user_id`, or its own plan.** All
+   three come from the authenticated identity, server-side (14.7, 14.8,
+   14.10). A client-asserted plan is a paywall bypass.
 3. **Never store a precomputed UTC read time.** Resolve it from
    `read_time_local` plus IANA `timezone` on every pass (14.6, decision #38).
 4. **Agent output is displayed and discarded.** It never enters a story
@@ -199,8 +200,10 @@ Do not build these. Rule 1 applies: propose a spec addition and wait.
   applies to both.
 - Source health checks and automatic quarantine.
 - Anything in section 11's open questions, which includes the topic menu, the
-  allocator budget constants, and the audio segment format. Each blocks a
+  allocator lookback window, and the free-tier topic allowance. Each blocks a
   piece of section 14.
+- Free-text topics and the Sunday retrospective. Both appear in the app
+  prototype as paid features and both are explicitly deferred by 14.10.
 
 `APP-ARCHITECTURE.md` and `APP-ARCHITECTURE-v2.drawio` describe the intended
 end state in plain English. **They are proposals and govern nothing.** Where
