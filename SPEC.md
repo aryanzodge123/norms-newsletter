@@ -1005,6 +1005,12 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 | 44 | Audio is a single voice reading self-contained per-story segments, superseding the multi-speaker half of decision #4. The two changes are one decision, not two: a two-host dialogue flows across story boundaries and cannot be recut, which is precisely what made per-story clips impossible, so choosing one voice is what unblocks reuse. Reuse is the point, because TTS is the most expensive stage in the system and per-user rendering at 1,000 users costs roughly forty to seventy times per-story rendering while also growing with every user added, which is the scaling property 14.1 exists to prevent. Clips render lazily on first request rather than for every written story, since most stories are never listened to, with the lead and highest `general_score` stories pre-rendered so the common case is immediate. Cohesion is recovered without per-listener rendering: topic announcements are one reusable clip per enum topic, opening and closing segments are fixed, and the only per-listener audio is the personalized intro, which is seconds long and inherits the story-ID-set cache key 14.5 already defines. A single voice also resolves an inconsistency rather than creating one: decision #11 makes Norm the editor persona, and a two-host format meant Norm plus an unnamed second party. The site episode remains the concatenation of that edition's clips at the same URL, so decision #20's guarantee that subscriber-facing URLs never move is untouched |
 
+| 45 | The allocator distributes a user-chosen budget across their topics in proportion to a user-set weight, replacing the earlier fixed budget with per-topic minimum and maximum constants. The reason is that the two mechanisms do the same job and the constants win silently: a per-topic minimum overrides the weight the reader just set, so the setting appears to work and does not. Weights also subsume the separate rebalancing rule, because a single-topic user has a share of 1.0 by arithmetic rather than by a special case. What the constants guaranteed is preserved by other rules rather than lost: reclaim and redistribute (rule 6) stops a quiet topic wasting budget, and the `general_score` top-up (rule 7) stops a quiet user receiving a thin newsletter. A topic legitimately allocated zero stories is the reader's own instruction rather than a defect, which is why the client states that outcome in the band label rather than hiding it. The cost of the change is that determinism now depends on four tie-breaks that a fixed allocation did not need, so all four are specified and asserted rather than left to sort stability. This also converts the budget from a constant in `config/pipeline.yaml` into per-user state, which is why 14.5 snapshots the weights and targets actually used: without that record a newsletter stops being explainable the moment the reader re-weights a topic |
+
+| 46 | The free tier is a cap on how many ranked topics run, which makes an entitlement an input to the allocator rather than a screen in front of it. This reclassifies monetization from a release-blocking question to one blocking the first line of app code, because 14.4 rule 1 cannot be written without it. The cap applies to ranked topics rather than chosen ones, and locked topics are withheld rather than discarded, so a downgrade never destroys the reader's ordering and an upgrade is not a fresh start. Entitlement is resolved server-side on every assembly and every request, for the same reason 14.7 refuses a client-supplied `user_id`: a client-asserted plan is a paywall bypass, and one shipped inside an App Store binary cannot be recalled. Assembly treats an unresolvable entitlement as the last known plan and otherwise as free, so that decision #26's per-user form never acquires a dependency on the payment system being reachable. What the tier withholds is quantity and never the writing: the readability gate, the voice standard, and the grounding rules are identical on both tiers, because degrading them for free users would trade away the one property that makes the subscription worth buying |
+
+| 47 | Subscriptions are sold through in-app purchase rather than the direct payment path the prototype shows. Apple Guideline 3.1.1 requires IAP for digital content consumed inside the app, and a subscription to the app's own newsletter is not a borderline case. The entitlement of record is the server's, derived from a validated store transaction; a client-held receipt is evidence and never the source of truth, which is the same boundary decision #46 draws for the plan itself. Recording this as a decision rather than an implementation detail is deliberate: a direct payment path is the single most likely cause of a review rejection in the app, it is cheap to choose correctly now, and discovering it at submission costs a review cycle on a binary that has already been built and tested against the wrong assumption |
+
 ## 11. Remaining open questions
 
 - Whether briefly items get one-line summaries or titles only (v1: titles).
@@ -1038,12 +1044,15 @@ urgent it feels.
   rubric re-calibration, not a configuration change, and 14.4's top-up
   already covers thin coverage, which weakens the case for many narrow
   topics.
-- **The allocator budget constants (14.4):** total per newsletter, per-topic
-  minimum and maximum, lookback window. Needed before
-  `tests/test_allocator.py` can assert against real numbers. The site's
-  published values (15-20 stories, 2-4 per section, decision #3) are the
-  obvious starting point, since they are validated by every edition shipped
-  so far rather than chosen in the abstract.
+- **The allocator constants (14.4).** Mostly closed by decision #45: the
+  budget is now per user and the per-topic minimum and maximum are gone. What
+  remains is the **lookback window** and the top-up rules, both of which
+  `tests/test_allocator.py` needs before it can assert against real numbers.
+- **The free-tier topic allowance (14.10).** Set to 3 from the prototype.
+  It is the single number that decides both how useful the free tier is and
+  whether anyone upgrades, and 14.5's `locked_topics` is the instrument for
+  answering it, so it should be treated as calibration to be measured rather
+  than a constant to be argued about.
 
 **Cannot be added retroactively, which is what makes them urgent.**
 
@@ -1055,17 +1064,28 @@ urgent it feels.
   specifies it.
 - **Data retention.** How long per-user newsletters and seen-story history are
   kept. It interacts with decision #36's deletion guarantee, and a retention
-  rule is far cheaper to apply before data accumulates than after.
+  rule is far cheaper to apply before data accumulates than after. It now also
+  gates a Pro benefit: 14.10 cannot sell archive depth until retention decides
+  how much archive there is, or the app sells access to data it has deleted.
 
 **Blocking release rather than code.**
 
 - **Push notification copy (14.6).** If generated per user by a model, it
   silently breaks 14.1's property that the per-user path holds exactly one AI
   call. Deterministic templates preserve it.
-- **Monetization.** Free, paid, or freemium. It changes the App Store review
-  path (Guideline 3.1 governs in-app purchase) and decides whether the agent
-  (14.8) is gated, which is the one component whose cost scales with
-  engagement.
+- **Monetization** is settled in shape by 14.10 and decisions #46 and #47, and
+  is no longer release-blocking. Two pieces of it remain open and are listed
+  where they belong rather than here: the free-tier allowance above, and
+  whether the agent (14.8) is gated, which is the one component whose cost
+  scales with engagement rather than news volume.
+- **The Sunday retrospective (14.10).** Offered as a Pro benefit in the
+  prototype and deliberately unspecified. It is a second assembly on a weekly
+  cadence with its own record and its own AI call, so it is a new
+  specification rather than a variation of 14.4.
+- **Whether read time re-anchors when a user travels (14.2).** The client
+  reports the device zone, so a user who flies to Tokyo either keeps waking to
+  news at their home hour or starts receiving it at 6am local. Both are
+  defensible and the choice is invisible until it happens to someone.
 - **Onboarding.** What a new user sees before any topic is chosen, and how the
   first newsletter is framed given 14.4 builds it immediately rather than at
   their first read time.
@@ -1121,8 +1141,12 @@ urgent it feels.
    (14.2), the allocator plus `tests/test_allocator.py` (14.4), and the
    newsletter record (14.5). Ordering constraint: the 6.4 scoring change lands
    first and additively, so the site path (6.5) keeps publishing untouched
-   throughout. M7 does not gate the v1 definition of done below, which remains
-   a property of the site.
+   throughout. Also carries the entitlement model (14.10), not because billing
+   belongs in a data milestone but because 14.4 rule 1 reads the plan and the
+   allocator cannot be written or tested without it (decision #46). The store
+   purchase flow itself belongs to M9 with the client that presents it. M7
+   does not gate the v1 definition of done below, which remains a property of
+   the site.
 
 8. **M8 App delivery:** read-time scheduling and the assembly loop (14.6),
    and the app API with versioning and account deletion (14.7). Ordering
@@ -1279,11 +1303,23 @@ Postgres, never the lake (decision #36).
 | Field | Notes |
 | --- | --- |
 | `user_id` | Present on every user-scoped row from the first migration, including during single-account testing. Adding it later means migrating everything. |
-| `topics[]` | Chosen from the closed menu (14.3). |
+| `topic_prefs[]` | **Ordered.** Each entry is `{topic, weight}`. `topic` comes from the closed menu (14.3); `weight` is an integer 1 to 10, default 6. The list order is the user's running order and is the section order in the rendered newsletter. This replaces a flat `topics[]`: the allocator (14.4) needs both the weight and the position. |
+| `length` | The newsletter budget, chosen by the user from the presets in 14.4. Stored as the story count, never the preset label. |
+| `newsletter_name` | The masthead title, user-editable, defaulting to `Norm's Newsletter`. Display only. It never affects selection, and no pipeline stage reads it. |
+| `plan` | The entitlement (14.10). It is an allocator input, not only a billing fact. |
 | `read_time_local` | A local wall-clock time, e.g. `06:30`. |
-| `timezone` | IANA name, e.g. `America/New_York`. |
+| `timezone` | IANA name, e.g. `America/New_York`. Supplied by the client from the device zone and stored as last reported. It is never inferred server-side from IP, which is wrong for VPN users and unstable for everyone. |
 | `seen_story_ids` | Drives the already-seen filter in 14.4. |
 | `push_token` | Nullable; push is opt-in. |
+
+**Weight bands are presentation, not data.** The client renders a weight as one
+of five labelled bands, but the stored value is the integer. Storing the band
+label instead would make the allocator's arithmetic depend on a copy decision
+and would collapse ten distinct settings into five.
+
+**`newsletter_name` is not a namespace.** A user has one newsletter. Renaming
+it changes a heading, and nothing keyed on `(user_id, local_date)` in 14.5 or
+14.6 changes with it.
 
 **Read time is stored as local time plus IANA timezone, never as UTC.** A
 stored UTC hour silently shifts every user's read time by an hour at each
@@ -1327,34 +1363,90 @@ newsletter; a user who picks 1 topic gets 10. Neither is a read. The job the
 editor does for the site (a budget, a spread, a lead) still has to happen, and
 it has to happen without an AI call per user.
 
-Inputs: the user's topics, their `seen_story_ids`, the story table, and the
-budget constants. Output: an ordered list of `story_id`s plus the lead story.
+**The user supplies the budget and the spread; the allocator supplies the
+selection.** A weight per topic and a chosen length express the reader's own
+editorial judgment, which is information the site's editor never had access to
+and had to infer. Where that information exists, the allocator uses it rather
+than overriding it with global constants (decision #45).
+
+Inputs: the user's ordered `topic_prefs[]` with weights, their `length`, their
+`plan`, their `seen_story_ids`, the story table, and the lookback window.
+Output: an ordered list of `story_id`s with the claiming topic for each, plus
+the lead story.
+
+**Length presets.** The user picks one. The stored value is the count; the
+label is client copy and is never stored or matched on.
+
+| Label | Stories |
+| --- | --- |
+| Front page | 5 |
+| Short | 8 |
+| As filed (default) | 11 |
+| Long | 16 |
+| Everything | 20 |
 
 Rules, applied in order:
 
-1. **Query.** Stories whose `primary_topic` **or** `secondary_topics`
-   intersects the user's topics, within the lookback window, excluding
+1. **Apply the entitlement.** Take the first `k` entries of `topic_prefs`,
+   where `k` is the plan's topic allowance (14.10). Entries beyond `k` are
+   locked: they are not queried and contribute nothing. The gate runs first so
+   that no later step can surface a locked topic by any route, including the
+   top-up in rule 7.
+2. **Query.** Stories whose `primary_topic` **or** `secondary_topics`
+   intersects the entitled topics, within the lookback window, excluding
    `seen_story_ids`.
-2. **Deduplicate across topics.** A story matching two of the user's topics
-   appears exactly once. Record which topic claimed it, so the rendered
-   grouping is stable.
-3. **Allocate** to the per-newsletter budget, ranking within each topic by
-   `topic_score`, subject to a per-topic minimum and maximum so one busy
-   topic cannot consume the newsletter.
-4. **Rebalance.** Fewer chosen topics means more stories per topic, so a
-   single-topic user still receives a full read.
-5. **Top up** from `general_score` when the user's topics are quiet, drawing
-   from stories outside their topics. This is normal behavior, not an error
-   path.
-6. **Lead story** is the highest `general_score` among the selected set.
+3. **Deduplicate across topics.** A story matching two entitled topics appears
+   exactly once, claimed by whichever of them comes **earlier in the user's
+   order**. That order is already total, so this needs no secondary tie-break.
+4. **Compute targets.** `share_i = weight_i / sum(weights)` across entitled
+   topics. Multiply each share by `length` and round by **largest remainder**,
+   so the targets sum to exactly `length` with no rounding drift. Remainder
+   ties resolve by the user's topic order.
+5. **Fill.** Each topic takes its target, ranked by `topic_score` descending,
+   tie-broken by `story_id` ascending.
+6. **Reclaim and redistribute.** A topic with fewer candidates than its target
+   releases the shortfall. Released slots are redistributed across topics that
+   still have unselected candidates, in proportion to their weights, by the
+   same largest-remainder rule. Repeat until the budget is filled or no
+   entitled topic has candidates left.
+7. **Top up.** If the budget is still short, fill from the highest
+   `general_score` among stories **outside** the user's entitled topics,
+   excluding already-seen and already-selected. These are claimed by their
+   `primary_topic` and flagged as topped up. This is normal behavior, not an
+   error path.
+8. **Lead story** is the highest `general_score` among the selected set.
+9. **Order.** Sections follow the user's `topic_prefs` order. Within a section,
+   `topic_score` descending, `story_id` ascending. Topped-up stories run after
+   the entitled sections.
 
-Budget constants (total per newsletter, per-topic minimum and maximum,
-lookback window) live in `config/pipeline.yaml` and are an open question
-(section 11).
+**A topic receiving zero stories is a correct outcome, not a failure.** A
+weight of 1 against a total of 40 at `length` 5 rounds to zero, and the band
+the client shows for that weight says exactly that: it runs only when the story
+is big enough to lead. The reader asked for that behavior.
+
+**There are no per-topic minimum or maximum constants.** A minimum and a
+user-set weight are two mechanisms competing for the same job, and the minimum
+wins silently, overriding the setting the reader just made. Removing them does
+not remove the guarantees they existed for: rule 6 is what stops a quiet topic
+from wasting budget, and rule 7 is what stops a quiet user from getting a thin
+newsletter.
+
+**Rebalancing for few topics is arithmetic rather than a step.** A
+single-topic user has `share = 1.0` and receives their whole `length`. The
+earlier "fewer chosen topics means more stories per topic" rule is subsumed.
+
+**Determinism requires every ordering to be total**, so all four tie-break
+points are specified rather than left to sort stability: remainder ties (rule
+4), `topic_score` ties (rule 5), redistribution order (rule 6), and the
+claiming topic (rule 3). This is the reason the allocator is code rather than
+a prompt, so it is asserted directly in the tests below.
+
+The lookback window and the top-up rules live in `config/pipeline.yaml`. The
+budget is no longer a constant there; it is per user.
 
 **Never an empty newsletter.** Decision #26 guarantees the site never has an
 unpublished day. The per-user equivalent is harder, because a user with two
-niche topics will hit quiet days routinely, and rule 5 is what discharges it.
+niche topics will hit quiet days routinely, and rule 7 is what discharges it.
 A user with zero eligible stories still receives a newsletter assembled
 entirely from `general_score`.
 
@@ -1368,21 +1460,34 @@ generation. The same applies to a new signup, whose first newsletter is built
 immediately rather than at their first read time.
 
 **Tests (`tests/test_allocator.py`), required before the prompt-free
-implementation lands, per rule 4:**
+implementation lands, per CLAUDE.md working rule 4:**
 
-- Total selected is within budget.
-- No topic exceeds its per-topic maximum.
-- A single-topic user receives a full newsletter.
-- A story matching two of the user's topics appears exactly once, and the
-  claiming topic is recorded.
+- Total selected equals `length` whenever enough candidates exist, and never
+  exceeds it.
+- Targets sum to exactly `length` across a range of weight vectors and
+  lengths, with no rounding drift.
+- Per-topic counts match the largest-remainder targets for a given weight
+  vector.
+- A single-topic user receives `length` stories.
+- A topic weighted far below its peers can receive zero, and the newsletter is
+  still full.
+- A topic with fewer candidates than its target releases the shortfall, and
+  the budget is filled from the remaining topics.
+- A story matching two entitled topics appears exactly once, claimed by the
+  topic earlier in the user's order.
 - Stories in `seen_story_ids` are never returned.
-- A user whose topics are entirely quiet receives a full newsletter via
-  `general_score` top-up.
-- Lead story is the highest `general_score` among the selected set.
-- Identical inputs produce an identical ordered output. Determinism is the
-  reason this is code rather than a prompt, so it is asserted directly.
+- A free-plan user with more ranked topics than their allowance receives
+  stories from exactly the entitled prefix and none from the locked topics,
+  including via the top-up path.
+- Shares are computed over entitled topics only, so an entitled prefix sums to
+  the full `length` rather than the plan silently shortening the newsletter.
+- A user whose entitled topics are entirely quiet receives a full newsletter
+  via `general_score` top-up.
 - A user with zero eligible stories in their topics still receives a
   newsletter (the per-user form of decision #26).
+- Lead story is the highest `general_score` among the selected set.
+- Identical inputs produce an identical ordered output, including when weights
+  tie and when largest-remainder remainders tie.
 
 ### 14.5 Newsletter record
 
@@ -1398,10 +1503,24 @@ the site's published record (decision #17) and is unaffected.
   "assembled_at": "2026-08-04T10:15:00Z",
   "intro": "string | null",
   "lead_story_id": "string",
-  "stories": [ {"story_id": "string", "claimed_by_topic": "string"} ],
-  "stats": {"candidates": 0, "selected": 0, "topped_up": 0}
+  "length": 11,
+  "plan": "free | pro",
+  "stories": [ {"story_id": "string", "claimed_by_topic": "string",
+                "topped_up": false} ],
+  "allocation": [ {"topic": "string", "weight": 6, "target": 4, "filled": 3} ],
+  "stats": {"candidates": 0, "selected": 0, "topped_up": 0, "locked_topics": 0}
 }
 ```
+
+`allocation` snapshots the weights and targets the run actually used. Without
+it a newsletter stops being explainable the moment the user re-weights a
+topic, and the two questions that will be asked most often, "why did I only
+get one Sports story" and "why is this newsletter short", become
+unanswerable after the fact. It also makes 14.4's determinism assertion
+checkable against a real record rather than only in tests.
+
+`length` and `plan` are recorded per newsletter rather than read back from the
+user row for the same reason: both can change between assembly and reading.
 
 The newsletter stores `story_id` references, never copies of story text. A
 copy would silently reintroduce per-user storage of shared content and would
@@ -1412,9 +1531,11 @@ particular mix. It is cached by a hash of the ordered `story_id` set, so users
 who received the same stories share one generated intro. It is nullable: a
 failed intro produces a newsletter without one, never a missing newsletter.
 
-`topped_up` records how many stories came from rule 5 rather than the user's
+`topped_up` records how many stories came from rule 7 rather than the user's
 topics, which is the signal for whether their topic selection is too narrow to
-sustain a daily read.
+sustain a daily read. `locked_topics` counts the ranked topics the plan
+withheld, which is the same signal read from the other side and is the honest
+measure of how much the free tier is actually costing a given reader.
 
 ### 14.6 Read-time scheduling and delivery
 
@@ -1578,3 +1699,70 @@ enough to justify existing (Guideline 4.2). The existing rule of paraphrasing
 and linking rather than reproducing source text (decision #10) is the correct
 posture and is also the honest description of what the writer stage does.
 Account deletion (Guideline 5.1.1(v)) is covered by 14.7.
+
+### 14.10 Plans and entitlements
+
+**An entitlement is an allocator input, not a screen.** The free tier is
+defined as a cap on how many of the user's ranked topics actually run, which
+means 14.4 rule 1 cannot be built without this section settled. This is why
+monetization moved out of the release-blocking group in section 11 and into
+the group blocking the first line of app code (decision #46).
+
+**Tiers.**
+
+| | Free | Pro |
+| --- | --- | --- |
+| Topic allowance (`k` in 14.4 rule 1) | The first 3 ranked topics | All ranked topics |
+| Length presets | All | All |
+| Archive depth | Open question, below | Every newsletter ever delivered |
+| Price | none | $9.99 per month, or $100 per year |
+| Trial | not applicable | Six weeks, then the chosen term |
+
+The allowance caps **ranked** topics, not chosen ones. A free user still ranks
+and weights their whole list; the first three run and the rest are visibly
+withheld. Discarding the locked entries instead would destroy the user's
+ordering on downgrade and make an upgrade feel like starting over.
+
+**Everything the free tier withholds is a quantity, never the writing.** The
+readability gate, the voice standard, and the grounding rules apply identically
+on both tiers. Degrading the writing for free users would trade away the one
+thing that distinguishes this product from every other aggregator, to protect
+a subscription that exists because of it.
+
+**Entitlement is resolved server-side from the authenticated identity**, on
+every assembly and every request. The client never supplies its own plan, for
+the same reason 14.7 forbids a client-supplied `user_id`: a client-asserted
+entitlement is a paywall bypass, and one shipped in an App Store binary cannot
+be recalled. The client's copy of the plan drives display only.
+
+**Purchases go through in-app purchase, not a direct payment path** (decision
+#47). Apple Guideline 3.1.1 requires IAP for digital content consumed inside
+the app, and a subscription to the app's own newsletter is squarely inside it.
+The entitlement of record is the server's, derived from the validated store
+transaction. A client receipt is evidence, never the source of truth.
+
+**Downgrade is non-destructive.** When Pro lapses, `topic_prefs` is untouched
+and the allowance simply narrows. The next assembly runs the first three, and
+14.5's `locked_topics` records the rest. Nothing is deleted, so re-subscribing
+restores the previous newsletter exactly.
+
+**Assembly never fails on a billing lookup.** An entitlement that cannot be
+resolved at assembly time is treated as the user's last known plan, and if
+there is none, as free. A newsletter still gets assembled. Decision #26's
+per-user form (14.4) does not acquire a payment-system dependency.
+
+**Deferred, and named here so they are not mistaken for settled:**
+
+- **Free-text topics.** The prototype offers "name any topic and the sources
+  attach themselves" as a Pro benefit. This is out of scope for v1 on both
+  tiers, unchanged from 14.3, and paying for it does not make decision #32's
+  failure mode any less real: the scoring call still cannot decline a story,
+  so an unmatched one is still filed under the nearest wrong topic. Selling it
+  would put the deferred risk on the revenue path.
+- **The Sunday retrospective.** "The whole week read across the stories, and
+  what to watch next" is a second assembly on a weekly cadence with its own
+  record and its own AI call. It is not a variation of 14.4 and needs its own
+  specification before it is offered.
+- **Archive depth as a paywall.** Gating history against a retention rule that
+  does not exist yet risks selling access to data that has already been
+  deleted. It settles only after data retention does (section 11).
