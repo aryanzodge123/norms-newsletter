@@ -232,24 +232,24 @@ function PhoneMockUnused() {
 
 const BENEFITS = [
   [
-    'You stop deciding what to read.',
-    'Norm scores every story on how much it matters to your sections, then throws out the twelve versions of it that say the same thing.',
-    '214 sources, clustered nightly',
+    'Outsource the curation.',
+    'Our system scores every story on foundational relevance, filtering out duplicate coverage so you never have to waste time deciding what deserves your attention.',
+    'Total coverage. Filtered continuously.',
   ],
   [
-    'You finish.',
-    'The edition is a fixed length. There is no next page, no related stories, and nothing loads when you reach the bottom.',
-    'Six stories, nine minutes',
+    'A definitive finish line.',
+    'Your edition is a complete experience, not an open-ended obligation. By choosing exactly how long or brief you want your package to be, you skip the infinite feeds, endless rabbit holes, and algorithmic traps, leaving you with a focused brief designed to be read, understood, and finished.',
+    'Tailored length. Zero infinite feeds.',
   ],
   [
-    'It arrives when you actually read.',
-    'You pick the moment. The paper is written overnight and held until then, and it follows your phone when you travel.',
-    'Delivery time, matched to your timezone',
+    'Assembled for your routine.',
+    'Content is evaluated around the clock for genuine impact and importance. Instead of interrupting your day with constant alerts, your custom edition is quietly built and delivered at the exact moment you choose to read.',
+    'On-demand delivery. Matched to your schedule.',
   ],
   [
-    'You can check every word of it.',
-    'Every claim keeps a link back to the wire it came from, so you are never asked to take a summary on trust.',
-    'Original sources on every story',
+    'Context you can verify.',
+    'We translate raw, scattered updates into clear, foundational narratives without taking shortcuts. Every single story includes direct links back to the original source materials, putting total transparency at your fingertips.',
+    'Chronicled from original sources.',
   ],
 ]
 
@@ -994,7 +994,7 @@ function ThePress() {
 
 /* ------------------------------------------------------------------- Norm
    SPEC 14.8: an opt-in agent that answers on the reader's own stories and
-   tracks how coverage of a story develops. A side branch — never part of
+   tracks how coverage of a story develops. A side branch, never part of
    assembling or delivering the newsletter.
 
    The mug, its steam, the thinking phrases and the exchanges are the
