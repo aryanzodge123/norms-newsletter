@@ -1210,13 +1210,14 @@ function Build() {
     <section id="build" className="pad-x py-24">
       <div className="mx-auto max-w-[1140px]">
         <Reveal>
-          <p className="label-rule eyebrow">Start</p>
+          <p className="label-rule eyebrow">Coming soon</p>
           <h2 className="display mt-8 max-w-[17ch] text-[clamp(32px,5.2vw,58px)]">
-            Tomorrow&rsquo;s edition is already being read.
+            Tomorrow&rsquo;s news engine is currently being built.
           </h2>
           <p className="mt-5 max-w-[48ch] text-[17px] leading-[1.6] text-[var(--ink-soft)]">
-            Put your sections in tonight and No. 058 lands at the time you picked. Six weeks free,
-            no card, and you can take the whole archive with you if you leave.
+            We are meticulously engineering a smarter, quieter way to read the news. Leave your
+            email below to trace our progress, receive behind-the-scenes engineering updates, and
+            secure priority early access the moment the first public edition drops.
           </p>
         </Reveal>
 
@@ -1230,12 +1231,12 @@ function Build() {
           >
             {done ? (
               <p className="display text-[24px] text-[var(--oxide)]">
-                Set. Your first edition lands tomorrow.
+                You are on the list. We will write when there is something to show.
               </p>
             ) : (
               <>
                 <label htmlFor="email" className="eyebrow">
-                  Where should it land
+                  Where should we reach you
                 </label>
                 <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-end">
                   <input
@@ -1248,12 +1249,14 @@ function Build() {
                     className="field flex-1"
                   />
                   <button type="submit" className="btn-oxide px-8 py-3.5 text-[15px]">
-                    Build my edition
+                    Secure Early Access
                   </button>
                 </div>
-                <p className="eyebrow mt-4 normal-case">
-                  One address, one nudge a day. We never sell your reading history, and there are no
-                  third-party trackers.
+                {/* Set in the eyebrow's own uppercase, like the tag and the
+                    label above it. The old line carried normal-case. */}
+                <p className="eyebrow mt-4">
+                  One address. Zero noise. We will only email you with major milestones and system
+                  release dates.
                 </p>
               </>
             )}
