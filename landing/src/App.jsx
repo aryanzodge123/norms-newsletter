@@ -916,13 +916,20 @@ function DeliveryDial({ idx, setIdx }) {
 }
 
 /* ----------------------------------------------------------------- the press
-   Scroll-driven: the night's raw wire narrows to the six stories that run. */
+   Scroll-driven: the night's raw wire narrows to the stories that run.
+
+   35 is the enabled count in config/sources.yaml (37 entries, 2 held back for
+   missing credentials). 149 and 112 are the per-day means of items_ingested
+   and clusters_considered across the 17 published editions, No. 43 to No. 59.
+   Both true means land on a half (148.5 and 112.5), so they are recorded here
+   rather than left to look arbitrary. 5 to 20 is the reader's own length
+   setting, and matches NS_LEN in the Topics section above. */
 
 const STAGES = [
-  ['214', 'sources read', 'Everything Norm subscribes to, pulled every three hours.'],
-  ['1,806', 'items filed', 'Most of it is the same story told by different desks.'],
-  ['18', 'stories left', 'Duplicates clustered, the rest scored against your weights.'],
-  ['6', 'stories run', 'What survives is your edition. Nine minutes, and it ends.'],
+  ['35', 'sources read', 'Everything Norm subscribes to, checked every hour.'],
+  ['149', 'items filed', 'Most of it is the same story told by different desks.'],
+  ['112', 'stories left', 'Duplicates clustered, the rest scored against your weights.'],
+  ['5-20', 'stories run', 'As many as you asked for. You set the length, and the page still ends.'],
 ]
 
 function ThePress() {

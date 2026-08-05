@@ -43,6 +43,13 @@ The hero video is a recording of the committed prototype, walked end to end.
   delivering a newsletter", and the allocator in 14.4 reads topics and weights,
   not tracked stories. The copy was given directly and is used verbatim. It is
   recorded here so it is not read back as a requirement.
+- **The overnight run says the collector runs every hour.** SPEC 6.2 sets it at
+  every three hours, `collect.yml` runs `cron: "7 */3 * * *"`, and
+  `pipeline.yaml`'s `since_window_hours: 6` is sized for that cadence. Hourly
+  is the app's intended design, given directly. The four figures beside it are
+  measured rather than projected: 35 is the enabled count in
+  `config/sources.yaml`, 149 and 112 are per-day means over the 17 published
+  editions, and 5 to 20 is the reader's length setting.
 - **The Norm section no longer shows the tracker at all.** It previously
   carried a coverage chart designed from spec text alone, with no reviewed
   design artifact behind it. The chart, its watch button, and the bullet that
