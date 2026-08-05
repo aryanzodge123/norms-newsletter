@@ -68,7 +68,15 @@ site keeps publishing while the app is built.
 
 ```
 norms-newsletter/
-  SPEC.md DESIGN.md CLAUDE.md MILESTONES.md
+  SPEC.md DESIGN.md      # authoritative, and the only two that are
+  CLAUDE.md              # this file
+  MILESTONES.md          # appended at the end of every milestone
+  README.md              # what the project is, for someone arriving cold
+  SETUP.md               # first-run bootstrap. SPEC 13 re-runs its Part 5 spikes
+  RUNBOOK.md             # operating it: health checks, and what to do when it breaks
+  APP-ARCHITECTURE.md    # + .png and -v2.drawio. A proposal. Governs nothing
+  COST_ANALYSIS.md       # working note, open. Governs nothing
+  STRESS_TEST_FINDINGS.md # working note, 2026-07-23. Governs nothing
   .claude/skills/milestone-verify/   # verification gate, run at milestone end
   config/
     sources.yaml         # adapter registry (SPEC 6.1)
