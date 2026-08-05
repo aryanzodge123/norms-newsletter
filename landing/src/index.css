@@ -1,0 +1,909 @@
+@import 'tailwindcss';
+
+/* The paper world of prototypes/ds/foundations, put on a press.
+   Tokens are the prototype's. What is new here is that they move: the whole
+   page is lit by the delivery time the visitor chooses. */
+
+@theme {
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+/* ---- time-of-day palettes ----------------------------------------------
+   'morning' is the prototype's canonical palette, verbatim. The other four
+   are that palette carried through the day, and 'night' is the prototype's
+   own Night paper setting. */
+
+:root,
+[data-tod='morning'] {
+  --paper: #f6f4ee;
+  --paper-raised: #fbfaf6;
+  --ink: #23231f;
+  --ink-soft: #44433c;
+  --muted: #6b6a62;
+  --rule: #ddd9cc;
+  --rule-faint: #e8e5da;
+  --oxide: #3f6a50;
+  --glow: 0 0 0 rgb(0 0 0 / 0);
+}
+[data-tod='dawn'] {
+  --paper: #f7f0e8;
+  --paper-raised: #fdf8f1;
+  --ink: #2a2520;
+  --ink-soft: #4c453c;
+  --muted: #7a6f62;
+  --rule: #e5dbc9;
+  --rule-faint: #eee6d8;
+  --oxide: #4a6b52;
+}
+[data-tod='day'] {
+  --paper: #f3f4f0;
+  --paper-raised: #fafbf8;
+  --ink: #1f2320;
+  --ink-soft: #3e443f;
+  --muted: #666b66;
+  --rule: #d8dcd5;
+  --rule-faint: #e6e9e3;
+  --oxide: #37634a;
+}
+[data-tod='dusk'] {
+  --paper: #efe7db;
+  --paper-raised: #f6efe5;
+  --ink: #2b2620;
+  --ink-soft: #4f463b;
+  --muted: #7d7061;
+  --rule: #ded1bd;
+  --rule-faint: #e9dfcf;
+  --oxide: #4c6b4f;
+}
+[data-tod='night'] {
+  --paper: #1a1a17;
+  --paper-raised: #232320;
+  --ink: #ecebe3;
+  --ink-soft: #c9c7bc;
+  --muted: #8b8a80;
+  --rule: #35342d;
+  --rule-faint: #2a2a24;
+  --oxide: #86b295;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  transition: background-color 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Everything that carries a themed colour transitions at the same rate, so a
+   palette change reads as the light changing rather than a repaint. */
+.tod,
+.tod * {
+  transition:
+    background-color 900ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 900ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fluid gutter: grows with the viewport instead of stepping at a breakpoint. */
+.pad-x {
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* ---- primitives --------------------------------------------------------- */
+
+.rule-double {
+  border: 0;
+  border-top: 2.5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  height: 4px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow-oxide {
+  color: var(--oxide);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.12;
+}
+
+/* Drop cap for the single editorial paragraph. Sized to exactly three lines. */
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 500;
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.82;
+  padding: 0.06em 0.1em 0 0;
+  color: var(--oxide);
+}
+
+.sheet {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  box-shadow:
+    0 1px 0 rgb(0 0 0 / 0.03),
+    0 10px 26px -16px rgb(0 0 0 / 0.28);
+}
+
+.label-rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.label-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ---- the impression (load sequence) -------------------------------------
+   Ink hitting paper: the type arrives slightly spread and out of register,
+   then settles. Not a fade. */
+
+@keyframes impress {
+  0% {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(9px) scale(1.014);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+.impress {
+  opacity: 0;
+  animation: impress 780ms cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
+}
+
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.rule-draw {
+  transform-origin: left center;
+  animation: rule-draw 900ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* ---- scroll reveal ------------------------------------------------------ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    transform 700ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+.reveal.seen {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- the ported Topics screen -------------------------------------------
+   Pixel values are the prototype's (App Interface, More -> Topics). Colours
+   go through the --tod palette so the section re-lights with the delivery
+   dial; the per-section inks stay literal and are set inline. */
+
+.ns-head {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oxide);
+  border-bottom: 1px solid var(--rule);
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+}
+
+.ns-bar {
+  display: flex;
+  height: 12px;
+  width: 100%;
+  border: 1px solid var(--ink);
+  overflow: hidden;
+}
+.ns-seg {
+  display: block;
+  border-right: 1px solid var(--paper);
+  transition:
+    width 300ms cubic-bezier(0.22, 0.9, 0.3, 1),
+    background 200ms ease;
+}
+.ns-seg:last-child {
+  border-right: 0;
+}
+
+.ns-barcap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.ns-row-wrap {
+  list-style: none;
+}
+.ns-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 13px 8px;
+  border-bottom: 1px solid var(--rule-faint);
+  min-height: 44px;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: none;
+  position: relative;
+  transition:
+    transform 200ms cubic-bezier(0.22, 1.4, 0.4, 1),
+    box-shadow 200ms ease,
+    background 200ms ease,
+    opacity 200ms ease;
+}
+.ns-row:hover {
+  background: var(--paper);
+}
+.ns-row[data-drag='true'] {
+  cursor: grabbing;
+  background: var(--paper);
+  opacity: 0.96;
+  transform: scale(1.025) rotate(-0.35deg);
+  box-shadow: 0 14px 30px rgb(35 35 31 / 0.22);
+  z-index: 5;
+}
+.ns-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  display: block;
+  border-radius: 50%;
+  transition: background 200ms ease;
+}
+.ns-band {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.ns-grip {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  flex: none;
+  cursor: grab;
+  padding: 6px 2px;
+  opacity: 0.7;
+}
+.ns-grip:active {
+  cursor: grabbing;
+}
+
+.ns-add {
+  margin-top: 16px;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14.5px;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+.ns-add:hover {
+  background: var(--paper);
+}
+
+.ns-foot {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 22px 0 0;
+}
+
+/* ---- overlays, scoped to the panel rather than the phone ---------------- */
+
+.ns-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+}
+@keyframes ns-scrim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.ns-scrim {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgb(23 23 19 / 0.44);
+  animation: ns-scrim 240ms ease both;
+  cursor: pointer;
+}
+@keyframes ns-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.ns-sheet {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  background: var(--paper-raised);
+  border: 1px solid var(--ink);
+  box-shadow: 0 24px 56px rgb(35 35 31 / 0.22);
+  padding: 16px 20px 20px;
+  animation: ns-rise 260ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+.ns-sheet-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 9px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.ns-sheet-meta {
+  font-size: 10.5px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+}
+.ns-bandtag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.ns-ends {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+}
+.ns-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 16px 0 0;
+  min-height: 38px;
+}
+.ns-cta {
+  margin-top: 6px;
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  border: 0;
+  cursor: pointer;
+}
+.ns-second {
+  margin-top: 8px;
+  width: 100%;
+  min-height: 44px;
+  background: transparent;
+  border: 0;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.ns-second:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ns-addlist {
+  margin-top: 10px;
+  max-height: 300px;
+  overflow: auto;
+}
+.ns-addlist li {
+  list-style: none;
+}
+.ns-addrow {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--rule-faint);
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+.ns-addrow:hover {
+  background: var(--paper);
+}
+
+/* ---- the weight control (pointer-driven, as in the prototype) ----------- */
+
+.ns-dial {
+  margin-top: 12px;
+  position: relative;
+  height: 44px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.ns-dial:active {
+  cursor: grabbing;
+}
+.ns-dial-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 21px;
+  height: 2px;
+  background: var(--rule);
+}
+.ns-dial-tick {
+  position: absolute;
+  top: 17px;
+  width: 1px;
+  height: 6px;
+  transition: background 140ms linear;
+}
+/* The length stops sit above the rail rather than on it, as the prototype
+   has them: top 4 against a track at 21. */
+.ns-len-tick {
+  position: absolute;
+  top: 4px;
+  width: 1px;
+  height: 6px;
+  transition: background 140ms linear;
+}
+.ns-len-est {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  text-align: right;
+  flex: none;
+}
+.ns-len-note {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 16px 0 0;
+  min-height: 44px;
+}
+
+.ns-dial-fill {
+  position: absolute;
+  left: 0;
+  top: 21px;
+  height: 2px;
+  background: var(--oxide);
+  transition: width 120ms linear;
+}
+.ns-dial-mark {
+  position: absolute;
+  top: 11px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--oxide);
+  border: 4px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--oxide);
+  transition: left 120ms linear;
+}
+
+/* ---- Norm ----------------------------------------------------------------
+   Steam keyframes and timings are the prototype's, verbatim. The chart draw
+   is new, and hangs off .reveal.seen so it runs once when the section
+   arrives rather than on every intersection. */
+
+@keyframes norm-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.4px);
+  }
+}
+@keyframes norm-curl {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: -46;
+    opacity: 0.15;
+  }
+}
+@keyframes norm-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.08);
+  }
+}
+@keyframes norm-think-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes norm-rule-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.norm-steam {
+  animation: norm-bob 3.6s ease-in-out infinite;
+}
+.norm-curl {
+  animation: norm-curl 1.7s ease-in-out infinite;
+}
+.norm-breathe-a {
+  transform-origin: 74px 50px;
+  animation: norm-breathe 1.3s ease-in-out infinite -0.4s;
+}
+.norm-breathe-b {
+  transform-origin: 39px 50px;
+  animation: norm-breathe 1.55s ease-in-out infinite -0.95s;
+}
+
+/* ---- the conversation ---------------------------------------------------- */
+
+.norm-stage {
+  min-height: 232px;
+  padding-top: 18px;
+}
+
+.norm-q {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  animation: impress 620ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+.norm-think {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 0 2px;
+  color: var(--muted);
+}
+.norm-thinktext {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  white-space: nowrap;
+  color: var(--muted);
+  animation: norm-think-pulse 1.7s ease-in-out infinite;
+}
+.norm-thinkrule {
+  display: block;
+  height: 1px;
+  width: 96px;
+  background: var(--muted);
+  opacity: 0.4;
+  transform-origin: left;
+  animation: norm-rule-grow 2.5s linear both;
+}
+
+.norm-answer {
+  margin-top: 16px;
+  border-left: 2px solid var(--oxide);
+  padding-left: 14px;
+}
+.norm-a {
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: var(--ink-soft);
+  animation: impress 700ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+.norm-cite {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--oxide);
+  margin-top: 9px;
+  animation: impress 600ms cubic-bezier(0.2, 0.7, 0.25, 1) 260ms both;
+}
+
+.norm-composer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+.norm-composer-input {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.norm-composer-btn {
+  flex: none;
+  background: var(--oxide);
+  color: var(--paper);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13.5px;
+  padding: 9px 18px;
+}
+
+/* Carries the spoken transcript of the conversation above. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- the press (sticky assembly) ---------------------------------------- */
+
+.press-stage {
+  position: sticky;
+  top: 12vh;
+}
+
+/* The composing floor. Every slip is the same block; only the transform
+   changes, so the field never reflows. */
+.press-floor {
+  position: relative;
+  height: 200px;
+  margin-top: 44px;
+}
+.press-slip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 3px;
+  background: var(--rule);
+  transform-origin: left center;
+  transition:
+    transform 900ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    opacity 500ms ease,
+    background-color 700ms ease;
+}
+/* Rule while it is loose copy, muted once it leads a cluster, ink once it is
+   a line of the page. The slip darkens as it survives. */
+.press-slip[data-lead='1'] {
+  background: var(--muted);
+}
+.press-slip[data-run='1'] {
+  background: var(--ink);
+}
+.press-forme-rule {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: left center;
+  transition:
+    transform 800ms cubic-bezier(0.2, 0.7, 0.25, 1) 260ms,
+    opacity 400ms ease 260ms;
+}
+
+@media (max-width: 640px) {
+  .press-floor {
+    height: 150px;
+    margin-top: 32px;
+  }
+}
+
+/* The stage is sticky at 12vh, so on a short window the floor is what would
+   fall off the bottom. Give it back the height instead of clipping it. */
+@media (max-height: 760px) {
+  .press-floor {
+    height: 150px;
+    margin-top: 28px;
+  }
+}
+
+/* ---- controls ------------------------------------------------------------ */
+
+.btn-oxide {
+  background: var(--oxide);
+  color: var(--paper);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    box-shadow 180ms ease;
+}
+.btn-oxide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.22), transparent 60%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+.btn-oxide:hover::after {
+  opacity: 1;
+}
+.btn-oxide:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -12px rgb(0 0 0 / 0.5);
+}
+
+.btn-ghost {
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  transition:
+    border-color 200ms ease,
+    color 200ms ease;
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.field {
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px solid var(--rule);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  padding: 10px 2px;
+  transition: border-color 220ms ease;
+}
+.field::placeholder {
+  color: var(--muted);
+}
+.field:focus {
+  outline: none;
+  border-bottom-color: var(--oxide);
+}
+
+input[type='range'].dial {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height: 22px;
+  width: 100%;
+  cursor: grab;
+}
+input[type='range'].dial:active {
+  cursor: grabbing;
+}
+input[type='range'].dial::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--rule);
+}
+input[type='range'].dial::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 17px;
+  margin-top: -7.5px;
+  border-radius: 1px;
+  background: var(--oxide);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+  transition: transform 160ms ease;
+}
+input[type='range'].dial:active::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+
+/* ---- the sun/moon arc that tracks the delivery dial ---------------------- */
+
+.sky-orb {
+  transition:
+    transform 900ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 900ms ease,
+    box-shadow 900ms ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--oxide);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .impress,
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

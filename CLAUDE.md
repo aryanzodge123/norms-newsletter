@@ -68,7 +68,15 @@ site keeps publishing while the app is built.
 
 ```
 norms-newsletter/
-  SPEC.md DESIGN.md CLAUDE.md MILESTONES.md
+  SPEC.md DESIGN.md      # authoritative, and the only two that are
+  CLAUDE.md              # this file
+  MILESTONES.md          # appended at the end of every milestone
+  README.md              # what the project is, for someone arriving cold
+  SETUP.md               # first-run bootstrap. SPEC 13 re-runs its Part 5 spikes
+  RUNBOOK.md             # operating it: health checks, and what to do when it breaks
+  APP-ARCHITECTURE.md    # + .png and -v2.drawio. A proposal. Governs nothing
+  COST_ANALYSIS.md       # working note, open. Governs nothing
+  STRESS_TEST_FINDINGS.md # working note, 2026-07-23. Governs nothing
   .claude/skills/milestone-verify/   # verification gate, run at milestone end
   config/
     sources.yaml         # adapter registry (SPEC 6.1)
@@ -91,7 +99,10 @@ norms-newsletter/
     src/pages/ src/components/ src/styles/tokens.css
     content/editions/    # committed edition.json per day, the publication record
     fixtures/            # normal.json quiet.json fallback.json, drive front-end dev
+  landing/               # the app's landing page (React/Vite), live at norm.news. No spec covers it
+  prototypes/            # the Claude Design export of the app. Governs nothing
   spikes/                # credential and dependency smoke checks, not pipeline code
+  scripts/               # operator tooling (norm.py), RUNBOOK.md points at it
   ops/trigger-worker/    # external publish trigger (SPEC 6.11), deploy infra
   .github/workflows/     # publish.yml collect.yml
   tests/
@@ -99,7 +110,16 @@ norms-newsletter/
 
 Directories not yet created are created by the milestone that needs them.
 `spikes/` holds standalone checks (`check_iceberg.py`, `check_anthropic.py`,
-`check_embeddings.py`, `check_tts.py`) and is not imported by `src/`.
+`check_embeddings.py`, `check_tts.py`) and is not imported by `src/`. `scripts/`
+is the other standalone directory and is not the same thing: spikes prove a
+dependency or credential works once, scripts are the tools a caretaker runs to
+operate the thing day to day. Neither is imported by `src/`.
+`landing/` is a second front end and is not the site: it is React rather than
+Astro, it publishes to `norm.news` rather than to Pages, and rule 1 has not
+been satisfied for it. It being live is the reason to read
+`landing/README.md` before touching it: the page makes claims the spec does
+not carry, and the README lists them, along with what is ported from
+`prototypes/` rather than designed.
 
 ## Data flow in one screen
 
