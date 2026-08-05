@@ -99,7 +99,7 @@ norms-newsletter/
     src/pages/ src/components/ src/styles/tokens.css
     content/editions/    # committed edition.json per day, the publication record
     fixtures/            # normal.json quiet.json fallback.json, drive front-end dev
-  landing/               # the app's landing page (React/Vite). No spec covers it yet
+  landing/               # the app's landing page (React/Vite), live at norm.news. No spec covers it
   prototypes/            # the Claude Design export of the app. Governs nothing
   spikes/                # credential and dependency smoke checks, not pipeline code
   scripts/               # operator tooling (norm.py), RUNBOOK.md points at it
@@ -115,9 +115,11 @@ is the other standalone directory and is not the same thing: spikes prove a
 dependency or credential works once, scripts are the tools a caretaker runs to
 operate the thing day to day. Neither is imported by `src/`.
 `landing/` is a second front end and is not the site: it is React rather than
-Astro, it is wired to no deploy, and rule 1 has not been satisfied for it.
-`landing/README.md` records that, and what in it is ported from `prototypes/`
-rather than designed.
+Astro, it publishes to `norm.news` rather than to Pages, and rule 1 has not
+been satisfied for it. It being live is the reason to read
+`landing/README.md` before touching it: the page makes claims the spec does
+not carry, and the README lists them, along with what is ported from
+`prototypes/` rather than designed.
 
 ## Data flow in one screen
 
