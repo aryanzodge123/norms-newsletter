@@ -72,22 +72,46 @@ function Hero() {
           </p>
 
           {/* Sized to hold its two intended lines at 1440; the break is the
-              point of the line, so it must not rag. */}
+              point of the line, so it must not rag. The slash is drawn rather
+              than underlined so it keeps the hand of a proof mark, and it takes
+              its colour from the palette so it follows night paper. */}
           <h1
             className="display impress mt-5 text-[clamp(44px,5.6vw,74px)]"
             style={{ animationDelay: '520ms' }}
           >
-            <span className="whitespace-nowrap">The only paper</span>
+            Read less.
             <br />
-            that ends.
+            Miss{' '}
+            <span className="relative whitespace-nowrap">
+              nothing.
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 300 12"
+                preserveAspectRatio="none"
+                className="absolute left-0 w-full"
+                /* em, not px: the headline clamps from 74px to 44px, and a
+                   fixed offset that clears the descender at the top size
+                   rides up into the word at the bottom one. */
+                style={{ color: 'var(--oxide)', bottom: '-0.085em', height: '0.13em' }}
+              >
+                <path
+                  d="M2 8.5C58 3.5 126 2.5 298 5.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
           </h1>
 
           <p
-            className="impress mt-7 max-w-[47ch] font-display text-[20px] leading-[1.55] text-[var(--ink-soft)]"
+            className="dropcap impress mt-7 max-w-[47ch] font-display text-[19px] leading-[1.62] text-[var(--ink-soft)]"
             style={{ animationDelay: '660ms' }}
           >
-            Norm reads 214 sources overnight and sets one edition in the sections you weighted. Six
-            stories, nine minutes, and then the page runs out.
+            From headline to context. Shape your newsletter using the stories you track, explained
+            from the roots up. Turn daily clutter into deep, meaningful insights without any of the
+            noise.
           </p>
 
           <div className="impress mt-10" style={{ animationDelay: '780ms' }}>
@@ -1121,52 +1145,6 @@ function Conversation() {
   )
 }
 
-/* The tracker. A coverage time series is one of the Story MCP server's four
-   read-only tools, and charting it is why the platform has code execution. */
-const COVERAGE = [1, 2, 2, 4, 7, 11, 9, 6, 4, 3, 5, 8, 6, 3]
-const COV_MAX = 12
-
-function Tracker() {
-  const w = 300
-  const h = 96
-  const pts = COVERAGE.map((v, i) => [
-    (i / (COVERAGE.length - 1)) * w,
-    h - (v / COV_MAX) * h,
-  ])
-  const d = pts.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`).join(' ')
-  const peak = pts[COVERAGE.indexOf(Math.max(...COVERAGE))]
-
-  return (
-    <div className="sheet mt-6 px-6 py-6 sm:px-7">
-      <p className="eyebrow flex items-center justify-between">
-        <span>Coverage, 14 days</span>
-        <span className="eyebrow-oxide">Hormuz</span>
-      </p>
-      <hr className="mt-3 border-0 border-t" style={{ borderColor: 'var(--ink)' }} />
-
-      <svg viewBox={`0 -6 ${w} ${h + 18}`} className="norm-chart" role="img"
-        aria-label="Coverage of the Hormuz story across fourteen days, rising to a peak of eleven sources on 27 July and settling to three.">
-        <line x1="0" y1={h} x2={w} y2={h} className="norm-axis" />
-        <path d={d} className="norm-line" pathLength="1" />
-        {pts.map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="2" className="norm-pt" style={{ animationDelay: `${900 + i * 45}ms` }} />
-        ))}
-        <circle cx={peak[0]} cy={peak[1]} r="4.5" className="norm-peak" />
-      </svg>
-
-      <div className="norm-axislabels">
-        <span>Jul 22 · No. 049</span>
-        <span>Aug 2 · No. 056</span>
-      </div>
-
-      <button type="button" className="norm-watch">
-        <span>Tell me when this develops</span>
-        <span aria-hidden="true">&#8594;</span>
-      </button>
-    </div>
-  )
-}
-
 const NORM_POINTS = [
   [
     'It only ever sees your paper',
@@ -1175,10 +1153,6 @@ const NORM_POINTS = [
   [
     'Every answer shows its work',
     'Which editions it read and how many sources were behind them, on the answer itself, so you can go and check.',
-  ],
-  [
-    'It keeps watching',
-    'Ask it to tell you when a story develops and it holds the thread, then comes back when the coverage actually moves.',
   ],
 ]
 
@@ -1219,7 +1193,6 @@ function NormAgent() {
 
           <Reveal delay={160} className="min-w-0 flex-[1_1_23rem]">
             <Conversation />
-            <Tracker />
           </Reveal>
         </div>
       </div>

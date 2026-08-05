@@ -38,10 +38,15 @@ The hero video is a recording of the committed prototype, walked end to end.
 
 ## Things a reader should not mistake for spec
 
-- **The coverage chart in the Norm section is invented.** SPEC 14.8 and
-  decision #40 describe a story tracker with a coverage time series, but no
-  tracker UI exists in the prototype. That visual was designed from the spec
-  text and has never been reviewed against a design artifact.
+- **The hero says tracked stories shape the newsletter.** SPEC 14.8 opens by
+  making the tracker a side branch that "is never part of assembling or
+  delivering a newsletter", and the allocator in 14.4 reads topics and weights,
+  not tracked stories. The copy was given directly and is used verbatim. It is
+  recorded here so it is not read back as a requirement.
+- **The Norm section no longer shows the tracker at all.** It previously
+  carried a coverage chart designed from spec text alone, with no reviewed
+  design artifact behind it. The chart, its watch button, and the bullet that
+  described the behavior have all been removed.
 - **There is deliberately no past-chats list.** Decision #54 defers it and #41
   forbids storing agent output. The prototype shows one; it is not adopted.
 - **The pricing block claims the agent is a Pro feature.** That copy came from
