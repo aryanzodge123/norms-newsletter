@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 const REDUCED =
   typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -116,7 +116,7 @@ function Hero() {
 
           <div className="impress mt-10" style={{ animationDelay: '780ms' }}>
             <a href="#build" className="btn-oxide inline-block px-8 py-3.5 text-[15px]">
-              Build my edition
+              Stay in the Loop
             </a>
             <p className="eyebrow mt-4">
               Six weeks free &middot; no card &middot; your first edition lands tomorrow
@@ -1169,8 +1169,11 @@ const EXCHANGES = [
 ]
 
 /* The mark, and the thinking indicator. Paths and keyframe timings are the
-   prototype's; only the gradient id is namespaced to avoid a collision. */
+   prototype's. The gradient id comes from useId because the page draws more
+   than one mug, and a document with two of the same id is a document where the
+   second one silently borrows the first one's fill. */
 function Mug({ size = 26, thinking = false }) {
+  const steamId = `norm-steam-${useId()}`
   return (
     <svg
       viewBox="16 2 96 106"
@@ -1180,14 +1183,14 @@ function Mug({ size = 26, thinking = false }) {
       data-thinking={thinking}
     >
       <defs>
-        <linearGradient id="norm-steam" gradientUnits="userSpaceOnUse" x1="0" y1="52" x2="0" y2="4">
+        <linearGradient id={steamId} gradientUnits="userSpaceOnUse" x1="0" y1="52" x2="0" y2="4">
           <stop offset="0" stopColor="currentColor" stopOpacity="1" />
           <stop offset=".4" stopColor="currentColor" stopOpacity=".8" />
           <stop offset=".72" stopColor="currentColor" stopOpacity=".3" />
           <stop offset="1" stopColor="currentColor" stopOpacity="0" />
         </linearGradient>
       </defs>
-      <g fill="none" stroke="url(#norm-steam)" strokeWidth="6" strokeLinecap="round" className="norm-steam">
+      <g fill="none" stroke={`url(#${steamId})`} strokeWidth="6" strokeLinecap="round" className="norm-steam">
         <path d="M56,52 C44,42 68,34 54,22 C46,14 62,9 57,1" strokeDasharray="30 14" className="norm-curl" />
         <path d="M74,50 C82,42 70,36 76,28" strokeWidth="4" className="norm-breathe-a" />
         <path d="M39,50 C32,43 43,37 38,30" strokeWidth="4" className="norm-breathe-b" />
@@ -1345,59 +1348,72 @@ function Build() {
 
   return (
     <section id="build" className="pad-x py-24">
-      <div className="mx-auto max-w-[1140px]">
-        <Reveal>
-          <p className="label-rule eyebrow">Coming soon</p>
-          <h2 className="display mt-8 max-w-[17ch] text-[clamp(32px,5.2vw,58px)]">
-            Tomorrow&rsquo;s news engine is currently being built.
-          </h2>
-          <p className="mt-5 max-w-[48ch] text-[17px] leading-[1.6] text-[var(--ink-soft)]">
-            We are meticulously engineering a smarter, quieter way to read the news. Leave your
-            email below to trace our progress, receive behind-the-scenes engineering updates, and
-            secure priority early access the moment the first public edition drops.
-          </p>
-        </Reveal>
+      {/* The copy column holds a 520px form, so it takes the wider basis and
+          the mug wraps under it rather than squeezing the field and button
+          apart. */}
+      <div className="mx-auto flex max-w-[1140px] flex-wrap items-center gap-x-16 gap-y-12">
+        <div className="min-w-0 flex-[1_1_30rem]">
+          <Reveal>
+            <p className="label-rule eyebrow">Coming soon</p>
+            <h2 className="display mt-8 max-w-[17ch] text-[clamp(32px,5.2vw,58px)]">
+              Tomorrow&rsquo;s news engine is currently being built.
+            </h2>
+            <p className="mt-5 max-w-[48ch] text-[17px] leading-[1.6] text-[var(--ink-soft)]">
+              We are meticulously engineering a smarter, quieter way to read the news. Leave your
+              email below to trace our progress, receive behind-the-scenes engineering updates, and
+              secure priority early access the moment the first public edition drops.
+            </p>
+          </Reveal>
 
-        <Reveal delay={100}>
-          <form
-            className="mt-10 max-w-[520px]"
-            onSubmit={(e) => {
-              e.preventDefault()
-              setDone(true)
-            }}
-          >
-            {done ? (
-              <p className="display text-[24px] text-[var(--oxide)]">
-                You are on the list. We will write when there is something to show.
-              </p>
-            ) : (
-              <>
-                <label htmlFor="email" className="eyebrow">
-                  Where should we reach you
-                </label>
-                <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-end">
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@example.com"
-                    className="field flex-1"
-                  />
-                  <button type="submit" className="btn-oxide px-8 py-3.5 text-[15px]">
-                    Secure Early Access
-                  </button>
-                </div>
-                {/* Set in the eyebrow's own uppercase, like the tag and the
-                    label above it. The old line carried normal-case. */}
-                <p className="eyebrow mt-4">
-                  One address. Zero noise. We will only email you with major milestones and system
-                  release dates.
+          <Reveal delay={100}>
+            <form
+              className="mt-10 max-w-[520px]"
+              onSubmit={(e) => {
+                e.preventDefault()
+                setDone(true)
+              }}
+            >
+              {done ? (
+                <p className="display text-[24px] text-[var(--oxide)]">
+                  You are on the list. We will write when there is something to show.
                 </p>
-              </>
-            )}
-          </form>
+              ) : (
+                <>
+                  <label htmlFor="email" className="eyebrow">
+                    Where should we reach you
+                  </label>
+                  <div className="mt-2 flex flex-col gap-4 sm:flex-row sm:items-end">
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@example.com"
+                      className="field flex-1"
+                    />
+                    <button type="submit" className="btn-oxide px-8 py-3.5 text-[15px]">
+                      Secure Early Access
+                    </button>
+                  </div>
+                  {/* Set in the eyebrow's own uppercase, like the tag and the
+                      label above it. The old line carried normal-case. */}
+                  <p className="eyebrow mt-4">
+                    One address. Zero noise. We will only email you with major milestones and system
+                    release dates.
+                  </p>
+                </>
+              )}
+            </form>
+          </Reveal>
+        </div>
+
+        {/* The mug, at the size the section can carry. Steam is the prototype's
+            own keyframes, running at 10x the scale it was drawn for. */}
+        <Reveal delay={160} className="min-w-0 flex-[1_1_16rem]">
+          <div className="mx-auto w-fit text-[var(--oxide)]">
+            <Mug size={260} />
+          </div>
         </Reveal>
       </div>
     </section>
