@@ -36,6 +36,12 @@ Two sections are ports of real prototype screens rather than new design:
 
 The hero video is a recording of the committed prototype, walked end to end.
 
+The composing floor in The overnight run is new work rather than a port. It
+reads the same `stage` the numbers do, and its four states are the physical
+version of the pipeline: copy lands on the stone, duplicates stack behind a
+lead, the survivors lock into a forme as lines of type. Every slip is the same
+240x3 block and only its transform changes.
+
 ## Things a reader should not mistake for spec
 
 - **The hero says tracked stories shape the newsletter.** SPEC 14.8 opens by

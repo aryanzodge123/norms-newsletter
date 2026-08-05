@@ -932,6 +932,134 @@ const STAGES = [
   ['5-20', 'stories run', 'As many as you asked for. You set the length, and the page still ends.'],
 ]
 
+/* ---- the composing floor -------------------------------------------------
+   The stone. Wire copy lands, duplicates stack behind a lead, and the
+   survivors lock into a forme as lines of type. One element does all four
+   stages, so nothing is created or destroyed as the night runs: a 240x3 block
+   that is only ever transformed.
+
+   Solid, not a bordered card. This shape is scaled from 1.4px wide to 240px,
+   and a scaled border is a scaled border: the hairline would vanish at one end
+   of that range and become a slab at the other. */
+
+const SLIP_N = 40
+const LEADS = 12 // stacks at stage 3, and the lines of the finished page
+const SLIP_W = 240
+const SLIP_H = 3
+
+function mulberry32(a) {
+  return () => {
+    a = (a + 0x6d2b79f5) | 0
+    let t = Math.imul(a ^ (a >>> 15), 1 | a)
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+
+// Fixed seed. The scatter is disorder, not randomness: it has to be the same
+// heap on every reload, or the section changes shape when you scroll back.
+const SLIPS = (() => {
+  const r = mulberry32(20260805)
+  return Array.from({ length: SLIP_N }, (_, i) => ({
+    lead: i < LEADS,
+    cluster: i % LEADS,
+    depth: Math.floor(i / LEADS),
+    sx: r(),
+    sy: r(),
+    spin: r() * 16 - 8, // degrees, loose on the stone
+    tilt: r() * 4 - 2, // degrees, once squared into a stack
+    jog: r() * 18 - 9, // the stacks do not sit on a ruled line
+    measure: 0.55 + r() * 0.45, // line length in the forme
+  }))
+})()
+
+/* Transform per slip per stage. Pure: no reads, no layout, one string. */
+function slipTransform(s, i, stage, w, h) {
+  const at = (x, y, rot, sx, sy) =>
+    `translate(${x.toFixed(1)}px, ${(y - SLIP_H / 2).toFixed(1)}px) rotate(${rot.toFixed(1)}deg) scale(${sx.toFixed(4)}, ${sy})`
+
+  // 2: a chit of copy, 18 x 9.
+  const chit = [0.075, 3]
+  const scatterX = 8 + s.sx * Math.max(0, w - 30)
+  const scatterY = 16 + s.sy * Math.max(0, h - 32)
+
+  const colGap = w / LEADS
+  const stackX = colGap * (s.cluster + 0.5) - 9 + s.depth * 3
+  const stackY = h / 2 + s.jog - s.depth * 2.5
+
+  const x0 = (w - SLIP_W) / 2
+  const leading = 12
+  const top = (h - LEADS * leading) / 2 + 10
+
+  switch (stage) {
+    case 0: // every source Norm subscribes to, standing as a tick
+      return at(10 + (i * Math.max(0, w - 20)) / (SLIP_N - 1), h / 2, 0, 0.006, 10)
+    case 1: // the night's copy, heaped
+      return at(scatterX, scatterY, s.spin, ...chit)
+    case 2: // clustered: duplicates squared up behind a lead
+      return at(stackX, stackY, s.tilt, ...chit)
+    default: // locked into the forme, or dropped off the stone
+      return s.lead
+        ? at(x0, top + i * leading, 0, i === 0 ? 0.92 : s.measure, i === 0 ? 2.5 : 1)
+        : at(stackX, stackY + 16, s.tilt, ...chit)
+  }
+}
+
+function PressFloor({ stage }) {
+  const ref = useRef(null)
+  const [box, setBox] = useState({ w: 0, h: 0 })
+
+  // Measured, because translateX(%) resolves against the slip's own 240px and
+  // the forme has to centre on the band. useLayoutEffect so the first paint
+  // already has the real width.
+  useLayoutEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const read = () => setBox({ w: el.clientWidth, h: el.clientHeight })
+    read()
+    const ro = new ResizeObserver(read)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
+  const { w, h } = box
+  const x0 = (w - SLIP_W) / 2
+  const ruleY = (h - LEADS * 12) / 2 - 8 // sits above the first line of the forme
+  const formed = stage === STAGES.length - 1
+
+  return (
+    <div ref={ref} className="press-floor" aria-hidden="true">
+      {/* The masthead rule, drawn only once the page exists. */}
+      <hr
+        className="rule-double press-forme-rule"
+        style={{
+          width: `${SLIP_W}px`,
+          transform: `translate(${x0.toFixed(1)}px, ${ruleY.toFixed(1)}px) scaleX(${formed ? 1 : 0})`,
+          opacity: formed ? 1 : 0,
+        }}
+      />
+      {w > 0 &&
+        SLIPS.map((s, i) => (
+          <span
+            key={i}
+            className="press-slip"
+            // From the moment the stacks form, the lead of each one darkens
+            // and sits on top of its duplicates. That is the slip that will
+            // still be there at the end.
+            data-lead={stage >= 2 && s.lead ? '1' : undefined}
+            data-run={formed && s.lead ? '1' : undefined}
+            style={{
+              zIndex: s.lead ? 2 : 1,
+              transform: slipTransform(s, i, stage, w, h),
+              opacity: formed && !s.lead ? 0 : 1,
+              transitionDelay: `${Math.min(i * 12, 420)}ms`,
+            }}
+          />
+        ))}
+    </div>
+  )
+}
+
 function ThePress() {
   const wrapRef = useRef(null)
   const [stage, setStage] = useState(0)
@@ -994,6 +1122,8 @@ function ThePress() {
             </p>
           </div>
         </div>
+
+        <PressFloor stage={stage} />
       </div>
     </section>
   )
