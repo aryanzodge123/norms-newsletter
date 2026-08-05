@@ -32,7 +32,12 @@ Two sections are ports of real prototype screens rather than new design:
 | Section | Source |
 | --- | --- |
 | Topics | `prototypes/App Interface.dc.html`, More → Topics. Data tables (`NS_TOPICS`, `NS_BANDS`, `NS_INKS`, `NS_LEN`), copy and pixel values are the prototype's |
-| Norm | `prototypes/App Interface.dc.html`, the chat. Mug SVG, steam keyframes, `THINK` phrases and `CHATS` exchanges are the prototype's |
+| Norm | `prototypes/App Interface.dc.html`, the chat. Mug SVG, steam keyframes, `THINK` phrases and `EXCHANGES` are the prototype's |
+
+Two deliberate divergences from the prototype in that ported copy, both
+required by CLAUDE.md rule 7: a section with nothing in it today reads `none`
+rather than the prototype's em dash, and the two ported sentences that carried
+an em dash are punctuated with a full stop instead.
 
 The hero video is a recording of the committed prototype, walked end to end.
 
@@ -62,11 +67,10 @@ lead, the survivors lock into a forme as lines of type. Every slip is the same
   described the behavior have all been removed.
 - **There is deliberately no past-chats list.** Decision #54 defers it and #41
   forbids storing agent output. The prototype shows one; it is not adopted.
-- **The pricing block claims the agent is a Pro feature.** That copy came from
-  the prototype's plan screen, which governs nothing, and SPEC 14.10's tier
-  table does not put the agent behind Pro. The Norm section makes no tier
-  claim, so the page currently contradicts itself. This is a known defect.
-- The plan tiers, prices and trial length are the prototype's, not 14.10's.
+- **The page names no price, no plan and no tier.** It is a waiting list, and
+  SPEC 14.10's tier table is not settled enough to sell from. Any future
+  pricing block is a copy decision that has to be checked against 14.10 rather
+  than lifted from the prototype's plan screen, which governs nothing.
 
 ## Running it
 
@@ -81,5 +85,5 @@ npm run dev          # http://localhost:5201
 view. `window.setW`, `setFrameScroll` and `scrollAll` are available on it.
 
 Note that Chrome suspends rendering in hidden tabs, so the hero video, the
-scroll reveals and the chart draw will all appear stuck if the tab is not
+scroll reveals and the composing floor will all appear stuck if the tab is not
 visible. That is the browser, not the page.

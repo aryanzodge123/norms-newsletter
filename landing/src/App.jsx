@@ -297,7 +297,9 @@ const NS_TOPICS = [
   { id: 'climate', name: 'Climate', meta: '1 today' },
   { id: 'health', name: 'Health', meta: '1 today' },
   { id: 'culture', name: 'Culture', meta: '1 today' },
-  { id: 'sports', name: 'Sport', meta: '—' },
+  // The prototype writes an em dash for a section with nothing in it today.
+  // Rule 7 does not allow one in copy, so these read 'none'.
+  { id: 'sports', name: 'Sport', meta: 'none' },
   { id: 'media', name: 'Media', meta: '1 today' },
   { id: 'law', name: 'Law & courts', meta: '1 today' },
   { id: 'education', name: 'Education', meta: '1 today' },
@@ -305,8 +307,8 @@ const NS_TOPICS = [
   { id: 'space', name: 'Space', meta: '1 today' },
   { id: 'money', name: 'Personal finance', meta: '1 today' },
   { id: 'entertainment', name: 'Entertainment', meta: '1 today' },
-  { id: 'travel', name: 'Travel', meta: '—' },
-  { id: 'food', name: 'Food & drink', meta: '—' },
+  { id: 'travel', name: 'Travel', meta: 'none' },
+  { id: 'food', name: 'Food & drink', meta: 'none' },
   { id: 'housing', name: 'Housing & real estate', meta: '1 today' },
 ]
 
@@ -331,7 +333,7 @@ const inkOf = (id) =>
 const NS_LEN = [
   { label: 'Front page', stories: 5, note: 'The headline of the day and the glance. Nothing else lands on your phone.' },
   { label: 'Short', stories: 8, note: 'The glance, and the stories that clearly cleared the bar.' },
-  { label: 'As filed', stories: 11, note: 'The edition the way Norm files it — every section that ran, in your order.' },
+  { label: 'As filed', stories: 11, note: 'The edition the way Norm files it. Every section that ran, in your order.' },
   { label: 'Long', stories: 16, note: 'Everything scored, and Briefly in full rather than as a strip of links.' },
   { label: 'Everything', stories: 20, note: 'Every cluster Norm kept, including the sections he held back for thinness.' },
 ]
@@ -1158,7 +1160,7 @@ const EXCHANGES = [
   },
   {
     q: 'Did either actually break in?',
-    a: 'Mostly no — most of the DeepSeek targets held. The shift is in how little the human had to do. No. 055 has the Unit 42 detail.',
+    a: 'Mostly no. Most of the DeepSeek targets held. The shift is in how little the human had to do. No. 055 has the Unit 42 detail.',
     cite: '1 edition · 2 sources',
   },
   {
