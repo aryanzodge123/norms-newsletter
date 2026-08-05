@@ -119,7 +119,7 @@ function Hero() {
               Stay in the Loop
             </a>
             <p className="eyebrow mt-4">
-              Six weeks free &middot; no card &middot; your first edition lands tomorrow
+              Built to be finished &middot; no feed, no infinite scroll
             </p>
           </div>
         </div>
