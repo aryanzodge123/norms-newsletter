@@ -20,7 +20,7 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "norm-waitlist"
-database_id = "REPLACE_ME"
+database_id = "4b7546eb-b58e-464c-963d-6d4b58c1264d"
 
 [vars]
 # The sender. Replies go to a human: Cloudflare Email Routing forwards this
