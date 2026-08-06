@@ -847,6 +847,24 @@ body {
   outline: none;
   border-bottom-color: var(--oxide);
 }
+.field:disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+/* The waiting list honeypot. Moved off screen rather than hidden with
+   display:none or visibility:hidden, both of which a bot filling a form checks
+   for and skips. It has to be a real, rendered, fillable field to work, so it
+   is put where nobody can reach it instead: no tab stop, no accessibility
+   tree, no pointer. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 
 input[type='range'].dial {
   -webkit-appearance: none;

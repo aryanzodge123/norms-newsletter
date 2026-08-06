@@ -19,9 +19,15 @@ coverage:
   section. This used to read "not wired to any deploy", which was part of why an
   unspecified page was acceptable. That defence is gone; the page is public.
   `astro.config` is still untouched and the Astro site still publishes to GitHub
-  Pages, so rule 6 is unaffected. The three absolute `https://norm.news` URLs in
-  `index.html` are Open Graph tags, which have to be absolute, and they are the
-  only place in `landing/` that names the domain.
+  Pages, so rule 6 is unaffected. Two files name the domain and no others:
+  `index.html`, whose Open Graph tags have to be absolute, and `wrangler.toml`,
+  which holds the origin the confirmation email loads the mug from. No source
+  file contains it.
+- **It now holds personal data**, which nothing else in this project does. The
+  waiting list is a real database with real email addresses in it, and that
+  reaches decision #36 and section 14.12 rather than only the design.
+  `PROPOSED-SPEC.md` in this directory is the addition it owes, and it is the
+  one gap here worth closing before the others.
 
 It lives in the repo because it is worth keeping and iterating on, not because
 it has been approved. Treat it as a working draft until a spec section covers
@@ -53,6 +59,43 @@ rather than the prototype's em dash, and the two ported sentences that carried
 an em dash are punctuated with a full stop instead.
 
 The hero video is a recording of the committed prototype, walked end to end.
+
+## The waiting list
+
+The Coming Soon form is the only thing on the page that is not a page. It posts
+to `functions/api/subscribe.js`, a Cloudflare Pages Function, which writes the
+address to a D1 table (`schema.sql`) and sends one confirmation through Resend.
+
+Three things about it are deliberate and are each one edit away from being
+undone:
+
+1. **The row is written before the mail is sent, and a failed send still
+   returns success.** The signup is what cannot be lost; the confirmation can be
+   sent again. A null `emailed_at` is how a failed one stays visible.
+2. **A duplicate address sends nothing.** `email` is the primary key and the
+   insert is `ON CONFLICT DO NOTHING`, so one address receives at most one
+   message from the endpoint ever. That is what stops a public form that sends
+   email being a way to mail a stranger repeatedly.
+3. **The address is never logged.** Failures record the Resend status and not
+   the recipient, because Cloudflare's logs are not one of the places a deletion
+   request can reach.
+
+Reading it:
+
+```
+npm run waitlist              # CSV to stdout, count to stderr
+npm run waitlist > list.csv
+npm run waitlist -- --local   # the copy `npm run dev:api` writes to
+```
+
+There is no HTTP read path. `subscribe.js` exports `onRequestPost` and a 405 for
+everything else, so seeing the list needs an authenticated Cloudflare account.
+
+`PROPOSED-SPEC.md` is what this owes SPEC.md. It matters more than the page's
+other gaps, because this is personal data rather than a design decision, and it
+carries the one hard rule: **nothing is broadcast to this list until a real
+unsubscribe exists.** The confirmation is transactional and reply-based removal
+is enough for it. A launch announcement is marketing and is not the same thing.
 
 The composing floor in The overnight run is new work rather than a port. It
 reads the same `stage` the numbers do, and its four states are the physical
@@ -90,8 +133,23 @@ lead, the survivors lock into a forme as lines of type. Every slip is the same
 ```
 cd landing
 npm install
-npm run dev          # http://localhost:5201
+npm run dev          # http://localhost:5201, no Functions
+npm run dev:api      # http://localhost:8788, builds first, Functions included
+npm run og           # regenerate og.png + apple-touch-icon.png (rarely needed)
 ```
+
+`npm run dev` serves the page without the Function behind it, so the Coming Soon
+form lands in its error state. That is correct rather than broken: nothing was
+recorded, so the form has to stay. Use `npm run dev:api` to exercise the real
+endpoint, and set up its local database once with
+
+```
+npx wrangler d1 execute norm-waitlist --local --file=schema.sql
+```
+
+`DEPLOY.md` in this directory is the start-to-finish guide for `norm.news`:
+the DNS move, the Cloudflare Pages setup, the waiting list's Resend and D1
+setup, and the one-command loop for shipping a change afterwards.
 
 `public/view.html` is a development harness, not a page: it frames the site at
 1440, 900 and 390 side by side so responsive behavior can be checked in one
