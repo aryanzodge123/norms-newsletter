@@ -91,7 +91,12 @@ lead, the survivors lock into a forme as lines of type. Every slip is the same
 cd landing
 npm install
 npm run dev          # http://localhost:5201
+npm run og           # regenerate og.png + apple-touch-icon.png (rarely needed)
 ```
+
+`DEPLOY.md` in this directory is the start-to-finish guide for `norm.news`:
+the DNS move, the Cloudflare Pages setup, and the one-command loop for shipping
+a change afterwards.
 
 `public/view.html` is a development harness, not a page: it frames the site at
 1440, 900 and 390 side by side so responsive behavior can be checked in one
