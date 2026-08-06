@@ -342,6 +342,136 @@ Inspector both have a re-scrape button that clears it.
 
 ---
 
+## Step 6. The waiting list
+
+Steps 1 to 5 put a static page online. This step is what makes the Coming Soon
+form do something: record the address and send one confirmation. Skip it and the
+form still submits and still says "You are on the list", which is a lie the page
+has already told in production.
+
+Read `PROPOSED-SPEC.md` in this directory first. This is the only part of the
+project that holds personal data, and it does so without a spec section.
+
+### 6a. Resend, and proving you own the domain
+
+1. Sign up at [resend.com](https://resend.com). The free tier is 3,000 emails a
+   month, which is far more than a waiting list will ever use.
+2. **Domains** → **Add domain** → `norm.news`.
+3. Resend shows a handful of DNS records: a DKIM `TXT`, an SPF `TXT`, and
+   usually an `MX` for bounce handling. Add each one in the Cloudflare
+   dashboard under the `norm.news` zone → **DNS** → **Add record**.
+
+   Copy the **Name** column exactly. Cloudflare appends the domain itself, so a
+   name Resend shows as `resend._domainkey.norm.news` is entered as
+   `resend._domainkey`. Getting this wrong is the usual cause of a domain that
+   will not verify.
+
+   Set every one of them to **DNS only**, not Proxied. Proxying is for HTTP and
+   these are not HTTP records.
+4. Back in Resend, **Verify**. It usually takes a few minutes.
+5. **API Keys** → **Create API Key**, with **Sending access** and nothing more.
+   Copy it once; Resend will not show it again.
+
+Until the domain verifies, sends fail. That is survivable by design: the row is
+written first, so nothing is lost, and `npm run waitlist` shows an empty
+`emailed_at` for anyone who signed up in the gap.
+
+### 6b. A real inbox behind norm@norm.news
+
+The confirmation tells people to reply if they want off the list, so a reply has
+to reach somebody.
+
+1. Cloudflare dashboard → the `norm.news` zone → **Email** → **Email Routing**
+2. **Get started**, and let Cloudflare add the records it asks for
+3. Create a custom address: `norm@norm.news` forwarding to your real inbox
+4. Confirm the forwarding address from the mail Cloudflare sends it
+
+This is free and it is the whole removal mechanism. Without it the promise in
+the email footer bounces.
+
+> This is the case the note at the end of step 1 anticipated: MX records for
+> this domain now live in Cloudflare, and Resend's bounce record and Email
+> Routing's records have to coexist. Add both; they are on different names.
+
+### 6c. The database
+
+```bash
+cd landing
+npx wrangler d1 create norm-waitlist
+```
+
+It prints a `database_id`. Put it in `wrangler.toml`, replacing `REPLACE_ME`,
+and commit that. It is an identifier rather than a credential: it names the
+database and grants nothing, in the same way `GITHUB_OWNER` in
+`ops/trigger-worker/wrangler.toml` names the repo.
+
+Then create the table:
+
+```bash
+npx wrangler d1 execute norm-waitlist --remote --file=schema.sql
+```
+
+`--remote` matters. Without it you create the table in a local development copy
+and the deployed endpoint writes to a database that has none.
+
+### 6d. The API key
+
+```bash
+npx wrangler pages secret put RESEND_API_KEY --project-name norm-news
+```
+
+Paste the key when it prompts. It is stored by Cloudflare and never written to a
+file (CLAUDE.md rule 5). Setting it once is enough; it survives every later
+deploy.
+
+### 6e. A limit on how fast the form can be used
+
+A public form that sends email is a way to send mail to a stranger. The endpoint
+already caps the damage at one message per address, ever, but the request rate
+is worth capping too.
+
+1. Cloudflare dashboard → the `norm.news` zone → **Security** → **Rate limiting
+   rules** → **Create rule**
+2. Name: `subscribe`
+3. Match: field **URI Path**, operator **equals**, value `/api/subscribe`
+4. Rate: **5** requests per **1 minute**, counting by **IP**
+5. Action: **Block**, duration **10 minutes**
+6. **Deploy**
+
+### 6f. Deploy and check it
+
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name norm-news --branch main --commit-dirty=true
+```
+
+Then, from the terminal:
+
+```bash
+# A GET must be refused. If this returns 200 and HTML, the Function did not
+# ship and the form is posting into the static site.
+curl -sI https://norm.news/api/subscribe | head -1
+
+# A real signup, to an address you can read
+curl -s -X POST https://norm.news/api/subscribe \
+  -H 'content-type: application/json' \
+  -d '{"email":"you@example.com"}'
+
+# The row, and whether the confirmation went out
+npm run waitlist
+```
+
+Then check the things a terminal cannot: that the mail arrived, that it is not
+in spam, that the mug renders at the top of it, and that replying to it lands in
+your inbox.
+
+If `emailed_at` is empty, the row was written and the send failed. Look at
+**Workers & Pages** → **norm-news** → **Logs**: the endpoint logs the Resend
+status and never the address. An unverified domain and a rejected key both show
+up there plainly.
+
+---
+
 ## Deploying a change later
 
 ```bash
@@ -350,10 +480,12 @@ npm run build
 npx wrangler pages deploy dist --project-name norm-news --branch main --commit-dirty=true
 ```
 
-That is the whole loop. The domain, certificate and redirect are already set up
-and are not touched again. Keep `--branch main`: drop it and the deploy silently
-becomes a preview, leaving `norm.news` on the previous version with nothing
-obviously wrong.
+That is the whole loop, and it covers the Function as well as the page: Wrangler
+compiles `functions/` on every deploy. The domain, certificate, redirect,
+database and secret are all set up once and are not touched again.
+
+Keep `--branch main`: drop it and the deploy silently becomes a preview, leaving
+`norm.news` on the previous version with nothing obviously wrong.
 
 Only run `npm run og` if you changed the card itself. It writes two PNGs into
 `public/` that are committed to git, so it is not part of `npm run build` and
@@ -386,12 +518,17 @@ matter of promoting an older one from the dashboard.
 | Page loads but is unstyled, or 404s on assets | `dist/` was stale or incomplete. Re-run `npm run build`, confirm the four files exist, redeploy. |
 | Shared link shows no image | `og.png` returned non-200, or the platform cached an older scrape. Check with `curl` first, then force a re-scrape. |
 | `wrangler` cannot find the project | Wrong Cloudflare account. Run `npx wrangler whoami`. |
+| `GET /api/subscribe` returns the landing page | The Function did not ship. Deploy from `landing/`, not from the repo root: Wrangler looks for `functions/` in the directory you run it from. |
+| Signups appear but `emailed_at` is always empty | Resend is refusing the send. The Pages logs name the status: usually an unverified domain (step 6a) or a missing key (step 6d). |
+| `npm run waitlist` prints nothing on a list that has people | It ran against the local copy. The script passes `--remote` unless you give it `--local`. |
+| The confirmation lands in spam | The SPF or DKIM record in step 6a is missing or wrong. Check the domain still shows Verified in Resend. |
 
 ## What this does not cover
 
 - **A spec section for this page.** Under CLAUDE.md rule 1 the landing page is
   still an unapproved working draft, and deploying it does not change that. See
-  `README.md` in this directory.
+  `README.md` in this directory, and `PROPOSED-SPEC.md` for the waiting list,
+  which is the part of it that holds personal data.
 - **The Astro site.** Untouched, still on GitHub Pages. If it ever moves onto
   this domain it needs a subdomain such as `news.norm.news`, because the bare
   `norm.news` is now the landing page.
