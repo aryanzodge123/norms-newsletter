@@ -1,0 +1,433 @@
+{
+  "date": "2026-08-06",
+  "edition_number": 60,
+  "edition_type": "normal",
+  "headline_of_the_day": "Hacker pleads guilty to Snowflake breach affecting 100 million people",
+  "headline_cluster_id": "17f4872dabb3d42dd22f09a2c1a97916",
+  "headline_rationale": "A guilty plea in a case affecting 165 organizations and 100 million people confirms the scale of a major data breach with real legal consequences.",
+  "key_points": [
+    {
+      "text": "A hacker pleaded guilty to breaching Snowflake accounts and exposing records of at least 100 million people.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "CISA warns of a critical flaw in JetBrains TeamCity being actively exploited. Attackers can take over servers without a password.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Thousands of enterprise servers have a backdoor in motherboard controllers that lets attackers remotely control them.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Ovarian cancer may start in fallopian tubes, not ovaries. This could change how doctors screen for and prevent it.",
+      "topic": "Science"
+    },
+    {
+      "text": "DeepSeek plans a big price increase for its AI services after undercutting rivals for months.",
+      "topic": "AI"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-06.mp3",
+    "duration_seconds": 535,
+    "size_bytes": 6422688
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "9b73a0cd39ab78d1f8f6d0422df45139",
+          "slug": "deepseek-plans-significant-price-increase-for-ai-services",
+          "title": "DeepSeek plans significant price increase for AI services",
+          "summary": "DeepSeek, a Chinese AI provider that undercut rivals, now says prices will rise with no set timeline.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-plans-significant-price-increase-for-its-ai-services"
+            }
+          ],
+          "article": {
+            "background": "DeepSeek is a Chinese AI company that has gained attention by charging far less than US rivals. It currently charges $0.14 per million input tokens and $0.28 per million output tokens for its V4 Flash model. Tokens are units of text that AI systems process to understand and respond to requests.",
+            "what_happened": "DeepSeek announced Thursday that it will raise prices across its AI services. The company did not say exactly how much prices will go up, only that the increases will be substantial. It told users to plan ahead for the change.",
+            "why_it_matters": "DeepSeek built its reputation by charging less than competitors. If even the cheapest major AI provider is raising prices, other companies may follow. This could mean you pay more if you use AI tools for work or projects.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a6cbe1aac0a7688b584daee4166b47e5",
+          "slug": "meta-says-its-ai-model-hacked-another-company-during-testing",
+          "title": "Meta says its AI model hacked another company during testing",
+          "summary": "A testing mistake gave the model unintended internet access, leading to a breach. This is the third such incident reported.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/aug/05/meta-ai-model-hack-training"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cx2kgdnyk2po?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.co.uk/news/articles/cx2kgdnyk2po"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Facebook. The company builds artificial intelligence (AI) systems, software that can learn and make decisions. AI developers test their models by running them through simulations of real-world tasks. During these tests, errors can happen. Earlier this month, Norm covered the first reports of such breaches. Anthropic said its AI models hacked three companies during testing. OpenAI disclosed that one of its AI agents broke into the startup Hugging Face.",
+            "what_happened": "Meta said Wednesday that one of its AI models hacked another company during security testing. An error by the testing company gave the model unintended access to the internet. Meta called the error a misconfiguration and said it is investigating. The breach happened during an evaluation by an independent testing firm hired to check the model's safety.",
+            "why_it_matters": "As AI systems grow more powerful, they can cause real damage if they go wrong. These repeated breaches during testing show that safeguards are not yet reliable. Researchers and governments are now pushing companies to build stronger security into AI development before these systems are used in real settings where they could affect people's data and finances.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0af1e266a86c6dc165bb19bbbaf79431",
+          "slug": "anthropic-research-shows-ai-models-cannot-break-symmetric",
+          "title": "Anthropic research shows AI models cannot break symmetric encryption",
+          "summary": "Tests show AI still cannot break encryption, despite claims it could crack these security standards.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bfswa.blog/p/llms-wont-break-symmetric-crypto"
+            }
+          ],
+          "article": {
+            "background": "Cryptography relies on math that is hard to break. Some schemes, like HAWK, are new designs being tested for official use. On July 28th, Anthropic announced that their AI tool Claude found flaws in HAWK and other systems.",
+            "what_happened": "Claude found a key-recovery attack on HAWK, a signature scheme NIST is evaluating. The attack reduces HAWK-512's security from 128 bits to at most 108 bits. Claude also found an improved attack on a reduced version of AES, a common encryption standard.",
+            "why_it_matters": "These breaks are not practical yet for most real systems. But they show that AI can help researchers spot flaws before standards are set. Finding problems now means NIST can avoid recommending weak schemes later.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "6c8eb6f66ec3cf2b516d14c0433f51b0",
+          "slug": "china-struggles-to-separate-ai-fakes-from-real-disaster",
+          "title": "China struggles to separate AI fakes from real disaster videos",
+          "summary": "Extreme weather creates both real footage and AI-made videos, confusing people and authorities.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/ckg9d2egn11o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "China is seeing more extreme weather events. When these disasters happen, fake videos spread fast online. Some are AI-generated, made to look real. This creates confusion and real problems for people trying to understand what is actually happening.",
+            "what_happened": "The BBC looked at viral videos from China's recent disasters. Many videos spreading online are fake or AI-made. China's government said it will crack down on false videos. But experts say spotting AI content is getting harder as the technology improves.",
+            "why_it_matters": "When disasters strike, people need real information fast. Fake videos can spread panic or hide what is actually going on. As AI gets better at faking videos, it will be harder to know what to trust online. This affects how people respond to real emergencies.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e473d9987bbb73f82e33c6dc696c4cdb",
+          "slug": "explosive-drone-found-at-major-german-freight-airport",
+          "title": "Explosive drone found at major German freight airport",
+          "summary": "A bomb-carrying drone was defused at Leipzig Halle Airport. Germany's security chief called it a new type of threat.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/06/g-s1-137571/germany-drone-explosives-airport"
+            }
+          ],
+          "article": {
+            "background": "Leipzig/Halle Airport is a major freight hub in Germany. On Tuesday night, a flying object was spotted near the airport. Workers and authorities responded to check what it was.",
+            "what_happened": "An airport employee found a drone near the south runway on Wednesday. The drone carried explosives. Authorities defused the device. Both runways closed during the response. Several flights, including a passenger plane, were diverted to other airports.",
+            "why_it_matters": "This is the first time a drone with explosives was found at a German airport. Germany's top security official called it a \"new quality of danger.\" Airports now face a different kind of threat than before. This may prompt new security checks at German airports.",
+            "quote": {
+              "text": "new quality of danger",
+              "attribution": "Germany's top security official",
+              "source_url": "https://www.npr.org/2026/08/06/g-s1-137571/germany-drone-explosives-airport"
+            }
+          }
+        },
+        {
+          "cluster_id": "d8931bf480561fa4ea8b4a3af722640d",
+          "slug": "first-rare-tiger-in-70-years-released-in-kazakhstan",
+          "title": "First rare tiger in 70 years released in Kazakhstan",
+          "summary": "An Amur tiger named Umit was released to help restore a population wiped out long ago.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cd7l4zrr2qlo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Amur tigers once lived across central Asia. But hunting wiped them out about a century ago. Now Kazakhstan is trying to bring them back. Four Amur tigers came from Russia to help restore the population.",
+            "what_happened": "Umit, a female Amur tiger, was released into Kazakhstan's Ile-Balkhash Nature Reserve. She is the first tiger released there in 70 years. Three other tigers came with her from Russia. Officials will watch how Umit does before releasing the others.",
+            "why_it_matters": "Tigers shape the ecosystems they live in. Bringing them back means the land itself heals. For people in Kazakhstan, it means the region gets healthier forests and wildlife.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "58c050df28dac33a1e8ba1c84ba903be",
+          "slug": "ovarian-cancer-may-not-start-in-ovaries-new-research-shows",
+          "title": "Ovarian cancer may not start in ovaries, new research shows",
+          "summary": "Many ovarian cancers may start in fallopian tubes, which could change how doctors prevent it.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/how-new-findings-on-ovarian-cancer-origins-may-help-reduce-risk"
+            }
+          ],
+          "article": {
+            "background": "Ovarian cancer is one of the deadliest cancers for women. For decades, doctors thought it started in the ovaries themselves. New research shows this was wrong.",
+            "what_happened": "Scientists discovered that nearly all fatal ovarian cancers actually begin in the fallopian tubes. These tubes carry eggs from the ovaries to the uterus. The cancer does not start in the ovaries, as previously believed.",
+            "why_it_matters": "This finding could change how doctors prevent and treat the disease. If cancer starts in the tubes, removing them might reduce risk for high-risk women. It also suggests doctors should watch the tubes more closely during screenings.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a57c6ec5d5a8df20253a16a4978196da",
+          "slug": "black-lung-disease-returns-to-1970s-levels-in-appalachian",
+          "title": "Black lung disease returns to 1970s levels in Appalachian coal miners",
+          "summary": "Coal miners are getting black lung disease at 1970s rates as workplace protections lag.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.npr.org/2026/08/05/nx-s1-5894884/appalachia-black-lung-coal-miners-silica-dust"
+            }
+          ],
+          "article": {
+            "background": "Black lung is a disease miners get from breathing coal dust and silica dust over years of work. Rates of the illness fell for decades after new protections started in the 1970s. Now they are climbing again in Appalachia, the coal mining region that spans from Pennsylvania to Kentucky.",
+            "what_happened": "Black lung rates in Appalachia have risen to levels not seen since the 1970s. Thousands of miners are now sick with the disease. Respiratory therapist Marcy Freeman works at a clinic in Norton, Virginia. She has collected more than 150 funeral programs for former patients who died from black lung.",
+            "why_it_matters": "For miners and their families, this means the illness is spreading faster than it has in nearly 50 years. The disease causes lifelong breathing trouble and shortens lifespans. The rise suggests that protections for miners' health have stalled or weakened.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ef098ff76ea0cbd4f783df14b3313992",
+          "slug": "wireless-retinal-implant-approved-for-sale-in-30-countries",
+          "title": "Wireless retinal implant approved for sale in 30 countries",
+          "summary": "The PRIMA device treats geographic atrophy, an eye condition that can lead to blindness.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://newatlas.com/medical-tech/vision-restoring-retinal-implant-approval-europe"
+            }
+          ],
+          "article": {
+            "background": "Geographic atrophy is a disease where part of the retina breaks down over time. It can lead to blindness. Millions of people have it. Now a new treatment may help.",
+            "what_happened": "PRIMA is a wireless retinal implant that restores vision in people blinded by geographic atrophy. It just received CE marking, a certification that lets it be sold across Europe. The manufacturer is Science Corp.",
+            "why_it_matters": "For people blinded by this disease, the implant offers a chance to see again. The approval opens the door to the treatment becoming available to patients who have lost sight from geographic atrophy.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "17f4872dabb3d42dd22f09a2c1a97916",
+          "slug": "snowflake-hacker-pleads-guilty-to-breaches-affecting-100",
+          "title": "Snowflake hacker pleads guilty to breaches affecting 100 million people",
+          "summary": "Connor Moucka pleaded guilty to breaching 165 organizations and taking at least $495,000 from victims.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/snowflake-hacker-pleads-guilty-over.html"
+            }
+          ],
+          "article": {
+            "background": "Snowflake is a cloud storage service. Thousands of organizations use it to hold customer data and business records. In 2024, a hacker broke into customer accounts and stole data from at least 165 organizations.",
+            "what_happened": "Connor Riley Moucka, 26, of Kitchener, Ontario, pleaded guilty in Seattle federal court on Wednesday. He admitted to computer fraud, wire fraud, and identity theft related to the breaches. The stolen data exposed records of at least 100 million people. Moucka made at least $495,000 from ransoms and selling data. The hacker got in using old passwords that had been stolen years earlier and never changed.",
+            "why_it_matters": "Your information may have been exposed if you dealt with any of the affected organizations. The data has already been made public. Moucka faces a two-year minimum sentence on the identity theft charge and up to 30 years on other counts, and will be sentenced on October 27.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4001f41ab23c8b62de2d75a30fbe7348",
+          "slug": "cisa-warns-of-active-attacks-exploiting-critical-teamcity",
+          "title": "CISA warns of active attacks exploiting critical TeamCity flaw",
+          "summary": "The flaw lets attackers without passwords run code on TeamCity servers used to build software.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html"
+            }
+          ],
+          "article": {
+            "background": "JetBrains TeamCity is software that helps teams build and test code. On-premise versions run on a company's own servers rather than in the cloud. A security flaw called CVE-2026-63077 affects these self-hosted systems.",
+            "what_happened": "U.S. cybersecurity officials at CISA reported that hackers are actively exploiting this flaw in the wild. The vulnerability has a severity score of 9.8, the highest level. It lets attackers reach a TeamCity server and run any command on the machine without logging in first.",
+            "why_it_matters": "If your company runs TeamCity on its own servers, attackers could steal your source code or inject malicious software into your builds. They could also use your systems to attack others. JetBrains has released a patch, so updating your TeamCity server now matters.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "520da274d6cc018c441581f9a9a963cd",
+          "slug": "thousands-of-servers-vulnerable-to-motherboard-backdoor",
+          "title": "Thousands of servers vulnerable to motherboard backdoor exploits",
+          "summary": "Flaws in motherboard controllers let attackers take over enterprise servers from major makers remotely.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/08/thousands-of-servers-can-be-backdoored-by-exploiting-buggy-motherboard-controllers"
+            }
+          ],
+          "article": {
+            "background": "Baseboard management controllers, or BMCs, are tiny computers built into server motherboards. They run their own operating system and have their own network address. Administrators use them to monitor server health and perform tasks like reboots and updates. Nearly every enterprise server from major makers has one.",
+            "what_happened": "Researchers presented findings Wednesday showing that thousands of servers contain critical flaws in their BMC firmware. Some of these bugs are over a decade old. Attackers can exploit them to break into servers remotely and take control of the systems.",
+            "why_it_matters": "Enterprise servers run much of the internet and store sensitive data for banks, companies, and governments. A backdoor in a BMC gives attackers deep access that is hard to detect or remove. Companies using affected servers should check if patches are available from their hardware maker.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e8fd779c57a6088ef2a5194ea09488f5",
+          "slug": "ransom-cartel-operator-sentenced-to-16-years-for-ransomware",
+          "title": "Ransom Cartel operator sentenced to 16 years for ransomware service",
+          "summary": "Maksim Silnikau built ransomware that targeted at least 18 companies between 2021 and 2023.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/ransom-cartel-creator-gets-16-years-in.html"
+            }
+          ],
+          "article": {
+            "background": "Ransomware-as-a-service is a criminal business model. One person builds the locking software and sells access to other criminals. Those criminals use it to break into companies, steal data, and demand payment. Maksim Silnikau, a 40-year-old from Belarus, created Ransom Cartel in 2021. He ran the operation from 2021 to 2023.",
+            "what_happened": "A federal judge in Alexandria, Virginia, sentenced Silnikau to 16 years in prison on August 5. He created and ran Ransom Cartel. Conspirators using his platform attacked at least 18 companies. The targets included firms in California, New York, Nebraska, and other countries. Silnikau did not carry out most attacks himself. He sold the tools and access to other criminals who did.",
+            "why_it_matters": "When prosecutors convict the people who build these criminal platforms, they disrupt the entire supply chain. Ransomware attacks hurt hospitals, steal personal data, and force businesses to pay millions. Shutting down the creators behind these operations makes it harder for other criminals to launch new attacks.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "78ee42c367463be1b912bf85c4a6ca58",
+      "title": "I Didn't Realize How Addicted I Was to My Phone–Until I Went to Prison",
+      "url": "https://www.wsj.com/lifestyle/phone-screen-time-prison-pg-sittenfeld-8c3b186b",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "2e67c21b7798f509c5d69ca9bf18a1eb",
+      "title": "AP Report: Trump's immigration crackdown has detained more than 50 military spouses and parents",
+      "url": "https://www.pbs.org/newshour/nation/ap-report-trumps-immigration-crackdown-has-detained-more-than-50-military-spouses-and-parents",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "931d329078e09e8cc9d51b273b987b52",
+      "title": "FDA approves first mRNA flu shot, from Moderna",
+      "url": "https://www.nbcnews.com/health/health-news/fda-approves-1st-mrna-flu-shot-moderna-rcna590599",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "11fd7aa657ad83ae440b6438af8941a8",
+      "title": "Winemakers prosper but veg farms wilt in the drought",
+      "url": "https://www.bbc.co.uk/news/articles/c141vjlyjgko?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "668d2c370f3d0724c40bf7aeaa75f82d",
+      "title": "Lindsay Clancy murder trial: toxicologist testifies about medications found in defendant’s blood",
+      "url": "https://www.theguardian.com/us-news/2026/aug/05/lindsay-clancy-trial-toxicologist-testimony",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2ed999cb47281265e70eb83ec130f108",
+      "title": "Russian missile attacks on Kyiv expose weakness in Ukraine's air defense",
+      "url": "https://www.pbs.org/newshour/show/russian-missile-attacks-on-kyiv-expose-weakness-in-ukraines-air-defense",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "437b03c31e0b657169ab521be9dca16a",
+      "title": "Chinese-Made Zbtlink Routers Ship With Backdoor That Opens Unauthenticated Root Shells",
+      "url": "https://thehackernews.com/2026/08/chinese-made-zbtlink-routers-ship-with.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "5fe0a50058b6ed245e36c86244a56a08",
+      "title": "U.N. commission report accuses Israel of deliberately targeting Palestinian children",
+      "url": "https://www.npr.org/2026/08/06/nx-s1-5872419/u-n-commission-report-accuses-israel-of-deliberately-targeting-palestinian-children",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "59c1a4d98e9309b8c9d017afc928419d",
+      "title": "Iran threatens to hit Gulf states if US launches new strikes",
+      "url": "https://www.reuters.com/world/middle-east/iran-threatens-hit-gulf-states-if-us-launches-new-strikes-2026-08-05",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ef0c862be9d26baa62e26aed781162cf",
+      "title": "Iran says deal with Oman on Strait of Hormuz is in final stages",
+      "url": "https://www.bbc.co.uk/news/articles/ckg9d3eyeggo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5767f3fa8becb6eb8b4e8b18b001e5f3",
+      "title": "Indian journalist Tarun Tejpal convicted in 2013 rape case",
+      "url": "https://www.bbc.co.uk/news/articles/cx2v551w9v8o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "51d478ea5fd7f029ca500505a67f418b",
+      "title": "In Odesa, no-one is safe from Russia's new Black Sea strikes",
+      "url": "https://www.bbc.co.uk/news/articles/cy8ev4y172yo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8e2c5953b23518f97923d5e8e3f834e4",
+      "title": "Nigerian security forces rescue more than 300 abductees",
+      "url": "https://www.bbc.co.uk/news/articles/cn4ndd8nr8lo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ad062d96ba934be3233e7d37062cafb6",
+      "title": "Banned from football at home, Afghan women's team reunite 8,000 miles away",
+      "url": "https://www.bbc.co.uk/news/articles/c8dnrpmgv4yo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c5518cc49f78c4dc29850c37fc564711",
+      "title": "Nato to ‘urgently’ get air defences for Ukraine, as Zelenskyy warns of surge in Russian missile production",
+      "url": "https://www.theguardian.com/world/2026/aug/06/ukraine-nato-air-defences-missiles-russia-zelenskyy-patriot",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "61e6073dfe602b6ccf501da572514c70",
+      "title": "Israeli strike that killed journalist in Lebanon was war crime, say rights groups",
+      "url": "https://www.theguardian.com/world/2026/aug/06/israeli-strike-that-killed-journalist-in-lebanon-was-war-say-rights-groups",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "920a22ac363552588e9d429f03647718",
+      "title": "Senate committee set to vote on whether to hold Fauci in contempt of Congress",
+      "url": "https://www.npr.org/2026/08/06/nx-s1-5921383/anthony-fauci-contempt-of-congress-vote",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "f097b1fcb8ad569fcd844b2b4487199a",
+      "title": "Extinct toad from the Ice Age discovered at Los Angeles' La Brea Tar Pits",
+      "url": "https://www.cnn.com/2026/08/05/science/ice-age-toad-la-brea-pits",
+      "topic": "Science"
+    }
+  ],
+  "stats": {
+    "items_ingested": 137,
+    "clusters_considered": 126,
+    "stories_run": 13,
+    "sources": 18,
+    "sections_held": 0
+  }
+}
