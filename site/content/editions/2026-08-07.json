@@ -1,0 +1,427 @@
+{
+  "date": "2026-08-07",
+  "edition_number": 61,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump limits birthright citizenship by executive order despite court rejection",
+  "headline_cluster_id": "da44826716773da5959f731efa378c8f",
+  "headline_rationale": "President signed orders on constitutional right after Court struck down previous attempt, creating immediate legal uncertainty affecting citizenship eligibility.",
+  "key_points": [
+    {
+      "text": "Trump signed orders to limit birthright citizenship after the Supreme Court rejected an earlier attempt.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Meta paid a $567 million fine in the largest child safety case for not warning about platform risks to kids.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Record heat broke across central and eastern Europe, reaching 42 degrees Celsius.",
+      "topic": "World"
+    },
+    {
+      "text": "The FDA approved mFlusiva, the first mRNA flu vaccine, made with the same method as COVID shots.",
+      "topic": "Science"
+    },
+    {
+      "text": "Scientists used AI to design working virus genomes in the lab for the first time.",
+      "topic": "Science"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "66d0f424158386d5c8910f9976fc079d",
+          "slug": "trump-imposes-15-percent-tariff-on-polysilicon-used-in-chips",
+          "title": "Trump imposes 15 percent tariff on polysilicon used in chips",
+          "summary": "A new order targets a key chip material to fight China and sets import price floors.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Polysilicon is a material used to make semiconductors and solar panels. It is made in large quantities overseas, mainly in China. The US has been investigating whether overseas production poses a security risk.",
+            "what_happened": "President Trump signed an executive order Thursday. It puts a 15% tariff on imported polysilicon products. The order also sets minimum prices for polysilicon imports. It aims to help US makers compete with Chinese chip makers.",
+            "why_it_matters": "Higher import costs could eventually raise prices for electronics and solar equipment that US consumers buy. For now this may not change much for most people. But it reflects growing US efforts to reduce dependence on Chinese manufacturing.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5c3c75aea983d20e74d1a4bb5382c50a",
+          "slug": "federal-communications-commission-scraps-broadcast-tv",
+          "title": "Federal Communications Commission scraps broadcast TV ownership cap",
+          "summary": "The FCC removed a 22-year-old rule that stopped one company from reaching too many households.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcnews.com/business/media/federal-communications-commission-scraps-limit-broadcast-tv-ownership-rcna587641"
+            }
+          ],
+          "article": {
+            "background": "The Federal Communications Commission is the government agency that regulates broadcast television in the United States. For 22 years, an FCC rule stopped any single company from owning TV stations that reached more than 39 percent of American households. The rule was meant to keep one company from controlling too much of the news and shows most people see.",
+            "what_happened": "The FCC voted 2-1 on Thursday to repeal the 22-year-old ownership cap. Companies can now own stations that reach any share of U.S. households. The FCC will use a case-by-case approach instead of a hard limit.",
+            "why_it_matters": "Fewer media companies controlling more stations could mean less variety in local news and shows where you live. A single owner might pick which stories get told and which voices get heard in your area. The change makes it easier for big companies to buy up more TV stations.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "da44826716773da5959f731efa378c8f",
+          "slug": "trump-signs-orders-limiting-birthright-citizenship-after",
+          "title": "Trump signs orders limiting birthright citizenship after Court rejection",
+          "summary": "The orders try to restrict who can become a citizen despite the Supreme Court blocking a similar effort last month.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/08/06/g-s1-137686/trump-birthright-citizenship-immigration-curb"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cj63966j95yo"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cj63966j95yo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/06/trump-birthright-citizenship-attack"
+            }
+          ],
+          "article": {
+            "background": "The 14th Amendment to the U.S. Constitution grants birthright citizenship, meaning anyone born in the country is automatically a citizen. Trump attempted to limit this right during his first term but the Supreme Court rejected that effort. Five weeks ago, the Court reaffirmed birthright citizenship as constitutional.",
+            "what_happened": "Trump signed two executive orders on Thursday. The first expands which non-citizens' children cannot get automatic citizenship. The second bans birth tourism, the practice of pregnant women coming to the U.S. to give birth so their babies become citizens. Trump claimed hundreds of thousands of people do this. Research from a nonpartisan group found the actual number is much lower, between 22,000 and 26,000 babies per year.",
+            "why_it_matters": "These orders could change which babies born in the U.S. become automatic citizens, based on their parents' immigration status. The orders may face legal challenges, as Trump's earlier attempt did. If they survive court challenges, the rules for citizenship at birth could shift for some families.",
+            "quote": {
+              "text": "This should have happened years ago, but we're taking care of it now.",
+              "attribution": "President Donald Trump",
+              "source_url": "https://www.bbc.com/news/articles/cj63966j95yo"
+            }
+          }
+        },
+        {
+          "cluster_id": "bf213616fe0bea8023b606590447be22",
+          "slug": "trump-s-second-term-operates-with-fewer-internal-checks",
+          "title": "Trump's second term operates with fewer internal checks than first",
+          "summary": "Lawyers now pick their battles as executive power works with fewer limits.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/politics/audio/2026/aug/07/trump-unbound-the-making-of-an-imperial-presidency-podcast"
+            }
+          ],
+          "article": {
+            "background": "Donald Trump's second term began differently from his first. In his first term, other politicians and lawyers inside his administration pushed back on his plans. Many of those challengers are now gone. The ones who remain tend to avoid confrontation. This has left Trump with far fewer people willing to question his choices inside his own government.",
+            "what_happened": "Jonathan Swan, a journalist at the New York Times, gave an interview about Trump's consolidated power. He spoke with Jonathan Freedland of The Guardian for a new podcast. Swan has covered Trump closely throughout his presidency. The podcast explores how Trump is using executive power to reshape policy. It looks at changes to the economy, immigration, and the presidency itself.",
+            "why_it_matters": "A president with few internal checks can move faster and more broadly than one who faces pushback from his own staff. Trump's ability to act without much resistance from those around him means major policy shifts can happen quickly. This affects how the government works, who can enter the country, and what rules apply to business. Understanding how a president gains this kind of power helps you see what may change under future presidents too.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "429addfa857ad4059b4669789e702409",
+          "slug": "central-and-eastern-europe-break-heat-records-reaching-42",
+          "title": "Central and eastern Europe break heat records, reaching 42 degrees",
+          "summary": "Slovakia, Austria, and Hungary hit new heat records as extreme weather spreads.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/07/extreme-heat-breaks-temperature-records-central-eastern-europe"
+            }
+          ],
+          "article": {
+            "background": "Central and eastern Europe has been hit by extreme heat. The weather has caused wildfires and droughts across the continent. Multiple countries have now broken their temperature records.",
+            "what_happened": "Slovakia set a new high of 42C (108F) on Thursday in the town of Dolné Plachtince. Austria and Hungary also registered record temperatures. Poland shut down two coal-fired power plants, Kozienice and Połaniec, because the Vistula River had critically low water levels. Low water meant less cooling water for the plants. The shutdown removed about 1.3GW of capacity from Poland's power system.",
+            "why_it_matters": "Power plants need water to cool. When rivers run low from heat and drought, plants must close. This can leave cities and homes without enough electricity, especially when people need it most for air conditioning. Europe is facing both record heat and power shortages at the same time.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "83076bc8f071962a1166984d21109e01",
+          "slug": "colombia-s-peace-negotiations-reverse-as-guerrilla-group",
+          "title": "Colombia's peace negotiations reverse as guerrilla group prepares for war",
+          "summary": "Armed conflict that was moving toward peace now heading back to active warfare.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/ng-interactive/2026/aug/07/colombia-on-the-brink-eln-guerrilla-group-prepares-for-return-to-war"
+            }
+          ],
+          "article": {
+            "background": "Colombia has been fighting an armed conflict for 62 years. The National Liberation Army, or ELN, is the country's last active guerrilla group. A new president, Abelardo de la Espriella, takes office Friday. He has said he will end peace talks with the ELN and start a military offensive instead.",
+            "what_happened": "ELN troops are now moving into position in remote jungle areas. They are hiding from military drones and preparing for combat. The group said it is ready to fight. De la Espriella's plan to abandon talks and launch an offensive has raised the risk of larger-scale fighting.",
+            "why_it_matters": "Most Colombians outside conflict zones will not see immediate change. But a return to large-scale war could undo years of progress toward peace. People in areas where the ELN operates may face increased violence in the coming months.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f205959b12c959f2997c4c2fcac5430c",
+          "slug": "student-shoots-multiple-people-at-bangkok-area-high-school",
+          "title": "Student shoots multiple people at Bangkok-area high school",
+          "summary": "Police responded to a shooting near Bangkok with multiple deaths and injuries.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/07/nx-s1-5924583/student-shoots-multiple-people-at-a-high-school-in-thailand-authorities-say"
+            }
+          ],
+          "article": {
+            "background": "A shooting happened Friday at Debsirin Nonthaburi School. The school is in Nonthaburi province, northwest of Bangkok. Police responded to reports of deaths and injuries at the scene.",
+            "what_happened": "A student opened fire at the school and stayed inside. Deaths and injuries were reported. Royal Thai Police spokesman Trairong Piwpan told the AP about the shooting. The Interior Ministry's Arsit Sampantharat confirmed the details to news station PPTV. Officials did not say how many people were hurt.",
+            "why_it_matters": "School shootings are rare in Thailand. This event marks a significant incident in a country where such attacks do not happen often. The details are still emerging as police respond.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "1e8138f4af47461ce5e60e973e6b5e2c",
+          "slug": "meta-fined-567-million-in-largest-child-safety-ruling",
+          "title": "Meta fined $567 million in largest child safety ruling",
+          "summary": "A judge ordered Meta to pay for failing to warn people about dangers to children.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cd7lz3wr2rlo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/technology/2026/aug/06/new-mexico-court-meta"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Facebook and Instagram, social media platforms used by billions of people worldwide. In March, a jury in New Mexico found that Meta knowingly harmed children's mental health. The jury also found that Meta hid what it knew about child sexual abuse on its platforms.",
+            "what_happened": "On Thursday, a judge in New Mexico ordered Meta to pay $567 million into a fund to help reduce future harms to children. This is in addition to a $375 million fine the company already owed from the same case. The total amount Meta must now pay is $942 million.",
+            "why_it_matters": "This ruling shows that courts will hold major platforms liable for harms to young users. Other social media companies may now invest more in safety tools and clearer warnings about mental health risks. For most people, this sets a precedent that platforms can be held accountable for what they know about dangers to children.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "15a9071c03a77d6ec917278b0f809598",
+          "slug": "new-york-sues-kalshi-for-allegedly-running-illegal-gambling",
+          "title": "New York sues Kalshi for allegedly running illegal gambling operation",
+          "summary": "New York is suing the prediction market platform Kalshi for breaking gambling laws.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://ag.ny.gov/press-release/2026/governor-hochul-and-attorney-general-james-announce-new-york-has-sued-kalshi"
+            }
+          ],
+          "article": {
+            "background": "Kalshi launched in 2021 as a prediction market platform. It lets users bet money on the results of future events. In 2025, Kalshi expanded to offer sports \"trading,\" saying it was legal sports betting open to people in all 50 states.",
+            "what_happened": "New York Governor Kathy Hochul and Attorney General Letitia James sued Kalshi. They say the company runs an illegal gambling operation in the state. Kalshi claims its sports betting markets are legal and available nationwide.",
+            "why_it_matters": "The lawsuit tests whether prediction markets and sports betting platforms need state gambling licenses. If New York wins, it could force changes to how these platforms operate. The outcome may affect what bets are allowed across the country.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "74d6779c7400acac2e5c5beb50b33091",
+          "slug": "airlines-warn-passengers-about-lithium-ion-battery-fire",
+          "title": "Airlines warn passengers about lithium-ion battery fire risks",
+          "summary": "Crew warnings show lithium batteries pose a real danger to air travel and passengers.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cwyl6yz719jo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Lithium-ion batteries power phones, laptops, and portable chargers. Travelers carry these devices onto planes every day. In June, a passenger on a flight to Las Vegas used a battery pack during the flight. The pack overheated, burst into flames, and set a seat on fire.",
+            "what_happened": "Flight crew saw smoke and rushed to the rear of the plane. They found a passenger's battery pack burning. The crew put out the fire before it spread further.",
+            "why_it_matters": "Lithium-ion batteries can catch fire at high altitude, where a small fire becomes a serious danger. Airlines now warn passengers about this risk. You can help prevent it by checking your devices and chargers before boarding.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "8bd575b87b16851afeca37fc7af7d7a1",
+          "slug": "ai-designs-functional-virus-genomes-for-first-time-in-lab",
+          "title": "AI designs functional virus genomes for first time in lab",
+          "summary": "Researchers created 16 new viruses that copy themselves using AI for the first time.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c5y3j3ngevmo"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/science/2026/08/large-genome-models-used-to-design-new-viruses"
+            }
+          ],
+          "article": {
+            "background": "AI tools have grown much better at biology work. Most of that work has focused on designing single proteins, the molecules that do life's chemistry. Now researchers have gone further. They used AI to design whole virus genomes, not just pieces.",
+            "what_happened": "US researchers used AI to design 16 brand new viruses. These viruses are fully functional and can copy themselves in the lab. This is the first time AI has designed complete virus genomes. All 16 were made to infect bacteria only. They pose no risk to people.",
+            "why_it_matters": "This is a major step forward for treating disease. The same AI tools could help design new medicines and antibiotics. But experts warn the technology raises urgent safety concerns. As AI gets better, the same tools could be misused to create harmful germs.",
+            "quote": {
+              "text": "This is a very significant turning point in science that could unlock a new era for treating disease.",
+              "attribution": "US researchers",
+              "source_url": "https://www.bbc.com/news/articles/c5y3j3ngevmo"
+            }
+          }
+        },
+        {
+          "cluster_id": "f2ad7c04bb896e98b2edf203fa10d064",
+          "slug": "fda-approves-first-mrna-flu-vaccine-using-covid-technology",
+          "title": "FDA approves first mRNA flu vaccine using COVID technology",
+          "summary": "Moderna's mFlusiva won approval using the same method that made COVID vaccines.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "science_news",
+              "url": "https://www.sciencenews.org/article/first-mrna-flu-vaccine-fall-season"
+            }
+          ],
+          "article": {
+            "background": "Flu kills thousands of people in the United States each year and puts tens of thousands more in hospitals. Moderna, a Massachusetts company, developed mFlusiva. It uses mRNA technology, the same approach that made COVID-19 vaccines work. mRNA teaches your body to make a protein that triggers immunity.",
+            "what_happened": "On August 5, the Food and Drug Administration approved mFlusiva, the first flu vaccine using mRNA technology. The shot is available for people 50 and older at select drugstores before flu season starts. In testing with 40,000 people, mFlusiva was about 27% more effective than a standard flu shot.",
+            "why_it_matters": "For older adults, better protection means fewer hospital stays. Flu shots already help, but this new option works better for a group at higher risk. The approval shows mRNA vaccines can fight other diseases beyond COVID-19.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "150ec1c72d36bf056c332bd53e24bd7e",
+          "slug": "bioengineered-chewing-gum-cuts-cancer-linked-virus-by-93",
+          "title": "Bioengineered chewing gum cuts cancer-linked virus by 93 percent",
+          "summary": "Human trial reduced HPV and bacteria tied to head and neck cancer.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.sciencedaily.com/releases/2026/08/260803080917.htm"
+            }
+          ],
+          "article": {
+            "background": "Head and neck cancer is linked to HPV, a common virus, and two bacteria found in the mouth. Researchers at the University of Pennsylvania developed a new tool to fight these microbes. The gum is bioengineered, meaning scientists designed it to release specific agents that target harmful bacteria and viruses.",
+            "what_happened": "The chewing gum reduced HPV levels by up to 93% in tests. It nearly wiped out two bacteria tied to head and neck cancer. The treatment also kept beneficial mouth bacteria intact, which suggests it could be safer than other options.",
+            "why_it_matters": "Head and neck cancers affect thousands of people each year. A simple chewing gum therapy could offer a cheaper and easier way to lower cancer risk than current treatments. If this works in larger tests, people could use it as a preventive tool in their daily routine.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "72e4b51c3cc7bdaef1e0d49e660f62fb",
+          "slug": "new-attack-bypasses-spectre-defenses-leaks-linux-password",
+          "title": "New attack bypasses Spectre defenses, leaks Linux password hashes",
+          "summary": "Researchers broke new security fixes on AMD and Intel chips using branch predictors.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/new-tontou-cpu-attack-bypasses-spectre-v2-fixes-leaks-linux-password-hashes"
+            }
+          ],
+          "article": {
+            "background": "Spectre v2 is a type of computer security weakness in processors made by AMD and Intel. It tricks a processor into running code it should not, which can leak secret data. Companies have added protections called neutralization-based mitigations to stop this attack.",
+            "what_happened": "Researchers found a way around these Spectre v2 protections. They created an attack called TONTOU that can leak password hashes from Linux machines. The attack works on AMD and Intel processors that use certain types of Spectre v2 defenses.",
+            "why_it_matters": "If your Linux computer has an AMD or Intel processor with these specific protections, an attacker could steal sensitive data like password hashes. This means the main defenses against this older attack may need updating to stay effective.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "93eae7af4c905c851fb8accf68e073fe",
+          "slug": "hackers-targeting-financial-firms-with-data-theft-and",
+          "title": "Hackers targeting financial firms with data theft and extortion",
+          "summary": "Hackers call employees to trick them into opening systems so hackers can steal data.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/06/google-says-hackers-are-calling-financial-firm-employees-to-hack-and-extort-victims"
+            }
+          ],
+          "article": {
+            "background": "Financial firms handle money and investments for clients. Hackers steal data from these companies to threaten to release it online unless they pay a ransom, a tactic called extortion. Even as hacking tools grow more advanced, simple tricks still work. Criminals can call employees and trick them into giving up access to company systems.",
+            "what_happened": "Groups of hackers targeted large U.S. financial and investment firms. They called employees to trick them into opening doors to company networks. Google's security researchers described this campaign in a report on Thursday. The victims include Apollo Global Management, Bain Capital, Blackstone, Bridgewater Associates, CME Group, KKR, Moody's, and TPG.",
+            "why_it_matters": "These hacks affect clients of those firms. If hackers steal financial data, people's investments and personal information could be at risk. The attacks show that no security system can fully stop hackers if they convince employees to help them in.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "67797513d16306f7e1305452fbfece77",
+      "title": "New Orleans will use AI to answer 911 calls instead of a human",
+      "url": "https://www.shreveporttimes.com/story/news/local/louisiana/2026/07/28/is-new-orleans-using-ai-to-answer-911-calls-instead-of-human-dispatchers-impacts-emergencies-crime/91065014007",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "e804257aac19bcc3170a21d189a494ea",
+      "title": "Some of Doge's $110bn saving reports are wrong or lack evidence, US watchdog finds",
+      "url": "https://www.bbc.co.uk/news/articles/cvg0rg9wmvlo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "10c2bb5dbb0001edaa64724425fc6fba",
+      "title": "Trump administration announces changes to Head Start in overhaul",
+      "url": "https://www.theguardian.com/us-news/2026/aug/06/trump-administration-head-start-changes",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "1eca92ca32a153267a8a1e9b916d5fd3",
+      "title": "Bank of America spends $250M a year on GLP-1 drugs for its employees",
+      "url": "https://www.cnbc.com/2026/08/05/bank-of-america-ceo-glp-1-drugs-cost.html",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "a74b9217c92b5e731d553a07c8cc67c7",
+      "title": "The Senate voted to hold Dr. Fauci in contempt. Now what?",
+      "url": "https://www.npr.org/2026/08/06/nx-s1-5923389/the-senate-voted-to-hold-dr-fauci-in-contempt-now-what",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "d88761382df0269ecfe33a04203ba8f9",
+      "title": "China-linked LightSpy spyware caught targeting victims in 13 countries, including the US",
+      "url": "https://techcrunch.com/2026/08/06/china-linked-lightspy-spyware-caught-targeting-victims-in-13-countries-including-the-us",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "8bf49ec92ad53d1c6a0d233345e2ae3c",
+      "title": "Astronomers capture highest-resolution image ever of the Sun's surface",
+      "url": "https://physicsworld.com/a/astronomers-capture-highest-resolution-image-ever-of-the-suns-surface",
+      "topic": "Science"
+    }
+  ],
+  "stats": {
+    "items_ingested": 160,
+    "clusters_considered": 142,
+    "stories_run": 15,
+    "sources": 18,
+    "sections_held": 0
+  }
+}
