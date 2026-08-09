@@ -1,0 +1,20 @@
+# Cloudflare Pages reads this file from the root of the deployed site. It is
+# copied verbatim out of public/ by the build, so it is not hashed and not
+# bundled.
+
+# Vite content-hashes every filename under /assets, so the bytes behind one of
+# these URLs never change: a new build produces a new name rather than new
+# contents at the old name. Pages defaults them to four hours with
+# revalidation, which spends a conditional request on every visit to be told
+# nothing changed. Immutable is what the hashing already guarantees.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The one file that must never be held. It is the only thing that knows the
+# current asset names, so a stale copy asks for files that no longer exist and
+# the page renders without its stylesheet. Pages already sends max-age=0 here.
+# Stating it means a future change to the defaults cannot quietly take it away.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
