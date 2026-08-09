@@ -779,5 +779,6 @@ Escalate to the owner (Milind) when:
 | Monitoring / run log | `src/runlog.py`, `src/health.py` | SPEC section 8 |
 | Config / secrets | `src/config.py`, `config/` | SPEC 6.10, `config/README.md` |
 | The website | `site/` | DESIGN.md, `site/README.md` |
+| The landing page (norm.news) | `landing/` | `landing/RUNBOOK.md` for operations, `DEPLOY.md` for setup. A separate system: it cannot break the pipeline and the pipeline cannot break it |
 | Cost | (the run log) | SPEC section 9 |
 | Failure behavior | (throughout) | SPEC section 7 |

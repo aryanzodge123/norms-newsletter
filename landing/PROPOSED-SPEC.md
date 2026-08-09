@@ -104,6 +104,19 @@ true because the only send that exists is the confirmation.
 It stops being true the first time this list is used for anything else. It is
 recorded here so it is a decision rather than a drift.
 
+**The promise is now made in three places, not one.** The form's note, the
+footer's legal line, and the confirmation mail's own footer all state it, and
+the footer is the one a visitor can read without submitting anything. Any change
+to what the list is used for has to move all three together, or the page will go
+on promising something the code has stopped doing. The footer is also the widest
+of the three: it says the address is never sold, shared, or used to advertise,
+which is a stronger claim than "we will only email you about milestones" and is
+the sentence to check a future decision against.
+
+The footer deliberately states no retention period, because question 2 above has
+not been answered. That gap is the reason this section is still open: a use
+limitation without a retention period is half a privacy notice.
+
 ## What is deliberately absent
 
 - **No double opt-in.** A confirmation that asks the person to confirm again

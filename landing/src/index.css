@@ -118,6 +118,21 @@ body {
   color: var(--oxide);
 }
 
+/* The only text link on the page. Everything else that navigates is a button,
+   so this carries its own rule rather than inheriting one. Colour is left to
+   the `.tod *` palette transition and only the underline answers the hover,
+   which keeps the response immediate instead of riding the 900ms light change. */
+.footer-link {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule);
+}
+.footer-link:hover {
+  text-decoration-color: var(--oxide);
+}
+
 .display {
   font-family: var(--font-display);
   font-weight: 500;
@@ -251,9 +266,21 @@ body {
   color: var(--muted);
 }
 
+/* The list item owns every transform: the FLIP offset when a row is displaced,
+   and the pointer offset when it is the one being dragged. The button inside it
+   owns the lift (background, shadow, opacity) and nothing that moves. Keeping
+   those on separate elements is what stops the two fighting. */
 .ns-row-wrap {
   list-style: none;
 }
+/* No transition here on purpose. The same element carries the settle and the
+   pointer offset, and the pointer offset has to be instant, so App.jsx switches
+   the transition on and off inline (SETTLE) rather than leaving one standing. */
+.ns-row-wrap[data-dragging='true'] {
+  position: relative;
+  z-index: 5;
+}
+
 .ns-row {
   display: flex;
   align-items: center;
@@ -266,10 +293,9 @@ body {
   background: transparent;
   color: var(--ink);
   cursor: pointer;
-  touch-action: none;
   position: relative;
   transition:
-    transform 200ms cubic-bezier(0.22, 1.4, 0.4, 1),
+    transform 200ms cubic-bezier(0.2, 0.8, 0.25, 1),
     box-shadow 200ms ease,
     background 200ms ease,
     opacity 200ms ease;
@@ -277,13 +303,16 @@ body {
 .ns-row:hover {
   background: var(--paper);
 }
+/* The prototype's pick-up: a slight scale and tilt, so a held row reads as
+   lifted off the page. It stays on the button rather than the list item
+   because the list item is carrying the translate, and the two would otherwise
+   overwrite each other. Nothing here moves the row along the list. */
 .ns-row[data-drag='true'] {
   cursor: grabbing;
-  background: var(--paper);
-  opacity: 0.96;
+  background: var(--paper-raised);
+  opacity: 0.97;
   transform: scale(1.025) rotate(-0.35deg);
   box-shadow: 0 14px 30px rgb(35 35 31 / 0.22);
-  z-index: 5;
 }
 .ns-dot {
   width: 9px;
@@ -298,14 +327,25 @@ body {
   font-size: 11.5px;
   color: var(--muted);
 }
+/* touch-action sits here rather than on the whole row. On the row it meant a
+   touch drag anywhere in the topic list refused to scroll the page, which on a
+   phone is most of the section. Only the grip starts a drag, so only the grip
+   needs to swallow the gesture. */
 .ns-grip {
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--muted);
   flex: none;
   cursor: grab;
-  padding: 6px 2px;
+  padding: 6px 4px;
+  margin: -6px -2px;
   opacity: 0.7;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ns-grip:hover {
+  opacity: 1;
 }
 .ns-grip:active {
   cursor: grabbing;

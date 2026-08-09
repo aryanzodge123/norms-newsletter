@@ -58,7 +58,6 @@ Sanity check before you touch anything:
 
 ```bash
 cd landing
-npm run og      # regenerates og.png and apple-touch-icon.png
 npm run build   # writes dist/
 ls dist/index.html dist/og.png dist/favicon.svg dist/apple-touch-icon.png
 ```
@@ -329,10 +328,10 @@ curl -sI http://norm.news | head -1
 Then check the two things a terminal cannot show you:
 
 - **The shared-link card.** Paste `https://norm.news` into
-  [opengraph.xyz](https://www.opengraph.xyz/). You should see the mug, the
-  tracked `NORM'S NEWSLETTER` wordmark, the double rule and "Read less. Miss
-  nothing." If the fonts look like a generic serif, the card was rendered
-  wrongly; re-run `npm run og` and redeploy.
+  [opengraph.xyz](https://www.opengraph.xyz/). You should see the mug beside
+  the word `Norm` on warm grey. If you see an older card instead, the platform
+  is serving a cached copy: bump the `?v=` number on the `og:image` and
+  `twitter:image` tags in `index.html` and redeploy.
 - **The real thing.** Send the link to yourself in whatever chat app you use and
   look at the preview. This is what everyone who ever receives the link sees.
 
@@ -474,6 +473,12 @@ up there plainly.
 
 ## Deploying a change later
 
+> **Once the setup above is done, `RUNBOOK.md` in this directory takes over.**
+> It covers shipping changes, the weekly and monthly checks, reading and looking
+> after the waiting list, rolling back a bad deploy, and the one failure mode
+> that is invisible from the outside: the form reports success to the visitor
+> even when the confirmation email did not send. The short version is below.
+
 ```bash
 cd landing
 npm run build
@@ -487,9 +492,10 @@ database and secret are all set up once and are not touched again.
 Keep `--branch main`: drop it and the deploy silently becomes a preview, leaving
 `norm.news` on the previous version with nothing obviously wrong.
 
-Only run `npm run og` if you changed the card itself. It writes two PNGs into
-`public/` that are committed to git, so it is not part of `npm run build` and
-does not need to run on every deploy.
+`npm run icon` only rebuilds `public/apple-touch-icon.png`, which is committed
+to git, so it is not part of `npm run build` and almost never needs to run. The
+shared-link card `public/og.png` is a supplied image and is not generated at
+all.
 
 Useful afterwards:
 

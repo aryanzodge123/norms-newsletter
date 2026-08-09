@@ -11,8 +11,8 @@
     <link rel="canonical" href="https://norm.news/" />
 
     <!-- The mug is the site's brand glyph (DESIGN.md section 10), copied from
-         site/public rather than redrawn. og.png and apple-touch-icon.png come
-         from `npm run og`. -->
+         site/public rather than redrawn. apple-touch-icon.png comes from
+         `npm run icon`; og.png is a supplied image and is not generated. -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -30,11 +30,22 @@
       content="A paper, printed for one. Built to be finished: no feed, no infinite scroll."
     />
     <meta property="og:url" content="https://norm.news/" />
-    <meta property="og:image" content="https://norm.news/og.png" />
+    <!-- ?v= is a cache buster, not a file. Facebook, LinkedIn and Twitter key
+         their scraped copy of the card on the URL, so replacing the bytes at
+         the same path leaves the old picture in circulation for a long time.
+         Bump this whenever public/og.png changes. -->
+    <meta property="og:image" content="https://norm.news/og.png?v=2" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://norm.news/og.png" />
+    <meta name="twitter:title" content="Norm's Newsletter · Read less. Miss nothing." />
+    <meta
+      name="twitter:description"
+      content="A paper, printed for one. Built to be finished: no feed, no infinite scroll."
+    />
+    <meta name="twitter:image" content="https://norm.news/og.png?v=2" />
+    <meta name="twitter:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
