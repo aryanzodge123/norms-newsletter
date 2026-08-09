@@ -160,9 +160,10 @@ endpoint, and set up its local database once with
 npx wrangler d1 execute norm-waitlist --local --file=schema.sql
 ```
 
-`DEPLOY.md` in this directory is the start-to-finish guide for `norm.news`:
-the DNS move, the Cloudflare Pages setup, the waiting list's Resend and D1
-setup, and the one-command loop for shipping a change afterwards.
+`DEPLOY.md` in this directory is the one-time setup for `norm.news`: the DNS
+move, the Cloudflare Pages setup, and the waiting list's Resend and D1 setup.
+`RUNBOOK.md` is the recurring half: shipping a change, the weekly and monthly
+checks, looking after the list, and what to do when mail stops going out.
 
 `public/view.html` is a development harness, not a page: it frames the site at
 1440, 900 and 390 side by side so responsive behavior can be checked in one

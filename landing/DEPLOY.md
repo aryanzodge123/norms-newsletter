@@ -473,6 +473,12 @@ up there plainly.
 
 ## Deploying a change later
 
+> **Once the setup above is done, `RUNBOOK.md` in this directory takes over.**
+> It covers shipping changes, the weekly and monthly checks, reading and looking
+> after the waiting list, rolling back a bad deploy, and the one failure mode
+> that is invisible from the outside: the form reports success to the visitor
+> even when the confirmation email did not send. The short version is below.
+
 ```bash
 cd landing
 npm run build
