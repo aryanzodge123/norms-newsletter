@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "landing/src/index.css"
+        ],
+        "createdAt": "2026-08-09T18:43:15.889Z",
+        "reason": "Delivery dial fill: absolutely positioned 2px bar, out of flow, width transition is synchronised with .ns-dial-mark's left transition so the fill tracks the dragged handle. User confirmed intentional."
+      }
+    ]
+  }
+}
