@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "dev:api": "vite build && wrangler pages dev dist",
-    "og": "node scripts/build-og.mjs",
+    "icon": "node scripts/build-og.mjs",
     "waitlist": "node scripts/waitlist.mjs"
   },
   "devDependencies": {

@@ -3,6 +3,17 @@ import React, { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } f
 const REDUCED =
   typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
+/* The topic list's settle. Applied inline rather than from a class, because the
+   same element also carries the pointer offset during a drag and that one has
+   to be instant. Owning the transition in JS is what keeps the two apart.
+   No control point above 1: a reorder should travel and stop, not bounce. */
+const SETTLE = 'transform 260ms cubic-bezier(0.2, 0.8, 0.25, 1)'
+
+/* How far past a slot boundary a dragged row has to be before the order
+   changes, in pixels. Rows are about 70px, so this is a 16px band a hand can
+   rest in without the list twitching. */
+const DEAD_BAND = 8
+
 /* ------------------------------------------------------------------ hooks */
 
 function useReveal(delay = 0) {
@@ -115,7 +126,27 @@ function Hero() {
           </p>
 
           <div className="impress mt-10" style={{ animationDelay: '780ms' }}>
-            <a href="#build" className="btn-oxide inline-block px-8 py-3.5 text-[15px]">
+            {/* The href stays, so this is still a real link for right-click,
+                middle-click and a page whose JS has not run. The click path is
+                intercepted only to keep the address bar at the bare origin:
+                the default would leave /#build behind, which is a URL nobody
+                should be sharing. */}
+            <a
+              href="#build"
+              onClick={(e) => {
+                e.preventDefault()
+                const target = document.getElementById('build')
+                if (!target) return
+                target.scrollIntoView({
+                  behavior: REDUCED ? 'auto' : 'smooth',
+                  block: 'start',
+                })
+                // Without this the page moves and the keyboard does not, so
+                // the next Tab resumes back at the hero.
+                target.focus({ preventScroll: true })
+              }}
+              className="btn-oxide inline-block px-8 py-3.5 text-[15px]"
+            >
               Stay in the Loop
             </a>
             <p className="eyebrow mt-4">
@@ -470,6 +501,11 @@ function TopicStudio() {
   const listRef = useRef(null)
   const positions = useRef(new Map())
   const overlayRef = useRef(null)
+  // Live drag state: the row's node, where the pointer grabbed it, and the slot
+  // geometry measured at that moment. A ref rather than state because a
+  // pointermove has to move the row without re-rendering the list. `dragId`
+  // state exists only so the lift styling can render.
+  const drag = useRef(null)
 
   const pcts = useMemo(() => shares(sel, wt), [sel, wt])
   const rows = sel.map((id, i) => ({
@@ -484,24 +520,43 @@ function TopicStudio() {
   const rest = NS_TOPICS.filter((t) => !sel.includes(t.id))
   const lead = rows[0]
 
-  // FLIP, so a reorder travels instead of jumping.
+  /* FLIP, so a displaced row travels instead of jumping. Runs on `sel` alone:
+     that is the only thing that moves a row, since a weight change rewrites the
+     percentage and the band label but not the geometry. It used to run on every
+     render, which meant re-measuring all five rows on every pointermove. */
   useLayoutEffect(() => {
     const el = listRef.current
-    if (!el || REDUCED) return
-    el.querySelectorAll('[data-nsid]').forEach((row) => {
-      const now = row.getBoundingClientRect().top
-      const was = positions.current.get(row.dataset.nsid)
-      if (was !== undefined && Math.abs(was - now) > 0.5) {
-        row.style.transition = 'none'
-        row.style.transform = `translateY(${was - now}px)`
-        requestAnimationFrame(() => {
-          row.style.transition = ''
-          row.style.transform = ''
-        })
-      }
-      positions.current.set(row.dataset.nsid, now)
+    if (!el) return
+    // Forget rows that are no longer in the paper. A removed topic that gets
+    // added back would otherwise animate from wherever it used to sit, which
+    // by then is somewhere else entirely.
+    positions.current.forEach((_, id) => {
+      if (!sel.includes(id)) positions.current.delete(id)
     })
-  })
+    el.querySelectorAll('[data-nsid]').forEach((row) => {
+      const id = row.dataset.nsid
+      // offsetTop, not getBoundingClientRect().top. It reports the laid-out
+      // position and ignores the transforms this effect is itself applying, so
+      // reordering again mid-settle still measures from the right place.
+      const now = row.offsetTop
+      const was = positions.current.get(id)
+      positions.current.set(id, now)
+
+      if (REDUCED || was === undefined || Math.abs(was - now) < 0.5) return
+      // The dragged row is held by the pointer. Its record is updated above so
+      // the drop lands correctly, but its transform is not ours to touch.
+      if (drag.current?.id === id) return
+
+      // Invert: put it back where it was, with no transition.
+      row.style.transition = 'none'
+      row.style.transform = `translateY(${was - now}px)`
+      // Play: next frame, hand it to the settle and let it run home.
+      requestAnimationFrame(() => {
+        row.style.transition = SETTLE
+        row.style.transform = ''
+      })
+    })
+  }, [sel])
 
   useEffect(() => {
     if (!editing && !adding) return
@@ -533,29 +588,106 @@ function TopicStudio() {
     setEditing(id)
   }
 
-  /* Drag to reorder: hit-test the row under the pointer, as the prototype does. */
+  /* ---- drag to reorder --------------------------------------------------
+     The row follows the pointer directly, and the rows it displaces are moved
+     by the FLIP above. Both write to the same `<li>`, never to the button
+     inside it, so the lift and the movement cannot fight each other. */
+
   const dragDown = (id) => (e) => {
+    if (e.button > 0) return
+    const nodes = [...(listRef.current?.querySelectorAll('[data-nsid]') ?? [])]
+    const node = nodes.find((n) => n.dataset.nsid === id)
+    if (!node) return
+
+    // Land any settle still in flight before measuring. Taking slot centres
+    // from rows that are halfway through travelling puts every swap point in
+    // the wrong place for the rest of the drag.
+    nodes.forEach((n) => {
+      n.style.transition = 'none'
+      n.style.transform = ''
+    })
+    const slots = nodes.map((n) => {
+      const r = n.getBoundingClientRect()
+      return { top: r.top, height: r.height }
+    })
+    nodes.forEach((n) => {
+      if (n !== node) n.style.transition = ''
+    })
+
+    // Stops the drag selecting the row's text on the way past.
+    e.preventDefault()
     e.currentTarget.setPointerCapture?.(e.pointerId)
+    drag.current = { id, node, slots, startY: e.clientY }
+    node.dataset.dragging = 'true'
     setDragId(id)
   }
+
   const dragMove = (e) => {
-    if (!dragId) return
-    const nodes = [...listRef.current.querySelectorAll('[data-nsid]')]
-    const over = nodes.find((n) => {
-      const r = n.getBoundingClientRect()
-      return e.clientY >= r.top && e.clientY <= r.bottom
-    })
-    if (!over || over.dataset.nsid === dragId) return
+    const d = drag.current
+    if (!d) return
+
+    const from = sel.indexOf(d.id)
+    if (from < 0) return
+    if (!REDUCED) d.node.style.transform = `translateY(${e.clientY - d.startY}px)`
+
+    /* Which slot the row's own centre is now over, against the geometry
+       measured at drag start. The rebase below keeps that centre continuous
+       across a swap, so this is a plain function of the pointer and cannot
+       depend on how it got here.
+
+       The old test asked whether the pointer was anywhere inside a neighbour.
+       A swap then moved that neighbour back under the pointer, satisfying the
+       same test in reverse, which is the flicker this replaces. DEAD_BAND is
+       what stops the cheaper version of the same problem: without it, a hand
+       resting on a slot boundary would toggle on a pixel of tremor. */
+    const centre = d.slots[from].top + d.slots[from].height / 2 + (e.clientY - d.startY)
+    let to = 0
+    while (to < d.slots.length - 1 && centre >= d.slots[to + 1].top) to += 1
+    if (to === from) return
+    // Committed into the new slot, not merely touching it.
+    const slot = d.slots[to]
+    if (to > from && centre < slot.top + DEAD_BAND) return
+    if (to < from && centre > slot.top + slot.height - DEAD_BAND) return
+
+    // The row is about to be laid out in a different slot while its offset is
+    // still measured from the old one, so rebase the grab point by the distance
+    // between them. Without this the row jumps out from under the pointer by
+    // one row height on every swap.
+    d.startY += d.slots[to].top - d.slots[from].top
+    if (!REDUCED) d.node.style.transform = `translateY(${e.clientY - d.startY}px)`
+
     setSel((s) => {
-      const from = s.indexOf(dragId)
-      const to = s.indexOf(over.dataset.nsid)
-      if (from < 0 || to < 0) return s
+      const i = s.indexOf(d.id)
+      if (i < 0 || i === to) return s
       const next = s.slice()
-      next.splice(to, 0, next.splice(from, 1)[0])
+      next.splice(to, 0, next.splice(i, 1)[0])
       return next
     })
   }
-  const dragUp = () => setDragId(null)
+
+  const dragUp = () => {
+    const d = drag.current
+    if (!d) return
+    drag.current = null
+    delete d.node.dataset.dragging
+    // Hand the offset to the settle so the row closes the last few pixels to
+    // its slot rather than snapping into it.
+    d.node.style.transition = REDUCED ? 'none' : SETTLE
+    d.node.style.transform = ''
+    setDragId(null)
+  }
+
+  // Pointer capture already delivers the release to the grip, so this is only
+  // the case where capture was never granted or was broken by the browser.
+  useEffect(() => {
+    if (!dragId) return
+    addEventListener('pointerup', dragUp)
+    addEventListener('pointercancel', dragUp)
+    return () => {
+      removeEventListener('pointerup', dragUp)
+      removeEventListener('pointercancel', dragUp)
+    }
+  }, [dragId])
 
   const focus = editing ? { ...rows.find((r) => r.id === editing), band: nsBand(wt[editing]) } : null
 
@@ -656,7 +788,16 @@ function TopicStudio() {
               <h4 className="ns-head" style={{ margin: '24px 0 2px' }}>
                 In your paper
               </h4>
-              <ol ref={listRef}>
+              {/* One set of pointer handlers for the list rather than one per
+                  row. Capture is taken on the grip, so every move and release
+                  during a drag arrives here by bubbling whatever it passes
+                  over. */}
+              <ol
+                ref={listRef}
+                onPointerMove={dragMove}
+                onPointerUp={dragUp}
+                onPointerCancel={dragUp}
+              >
                 {rows.map((r) => (
                   <li key={r.id} data-nsid={r.id} className="ns-row-wrap">
                     <button
@@ -664,9 +805,6 @@ function TopicStudio() {
                       className="ns-row"
                       data-drag={dragId === r.id}
                       onClick={() => setEditing(r.id)}
-                      onPointerMove={dragMove}
-                      onPointerUp={dragUp}
-                      onPointerCancel={dragUp}
                       aria-label={`${r.name}, ${r.w} of 10, ${r.band}, ${r.pct}%`}
                     >
                       <span className="flex min-w-0 flex-1 flex-col gap-[3px]">
@@ -1376,7 +1514,9 @@ function Build() {
   }
 
   return (
-    <section id="build" className="pad-x py-24">
+    /* tabIndex -1 so the hero CTA can move focus here after it scrolls. It is
+       not in the tab order; it is only a place focus can be put. */
+    <section id="build" tabIndex={-1} className="pad-x py-24">
       {/* The copy column holds a 520px form, so it takes the wider basis and
           the mug wraps under it rather than squeezing the field and button
           apart. */}
@@ -1437,8 +1577,8 @@ function Build() {
                       {/* The label swaps, so the button carries a min-width to
                           stop the shorter word pulling the field beside it
                           wider mid-request. Measured from the idle label. */}
-                      <span className="block min-w-[9.5rem]">
-                        {sending ? 'Sending' : 'Secure Early Access'}
+                      <span className="block min-w-[8.5rem]">
+                        {sending ? 'Sending' : 'Keep Me Informed'}
                       </span>
                     </button>
                   </div>
@@ -1474,14 +1614,42 @@ function Build() {
   )
 }
 
+/* The page collects email addresses, so the footer has to say who is collecting
+   them and what happens to them. Every claim below is one the page or the
+   confirmation mail already makes elsewhere: the use limitation restates the
+   form's own note, and removal by reply is what functions/api/subscribe.js
+   sends in its footer and its List-Unsubscribe header.
+
+   What is deliberately absent is a retention period. PROPOSED-SPEC.md question
+   2 records that there is not one yet, and a footer is not the place to invent
+   policy. That is the line this footer still owes. */
 function Footer() {
   return (
     <footer className="pad-x pb-16">
       <div className="mx-auto max-w-[1140px]">
         <hr className="rule-double" />
-        <div className="flex flex-wrap items-end justify-between gap-6 pt-6">
+
+        <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3 pt-6">
           <p className="display text-[22px]">Norm&rsquo;s Newsletter</p>
-          <p className="eyebrow">Est. 2025 &middot; set nightly at 6:00 am ET</p>
+          <p className="eyebrow">
+            Built by Aryan Zodge &middot;{' '}
+            <a href="mailto:norm@norm.news" className="footer-link">
+              norm@norm.news
+            </a>
+          </p>
+        </div>
+
+        <div className="mt-5 flex flex-wrap items-start justify-between gap-x-8 gap-y-3">
+          <p className="max-w-[62ch] text-[13px] leading-[1.65] text-[var(--muted)]">
+            Your email address is used only to tell you how Norm&rsquo;s Newsletter is coming along
+            and when it opens. It is never sold, shared, or used to advertise anything. Reply to any
+            message with the word <span className="font-medium text-[var(--ink-soft)]">off</span> and
+            you are removed.
+          </p>
+          {/* No shrink-0 here. The line is 45 characters of letter-spaced mono,
+              which is wider than a phone gutter allows, and holding it rigid is
+              the one thing on the page that made the body scroll sideways. */}
+          <p className="eyebrow">&copy; 2026 &middot; Est. 2025 &middot; set nightly at 6:00 am ET</p>
         </div>
       </div>
     </footer>

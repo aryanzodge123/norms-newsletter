@@ -232,19 +232,36 @@ Norm
 // DESIGN.md section 3. The card in scripts/build-og.mjs uses the same four.
 const PAPER = '#f6f4ee'
 const INK = '#23231f'
+const INK_SOFT = '#44433c'
 const MUTED = '#6b6a62'
 const OXIDE = '#3f6a50'
 
+// The hero paragraph's stack. Newsreader is not loadable in mail, so this falls
+// to Georgia, which is the closest thing installed everywhere.
+const SERIF = "Newsreader,Georgia,'Times New Roman',serif"
+
 /** Table layout and inline styles throughout, because that is the only thing
- *  every mail client agrees on. Newsreader is not loadable in mail, so the
- *  stack falls to Georgia, which is the closest thing installed everywhere.
+ *  every mail client agrees on.
+ *
+ *  The body is set to match the hero paragraph on the landing page: the same
+ *  serif, 19px on 1.62, in --ink-soft, opening on an oxide drop cap. The
+ *  content table is 520px, which at that size lands near the hero's own 47ch
+ *  measure. This mail is the first thing a subscriber sees after the page, so
+ *  it should read as the same publication rather than as a receipt.
  *
  *  The mug is served from the deployed site rather than embedded, so it is one
  *  file with the favicon and the shared-link card rather than a third copy.
  *  Mail clients that block images show the alt text and lose nothing else, and
  *  so does an unset origin. */
 function html(origin) {
-  const p = `margin:0 0 18px;font-size:16px;line-height:1.62;color:${INK}`
+  const p = `margin:0 0 20px;font-family:${SERIF};font-size:19px;line-height:1.62;color:${INK_SOFT}`
+
+  /* index.css uses ::first-letter for this, which is not available here: there
+     is no <style> block to put it in and Gmail strips the rule anyway. A
+     floated span is the one form of it that survives. Outlook's Word engine
+     ignores float on an inline span, so there it degrades to an oversized first
+     letter sitting on the line, which is a fair reading of the same idea. */
+  const cap = `float:left;font-family:${SERIF};font-weight:500;font-size:3.4em;line-height:0.82;padding:0.06em 0.1em 0 0;color:${OXIDE}`
   const mug = origin
     ? `<tr><td style="padding-bottom:22px">
 <img src="${origin}/apple-touch-icon.png" width="44" height="44" alt="Norm's Newsletter" style="display:block;border:0;width:44px;height:44px">
@@ -266,15 +283,15 @@ ${mug}
 <tr><td style="height:1px;background:${INK};font-size:0;line-height:0">&nbsp;</td></tr>
 
 <tr><td style="padding-top:34px">
-<h1 style="margin:0 0 24px;font-family:Newsreader,Georgia,'Times New Roman',serif;font-weight:500;font-size:30px;line-height:1.15;letter-spacing:-0.012em;color:${INK}">You are on the list.</h1>
+<h1 style="margin:0 0 24px;font-family:${SERIF};font-weight:500;font-size:30px;line-height:1.15;letter-spacing:-0.012em;color:${INK}">You are on the list.</h1>
 
-<p style="${p}">Thank you. We are grateful you are here, and glad to have you along for this part of it.</p>
+<p style="${p}"><span style="${cap}">T</span>hank you. We are grateful you are here, and glad to have you along for this part of it.</p>
 
 <p style="${p}">Norm&rsquo;s Newsletter is being built to do one thing well. It gives you the day&rsquo;s news in plain English, and then it ends. No feed, no infinite scroll, and no reason to keep going once you have finished.</p>
 
 <p style="${p}">Here is what happens next: not much, for a while. We will not fill your inbox. You will hear from us when something real changes, and again on the day the app opens. That is the whole promise.</p>
 
-<p style="margin:0;font-family:Newsreader,Georgia,'Times New Roman',serif;font-size:20px;line-height:1.4;color:${OXIDE}">Norm</p>
+<p style="margin:0;font-family:${SERIF};font-size:20px;line-height:1.4;color:${OXIDE}">Norm</p>
 </td></tr>
 
 <tr><td style="padding-top:38px">
