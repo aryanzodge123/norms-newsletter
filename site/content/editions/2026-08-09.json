@@ -1,0 +1,265 @@
+{
+  "date": "2026-08-09",
+  "edition_number": 63,
+  "edition_type": "normal",
+  "headline_of_the_day": "Senate confirms Todd Blanche as attorney general despite Trump ties concerns.",
+  "headline_cluster_id": null,
+  "headline_rationale": "A cabinet confirmation directly affecting how federal law enforcement will be administered nationwide, with significant constitutional implications for executive control.",
+  "key_points": [
+    {
+      "text": "The Senate confirmed Todd Blanche as US attorney general. He was Trump's personal attorney.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "A wallet flaw led to theft of 2,055 Bitcoin, worth roughly $130 million.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Illinois requires device makers to verify children's ages at the system level statewide.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Flesh-eating screwworm cases in Mexico have topped 500 since the parasite's 2024 reinvasion of the country.",
+      "topic": "Science"
+    },
+    {
+      "text": "Wildfires forced 20,000 evacuations in British Columbia as the province declared a state of emergency.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-09.mp3",
+    "duration_seconds": 380,
+    "size_bytes": 4557888
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "5eb3b0c3ece5b8dc930ebe3202e3ac3d",
+          "slug": "british-columbia-declares-emergency-as-wildfires-force-20",
+          "title": "British Columbia declares emergency as wildfires force 20,000 to evacuate",
+          "summary": "Fast wildfires forced 20,000 evacuations and a state of emergency in British Columbia.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/wildfires-force-20000-to-flee-as-british-columbia-declares-state-of-emergency"
+            }
+          ],
+          "article": {
+            "background": "British Columbia is a province in western Canada. It faces wildfires during warm months. On Saturday, fast-moving fires forced 20,000 people to flee communities along Okanagan Lake.",
+            "what_happened": "British Columbia declared a state of emergency as more than 100 wildfires burned across the province. The fires destroyed homes and trapped residents. Premier David Eby announced the emergency to unlock extra resources and funding.",
+            "why_it_matters": "When a region declares a state of emergency, it gets additional help to fight fires and aid displaced residents. For the 20,000 evacuated people, this means temporary shelter and support while they are away from their homes. The declaration also speeds up the response to contain the fires.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f7eb0140fe485dfd0ff7e677d2c8c3d2",
+          "slug": "thailand-school-shooting-death-toll-rises-to-nine",
+          "title": "Thailand school shooting death toll rises to nine",
+          "summary": "A 12-year-old girl wounded in Friday's attack died in hospital, police say.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/09/thailand-school-shooting-toll-rises-to-nine-after-12-year-old-dies-police-say"
+            }
+          ],
+          "article": {
+            "background": "A 14-year-old student killed his grandparents at home on Friday. He then went to Debsirin School in Nonthaburi, near Bangkok, where he was a student. He opened fire at the school, killing five teachers and wounding more than 30 people. He then took his own life. Thailand's prime minister has already vowed to introduce stricter gun laws in response.",
+            "what_happened": "The death toll rose to nine on Saturday. A 12-year-old girl who was shot on Friday died from her injuries at the hospital. She had been in critical condition since the shooting. Fourteen people remained hospitalized on Saturday, with seven in critical condition.",
+            "why_it_matters": "School shootings are rare in Thailand, and this incident has pushed the government to act on gun control. New laws could make it harder to access firearms in the country. For now, this remains an active investigation, but it signals the government's intent to prevent similar attacks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c444161a7c9c60306d4976af4707263b",
+          "slug": "china-surpasses-us-to-lead-global-research-and-development",
+          "title": "China surpasses US to lead global research and development spending at $615 billion",
+          "summary": "China spent more on research than the United States in 2024.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://asia.nikkei.com/business/science/china-overtakes-us-to-lead-global-r-d-spending-hitting-615bn"
+            }
+          ],
+          "article": {
+            "background": "Research and development, or R&D, is spending by companies and universities on creating new products and technologies. China has been investing heavily in computer chips and electronics for years. The U.S. has long led the world in R&D spending by companies and universities.",
+            "what_happened": "China has surpassed the U.S. as the world's top spender on R&D. New data from Japan shows China spent $615 billion in 2024. Much of this came from corporate investment in computers and electronics.",
+            "why_it_matters": "China is using R&D spending to build its own tech and reduce reliance on American exports. The U.S. has restricted China's access to advanced chips. This shift could reshape global supply chains for electronics and semiconductors.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "39837dcea903348eb714a785a11146eb",
+          "slug": "illinois-requires-operating-systems-to-verify-children-s",
+          "title": "Illinois requires operating systems to verify children's ages at device level",
+          "summary": "Illinois law now requires device makers to check children's ages on their devices.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://itsfoss.com/news/illinois-age-verification-bill"
+            }
+          ],
+          "article": {
+            "background": "Illinois has passed a new law about how tech companies verify users' ages online. Governor JB Pritzker signed HB5511, the Children's Online Social Media Safety Act. The law applies to device makers, operating system providers, and app stores. These companies are called \"covered manufacturers\" under the law.",
+            "what_happened": "By January 1, 2028, these manufacturers must add an age check at account setup. Parents or account holders will enter the child's birth date. The system converts that into one of four age brackets: under 13, 13 to 15, 16 to 17, or 18 and up.",
+            "why_it_matters": "This affects anyone in Illinois who buys a device or opens an account there. Tech companies will now collect age data as part of normal setup. The framework could later shape what content is shown based on age.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d523556d315af95faeba9790700b12d2",
+          "slug": "amazon-data-center-power-plant-permitted-to-emit-more",
+          "title": "Amazon data center power plant permitted to emit more carbon than any US facility",
+          "summary": "The planned Texas natural gas plant would release 33 million tons of carbon dioxide yearly.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s"
+            }
+          ],
+          "article": {
+            "background": "Data centers are large facilities that store and process digital information. They need constant power to run. Amazon is building a new data center in Pecos County, Texas.",
+            "what_happened": "Amazon will power the facility with an on-site natural gas power plant. The plant is permitted to release 33 million tons of carbon dioxide per year. No other power plant in the U.S. releases that much.",
+            "why_it_matters": "This single facility would produce more greenhouse gases than any other power plant in the country. It raises questions about whether this way of powering data centers can work long-term. As more companies build data centers for artificial intelligence and cloud computing, their power needs will only grow.",
+            "quote": {
+              "text": "be powered by new on-site generation that won't raise electricity costs for Texas families",
+              "attribution": "Amazon spokesperson",
+              "source_url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s"
+            }
+          }
+        },
+        {
+          "cluster_id": "a5873f6310e7064e224a3e8f3ab17c91",
+          "slug": "federal-plan-proposes-deep-water-cuts-for-arizona",
+          "title": "Federal plan proposes deep water cuts for Arizona, California, and Nevada",
+          "summary": "A plan would cut Colorado River water during dry years, affecting one in ten Americans.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcnews.com/science/environment/proposal-cut-colorado-river-water-arizona-california-nevada-rcna590285"
+            }
+          ],
+          "article": {
+            "background": "The Colorado River provides water to one in 10 Americans. It irrigates land that produces 15% of U.S. food output. It also generates power for 6 million people across seven states. Seven states rely on it: Colorado, New Mexico, Utah, Wyoming, Arizona, California and Nevada. These states failed to agree on how to share the river after over three years of talks. Their current plan expires this year.",
+            "what_happened": "The U.S. government released a new proposal on Friday. It would cut water supplies for Arizona, California and Nevada during dry years. The plan aims to manage the drought-stricken Colorado River. States may challenge this federal intervention through lawsuits.",
+            "why_it_matters": "These cuts could reshape water for millions of people and billions of dollars in Southwest farming. If states sue, years more uncertainty could follow. Most Americans rely on this river without knowing it, through the food they eat and the power they use.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "1b6eea8074bc8e6e43daabbd328e2323",
+          "slug": "coldcard-hardware-wallet-flaw-leads-to-theft-of-130-million",
+          "title": "Coldcard hardware wallet flaw leads to theft of $130 million in Bitcoin",
+          "summary": "A firmware flaw may have let attackers steal from thousands of cryptocurrency wallets.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.web3isgoinggreat.com?id=coldcard-hardware-wallet-flaw"
+            }
+          ],
+          "article": {
+            "background": "Coldcard is a hardware wallet, a physical device that stores Bitcoin offline. This keeps the private keys (the codes needed to unlock wallets) away from the internet. Norm covered this story on August 3, when researchers found a flaw in Coldcard's firmware. The flaw broke how the device generated seed phrases, the word lists that unlock wallets. Normally, these devices protect users from hacking because they stay offline.",
+            "what_happened": "An estimated 2,055 Bitcoin, worth roughly $130 million, has been stolen following the discovery of the Coldcard firmware flaw. The first wave of attacks drained 594 Bitcoin ($38 million) from about 500 wallets in a 41-minute window. Those early attacks only hit wallets holding 0.15 Bitcoin ($9,500) or more, suggesting attackers hunted for higher-value targets. At least 15 separate groups have since exploited the same flaw to steal from vulnerable wallets.",
+            "why_it_matters": "Hardware wallets appeal to people managing large amounts of Bitcoin and those who care deeply about security. A single flaw in a widely used tool can harm many people at once. The attacks show that even offline storage does not guarantee safety if the device itself has a problem that lets attackers unlock the seed phrases.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bea731db07e8756d738260e965d14eeb",
+          "slug": "meta-s-muse-code-sends-user-instructions-to-company-servers",
+          "title": "Meta's Muse Code sends user instructions to company servers without asking permission",
+          "summary": "The development tool copies personal coding rules and sends them to Meta by default.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://runtimewire.com/article/exclusive-muse-code-sends-codex-and-claude-instructions-to-meta-by-default"
+            }
+          ],
+          "article": {
+            "background": "Muse Code is Meta's coding tool. It uses AI to help write and edit code. Codex files are personal instruction files where users store custom rules and preferences. By default, Muse reads these files and sends them to Meta when it makes its first request.",
+            "what_happened": "RuntimeWire found that Muse sends the complete contents of a user's Codex files to Meta without asking first. It includes files stored outside the selected workspace. Muse's startup message says it is \"Including your Codex personal rules.\" Users can stop this by using a command-line flag called --no-foreign-personal-context or by changing /settings.",
+            "why_it_matters": "If your Codex files hold sensitive information, passwords, or private instructions, those details go to Meta's servers without your permission. You should review what is in your Codex files. Then decide if you want to use Muse, turn off this behavior, or remove sensitive material from those files.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "af8b71e12231d197191ece9513ce370b",
+      "title": "GOP-controlled Senate delivers win for Trump with Blanche confirmation",
+      "url": "https://www.npr.org/2026/08/08/nx-s1-5925869/gop-controlled-senate-delivers-win-for-trump-with-blanche-confirmation",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "485e70716cc9a6672aca34e59d27cfaf",
+      "title": "Flesh-eating screwworms feast on humans in Mexico; human cases top 500",
+      "url": "https://arstechnica.com/health/2026/08/flesh-eating-screwworms-feast-on-humans-in-mexico-human-cases-top-500",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "13fc67825625266f9db3c445d9e74664",
+      "title": "SpaceX Earnings Reveal X's Shrinking Ad Biz",
+      "url": "https://www.mediapost.com/publications/article/417046/spacex-q2-earnings-show-xs-shrunken-ad-biz.html",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "560ae99e9ed16aec4590d20b96e02642",
+      "title": "Signal can easily work across multiple Android devices and iPhones now",
+      "url": "https://www.theverge.com/tech/975407/signal-linked-devices-sync",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "0875e09efc56f913695e87f00b6685ef",
+      "title": "Utah wildfire blocks rescuers from reaching firefighting helicopter crash site",
+      "url": "https://www.theguardian.com/us-news/2026/aug/08/utah-helicopter-crash-wildfire",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a8ff5532f89e713ce9cf069679c5f220",
+      "title": "Fast-moving Canada wildfire doubles in size forcing thousands to flee homes",
+      "url": "https://www.bbc.co.uk/news/articles/cx25dkwk3e3o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "69757e85eecd4a09910a35be8eadd1fc",
+      "title": "‘Not enough air traffic controllers’: safety concerns at Sydney airport after Jetstar and Qatar planes involved in near-miss",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/09/sydney-airport-jetstar-qatar-airways-planes-collision-near-miss-air-traffic-controllers-safety-chris-minns",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0ac0301cb017a4e902b0fa2594718de5",
+      "title": "Plastics contamination an ‘overlooked’ concern in food waste schemes, experts say",
+      "url": "https://www.theguardian.com/environment/2026/aug/09/plastics-pollution-food-waste-landfill-recycling-research",
+      "topic": "Science"
+    }
+  ],
+  "stats": {
+    "items_ingested": 120,
+    "clusters_considered": 103,
+    "stories_run": 8,
+    "sources": 12,
+    "sections_held": 1
+  }
+}
