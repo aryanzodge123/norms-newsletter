@@ -120,6 +120,14 @@ been satisfied for it. It being live is the reason to read
 `landing/README.md` before touching it: the page makes claims the spec does
 not carry, and the README lists them, along with what is ported from
 `prototypes/` rather than designed.
+It also **holds the only personal data in the project**: its waiting list is a
+Cloudflare D1 table of email addresses, which is neither Postgres nor the lake
+and so sits outside decision #36's enumeration. Deletion is still one
+statement, which is what #36 actually guarantees, but the table has no spec
+section and no retention period. `landing/PROPOSED-SPEC.md` is the addition it
+owes and is the thing to read before extending it. **Nothing is broadcast to
+that list until a real unsubscribe exists**: the signup confirmation is
+transactional, a launch announcement is not.
 
 ## Data flow in one screen
 

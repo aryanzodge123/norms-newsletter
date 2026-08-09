@@ -1,0 +1,44 @@
+# Cloudflare Pages configuration for the landing page.
+#
+# The page itself is static and needs none of this. It exists for the one
+# Pages Function, functions/api/subscribe.js, which needs a database to write
+# to and an address to send from. See DEPLOY.md for the one-time setup and
+# PROPOSED-SPEC.md for what this still owes SPEC.md.
+
+name = "norm-news"
+compatibility_date = "2026-08-05"
+pages_build_output_dir = "dist"
+
+# The waiting list (schema.sql). Created once with:
+#
+#   npx wrangler d1 create norm-waitlist
+#
+# and the id it prints goes below. A D1 database id is an identifier rather
+# than a credential: it names the database and grants nothing, in the same way
+# GITHUB_OWNER in ops/trigger-worker/wrangler.toml names the repo. Reaching it
+# still needs an authenticated Cloudflare account.
+[[d1_databases]]
+binding = "DB"
+database_name = "norm-waitlist"
+database_id = "4b7546eb-b58e-464c-963d-6d4b58c1264d"
+
+[vars]
+# The sender. Replies go to a human: Cloudflare Email Routing forwards this
+# address to a real inbox, which is what makes the "reply and you are removed"
+# line in the confirmation a real removal path rather than a bounce.
+MAIL_FROM = "Norm <norm@norm.news>"
+MAIL_REPLY_TO = "norm@norm.news"
+
+# Where the confirmation loads the mug from. Mail cannot use a relative URL, so
+# this has to be absolute, and it is here rather than in subscribe.js for the
+# same reason ops/trigger-worker/wrangler.toml holds GITHUB_OWNER: a value that
+# changes with the deployment does not belong in the code that uses it. Unset
+# it and the mail simply ships without the image.
+#
+# With index.html's Open Graph tags, this is the second and last place in
+# landing/ that names the domain.
+MAIL_IMAGE_ORIGIN = "https://norm.news"
+
+# RESEND_API_KEY is NOT here. It is a secret, set with:
+#   wrangler pages secret put RESEND_API_KEY --project-name norm-news
+# A credential is never written to a file (CLAUDE.md rule 5).

@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "og": "node scripts/build-og.mjs"
+    "dev:api": "vite build && wrangler pages dev dist",
+    "og": "node scripts/build-og.mjs",
+    "waitlist": "node scripts/waitlist.mjs"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",

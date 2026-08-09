@@ -1346,7 +1346,34 @@ function NormAgent() {
 
 function Build() {
   const [email, setEmail] = useState('')
-  const [done, setDone] = useState(false)
+  // idle -> sending -> done, or sending -> error and back to idle on the next
+  // attempt. A boolean was enough while the submit did nothing.
+  const [state, setState] = useState('idle')
+  const sending = state === 'sending'
+
+  async function submit(e) {
+    e.preventDefault()
+    if (sending) return
+    setState('sending')
+
+    // The endpoint answers 200 for a duplicate and for a signup whose
+    // confirmation failed to send, because in both cases the person is on the
+    // list. Only a genuine failure to record them reaches the error branch.
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        // `company` is the honeypot, sent empty by the real form.
+        body: JSON.stringify({ email, company: '' }),
+      })
+      setState(response.ok ? 'done' : 'error')
+    } catch {
+      // Offline, or `npm run dev` on 5201, which serves the page without the
+      // Function behind it. Both land here, which is correct: nothing was
+      // recorded, so the form has to stay.
+      setState('error')
+    }
+  }
 
   return (
     <section id="build" className="pad-x py-24">
@@ -1368,14 +1395,8 @@ function Build() {
           </Reveal>
 
           <Reveal delay={100}>
-            <form
-              className="mt-10 max-w-[520px]"
-              onSubmit={(e) => {
-                e.preventDefault()
-                setDone(true)
-              }}
-            >
-              {done ? (
+            <form className="mt-10 max-w-[520px]" onSubmit={submit}>
+              {state === 'done' ? (
                 <p className="display text-[24px] text-[var(--oxide)]">
                   You are on the list. We will write when there is something to show.
                 </p>
@@ -1393,9 +1414,32 @@ function Build() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@example.com"
                       className="field flex-1"
+                      disabled={sending}
                     />
-                    <button type="submit" className="btn-oxide px-8 py-3.5 text-[15px]">
-                      Secure Early Access
+                    {/* The honeypot. Off screen rather than display:none,
+                        which is the first thing a bot checks. Kept out of the
+                        tab order and off the accessibility tree, so the only
+                        thing that ever fills it is something reading the
+                        markup. */}
+                    <input
+                      type="text"
+                      name="company"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="honeypot"
+                    />
+                    <button
+                      type="submit"
+                      className="btn-oxide px-8 py-3.5 text-[15px] disabled:opacity-60"
+                      disabled={sending}
+                    >
+                      {/* The label swaps, so the button carries a min-width to
+                          stop the shorter word pulling the field beside it
+                          wider mid-request. Measured from the idle label. */}
+                      <span className="block min-w-[9.5rem]">
+                        {sending ? 'Sending' : 'Secure Early Access'}
+                      </span>
                     </button>
                   </div>
                   {/* Set in the eyebrow's own uppercase, like the tag and the
@@ -1404,6 +1448,14 @@ function Build() {
                     One address. Zero noise. We will only email you with major milestones and system
                     release dates.
                   </p>
+                  {state === 'error' && (
+                    // Same eyebrow as the line above it, in oxide. No red and
+                    // no icon: the page has no error vocabulary and this is
+                    // not the place to invent one.
+                    <p className="eyebrow eyebrow-oxide mt-3">
+                      That did not go through. Try again, or write to norm@norm.news
+                    </p>
+                  )}
                 </>
               )}
             </form>
