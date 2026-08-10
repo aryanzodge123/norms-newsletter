@@ -1,0 +1,344 @@
+{
+  "date": "2026-08-10",
+  "edition_number": 64,
+  "edition_type": "normal",
+  "headline_of_the_day": "WordPress plugin with 5 million installs added backdoor giving developers remote access to any site",
+  "headline_cluster_id": "73bc7c5c62ff06e352b7e6a339e8d8bd",
+  "headline_rationale": "Five million websites running the plugin means millions of site owners are exposed to remote takeover by the developer, deployed three weeks ago and confirmed active.",
+  "key_points": [
+    {
+      "text": "WordPress plugin WPForms Lite, on over 5 million sites, added a backdoor letting its developer log in to any site.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "British Royal Navy drones secretly sent surveillance data to China, so the Ministry of Defence cut off their internet.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Israel rejected Trump's 15-point Gaza plan because Netanyahu says troops must stay until Hamas is fully disarmed.",
+      "topic": "World"
+    },
+    {
+      "text": "Typhoon Dolphin forced more than a million people to evacuate across eastern China as Shanghai and nearby areas got record rainfall.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-10.mp3",
+    "duration_seconds": 509,
+    "size_bytes": 6104448
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "88d5d9a3047a283e651ecfde80ddc97a",
+          "slug": "israel-rejects-trump-s-gaza-peace-plan-netanyahu-says-no",
+          "title": "Israel rejects Trump's Gaza peace plan, Netanyahu says no withdrawal without Hamas disarmament",
+          "summary": "Prime Minister Netanyahu rejected Trump's 15-point plan and said the military will not leave until Hamas is fully disarmed.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c5yw4lpe0yeo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Trump's Board of Peace released a 15-point plan last month for Gaza. It aimed for complete disarmament of Hamas and other armed groups there. Hamas said it would only give up heavy weapons if Israel stopped all attacks and left Gaza entirely.",
+            "what_happened": "Israeli Prime Minister Benjamin Netanyahu rejected the plan. He said Israeli forces will not leave Gaza until Hamas is genuinely disarmed. Hamas and Israel remain at odds over the terms, even after an initial ceasefire began in October.",
+            "why_it_matters": "This disagreement could block any lasting ceasefire or peace deal. What happens in Gaza affects millions of people living there. It also shapes how the US handles the Middle East.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5264fa81e5a7e5c5e5a3d10b23eda61e",
+          "slug": "typhoon-dolphin-forces-over-a-million-evacuations-in",
+          "title": "Typhoon Dolphin forces over a million evacuations in eastern China",
+          "summary": "Wenzhou moved 900,000 people to 1,500 shelters as the typhoon brought record rainfall to Shanghai and nearby areas.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/10/typhoon-dolphin-china-shanghai-flooding-evacuations"
+            }
+          ],
+          "article": {
+            "background": "Typhoon Dolphin is a powerful tropical storm that made landfall in eastern China. The region includes major cities like Shanghai and Wenzhou in Zhejiang province. When typhoons hit, heavy rain can cause flooding and landslides that kill people.",
+            "what_happened": "More than a million people were moved to safety by Sunday evening. Wenzhou moved more than 900,000 people and opened more than 1,500 shelters. Fujian moved 98,900 people from high-risk areas. Shanghai moved 215,600 people by Sunday evening. A weather station in Shanghai recorded its highest 24-hour rainfall in more than 150 years.",
+            "why_it_matters": "Large-scale evacuations protect people from serious injury or death during severe storms. Shanghai's record rainfall shows that the city faces real flood risk from major typhoons, which means it needs to prepare shelters and evacuation plans ahead of time.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "be85aa54379db134c25b6ebc95aa7099",
+          "slug": "evidence-shared-with-bbc-shows-south-african-special-forces",
+          "title": "Evidence shared with BBC shows South African special forces murdered top detective",
+          "summary": "Senior police detective Frans Mathipa was killed two days after he was told crucial case information would finally reach him.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cly8djwgem0o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Senior police detective Frans Mathipa worked in South Africa. He spent four months trying to get access to key information for a case. Finally, he was told it would come to him soon. But he worried the search might get him killed.",
+            "what_happened": "Two days after being told the information was coming, Mathipa's car was found overturned. He had been shot dead while driving. In August 2023, nine people were charged with his murder. Seven were members of South Africa's special forces. One was a military police officer. They deny the charges. No trial date has been set.",
+            "why_it_matters": "When members of the security forces kill a respected officer, public trust in those institutions breaks down. The case will show whether South Africa's military and police can hold their own people accountable. If they cannot, it signals that powerful institutions operate without real checks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9e67a284e87c9c262578e7566ceb551c",
+          "slug": "suspected-crime-boss-daniel-kinahan-extradited-from-dubai",
+          "title": "Suspected crime boss Daniel Kinahan extradited from Dubai, appears in Irish court",
+          "summary": "Kinahan, one of the world's most wanted people, has been charged with running a criminal group from 2015 to 2017.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c62qd5plzp6o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Daniel Kinahan is a suspected crime boss accused of leading a major drug and weapons operation. The Kinahan cartel has trafficked large amounts of drugs and firearms worldwide for more than 20 years, according to the UK's National Crime Agency. Kinahan was arrested in the United Arab Emirates in April and fought extradition back to Ireland.",
+            "what_happened": "Kinahan appeared in Dublin's Special Criminal Court on Sunday after being extradited from Dubai. He was charged with directing a criminal organization between October 2015 and April 2017. A judge remanded him in custody until October 5.",
+            "why_it_matters": "The case shows how countries work together to pursue suspects who hide overseas. When major crime figures traffic drugs and weapons across borders, law enforcement must coordinate across multiple nations to bring them to court.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "a8f0a9348ecb8559f66f8469b95a53a9",
+          "slug": "georgia-police-fire-six-employees-after-misuse-of-license",
+          "title": "Georgia police fire six employees after misuse of license plate reader system",
+          "summary": "Savannah Police Department fired four officers and two staff members after finding they searched the Flock Safety system without permission.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wtoc.com/2026/08/07/savannah-police-department-fires-6-employees-over-flock-safety-system-misuse"
+            }
+          ],
+          "article": {
+            "background": "The Savannah Police Department uses Flock Safety, a license plate reader system that tracks vehicle movements. The system is meant for real law work. In early August, a review of system use found six employees had searched it for reasons unrelated to actual cases.",
+            "what_happened": "The department fired four officers and two civilian staff members. All six had used the Flock system without proper cause. The Georgia Bureau of Investigation is now running its own criminal investigation into the misuse.",
+            "why_it_matters": "Police access to surveillance tools depends on trust that officers will use them only for real investigations. Unauthorized searches show how easy it is for such systems to be misused. This case highlights why departments need strict oversight of who can access these tools and why.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "733fd1392d6204edb7867ee722f183d0",
+          "slug": "andy-burnham-promises-crackdown-on-fake-discounts-and",
+          "title": "Andy Burnham promises crackdown on fake discounts and subscription traps to cut cost of living",
+          "summary": "The plan is expected to save shoppers 400 million pounds a year, part of broader everyday cost fixes.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/aug/09/burnham-vows-crackdown-on-rip-off-business-practices-to-ease-cost-of-living"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cly5x9qlnvjo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The cost of living has been a major concern for British households. Prime Minister Andy Burnham is now tackling business practices he says trick people into spending more money.",
+            "what_happened": "Burnham announced a crackdown on fake discounts and subscription traps. Shops will no longer be able to falsely claim products were once much pricier. Companies must make it easy to cancel subscriptions and warn customers when fees will go up.",
+            "why_it_matters": "These changes could save consumers about £400 million a year. If you shop online or use subscriptions, you will see clearer prices and escape unwanted charges more easily. The rules take aim at hidden costs that add up in everyday life.",
+            "quote": {
+              "text": "We won't be able to solve every frustration overnight. But where the government can save people money, remove an unnecessary obstacle or simplify something, we will.",
+              "attribution": "Andy Burnham, Prime Minister",
+              "source_url": "https://www.theguardian.com/business/2026/aug/09/burnham-vows-crackdown-on-rip-off-business-practices-to-ease-cost-of-living"
+            }
+          }
+        },
+        {
+          "cluster_id": "fcb18f897dca0c053095de93cb9bb5b1",
+          "slug": "irish-high-court-president-warns-lawyers-using-ai-face",
+          "title": "Irish High Court president warns lawyers using AI face sanctions for fake citations",
+          "summary": "Lawyers who use AI and cite false sources could be referred to their regulator or made to pay court costs.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.irishtimes.com/crime-law/2026/08/05/lawyers-could-face-sanctions-including-costs-if-ai-leads-to-fake-citations-in-court-cases"
+            }
+          ],
+          "article": {
+            "background": "Generative AI tools, like ChatGPT, can write text on command. Lawyers are starting to use them to draft documents and find legal sources. The tools work fast and can cut costs. But they have a real problem: they sometimes make up facts that sound true.",
+            "what_happened": "David Barniville, president of Ireland's High Court, issued new rules on AI use in court. He warned that lawyers who cite fake sources created by AI will face punishment. Lawyers could be sent to their professional regulator or forced to pay the other side's legal bills.",
+            "why_it_matters": "If your lawyer uses AI to research your case, fake citations could hurt your chances of winning. The court wants lawyers to be honest about what AI they used and to check its work by hand. This means your lawyer will need to verify any sources the AI suggests before filing them in court.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "5b016fe77b1434ae7d43d49e940e1b50",
+          "slug": "world-s-seas-hit-hottest-temperature-on-record-for-july",
+          "title": "World's seas hit hottest temperature on record for July, scientists confirm",
+          "summary": "Ocean surface temperatures outside polar regions hit a record high in July, beating the previous record from 2023.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/aug/10/global-seas-hottest-temperature-july-scientists"
+            }
+          ],
+          "article": {
+            "background": "Ocean temperatures outside polar regions have been rising. The EU's Copernicus climate service tracks these global sea temperatures. In July, the seas hit their hottest point ever recorded for that month.",
+            "what_happened": "Average sea surface temperatures outside the cold polar regions reached their highest July level on record. The Atlantic coast and western Mediterranean saw the worst heat. These zones hit higher temperatures than they had in July 2023, the prior record.",
+            "why_it_matters": "Warmer seas affect the fish people eat and the weather patterns that shape daily life. Marine heatwaves can harm fishing and tourism. This trend matters because July 2024 broke a record set just one year prior, showing how fast ocean heat is rising.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3f9d260980600228d70ee8996510aa49",
+          "slug": "uk-could-reach-36c-this-week-as-fifth-heatwave-of-summer",
+          "title": "UK could reach 36C this week as fifth heatwave of summer looms",
+          "summary": "Forecasters may issue rare amber or red heat warnings as extreme heat could damage railways and power systems.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/uk-news/2026/aug/10/uk-temperatures-heatwave-summer-met-office-warning"
+            }
+          ],
+          "article": {
+            "background": "The UK is experiencing unprecedented heat this summer. The country has already had four heatwaves since June. Now forecasters say a fifth one is coming this week, with temperatures potentially reaching 36C (97F). The Met Office, the UK's national weather service, is considering issuing rare amber or red extreme heat warnings. These warnings are uncommon and signal serious danger.",
+            "what_happened": "Temperatures will dip slightly on Monday. They will rise again from Tuesday onward. The Met Office meteorologist Tom Morgan said highs will likely reach the mid-30s on Wednesday and Thursday. England and Wales will be most affected. The Midlands and areas farther south could see the highest temperatures.",
+            "why_it_matters": "This sustained heat can damage critical systems people depend on daily. Railway lines can buckle in extreme heat. Power networks can fail under the strain. These failures could disrupt commutes and electricity supply for thousands of people. For now, the country faces the risk of broader outages if this heat continues.",
+            "quote": {
+              "text": "We'll probably see highs reaching the mid-30s quite widely on Wednesday, and indeed on Thursday too for England and Wales.",
+              "attribution": "Tom Morgan, Met Office meteorologist",
+              "source_url": "https://www.theguardian.com/uk-news/2026/aug/10/uk-temperatures-heatwave-summer-met-office-warning"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "73bc7c5c62ff06e352b7e6a339e8d8bd",
+          "slug": "wordpress-plugin-used-by-5-million-sites-put-backdoor-in",
+          "title": "WordPress plugin used by 5 million sites put backdoor in latest version",
+          "summary": "The plugin lets the developer's app log into your site and stay logged in for one hour.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/SybreWaaijer/status/2086528919394480389"
+            }
+          ],
+          "article": {
+            "background": "WPForms Lite is a form-building plugin used on over 5 million WordPress sites. WordPress is a platform people use to build websites. In version 2.0.0, released three weeks ago, the plugin's creator Syed Balkhi added hidden code that acts without user knowledge or consent.",
+            "what_happened": "The hidden code is in a file called Bridge.php. When you set up the plugin as an admin, it takes over your browser. It opens an app on WPForms' servers and gives that app a one-hour login token for your site. This token lets their app act as you on your site.",
+            "why_it_matters": "With that token, WPForms' app can install and turn on plugins you did not choose. It can also flip a switch that sends all your form data to WPForms' servers. The plugin never asks first or warns you this is happening. If you run WPForms Lite 2.0.0, your site's data and settings are exposed to changes you did not approve.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "de6d8b66d6a6f4f67f15dc3bfb8a4654",
+          "slug": "uk-navy-spy-drones-sent-surveillance-data-to-china-through",
+          "title": "UK Navy spy drones sent surveillance data to China through camera components",
+          "summary": "The Ministry of Defence cut all internet connections after finding the drones secretly sent data to a Chinese device.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.telegraph.co.uk/news/2026/08/09/spy-cameras-on-navy-drones-secretly-sent-data-to-china"
+            }
+          ],
+          "article": {
+            "background": "The Royal Marines use K3 Scout surveillance drones. These unmanned aircraft carry cameras for spying on targets. A major British defence contractor, Kraken Technology Group, supplied the £12 million fleet to the military. The Royal Marines started using them in March.",
+            "what_happened": "The Telegraph revealed that the drone cameras secretly sent data to China. The cameras had parts made in China. These parts transmitted information to a device inside China. The Ministry of Defence found the breach. It then removed all internet links from the cameras.",
+            "why_it_matters": "This shows how parts bought from other countries can create security holes, even when purchased through British defence contractors. Military systems may now be at risk if their components have hidden ways to send data. The discovery raises questions about how closely the government checks what goes into defence equipment.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "27d15b8bc111a28dfdc0df172afd41e4",
+          "slug": "one-in-three-uk-manufacturers-hit-by-cyberattack-or-supply",
+          "title": "One in three UK manufacturers hit by cyberattack or supply chain breach last year",
+          "summary": "A survey found 30 percent of British manufacturers were hit by cyberattacks in the past year.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/aug/10/uk-companies-cyber-attack-third-jlr"
+            }
+          ],
+          "article": {
+            "background": "MakeUK, a group that represents British manufacturers, surveyed the industry. It found that 30% of manufacturers were hit by a cyber-attack in the past 12 months. Attacks can target a company directly or hit it through its supply chain. The supply chain is the network of vendors and partners that provide parts and services. Nearly a year ago, JLR, Britain's biggest car maker, suffered an attack that shut down production for weeks.",
+            "what_happened": "The MakeUK survey shows the scale of the hacking threat to British factories. In many cases, attacks caused lost production time and higher costs. Yet only half of manufacturers had a plan to respond to an attack. The report highlights how hackers, often backed by hostile nations, are increasingly targeting the industry.",
+            "why_it_matters": "If hackers disrupt a major manufacturer, the impact spreads through the whole economy. Companies that depend on it for parts face delays. Workers lose pay. Customers wait longer for goods. Most manufacturers still lack a response plan, which means another major attack could cause real damage to the UK's industrial base.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "ae63f784e27af902dde6aac831fc2629",
+      "title": "To Recruit Teachers, School Districts Are Building Homes",
+      "url": "https://www.nytimes.com/2026/07/28/business/affordable-housing-schools-teachers.html",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "fac3ef6ddc6cc1c7ffa9c71e817813a5",
+      "title": "Endless Execution",
+      "url": "https://world.hey.com/dhh/endless-execution-4157e065",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "f752accad6d85d11ad49b0e272c88da7",
+      "title": "Black lung rates in Appalachia are high as the 1970s",
+      "url": "https://text.npr.org/nx-s1-5894884",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "681c8e0435fdd2f3b81b576a4d0617b6",
+      "title": "Residents warned to brace for the worst as Canada wildfire rages out of control",
+      "url": "https://www.bbc.co.uk/news/articles/cx25dkwk3e3o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "2be821232516007a4100bb952e37c0f4",
+      "title": "British national shot dead in Kashmir by Pakistani security forces",
+      "url": "https://www.theguardian.com/world/2026/aug/10/british-national-shot-dead-in-kashmir-by-pakistani-security-forces",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "7e9117f00602f25707ba3e4e70e916ff",
+      "title": "Monday briefing: How the new phase of confrontation at al-Aqsa signals a challenge to the status quo",
+      "url": "https://www.theguardian.com/world/2026/aug/10/monday-briefing-how-the-new-phase-of-confrontation-at-al-aqsa-signals-a-challenge-to-the-status-quo",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c6e928964994cf520ad32d33f205d3d4",
+      "title": "Daily global sea surface temperatures break records for the time of year",
+      "url": "https://climate.copernicus.eu/copernicus-marine-and-copernicus-climate-change-daily-global-sea-surface-temperatures-break-records",
+      "topic": "Science"
+    }
+  ],
+  "stats": {
+    "items_ingested": 130,
+    "clusters_considered": 98,
+    "stories_run": 12,
+    "sources": 14,
+    "sections_held": 1
+  }
+}
