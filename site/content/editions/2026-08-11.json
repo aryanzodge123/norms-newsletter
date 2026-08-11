@@ -1,0 +1,450 @@
+{
+  "date": "2026-08-11",
+  "edition_number": 65,
+  "edition_type": "normal",
+  "headline_of_the_day": "Hackers shut down Polish power plant through cellular network",
+  "headline_cluster_id": "3d5da05493be033502f09daa7f62c583",
+  "headline_rationale": "Attackers remotely shut down critical infrastructure serving 50,000 people, demonstrating how private cellular networks utilities depend on remain vulnerable.",
+  "key_points": [
+    {
+      "text": "Hackers shut down a Polish power plant by breaking into its private cellular network.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "A magnitude 7.4 earthquake in Colombia killed at least 111 people and trapped many in rubble.",
+      "topic": "World"
+    },
+    {
+      "text": "Trump's former lawyer Todd Blanche was confirmed as US Attorney General by a close Senate vote.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The president signed an order to reduce childhood vaccines and give MMR shots as separate doses.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Nvidia partnered with six investment firms on five hundred billion dollars for AI chip projects.",
+      "topic": "Business"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-11.mp3",
+    "duration_seconds": 401,
+    "size_bytes": 4816224
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "4d8567f4634910f960b7758d6f341872",
+          "slug": "one-hundred-driverless-trucks-headed-for-public-roads",
+          "title": "One hundred driverless trucks headed for public roads",
+          "summary": "Atlas Energy and Kodiak plan to put one hundred self-driving trucks on public roads by early 2027.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.foxnews.com/tech/100-kodiak-driverless-trucks-headed-public-roads"
+            }
+          ],
+          "article": {
+            "background": "Atlas Energy Solutions runs driverless trucks made by Kodiak Robotics. These trucks haul sand to oil and gas well sites in Texas and New Mexico without anyone in the cab. The company currently operates 28 of them on private roads.",
+            "what_happened": "Atlas and Kodiak plan to grow the fleet to 100 trucks by mid-2027. The trucks will start using public roads in early 2027. This depends on hitting operational milestones first.",
+            "why_it_matters": "This shows how driverless trucks are moving from private industrial roads to highways. As fleets grow and prove safe on public roads, they could reshape trucking jobs and logistics across the country. For now, the trucks run set routes hauling specific cargo, not the long-haul routes most truckers drive.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "52a3a00ea964029a746c5b1cba20465a",
+          "slug": "call-centers-use-ai-to-neutralize-indian-accents",
+          "title": "Call centers use AI to neutralize Indian accents",
+          "summary": "Teleperformance uses software to change accents in real time for Western customers, raising bias concerns.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://tech.yahoo.com/ai/articles/call-centres-using-ai-whiten-090000847.html"
+            }
+          ],
+          "article": {
+            "background": "Teleperformance is the world's biggest call centre company. It employs 90,000 people in India and tens of thousands more globally. The French firm serves major UK clients like the NHS, Vodafone, and parts of government.",
+            "what_happened": "Teleperformance began using real-time AI software from Sanas, an American company, to change Indian accents during customer calls. The company says this tool boosts understanding between callers. It reduces confusion and makes workers more productive. Sanas markets the system as helping build a more understanding world.",
+            "why_it_matters": "If you call a big company for support, you may get routed to an Indian call centre without knowing it. This technology could alter those workers' voices to sound less distinctly Indian to Western ears. The shift raises questions about whether accent change serves customers or masks where work actually happens.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "834ce99feee3d9babb44d84f52d418d7",
+          "slug": "nvidia-lines-up-five-hundred-billion-dollars-to-make-chips",
+          "title": "Nvidia lines up five hundred billion dollars to make chips investable assets",
+          "summary": "Nvidia partnered with six investment firms on five hundred billion dollars for AI chip projects.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/JensenHuang/status/2086934705207959965"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c78gr0jv0mdo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/aug/11/nvidia-wall-street-finance-ai-infrastructure"
+            }
+          ],
+          "article": {
+            "background": "Nvidia makes the chips that power AI systems. For years, companies bought these chips and built data centers one project at a time. Now Nvidia wants to change that. The company is treating AI computing power like a standard asset, similar to real estate or toll roads that investors can finance and profit from over time.",
+            "what_happened": "Nvidia signed deals Monday with six major financial firms: Apollo, Blackstone, BlackRock, Brookfield, Goldman Sachs, and KKR. These partners will set up independent financing platforms. The goal is to raise over $500 billion in capital for AI infrastructure. Nvidia itself can backstop up to $125 billion, or 25 percent, of these deals.",
+            "why_it_matters": "Most people do not buy Nvidia chips directly. But lower infrastructure costs eventually lead to cheaper AI tools and services. When large institutions can finance AI factories like traditional infrastructure, it becomes easier to build out the systems that will power the AI services people use. This shift could speed up how fast AI infrastructure grows.",
+            "quote": {
+              "text": "In AI, compute is revenue. We are bringing the world's leading long-term capital providers together to independently underwrite AI infrastructure.",
+              "attribution": "Jensen Huang, Nvidia chief executive",
+              "source_url": "https://www.bbc.co.uk/news/articles/c78gr0jv0mdo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "ecc539e3ab2c43079844cfe8c43c5924",
+          "slug": "amazon-backs-texas-gas-plant-that-could-become-top-us",
+          "title": "Amazon backs Texas gas plant that could become top US climate polluter",
+          "summary": "Amazon is investing in an on-site power plant for one of its data center projects.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/08/amazon-funds-biggest-gas-power-plant-in-us-despite-climate-pledge"
+            }
+          ],
+          "article": {
+            "background": "Amazon is building a data center in Pecos County, Texas. The facility will run artificial intelligence systems. It needs a lot of power. Amazon is paying for a new natural gas power plant to supply it.",
+            "what_happened": "The plant could become the largest single source of climate pollution in the United States. It would release 33 million tons of carbon dioxide per year. That is more than any other US power plant. The Trump administration is fast-tracking the project. Some communities want stricter environmental reviews first.",
+            "why_it_matters": "Natural gas plants produce pollution that harms public health. Exposure can lead to asthma, heart disease, lung cancer, and strokes. As data centers grow, more gas plants are being built to power them. This plant's emissions could make that problem much worse.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "52747aee78ae3aa36598dbbeb1aff0be",
+          "slug": "todd-blanche-sworn-in-as-attorney-general",
+          "title": "Todd Blanche sworn in as attorney general",
+          "summary": "Trump's former lawyer Todd Blanche was confirmed as attorney general in a close Senate vote.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/todd-blanche-sworn-in-as-attorney-general-after-bruising-confirmation-battle"
+            }
+          ],
+          "article": {
+            "background": "Todd Blanche was Donald Trump's personal lawyer before this job. The Justice Department enforces federal laws and runs federal prosecutions. Trump picked Blanche to lead it after his first term ended.",
+            "what_happened": "Blanche was sworn in Monday as attorney general. The Senate confirmed him the day before after a close vote. Both Republicans and Democrats raised concerns about the Justice Department's future under Trump.",
+            "why_it_matters": "The attorney general runs the federal law enforcement agency that touches almost every major case at the federal level. Concerns from both parties suggest the fight over this pick signaled worry about the department's role in Trump's plans.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b41c324feaea9b04b8b17994e8ca74b7",
+          "slug": "trump-orders-fewer-childhood-vaccines-split-mmr-shots",
+          "title": "Trump orders fewer childhood vaccines, split MMR shots",
+          "summary": "The president signed an order to give fewer childhood vaccines and to split MMR shots into separate doses, though doctors disagree.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.co.uk/news/articles/ce3q5vl581wo"
+            },
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/08/10/nx-s1-5927313/trump-rfk-jr-vaccines-autism-executive-order"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/08/trump-signs-bonkers-order-that-cuts-vaccines-promotes-ones-that-dont-exist"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/10/trump-vaccines-executive-order-measles"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ce3q5vl581wo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The CDC recommends that U.S. children get 18 different vaccines to prevent serious diseases like measles and polio. President Trump has long questioned vaccine safety. On Monday, he signed an order calling for cuts to these recommendations.",
+            "what_happened": "Trump's order asks to cut childhood vaccines from 18 down to 11. It also calls for splitting the MMR shot, which protects against measles, mumps and rubella, into three separate shots. The order directs that all vaccines be given at different doctor visits. Trump said vaccines cause autism. Multiple studies show they do not.",
+            "why_it_matters": "These changes could delay when children get protected from serious diseases. Measles spreads fast and can cause brain damage or death. Doctors say spacing out vaccines leaves kids at risk. The CDC, not the White House, normally sets vaccine rules based on medical evidence.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e99f4b870584a5c596e2c65397218c92",
+          "slug": "republicans-name-candidate-after-edwards-exits-over",
+          "title": "Republicans name candidate after Edwards exits over harassment",
+          "summary": "Jennifer Balkcom will run for North Carolina's 11th district after the incumbent left.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/10/jennifer-balkcom-chuck-edwards-north-carolina-midterms"
+            }
+          ],
+          "article": {
+            "background": "Chuck Edwards was the congressman for North Carolina's 11th district. This month, a US House investigation found his conduct toward young female staffers likely amounted to sexual harassment. Edwards then dropped his re-election bid. Now Republicans need a new candidate for the November election.",
+            "what_happened": "North Carolina Republicans chose state lawmaker Jennifer Balkcom as their replacement candidate on Monday. She will face Democrat Jamie Ager in November. Trump won this district by 10 points two years ago. Democrats think Ager has a chance to win it.",
+            "why_it_matters": "This race will decide who represents western North Carolina in Congress. The district leans Republican, but the sexual harassment investigation has created an opening for Democrats to compete in a seat they normally would not target.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "7a253ddf1c145c415ae04ebe38906416",
+          "slug": "magnitude-7-4-earthquake-kills-at-least-111-in-colombia",
+          "title": "Magnitude 7.4 earthquake kills at least 111 in Colombia",
+          "summary": "Buildings collapsed across western Colombia and rescue teams are working to free people trapped in rubble.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cz6473llqpwo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/7-4-magnitude-earthquake-rocks-colombia-crumbling-homes-and-buildings"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/live/2026/aug/10/74-magnitude-earthquake-shakes-colombia-causing-serious-damage-latest-news"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/10/nx-s1-5927515/earthquake-western-colombia"
+            }
+          ],
+          "article": {
+            "background": "A powerful 7.4 magnitude earthquake struck western Colombia on Monday morning. The quake hit at a depth of 103 kilometers in Chocó province. Shaking was felt across the country and into neighboring Venezuela, Ecuador, and Panama.",
+            "what_happened": "At least 111 people died and dozens more were injured. Buildings collapsed across major cities including Cali and Pereira. Rescue teams and volunteers worked through rubble with basic tools and bare hands to find survivors trapped beneath debris.",
+            "why_it_matters": "Large earthquakes like this one cause deaths and injuries in affected areas. Rescue and rebuilding efforts take weeks or months and cost significant resources. The wider region may see more aftershocks in the coming days.",
+            "quote": {
+              "text": "We are trying to get everyone out alive.",
+              "attribution": "Andres Felipe Mejia, volunteer rescuer in Cali",
+              "source_url": "https://www.theguardian.com/world/live/2026/aug/10/74-magnitude-earthquake-shakes-colombia-causing-serious-damage-latest-news"
+            }
+          }
+        },
+        {
+          "cluster_id": "709b838d7cdfbe0d028954552201ed75",
+          "slug": "trump-demands-iran-pay-compensation-for-us-soldier-deaths",
+          "title": "Trump demands Iran pay compensation for US soldier deaths",
+          "summary": "Talks to reopen the Strait of Hormuz stalled after the president asked Iran to pay decades of compensation.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/10/trump-demands-iran-pay-compensation-for-decades-of-us-soldier-deaths"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/iran-demands-u-s-pay-for-war-damage-before-agreeing-to-reopen-strait-of-hormuz"
+            }
+          ],
+          "article": {
+            "background": "The Strait of Hormuz is a shipping channel between Iran and Oman that carries about a third of the world's oil. Iran closed it as leverage in negotiations with the US. Trump is trying to end conflicts in Iran, Gaza, and Lebanon, and needs the strait reopened as part of those talks.",
+            "what_happened": "Trump said he will demand that Iran pay compensation for US soldier deaths. He also demanded payment for Iranian civilian deaths from recent decades. Iran responded by doubling down on keeping the strait closed. It is demanding that the US pay reparations for damage from five months of US-Israeli bombardments.",
+            "why_it_matters": "The strait's closure affects global oil supplies and prices worldwide. When negotiations stall like this, the channel stays shut longer. That means higher costs for fuel and goods that rely on this route, which eventually reaches consumers in the US and elsewhere.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5cdf18d52957305a9258f46a99f8e3ce",
+          "slug": "us-brokers-secret-deal-on-syrian-nuclear-site",
+          "title": "US brokers secret deal on Syrian nuclear site",
+          "summary": "The US made a secret deal about nuclear activity in Syria and set new rules for covert programs.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.axios.com/2026/08/10/syria-nuclear-israel-turkey-iaea"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "d5799dc259b35aa427e31dfa59c1d650",
+          "slug": "uk-to-give-councils-power-to-block-vape-and-betting-shops",
+          "title": "UK to give councils power to block vape and betting shops",
+          "summary": "UK local councils will be able to block new betting shops and vape stores in their areas.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/aug/10/burnham-to-give-councils-more-powers-to-block-vape-and-betting-shops"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cvg90el9236o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Town centers across the UK have changed over decades. Vape and betting shops have opened widely, sometimes replacing other businesses. A 1990s law called the \"aim to permit\" rule makes councils approve new gambling businesses if they meet basic licensing standards, even if a neighborhood already has many. Vape shops face no planning limits, so they can open wherever retail space is available.",
+            "what_happened": "Andy Burnham, the Prime Minister, announced plans to give councils new power to stop betting and vape shops. Councils will be able to reject new betting shops and adult gaming centres. Vape shops will need planning permission for the first time. Downing Street said these rules could start from the beginning of next year. The plans scrap the \"aim to permit\" rule from the Gambling Act 2005.",
+            "why_it_matters": "If you live in a town center, this means the shops around you could look different soon. Your council will get a real say in whether new betting or vape shops open near you, instead of being forced to approve them. This shift could help town centers feel less dominated by these shops and more appealing to families and shoppers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3f35ddfdf788256627e571659981b548",
+          "slug": "state-election-officials-join-federal-security-call-85-days",
+          "title": "State election officials join federal security call 85 days before voting",
+          "summary": "CISA told state officials how to protect voting systems from cyberattacks.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/state-voting-officials-join-cisa-security-call-with-election-85-days-away"
+            }
+          ],
+          "article": {
+            "background": "CISA is the federal agency that protects critical infrastructure, including voting systems. The midterm election is 85 days away. Election officials have been working with federal agencies to secure voting systems.",
+            "what_happened": "CISA held a call with state election officials to discuss cybersecurity for the upcoming midterms. This was one of CISA's first broad outreach efforts this close to Election Day.",
+            "why_it_matters": "When federal and state officials work together on cybersecurity, they can spot threats before voting happens. Securing voting systems helps ensure election results are trustworthy.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "3d5da05493be033502f09daa7f62c583",
+          "slug": "hackers-shut-down-polish-power-plant-through-cellular",
+          "title": "Hackers shut down Polish power plant through cellular network",
+          "summary": "Hackers broke into a private cellular network that utilities use to run equipment and shut down turbines.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/hackers-breach-polish-power-plant.html"
+            }
+          ],
+          "article": {
+            "background": "A combined heat and power plant in Poland supplies heat to about 50,000 residents. These plants burn fuel to make both heat and electricity. The local grid operator uses a private cellular network to control equipment at remote locations, including this plant. In January, Poland's prime minister said two such plants had been attacked. This is the second one.",
+            "what_happened": "Hackers broke into the private cellular network in December 2025. They shut down a steam turbine and the water treatment system. Workers began fixing the problem around 7:30 a.m. while the attackers were still inside the system. Poland's national cybersecurity agency, CERT Polska, disclosed the breach on August 8 after investigating for more than three months.",
+            "why_it_matters": "The plant kept working even under attack. Heat and power kept flowing to the residents it serves. This shows that good response time matters: the fast recovery meant the breach caused no outages. As more utilities connect to remote networks, this kind of attack could happen elsewhere.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "463da39dcc505c1d173547eeee0a11b8",
+          "slug": "surveillance-network-tracks-cars-across-the-us",
+          "title": "Surveillance network tracks cars across the US",
+          "summary": "A system tracks where cars go across America, raising privacy concerns.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/video/us/100000011056273/the-surveillance-network-tracking-cars-across-the-us.html"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "b40f17ea1f6d5ba6dd51c227b2919a6f",
+          "slug": "flock-cameras-can-track-every-car-in-america",
+          "title": "Flock cameras can track every car in America",
+          "summary": "Police use license plate readers to track any car nationwide, privacy advocates say.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/08/10/us/flock-cameras-can-track-every-car-in-america-police-love-them-citizens-dont.html"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "34defef78b9c6abf9208deae78666756",
+      "title": "Road deaths in the US have fallen more slowly than in other rich countries",
+      "url": "https://ourworldindata.org/data-insights/road-deaths-in-the-united-states-have-fallen-much-more-slowly-than-in-other-rich-countries",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "26022895b11bca00c167721f8da360c5",
+      "title": "Nintendo Should Stop Selling Consoles",
+      "url": "https://taikhooms.substack.com/p/nintendo-the-media-company",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "400e1b5f5703a9b75a61613f4f0f9442",
+      "title": "Half of Europe's towns and villages have fewer residents than 60 years ago",
+      "url": "https://correctiv.org/en/europe/2026/04/21/half-of-europes-towns-and-villages-have-fewer-residents-than-60-years-ago",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "28a0afcbace814134d2b8720b5918594",
+      "title": "Yen sinks as effect of US-Japan intervention fades",
+      "url": "https://www.ft.com/content/47d2ab3c-0423-49ed-89ca-68683761ed98",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "c4bf9739c28672cc8e3e91ef5765b103",
+      "title": "BdThemes Supply Chain Attack Poisons JSON to Create Rogue WordPress Admins",
+      "url": "https://thehackernews.com/2026/08/bdthemes-supply-chain-attack-poisons.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "f8d3ee9c8538e309009852084a5a48dc",
+      "title": "Chinese rocket explodes shortly after liftoff",
+      "url": "https://www.space.com/space-exploration/launches-spacecraft/chinese-rocket-explodes-less-than-90-seconds-after-liftoff",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "f9b0833e3dc856efff104bd92a429b40",
+      "title": "Greenland issues 'strong warning' as Trump-linked oil firm prepares to drill",
+      "url": "https://www.theguardian.com/world/2026/aug/08/greenland-iwarning-trump-linked-oil-firm-prepares-drill",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e9a32857e3908a3f49147e3257251b26",
+      "title": "Family of Marine veteran imprisoned in Russia warns he's near death",
+      "url": "https://www.pbs.org/newshour/show/family-of-marine-veteran-imprisoned-in-russia-warns-hes-near-death",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 169,
+    "clusters_considered": 134,
+    "stories_run": 15,
+    "sources": 17,
+    "sections_held": 0
+  }
+}
