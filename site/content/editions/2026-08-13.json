@@ -1,0 +1,402 @@
+{
+  "date": "2026-08-13",
+  "edition_number": 67,
+  "edition_type": "normal",
+  "headline_of_the_day": "White House lets US firms hack foreign cybercrime groups",
+  "headline_cluster_id": "a84ace336343d3b1d82c81355a28574e",
+  "headline_rationale": "A formal White House authorization fundamentally changes what private companies can legally do in response to cyberattacks, marking a precedent shift in public-private cybersecurity roles.",
+  "key_points": [
+    {
+      "text": "The White House said US companies can now legally attack foreign cybercrime groups, a major shift in cyber policy.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Hackers stole large amounts of passwords in an attack on LiteLLM, affecting Microsoft, Amazon, Cisco, Samsung, and Salesforce.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "California Uber and Lyft drivers won union rights in one of the biggest gig-worker organizing wins ever.",
+      "topic": "Business"
+    },
+    {
+      "text": "Congo's Ebola outbreak is on track to become the deadliest ever, the WHO chief said.",
+      "topic": "World"
+    },
+    {
+      "text": "Hackers are using a SharePoint security flaw after someone released working attack code online.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "cc8a391978ed96344c0a594570dea965",
+          "slug": "microsoft-edge-is-dropping-older-extensions-affecting",
+          "title": "Microsoft Edge is dropping older extensions, affecting popular privacy tools",
+          "summary": "Microsoft Edge will stop supporting Manifest V2 extensions by the end of 2026, leaving 58 popular extensions to update.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.malwarebytes.com/blog/news/2026/08/edge-is-dropping-older-extensions-affecting-popular-privacy-tools"
+            }
+          ],
+          "article": {
+            "background": "Manifest V2 (MV2) is an old system for how extensions work in Edge, Microsoft's web browser. Extensions are add-on tools that change how the browser works, often for privacy or security. Microsoft is now moving to Manifest V3 (MV3), a newer system. Most popular MV2 extensions have already switched to MV3.",
+            "what_happened": "Microsoft is retiring MV2 extensions in Edge starting this month. Some users will see warnings in their extension settings. Over the coming months, MV2 extensions will be turned off by default. Microsoft plans to finish removing them for regular users by the end of 2026. Enterprise users on managed systems will lose them in early 2027.",
+            "why_it_matters": "If you use privacy extensions in Edge, you may need to update them soon. Microsoft found 58 MV2 extensions with real usage. Only three lack a newer MV3 version you can switch to. For most popular tools, updated versions already exist. You will not lose functionality, but you may need to reinstall or update your extensions.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fc36e15033ec82a7517ee9fe3967dfe6",
+          "slug": "twitch-now-lets-users-opt-out-of-amazon-ai-training-on",
+          "title": "Twitch now lets users opt out of Amazon AI training on their content",
+          "summary": "Amazon has been using Twitch streams, clips, and chat to train AI models for more than two years.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/ai/2026/08/twitch-content-has-trained-amazon-ai-for-years-but-users-can-opt-out-now"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cp30pz8d09jo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Amazon acquired Twitch, a video streaming platform where creators broadcast games and other content live, in 2014. For years, Amazon has been using material from Twitch streams, clips, and chats to train its generative AI models, which are systems designed to create new text, images, audio, or video. Users were not told they could opt out of this practice until now.",
+            "what_happened": "Twitch announced today that users can opt out of having their content used for Amazon's AI training. The opt-out applies to streams, archived videos (called VODs), clips, chat messages, and channel images and text. Users can change this setting at www.twitch.tv/settings/security. Previously, Amazon's use of Twitch content for AI training was not something creators could refuse.",
+            "why_it_matters": "If you stream on Twitch, your content may have already been fed into Amazon's AI systems without your knowledge. Now you have a choice: you can prevent future streams and posts from being used this way by adjusting your privacy settings. This matters because your creative work shapes how these AI tools learn and behave, and you now get a say in whether that happens.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "0e5389fcbbf74f03b91e21edc1fc63a7",
+          "slug": "california-uber-and-lyft-drivers-win-union-recognition",
+          "title": "California Uber and Lyft drivers win union recognition",
+          "summary": "California Uber and Lyft drivers won union rights in one of the biggest gig-worker organizing wins ever.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cbsnews.com/losangeles/news/california-uber-lyft-drivers-win-union-recognition"
+            }
+          ],
+          "article": {
+            "background": "Uber and Lyft drivers in California are independent contractors, not employees. This means they have fewer legal protections than regular workers. On Friday, the Public Employment Relations Board said the California Gig Workers Union had reached the threshold to represent California Uber and Lyft drivers.",
+            "what_happened": "Uber and Lyft drivers gathered in Los Angeles on Tuesday to celebrate. The California Gig Workers Union said they won what they call one of the largest new organizing victories in modern labor history. After a 30-day waiting period, the union expects to be certified as their official bargaining representative.",
+            "why_it_matters": "If certified, the union can negotiate wages, benefits, and working conditions for thousands of California drivers. This could affect how much drivers earn and what protections they have on the job. It may also shape how other gig work companies treat their drivers.",
+            "quote": {
+              "text": "On August 7, 2026, we won.",
+              "attribution": "Joseph Augusto, a longtime Uber and Lyft driver from San Francisco",
+              "source_url": "https://www.cbsnews.com/losangeles/news/california-uber-lyft-drivers-win-union-recognition"
+            }
+          }
+        },
+        {
+          "cluster_id": "27539df71eb118b95d9003053a3f3250",
+          "slug": "general-dynamics-failed-to-deliver-artillery-shells-despite",
+          "title": "General Dynamics failed to deliver artillery shells despite $533 million contract",
+          "summary": "General Dynamics was paid in full but did not produce a single usable shell at its new factory.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.propublica.org/article/general-dynamics-artillery-factory-failed"
+            }
+          ],
+          "article": {
+            "background": "The Army needed artillery shells made quickly. It skipped normal safety rules and hired General Dynamics, a big defense company that builds military equipment. General Dynamics brought in a Turkish subcontractor without much vetting. The Army gave the company $533 million to build a new factory.",
+            "what_happened": "General Dynamics did not produce a single usable shell at the new factory. The Army shut down two production lines there. Despite this failure and no public penalty, the General Dynamics unit got new contract awards worth $2.5 billion.",
+            "why_it_matters": "Taxpayers paid $533 million for zero working shells. The military needs ammunition made well, and accountability matters when big contractors fail. It raises questions about how the Army checks its spending when a project goes wrong and whether failed contractors face real consequences.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "b736cc4a8f63cc516c893a89202f11f0",
+          "slug": "immigration-and-customs-enforcement-plans-to-equip-agents",
+          "title": "Immigration and Customs Enforcement plans to equip agents with electric shock gloves",
+          "summary": "ICE plans to spend up to $20 million on gloves that deliver painful electric shocks.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c20d292gdp4o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c20d292gdp4o"
+            }
+          ],
+          "article": {
+            "background": "ICE enforces immigration law and handles deportations. In August, Norm covered ICE's plan to buy shock-delivering gloves. Now the agency has posted official details about the purchase.",
+            "what_happened": "ICE plans to spend up to $20 million to buy gloves that deliver electric shocks. The gloves, called GLOVE, can deliver 380 volts of electricity. That is roughly three times the power of a standard US outlet. The Department of Homeland Security published the plan on Monday.",
+            "why_it_matters": "ICE agents would use these gloves during arrests and enforcement actions. Civil rights groups, including the ACLU, have raised concerns about the devices. The gloves could change how ICE officers handle people who resist.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6c1e88bcb37ae2559ed13aea52e234f4",
+          "slug": "federal-judges-describe-violent-threats-amid-dehumanizing",
+          "title": "Federal judges describe violent threats amid dehumanizing attacks from political leaders",
+          "summary": "Hundreds of federal judges have gotten threats against them and their families.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/federal-judges-describe-violent-threats-amid-dehumanizing-attacks-from-political-leaders"
+            }
+          ],
+          "article": {
+            "background": "Federal judges decide cases on everything from criminal trials to disputes over policy. They sometimes face criticism when they rule against powerful people or groups. This year, hundreds of judges have received threats against themselves and their families, according to the U.S. Marshals Service.",
+            "what_happened": "The threats come as President Trump and his administration have made verbal and written attacks on judges who ruled against them. Some judges describe the attacks as dehumanizing. Judge John McConnell and others have spoken publicly about the threats they have received.",
+            "why_it_matters": "When judges fear for their safety, they struggle to make fair decisions. It also makes it harder for people to trust that justice is applied equally. Threats that target judges undermine the courts' ability to work without fear or pressure.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9fdbf10f4521b70499aaed074f12ea85",
+          "slug": "three-men-will-be-executed-on-the-same-day-for-first-time",
+          "title": "Three men will be executed on the same day for first time in 16 years",
+          "summary": "Three inmates in Tennessee, Alabama, and Oklahoma will be executed Thursday, the first time three were executed on the same day since 2010.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cn5n399n6zvo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US allows states to execute people convicted of murder, usually after years of legal appeals. It's been 16 years since three people were executed on the same day.",
+            "what_happened": "Three men will be executed on Thursday in three different states. Anthony Darrell Hines, 66, will die in Tennessee. Jeremy Williams, 41, will die in Alabama. Carlos Cuesta-Rodriguez, 71, will die in Oklahoma. Last year there were more than four times as many executions as in 2021.",
+            "why_it_matters": "Executions are climbing sharply. Yet most Americans now oppose the death penalty. The trend shows a split between what states are doing and what most people want.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "012fc213b612278fc45026794547534c",
+          "slug": "democratic-republic-of-congo-ebola-outbreak-on-track-to-be",
+          "title": "Democratic Republic of Congo Ebola outbreak on track to be deadliest ever",
+          "summary": "The WHO director says the current outbreak is on pace to surpass the 2014-2016 West Africa outbreak.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cgk4pex4mn8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Democratic Republic of Congo has had Ebola outbreaks before. The worst one was from 2014 to 2016. That outbreak killed at least 11,000 people. The current outbreak started on May 15 of this year.",
+            "what_happened": "The current Ebola outbreak in Congo has caused more than 2,000 deaths and at least 4,300 cases so far. Tedros Adhanom Ghebreyesus is the director of the World Health Organization. He said the outbreak, at its current pace, will surpass the 2014-2016 outbreak as the deadliest ever. The WHO hopes to slow the spread within three months.",
+            "why_it_matters": "Ebola kills many people who catch it. If this outbreak becomes the deadliest on record, it means the disease is harder to control now than before. This changes how public health groups will prepare for and handle future outbreaks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b78118794c76dff3cdc347bd22079dc3",
+          "slug": "ukrainian-attack-on-russian-black-sea-port-damages-major",
+          "title": "Ukrainian attack on Russian Black Sea port damages major grain export terminals",
+          "summary": "A strike on the Russian port of Novorossiysk killed three people, including a child, and hurt 24.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c5y49xp2wrno?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Novorossiysk is Russia's main Black Sea port. It handles grain exports and hosts a major Russian naval base. Ukraine and Russia have fought over control of the Black Sea since Russia's 2022 invasion.",
+            "what_happened": "Ukraine launched a drone and missile strike on Novorossiysk overnight. The attack damaged two grain export terminals at the port. It also hit the naval base, Russia's last major one on the Black Sea. Local officials said three people died, including an eight-year-old child. Another 24 were injured. Ukraine's military said four Russian warships were hit.",
+            "why_it_matters": "Grain exports from Russia feed many countries worldwide. Damage to these terminals could disrupt global food supplies and raise prices. The strike also weakens Russia's military position in the region, which affects shipping and regional stability. As the war continues, both sides target each other's economic and military assets.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "028a77e1f6d7da31e9d05826eb27329f",
+          "slug": "thousands-of-canadians-call-for-us-ambassador-s-expulsion",
+          "title": "Thousands of Canadians call for US ambassador's expulsion over political interference",
+          "summary": "More than 70,000 Canadians signed a petition asking the US to remove ambassador Pete Hoekstra for interfering in Canada.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c9d83j4ql2xo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Pete Hoekstra is the US ambassador to Canada. He was appointed by the Trump administration. Canada and the US are now in trade talks. They aim to reach a deal before new US tariffs start.",
+            "what_happened": "More than 70,000 Canadians signed an online petition calling for Hoekstra's expulsion. The petition says he has repeatedly spoken in Canadian politics. It also says he has treated Trump's talk of annexing Canada as a '51st state' as normal. The US embassy said it knows about the petition but will not say more.",
+            "why_it_matters": "These talks happen when relations between the two countries are already tense. A weakened relationship could hurt the chance of a trade deal that avoids new tariffs on both sides. Canada and the US are major trading partners, and tariffs would affect prices on goods.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "a84ace336343d3b1d82c81355a28574e",
+          "slug": "white-house-authorizes-private-companies-to-hack-foreign",
+          "title": "White House authorizes private companies to hack foreign cybercrime groups",
+          "summary": "A presidential memo lets US companies legally attack foreign hackers on their own.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.whitehouse.gov/presidential-actions/2026/08/expanding-capabilities-to-combat-transnational-cyber-enabled-crime"
+            }
+          ],
+          "article": {
+            "background": "Foreign cybercrime groups based outside the US attack American businesses and steal from people online. Until now, private companies could only defend their own systems. The government handled counterattacks.",
+            "what_happened": "The White House issued a directive allowing US companies to conduct offensive cyber operations. Companies may now hack foreign crime groups that target them. The order removes legal barriers that previously stopped private companies from hacking attackers.",
+            "why_it_matters": "American businesses targeted by cybercriminals may now fight back directly instead of waiting for government help. This could slow attacks faster. It also creates new risks if companies act recklessly or misidentify their targets.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c0fbce8488f14f218b682da4d690e779",
+          "slug": "terabytes-of-credentials-leaked-in-massive-supply-chain",
+          "title": "Terabytes of credentials leaked in massive supply-chain attack on LiteLLM",
+          "summary": "The breach exposed passwords and access codes from Microsoft, Amazon, Cisco, Samsung, Salesforce, and thousands more.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/IntCyberDigest/status/2087581727619162296"
+            }
+          ],
+          "article": {
+            "background": "LiteLLM is an open source tool that helps developers build AI-powered software. It is widely used by major companies. This week, security researchers discovered that someone exposed sensitive data from people who use LiteLLM.",
+            "what_happened": "Researchers at CloudSEK and Hudson Rock found terabytes of leaked credentials. The data came from about 2,500 organizations. Victims include Microsoft, Amazon, Cisco, Samsung, Salesforce, Nvidia, Boeing, and Intel. The leaked files held cloud keys, password tokens, and AI access codes. Attackers could have used these to break into victim systems.",
+            "why_it_matters": "If your company uses LiteLLM, assume any passwords or access codes stored there are now exposed. You should change them right away. Even if you do not use LiteLLM directly, the breach shows that attacks on widely used tools can reach thousands of organizations at once.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9574e1bac395f526d3c8785188de7c71",
+          "slug": "attackers-exploit-sharepoint-authentication-bypass-after",
+          "title": "Attackers exploit SharePoint authentication bypass after public proof-of-concept release",
+          "summary": "Microsoft fixed a critical flaw in July, but hackers started exploiting it after code went public.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html"
+            }
+          ],
+          "article": {
+            "background": "Microsoft SharePoint is software that helps organizations store and share documents online. In July 2026, Microsoft patched a critical flaw in how SharePoint checks who you are. The flaw, called CVE-2026-55040, had a severity score of 9.1 out of 10, meaning it was serious.",
+            "what_happened": "After someone released code showing how to exploit the flaw, attackers began using it. The bug lets attackers pretend to be someone else. This could let them read files or change data in SharePoint, though it would not knock the system offline.",
+            "why_it_matters": "If your company uses SharePoint, attackers could access or change your files if you have not yet patched. Microsoft released the fix in July, so you should install it right away if you have not already.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "f77ed2a1e02d200c541bf9489b5e3536",
+      "title": "Node.js creator liberates Durable Objects from Cloudflare",
+      "url": "https://www.theregister.com/devops/2026/08/12/nodejs-creator-liberates-durable-objects-from-cloudflare-with-celld/5286954",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "e21bbd15bc49476c8263748c67b78923",
+      "title": "Europe solar eclipse: millions watch rare spectacle across Spain, UK and Iceland – as it happened",
+      "url": "https://www.theguardian.com/world/live/2026/aug/12/europe-solar-eclipse-spain-uk-iceland-latest-news-updates",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "971d689a33adb20d8ee342e24ada4b29",
+      "title": "Hudson-Smith dazzles home fans as he surges to golden European 400m hat-trick",
+      "url": "https://www.theguardian.com/sport/2026/aug/12/matt-hudson-smith-european-athletic-championship-2026-400m",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "fed70480a944059c29cb4c29180f76d7",
+      "title": "Polymarket let users bet on wildfires. Lawmakers warn that could spur arson.",
+      "url": "https://www.washingtonpost.com/nation/2026/08/12/polymarket-let-users-bet-wildfires-lawmakers-warn-that-could-spur-arson",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "a2c3ccbb3f11b65e939e27fba2f474cd",
+      "title": "India fuels worldwide jump in planned coal production",
+      "url": "https://www.theguardian.com/environment/2026/aug/13/india-planned-coal-production-new-mine",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c7d3b6fead975958b16fcaf8b9c12887",
+      "title": "Taiwan says it was hit by ‘abnormal’ AI-assisted cyber-attack",
+      "url": "https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "a6dca3ad8abe84eef5fab349337de415",
+      "title": "ChatGPT Desktop (Codex Desktop) for Linux",
+      "url": "https://openai.com/codex",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "fe83335aceda7c37ec9d8601c1c8b355",
+      "title": "AI nuclear power firm Fermi finally has a new CEO",
+      "url": "https://techcrunch.com/2026/08/12/ai-nuclear-power-firm-fermi-finally-has-a-new-ceo",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "935ad172b2a5a71c9a1d2f3d6ff5a750",
+      "title": "Japan protests Putin visit to disputed islands",
+      "url": "https://www.bbc.co.uk/news/articles/cqx7ple0nxxo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "de3b6249e1c58f84113dfcb0147bd505",
+      "title": "Trump says White House press secretary Karoline Leavitt to leave post",
+      "url": "https://www.bbc.co.uk/news/articles/cvglzrvyrz3o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "bb78dc2acae63fc615c392b05c9427ee",
+      "title": "Economy grew in April to June as sun and World Cup helped some UK businesses",
+      "url": "https://www.bbc.co.uk/news/articles/cx2d1gpx2k0o?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "d3fe39acaaeabfe98cfdd100954a53b9",
+      "title": "A look at Spain's plan to give undocumented migrants legal status",
+      "url": "https://www.pbs.org/newshour/show/a-look-at-spains-plan-to-give-undocumented-migrants-legal-status",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 175,
+    "clusters_considered": 148,
+    "stories_run": 13,
+    "sources": 20,
+    "sections_held": 1
+  }
+}
