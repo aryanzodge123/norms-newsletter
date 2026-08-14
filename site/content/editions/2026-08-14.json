@@ -1,0 +1,352 @@
+{
+  "date": "2026-08-14",
+  "edition_number": 68,
+  "edition_type": "normal",
+  "headline_of_the_day": "Judge orders Google to make rival app stores easier to install on Android",
+  "headline_cluster_id": "fc4e9dad1e6be201136bef873e08d484",
+  "headline_rationale": "Court ruling directly changes how millions of users can install software on their devices, with immediate practical effect",
+  "key_points": [
+    {
+      "text": "A judge told Google to let rival app stores be easier to install on Android phones.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "The US government is trying to strip citizenship from 25 naturalized Americans to deport them.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Colombia earthquake death toll tops 260 with nearly 20 million affected",
+      "topic": "World"
+    },
+    {
+      "text": "US sold 30-year bonds at highest rates since 2001, raising borrowing costs",
+      "topic": "Finance"
+    },
+    {
+      "text": "Netflix closes two game studios as it shifts focus to party games for TVs",
+      "topic": "Business"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-14.mp3",
+    "duration_seconds": 423,
+    "size_bytes": 5071104
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "90517af0f58dc4941149574f58a6fa42",
+          "slug": "namecheap-hosting-down-after-data-center-cooling-system",
+          "title": "Namecheap hosting down after data center cooling system fails",
+          "summary": "A cooling system failure took down customer websites, but service came back by 3 PM ET.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.engadget.com/2236616/hosting-provider-namecheap-is-down-after-data-center-cooling-failure"
+            }
+          ],
+          "article": {
+            "background": "Namecheap is a hosting provider. It stores and runs websites for millions of customers, mostly small businesses and individuals. When Namecheap's systems go down, many sites across the web go down with them.",
+            "what_happened": "Namecheap experienced an outage today after cooling systems failed at its Phoenix data center. The failure knocked out many of its services, including its own website. CEO Hillan Klein said service could start coming back around 3 to 3:30 PM ET.",
+            "why_it_matters": "If your website was hosted by Namecheap, it was offline today. Even if you don't use Namecheap directly, sites you visit might run on it, so you may have hit dead pages without knowing why. Most hosting outages get fixed within hours.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fb89e067ca96b535a3606afa12b9355b",
+          "slug": "trump-declares-100-percent-tariffs-on-drones-and-all",
+          "title": "Trump declares 100 percent tariffs on drones and all aircraft parts",
+          "summary": "The president is putting steep new tariffs on imported drones and drone parts.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/policy/979977/trump-declares-100-percent-tariffs-on-many-drones-and-all-aircraft-parts"
+            }
+          ],
+          "article": {
+            "background": "The US already bans new foreign drones from entering the country unless their makers meet American security standards. This ban also covers routers, robots, and Roombas. Now President Trump is going after drones and aircraft parts that were already approved.",
+            "what_happened": "Trump declared a 100 percent tariff on drone imports with thermal cameras. The same tariff applies to all aircraft parts. A 100 percent tariff doubles the price of goods coming in from other countries.",
+            "why_it_matters": "Farmers and construction companies use thermal drones for their work. They will pay much more for these tools. Airlines also depend on aircraft parts. If costs go up, airlines may raise ticket prices to cover the expense.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "1fed08f883b6e3d20ae1319459e083f1",
+          "slug": "justice-department-moves-to-strip-citizenship-from-25",
+          "title": "Justice Department moves to strip citizenship from 25 naturalized Americans",
+          "summary": "Federal prosecutors filed cases to take citizenship away from people in a major new enforcement action.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/doj-deploys-tactic-to-strip-naturalized-americans-of-citizenship"
+            }
+          ],
+          "article": {
+            "background": "Denaturalization is a legal process where the US government removes citizenship from someone who became a citizen through naturalization. Naturalized citizens are people born outside the US who went through the legal process to become Americans. The Justice Department now says denaturalization is one of its top priorities.",
+            "what_happened": "Earlier this month, federal prosecutors filed cases against 25 naturalized Americans. They accused these people of lying on citizenship applications or hiding serious crimes from immigration officials. The Justice Department called this a major new enforcement action.",
+            "why_it_matters": "Millions of naturalized citizens may worry about their legal status now. If the government expands denaturalization cases, more people could face loss of citizenship they thought was secure.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4abc49a4325a716dc4017254dd32086a",
+          "slug": "three-men-executed-on-same-day-for-first-time-in-15-years",
+          "title": "Three men executed on same day for first time in 15 years",
+          "summary": "Oklahoma, Tennessee, and Alabama carried out executions on the same day Thursday, a rare event.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/13/executions-oklahoma-alabama-tennessee"
+            }
+          ],
+          "article": {
+            "background": "The US carries out relatively few executions these days. But states have been increasing their use of the death penalty. This Thursday marked a milestone: three men were executed on the same day. It was the first time this happened in 15 years.",
+            "what_happened": "Carlos Cuesta-Rodriguez, 70, was executed by Oklahoma at 10:13am. He had been sentenced to death for murdering his common-law wife, Olimpia Fisher, in 2003. One hour later, Tennessee executed Darrell Hines. At 6pm, Alabama executed Jeremy Williams. The three men were executed in three different states on the same day.",
+            "why_it_matters": "The triple execution shows a shift in how the US uses capital punishment. States have been carrying out more executions in recent years. This rare event highlights that trend and suggests the appetite for state killings is growing across the country.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "12b5760dfafc65ea8554ee19cb9b1914",
+          "slug": "us-conducted-mass-surveillance-of-anti-deportation",
+          "title": "US conducted mass surveillance of anti-deportation protesters, records show",
+          "summary": "Homeland Security sent undercover agents to activist meetings and hacked into a Minnesota group's private chats.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/13/us-government-spied-anti-ice-protesters"
+            }
+          ],
+          "article": {
+            "background": "The Department of Homeland Security, or DHS, enforces immigration law. Earlier this year, groups across the US protested the Trump administration's immigration enforcement actions. Many opposed ICE, the agency that detains undocumented immigrants.",
+            "what_happened": "New records show DHS sent undercover agents to activist meetings in the Twin Cities and New York City. The agency infiltrated private chats and obtained financial records from unions and nonprofits that opposed the immigration crackdown.",
+            "why_it_matters": "If you attended rallies, joined meetings, or organized against immigration enforcement, federal agents may have tracked your activities. These records reveal how much law enforcement monitored Americans exercising their right to protest.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "9ed91a4612c332c06f97461df6c344da",
+          "slug": "colombia-earthquake-death-toll-exceeds-260-with-millions",
+          "title": "Colombia earthquake death toll exceeds 260 with millions affected",
+          "summary": "The president said over 260 people died and nearly 20 million were harmed by the disaster.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/news-wrap-earthquake-death-toll-in-colombia-tops-260"
+            }
+          ],
+          "article": {
+            "background": "Colombia experienced a major earthquake this week. President of Colombia confirmed the death toll has exceeded 260 people. Earthquakes in populated areas often cause widespread damage and strain local resources.",
+            "what_happened": "Colombia's president reported more than 260 confirmed deaths from this week's earthquake. The death toll continues to rise as rescue efforts continue in affected areas.",
+            "why_it_matters": "Large earthquakes in densely populated regions kill many people and damage homes and buildings. Recovery from such disasters takes months or years, affecting the people living there and straining the country's resources.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "362ac200ffca57ede1dec43a00b84151",
+          "slug": "us-ambassador-calls-israeli-settlers-besieging-palestinian",
+          "title": "US ambassador calls Israeli settlers besieging Palestinian-American family terrorists",
+          "summary": "Mike Huckabee condemned West Bank settlers who surrounded an American-Palestinian home for several days.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/13/nx-s1-5930275/u-s-ambassador-slams-israeli-settlers-besieging-home-of-palestinian-american"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/palestinian-american-family-recounts-siege-of-west-bank-home-by-israeli-settlers"
+            }
+          ],
+          "article": {
+            "background": "The Israeli-occupied West Bank is territory that Israel controls. Israeli settlers build homes there, often in disputed areas. Palestinian families also live in the West Bank. Tensions between the two groups are common and sometimes turn violent.",
+            "what_happened": "A group of Israeli settlers surrounded the home of a Palestinian-American family in the West Bank for several days. They cut off water, power, and supplies to the house. U.S. Ambassador to Israel Mike Huckabee called the settlers' actions an \"act of terror\" and labeled them \"terrorists.\" His words pushed Israeli forces to move in.",
+            "why_it_matters": "One of the families under siege holds U.S. citizenship. The ambassador's strong criticism shows the Trump administration is willing to pressure Israel over settler actions. This may signal how the administration plans to handle similar disputes going forward.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3e1c51e897b3f266cac7f4eaa000e9a6",
+          "slug": "seoul-airport-overtakes-dubai-as-world-s-busiest",
+          "title": "Seoul airport overtakes Dubai as world's busiest international hub",
+          "summary": "South Korea's main airport now serves more international travelers than any other airport in the world.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.ft.com/content/f3f3c945-6a75-4663-b8ec-d5251438c1c5"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "fc4e9dad1e6be201136bef873e08d484",
+          "slug": "judge-orders-google-to-make-rival-app-stores-easier-to",
+          "title": "Judge orders Google to make rival app stores easier to install",
+          "summary": "A judge ordered Google to make rival app stores easier to install on Android phones.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/policy/979852/that-is-not-acceptable-judge-orders-google-to-make-rival-app-store-installs-easier"
+            }
+          ],
+          "article": {
+            "background": "Google controls the main way people install apps on Android phones, the operating system that powers most phones worldwide. In 2021, a jury found that Google illegally blocked competitors from offering rival app stores. Judge James Donato has been overseeing the fix.",
+            "what_happened": "Judge Donato ordered Google to make it simpler to install other app stores on Android devices. The ruling came after Epic Games, which makes the game Fortnite, returned to court. Epic said Google was not following earlier orders to open up Android.",
+            "why_it_matters": "If rival app stores become easier to access, app makers may sell through them instead. That could give you more choices and possibly lower prices. For now, most people still buy apps only through Google's store.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "809a55dd22b8dba5c6d1a16110e2512d",
+          "slug": "fight-over-license-plate-tracking-cameras-spreads-across-us",
+          "title": "Fight over license plate tracking cameras spreads across US communities",
+          "summary": "Dozens of towns are canceling Flock camera contracts due to privacy and tracking concerns.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/979869/flock-alpr-ai-surveillance-protest-privacy"
+            }
+          ],
+          "article": {
+            "background": "Flock Safety makes automatic license plate reader cameras, known as ALPRs. These cameras use AI to read license plates. They record details like the vehicle's make, model, and color. Over 120,000 of Flock's cameras are installed across the US.",
+            "what_happened": "Dozens of communities have canceled contracts for these cameras or turned them off. Los Angeles did so as well. Officials want stricter limits on what data the cameras collect. They also want to control who can access the data and how it gets used. Earlier this year, Amazon-owned Ring ended a partnership with Flock after public backlash.",
+            "why_it_matters": "When many cameras are networked together, they can track your vehicle throughout the day and across the country. Cities canceling these contracts show that governments are starting to listen to privacy concerns. How much tracking should happen in public spaces is now a question more officials are asking.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "0ce4795153032a690b504c7aab75683d",
+          "slug": "cancer-surgery-wait-times-in-us-steadily-worsening-over",
+          "title": "Cancer surgery wait times in US steadily worsening over past decade",
+          "summary": "Study of six cancer types shows patients facing longer delays than in 2012.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/08/us-wait-times-for-cancer-surgeries-are-getting-longer-and-longer"
+            }
+          ],
+          "article": {
+            "background": "Cancer surgery waits have grown longer over the past ten years in the US. Doctors consider how fast patients get surgery a key measure of healthcare quality. Long delays before cancer surgery have been tied to worse outcomes. These include lower survival rates and higher anxiety in patients.",
+            "what_happened": "A study in JAMA Surgery looked at data from over 2.7 million patients. The patients had breast, colon, lung, pancreatic, gastric, or esophageal cancer. Compared to 2012, wait times for surgery grew longer for all six cancer types.",
+            "why_it_matters": "Cancer grows faster in some people than others. Even a few weeks of delay can change how well treatment works. If your surgery gets pushed back, your cancer may advance further. The trend suggests the US healthcare system is struggling to keep up with cancer cases.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "34151a3e178094d27413e7c0a3e42440",
+          "slug": "indian-solar-mission-offers-new-clues-to-sun-s-superheated",
+          "title": "Indian solar mission offers new clues to sun's superheated corona mystery",
+          "summary": "A new study explains why the sun's outer layer is hotter than its surface.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c934wqpd74xo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Sun's outer atmosphere, called the corona, is far hotter than the Sun's surface. This puzzles scientists because it should not be that way. Heat normally spreads outward and cools down, not the reverse. The corona also shoots out huge amounts of energy during eruptions, yet stays hot. India has now launched Aditya-L1, its first space mission to study the Sun up close.",
+            "what_happened": "Aditya-L1 has found clues that may explain these mysteries. Scientists published their findings in the Astrophysical Journal Letters, a major science journal. The mission's data suggests new answers to questions scientists have debated for years.",
+            "why_it_matters": "The Sun's eruptions send waves of energy toward Earth. These waves can knock out satellites and damage power grids that supply our homes. Understanding the corona helps scientists predict these eruptions and warn us in advance. Better warnings mean we can protect the systems we depend on every day.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "b03768a939cde44ef20409030d5c58d2",
+      "title": "US sells 30-year bonds at highest borrowing costs since 2001",
+      "url": "https://www.ft.com/content/9c9c948f-dc8b-4385-a9b9-4b98dc1eadd9",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "9d832998c50a60e43f4cb984bd5970fc",
+      "title": "Netflix is closing two game studios",
+      "url": "https://www.theverge.com/games/979855/netflix-shut-down-night-school-studio-moonloot-games",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "5a2bc831e5ff32a3d2746d43e95e790f",
+      "title": "If Apple sends you a push notification alerting you to a spyware attack, take it seriously",
+      "url": "https://techcrunch.com/2026/08/13/if-apple-sends-you-a-push-notification-alerting-you-to-a-spyware-attack-take-it-seriously",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "85d425db3e91bc256ea9cc7f4107b2d3",
+      "title": "China's renewable boom masks a quiet Coal-to-Liquids expansion",
+      "url": "https://oilprice.com/Energy/Coal/Chinas-Renewable-Boom-Masks-a-Quiet-Coal-to-Liquids-Expansion.html",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b48f2b8382cb40b183dc68f04958783c",
+      "title": "Engine parts smashed Ryanair window that man's head was sucked out of, report says",
+      "url": "https://www.bbc.co.uk/news/articles/cr59j4z3vl8o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5fd2b1225c586a3b3f3e45263894edbc",
+      "title": "Romania shuts its last nuclear reactor as drought-hit Danube river drops to record low",
+      "url": "https://www.theguardian.com/world/2026/aug/14/romania-nuclear-plant-shut-down-cernavoda-danube-river-water-drought",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "fe4e03107c622896d68d4a2ae76d7d25",
+      "title": "‘Unprecedented’ rain kills four in Japan as thousands stranded at airport",
+      "url": "https://www.theguardian.com/world/2026/aug/14/japan-deadly-rain-evacuation-thousands-stranded-tokyo-airport-weather",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6704f277341f981c0c08f81c6a3f86dc",
+      "title": "Female assassin kills Ukraine submarine commander who defected to Russia",
+      "url": "https://www.yahoo.com/news/world/articles/woman-assassinates-ukrainian-submarine-commander-143742712.html",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "d7a2a263eeece78ea707931767eeffbe",
+      "title": "Trump administration ends funding for Arctic climate report",
+      "url": "https://www.pbs.org/newshour/show/trump-administration-ends-funding-for-arctic-climate-report",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 144,
+    "clusters_considered": 124,
+    "stories_run": 12,
+    "sources": 15,
+    "sections_held": 0
+  }
+}
