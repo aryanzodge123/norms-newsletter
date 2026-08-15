@@ -1,0 +1,339 @@
+{
+  "date": "2026-08-15",
+  "edition_number": 69,
+  "edition_type": "normal",
+  "headline_of_the_day": "Earthquake kills at least 14 in eastern Indonesia, triggers tsunami warning",
+  "headline_cluster_id": "1f5ae0fa483dc490c6ed16d541711b98",
+  "headline_rationale": "A major natural disaster with confirmed deaths, thousands fleeing, and ongoing rescue operations affecting a large population in a seismically active region",
+  "key_points": [
+    {
+      "text": "A magnitude 7.7 earthquake hit eastern Indonesia early Saturday, killing at least 14 people.",
+      "topic": "World"
+    },
+    {
+      "text": "Mastercard's payment network went down globally Saturday, stopping shopping and ATM withdrawals before it came back.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Luigi Mangione pleaded guilty in federal court for killing a CEO and explained his motive publicly.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Congo Ebola outbreak is on track to become the deadliest in history, WHO says.",
+      "topic": "World"
+    },
+    {
+      "text": "A wildfire in Croatia killed one person, injured 40, and forced thousands to leave coastal towns.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-15.mp3",
+    "duration_seconds": 482,
+    "size_bytes": 5789664
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "8ecacfa2f7bb2a294c64d418242471ee",
+          "slug": "namecheap-and-radiusdc-publish-post-mortem-after-major",
+          "title": "Namecheap and RadiusDC publish post-mortem after major service outage",
+          "summary": "A domain registrar and hosting provider explained what failed and how to stop it next time.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.namecheap.com/blog/namecheap-service-outage-update"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "367866759bfb0fc1ebcdb09d4af05ce7",
+          "slug": "us-to-tell-allies-they-must-choose-sides-in-ai-competition",
+          "title": "US to tell allies they must choose sides in AI competition with China",
+          "summary": "The U.S. will pressure its partners to choose between American and Chinese artificial intelligence systems.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/world/china/us-tell-partners-they-must-pick-sides-ai-race-with-china-2026-08-14"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "d7db1758385040df2708ae480accd3c5",
+          "slug": "corgi-shuts-down-website-that-ranked-its-female-employees",
+          "title": "Corgi shuts down website that ranked its female employees",
+          "summary": "A startup shut down a site that let visitors vote on female workers and threatened legal action.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://sf.gazetteer.co/corgi-kills-short-lived-website-that-ranked-its-female-employees"
+            }
+          ],
+          "article": {
+            "background": "Corgi is an AI insurance company known for its 24-hour cafes and playful social media. It became the target of a ranking website that did not last long.",
+            "what_happened": "On Monday, someone created CorgiGirls.com. The site showed photos of Corgi's female workers side by side. Visitors voted on who they found more attractive. Corgi learned of the site and threatened legal action. By Thursday, the site went down. The creator was Sebastian Mandal, a San Francisco startup founder.",
+            "why_it_matters": "Employee ranking sites create a new form of workplace harassment that is easy to set up and hard to stop. Corgi moved fast here, but many companies lack the speed or resources to fight back.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7dd0eb049decc604440423637afd7c09",
+          "slug": "amazon-reinstates-binding-arbitration-blocks-class-action",
+          "title": "Amazon reinstates binding arbitration, blocks class-action lawsuits from workers",
+          "summary": "Amazon changed its dispute rules for new hires and possibly workers already on staff.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/legal/government/amazon-reinstates-binding-arbitration-bars-class-action-lawsuits-2026-08-14"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "499103e55aa99ac51bb16c67fd90a7d6",
+          "slug": "luigi-mangione-pleads-guilty-in-federal-case-reveals-ceo",
+          "title": "Luigi Mangione pleads guilty in federal case, reveals CEO killing motive",
+          "summary": "Luigi Mangione pleaded guilty and publicly stated why he committed the shooting.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/luigi-mangione-reveals-motive-for-ceos-killing-after-pleading-guilty-in-federal-case"
+            }
+          ],
+          "article": {
+            "background": "Brian Thompson was the CEO of UnitedHealthcare, a major health insurance company. In December 2024, he was shot and killed outside a hotel in Manhattan. Luigi Mangione, 28, was arrested for the killing.",
+            "what_happened": "Mangione pleaded guilty to shooting Thompson. He admitted to stalking and shooting Thompson in 2024 outside a Hilton hotel in Manhattan. He faces life in prison on federal charges. He also faces state murder charges in New York.",
+            "why_it_matters": "This case has drawn public attention because it involved a top insurance company executive. Many people are angry about health insurance practices and access to care. The case may fuel ongoing debates about how the insurance industry operates.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1f1834616e371cec246456a2138bf503",
+          "slug": "trump-vaccine-order-would-require-millions-of-individual",
+          "title": "Trump vaccine order would require millions of individual shots not used in decades",
+          "summary": "An executive order would require single-dose vials for childhood vaccines that were last made years ago.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/health/trumps-vaccine-order-would-require-millions-of-individual-shots-last-used-decades-ago"
+            }
+          ],
+          "article": {
+            "background": "Childhood vaccines in the U.S. have used combination shots for decades. A single injection now protects against multiple diseases at once. President Trump issued an executive order to change how these vaccines are given to children.",
+            "what_happened": "The order would require millions of separate shots instead of combination vaccines. Each disease would get its own dose. Public health experts quickly condemned the plan, saying it would create major financial and logistical problems.",
+            "why_it_matters": "The switch would mean more needles for every child. It would cost far more to produce, store, and give out separate shots. Health officials worry it could disrupt a system that has worked well for generations.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "1f5ae0fa483dc490c6ed16d541711b98",
+          "slug": "magnitude-7-7-earthquake-kills-at-least-14-in-eastern",
+          "title": "Magnitude 7.7 earthquake kills at least 14 in eastern Indonesia",
+          "summary": "A shallow 7.7 magnitude earthquake struck the Flores region early Saturday with rescue efforts ongoing.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c5y0zz63gero?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Indonesia sits on the Pacific Ring of Fire, where tectonic plates collide often. The country experiences regular earthquakes, some causing major damage. Flores, where this quake hit, lies in a particularly active zone.",
+            "what_happened": "A 7.7-magnitude earthquake struck the island of Flores early Saturday, just before 5 a.m. local time. At least 14 people died and others were injured. Teams worked to free people trapped in damaged buildings after the quake and dozens of aftershocks. A tsunami warning was issued but lifted about three hours later.",
+            "why_it_matters": "Major earthquakes in Indonesia can cause widespread death and injury across the country. The preliminary death toll may rise as search efforts continue. Understanding the risk helps Indonesia plan safer buildings and faster emergency response.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c858d68b345ccc20934d702636bd5cb1",
+          "slug": "congo-ebola-outbreak-on-track-to-become-deadliest-in-history",
+          "title": "Congo Ebola outbreak on track to become deadliest in history",
+          "summary": "The current Ebola outbreak is getting worse and is now the deadliest ever recorded.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/congo-ebola-outbreak-on-track-to-become-deadliest-in-history"
+            }
+          ],
+          "article": {
+            "background": "Ebola is a rare, severe disease spread through contact with blood or body fluids. The Democratic Republic of Congo has dealt with several outbreaks over the years. Norm covered this outbreak in August when the World Health Organization warned it was on track to become the deadliest ever. It could surpass the 2014-2016 West African epidemic, which killed at least 11,000 people.",
+            "what_happened": "The Ebola outbreak in Congo has worsened. Confirmed cases have climbed to over 4,600. At least 2,100 people have died. The outbreak reached this death toll almost three times faster than the 2014-2016 outbreak.",
+            "why_it_matters": "Ebola kills quickly and spreads through direct contact with blood or body fluids. Outbreaks in Congo often move fast because of dense populations and limited access to health care. If this outbreak reaches 11,000 deaths, it will be the deadliest in history. That matters because it shows how hard the disease is to contain even when the world is watching.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "396ff050eefcdd8c8ca2a7554ba67fcd",
+          "slug": "croatia-wildfire-kills-one-injures-40-evacuates-thousands",
+          "title": "Croatia wildfire kills one, injures 40, evacuates thousands from coast",
+          "summary": "Severe blaze spread quickly from Lokva Rogoznica to tourist town of Omis Thursday night.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c9342wn2x27o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Croatia sits on Europe's Mediterranean coast, a region prone to wildfires during hot, dry summers. A severe wildfire started near the village of Lokva Rogoznica on Thursday evening.",
+            "what_happened": "The fire spread quickly toward Omis, a nearby tourist town. Around 1,200 residents and tourists were evacuated. At least one person died and about 40 others were injured. Ten people were in intensive care. Croatia's fire chief called it one of the worst blazes in the country's history.",
+            "why_it_matters": "Wildfires like this one show how fast fire can force people to flee their homes and harm large numbers of people. The scale of this disaster reflects broader trends across Europe during fire season.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7488a267c630896c36cb27ec21bb3d4e",
+          "slug": "broken-engine-parts-shattered-ryanair-window-that-sucked",
+          "title": "Broken engine parts shattered Ryanair window that sucked man's head out",
+          "summary": "Safety board says fragments from engine smashed cabin window during flight last month.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/ntsb-says-broken-engine-parts-shattered-ryanair-plane-window-that-a-mans-head-got-sucked-into"
+            }
+          ],
+          "article": {
+            "background": "A Ryanair flight took off from Greece on July 10 heading to Germany. Shortly after takeoff, an engine fan blade broke. Broken pieces from the engine are what caused what happened next.",
+            "what_happened": "The broken engine parts smashed through a cabin window. A passenger's head and right shoulder were sucked partway through the opening. Other passengers pulled him back inside. The National Transportation Safety Board, the US agency that investigates accidents, confirmed this in a preliminary report.",
+            "why_it_matters": "Window failures on planes are rare because engines are built to contain broken parts. This incident shows a system failed, which matters to anyone who flies. The investigation will determine what went wrong and what needs to change to prevent it from happening again.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "5f98a7b1754d9734f7d195bf193f56f7",
+          "slug": "securities-and-exchange-commission-charges-three-entities",
+          "title": "Securities and Exchange Commission charges three entities with $74 million pre-IPO fraud",
+          "summary": "Regulator says three companies ran a scam to defraud ordinary investors with unregistered securities.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "sec_edgar_press",
+              "url": "https://www.sec.gov/newsroom/press-releases/2026-75-sec-charges-boiler-room-operator-three-entities-defrauding-retail-investors-74-million-pre-ipo"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "9007075ac7725616cee80b492184090d",
+          "slug": "uk-bans-disposable-barbecues-temporarily-during-extreme",
+          "title": "UK bans disposable barbecues temporarily during extreme heatwave",
+          "summary": "The U.K. banned single-use grills because they pose a major wildfire risk during extreme heat.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.independent.co.uk/news/uk/home-news/disposable-bbq-ban-burnham-wildfires-heatwave-b3033164.html"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c0jlyqdj6geo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Disposable barbecues are single-use grills people can buy cheaply and use once at parks or beaches. The UK is experiencing a severe heatwave and drought. These conditions have made the country very dry and prone to fire.",
+            "what_happened": "The UK government put a temporary ban on selling disposable barbecues. The ban came after these grills caused serious wildfires across the country over the summer. Officials said the grills pose a significant risk to the public during the current heat and dry weather.",
+            "why_it_matters": "If you enjoy outdoor cooking, you will need to use a different type of grill for now. The ban aims to prevent accidental fires that could spread quickly in dry conditions. This protects homes and land while the heatwave continues.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "72c96821a4af9db771c2d410d9d7748f",
+          "slug": "global-mastercard-outage-disrupts-shopping-and-atms-before",
+          "title": "Global Mastercard outage disrupts shopping and ATMs before resolution",
+          "summary": "Payments were declined across Sydney and Melbourne Saturday afternoon, affecting thousands of users.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.smh.com.au/national/global-mastercard-outage-stopping-shopping-in-sydney-20260815-p60omk.html"
+            }
+          ],
+          "article": {
+            "background": "Mastercard is the payment network that lets people use Mastercard-branded credit and debit cards to buy things and withdraw cash. On Saturday afternoon, a problem with Mastercard's systems hit Australia and other parts of the world. Banks including NAB and Commonwealth Bank confirmed the issue was global.",
+            "what_happened": "Card payments were declined in Sydney and Melbourne on Saturday afternoon. Some ATMs also had problems. The outage was resolved by about 4pm. Down Detector, a service that tracks outages, recorded thousands of reports from Commonwealth Bank, Mastercard, ApplePay, and Westpac customers during the disruption.",
+            "why_it_matters": "If you use a Mastercard to pay at stores, outages like this can stop you from making purchases. Commonwealth Bank told customers they could insert their card and select 'savings' to pay via EFTPOS, a direct payment method, if their Mastercard was declined. Outages usually don't last long, but they show how much shopping depends on payment networks working smoothly.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7cc1b43a75879b4c23abfa6500057126",
+          "slug": "vulnerability-found-in-destruction-certificate-txt-files",
+          "title": "Vulnerability found in destruction-certificate.txt files",
+          "summary": "A security flaw was found in widely used infrastructure software with incomplete details released publicly.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://stallman.org/articles/destruction-certificate.txt"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "96f4eb5936d48f42aa308c6732872be6",
+      "title": "Study links coffee consumption to metabolic health and sex hormones",
+      "url": "https://www.oulu.fi/en/news/study-links-coffee-consumption-metabolic-health-and-sex-hormones",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "c724c7520a41fc029c76d5a19f84829d",
+      "title": "Concerns grow over increased global ties with Taliban in Afghanistan",
+      "url": "https://www.theguardian.com/world/2026/aug/15/concern-grow-global-ties-taliban-afghanistan-human-rights",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "09c1d69fedf50d34e5954b517e84f99f",
+      "title": "Jason Arday, ex-Cambridge professor at centre of plagiarism row, found dead",
+      "url": "https://www.bbc.com/news/articles/c1j1ye6n30no",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 176,
+    "clusters_considered": 118,
+    "stories_run": 14,
+    "sources": 14,
+    "sections_held": 0
+  }
+}
