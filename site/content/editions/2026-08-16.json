@@ -1,0 +1,407 @@
+{
+  "date": "2026-08-16",
+  "edition_number": 70,
+  "edition_type": "normal",
+  "headline_of_the_day": "7.7-magnitude earthquake kills at least 47 in Indonesia",
+  "headline_cluster_id": "fd323565f83ee07a46a8b4f58329d04d",
+  "headline_rationale": "A major natural disaster with significant casualties and ongoing rescue operations affecting thousands across a populated Indonesian region.",
+  "key_points": [
+    {
+      "text": "At least 47 people died after a 7.7-magnitude earthquake struck Indonesia's Flores island early Saturday.",
+      "topic": "World"
+    },
+    {
+      "text": "Israel killed eleven people in strikes on southern Lebanon in one of the deadliest days since a June truce agreement.",
+      "topic": "World"
+    },
+    {
+      "text": "South Korea proposed formal talks to officially end the war with North Korea that has lasted seventy years.",
+      "topic": "World"
+    },
+    {
+      "text": "Abdominal fat predicts heart disease risk better than body mass index alone, a large trial found.",
+      "topic": "Science"
+    },
+    {
+      "text": "American credit card debt hit $1.26 trillion, just below the all-time record from late last year.",
+      "topic": "Finance"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-16.mp3",
+    "duration_seconds": 452,
+    "size_bytes": 5428224
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "8c14e79ac9453bc7f84865180811f543",
+          "slug": "chinese-chipmaker-tops-micron-in-nand-memory-shipments",
+          "title": "Chinese chipmaker tops Micron in NAND memory shipments",
+          "summary": "Yangtze Memory reached third globally in second quarter, beating US and Japanese rivals.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnbc.com/2026/08/13/chinese-firm-tops-micron-kioxia-shipments-nand-memory-chips.html"
+            }
+          ],
+          "article": {
+            "background": "NAND memory chips store data even when devices are powered off. They are slower than DRAM chips, which cost much more. NAND makes up about one-fourth of Micron's revenue. Samsung and SK hynix, both from South Korea, have long led this market.",
+            "what_happened": "Yangtze Memory Technologies, a Chinese firm also known as YMTC, took third place in global NAND chip shipments in the second quarter. It beat out U.S. rival Micron and Japan's Kioxia. Samsung and SK hynix held the top two spots. Counterpoint Research released the data Wednesday.",
+            "why_it_matters": "More competitors in this market could mean more choices for devices that use NAND chips, like USB drives and phones. It may also affect chip prices as supply sources diversify. For now, most people will not see immediate changes.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0a3a47b8fe6b558f705fa98dd7c6733d",
+          "slug": "engineers-repeatedly-ignore-historical-failures-in-critical",
+          "title": "Engineers repeatedly ignore historical failures in critical systems",
+          "summary": "Systemic practice failures affect how infrastructure and essential technology are built and maintained.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://horn.gg/blog/engineers-will-do-anything-to-avoid-learning-from-history"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "008ec3dbc4c1d069d63f75d7a6eae963",
+          "slug": "alibaba-ai-models-surpass-3-billion-downloads-leading-meta",
+          "title": "Alibaba AI models surpass 3 billion downloads, leading Meta and Google",
+          "summary": "Alibaba's open-weight AI models became the world's most downloaded in six months, according to the company.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://finance.yahoo.com/technology/ai/articles/alibaba-ai-models-hit-3-091606840.html"
+            }
+          ],
+          "article": {
+            "background": "Open-weight AI models are systems that a company releases publicly. Other developers can download them, study them, and change them. Alibaba is a Chinese tech company. It has released more than 460 models in its family called Qwen. The company says other developers have made 300,000 additional versions based on Alibaba's work.",
+            "what_happened": "Alibaba's open-weight models hit 3 billion downloads in the past six months. This makes them the world's most downloaded AI models. The count surpasses Meta, Google, and other competitors globally. Alibaba announced the milestone in a statement to the media.",
+            "why_it_matters": "Open-weight models help smaller companies and researchers build AI tools. They do not have to pay for expensive systems from big tech companies. More downloads of Alibaba's models suggest developers worldwide trust this approach. This could shape how AI gets built outside the United States.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7c704eb83c47a6750efc567ddacb0e8d",
+          "slug": "woman-alleges-stepfather-used-grok-to-create-explicit",
+          "title": "Woman alleges stepfather used Grok to create explicit images from childhood photo",
+          "summary": "A lawsuit claims an xAI chatbot turned a girl's photo into over seven thousand explicit images without consent.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery"
+            }
+          ],
+          "article": {
+            "background": "Grok is an AI chatbot made by xAI, Elon Musk's AI company. In recent months, multiple people have filed a lawsuit against xAI. They claim Grok was used to create child sexual abuse material from their photos.",
+            "what_happened": "A woman identified as Jane Doe 4 joined the lawsuit. She alleged her stepfather used Grok to alter a photo of her taken at age 11. This created more than 7,000 explicit images. Her stepfather died by suicide two days after law enforcement discovered the images.",
+            "why_it_matters": "This case tests whether AI companies can be held legally responsible when people misuse their tools to create abuse material. The outcome could shape what safety rules these companies must build in. For now, the question is whether xAI knew or should have known what Grok could be used to do.",
+            "quote": {
+              "text": "Limitless access to these tools is spreading so quickly. It is taking everyday life and turning it into child sexual abuse.",
+              "attribution": "the woman, identified as Jane Doe 4 in the lawsuit",
+              "source_url": "https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "ac1acb54380a67818fa319ede5a76641",
+          "slug": "parents-watering-down-baby-formula-to-stretch-supplies",
+          "title": "Parents watering down baby formula to stretch supplies, charity reports",
+          "summary": "Parents are diluting baby formula to save money as costs stay high, a baby bank founder says.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cpq8p82gq49o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Baby formula costs have risen sharply. Moorside Baby Bank, based in County Durham, England, helps families who cannot afford formula at current prices. A recent study found nearly half of parents struggle financially after having a baby.",
+            "what_happened": "The baby bank's founder, Megan Sinden, said some families are watering down formula to save money. They use less powder to stretch supplies longer. Sinden called this unsafe and asked the government to cap formula prices.",
+            "why_it_matters": "Diluting formula changes its nutrition. Babies need specific amounts of calories and nutrients to grow properly. Parents facing high costs may choose unsafe shortcuts instead of getting help they need.",
+            "quote": {
+              "text": "It's not a luxury item, it's a basic need for a baby.",
+              "attribution": "Megan Sinden, founder of Moorside Baby Bank",
+              "source_url": "https://www.bbc.co.uk/news/articles/cpq8p82gq49o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "2c0880f5b1042ae4d94895048ac3004d",
+          "slug": "new-south-wales-launches-gun-buyback-after-bondi-attack",
+          "title": "New South Wales launches gun buyback after Bondi attack",
+          "summary": "Australia's largest state offers up to one thousand dollars per firearm starting November second.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cgjee21eenvo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/live/2026/aug/16/politics-reactions-nsw-gun-buyback-anthony-albanese-labor-angus-taylor-coalition-pauline-hanson-one-nation-bird-flu-ntwnfb"
+            }
+          ],
+          "article": {
+            "background": "In December, a gunman killed 15 people at a Jewish festival on Sydney's Bondi Beach in New South Wales. NSW is Australia's most populous state. After the attack, Australian authorities promised major firearm law reforms.",
+            "what_happened": "NSW will launch a gun buyback program starting November 2. Gun owners can trade eligible handguns, shotguns, and rifles for up to 1,000 Australian dollars (about 523 British pounds). NSW is the first Australian state to offer cash for firearms. Prime Minister Anthony Albanese invited all other states and territories to join the scheme.",
+            "why_it_matters": "Australia has more guns today than it did after Port Arthur, a 1996 mass shooting that led to major gun reforms. The buyback aims to reduce the number of firearms in circulation. For most people, this means fewer guns in the community, though gun restrictions already existed before this program began.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "75ba7a9acf2ea1d10295e514b56ce0b9",
+          "slug": "credit-card-debt-nears-record-high-at-1-26-trillion",
+          "title": "Credit card debt nears record high at $1.26 trillion",
+          "summary": "American credit card debt hit $1.26 trillion in the second quarter, nearly matching the all-time high from late 2025.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://abc7.com/story/credit-card-debt-rises-126-trillion-nearing-time-record/19667289"
+            }
+          ],
+          "article": {
+            "background": "Credit card debt in America goes up when people spend more. It also rises when prices climb for basics like groceries and gas. Last year, credit card debt hit an all-time high of $1.28 trillion in the fourth quarter.",
+            "what_happened": "Americans' credit card debt reached $1.26 trillion in the second quarter. That was a $21 billion increase from the prior quarter. The Federal Reserve Bank of New York released the data Tuesday. Total balances now sit just shy of last year's all-time record.",
+            "why_it_matters": "When credit card debt climbs, it signals that many households are spending more. Some are also falling behind on payments. Rising prices for everyday needs like food and fuel push people to use cards more often. This affects how much debt Americans carry and how hard it becomes to pay down.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4dfb7214db096b9f28d6fea957ed24a7",
+          "slug": "uk-inflation-expected-to-reach-2-9-percent-as-energy-bills",
+          "title": "UK inflation expected to reach 2.9 percent as energy bills surge",
+          "summary": "UK inflation rose in July as gas and electricity prices climbed, putting pressure on household budgets.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/aug/16/new-uk-cost-of-living-crisis-looms-rising-energy-bills-inflation"
+            }
+          ],
+          "article": {
+            "background": "British households buy gas and electricity from a market affected by global events. When energy prices jump, they push up inflation, the rate at which prices rise. The Bank of England watches inflation closely. It may raise interest rates if inflation stays too high.",
+            "what_happened": "UK inflation is expected to hit 2.9% in July, up from 2.6% in June. Rising gas and electricity bills drove most of that increase. The Office for National Statistics will release the full July figures on Wednesday. The Bank of England is considering raising interest rates as early as September in response to the higher inflation.",
+            "why_it_matters": "Higher inflation means your money buys less. If interest rates rise, mortgages and loans become more expensive, raising what you pay each month. Energy bills are already squeezing household budgets. These moves together could make everyday costs harder to manage.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "fd323565f83ee07a46a8b4f58329d04d",
+          "slug": "earthquake-kills-at-least-47-in-indonesia-rescue-teams",
+          "title": "Earthquake kills at least 47 in Indonesia, rescue teams search for survivors",
+          "summary": "A 7.7-magnitude earthquake hit Flores island early Saturday, killing at least 47 people with rescue work ongoing.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c3v00w5ylw9o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/16/rescue-teams-search-for-survivors-in-indonesia-after-powerful-earthquake"
+            }
+          ],
+          "article": {
+            "background": "Indonesia sits in a region where earthquakes are common. The ground here is unstable due to the movement of Earth's tectonic plates, the huge sections that make up the planet's crust. Norm covered this story on August 15, when at least 14 people had died. The death toll has since risen to at least 47.",
+            "what_happened": "A magnitude 7.7 earthquake struck the island of Flores on Saturday, just before 5 a.m. local time. It reached a depth of 15 kilometers. Hundreds of buildings were badly damaged, and dozens of aftershocks followed. Rescue teams dug through collapsed buildings and landslides on Sunday. At least 24 people died in Manggarai regency. At least 17 died in neighboring East Manggarai. More deaths occurred in Sikka, Ngada, and Ende regencies. Over 100 people were injured, and thousands were displaced.",
+            "why_it_matters": "If you live in or visit earthquake-prone areas, this shows why building codes and emergency plans matter. The damage from a single quake can be huge and sudden. Indonesia's location makes it especially at risk for these events.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ffc8105010b91c943f9aed395932402d",
+          "slug": "israeli-strikes-kill-eleven-in-southern-lebanon",
+          "title": "Israeli strikes kill eleven in southern Lebanon",
+          "summary": "Attacks on Ansar mark one of deadliest days since June agreement aimed at reducing hostilities.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c4gjygx4gjeo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "An agreement announced in June aimed to reduce fighting between Israel and Hezbollah, an Iran-backed militia group in Lebanon. Despite this deal, violence has continued with regular strikes in southern Lebanon near the border.",
+            "what_happened": "Israeli forces struck a house on the outskirts of Ansar, a town 43 miles south of Beirut, killing seven people according to Lebanon's prime minister. Three children and two women were among the dead. Israeli officials said they also killed a Hezbollah commander in a separate operation. Eleven people died in total, making it one of the deadliest days since the June agreement.",
+            "why_it_matters": "For people in southern Lebanon and northern Israel, the danger remains despite the agreement meant to bring stability. The continued strikes show the agreement has not stopped the violence between the two sides.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bd821bff7276be0c229262bad0f9734c",
+          "slug": "south-korea-proposes-talks-to-officially-end-war-with-north",
+          "title": "South Korea proposes talks to officially end war with North",
+          "summary": "South Korea's president wants formal talks and new security measures to end the decades-old conflict with North Korea.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c8en2z9jp2xo"
+            }
+          ],
+          "article": {
+            "background": "The Korean peninsula has been divided since 1953. South Korea and North Korea signed an armistice that stopped the fighting but never formally ended the war. The two countries remain technically at war. North Korea has tested ballistic missiles that can carry nuclear warheads. South Korea and Japan see these tests as attempts to intimidate.",
+            "what_happened": "South Korea's president Lee Jae Myung proposed talks to officially end the war. He suggested a multi-layered security system to stop flare-ups along the demilitarised zone, the border between the two countries. He also offered to discuss ways to halt North Korea's nuclear program.",
+            "why_it_matters": "A formal end to the war would reduce the risk of conflict on the peninsula. Right now, any incident along the heavily armed border could escalate. For people in South Korea and Japan, an official peace agreement would mean lower tensions and less risk of military confrontation.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "6256fe9ccb616b7a98d5391ec5c45827",
+          "slug": "ice-manual-details-electric-shock-gloves-planned-for-agents",
+          "title": "ICE manual details electric shock gloves planned for agents",
+          "summary": "An immigration agency plans to spend tens of millions on gloves that give electrical shocks to restrain detainees.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.404media.co/heres-the-manual-for-ices-electric-shock-gloves"
+            }
+          ],
+          "article": {
+            "background": "Immigration and Customs Enforcement (ICE) is a federal agency that enforces immigration and border laws. In August, Norm covered ICE's plan to buy thousands of electric shock gloves called G.L.O.V.E, or Generated Low Output Voltage Emitter, made by a company called Compliant Technologies. ICE plans to spend up to $20 million on these devices. The gloves can deliver up to 380 volts of electricity to help agents subdue people.",
+            "what_happened": "A user manual for the G.L.O.V.E gloves has now become public. The manual gives details on how the gloves work and how ICE intends to use them. It reveals specifics about the devices that were not previously known. The Associated Press reported on the manual on Tuesday.",
+            "why_it_matters": "The manual's release lets the public see exactly how ICE plans to use electrical devices during arrests and detentions. If you care about how law enforcement treats people in custody, this shows what tools agents may use on you or people you know. The specifics matter because they show what happens when someone is detained.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5b688a1c334880dff4cf412d67237221",
+          "slug": "federal-highway-approval-clears-interstate-24-expansion-in",
+          "title": "Federal highway approval clears Interstate 24 expansion in Tennessee",
+          "summary": "A final agency decision makes it harder to challenge a Nashville-Murfreesboro highway project in Davidson and Rutherford counties.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "federal_register",
+              "url": "https://www.federalregister.gov/documents/2026/08/17/2026-16746/notice-of-final-federal-agency-actions-on-proposed-highway-in-tennessee"
+            }
+          ],
+          "article": {
+            "background": "The Federal Highway Administration (FHWA) oversees major highway projects across the country. A proposed project would expand Interstate 24, a major highway, across about 26 miles in Tennessee. The route runs between Nashville and Murfreesboro, spanning Davidson and Rutherford counties.",
+            "what_happened": "The FHWA has issued final approval for the I-24 project. The agency completed its environmental review and issued a Finding of No Significant Impact, meaning it determined the project would not cause major environmental harm. This final decision limits the window for legal challenges.",
+            "why_it_matters": "The approval makes it harder to challenge the highway project in court. People in the Nashville and Murfreesboro area may see changes to traffic flow, property access, and commute times. The final ruling means the project can now move forward.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "de6059f27a064874c33015fb467ab0dd",
+          "slug": "abdominal-fat-predicts-heart-disease-better-than-bmi-study",
+          "title": "Abdominal fat predicts heart disease better than BMI, study finds",
+          "summary": "A large study found that waist size predicts heart disease risk better than body mass index alone.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.acc.org/about-acc/press-releases/2026/08/11/14/59/abdominal-fat-predicts-heart-disease-risk-better-than-bmi"
+            }
+          ],
+          "article": {
+            "background": "Doctors have long used BMI, or body mass index, to assess heart disease risk. BMI is a number based on height and weight. But it does not show where a person carries fat. A new study finds that belly fat matters more than BMI alone.",
+            "what_happened": "Researchers published findings in JACC, the journal of the American College of Cardiology. They found that waist size is a better sign of heart disease risk than BMI. Measuring waist circumference or waist-to-hip ratio catches health risks that BMI misses. Two people with the same BMI can have very different amounts of belly fat.",
+            "why_it_matters": "If your doctor relies only on BMI, you might miss a real warning sign. A person with a normal BMI but excess belly fat still faces higher heart risk. Doctors may now have a simpler way to spot who needs closer monitoring.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "652915d328c8f54b13354bad6e70eb26",
+          "slug": "study-reveals-how-wind-turbulence-transforms-odor-signals",
+          "title": "Study reveals how wind turbulence transforms odor signals animals track",
+          "summary": "A study explains how animals use smell to find sources even when wind constantly changes the scent.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.colorado.edu/today/2026/08/10/decoding-smell-study-reveals-how-odor-signals-shapeshift-wind"
+            }
+          ],
+          "article": {
+            "background": "Dogs can find missing people by following scent. Bees locate flowers to pollinate by smell. Scientists have long known animals have powerful noses, but they did not fully understand how these animals actually track an odor back to its source. New research from CU Boulder is starting to fill that gap.",
+            "what_happened": "Researchers discovered that wind plays a key role in how odors spread and change. As an odor travels through turbulent air, the timing of odor whiffs shifts in predictable patterns. These patterns may help animals like dogs and bees navigate toward where a smell is coming from. The work is part of Odor2Action, an international research network with teams from 16 institutions.",
+            "why_it_matters": "Understanding how smell works in the real world could improve how we train and use dogs for search and rescue. It might also help scientists design better sensors or robots that track odors. For now, the research is mainly about basic science, but it fills a real gap in how we understand animal behavior.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "fc3093618fd9ee3d1aac9ca6524db4be",
+      "title": "Australia’s Lani Pallister topples 800m freestyle queen Katie Ledecky at Pan Pacs",
+      "url": "https://www.theguardian.com/sport/2026/aug/16/lani-pallister-katie-ledecky-pan-pacs-800m-freestyle-record-swimming",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "42be694c098f3e7fa08cdfe3f83f788b",
+      "title": "New York City man charged with hate crimes after alleged synagogue assault",
+      "url": "https://www.theguardian.com/us-news/2026/aug/15/hate-crime-charges-new-york-synagogue-assault",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "bd21ed4252a0565fcd421d289dd6f6e1",
+      "title": "Hurricane Hits Big Island, Hawaii",
+      "url": "https://www.nhc.noaa.gov",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "db378ff5c1f8467649930442a8da2444",
+      "title": "Hawaii braces for potential first direct hit by a hurricane in 34 years",
+      "url": "https://www.bbc.co.uk/news/articles/crmrr7kjy9vo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "116a1e460851ca783158e48b11fa6e73",
+      "title": "‘We detected unusual activity’: the scam that uses AI to exploit your holiday photos",
+      "url": "https://www.theguardian.com/money/2026/aug/16/scam-ai-holiday-photos-instagram-facebook",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 156,
+    "clusters_considered": 126,
+    "stories_run": 15,
+    "sources": 12,
+    "sections_held": 1
+  }
+}
