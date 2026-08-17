@@ -1,0 +1,408 @@
+{
+  "date": "2026-08-17",
+  "edition_number": 71,
+  "edition_type": "normal",
+  "headline_of_the_day": "Congo's Ebola outbreak is the deadliest ever there with over 2,300 deaths.",
+  "headline_cluster_id": "25bca465ee0b079566ceb56d7a4c84da",
+  "headline_rationale": "A historic threshold in a major health crisis affecting thousands with regional stability implications and testing global disease preparedness systems.",
+  "key_points": [
+    {
+      "text": "Congo's Ebola outbreak killed at least 2,325 people, the deadliest in the country.",
+      "topic": "World"
+    },
+    {
+      "text": "Trump ordered the Pentagon to cut joint military drills with South Korea.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Thirty US states are suing Meta for harming young users on Instagram and Facebook.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Ukraine found an Nvidia AI chip inside a new Russian cruise missile.",
+      "topic": "World"
+    },
+    {
+      "text": "Anthropic will watermark all Claude text output worldwide to follow EU AI rules.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-17.mp3",
+    "duration_seconds": 444,
+    "size_bytes": 5325120
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "7a1aa041f3232b94a96a147c27a8983b",
+          "slug": "microsoft-ai-expansion-constrained-by-chip-shortage",
+          "title": "Microsoft AI expansion constrained by chip shortage",
+          "summary": "Microsoft has fewer advanced chips than it needs for its AI plans.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/aug/17/are-microsofts-ai-plans-being-held-back-by-a-shortage-of-chips"
+            }
+          ],
+          "article": {
+            "background": "Advanced chips are small components that can fit in your palm. They power artificial intelligence models. Big tech companies need huge numbers of them to stay competitive. Microsoft is one of those companies.",
+            "what_happened": "A Guardian investigation found a gap between what Microsoft said about its AI capacity and how many advanced chips it actually has running. The company's public statements appear to claim more computing power than its chip numbers suggest.",
+            "why_it_matters": "If Microsoft has fewer chips than needed, it may struggle to build and run the AI systems it has promised. This could affect the AI services the company offers to customers and businesses.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "46fc026ffad72507860e845b9b64001b",
+          "slug": "us-air-force-jet-engine-production-faces-quality-control",
+          "title": "US Air Force jet engine production faces quality control failures",
+          "summary": "US military engine makers have delays, defects, and old parts, the Pentagon says.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.militarytimes.com/industry/techwatch/2026/08/03/us-air-force-jet-engine-manufacturing-plagued-by-significant-challenges"
+            }
+          ],
+          "article": {
+            "background": "The U.S. Air Force relies on jet engines to power its fighter jets. These engines are made by contractors in the current industrial base. The Air Force has grown dissatisfied with their quality and performance.",
+            "what_happened": "On August 3, the Air Force issued a Request for Information. This asks companies to propose new engines and new makers. The agency cited production delays, quality control failures, and shortages of critical parts. The deadline to respond is August 28. The Air Force said it will pursue a strategic competition to drive innovation and strengthen supply chains.",
+            "why_it_matters": "The Air Force's ability to field and repair fighter jets depends on reliable engines. Right now, the current engines have problems the Air Force says it cannot accept. If the service finds new makers or engines, it could mean faster repairs and more jets ready to fly.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "b1b1c4aa2870ae43332500b387b61cd3",
+          "slug": "anthropic-to-watermark-all-claude-text-output-worldwide",
+          "title": "Anthropic to watermark all Claude text output worldwide",
+          "summary": "Anthropic is watermarking all Claude text worldwide to comply with EU AI law.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://daringfireball.net/2026/08/anthropics_watermark_text_adulteration_in_claude_is_a_perversion_of_writing"
+            }
+          ],
+          "article": {
+            "background": "Anthropic makes Claude, an AI assistant. The EU AI Act requires AI companies to mark generated content so machines can detect it. This week Anthropic said Claude would add invisible watermarks to everything it generates worldwide, not just in Europe. Norm covered this in August when Anthropic first announced the change.",
+            "what_happened": "Anthropic has not explained how the watermarks will work. The company's announcement promised technical details but gave almost none. Early guesses were that the marks might be hidden Unicode characters in the text. Anthropic has not confirmed what method it is using.",
+            "why_it_matters": "When you copy Claude's text into a document or email, invisible data could travel with it. You would not see it, but machines might detect it. This will happen on the API and in the web interface too. For now this is a compliance step in Europe, but it sets a pattern other regulators may follow.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "34901c07e5d25f120a0c16f90afb2bba",
+          "slug": "openai-disbanded-its-preparedness-team",
+          "title": "OpenAI disbanded its preparedness team",
+          "summary": "OpenAI shut down its team that assessed model risks and split up its work.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/980817/openai-disbands-preparedness-team"
+            }
+          ],
+          "article": {
+            "background": "OpenAI builds artificial intelligence systems. The company had a preparedness team whose job was to check if its AI models posed serious risks. That team also worked on ways to prevent those risks from happening.",
+            "what_happened": "OpenAI disbanded the preparedness team at the end of last month, according to the Financial Times. The company split the team's work across other groups. Each group now handles a specific risk area, like biosecurity or cybersecurity.",
+            "why_it_matters": "AI safety remains important as these systems grow more powerful. How companies organize their safety work affects how well they catch problems. OpenAI's move suggests the company thinks safety fits better inside its existing teams than in a separate group.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "c316db7b6c2efe08f1806b4bc9d7f46a",
+          "slug": "trump-orders-military-drill-cuts-with-south-korea",
+          "title": "Trump orders military drill cuts with South Korea",
+          "summary": "Trump cut military drills with South Korea after it would not join the Iran conflict.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/17/trump-cuts-south-korea-joint-drills-us-military-good-relationship-kim-jong-un"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/17/g-s1-138969/trump-exercises-south-korea"
+            }
+          ],
+          "article": {
+            "background": "The US and South Korea hold two major joint military exercises each year. These drills prepare the countries to defend against North Korea if needed. One drill, called Ulchi Freedom Shield, was set to start Monday with about 18,000 South Korean troops and US forces.",
+            "what_happened": "President Trump announced Sunday he will scale back these joint exercises. He said South Korea declined to help with the US war effort against Iran. Trump also cited his good relationship with North Korea's leader Kim Jong Un. He said the exercises are costly and send a hostile signal to North Korea. South Korea said the drills will proceed as scheduled.",
+            "why_it_matters": "These exercises help US and South Korean forces stay ready to defend against North Korea. Scaling them back could reduce that readiness at a time when North Korea is gaining combat skills elsewhere. For most people, this may not change daily life soon. But it affects the military balance on the peninsula.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a4043df9b9403435f887973bff1622ae",
+          "slug": "federal-keyword-lists-canceled-billions-in-research-funding",
+          "title": "Federal keyword lists canceled billions in research funding",
+          "summary": "The Trump administration stopped research grants already being paid out and changed what federal agencies work on.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.highereddive.com/news/inside-the-federal-keyword-lists-that-canceled-billions-in-research-funding/826203"
+            }
+          ],
+          "article": {
+            "background": "The federal government funds research through grants to universities and other institutions. These grants often support long-term projects that take years to complete.",
+            "what_happened": "After President Trump returned to office, researchers nationwide received notices that their federal grants had been cut. In a lawsuit by University of California researchers, federal agencies confirmed in court this month that they cut grants when projects expressed views the administration disfavored. The agencies gave few details in their notices beyond saying the work no longer fit their priorities.",
+            "why_it_matters": "Stopped grants mid-project can slow medical breakthroughs and other advances that usually take years to finish. If your region hosts universities or research hospitals, cuts to federal funding can slow local job growth and slow the discoveries those labs might have made.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "25bca465ee0b079566ceb56d7a4c84da",
+          "slug": "congo-ebola-outbreak-becomes-country-s-deadliest",
+          "title": "Congo Ebola outbreak becomes country's deadliest",
+          "summary": "At least 2,325 deaths confirmed, surpassing toll from the 2018-20 outbreak.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/17/ebola-outbreak-drc-democratic-republic-of-congo-deadliest-in-history"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cvgll74vvydo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Ebola is a rare virus spread through blood and body fluids. It kills many people who catch it. The Democratic Republic of Congo has dealt with Ebola before. The 2018-20 outbreak killed fewer people than this one.",
+            "what_happened": "The Ebola outbreak in Congo has now killed at least 2,325 people. This surpasses the death toll from the 2018-20 outbreak. Congo's public health institute reported 4,945 confirmed cases on Sunday. The outbreak was declared on May 15 and is now killing one person every 30 minutes.",
+            "why_it_matters": "This is the deadliest Ebola outbreak in Congo's history. It shows the virus is spreading fast and hard to stop. No approved vaccine yet exists for the type causing this outbreak, though several are in development. The faster it spreads, the harder it becomes to control.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "392731b52fc294c64cd95e165f1bfedd",
+          "slug": "ukraine-destroys-russia-s-largest-wildberries-warehouse-in",
+          "title": "Ukraine destroys Russia's largest Wildberries warehouse in drone attack",
+          "summary": "Ukraine fired over 800 drones at a Russian online store's warehouse.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-news-rocket-facility-hit-b3033769.html"
+            }
+          ],
+          "article": {
+            "background": "Wildberries is Russia's largest online retailer, often called the Russian Amazon. Ukraine has targeted its warehouses as part of a campaign to disrupt Russian supplies and economic activity. Damage at these sites disrupts deliveries across Russia.",
+            "what_happened": "Ukraine launched a massive drone attack overnight. Russian authorities said more than 800 drones were fired, with 600 aimed at Moscow. Ukraine hit a Wildberries warehouse in Podolsk, in the Moscow region. Russian authorities say this is Wildberries' largest warehouse.",
+            "why_it_matters": "Wildberries is a major Russian retailer. Attacks on its warehouses slow down deliveries to Russian customers. Ukraine is using strikes on commercial targets as part of its broader war strategy against Russia.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "87060154848816c37ea70627af2f28f7",
+          "slug": "ghana-leads-global-push-for-slavery-reparations",
+          "title": "Ghana leads global push for slavery reparations",
+          "summary": "Ghana wants countries to apologize and pay money for slavery.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cy0j2r15dr1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "For centuries after slavery ended, wealthy nations that profited from the transatlantic slave trade did not apologize or pay compensation. Ghana has emerged as the leading voice demanding reparations from those nations and institutions. This year has seen a dramatic shift in how the world talks about slavery and its lasting harms.",
+            "what_happened": "In March, the United Nations passed a resolution calling slavery the greatest crime against humanity. The United States voted against it. Every European nation abstained rather than support it. The UK, which led the transatlantic slave trade alongside Portugal, has consistently rejected the idea of reparations. The demand for formal apologies, debt relief, and financial compensation from nations and institutions that benefited from slavery has become increasingly forceful.",
+            "why_it_matters": "For descendants of enslaved people, reparations could mean official acknowledgment of historical harm and real financial resources to address it. The shift in tone at the UN signals that the conversation about slavery's legacy is changing. If this movement gains real traction, it could reshape relationships between wealthy nations and their former colonies.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "48f63a76bd352a266e15a751ce372dd8",
+          "slug": "kushner-meets-hamas-leader-on-gaza-peace-plan",
+          "title": "Kushner meets Hamas leader on Gaza peace plan",
+          "summary": "Trump's Middle East envoy met with Hamas in Egypt to discuss a US peace plan.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/16/g-s1-138948/kushner-gaza-hamas-netanyahu-egypt-talks"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/16/jared-kushner-hamas-gaza-meeting"
+            }
+          ],
+          "article": {
+            "background": "Trump's Middle East envoy Jared Kushner is trying to push a new peace plan for Gaza. The 15-point plan, backed by the US, calls for Hamas to disarm. It also calls for Israeli troops to leave Gaza. Gaza would then be rebuilt under a new civilian Palestinian administration.",
+            "what_happened": "Kushner met with Hamas's new leader Khalil al-Hayya in Egypt on Sunday. The two discussed how to carry out the US peace plan. Kushner is scheduled to meet Israeli Prime Minister Benjamin Netanyahu on Monday. Last week, Israel rejected the 15-point plan.",
+            "why_it_matters": "About 2 million people live in Gaza, which has been shattered by war. The outcome of these talks will shape whether Gaza can rebuild or whether fighting resumes. For now, Israel controls most of Gaza and has continued airstrikes in recent days.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "e7f930e6aee3d19b5e517ce06200db98",
+          "slug": "meta-faces-jury-trial-over-youth-harm-claims",
+          "title": "Meta faces jury trial over youth harm claims",
+          "summary": "Thirty US states sued Meta, saying it harmed young users on its platforms.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/clyqpx6xk69o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/clyqpx6xk69o"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Instagram and Facebook, the two largest social media platforms in the US. A lawsuit filed in 2023 by 30 states claims Meta broke federal and state laws meant to protect children's privacy. The states say Meta's platforms target and harm young users.",
+            "what_happened": "A jury trial begins on Tuesday. The 30 states are seeking over $1 trillion from Meta. They also want Meta to remove \"like\" counts and infinite scroll from Instagram and Facebook. These features are designed to be habit-forming, especially for young people.",
+            "why_it_matters": "If Meta loses, it could force major changes to how Instagram and Facebook work. You or your family use these apps daily, so the features you see could look different. A loss this big could reshape how the company builds its platforms going forward.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ecc7afbd21995d9dbaaf0971da56a448",
+          "slug": "england-loosens-planning-rules-for-homes-near-transit",
+          "title": "England loosens planning rules for homes near transit",
+          "summary": "England now lets homes be built within ten minutes of transit hubs.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/politics/2026/aug/17/loosening-planning-rules-england-more-homes-train-stations-rayner"
+            }
+          ],
+          "article": {
+            "background": "England's planning rules control where new homes can be built. The government protects some countryside, called green belt land, from development. Angela Rayner is the housing secretary.",
+            "what_happened": "Rayner announced new guidance on Monday. Councils will now say yes to housing near train and tram stations by default. Developments must be within a short walk of well-connected stations. This includes sites on green belt land, which was previously off limits.",
+            "why_it_matters": "Thousands of new homes could be built near public transport where people can live without needing a car. Faster approval means construction may happen sooner. This could ease England's housing shortage in places designed for people without cars.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "1f236996bb0678c84f32208cf49c7f61",
+          "slug": "physicists-find-hidden-gluon-structure-inside-protons",
+          "title": "Physicists find hidden gluon structure inside protons",
+          "summary": "Physicists found that gluons form a Y-shaped junction inside protons, not just three quarks.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.sciencedaily.com/releases/2026/08/260815064805.htm"
+            }
+          ],
+          "article": {
+            "background": "Protons are the tiny particles inside atoms that carry positive charge. They make up most of ordinary matter. Scientists have long believed protons stay stable because of a property called baryon number, which lives in their three quarks. New data from RHIC, a particle collider at Brookhaven National Laboratory, now suggests that picture is incomplete.",
+            "what_happened": "Researchers studying proton collisions found that baryon number is not simply held by three quarks alone. Instead, the data show it is carried by a Y-shaped junction of gluons that connect the quarks. This hidden structure appears in RHIC collision data from the STAR detector. The finding challenges what physics textbooks have taught for decades.",
+            "why_it_matters": "This does not change anything in your daily life right now. But it means our basic models of matter contain surprises we missed. Understanding how protons stay stable is crucial to knowing why matter itself exists and does not fall apart.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "eece15921af7f5606aec6540716951aa",
+          "slug": "ukraine-finds-nvidia-ai-chip-in-new-russian-missile",
+          "title": "Ukraine finds Nvidia AI chip in new Russian missile",
+          "summary": "Ukraine found an Nvidia Jetson Orin chip in a Russian S-71 Monochrome cruise missile.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.kyivpost.com/post/82225"
+            }
+          ],
+          "article": {
+            "background": "Ukraine's military intelligence agency (HUR) tracks foreign computer parts found in Russian weapons. The agency runs a public portal called War&Sanctions. It documents electronic components that Russia obtains from abroad despite international sanctions meant to block such sales.",
+            "what_happened": "HUR identified an Nvidia Jetson Orin computer module inside Russia's new S-71 Monochrome air-launched cruise missile. The agency announced this finding on Wednesday, August 12. HUR also found 35 other electronic components in Russian weapons during the same research.",
+            "why_it_matters": "The Jetson Orin is an AI chip. Its presence in the missile suggests Russia may be using artificial intelligence in new weapons despite Western restrictions on selling advanced computer parts to Russia. The discovery shows these trade limits are not fully stopping Russia from getting the specialized parts it needs.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "3c070a3c3feefb323d74f2ea415d5349",
+      "title": "History for Hunt and Asher-Smith in golden finish for GB",
+      "url": "https://www.bbc.co.uk/sport/athletics/articles/c30444dmqe0o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "c7ce409835d871cb9ac76304023194d2",
+      "title": "Lala weakens to tropical storm as it lashes Hawaii with heavy wind and rain",
+      "url": "https://www.theguardian.com/world/2026/aug/16/hurricane-lala-hawaii-big-island-avoids-landfall",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "51cf3130654d023007cc71727c597b2f",
+      "title": "Alan Jones allegedly kissed young man in wardrobe of James Packer’s personal suite at Crown Towers, court hears",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/17/alan-jones-allegedly-kissed-driver-in-wardrobe-james-packer-personal-suite-crown-towers-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0916b3ee16c78b0e1f3fafb945a32918",
+      "title": "Israeli minister calls for killing '30 to 40′ Palestinians in Gaza nightly",
+      "url": "https://www.aljazeera.com/news/2026/8/16/israeli-minister-calls-for-killing-30-to-40-palestinians-in-gaza-nightly",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "2de0649d3837c23d62b62f989dbb1a6d",
+      "title": "Wildfires kill two in Greece and torch Belgian nature reserve",
+      "url": "https://www.theguardian.com/world/2026/aug/16/greek-island-salamis-belgium-high-fens-helicopters-wildfire",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5ab1ae3f730bc8330d10161ab4b978b8",
+      "title": "Stripe Clinches over $7B Deal to Buy AI Firm OpenRouter",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-16/stripe-nears-deal-to-buy-ai-firm-openrouter-for-over-7-billion",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "35a7f974179ec6830dbde265b9bcf031",
+      "title": "Anthropic IPO valuation hinges on $190-200B 2028 revenue forecast",
+      "url": "https://www.reuters.com/business/anthropic-ipo-valuation-hinges-190-200-billion-2028-revenue-forecast-sources-say-2026-08-15",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 164,
+    "clusters_considered": 114,
+    "stories_run": 14,
+    "sources": 14,
+    "sections_held": 1
+  }
+}
