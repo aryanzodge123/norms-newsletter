@@ -1,0 +1,395 @@
+{
+  "date": "2026-08-18",
+  "edition_number": 72,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump's 60-day Iran war deadline expires with no deal as he threatens to bomb Oman",
+  "headline_cluster_id": "6e31923f9eebcd4086294234d34b3e59",
+  "headline_rationale": "A regional war's diplomatic deadline passed with threats from the US president to strike an allied nation, escalating the conflict and threatening global oil markets.",
+  "key_points": [
+    {
+      "text": "Trump threatened to bomb Oman as the deadline for an Iran peace deal passed with no agreement.",
+      "topic": "World"
+    },
+    {
+      "text": "Kindergarten vaccination rates fell below 95 percent, the level needed to prevent outbreaks, CDC data shows.",
+      "topic": "Science"
+    },
+    {
+      "text": "Apple sent spyware alerts to more users than usual this weekend, investigators say.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Trump said the US will cut military exercises with South Korea after it declined to join the Iran war.",
+      "topic": "World"
+    },
+    {
+      "text": "Lakes Powell and Mead hit record lows, threatening water for millions of people.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-18.mp3",
+    "duration_seconds": 405,
+    "size_bytes": 4860000
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "f509884d81b46ffd4dbe9df5a015f0cb",
+          "slug": "workers-staying-in-jobs-longer-as-economic-uncertainty",
+          "title": "Workers staying in jobs longer as economic uncertainty continues",
+          "summary": "Many workers are staying in their jobs instead of switching due to economic uncertainty.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/sounds/play/w3ct8gg6?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "fc80130b66889b51ecc7a1dd2c0ff1f8",
+          "slug": "uk-job-vacancies-fall-to-lowest-level-in-more-than-five",
+          "title": "UK job vacancies fall to lowest level in more than five years",
+          "summary": "Job openings fell to 707,000 as small businesses hire fewer workers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cn9nwx090v9o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK job market has been cooling. Fewer companies are hiring than they were a few years ago. The Office for National Statistics tracks how many job openings exist at any given time.",
+            "what_happened": "Job vacancies fell to 707,000 in the May-to-July period. This is the lowest number in more than five years. Small businesses said they are cutting back on hiring due to labour costs and operating costs. The unemployment rate stayed at 4.9%.",
+            "why_it_matters": "Fewer job openings means more people competing for each position. Job seekers may have a harder time finding work. For now the unemployment rate has not risen much, but people looking for jobs will likely face more competition.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "9ab4489033550a3ecd5c685b41aa0ace",
+          "slug": "us-and-canada-race-to-avoid-new-tariffs-with-48-hours-until",
+          "title": "US and Canada race to avoid new tariffs with 48 hours until deadline",
+          "summary": "Negotiations continue as 50 percent tariffs on 20 billion dollars of goods loom.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/crl7600rpnko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Trump administration has threatened to impose 50% tariffs on about $20 billion worth of Canadian imports. The tariffs are set to take effect on Wednesday. This would make Canadian goods much more costly for US buyers.",
+            "what_happened": "Canadian negotiators have spent a week in Washington trying to reach a deal before the deadline. Prime Minister Mark Carney said the talks are \"very delicate and intense.\" He refused to share details on Monday, saying it is not the time to negotiate in public.",
+            "why_it_matters": "Higher tariffs on Canadian goods typically raise prices for Americans who buy them. If the tariffs go through, costs could go up on many everyday items. The deal talks suggest this outcome is not certain yet.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "adfd6e302e2aa169d0f8a33092dd478d",
+          "slug": "england-scraps-time-restrictions-on-disabled-people-s-free",
+          "title": "England scraps time restrictions on disabled people's free bus passes",
+          "summary": "Starting April, disabled people can ride free on local buses at any time.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/politics/2026/aug/17/burnham-scraps-restrictions-disabled-people-bus-passes-england"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cjwx5vx21y2o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Disabled people in England currently get free bus passes. But there are limits on when they can use them. On weekdays, the passes only work between 9:30am and 11pm. Some councils pay extra to remove those limits, but most do not. About one million people have these passes.",
+            "what_happened": "Prime Minister Andy Burnham announced the weekday limits will end on April 1, 2027. Disabled people will then ride free on local buses at any time, day or night. Burnham introduced this policy when he led Greater Manchester. He is now applying it across all of England.",
+            "why_it_matters": "The change helps people with disabilities who work late shifts or want to travel in the evening. It also helps them attend events after 11pm. For people on tight budgets, removing these barriers makes it easier to get around. The move is part of the government's effort to reduce living costs.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ac9d22d1234236537e79c313318ef011",
+          "slug": "florida-gop-primary-sees-accusations-of-carpetbagging-in",
+          "title": "Florida GOP primary sees accusations of carpetbagging in Southwest swing district",
+          "summary": "Six former congressional hopefuls from other states are running in the conservative stronghold.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/08/17/nx-s1-5913672/florida-gop-race-draws-accusations-of-carpetbagging"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "6e31923f9eebcd4086294234d34b3e59",
+          "slug": "trump-threatens-to-bomb-oman-as-iran-war-deadline-passes",
+          "title": "Trump threatens to bomb Oman as Iran war deadline passes with no deal",
+          "summary": "The 60-day deadline to end the Iran war expired with no agreement reached.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/war-with-iran"
+            }
+          ],
+          "article": {
+            "background": "The United States is in a military conflict with Iran. A 60-day window to negotiate a peace deal between the two countries has now expired. Oman, a neighboring country in the Middle East, has been working as a mediator to help both sides reach an agreement.",
+            "what_happened": "President Trump responded to the expired deadline by lashing out at U.S. allies on Monday. He threatened to bomb Oman for its role in mediating the negotiations. Trump also called for military exercises with South Korea to be reduced, citing South Korea's refusal to join the war as a reason.",
+            "why_it_matters": "The failed deadline means the path to ending this conflict remains unclear. Trump's threats toward allies and pressure on countries to join the war could reshape U.S. relationships and pull more nations into the conflict. This affects where American military resources go and which countries stand with the U.S.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "98a2413a5d4a6e9402c20c161ac6f035",
+          "slug": "trump-says-us-will-scale-back-military-drills-with-south",
+          "title": "Trump says US will scale back military drills with South Korea",
+          "summary": "The move follows South Korea's refusal to join the US in the Iran war.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cy45zjw424xo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/live/2026/aug/17/politics-trump-south-korea-military-pentagon-republicans-democrats"
+            }
+          ],
+          "article": {
+            "background": "The US and South Korea have run joint military exercises together for decades. These drills are a core part of their military alliance. Trump has sought closer ties with North Korea's leader Kim Jong Un, and that shift is now changing how the US plans military moves in the region.",
+            "what_happened": "Trump ordered the Pentagon to cut back this week's joint drills with South Korea. He said North Korea has been \"unthreatening and respectful\" and cited his \"very good\" ties with Kim Jong Un. Trump also noted that South Korea had declined to join the US in efforts to stop Iran from getting nuclear weapons.",
+            "why_it_matters": "Scaling back these exercises worries US military officials. They warn that North Korea is learning new battle tactics while helping Russia fight in Ukraine. South Korea's president is now pushing to control his own military during wartime instead of relying on US coordination.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ab4c1b72abb5c0f5e391a05198a33413",
+          "slug": "germany-carries-out-first-raids-under-new-law-targeting",
+          "title": "Germany carries out first raids under new law targeting migrant smuggling",
+          "summary": "Police seized life jackets and boats in raids targeting human smugglers using small boats.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cpq809zrvqdo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Germany has become a staging post for smugglers. Criminal networks buy and store boats and equipment there. They move them west to launch crossings toward the English Channel. This spring, Germany passed a new law. It gave police stronger powers to raid suspected smuggler bases.",
+            "what_happened": "The UK, France, and Germany launched a joint operation. German police raided suspected smuggler locations in North Rhine-Westphalia. They seized more than 9,000 life jackets. They seized dozens of dinghies with engines and 360 pumps. The seized boats could have carried more than 2,000 migrants across the Channel illegally.",
+            "why_it_matters": "Disrupting smuggling operations in Germany makes the route harder and more expensive. This could reduce dangerous boat journeys. The cooperation between three countries shows they are treating the issue as a shared problem. For now this affects the supply of boats available to smugglers.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "3616c5a296974af768cb3e2f90f27992",
+          "slug": "us-childhood-vaccination-rates-fall-below-herd-immunity",
+          "title": "US childhood vaccination rates fall below herd immunity threshold",
+          "summary": "Kindergarten vaccination rates dropped below 95 percent, which is needed to stop disease outbreaks.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/08/us-vaccination-rates-fall-again-as-exemptions-continue-to-rise-cdc-data-shows"
+            }
+          ],
+          "article": {
+            "background": "Schools require kindergarteners to get certain vaccines, including measles, mumps, and rubella (MMR). When rates stay around 95 percent, communities have enough protection to stop disease outbreaks. Vaccination rates in the US were at that level in the 2019–2020 school year but have been slipping ever since.",
+            "what_happened": "The CDC released data Monday on vaccination rates for the 2025–2026 school year. Only 92.4 percent of kindergartners got the MMR vaccine. That is down from 92.5 percent the year before.",
+            "why_it_matters": "As rates fall below 95 percent, more children stay unprotected. Infants and people who cannot be vaccinated for medical reasons also become vulnerable to outbreaks. The US is moving further from the protection level that stops measles and related diseases from spreading.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9e9916d74ec357a5fbdcafc387f4ff4f",
+          "slug": "colorado-river-drops-to-record-lows-at-lakes-powell-and-mead",
+          "title": "Colorado River drops to record lows at lakes Powell and Mead",
+          "summary": "Lakes Powell and Mead hit record-low water levels, threatening water for millions.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/08/17/climate/lake-powell-record-low-colorado.html"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "ae8fa6cfa34ea4b2542a000980690e63",
+          "slug": "study-shows-attention-can-directly-regulate-the-body-s",
+          "title": "Study shows attention can directly regulate the body's immune response",
+          "summary": "In an experiment, focusing attention away from inflammation reduced immune response.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nature.com/articles/s41562-026-02541-1"
+            }
+          ],
+          "article": {
+            "background": "Attention shapes how we sense pain and discomfort. Focusing away from an injury can ease what we feel. Scientists wanted to know if this mental control goes deeper. Could attention affect the body's immune response itself, not just what we notice?",
+            "what_happened": "Researchers ran three planned experiments with volunteers. They gave each person mild skin inflammation. Some focused on their sensations. Others distracted themselves. Those who focused had smaller immune responses. The effect was strong. About 90 percent of people showed it.",
+            "why_it_matters": "Your mind may help control how your body reacts to injury or illness. This could change how doctors think about pain and healing. For now, the finding is new and needs more testing before doctors use it.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "57dce69fbff11f2a6cbb020d8629a561",
+          "slug": "apple-sends-spyware-alerts-to-unprecedented-number-of-users",
+          "title": "Apple sends spyware alerts to unprecedented number of users",
+          "summary": "Apple sent more spyware alerts this batch than it ever has before, investigators say.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/17/unprecedented-number-of-apple-users-received-recent-spyware-alert-say-investigators"
+            }
+          ],
+          "article": {
+            "background": "Apple sends alerts to customers when it suspects spyware attacks. Spyware is software designed to secretly monitor devices. Norm covered the initial notifications on August 14, when Apple alerted users in 110 countries about suspected attacks. This week, an unprecedented number of customers reported receiving these alerts.",
+            "what_happened": "Apple sent out a new batch of threat notifications on Friday. The alerts reached customers in 110 countries. Users reported receiving the warnings over the weekend. The alerts warned that iPhones, iPads, or Macs might be compromised with government-grade malware.",
+            "why_it_matters": "If you get such an alert, Apple suggests reviewing your device security. You should also change passwords for important accounts. These notifications are rare and signal a serious threat. Most people will not see these alerts, but those who do should take them seriously.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e37f26059fc7cf2d7669a55fbd80860e",
+          "slug": "critical-gitlab-flaw-lets-attackers-delete-projects-without",
+          "title": "Critical GitLab flaw lets attackers delete projects without authentication",
+          "summary": "A flaw in GitLab lets attackers delete data from both Community and Enterprise versions.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html"
+            }
+          ],
+          "article": {
+            "background": "GitLab is a platform that helps developers build and manage code projects. It comes in two versions: Community Edition, which is free, and Enterprise Edition for larger organizations. GitLab released an emergency security patch on August 17, 2026, outside its normal schedule.",
+            "what_happened": "A critical flaw in GitLab's GraphQL system could let attackers delete or change public projects and user data without logging in. The flaw, tracked as CVE-2026-19478, was rated 9.4 in severity. Only self-managed installations, where teams run GitLab on their own servers, need to update.",
+            "why_it_matters": "If you run GitLab on your own servers, attackers could wipe out your projects and data without any credentials. If you use GitLab's hosted version instead, you are not at risk from this particular flaw.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "905b1691efc6cc00b38b4fbcf74273f3",
+      "title": "California's new tire efficiency rules could save drivers $1B a year",
+      "url": "https://grist.org/transportation/californias-new-tire-efficiency-rules-could-save-drivers-1b-a-year",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "5551510395332357b6803dd2dc9aed0c",
+      "title": "I don't enjoy the Internet any more",
+      "url": "https://btao.org/posts/2026-08-17-i-dont-enjoy-the-internet",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "67d0657f4067c868ee09bf3807a1afc0",
+      "title": "Fifa chief sacked after criticism of Infantino’s World Cup sell-off plan",
+      "url": "https://www.theguardian.com/football/2026/aug/17/fifa-chief-sacked-criticism-infantino-world-cup-sell-off-plan-kevin-lamour",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "1696304609ef27ecfad66821719e1caa",
+      "title": "Anthropic’s annualized revenue surges to $65B",
+      "url": "https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "1bc0a79e248c93d1c09d0ba8c01b690d",
+      "title": "National debt nears $40 trillion: How we got here and why it matters",
+      "url": "https://www.pbs.org/newshour/show/national-debt-nears-40-trillion-how-we-got-here-and-why-it-matters",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "7be75dee9198091683d13723df6ba9f0",
+      "title": "News Wrap: 7 dead after storms and catastrophic floods in Midwest",
+      "url": "https://www.pbs.org/newshour/show/news-wrap-7-dead-after-storms-and-catastrophic-floods-in-midwest",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "cea74b271cebcce813730523fd2d368b",
+      "title": "Justice Department watchdog to review DEA tactic that permitted deadly fentanyl to hit streets",
+      "url": "https://www.pbs.org/newshour/politics/justice-department-watchdog-to-review-dea-tactic-that-permitted-deadly-fentanyl-to-hit-streets",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "ddcf37a3f18de71eb12449a0dd75597c",
+      "title": "Examining RFK Jr.'S Role in the Measles Outbreak",
+      "url": "https://www.nationalreview.com/news/examining-rfk-jr-s-role-in-the-measles-outbreak",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "3fe8abe184435f1e47f76d784201ac79",
+      "title": "Caffeine and Cardiovascular Disease: A Scientific Statement from the AHA",
+      "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001454",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "741555c230a3d2f4ab4b65689cff9d4b",
+      "title": "ICE pitches legal insurance to help shield local officers who make immigration arrests",
+      "url": "https://www.pbs.org/newshour/nation/ice-pitches-legal-insurance-to-help-shield-local-officers-who-make-immigration-arrests",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "c7d727b87f2fba9210a089f2a4295bd2",
+      "title": "Supreme Court asked to review Texas law requiring the Ten Commandments in public schools",
+      "url": "https://www.pbs.org/newshour/nation/supreme-court-asked-to-review-texas-law-requiring-the-ten-commandments-in-public-schools",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "cedf096c1890967f2d4027bb1c308c8a",
+      "title": "Democratic Rep. Jimmy Gomez being investigated over sexual misconduct allegations",
+      "url": "https://www.npr.org/2026/08/17/nx-s1-5935513/jimmy-gomez-house-ethics-investigation",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "1dbcd41fb1c345164378f067bb9cf36e",
+      "title": "Justice Department creates a new pathway to restore gun rights for some people convicted of felonies",
+      "url": "https://www.pbs.org/newshour/politics/justice-department-creates-a-new-pathway-to-restore-gun-rights-for-some-people-convicted-of-felonies",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "17eafc1f0a3a98511c460a416a98e475",
+      "title": "'Buy Now, Pay Later' Lenders Pitch Loans for Needs Like Electricity and Rent",
+      "url": "https://www.nytimes.com/2026/08/17/business/buy-now-pay-later.html",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 159,
+    "clusters_considered": 141,
+    "stories_run": 13,
+    "sources": 18,
+    "sections_held": 1
+  }
+}
