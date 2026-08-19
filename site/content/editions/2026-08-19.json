@@ -1,0 +1,483 @@
+{
+  "date": "2026-08-19",
+  "edition_number": 73,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump pauses new tariffs on Canada for three days as countries move toward trade deal",
+  "headline_cluster_id": "afdc7f606548ef167233bd6e3715eaad",
+  "headline_rationale": "A last-minute pause on $20 billion in trade tariffs affecting both economies, creating immediate economic relief though the deal remains temporary and details unclear.",
+  "key_points": [
+    {
+      "text": "Trump paused new tariffs on Canada for three days as the countries work to finalize a trade deal.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "London children's lungs grew bigger and stronger after the city restricted polluting vehicles.",
+      "topic": "Science"
+    },
+    {
+      "text": "Ukraine's dismissed defence minister called for a wartime election, directly challenging Zelenskyy for the first time since the invasion.",
+      "topic": "World"
+    },
+    {
+      "text": "Chinese robotics giant Unitree's stock soared over 600% in its Shanghai market debut.",
+      "topic": "Business"
+    },
+    {
+      "text": "Bayern Munich's Jamal Musiala collapsed during a match for the second time in four days while being treated for a neurological condition.",
+      "topic": "Sports"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "bd47ed735d3c0195d63ac99fc4aee619",
+          "slug": "china-orders-state-agencies-to-uninstall-windows-and-switch",
+          "title": "China orders state agencies to uninstall Windows and switch to domestic systems",
+          "summary": "China is speeding up its plan to cut US tech reliance by switching to Linux systems.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.indiatoday.in/technology/news/story/china-orders-state-agencies-to-uninstall-windows-as-it-cuts-dependence-on-us-tech-2974571-2026-08-19"
+            }
+          ],
+          "article": {
+            "background": "China has long relied on Microsoft's Windows operating system in its government agencies. Now Beijing is moving to reduce its use of US technology. The Chinese Ministry of State Security has ordered state agencies to switch away from Windows.",
+            "what_happened": "Government officials told state agencies to uninstall Windows 10 from their computers. They must move to domestic systems based on Linux instead. Bloomberg reported this shift is happening a few months earlier than originally planned.",
+            "why_it_matters": "For most people outside China, this shows countries are building their own tech systems. China's move may prompt other nations to do the same. It reflects growing tension over US technology and global supply chains.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "264580592759e481d89abb69b153e292",
+          "slug": "former-facebook-director-publishes-critical-memoir-of",
+          "title": "Former Facebook director publishes critical memoir of platform's internal culture",
+          "summary": "Sarah Wynn-Williams' book details how the company made decisions during her time there.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://en.wikipedia.org/wiki/Careless_People"
+            }
+          ],
+          "article": {
+            "background": "Sarah Wynn-Williams worked at Facebook (now Meta) as a director of public policy. She left the company and wrote a memoir called Careless People. It came out on March 11, 2025.",
+            "what_happened": "The book is highly critical of Facebook's choices during Wynn-Williams' time there. She accuses the company of contributing to the Rohingya genocide in Myanmar. She also says CEO Mark Zuckerberg tried to censor content for the Chinese government. Wynn-Williams names other executives, including Sheryl Sandberg and Joel Kaplan, as part of these choices.",
+            "why_it_matters": "This memoir offers a rare inside look at how one of the world's largest social media companies makes decisions. It shows how tech companies can affect real-world crises and governments.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "762c190b1edb5dde12c93792095bc26c",
+          "slug": "chinese-robotics-giant-unitree-soars-over-600-in-stock",
+          "title": "Chinese robotics giant Unitree soars over 600% in stock market debut",
+          "summary": "The world's biggest humanoid robot maker opened at 1,100 yuan in Shanghai trading.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c0qv4w9492zo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Unitree Robotics is a Chinese company that makes humanoid robots. These are machines built to look and move like humans. The firm just went public on Shanghai's Star Market, a tech-focused stock exchange. This listing marks a big moment for China's push to lead the global robotics industry.",
+            "what_happened": "Unitree made its stock market debut on Wednesday in Shanghai. Its shares opened at 1,100 yuan, then fell to around 900 yuan. Early trading saw shares jump more than 600% in value. The US and China are competing hard to dominate the global robot market.",
+            "why_it_matters": "A successful IPO signals that investors believe in Chinese robotics tech. This debut may speed up development and competition in a field that shapes manufacturing, automation, and future jobs. For most people today this changes little. But it shows where the next wave of robots will come from.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "75bf8b4924998dc4674ea103001497ce",
+          "slug": "soaring-diesel-prices-hit-us-economy-across-logistics-and",
+          "title": "Soaring diesel prices hit US economy across logistics and production",
+          "summary": "Diesel prices are rising, pushing up shipping and manufacturing costs.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.ft.com/content/8a5cd515-191d-42f9-9b0c-1b817a1bc044"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "a4ea6b45ebd0623c1b40562733cdbb4f",
+          "slug": "uk-inflation-rises-to-2-9-as-iran-war-fuels-energy-price",
+          "title": "UK inflation rises to 2.9% as Iran war fuels energy price increases",
+          "summary": "July inflation rose from 2.6% in June, driven by soaring energy bills.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/aug/19/uk-inflation-rise-iran-war-energy-consumer-prices-index-interest-rates"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cdrv7jr8n74o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Inflation measures how fast prices rise for goods and services. The UK tracks it monthly through the Office for National Statistics. In July, inflation hit 2.9%, up from 2.6% in June. The jump came as energy prices spiked due to the Iran war disrupting global oil and gas markets.",
+            "what_happened": "On July 1, the UK regulator Ofgem raised the price cap on household gas and electricity by 13%. This added about £221 a year to a typical household's bill. The increase was the largest rise in gas prices in almost four years. It pushed overall inflation to 2.9% in July, the highest rate since March.",
+            "why_it_matters": "Higher energy bills hit household budgets when money is already tight. This is the sharpest summer energy increase in four years, meaning families will pay more to heat and power their homes through the rest of the year. For the government, which promised to give households breathing room, the spike shows how global events like the Iran war can undo progress on cost of living relief.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c05db0cff7b35b29e9339670cb598cce",
+          "slug": "37-of-us-workers-saw-real-wages-decline-from-2021-to-2024",
+          "title": "37% of US workers saw real wages decline from 2021 to 2024",
+          "summary": "More than a third of American workers earned less in real pay from 2021 to 2024.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://bfi.uchicago.edu/wp-content/uploads/2026/08/BFI_WP_2026-108-1.pdf"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "afdc7f606548ef167233bd6e3715eaad",
+          "slug": "trump-pauses-new-tariffs-on-canada-for-three-days-as",
+          "title": "Trump pauses new tariffs on Canada for three days as countries move toward deal",
+          "summary": "Trump paused tariffs on $20 billion in Canadian trade for three days to negotiate.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cy9wz79ze29o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/19/trump-delay-canada-tariffs-keystone-xl-oil-pipeline"
+            },
+            {
+              "name": "npr_economy",
+              "url": "https://www.npr.org/2026/08/19/g-s1-139156/trump-canada-tariffs"
+            }
+          ],
+          "article": {
+            "background": "The US and Canada have been negotiating a trade deal. Tariffs are taxes on imports. Trump had planned to place a 50% tax on about $20 billion of Canadian goods starting Wednesday. Norm covered these escalating talks yesterday as the deadline approached.",
+            "what_happened": "Trump announced Tuesday evening he would delay the tariffs for three days. This pause came less than two hours before the taxes were set to begin. Canadian Prime Minister Mark Carney said \"substantial progress\" had been made toward a deal. Both sides now have time to finish their agreement.",
+            "why_it_matters": "The delayed tariffs affect everyday goods Canadians sell to the US, from wine to hockey sticks. Without this pause, US prices for those imports would have jumped. The three-day window lets negotiators reach a full deal and avoid costs for American shoppers and businesses that buy Canadian products.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0cf9adcad7b4627dc4d35002e51797fe",
+          "slug": "senator-jon-ossoff-calls-trump-a-draft-dodging-crook",
+          "title": "Senator Jon Ossoff calls Trump a draft-dodging crook president at Georgia campaign event",
+          "summary": "Senator Jon Ossoff publicly fought with the White House while defending Mark Kelly.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/18/jon-ossoff-trump"
+            }
+          ],
+          "article": {
+            "background": "Donald Trump is the US president. Jon Ossoff is a Democratic senator from Georgia running for re-election. Mark Kelly is another Democratic senator and a military veteran. The two sides have been feuding publicly.",
+            "what_happened": "During a campaign event in Georgia on Tuesday, Ossoff called Trump a \"draft-dodging, crook president.\" He was defending Kelly against Trump's criticism. Ossoff said Trump tried to imprison Kelly, who \"embodies American heroism.\" Ossoff also criticized Trump for starting a war he cannot win.",
+            "why_it_matters": "This feud shows the intensity of conflict between the White House and Senate Democrats. How leaders talk about each other in public affects the tone of national politics. Ossoff's sharp language escalates the battle over who is fit for office.",
+            "quote": {
+              "text": "I don't think anything illustrates the times more aptly than that the draft-dodging, crook president, who has plunged our nation recklessly into a war he knows not how to end or to win, tried to imprison this man, who embodies American heroism.",
+              "attribution": "Senator Jon Ossoff, during a campaign appearance in Georgia",
+              "source_url": "https://www.theguardian.com/us-news/2026/aug/18/jon-ossoff-trump"
+            }
+          }
+        },
+        {
+          "cluster_id": "5cfda8300a4344da282d2162f2c5ed9e",
+          "slug": "whistleblower-alleges-political-pressure-in-antisemitism",
+          "title": "Whistleblower alleges political pressure in antisemitism investigations targeting universities",
+          "summary": "Testimony claims federal probes lacked evidence and faced improper political influence during enforcement actions.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/nation/whistleblower-alleges-political-pressure-lack-of-evidence-in-antisemitism-investigations-targeting-universities"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/trump-harvard-justice-department-brown-columbia-3e2519fac8b1d85caa74b7ff1ff63744"
+            }
+          ],
+          "article": {
+            "background": "The Trump administration created a task force to combat antisemitism at universities. It investigated Ivy League schools like Harvard, Yale, and Columbia. These schools were examined over their handling of antisemitic speech and conduct.",
+            "what_happened": "A former Justice Department lawyer filed a whistleblower complaint. The lawyer says the task force pushed universities to settle cases. This happened even though investigations were rushed, incomplete, or found no legal violations.",
+            "why_it_matters": "How federal agencies enforce discrimination rules shapes what standards universities must follow. Unfair enforcement can undermine trust in government investigations. It also affects what consequences schools actually face for breaking the rules.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "20e87e5dd14a2389e9aa9dc807cf3c61",
+          "slug": "moscow-region-hit-by-almost-800-drones-as-russian-missiles",
+          "title": "Moscow region hit by almost 800 drones as Russian missiles kill 10 in Ukrainian village",
+          "summary": "Ukraine launched almost 800 drones at Moscow region as Russia struck with deadly missiles.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/the-moscow-region-is-hit-by-almost-800-drones-as-russian-missiles-kill-10-in-a-ukrainian-village"
+            }
+          ],
+          "article": {
+            "background": "Russia invaded Ukraine over four years ago. Since then, Ukraine has carried out drone attacks on Russian territory. This week brought one of Ukraine's biggest drone attacks yet.",
+            "what_happened": "Ukrainian forces fired almost 800 drones at the Moscow region. The attack came just two days after a prior strike. Russian missiles hit a Ukrainian village, killing 10 people.",
+            "why_it_matters": "The scale of Ukraine's drone strikes shows it can reach deep into Russian territory. These attacks may affect how the war unfolds. Civilian deaths in Ukraine continue as Russia strikes back.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a1d8bb6041150f33e88498ea57d3bd95",
+          "slug": "ukraine-s-dismissed-defence-minister-calls-for-wartime",
+          "title": "Ukraine's dismissed defence minister calls for wartime presidential election",
+          "summary": "Mykhailo Fedorov directly challenged Zelenskyy for the first time since the invasion began.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/18/ukraines-dismissed-defence-minister-calls-for-wartime-presidential-election"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Mykhailo Fedorov served as Ukraine's defence minister until his unexpected firing last month. The dismissal sparked protests. Ukraine has been under martial law since Russia's invasion in February 2022, which suspends elections.",
+            "what_happened": "Fedorov released a video Tuesday calling for wartime presidential elections. He said Ukraine must restore full democracy even during prolonged war. Fedorov did not name Zelenskyy but implied criticism of the current president.",
+            "why_it_matters": "This is the boldest challenge to Zelenskyy's rule since the invasion began. It shows disagreement inside Ukraine's government over whether one leader can rule without facing voters during wartime. Many see it as a sign that some officials believe democracy matters even while fighting.",
+            "quote": {
+              "text": "Democracy cannot be held hostage by Russia. We are fighting precisely because we want to remain a free European state.",
+              "attribution": "Mykhailo Fedorov, former Ukrainian defence minister",
+              "source_url": "https://www.theguardian.com/world/2026/aug/18/ukraines-dismissed-defence-minister-calls-for-wartime-presidential-election"
+            }
+          }
+        },
+        {
+          "cluster_id": "8110147519341e8c9140d9fe38dbb120",
+          "slug": "un-atomic-watchdog-says-inspectors-found-tonnes-of-nuclear",
+          "title": "UN atomic watchdog says inspectors found tonnes of nuclear material at Syria site",
+          "summary": "Damascus told the IAEA about an undisclosed nuclear site from the Assad era.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.rte.ie/news/middle-east/2026/0818/1588407-syria-nuclear"
+            }
+          ],
+          "article": {
+            "background": "Syria has nuclear material left over from the Assad era, a period under former president Bashar al-Assad. The International Atomic Energy Agency, or IAEA, is the UN body that checks nuclear material worldwide to stop weapons use. Last month, Syria told the IAEA about a site with this material that had not been reported before.",
+            "what_happened": "IAEA inspectors found several tons of nuclear material at the undisclosed Syrian site. Rafael Grossi, the IAEA's head, said the material could be misused. Syria's government reported the site on July 17 and praised their decision as courageous. The material will now be placed under international safeguards.",
+            "why_it_matters": "International oversight means inspectors can watch this material and verify it stays safe. Nuclear material that is not tracked raises concerns about misuse. Syria's disclosure helps prevent possible risks from loose nuclear resources in the region.",
+            "quote": {
+              "text": "We are talking about a few tons of nuclear material that could be put to bad use.",
+              "attribution": "Rafael Grossi, head of the International Atomic Energy Agency",
+              "source_url": "https://www.rte.ie/news/middle-east/2026/0818/1588407-syria-nuclear"
+            }
+          }
+        },
+        {
+          "cluster_id": "03d59c36b143f3cc137a70dd9572d2d7",
+          "slug": "us-led-military-drills-in-south-korea-to-end-six-days-early",
+          "title": "US-led military drills in South Korea to end six days early amid Trump push for Kim talks",
+          "summary": "The US cut joint military drills short as Trump seeks new talks with North Korea.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/19/us-south-korea-army-drills-cut-trump-push-kim-jong-un-talks"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cnvn0j31qj8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US and South Korea hold annual joint military drills called the Ulchi Freedom Shield exercise. These drills test how the two militaries work together to prepare for conflict. The exercise began Monday and was originally scheduled to run through August 27.",
+            "what_happened": "South Korea's military announced Wednesday that the drills will end six days early, on Friday, August 21. The US requested the change. Separate field training exercises will also be reduced in scale, though officials are still working out those details.",
+            "why_it_matters": "These drills are routine for South Korea's defense. Changes to them signal shifts in US strategy toward the region. Donald Trump ordered the Pentagon to scale back the exercises, citing his relationship with North Korea's leader Kim Jong Un. The cuts reflect a policy move toward talks rather than military posturing.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "2ea85fdd0e46cd5896ede2c7188eb470",
+          "slug": "meta-faces-federal-trial-over-claims-its-platforms-harm",
+          "title": "Meta faces federal trial over claims its platforms harm children",
+          "summary": "Four states say Meta's platforms deliberately target and harm young users.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/news-wrap-meta-faces-trial-over-arguments-its-platforms-harm-children"
+            }
+          ],
+          "article": {
+            "background": "Four states filed a lawsuit against Meta. They argue that Facebook and Instagram harm children. The case went to trial this week.",
+            "what_happened": "A federal trial started Tuesday. Four states presented their case against Meta. They claim the company's social media platforms hurt children through features like endless scrolling and algorithms designed to boost engagement.",
+            "why_it_matters": "Many parents worry about how social media affects their kids. This trial could shape how platforms design their apps. A court ruling might force Meta to change features millions of young people use every day.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5c95eaf12726eb6c93791058e4dabe25",
+          "slug": "sec-charges-former-executives-with-fraud-in-1-9-billion",
+          "title": "SEC charges former executives with fraud in $1.9 billion collapse of subprime auto lender Tricolor",
+          "summary": "The SEC charged a former CEO, CFO, and senior finance director with fraud.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "sec_edgar_press",
+              "url": "https://www.sec.gov/newsroom/press-releases/2026-77-sec-charges-former-executives-fraud-connection-19-billion-collapse-subprime-auto-lender-tricolor"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "0c856651768165677bc30a5b0feb2f1b",
+          "slug": "london-children-s-lungs-grew-bigger-and-stronger-after",
+          "title": "London children's lungs grew bigger and stronger after ultra-low emission zone introduced",
+          "summary": "A study found children's lung capacity grew back after pollution exposure fell.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/aug/18/ulez-better-lung-size-function-london-children"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c1l1r1zne1ro"
+            }
+          ],
+          "article": {
+            "background": "London introduced an ultra-low emission zone, or Ulez, in 2019. This policy bans the most polluting vehicles from entering the city. The goal was to improve air quality. Critics complained it would burden drivers.",
+            "what_happened": "Researchers studied over 3,400 primary school children in London and Luton. They measured lung function before and after Ulez started. Children in London showed lung growth that had been slowed by pollution. After the zone took effect, their lungs grew bigger and stronger.",
+            "why_it_matters": "Air pollution harms how children's lungs develop. This study shows that reducing traffic pollution can reverse that damage. It suggests clean air zones in other cities could help children breathe easier and grow healthier.",
+            "quote": {
+              "text": "Traffic pollution in cities damages children's health and development.",
+              "attribution": "Chris Griffiths, professor of primary care at the University of Oxford and Queen Mary University of London",
+              "source_url": "https://www.theguardian.com/environment/2026/aug/18/ulez-better-lung-size-function-london-children"
+            }
+          }
+        },
+        {
+          "cluster_id": "bf9a6600f1516e5d17c8616c306c6828",
+          "slug": "uk-satellite-will-use-dark-side-of-moon-as-shield-to-study",
+          "title": "UK satellite will use dark side of Moon as shield to study cosmic dark ages",
+          "summary": "A UK satellite will hide behind the moon to study the universe before its first stars.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cam.ac.uk/research/news/tiny-satellite-will-use-the-dark-side-of-the-moon-to-eavesdrop-on-whispers-from-the-early-universe"
+            }
+          ],
+          "article": {
+            "background": "Cosmologists want to understand the universe's earliest history. The cosmic dark ages are a period roughly 150 million years after the Big Bang. Before the universe's first stars appeared, this period shaped how stars and galaxies formed. An international team led by the University of Cambridge is building a small satellite called CosmoCube to detect signals from this ancient time.",
+            "what_happened": "CosmoCube is a UK-developed satellite, about the size of a small carry-on suitcase. The team will place it on the far side of the Moon. From there, it will listen for a faint signal called the 21-centimetre line. This whisper comes from hydrogen atoms in the early universe.",
+            "why_it_matters": "Understanding the cosmic dark ages helps explain how the first stars and galaxies formed. This history shaped everything we see today, including our own existence. By using the Moon as a shield, CosmoCube can block Earth's radio noise. This lets it pick up signals too faint to hear from Earth.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "b9a3b087ecb0bad7126abbc6e9303553",
+      "title": "OpenAI announces slowing pace of development after hack by rogue agent",
+      "url": "https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "37b31da8234252754de840c6a3ee1ad1",
+      "title": "Musiala collapses during match for second time in four-day period",
+      "url": "https://www.bbc.co.uk/sport/football/articles/c330kg5xm8no?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "0bc36fa574a73d66da5c9074c3e0067f",
+      "title": "Judge swapped in Trump's defamation case against BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cvgvyz8e27zo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "9aa1629f9ad9d24410233302996448d5",
+      "title": "Judge blocks the Trump administration from moving FBI headquarters out of Maryland to DC office building",
+      "url": "https://www.pbs.org/newshour/politics/judge-blocks-the-trump-administration-from-moving-fbi-headquarters-out-of-maryland-to-dc-office-building",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "b74b2498b9f30bef3f1eb6c15f1b1740",
+      "title": "US announces new sanctions on top ICC figures",
+      "url": "https://www.bbc.co.uk/news/articles/cnvnl0elz47o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "3b0a1353d1a1a8b2c50e1a376677a7dd",
+      "title": "Ten-year-old girl found three days after she was reported missing in Perth suburbs",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/18/wa-police-appeal-for-help-to-find-10-year-old-girl-missing-from-perth-suburbs",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "da8b2828cc93c335801e7cf29463d571",
+      "title": "DOJ’s probe into Andreessen Horowitz over board seats baffles VCs",
+      "url": "https://techcrunch.com/2026/08/18/dojs-probe-into-andreessen-horowitz-over-board-seats-baffles-vcs",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "f02cb448fb3590e0b6ae3fc3ee71a32a",
+      "title": "2020 election deniers on the ballot for key offices in battleground states",
+      "url": "https://www.pbs.org/newshour/show/2020-election-deniers-on-the-ballot-for-key-offices-in-battleground-states",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "19def39c0807fe3381b6fa140cf9dbb0",
+      "title": "Democratic socialist Angie Nixon clinches surprise primary win in Florida US Senate race",
+      "url": "https://www.theguardian.com/us-news/2026/aug/18/angie-nixon-alex-vindman-florida-results",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 188,
+    "clusters_considered": 168,
+    "stories_run": 17,
+    "sources": 19,
+    "sections_held": 1
+  }
+}
