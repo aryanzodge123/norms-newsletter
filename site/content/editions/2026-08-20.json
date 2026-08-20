@@ -1,0 +1,449 @@
+{
+  "date": "2026-08-20",
+  "edition_number": 74,
+  "edition_type": "normal",
+  "headline_of_the_day": "US warns of AI attacks on Siemens industrial gear in key infrastructure",
+  "headline_cluster_id": "2c72646bb994837a4d7d77f4b6807cb3",
+  "headline_rationale": "Active threat to US critical infrastructure using AI-generated tools with concrete government warning issued by five federal agencies.",
+  "key_points": [
+    {
+      "text": "Threat actors use AI scripts to attack Siemens controllers in critical infrastructure, US agencies warn.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "China sentenced Evergrande founder Hui Ka Yan to life in prison for theft and bribery.",
+      "topic": "World"
+    },
+    {
+      "text": "Israel seeks to build 1,200 homes in the West Bank to prevent Palestinian statehood.",
+      "topic": "World"
+    },
+    {
+      "text": "T-Mobile found Chinese hackers in its networks and cut their access.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "US national debt topped 40 trillion dollars for the first time on Wednesday.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Flock Safety built an AI system that can find drivers and track cars by how they move.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-20.mp3",
+    "duration_seconds": 369,
+    "size_bytes": 4430304
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "fe010cdfbc18f90f2a579f69c5a4d10c",
+          "slug": "asana-cleared-five-years-of-engineering-backlog-in-two",
+          "title": "Asana cleared five years of engineering backlog in two weeks using Codex",
+          "summary": "A company used an AI tool to clear years of work delays and got more done faster.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://openai.com/index/asana"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "335c4fabfc997c539824d192edf9a360",
+          "slug": "the-relationship-between-apple-and-the-cia-that-shaped-a",
+          "title": "The relationship between Apple and the CIA that shaped a product",
+          "summary": "Apple and a US spy agency partnered to create widely used technology.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/tech/steve-jobs-apple-next-cia-161b65f9"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "6ef997cf44910e1dab364111c84b66ac",
+          "slug": "census-bureau-report-trump-cites-on-noncitizen-voting-has",
+          "title": "Census Bureau report Trump cites on noncitizen voting has ties to Trump think tank",
+          "summary": "Experts worry the president relies on an unusual report to claim voter fraud is common.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/08/19/nx-s1-5938799/trump-census-bureau-noncitizen-voting"
+            }
+          ],
+          "article": {
+            "background": "The Census Bureau recently released an unusual report about noncitizens and voting. President Trump has cited it to back claims of widespread illegal voting by noncitizens in the 2020 election. The report has ties to a Trump-aligned think tank, according to NPR.",
+            "what_happened": "In a Tuesday social media post, Trump claimed the Census Bureau's analysis proved more than 24,000 noncitizens voted illegally in 2020. The analysis checked over 128 million voter records. Trump said the final count will be much higher once the bureau checks 32 million more records.",
+            "why_it_matters": "Voters need accurate information to judge claims about election security. The report's connections to a Trump-aligned group and its unusual format raise questions about its reliability. How this analysis is checked matters for public trust in elections.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "92655c25a0fcacfc6e75b106095730e3",
+          "slug": "trump-threatens-economic-consequences-on-countries-helping",
+          "title": "Trump threatens economic consequences on countries helping Iran",
+          "summary": "Trump said he will hurt Iran's economy but gave no specifics or schedule.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c2k7e83ynj4o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/20/trump-threatens-crush-iran-economy-war-hormuz"
+            }
+          ],
+          "article": {
+            "background": "Iran's relationship with the US has been tense for years. The US and Israel began military strikes against Iran in late February. A 60-day ceasefire between them expired on Monday with no peace deal in sight.",
+            "what_happened": "President Donald Trump announced a new economic pressure campaign against Iran on Truth Social. He said he is launching \"the most crushing economic operation ever taken against any country.\" He threatened to punish any country that helps Iran or does business with it. He gave no details about which countries or what the punishments would be.",
+            "why_it_matters": "If Trump enforces this, countries that trade with Iran could face US penalties. This could affect global business and trade networks. The move could create friction with major trading partners like China.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "efcaba31a977c259909a0db97ebba6da",
+          "slug": "evergrande-founder-sentenced-to-life-in-prison-for",
+          "title": "Evergrande founder sentenced to life in prison for embezzlement",
+          "summary": "Hui Ka Yan got a life sentence for stealing money and taking bribes during China's housing crisis.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cd0x9mjjmgjo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Evergrande is a massive Chinese property company. It collapsed after taking on huge debt to build apartments across China. The company's failure left many people without homes they had paid for and shook China's housing market.",
+            "what_happened": "Hui Ka Yan, Evergrande's founder, was sentenced to life in prison. He pleaded guilty in April to embezzlement and bribery. The court also fined his former companies 15.82 billion yuan, about $2.35 billion, for falsifying records and hiding debt.",
+            "why_it_matters": "Evergrande's collapse hurt millions of ordinary people in China who bought apartments that were never finished. This sentence shows the government is holding top leaders responsible for the financial damage they caused. It may signal tougher enforcement against executives who mismanage major companies.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "03807de835ac81bbd72f14d34cce288e",
+          "slug": "israel-opens-tenders-for-1-200-west-bank-settlement-homes",
+          "title": "Israel opens tenders for 1,200 West Bank settlement homes in E1 area",
+          "summary": "Israel wants to build 1,200 homes on land east of Jerusalem where Palestinians could have a state.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cly50gn1e54o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Israel has long planned to build settlements on land in the West Bank, a territory it occupies. The E1 area sits east of Jerusalem. Building there has drawn criticism for decades. International law treats Israeli settlements as illegal. The new plans come as the Israeli government seeks to make a Palestinian state less likely.",
+            "what_happened": "Israel opened up bids for about 1,200 settlement homes in the E1 area. The move signals the government is moving forward with construction plans. UK Foreign Secretary Ed Miliband called this \"an unacceptable and destructive act\" and told Israel to stop.",
+            "why_it_matters": "Building in E1 would split the West Bank in two and cut off East Jerusalem. This makes it much harder for Palestinians to form their own state with connected territory. The issue has sparked global pushback for years, and Israel is now taking concrete steps toward construction.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "eede6ef0fa0e74a83ec0324d4d614508",
+          "slug": "over-100-dead-after-goldmine-collapse-in-central-african",
+          "title": "Over 100 dead after goldmine collapse in Central African Republic",
+          "summary": "A landslide at a mine in Zamboye village killed over 100 workers, with more expected to be found.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/20/gold-mine-collapse-deadly-landslide-central-african-republic"
+            }
+          ],
+          "article": {
+            "background": "Artisanal goldmines are small-scale operations. Workers dig for gold by hand or with basic tools. The Central African Republic has gold deposits. Many people in rural areas rely on mining for income. These mines often lack formal safety measures or oversight.",
+            "what_happened": "A landslide struck the village of Zamboye on Tuesday afternoon. Zamboye is in western Central African Republic, about 50 kilometers from Baboua and near the Cameroon border. More than 100 people died when the mine caved in. Video footage showed sand bury a group of miners. Local officials say the death toll will likely rise as recovery efforts continue.",
+            "why_it_matters": "This disaster shows the dangers workers face in artisanal mines without safety gear or rules. Small-scale mining is how many rural people in the Central African Republic earn money. But the lack of safety standards puts their lives at serious risk.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a40cf32b6b19727150bb23a311b9daf4",
+          "slug": "russian-missile-attack-on-kyiv-kills-at-least-six-people",
+          "title": "Russian missile attack on Kyiv kills at least six people",
+          "summary": "Missiles hit homes, warehouses, a hospital, and a school in the capital overnight.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/20/ukraine-kyiv-deaths-russian-missile-attack"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c98vzmden5yo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia has conducted repeated missile attacks on Kyiv throughout the conflict. Ukraine's capital faces a shortage of air defence missiles, making it harder to stop incoming strikes. This shortage means more attacks reach their targets.",
+            "what_happened": "A heavy Russian bombardment struck Kyiv and its surrounding region overnight Thursday. Missiles hit homes, warehouses, a children's hospital, and a school. At least 12 people were killed and 34 injured, Ukraine's State Emergency Service said. In Brovary, a nearby district, one man was killed and another wounded when a strike hit an industrial facility, the regional governor said.",
+            "why_it_matters": "Kyiv residents face ongoing threats to their safety and daily life. With fewer air defence systems available, more attacks reach civilian areas like homes and hospitals. These repeated strikes strain emergency services and force people to live under constant bombardment.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "80b1147e8dbec56b5e77e876e47baf94",
+          "slug": "states-claim-meta-deliberately-designed-addictive-features",
+          "title": "States claim Meta deliberately designed addictive features targeting children",
+          "summary": "Several states say Meta built features to keep kids on the platform longer.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/why-states-claim-meta-designed-addictive-features-for-children"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Instagram and Facebook, two of the world's largest social platforms. States have filed allegations that Meta knowingly designed these apps to keep children and teens hooked. The company says the claims are false and that it protects young users.",
+            "what_happened": "States claim Meta built addictive features into Instagram and Facebook even after learning the apps could harm children's mental health. Meta's spokesperson rejected the allegations. A landmark trial is underway to examine these claims.",
+            "why_it_matters": "If states prove their case, Meta might have to change how the apps work. This could mean fewer notifications, less tailored feeds, or other changes that make scrolling less habit-forming. For young people and their parents, this could shift how social media pulls at their attention.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "25ac8493b79641e43568e21c92461435",
+          "slug": "gardner-kansas-cancels-flock-license-plate-reader-cameras",
+          "title": "Gardner Kansas cancels Flock license plate reader cameras over privacy concerns",
+          "summary": "Gardner, Kansas turned off surveillance cameras and ended its contract as people questioned the program.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.kmbc.com/article/gardner-kansas-flock-cameras-license-plate-readers-privacy/73468724"
+            }
+          ],
+          "article": {
+            "background": "Flock Safety operates cameras that read license plates on streets. Gardner, Kansas, had bought this system to help police track vehicles. But privacy concerns about how the data is stored and who can see it have grown.",
+            "what_happened": "The Gardner City Council voted Monday to turn off all Flock cameras right away. The city canceled its contract with Flock Safety and will not renew it. By Tuesday, some cameras were covered to stop recording.",
+            "why_it_matters": "License plate readers can track where any driver goes. Gardner's decision shows cities are asking if the benefits are worth the privacy risks. As more communities reconsider these systems, the debate over what police should be able to see will likely shape which tools cities use next.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "c87ca01702757ff4ea9f59282294858a",
+          "slug": "nasa-abandons-rescue-mission-for-swift-space-telescope",
+          "title": "NASA abandons rescue mission for Swift space telescope",
+          "summary": "A repair attempt failed and the telescope will stop working after studying gamma rays for decades.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.scientificamerican.com/article/nasa-calls-off-rescue-mission-for-its-falling-swift-space-telescope"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "a9683df6dc6f7879d850a62a2301fa2f",
+          "slug": "youth-vaping-linked-to-breathing-problems-and-risk-of",
+          "title": "Youth vaping linked to breathing problems and risk of smoking cigarettes",
+          "summary": "Kids who vape are more likely to cough, wheeze, get bronchitis, or have asthma.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/aug/20/young-vapers-at-risk-of-breathing-problems-and-becoming-smokers"
+            }
+          ],
+          "article": {
+            "background": "Vaping is breathing in and out vapor from an electronic device. Children's doctors from the Royal College of Child and Paediatrics Health reviewed evidence on how vaping affects young people. The review is one of the most thorough studies done so far on this topic.",
+            "what_happened": "The review found that child vaping is linked to poor breathing health. This includes coughing, wheezing, bronchitis symptoms, and asthma getting worse. The doctors also found that vapes may lead young people to start smoking cigarettes.",
+            "why_it_matters": "If you have a child or teenager, this shows a direct health risk. Vaping can damage their lungs now and push them toward smoking later. That means more breathing problems both immediately and as they grow up.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "2c72646bb994837a4d7d77f4b6807cb3",
+          "slug": "us-warns-of-ai-powered-attacks-on-siemens-industrial",
+          "title": "US warns of AI-powered attacks on Siemens industrial controllers",
+          "summary": "Five federal agencies warn that attackers use AI scripts to hack Siemens S7 controllers in critical infrastructure.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/us-warns-of-ai-powered-attacks-on-siemens-plcs-in-critical-infrastructure"
+            }
+          ],
+          "article": {
+            "background": "Programmable logic controllers, or PLCs, are computers that run machinery in factories, power plants, and water systems. The Siemens S7 Series is a common type used across U.S. infrastructure. These systems control vital services like electricity and water that millions of people depend on.",
+            "what_happened": "Five federal agencies issued a joint warning Wednesday about ongoing attacks. The NSA, CISA, FBI, Department of Energy, and Environmental Protection Agency said attackers are using AI-generated scripts to exploit Siemens S7 controllers. The agencies noted that PLC attacks are broader than just Siemens and urged all PLC owners to take action.",
+            "why_it_matters": "If attackers gain control of these systems, they could disrupt electricity, water, or other services people rely on every day. The use of AI scripts makes attacks faster and harder to stop. Even if you do not work in infrastructure, you depend on these systems functioning safely.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "578be7f76de8b6573b4b110f3ab922cc",
+          "slug": "flock-safety-built-ai-tool-that-identifies-and-tracks",
+          "title": "Flock Safety built AI tool that identifies and tracks drivers by movement",
+          "summary": "Flock Safety said its cameras cannot track people, then built a system that does.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wired.com/story/flock-safety-os-investigate"
+            }
+          ],
+          "article": {
+            "background": "Flock Safety operates a network of automatic license plate reader cameras. These cameras are installed in over 6,000 US communities and log where vehicles go. The cameras use AI to identify and track cars based on license plates, make, model, and color. Norm reported in August that over 120,000 of these cameras are deployed across the US. Some communities have canceled contracts over privacy concerns.",
+            "what_happened": "Flock has built a new AI tool that identifies drivers and tracks vehicles by their movement patterns alone. The tool can pick out potential witnesses by how often their cars pass through a neighborhood. It can also surface a driver's \"associates\" from the cameras they pass together. The system connects camera footage to police case files, 911 logs, and commercial identity records.",
+            "why_it_matters": "For years, Flock said publicly that its technology cannot recognize or identify people. This tool does both. Police can now identify you as a witness or link you to others using only video of your car's movements, without your knowledge or consent. This happens across thousands of communities where these cameras already record your daily drives.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bef04bdd66c59ed91833c2f933510165",
+          "slug": "t-mobile-physically-cut-cables-to-expel-chinese-government",
+          "title": "T-Mobile physically cut cables to expel Chinese government hackers from its network",
+          "summary": "T-Mobile found Chinese hackers in its networks and physically cut their access.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://techcrunch.com/2026/08/19/t-mobile-chopped-a-cable-to-expel-chinese-hackers-from-its-network"
+            }
+          ],
+          "article": {
+            "background": "In 2024, Chinese hackers broke into hundreds of phone and internet companies. The group, called Salt Typhoon, is backed by China's government. These hackers wanted to steal phone records and data about U.S. leaders.",
+            "what_happened": "T-Mobile's cybersecurity team found the hackers in its network. They expelled them by cutting a cable, according to Bloomberg reporting. Other big phone and internet companies were also hit, including AT&T, Verizon, Charter, and Windstream.",
+            "why_it_matters": "T-Mobile handled this breach better than some peers by catching and removing the intruders before more damage could happen. The attack shows that foreign governments can reach into major U.S. phone networks to collect data on government officials and the public.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4335d823849857807350b281484c8785",
+          "slug": "elementor-pro-wordpress-plugin-flaw-allows-unauthenticated",
+          "title": "Elementor Pro WordPress plugin flaw allows unauthenticated code execution",
+          "summary": "A serious flaw in a popular plugin lets attackers upload harmful code from far away.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html"
+            }
+          ],
+          "article": {
+            "background": "Elementor Pro is a popular WordPress plugin that helps people build websites without writing code. The plugin has a Forms module that lets site visitors upload files. Researchers found a critical flaw in this file upload feature.",
+            "what_happened": "The flaw, tracked as CVE-2026-32475 with a severity score of 9.0 out of 10, lets unauthenticated attackers upload PHP files. PHP is code that runs on web servers. An attacker submits two file parts for the same upload field. This bypasses the extension check that normally blocks dangerous file types. The attacker can then execute code on the website.",
+            "why_it_matters": "Any website using the unpatched Elementor Pro plugin is at risk. An attacker does not need a login to exploit this. If successful, they can take over the site, steal data, or use it to attack visitors. Site owners should update the plugin right away.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "85fadd3d00fee918b29feb6797f2e5c5",
+      "title": "The U.S. debt tops a record-shattering $40 trillion. Yes, with a T",
+      "url": "https://www.npr.org/2026/08/19/nx-s1-5937552/the-u-s-debt-tops-a-record-shattering-40-trillion-yes-with-a-t",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "78d8c12292825791cf4d024252e1de3b",
+      "title": "Algorithms amplified World Cup racism, says report",
+      "url": "https://www.bbc.co.uk/sport/football/articles/c2k7en0lxkjo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "7ce516745ccede3549715c3c2e869b0e",
+      "title": "Isaac Heeney dumped as face of own company amid Sydney Swans commercial fallout",
+      "url": "https://www.theguardian.com/sport/2026/aug/20/isaac-heeney-dropped-colgate-telstra-book-deal-sydney-swans-incident-ntwnfb",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "4ea6018154e92ce1ab8dcd218e496be0",
+      "title": "Australia politics live: Chalmers says Coalition ‘hyperventilating’ over national debt as gross figure hits $1tn; jobless rate climbs to 4.5% as 15,800 lose work",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/20/australian-politics-live-penny-wong-labor-government-anthony-albanese-gambling-ndis-question-time-angus-taylor-pauline-hanson-ntwnfb",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "3480128e52a073fba756b3bf49ea3f67",
+      "title": "Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation",
+      "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "f57eb91ceec6197e281833cf8c194ad1",
+      "title": "Israeli military launches criminal probes into killings of 5-year-old and paramedics",
+      "url": "https://www.npr.org/2026/08/20/nx-s1-5939310/israeli-military-criminal-probes",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "93fd277ea388aa61ccbde8d1e08725d1",
+      "title": "Zomi Frankcom: Penny Wong condemns ‘insulting’ decision to clear IDF over Gaza strikes that killed Australian aid worker",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/20/australia-idf-reaction-gaza-strike-zomi-frankcom-penny-wong-statement-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "efe0e59ffe5dda7a9e0b6790b9053763",
+      "title": "Giant whales move into Greenland waters as ice disappears",
+      "url": "https://www.bbc.co.uk/news/articles/cq6dn9gj7eno?at_medium=RSS&at_campaign=rss",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "ad1114b25a6c8bda7915314cbe6a3984",
+      "title": "More than 1,000 birds found dead in three mass mortality events amid ‘significant’ H5 escalation in Australia",
+      "url": "https://www.theguardian.com/world/2026/aug/20/more-than-1000-birds-found-dead-in-three-mass-mortality-events-amid-significant-h5-escalation-in-australia",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "76800ae59d51e226b7a1e00be8eb29db",
+      "title": "Sacked Ukrainian defence minister calls for presidential election",
+      "url": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "787bb590413bb52ec41087774e4d3c29",
+      "title": "Israel's deadly Gaza strikes cast doubt on ceasefire progress days after Kushner visit",
+      "url": "https://www.pbs.org/newshour/world/israels-deadly-gaza-strikes-cast-doubt-on-ceasefire-progress-days-after-kushner-visit",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "fce728e4a7ffb01088e11de78114b43e",
+      "title": "More than 1,000 Afghan refugees have been stuck at a camp in Qatar since 2021",
+      "url": "https://www.npr.org/2026/08/19/nx-s1-5936482/more-than-1-000-afghan-refugees-have-been-stuck-at-a-camp-in-qatar-since-2021",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 192,
+    "clusters_considered": 160,
+    "stories_run": 16,
+    "sources": 20,
+    "sections_held": 0
+  }
+}
