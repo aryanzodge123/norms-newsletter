@@ -1,0 +1,456 @@
+{
+  "date": "2026-08-21",
+  "edition_number": 75,
+  "edition_type": "normal",
+  "headline_of_the_day": "Russia kills at least 16 people in one of its most intense bombardments of Kyiv since the war began",
+  "headline_cluster_id": "8361167d1db8f84a8df98468dde3a220",
+  "headline_rationale": "Most intense assault on Ukraine's capital in years, with at least 16 dead and homes, schools, and hospitals damaged, marking significant escalation in ongoing conflict.",
+  "key_points": [
+    {
+      "text": "Russia killed at least 16 people in a heavy attack on Kyiv, hitting homes and hospitals.",
+      "topic": "World"
+    },
+    {
+      "text": "Hong Kong activists who organized Tiananmen Square vigils were convicted under the national security law and face up to 10 years in prison.",
+      "topic": "World"
+    },
+    {
+      "text": "Microsoft Entra ID has a serious flaw that hackers are using, but the company says no customers need to act.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "US officials plan to force the Netherlands to ban ASML, a chip equipment maker, from selling to China.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Harmful code got into popular Rust libraries downloaded 245 million times. Developers need to act now.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-21.mp3",
+    "duration_seconds": 478,
+    "size_bytes": 5734080
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "010c5f10e7fece02e15658dc405d3514",
+          "slug": "tesla-discontinues-solar-roof-tiles-after-years-of",
+          "title": "Tesla discontinues Solar Roof tiles after years of development",
+          "summary": "Tesla will stop supplying solar roof tiles to installers and only sell traditional solar panels.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://electrek.co/2026/08/20/tesla-discontinues-solar-roof-panels-only"
+            }
+          ],
+          "article": {
+            "background": "Tesla's Solar Roof was a product that combined solar cells with roof tiles. The idea was to make a home's roof produce electricity. Tesla launched the product years ago as an alternative to traditional solar panels.",
+            "what_happened": "Tesla has discontinued the Solar Roof tiles. The company told third-party installers it will no longer supply the tiles. Tesla will only offer conventional solar panels going forward. Internally, the company concluded the product was not financially viable.",
+            "why_it_matters": "For homeowners considering solar, this means fewer options. Tesla's exit suggests the solar tiles were too expensive or difficult to make at a profit. Conventional solar panels remain available and are the more established technology.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d9463b0bfd06db1ef70fe8fe4def5746",
+          "slug": "walmart-stock-drops-9-percent-after-company-outlook",
+          "title": "Walmart stock drops 9 percent after company outlook disappoints Wall Street",
+          "summary": "Walmart's sales beat expectations, but investors disliked its outlook for the future.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html"
+            }
+          ],
+          "article": {
+            "background": "Walmart is the largest retailer in the US. It sells groceries, clothes, household goods, and more across stores and online. The company has grown its e-commerce business in recent quarters.",
+            "what_happened": "Walmart posted strong quarterly results on Thursday. Revenue rose 5.9% and e-commerce sales jumped 23% globally. The company also raised its outlook for the full year. However, U.S. comparable sales grew only 2.6%, below Wall Street's expected 3.5%. A price cap on certain drugs hurt the health and wellness business. The stock fell about 9% after the news.",
+            "why_it_matters": "Walmart's slower sales growth on certain items suggests shoppers may be cutting back on non-essential purchases. The company remains healthy and investing in online delivery and selection. For most shoppers, this means Walmart will keep offering the same basic services and prices you rely on today.",
+            "quote": {
+              "text": "Our business is strong. We feel really good about the progress we're making.",
+              "attribution": "John David Rainey, Walmart CFO",
+              "source_url": "https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "387063aac95bf8927208a734e3959b0a",
+          "slug": "treasury-yields-hit-20-year-highs-affecting-mortgages-and",
+          "title": "Treasury yields hit 20-year highs, affecting mortgages and government borrowing costs",
+          "summary": "Long-term Treasury yields hit their highest levels in nearly 20 years despite Federal Reserve action.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/why-treasury-yields-are-at-20-year-highs-and-why-it-matters"
+            }
+          ],
+          "article": {
+            "background": "Treasury yields are the interest rates the U.S. government pays when it borrows money by selling bonds. When yields rise, borrowing costs go up across the entire economy. This week, long-term Treasury yields reached their highest levels in nearly 20 years, sending shocks through financial markets and policy circles.",
+            "what_happened": "A major sell-off in the bond market drove long-term Treasury yields to nearly 20-year highs this week. The surge rattled both Wall Street and Washington. Higher yields mean the government now pays more to borrow, and those costs ripple through the rest of the economy.",
+            "why_it_matters": "When Treasury yields rise, banks and lenders pass those costs to you. Mortgages, car loans, and credit card rates all become more expensive. If you are planning to borrow money soon, these higher rates will directly affect what you pay.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7d73412de2b6028bd4d57ac866ee587a",
+          "slug": "us-workers-are-paying-more-for-healthcare-and-next-year",
+          "title": "US workers are paying more for healthcare, and next year will be worse",
+          "summary": "Healthcare costs are rising faster than worker pay and squeezing household budgets.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/health/healthcare/u-s-workers-are-paying-more-for-healthcare-and-next-year-will-be-worse-0924d0dd"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "8361167d1db8f84a8df98468dde3a220",
+          "slug": "russia-kills-at-least-16-in-intense-overnight-bombardment",
+          "title": "Russia kills at least 16 in intense overnight bombardment of Kyiv",
+          "summary": "Russia damaged homes, a school, and a children's hospital in the attack on Kyiv.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/20/ukraine-kyiv-deaths-russian-missile-attack"
+            }
+          ],
+          "article": {
+            "background": "Russia has launched repeated aerial attacks on Kyiv throughout the war. These attacks hit homes, schools, hospitals, and other civilian buildings. Vitali Klitschko, Kyiv's mayor, tracks the damage and deaths from each strike.",
+            "what_happened": "A heavy Russian missile and drone attack began around midnight. The bombardment continued into the early afternoon. At least 16 people died in Kyiv. Officials said 33 others were hurt. The strike damaged homes, a school, and a children's medical center.",
+            "why_it_matters": "Each attack on Kyiv threatens civilians and damages the city's basic services. Schools and hospitals hit means families lose access to care and education. These strikes are among the war's most intense attacks on the capital, showing no sign of slowing.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "976d772c3d1f5462b49dd372ed5aa136",
+          "slug": "hong-kong-activists-convicted-under-national-security-law",
+          "title": "Hong Kong activists convicted under national security law for Tiananmen vigils",
+          "summary": "Two organizers face up to 10 years in prison for pushing people to challenge the government.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c1l10mdrld5o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/21/tiananmen-square-vigil-hong-kong-alliance-activists-guilty-verdict-lee-cheuk-yan-chow-hang-tung"
+            }
+          ],
+          "article": {
+            "background": "Hong Kong has held annual vigils since 1989 to remember the Tiananmen Square crackdown in mainland China, in which dozens died. In 2020, Beijing imposed a national security law on Hong Kong. The law allows authorities to prosecute people for speech and organizing they say threaten the state's power.",
+            "what_happened": "Lee Cheuk-yan, 69, and Chow Hang-tung, 41, led the vigils for years. A court found them guilty of inciting others to subvert state power under the 2020 law. They face up to 10 years in prison. A third defendant, Albert Ho, 74, pleaded guilty in January.",
+            "why_it_matters": "The convictions show how Hong Kong uses the law to stop public gatherings and political work. It now carries serious risk to hold events authorities see as challenging the state, even peaceful yearly ones. People cannot freely mark or discuss this part of history.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "df791678247cef8bb19ea161711a52ab",
+          "slug": "us-immigration-agency-coordinated-with-iran-to-deport",
+          "title": "US immigration agency coordinated with Iran to deport Iranian nationals",
+          "summary": "Released emails show ICE worked with Iran on deportations.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.pbs.org/newshour/world/ice-and-iran-worked-together-to-deport-iranians-from-u-s-newly-released-emails-show"
+            }
+          ],
+          "article": {
+            "background": "Immigration and Customs Enforcement, or ICE, is the U.S. agency that deports people without legal status to their home countries. The United States and Iran have tense relations. Yet newly released emails show the two governments worked together on deportations in 2025.",
+            "what_happened": "U.S. immigration officials coordinated with Iran to deport Iranian citizens from the United States. Hundreds of emails released in August 2026 document this working relationship. The cooperation happened despite rising tensions between the two countries.",
+            "why_it_matters": "The emails show that immigration enforcement can cross political divides. It reveals that deportations may involve coordination with foreign governments, even when those countries are at odds with the U.S. on other issues.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f17e907b19cd6791efb6232d4d3f4abf",
+          "slug": "us-deports-20-people-to-liberia-under-trump-administration",
+          "title": "US deports 20 people to Liberia under Trump administration deal for 1,200 migrants",
+          "summary": "The first group arrived Thursday in one of the largest deportations to a third country yet.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/20/liberia-deportation-agreement"
+            }
+          ],
+          "article": {
+            "background": "The United States deports people who are not citizens and cannot stay legally. Normally these people go back to their home countries. Under the Trump administration, the US is instead sending some deportees to other nations that agree to take them. Liberia, a west African nation, has now agreed to receive deported people from the US.",
+            "what_happened": "Twenty people arrived in Liberia on Thursday as the first group under a new US deal. The group landed at Roberts International Airport near the capital, Monrovia. The agreement allows up to 1,200 more deportees to follow. These will include people from Africa, North America, South America, and the Caribbean.",
+            "why_it_matters": "This is one of the largest deals of its kind the Trump administration has made. It signals a shift in how the US handles deportations, moving beyond sending people to their home countries.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "79b07669621c53cbddbc11bb0ca068f7",
+          "slug": "us-preparing-to-force-netherlands-to-ban-asml-chip",
+          "title": "US preparing to force Netherlands to ban ASML chip equipment sales to China",
+          "summary": "The ban would stop ASML from selling nearly all machines used to make complex computer chips.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://nltimes.nl/2026/08/20/us-preparing-force-netherlands-ban-asml-selling-china"
+            }
+          ],
+          "article": {
+            "background": "ASML is a Dutch company that makes lithography machines. These machines are essential for producing the world's most advanced microchips. The United States and China compete for leadership in artificial intelligence and advanced computing, which also matters for military strength.",
+            "what_happened": "The U.S. government is preparing to force the Netherlands to ban ASML from selling chip-making machines to China. The goal is to slow China's progress in AI and supercomputers. The U.S. believes this will also limit China's military development.",
+            "why_it_matters": "If the ban happens, it could reshape which countries lead in AI and military technology for years. The restrictions would affect what advanced computing power China can build. For people outside the tech industry, this matters because AI and computing power influence economic competition and national security globally.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ed5009d87bb2f75efc5d9c84a05f3621",
+          "slug": "nevada-approves-up-to-8-000-robotaxis-from-tesla-uber-and",
+          "title": "Nevada approves up to 8,000 robotaxis from Tesla, Uber, and Waymo in Las Vegas area",
+          "summary": "Three permits allow deployment of 5,000 Tesla and 3,000 combined Uber and Waymo robotaxis over 12 months.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/20/tesla-uber-and-waymo-all-get-the-ok-to-operate-thousands-of-robotaxis-in-nevada"
+            }
+          ],
+          "article": {
+            "background": "Nevada regulators just gave three companies the green light to run robotaxis. Robotaxis are self-driving cars that carry passengers for hire, like Uber or Lyft but with no driver. The Nevada Transportation Authority approved this on Thursday for Tesla, Uber, and Waymo.",
+            "what_happened": "The three permits will let these companies deploy up to 8,000 robotaxis in Clark County over the next 12 months. Tesla can operate up to 5,000. Waymo gets 1,000. Uber gets 1,000, running them through partnerships with Hyundai's Motional and Zoox.",
+            "why_it_matters": "If you live in or visit Las Vegas, you may soon see self-driving taxis on the road. These services could give you a ride without waiting for a human driver. Nevada is moving faster than most states to let companies test and run robotaxi fleets at scale.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3fcde01ccc3aa20148a379f0145b7987",
+          "slug": "european-union-says-copyright-does-not-protect-ai-generated",
+          "title": "European Union says copyright does not protect AI-generated content",
+          "summary": "The EU ruled that work made only by artificial intelligence cannot have copyright protection.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://mathstodon.xyz/@maxpool/117128107757895678"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "5ed566fdf5899618a5d6a2d1e499da75",
+          "slug": "scientists-release-largest-two-dimensional-map-of-the",
+          "title": "Scientists release largest two-dimensional map of the universe ever created",
+          "summary": "Scientists combined over 263,000 telescope images to create a map of visible and near-infrared light.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://newscenter.lbl.gov/2026/08/10/scientists-release-biggest-2d-map-of-the-universe"
+            }
+          ],
+          "article": {
+            "background": "Astronomers map the universe by combining many telescope images into a single picture. This new map covers more of the sky than any before it. It shows stars and galaxies in visible light and near-infrared light, which human eyes cannot see but telescopes can detect.",
+            "what_happened": "Scientists released the largest 2D map of the universe. The DESI Legacy Imaging Surveys project combined 263,000 telescope images to create it. The map contains nearly 4 billion stars and galaxies and holds 5.6 trillion pixels.",
+            "why_it_matters": "This map serves as the foundation for a larger project called the Dark Energy Spectroscopic Instrument. That project will measure the universe in 3D and help scientists study dark energy, the mysterious force that appears to push galaxies apart. Astronomers can now pair this map with their own telescope data to search for rare objects and understand the universe better.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "96001281fb2450aabdb5742591f67717",
+          "slug": "uk-study-finds-men-with-heart-disease-have-elevated-cancer",
+          "title": "UK study finds men with heart disease have elevated cancer risk",
+          "summary": "Smoking, obesity, and heavy drinking are the top causes of cancer in men with heart disease.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/aug/21/uk-men-heart-disease-higher-cancer-risk"
+            }
+          ],
+          "article": {
+            "background": "Heart disease and cancer are two of the biggest health threats in the UK. A new study tracked 22,000 British adults for 25 years. About 11,000 had heart disease at the start or developed it during the study. Researchers from the University of Aberdeen and Keele University looked at links between the two conditions.",
+            "what_happened": "Men with heart disease faced a higher risk of developing cancer and dying from it. The link was strongest for lung and oesophageal cancers. Three main factors drove this risk in men: smoking, obesity, and heavy drinking. Women with heart disease did not show the same cancer risk.",
+            "why_it_matters": "If you have heart disease, your doctor may now watch more closely for signs of cancer. The same habits that harm your heart also raise cancer risk: smoking, excess weight, and too much alcohol. Changing these habits helps protect against both diseases.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "24d0b4d9f11651baf483101f71b673b4",
+          "slug": "microsoft-entra-id-vulnerability-with-maximum-severity",
+          "title": "Microsoft Entra ID vulnerability with maximum severity score exploited in the wild",
+          "summary": "A serious flaw in Microsoft Entra ID, a cloud identity service, lets hackers run code.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html"
+            }
+          ],
+          "article": {
+            "background": "Microsoft Entra ID is the company's cloud service for managing who can access what in an organization. It was called Azure Active Directory before. Identity services are high-value targets because compromising them gives attackers broad access to a company's systems.",
+            "what_happened": "Microsoft warned Thursday of a maximum-severity flaw in Entra ID. The flaw, tracked as CVE-2026-69836, allows attackers to run code remotely over a network. Microsoft said the flaw has been exploited in the wild, but customers are already protected and no action is needed.",
+            "why_it_matters": "This flaw affects how your company controls who accesses its systems. For most people, your company's security team has likely already deployed the fix automatically. The underlying issue, called deserialization, is a known weakness attackers have exploited in many other services.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d63059cc61bd35058f2928a624a61bc0",
+          "slug": "malicious-code-inserted-into-three-widely-used-rust",
+          "title": "Malicious code inserted into three widely used Rust programming libraries",
+          "summary": "A hacked account released harmful code that ran on 245 million downloads during setup.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html"
+            }
+          ],
+          "article": {
+            "background": "Rust is a programming language. Crates.io is a repository where developers find and use code libraries. Three popular libraries on crates.io are arrayref, internment, and append-only-vec. Together they have been downloaded 245 million times. Someone compromised the account that manages these libraries on August 20, 2026.",
+            "what_happened": "The attacker published new versions of all three libraries. Each one included a fake dependency, a library that does not really exist. The fake dependency had malicious code in its build script. A build script runs automatically when a developer compiles a project. The malicious code downloaded and ran malware without any action from the developer. The Rust Project found the attack and deleted these versions within 86 to 107 minutes.",
+            "why_it_matters": "Popular libraries are trusted. Attackers can use that trust to reach many developers at once. If you tried to build a project using these libraries during those 86 to 107 minutes, malware ran on your machine without your knowledge. This shows why it matters who controls the code you depend on, even when the code itself looks safe.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f9e0533e9e972454bc2ca79f4cfe05e1",
+          "slug": "russian-hacking-groups-abuse-google-and-whatsapp",
+          "title": "Russian hacking groups abuse Google and WhatsApp authentication to hijack high-value accounts",
+          "summary": "Three suspected Russian spy groups targeted defense, government, and school workers in Europe and the US.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/suspected-russian-hackers-abuse-google.html"
+            }
+          ],
+          "article": {
+            "background": "Three Russian cyber espionage groups have been spotted targeting specific people. They go after workers in academia, aerospace, defense, government, and think tanks in Europe and the U.S. Google researchers named the groups UNC6293, UNC7005, and UNC5976.",
+            "what_happened": "These groups use fake login requests to hijack accounts. They pose as trusted services like Google and WhatsApp. They ask people to verify their identity through these legitimate authentication systems. The researchers said the groups run persistent phishing campaigns with sophisticated social engineering tactics. They try to compromise personal accounts across multiple platforms.",
+            "why_it_matters": "If you approve a login request you never asked for, attackers get direct access to your personal data. This matters because these groups specifically target people with access to sensitive information. If you work in one of these fields, you should be extra careful about login requests. Even from familiar services, verify you actually started the login before approving it.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "323fabffc2a180b7b4a23e1d54260dc1",
+      "title": "Progressive Aisha Wahab wins California special election to fill Eric Swalwell seat",
+      "url": "https://www.theguardian.com/us-news/2026/aug/20/california-special-election-results-eric-swalwell",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2f29a49e80435505e02adefb4c2c0eec",
+      "title": "FTC says \"personalized pricing\" based on consumer data could violate the law",
+      "url": "https://www.cbsnews.com/news/ftc-personalized-pricing-warning-consumers",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "d75c0669f487c23b63c1ee595239aba2",
+      "title": "El Niño set to be 'strongest in living memory', says Met Office",
+      "url": "https://www.bbc.co.uk/weather/articles/c3ekg93vjz9o?at_medium=RSS&at_campaign=rss",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "deb8bd2874e2c9139f95c1b1b3659fc0",
+      "title": "Panama Canal to cut number of ships passing through due to El Niño",
+      "url": "https://www.bbc.co.uk/news/articles/cwyl0jkxxryo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e097dfaf21866b18a1df887a65349cf1",
+      "title": "Israeli settler attacks shift to heart of territory earmarked for Palestinian state",
+      "url": "https://www.theguardian.com/world/2026/aug/21/israeli-settler-attacks-shift-to-heart-of-territory-earmarked-for-palestinian-state",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "eab7f773c749e6c4ebdaf12dd8798f84",
+      "title": "Jailed Pakistan ex-PM Imran Khan taken to hospital for treatment",
+      "url": "https://www.bbc.co.uk/news/articles/ckgdr9vr50po?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "90260ec574dae72732db27650e4cb1c0",
+      "title": "UK reports unexpected deficit of £1.8bn as John Healey prepares for first budget",
+      "url": "https://www.theguardian.com/politics/2026/aug/21/uk-unexpected-deficit-john-healey-prepares-for-first-budget",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "2391f56512de22c1f9050ffbac1ffd45",
+      "title": "California oil pipeline can continue to operate, judge rules",
+      "url": "https://www.theguardian.com/us-news/2026/aug/20/california-oil-pipeline-trump-judge-ruling",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "292d45e7ba7aad1524dafd299e38b6ad",
+      "title": "AP report: Federal agents seize devices from ex-Rep. Eric Swalwell in sexual misconduct probe",
+      "url": "https://www.pbs.org/newshour/politics/ap-report-federal-agents-seize-devices-from-ex-rep-eric-swalwell-in-sexual-misconduct-probe",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "36e7a14477dd91a336c706f0e3f0b9ef",
+      "title": "US distributor of China’s most popular humanoid robots pivots after US ban",
+      "url": "https://arstechnica.com/gadgets/2026/08/us-distributor-of-chinas-most-popular-humanoid-robots-pivots-after-us-ban",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "7d32c1c4971087af14c8df3f7a38edf5",
+      "title": "As workplace surveillance grows, it's good to know the ways employers watch you",
+      "url": "https://apnews.com/article/employer-surveillance-bossware-tracking-workplace-7d61e74242b872457bbfcf2223f9ebd5",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "84b448e21ea379845d9e454fe63db553",
+      "title": "Treasury plan to subdue yields fails",
+      "url": "https://www.cnbc.com/2026/08/19/stock-market-today-live-updates.html",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "b008029c8db4689497036e1f948f7634",
+      "title": "The $40 trillion national debt may already be costing you",
+      "url": "https://www.npr.org/2026/08/20/nx-s1-5939466/the-40-trillion-national-debt-may-already-be-costing-you",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 169,
+    "clusters_considered": 156,
+    "stories_run": 16,
+    "sources": 19,
+    "sections_held": 0
+  }
+}
