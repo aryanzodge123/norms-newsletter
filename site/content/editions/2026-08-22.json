@@ -1,0 +1,301 @@
+{
+  "date": "2026-08-22",
+  "edition_number": 76,
+  "edition_type": "normal",
+  "headline_of_the_day": "US imposes 50% tariffs on $20 billion in Canadian goods as trade talks collapse",
+  "headline_cluster_id": "29a3ee58f85fa7f42808d9a3463609f6",
+  "headline_rationale": "Immediate effect on cross-border trade and consumer prices between historic allies, marking a significant escalation in US trade policy",
+  "key_points": [
+    {
+      "text": "The US set 50% tariffs on $20 billion of Canadian goods after trade talks failed. Canada said it will retaliate.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The Pentagon fired the Stars and Stripes editor for publicly opposing military control of the newsroom.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "A Dutch regulator fined Uber $966 million for shutting down driver accounts without proper notice.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Russia killed 16 civilians in a shopping center attack in Kryvyi Rih, the home town of Ukraine's president.",
+      "topic": "World"
+    },
+    {
+      "text": "US national debt crossed $40 trillion, which affects global borrowing costs and currency values.",
+      "topic": "Finance"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-22.mp3",
+    "duration_seconds": 379,
+    "size_bytes": 4544640
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "29a3ee58f85fa7f42808d9a3463609f6",
+          "slug": "us-imposes-50-tariffs-on-20-billion-in-canadian-goods",
+          "title": "US imposes 50% tariffs on $20 billion in Canadian goods",
+          "summary": "The US began tariffs on $20 billion of Canadian goods Saturday after trade talks broke down.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/22/nx-s1-5941584/us-canada-tariffs"
+            }
+          ],
+          "article": {
+            "background": "The U.S. and Canada are historic trading partners, but their relationship has grown tense in recent years. President Donald Trump uses tariffs, which are taxes on goods coming into the country, as part of his trade approach. This is the latest strain between the two allies after failed last-ditch talks.",
+            "what_happened": "Early Saturday, the U.S. imposed 50% tariffs on $20 billion of Canadian products. This tax hits about 5% of all Canadian exports to America yearly. Items affected include hockey sticks and tongue depressors. Canada's Prime Minister Mark Carney said Canada would match the U.S. tariffs dollar for dollar.",
+            "why_it_matters": "Tariffs raise prices on imported goods, which could make some products more expensive for American shoppers. The trade conflict is escalating and may disrupt business ties between the two countries. This affects everyday items many people buy and use.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "55b3480d4d994686e6705cbb51b087dc",
+          "slug": "pentagon-fires-stars-and-stripes-leaders-who-opposed",
+          "title": "Pentagon fires Stars and Stripes leaders who opposed editorial interference",
+          "summary": "The Pentagon fired Stars and Stripes' editor and top reporter for opposing military control of the newsroom.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/stars-stripes-pentagon-censorship-media-d42affb0c17fef31c6089645c8dbbe70"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/politics/stars-and-stripes-editor-reporter-fired-for-insubordination-after-doing-cbs-interview"
+            }
+          ],
+          "article": {
+            "background": "Stars and Stripes is a newspaper partly funded by the Pentagon that serves active-duty and retired military personnel. It has a long history of editorial independence from the Defense Department. That separation lets it cover military news without Pentagon control.",
+            "what_happened": "The Pentagon fired Stars and Stripes editor-in-chief Erik Slavin and a top reporter on Friday. The stated reason was insubordination. Both had spoken publicly against Pentagon interference in the outlet. The newspaper's publisher was also dismissed days after announcing his retirement.",
+            "why_it_matters": "Service members rely on Stars and Stripes for news about their own institution separate from Pentagon messaging. When leadership faces firing for defending that independence, it signals the military may move toward tighter control over what service members read. This affects millions of active-duty and retired military personnel who depend on the outlet for unfiltered information.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c5d64b36214c39cf01b54f763722266d",
+          "slug": "postal-service-moves-forward-with-mail-voting-rule-despite",
+          "title": "Postal Service moves forward with mail voting rule despite court blocks",
+          "summary": "USPS will require states to share voter information for mail ballots, despite court orders against it.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/21/us-postal-service-mail-in-voter-rule"
+            }
+          ],
+          "article": {
+            "background": "The USPS is the federal agency that delivers mail across the country, including mail-in ballots. States currently decide how to run their own elections and handle voter information. The USPS is now moving to change that relationship.",
+            "what_happened": "The USPS posted a final rule on Friday. It would require states to share voter data with the federal government. In return, the USPS would deliver ballots before the November midterm elections. Two federal courts have already blocked this rule from taking effect. The USPS is moving forward anyway.",
+            "why_it_matters": "Mail-in voting has grown much larger in recent years. This rule would shift control of voter data from states to the federal government. If the courts lift their blocks, states would have to comply or risk slower ballot delivery. The legal fight will likely continue.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4fad243d35e4024d36422c5373e808ae",
+          "slug": "russian-drone-strike-kills-16-at-ukrainian-shopping-center",
+          "title": "Russian drone strike kills 16 at Ukrainian shopping center",
+          "summary": "A Russian drone strike on a Kryvyi Rih shopping mall killed 16 people and hurt 130 more, including 23 children.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/22/ukraine-shopping-centre-attack-deaths-russia-terror-by-design-kaja-kallas-kryvyi-rih"
+            }
+          ],
+          "article": {
+            "background": "Russian drones attack Ukrainian cities regularly during the war. On Friday, drones hit a busy shopping center in Kryvyi Rih, a major city in southeastern Ukraine. Kryvyi Rih is also the hometown of President Volodymyr Zelenskyy.",
+            "what_happened": "The strike killed 16 people. President Zelenskyy called the attack \"cynical and despicable\". Kaja Kallas, the EU's top diplomat, condemned it as \"terror by design\". She said she is pushing for the harshest Russia sanctions since the war began. EU ministers will meet in Ireland next month to discuss them.",
+            "why_it_matters": "The attack shows Russia is targeting civilian sites in major Ukrainian cities. Stronger sanctions may increase pressure on Russia's ability to wage war, though their effect depends on whether other countries also enforce them.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "92774f21aae57e5e6f83b3dcd93628d9",
+          "slug": "canada-vows-to-match-us-tariffs-dollar-for-dollar",
+          "title": "Canada vows to match US tariffs dollar for dollar",
+          "summary": "Canada's Prime Minister said it will match US tariffs after trade talks broke down.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cvgvyy4x2mvo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/22/canada-tariffs-trump-trade-deal-talks-fail"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cvgvyy4x2mvo"
+            }
+          ],
+          "article": {
+            "background": "The US and Canada have been in trade talks since July. President Donald Trump threatened 50% tariffs on about $20 billion of Canadian goods. Negotiations had been intense, with Canadian officials working in Washington for a week. The two sides had a Friday midnight deadline to reach a deal.",
+            "what_happened": "Talks broke down late Friday. A fresh wave of US tariffs on Canadian goods took effect Saturday. Canadian Prime Minister Mark Carney said the US made unfair last-minute changes. In response, Canada will impose matching tariffs on US goods dollar for dollar.",
+            "why_it_matters": "These tariffs will make goods more expensive for both countries' shoppers. Companies doing business across the border will face higher costs. This can slow hiring and economic growth on both sides.",
+            "quote": {
+              "text": "Last-minute changes in the US proposed terms were unfair, uneconomic, and called into question the reliability of any deal.",
+              "attribution": "Canadian Prime Minister Mark Carney",
+              "source_url": "https://www.bbc.co.uk/news/articles/cvgvyy4x2mvo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "0e27594d133f3e7624a52b4b90576c9d",
+          "slug": "dutch-regulator-fines-uber-966-million-over-automated",
+          "title": "Dutch regulator fines Uber $966 million over automated driver suspensions",
+          "summary": "A Dutch regulator fined Uber $966 million for shutting down accounts without proper notice.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/aug/21/netherlands-fines-uber-automated-driver-suspensions"
+            }
+          ],
+          "article": {
+            "background": "Uber is a ride-hailing service that employs drivers in Europe. The Dutch data protection authority enforces GDPR, a law that sets rules for how companies collect and use people's personal data. GDPR requires companies to get clear consent and inform people before making automated decisions that affect them.",
+            "what_happened": "The Dutch authority fined Uber €825m ($966m) on August 17 for suspending driver accounts through automated systems. The company did not adequately tell drivers before these suspensions happened. Uber said it will appeal the fine.",
+            "why_it_matters": "This is the second-largest GDPR fine ever issued. Only Meta's €1.2bn fine in 2023 was larger. The decision signals that regulators will penalize companies that use automation to make decisions about people without proper notice or human review. Drivers and workers in the EU now have stronger protection when companies deactivate their accounts.",
+            "quote": {
+              "text": "We strongly disagree with this decision and disproportionate fine.",
+              "attribution": "Uber spokesperson",
+              "source_url": "https://www.theguardian.com/technology/2026/aug/21/netherlands-fines-uber-automated-driver-suspensions"
+            }
+          }
+        },
+        {
+          "cluster_id": "466a02cef7a2e0b3f330624aeb8d841d",
+          "slug": "states-accuse-meta-of-designing-platforms-to-addict-children",
+          "title": "States accuse Meta of designing platforms to addict children",
+          "summary": "States say Meta designed its platforms to addict young users in a lawsuit seeking billions of dollars.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.latimes.com/california/story/2026-08-18/california-social-media-addiction-lawsuit-meta"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Facebook and Instagram, two of the world's largest social networks. California and other states are suing Meta. They claim the company made its apps addictive to kids on purpose. They also say Meta lied about how safe its platforms are for young users.",
+            "what_happened": "Opening arguments began Tuesday in the lawsuit. California and other states are seeking billions of dollars in damages. The states say Meta designed its platforms to hook children. Meta's lawyers say the company has worked to protect young users.",
+            "why_it_matters": "If the states win, Meta could face major penalties and be forced to change how it builds apps for kids. The case may set rules for how social networks can target young people. For now, the lawsuit is still in early stages.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7c399b74dba012addff4c33fb0058b89",
+          "slug": "tiktok-settles-children-s-privacy-lawsuit-for-400-million",
+          "title": "TikTok settles children's privacy lawsuit for $400 million",
+          "summary": "TikTok agreed to pay $400 million to settle claims it broke federal child privacy laws.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/21/tiktok-reaches-400m-settlement-over-childrens-privacy-lawsuit"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/aug/21/tiktok-settlement-children-privacy"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/983531/tiktok-settle-doj-lawsuit-coppa"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwyr0l45xjro?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "TikTok is a social media app where people share short videos. The Children's Online Privacy Protection Act, or COPPA, is a federal law from 2000 that requires apps to get permission from parents before collecting data on children under 13. In 2024, the U.S. Department of Justice sued TikTok and its parent company ByteDance for breaking this law.",
+            "what_happened": "TikTok agreed to pay $400 million to settle the lawsuit. The company will pay $300 million right away. It will pay the remaining $100 million later. The DOJ said TikTok let millions of children under 13 use the app. The company collected their personal data without asking parents first.",
+            "why_it_matters": "This is one of the largest settlements ever in a COPPA case. It means TikTok will face stricter rules about protecting young users' data going forward. If you have children using apps, this case shows the government is holding companies accountable for how they handle kids' information.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7777083628be8eef3db24a783239fe56",
+          "slug": "australia-requires-tech-platforms-to-pay-news-publishers-or",
+          "title": "Australia requires tech platforms to pay news publishers or face levy",
+          "summary": "New law forces Google and Meta to strike deals or pay tax on advertising revenue",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/21/nx-s1-5939814/big-tech-companies-will-have-to-pay-to-publish-australian-news-content-under-new-laws"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "6d82f8bdc0663a76aa8bca6fb4b18529",
+      "title": "Watch: How does the US national debt affect consumers around the world?",
+      "url": "https://www.bbc.co.uk/news/videos/c4gjn4ezljno?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "f0b21165dbe95105d33dd470d5bfb5ee",
+      "title": "Apple is laying off staffers working on the Vision Pro and Siri",
+      "url": "https://www.theverge.com/tech/983451/apple-layoffs-vision-pro-siri",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "e83d979f29799802c3d97e42a7ef09db",
+      "title": "Battery fires at recycling centres are costing UK £1bn a year, figures show",
+      "url": "https://www.theguardian.com/environment/2026/aug/22/lithium-battery-fires-waste-recycling-centres-vapes-uk",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "2cedd4c75676da46c02843b89f7bb84e",
+      "title": "S&P 500 CEO median pay hits $17.3M, widening CEO-worker ratio to 312-to-1",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-ceo-median-pay-234900518.html",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "665cdf6bd0c0243aef469ad1b168bbd9",
+      "title": "Walmart finally says yes to Apple Pay and Google Pay",
+      "url": "https://www.neowin.net/news/walmart-finally-says-yes-to-apple-pay-and-google-pay",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "d87917573e4aff071345476b2e906f53",
+      "title": "Kindle raises US prices by $40-$50",
+      "url": "https://www.reddit.com/r/kindle/comments/1vujton/price_increase_on_kindles",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "1e80bd7c64e3eec6f33f92a6a3cacfe0",
+      "title": "5 years on, Afghan girls still barred from education under Taliban",
+      "url": "https://apnews.com/article/afghanistan-girls-excluded-secondary-education-taliban-618c7f5c7659d43ede2a3f71a7cf845f",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 167,
+    "clusters_considered": 126,
+    "stories_run": 9,
+    "sources": 15,
+    "sections_held": 0
+  }
+}
