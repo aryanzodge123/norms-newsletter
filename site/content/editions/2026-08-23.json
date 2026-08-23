@@ -1,0 +1,241 @@
+{
+  "date": "2026-08-23",
+  "edition_number": 77,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump adds fifty-percent tariffs on Canadian goods, raising prices on trade",
+  "headline_cluster_id": "63593ea7e408b8e2d42355bf01238c39",
+  "headline_rationale": "A major tariff affecting the largest US trading partner took effect today with immediate consequences for household costs and commerce",
+  "key_points": [
+    {
+      "text": "Trump added fifty-percent tariffs on Canadian goods, which will raise prices for most households.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Canada stopped trade talks with the US after decades of free trade and has no clear plan.",
+      "topic": "World"
+    },
+    {
+      "text": "A fur seal died from H5 bird flu in South Australia, the first mainland mammal fatality from the spreading strain",
+      "topic": "Science"
+    },
+    {
+      "text": "Nine out of ten unsolved murders in London involve non-white victims, a new study found.",
+      "topic": "World"
+    },
+    {
+      "text": "England got a ten-year high in new windfarm requests after Labour ended a nine-year ban.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-23.mp3",
+    "duration_seconds": 368,
+    "size_bytes": 4421664
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "63593ea7e408b8e2d42355bf01238c39",
+          "slug": "trump-imposes-fifty-percent-tariffs-on-canadian-goods",
+          "title": "Trump imposes fifty-percent tariffs on Canadian goods",
+          "summary": "The tariffs took effect today, raising prices on cross-border trade between the longtime allies",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/economy/what-to-know-about-trumps-50-tariffs-on-canadian-goods-that-just-went-into-effect"
+            }
+          ],
+          "article": {
+            "background": "A tariff is a tax on goods coming into a country. Canada is one of the largest trading partners for the United States. The two countries trade cars, energy, and many other goods across their shared border.",
+            "what_happened": "Trade talks between the U.S. and Canada fell apart at the last moment. President Donald Trump then put a 50% tariff on many Canadian imports. The tariffs took effect on Saturday and will affect about 5% of Canada's yearly exports to the U.S.",
+            "why_it_matters": "Tariffs raise prices on imported goods. American consumers and businesses that buy Canadian materials will likely pay more. Prices for cars, energy, and other everyday items could go up.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d2e1c07c01ca76698f548b7973ebab1b",
+          "slug": "pentagon-fires-stars-and-stripes-editor-who-opposed",
+          "title": "Pentagon fires Stars and Stripes editor who opposed military interference",
+          "summary": "The editor was fired for alleged insubordination and then raised concerns about censorship.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cm2g23ng8p4o"
+            }
+          ],
+          "article": {
+            "background": "Stars and Stripes is the official newspaper of the US military. It has a long history of editorial independence. On Friday, the Pentagon fired editor-in-chief Erik Slavin, a top reporter, and the publisher for insubordination.",
+            "what_happened": "Slavin told the BBC he believes he was fired for saying censorship would be a red line. He said Pentagon officials are less willing to speak on the record. The firings raised concerns about what information the public will learn about military operations and policy.",
+            "why_it_matters": "Readers depend on Stars and Stripes to report on military news. When newsroom leadership is dismissed over editorial disputes, it can change what stories get told. This matters because the public relies on independent reporting to understand how their military works.",
+            "quote": {
+              "text": "This is a time when we really need to hear what's happening.",
+              "attribution": "Erik Slavin, former editor-in-chief of Stars and Stripes",
+              "source_url": "https://www.bbc.com/news/articles/cm2g23ng8p4o"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "7070c76cfdb93c2b9a47e4ead050130b",
+          "slug": "canada-suspends-trade-talks-with-us-enters-tariff-war",
+          "title": "Canada suspends trade talks with US, enters tariff war",
+          "summary": "Prime Minister Carney walked away from Trump's deal after decades of free trade",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c3040pn8lmmo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The United States and Canada have been close trading partners for decades, with free trade between them. Now they are in an escalating trade war with no clear way out. Prime Minister Mark Carney decided to suspend talks with President Donald Trump late Friday and retaliate instead of accepting a deal that seemed close.",
+            "what_happened": "Carney said the US tariffs were a \"miscalculation\" meant to \"hurt and divide us.\" He told Canadians that the US asked too much and offered too little. Canada will match US tariffs dollar-for-dollar starting September 8. The new tariffs cover steel, dairy, appliances, and electronics.",
+            "why_it_matters": "Trade wars between the US and Canada raise prices for everyday goods. Groceries, appliances, and other items that cross the border will likely cost more. How this dispute ends will determine whether the two countries return to the stable trading relationship they have relied on for decades.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "48262446cf5cef090a0644e1ac22018a",
+          "slug": "nine-in-ten-unsolved-london-murders-involve-non-white",
+          "title": "Nine in ten unsolved London murders involve non-white victims",
+          "summary": "Killers of black people in London are more likely to avoid justice than killers of white people.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/law/2026/aug/23/nine-out-of-10-unsolved-murders-in-london-linked-to-non-white-victims"
+            }
+          ],
+          "article": {
+            "background": "Research looked at unsolved murders in London from 2019 to 2023. It found that killers of black people are more likely to escape justice than those who target white people. Non-white British people made up 61% of all murder victims during this time.",
+            "what_happened": "When researchers studied unsolved cases, 92.9% involved non-white victims. Black people were victims in 40% of all homicides. But they made up 73% of unsolved murders. Black victims accounted for 83.7% of unsolved shootings and 73.5% of unsolved stabbings.",
+            "why_it_matters": "This gap means some communities face a real risk that crimes against them go unsolved. Families of black victims are far less likely to see killers caught. The data shows a serious gap in how justice works across different groups in London.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "994775d034fcc9127570f2078ad43915",
+          "slug": "swedish-school-sword-attack-kills-seventeen-year-old-girl",
+          "title": "Swedish school sword attack kills seventeen-year-old girl",
+          "summary": "Two boys aged twelve and seventeen were seriously injured in the attack",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c8jnjp0lwlwo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "A sword attack happened at Brinell School in Fagersta, Sweden on Friday afternoon. One student died. Two more students were hurt badly. A third person had minor injuries. An 18-year-old man was arrested. Police are treating it as murder and attempted murder.",
+            "what_happened": "The victim was a 17-year-old girl. The two boys who were seriously hurt were ages 12 and 17. All three were students at the school. Police arrested an 18-year-old man in connection with the attack.",
+            "why_it_matters": "Deadly school attacks are uncommon in Sweden. The incident drew immediate visits from Swedish Prime Minister Ulf Kristersson and opposition leader Magdalena Andersson the day after. The school community left flowers to honor those hurt and killed.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "478df579697d1257f808f43be4476113",
+          "slug": "first-australian-mainland-mammal-dies-from-h5-bird-flu",
+          "title": "First Australian mainland mammal dies from H5 bird flu",
+          "summary": "A fur seal found dead in South Australia marks concerning expansion of the virus",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/23/fur-seal-death-first-australian-mainland-mammal-h5-bird-flu"
+            }
+          ],
+          "article": {
+            "background": "H5 bird flu is a virus that spreads among birds. It rarely infects mammals. South Australia has seen the virus spread among seabirds in recent weeks.",
+            "what_happened": "A long-nosed fur seal died from H5 bird flu at Beachport on the South Australian coast. This is the first confirmed case in a mammal on the Australian mainland. Days before, three mass death events killed more than 1,000 greater crested terns on offshore islands.",
+            "why_it_matters": "The seal's death shows the virus is spreading beyond birds to other animals. Officials warned of significant losses ahead. This marks a new stage in how the virus moves through Australian wildlife.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e54b773d7b82298a54ff10dde58015bb",
+          "slug": "historic-el-ni-o-forming-with-broad-weather-and-food",
+          "title": "Historic El Niño forming with broad weather and food production impacts",
+          "summary": "A major climate event is forming and will affect weather and food worldwide.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.youtube.com/watch?v=Dcl5Mn373Oc"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "d697671c515e9676004bd77198eecede",
+      "title": "Onshore windfarm applications hit 10-year high in England",
+      "url": "https://www.theguardian.com/environment/2026/aug/23/onshore-windfarm-applications-10-year-high-england",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "49711bacecf2a273d0e159678aaeb490",
+      "title": "Cyber attack shut down small power plant",
+      "url": "https://www.bbc.co.uk/news/articles/ce9793g34yvo?at_medium=RSS&at_campaign=rss",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "347b5d8b2381a1725cf84b819f7bd892",
+      "title": "The ‘ordinary’ woman accused of assassinating a Russian commander in Crimea",
+      "url": "https://www.theguardian.com/world/2026/aug/23/ordinary-woman-margarita-reutt-accused-assassinating-russian-commander-crimea",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "79258a504c399d9dfae68b4794da7cb3",
+      "title": "China recovers rocket stage on land for the first time",
+      "url": "https://apnews.com/article/china-space-rocket-reuse-land-7280ab07f29771e2034a917ff679e1a6",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "e2c9292f072813b2a32619273d456e86",
+      "title": "Is this the end of Harry and Meghan’s American dream?",
+      "url": "https://www.theguardian.com/news/ng-interactive/2026/aug/22/prince-harry-meghan-american-dream",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "bcc25ffd57ded89f1dbec058b28238b1",
+      "title": "Tropical Storm Moke poised to slam into Hawaii just days after Hurricane Lala",
+      "url": "https://www.theguardian.com/us-news/2026/aug/22/hawaii-tropical-storm-moke",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "06a842c4c18b4082fd2a485fa85b011d",
+      "title": "Nearly 25% of U.S. workers are functionally unemployed, economic analysis finds",
+      "url": "https://www.cbsnews.com/news/functional-unemployment-us-labor-market-analysis",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "61d32b93d0d85df36477f83035c63c80",
+      "title": "‘Friday afternoon fraud’: warning for UK homebuyers on bank scams",
+      "url": "https://www.theguardian.com/money/2026/aug/23/friday-afternoon-fraud-scam-conveyancing-fraud-uk-property-buyer-bank-account",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 121,
+    "clusters_considered": 91,
+    "stories_run": 7,
+    "sources": 10,
+    "sections_held": 1
+  }
+}
