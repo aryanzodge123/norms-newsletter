@@ -1,4 +1,4 @@
-/* Prerender the landing page, and write the files a machine reads.
+/* Prerender the landing pages, and write the files a machine reads.
  *
  * SPEC 15.2 and 15.3, proposed in PROPOSED-SPEC-DISCOVERY.md. Runs after
  * `vite build`, over the output in dist/.
@@ -6,6 +6,11 @@
  * The contract this exists to satisfy: a client that runs no JavaScript
  * receives the whole page. Before this step, dist/index.html held 3,166 bytes
  * and an empty root div, so everything except Google saw a blank document.
+ *
+ * There are two pages now, / and /faq, and each is a separate static document
+ * rather than a route. The loop below is the only thing that knows that; the
+ * contract and the reasoning are unchanged, and adding a third page is adding
+ * a third entry to PAGES.
  *
  * Deterministic. No model call. Rendering is not something an AI touches.
  */
@@ -25,7 +30,7 @@ const TMP = join(LANDING, '.prerender')
 
 /* The only place any generated file names the domain (proposed decision #58).
  * CLAUDE.md rule 6 does this for the site through astro.config, and section 13
- * is the reason it matters on a page that today has exactly one URL. */
+ * is the reason it matters on a page that today has exactly two URLs. */
 const SITE_ORIGIN = 'https://norm.news'
 const CONTACT = 'norm@norm.news'
 
@@ -59,103 +64,154 @@ await build({
 })
 
 const mod = await import(pathToFileURL(join(TMP, 'entry-server.mjs')).href)
-const { App, BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } = mod
+const { App, FaqPage, FAQ_ITEMS, BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } = mod
 
-/* Static markup rather than renderToString. Nothing hydrates: the client entry
- * keeps createRoot().render(), which replaces these children outright, so
- * React's hydration bookkeeping attributes would be bytes nobody reads. */
-const markup = renderToStaticMarkup(createElement(App))
+const decode = (s) =>
+  s.replace(/&middot;/g, '·').replace(/&rsquo;/g, '’').replace(/&amp;/g, '&').trim()
 
-/* Checked here, before anything in dist/ is touched, so a failed run cannot
- * leave a half-written index.html behind for a later deploy to pick up.
+/* </ inside a script block ends it, whatever the surrounding quotes say. */
+const embed = (data) => JSON.stringify(data, null, 2).replace(/</g, '\\u003c')
+
+/* Render one component into one built HTML file.
+ *
+ * The floor is per page rather than global. The front page is an order of
+ * magnitude longer than /faq, so one number would be either useless there or
+ * impossible here. Both are checked before anything in dist/ is touched, so a
+ * failed run cannot leave a half-written file behind for a later deploy.
  *
  * The failure mode that matters is silent. An empty root looks exactly like a
  * working build until somebody runs curl against production weeks later, which
  * is how the page shipped in that state and nobody noticed. */
-const FLOOR = 10000
-if (markup.length < FLOOR) {
-  fail(`Prerendered markup is ${markup.length} bytes, under the ${FLOOR} byte floor. The page would ship close to empty.`)
+function render({ name, component, file, floor, graph }) {
+  const markup = renderToStaticMarkup(createElement(component))
+  if (markup.length < floor) {
+    fail(`${name}: markup is ${markup.length} bytes, under the ${floor} byte floor. The page would ship close to empty.`)
+  }
+
+  const htmlPath = join(DIST, file)
+  let html = readFileSync(htmlPath, 'utf8')
+
+  const ROOT = '<div id="root"></div>'
+  if (!html.includes(ROOT)) {
+    fail(`${name}: could not find ${ROOT} in dist/${file}. Vite's output shape changed, and the page would have shipped empty.`)
+  }
+  html = html.replace(ROOT, `<div id="root">${markup}</div>`)
+
+  /* Title and description are read back out of the built HTML rather than
+   * restated here. Each page's own .html owns its copy; this file owns URLs. */
+  const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [])[1]
+  const description = (html.match(/<meta\s+name="description"\s+content="([\s\S]*?)"/) || [])[1]
+  if (!title || !description) fail(`${name}: ${file} is missing a <title> or a meta description.`)
+
+  html = html.replace(
+    '</head>',
+    `    <script type="application/ld+json">\n${embed({
+      '@context': 'https://schema.org',
+      '@graph': graph({ TITLE: decode(title), DESCRIPTION: decode(description) }),
+    })}\n    </script>\n  </head>`,
+  )
+
+  writeFileSync(htmlPath, html)
+  return { markup: markup.length, html: html.length }
 }
 
-/* ------------------------------------------------------------------ inject */
+/* One @graph per page. Structured data describes only what exists (proposed
+ * decision #59): there is no offers block, no aggregateRating and no review,
+ * because the app is not released and has no users. There is no
+ * operatingSystem or softwareVersion for the same reason.
+ *
+ * The Organization and WebSite nodes are declared on the front page and
+ * referenced by @id from /faq, which is what @id is for: one description of
+ * the publisher, pointed at from everywhere. */
+const ORG = `${SITE_ORIGIN}/#organization`
+const SITE = `${SITE_ORIGIN}/#website`
 
-const htmlPath = join(DIST, 'index.html')
-let html = readFileSync(htmlPath, 'utf8')
+const PAGES = [
+  {
+    name: 'index',
+    component: App,
+    file: 'index.html',
+    floor: 10000,
+    graph: ({ TITLE, DESCRIPTION }) => [
+      {
+        '@type': 'Organization',
+        '@id': ORG,
+        name: "Norm's Newsletter",
+        url: `${SITE_ORIGIN}/`,
+        email: CONTACT,
+        foundingDate: '2025',
+        logo: { '@type': 'ImageObject', url: `${SITE_ORIGIN}/apple-touch-icon.png` },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': SITE,
+        url: `${SITE_ORIGIN}/`,
+        name: "Norm's Newsletter",
+        description: DESCRIPTION,
+        inLanguage: 'en',
+        publisher: { '@id': ORG },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${SITE_ORIGIN}/#webpage`,
+        url: `${SITE_ORIGIN}/`,
+        name: TITLE,
+        description: DESCRIPTION,
+        inLanguage: 'en',
+        isPartOf: { '@id': SITE },
+        about: { '@id': `${SITE_ORIGIN}/#app` },
+        primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE_ORIGIN}/og.png` },
+      },
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${SITE_ORIGIN}/#app`,
+        name: "Norm's Newsletter",
+        applicationCategory: 'NewsApplication',
+        description: DESCRIPTION,
+        url: `${SITE_ORIGIN}/`,
+        publisher: { '@id': ORG },
+        featureList: BENEFITS.map(([benefit]) => benefit.replace(/\.$/, '')),
+      },
+    ],
+  },
+  {
+    name: 'faq',
+    component: FaqPage,
+    file: 'faq.html',
+    /* The ten answers alone are about 4,500 characters, so this catches an
+     * empty root without tripping on ordinary copy edits. */
+    floor: 6000,
+    graph: ({ TITLE, DESCRIPTION }) => [
+      {
+        '@type': 'FAQPage',
+        '@id': `${SITE_ORIGIN}/faq#webpage`,
+        url: `${SITE_ORIGIN}/faq`,
+        name: TITLE,
+        description: DESCRIPTION,
+        inLanguage: 'en',
+        isPartOf: { '@id': SITE },
+        publisher: { '@id': ORG },
+        /* Composed from the same strings the page renders, so the markup
+         * cannot claim an answer the page does not give. */
+        mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${SITE_ORIGIN}/faq#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: "Norm's Newsletter", item: `${SITE_ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Frequently asked questions', item: `${SITE_ORIGIN}/faq` },
+        ],
+      },
+    ],
+  },
+]
 
-const ROOT = '<div id="root"></div>'
-if (!html.includes(ROOT)) {
-  fail(`Could not find ${ROOT} in dist/index.html. Vite's output shape changed, and the page would have shipped empty.`)
-}
-html = html.replace(ROOT, `<div id="root">${markup}</div>`)
-
-/* Title and description are read back out of the built HTML rather than
- * restated here. index.html owns the page's copy; this file owns its URLs. */
-const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [])[1]
-const description = (html.match(/<meta\s+name="description"\s+content="([\s\S]*?)"/) || [])[1]
-if (!title || !description) fail('index.html is missing a <title> or a meta description.')
-
-const decode = (s) =>
-  s.replace(/&middot;/g, '·').replace(/&rsquo;/g, '’').replace(/&amp;/g, '&').trim()
-const TITLE = decode(title)
-const DESCRIPTION = decode(description)
-
-/* One @graph in the head. Structured data describes only what exists
- * (proposed decision #59): there is no offers block, no aggregateRating and no
- * review, because the app is not released and has no users. There is no
- * operatingSystem or softwareVersion for the same reason. */
-const jsonld = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': `${SITE_ORIGIN}/#organization`,
-      name: "Norm's Newsletter",
-      url: `${SITE_ORIGIN}/`,
-      email: CONTACT,
-      foundingDate: '2025',
-      logo: { '@type': 'ImageObject', url: `${SITE_ORIGIN}/apple-touch-icon.png` },
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE_ORIGIN}/#website`,
-      url: `${SITE_ORIGIN}/`,
-      name: "Norm's Newsletter",
-      description: DESCRIPTION,
-      inLanguage: 'en',
-      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
-    },
-    {
-      '@type': 'WebPage',
-      '@id': `${SITE_ORIGIN}/#webpage`,
-      url: `${SITE_ORIGIN}/`,
-      name: TITLE,
-      description: DESCRIPTION,
-      inLanguage: 'en',
-      isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
-      about: { '@id': `${SITE_ORIGIN}/#app` },
-      primaryImageOfPage: { '@type': 'ImageObject', url: `${SITE_ORIGIN}/og.png` },
-    },
-    {
-      '@type': 'SoftwareApplication',
-      '@id': `${SITE_ORIGIN}/#app`,
-      name: "Norm's Newsletter",
-      applicationCategory: 'NewsApplication',
-      description: DESCRIPTION,
-      url: `${SITE_ORIGIN}/`,
-      publisher: { '@id': `${SITE_ORIGIN}/#organization` },
-      featureList: BENEFITS.map(([benefit]) => benefit.replace(/\.$/, '')),
-    },
-  ],
-}
-
-/* </ inside a script block ends it, whatever the surrounding quotes say. */
-const jsonText = JSON.stringify(jsonld, null, 2).replace(/</g, '\\u003c')
-html = html.replace(
-  '</head>',
-  `    <script type="application/ld+json">\n${jsonText}\n    </script>\n  </head>`,
-)
-
-writeFileSync(htmlPath, html)
+const rendered = PAGES.map((page) => ({ name: page.name, ...render(page) }))
 
 /* ---------------------------------------------------------------- generate */
 
@@ -177,15 +233,24 @@ Sitemap: ${SITE_ORIGIN}/sitemap.xml
 `,
 )
 
+/* /faq is monthly against the front page's weekly. The front page changes as
+ * the product does; the answers change when somebody asks something new. */
+const SITEMAP = [
+  { loc: `${SITE_ORIGIN}/`, changefreq: 'weekly' },
+  { loc: `${SITE_ORIGIN}/faq`, changefreq: 'monthly' },
+]
+
 writeFileSync(
   join(DIST, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${SITE_ORIGIN}/</loc>
+${SITEMAP.map(
+  ({ loc, changefreq }) => `  <url>
+    <loc>${loc}</loc>
     <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
+    <changefreq>${changefreq}</changefreq>
+  </url>`,
+).join('\n')}
 </urlset>
 `,
 )
@@ -203,7 +268,7 @@ writeFileSync(
   join(DIST, 'llms.txt'),
   `# Norm's Newsletter
 
-> ${DESCRIPTION}
+> ${decode((readFileSync(join(DIST, 'index.html'), 'utf8').match(/<meta\s+name="description"\s+content="([\s\S]*?)"/) || [])[1])}
 
 Norm's Newsletter is a news product, not a feed. A reader picks the sections
 they care about and how long they want to read. Norm collects from a fixed list
@@ -238,9 +303,16 @@ ${STOPS.map(([time, tod, note]) => bullet(`${time}, ${tod}`, note)).join('\n')}
 
 ${NORM_POINTS.map(([head, body]) => bullet(head, body)).join('\n')}
 
+## Common questions
+
+The full set, in the order /faq gives them.
+
+${FAQ_ITEMS.map(({ q, a }) => `### ${q}\n\n${a}`).join('\n\n')}
+
 ## Links
 
 - [Norm's Newsletter](${SITE_ORIGIN}/): this page. Product overview and the waiting list signup.
+- [Frequently asked questions](${SITE_ORIGIN}/faq): the questions above, on their own page.
 - Contact: ${CONTACT}
 
 Generated from the page's own copy at build time, ${today}.
@@ -252,9 +324,9 @@ Generated from the page's own copy at build time, ${today}.
 rmSync(TMP, { recursive: true, force: true })
 
 console.log(
-  `prerender: ${markup.length.toLocaleString()} bytes of markup, ` +
-    `dist/index.html now ${html.length.toLocaleString()} bytes. ` +
-    `robots.txt, sitemap.xml and llms.txt written.`,
+  `prerender: ${rendered
+    .map((r) => `${r.name} ${r.markup.toLocaleString()} bytes of markup into ${r.html.toLocaleString()} bytes of HTML`)
+    .join(', ')}. robots.txt, sitemap.xml and llms.txt written.`,
 )
 
 function fail(message) {

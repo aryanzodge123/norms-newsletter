@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently asked questions &middot; Norm&rsquo;s Newsletter</title>
+    <meta
+      name="description"
+      content="Common questions about Norm's Newsletter: how each daily edition is built, what Ask Norm can see, how topics and length work, whether every story links back to a source, and when it opens."
+    />
+    <link rel="canonical" href="https://norm.news/faq" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- The morning paper. This page carries no delivery dial, so unlike the
+         front page the value here is the palette the visitor actually gets. -->
+    <meta name="theme-color" content="#f6f4ee" />
+
+    <!-- Absolute URLs, because Open Graph requires them. This is the second
+         page whose head names the domain, for the same reason index.html does.
+         Every *generated* self URL still comes from SITE_ORIGIN in
+         scripts/prerender.mjs. See README.md. -->
+    <meta property="og:site_name" content="Norm's Newsletter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Frequently asked questions · Norm's Newsletter" />
+    <meta
+      property="og:description"
+      content="Common questions about Norm's Newsletter: how each daily edition is built, what Ask Norm can see, how topics and length work, whether every story links back to a source, and when it opens."
+    />
+    <meta property="og:url" content="https://norm.news/faq" />
+    <!-- Shares the front page's card. Bump ?v= with public/og.png, in both
+         files together: the scrapers key their copy on the URL. -->
+    <meta property="og:image" content="https://norm.news/og.png?v=2" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frequently asked questions · Norm's Newsletter" />
+    <meta
+      name="twitter:description"
+      content="Common questions about Norm's Newsletter: how each daily edition is built, what Ask Norm can see, how topics and length work, whether every story links back to a source, and when it opens."
+    />
+    <meta name="twitter:image" content="https://norm.news/og.png?v=2" />
+    <meta name="twitter:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
+
+    <!-- Same reveal defeat as the front page: every element starts at opacity 0
+         and is revealed by script, so without this a visitor with JavaScript off
+         receives a complete document and sees a blank screen.
+
+         The accordion rule is the part specific to this page. The answers are
+         in the markup at every state, but they are collapsed by CSS, and a
+         reader with no JavaScript has no way to open them. Opening all of them
+         is the readable outcome, and the answers are the only reason to come
+         here. PROPOSED-SPEC-DISCOVERY.md section 15.2. -->
+    <noscript>
+      <style>
+        .impress,
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+        }
+        .faq-panel {
+          grid-template-rows: 1fr !important;
+          visibility: visible !important;
+        }
+        .faq-mark {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main-faq.jsx"></script>
+  </body>
+</html>

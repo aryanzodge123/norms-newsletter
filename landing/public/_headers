@@ -18,3 +18,10 @@
   Cache-Control: public, max-age=0, must-revalidate
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
+
+# Same reasoning for the second document. A held copy of this one asks for
+# asset names that no longer exist, and the page renders without its stylesheet.
+/faq
+  Cache-Control: public, max-age=0, must-revalidate
+/faq.html
+  Cache-Control: public, max-age=0, must-revalidate

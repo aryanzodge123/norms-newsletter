@@ -65,6 +65,15 @@
           transform: none !important;
           filter: none !important;
         }
+        /* The FAQ answers are in the markup but collapsed by CSS, and without
+           script there is no way to open them. Opened is the readable state. */
+        .faq-panel {
+          grid-template-rows: 1fr !important;
+          visibility: visible !important;
+        }
+        .faq-mark {
+          display: none !important;
+        }
       </style>
     </noscript>
   </head>

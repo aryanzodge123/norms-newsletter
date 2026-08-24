@@ -150,6 +150,128 @@ body {
   text-decoration-color: var(--oxide);
 }
 
+/* The masthead wordmark, on any page that is not the front page. No underline
+   at rest: a masthead is a masthead, not a link in a paragraph. Only the
+   underline answers the hover, which is how .footer-link behaves too. */
+.masthead-link {
+  color: inherit;
+  text-decoration: none;
+}
+.masthead-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--oxide);
+}
+
+/* ---- the FAQ accordion ---------------------------------------------------
+   New construction. The row geometry is the topic list's (.ns-row): a full
+   width button on a --rule-faint divider, 44px minimum target, paper-raised
+   on hover. The open transition uses the same 260ms settle curve the reorder
+   uses, so the page has one idea of how something arrives. */
+
+.faq-list {
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+
+.faq-h {
+  margin: 0;
+  font: inherit;
+  font-weight: inherit;
+}
+
+.faq-q {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  width: 100%;
+  padding: 17px 8px;
+  min-height: 44px;
+  text-align: left;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+.faq-q:hover {
+  background: var(--paper-raised);
+}
+
+.faq-q-text {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* A drawn plus rather than a glyph, so it takes the rule colour and the 900ms
+   palette transition like everything else. The upright stroke is what leaves
+   on open, which reads as a minus without swapping any character. */
+.faq-mark {
+  position: relative;
+  flex: none;
+  width: 11px;
+  height: 11px;
+  align-self: center;
+  color: var(--muted);
+}
+.faq-mark-h,
+.faq-mark-v {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background: currentColor;
+}
+.faq-mark-h {
+  width: 11px;
+  height: 1.5px;
+}
+.faq-mark-v {
+  width: 1.5px;
+  height: 11px;
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+.faq-mark[data-open='true'] .faq-mark-v {
+  transform: scaleY(0);
+}
+.faq-q:hover .faq-mark {
+  color: var(--oxide);
+}
+
+/* 0fr to 1fr, so the panel animates without anyone measuring a height, and
+   the answer text stays in the markup at every state. That last part is the
+   whole point of the page: see the comment in Accordion.jsx.
+
+   `visibility` is what keeps a closed answer out of the accessibility tree, so
+   what a screen reader gets agrees with aria-expanded. It is held until the
+   collapse finishes and dropped immediately on open. */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  border-bottom: 1px solid var(--rule-faint);
+  transition:
+    grid-template-rows 260ms cubic-bezier(0.2, 0.8, 0.25, 1),
+    visibility 0s linear 260ms;
+}
+.faq-panel[data-open='true'] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.faq-panel-clip {
+  overflow: hidden;
+}
+
+.faq-a {
+  max-width: 64ch;
+  padding: 2px 8px 22px;
+  font-size: 15.5px;
+  line-height: 1.68;
+  color: var(--ink-soft);
+}
+
 .display {
   font-family: var(--font-display);
   font-weight: 500;
@@ -980,5 +1102,12 @@ input[type='range'].dial:active::-webkit-slider-thumb {
     opacity: 1;
     transform: none;
     filter: none;
+  }
+  /* The blanket rule above zeroes transition-duration but not delay, and this
+     one carries a 260ms delay on visibility. Left alone, a closed panel would
+     stay in the accessibility tree for a quarter second after it snapped shut. */
+  .faq-panel,
+  .faq-mark-v {
+    transition: none !important;
   }
 }
