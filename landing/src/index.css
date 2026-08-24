@@ -1,5 +1,22 @@
 @import 'tailwindcss';
 
+/* Self-hosted, the same three families the site self-hosts through @fontsource
+   (site/src/styles/global.css). This removes the only third-party origin the
+   page touched: Google Fonts was two extra connections and a render-blocking
+   stylesheet before first paint.
+
+   Weights 400 and 500 only, upright, no italic. That is everything the rules
+   below actually ask for. The Google Fonts request this replaces pulled
+   Newsreader variable 300 to 700 plus a full italic axis and IBM Plex Sans 600,
+   none of which any rule here uses. Vite hashes the woff2 into /assets, where
+   public/_headers already marks it immutable. */
+@import '@fontsource/newsreader/latin-400.css';
+@import '@fontsource/newsreader/latin-500.css';
+@import '@fontsource/ibm-plex-sans/latin-400.css';
+@import '@fontsource/ibm-plex-sans/latin-500.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+
 /* The paper world of prototypes/ds/foundations, put on a press.
    Tokens are the prototype's. What is new here is that they move: the whole
    page is lit by the delivery time the visitor chooses. */

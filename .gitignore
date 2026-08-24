@@ -13,3 +13,4 @@ site/dist/
 # findings were acknowledged). Machine-local. config.json beside it is shared
 # and is committed.
 .impeccable/hook.cache.json
+landing/.prerender/

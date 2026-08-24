@@ -261,7 +261,7 @@ function PhoneMockUnused() {
 /* --------------------------------------------------------------- benefits
    Block 3. Benefit leads, the feature backs it up. */
 
-const BENEFITS = [
+export const BENEFITS = [
   [
     'Outsource the curation.',
     'Our system scores every story on foundational relevance, filtering out duplicate coverage so you never have to waste time deciding what deserves your attention.',
@@ -318,7 +318,7 @@ function Benefits() {
    That part is not carried over: rows and controls are real buttons, the
    slider is a role="slider" with arrow keys, and the overlays close on Escape. */
 
-const NS_TOPICS = [
+export const NS_TOPICS = [
   { id: 'politics', name: 'Politics', meta: '3 today' },
   { id: 'world', name: 'World', meta: '3 today' },
   { id: 'business', name: 'Business & markets', meta: '2 today' },
@@ -361,7 +361,7 @@ const inkOf = (id) =>
 /* The length setting. In the prototype this lives on the newsletter Settings
    screen rather than Topics, but the Topics screen already states its result
    ("Length: about 11 stories a morning"), so the control sits with it here. */
-const NS_LEN = [
+export const NS_LEN = [
   { label: 'Front page', stories: 5, note: 'The headline of the day and the glance. Nothing else lands on your phone.' },
   { label: 'Short', stories: 8, note: 'The glance, and the stories that clearly cleared the bar.' },
   { label: 'As filed', stories: 11, note: 'The edition the way Norm files it. Every section that ran, in your order.' },
@@ -973,7 +973,7 @@ function Reinforce() {
    The prototype's delivery-time step. Moving it re-lights the entire page:
    the palette travels from dawn to the prototype's Night paper. */
 
-const STOPS = [
+export const STOPS = [
   ['5:30 am', 'dawn', 'Before the house wakes'],
   ['7:15 am', 'morning', 'On the commute, still warm'],
   ['12:30 pm', 'day', 'Read over lunch'],
@@ -1065,7 +1065,7 @@ function DeliveryDial({ idx, setIdx }) {
    rather than left to look arbitrary. 5 to 20 is the reader's own length
    setting, and matches NS_LEN in the Topics section above. */
 
-const STAGES = [
+export const STAGES = [
   ['35', 'sources read', 'Everything Norm subscribes to, checked every hour.'],
   ['149', 'items filed', 'Most of it is the same story told by different desks.'],
   ['112', 'stories left', 'Duplicates clustered, the rest scored against your weights.'],
@@ -1425,7 +1425,7 @@ function Conversation() {
   )
 }
 
-const NORM_POINTS = [
+export const NORM_POINTS = [
   [
     'It only ever sees your paper',
     'Every lookup is scoped to one reader on the server, and the sandbox it runs in holds no database credentials at all.',

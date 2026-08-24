@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Norm's Newsletter &middot; Read less. Miss nothing.</title>
+    <title>Norm&rsquo;s Newsletter &middot; A daily news briefing, built to be finished</title>
     <meta
       name="description"
-      content="A paper, printed for one. Built to be finished: no feed, no infinite scroll."
+      content="A personal daily news briefing. Choose your topics and your length, and Norm builds one edition at your delivery time, every story linked to its sources."
     />
     <link rel="canonical" href="https://norm.news/" />
 
@@ -20,14 +20,16 @@
          the visitor sets, not prefers-color-scheme. -->
     <meta name="theme-color" content="#f6f4ee" />
 
-    <!-- Absolute URLs, because Open Graph requires them. This is the only file
-         in landing/ that names the domain. -->
+    <!-- Absolute URLs, because Open Graph requires them. Two files in landing/
+         name the domain in source: this one, and scripts/prerender.mjs, which
+         holds the SITE_ORIGIN every generated file derives from. wrangler.toml
+         holds it as deploy configuration. -->
     <meta property="og:site_name" content="Norm's Newsletter" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Norm's Newsletter · Read less. Miss nothing." />
+    <meta property="og:title" content="Norm's Newsletter · A daily news briefing, built to be finished" />
     <meta
       property="og:description"
-      content="A paper, printed for one. Built to be finished: no feed, no infinite scroll."
+      content="A personal daily news briefing. Choose your topics and your length, and Norm builds one edition at your delivery time, every story linked to its sources."
     />
     <meta property="og:url" content="https://norm.news/" />
     <!-- ?v= is a cache buster, not a file. Facebook, LinkedIn and Twitter key
@@ -39,17 +41,32 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Norm's Newsletter · Read less. Miss nothing." />
+    <meta name="twitter:title" content="Norm's Newsletter · A daily news briefing, built to be finished" />
     <meta
       name="twitter:description"
-      content="A paper, printed for one. Built to be finished: no feed, no infinite scroll."
+      content="A personal daily news briefing. Choose your topics and your length, and Norm builds one edition at your delivery time, every story linked to its sources."
     />
     <meta name="twitter:image" content="https://norm.news/og.png?v=2" />
     <meta name="twitter:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Every element on the page starts at opacity 0 and is revealed by
+         script (.impress, .reveal in index.css). The markup is prerendered, so
+         without this a visitor with JavaScript off receives a complete document
+         and sees a blank screen. Important author declarations beat animation
+         declarations in the cascade, which is what defeats the `forwards` fill.
+         The interactive parts render in their initial state and do nothing when
+         operated. A readable page with inert controls beats no page.
+         PROPOSED-SPEC-DISCOVERY.md section 15.2. -->
+    <noscript>
+      <style>
+        .impress,
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
