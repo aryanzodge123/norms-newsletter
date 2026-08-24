@@ -143,8 +143,10 @@ Amazonbot, Applebot-Extended, Bytespider, and CloudflareBrowserRenderingCrawler.
 
 Two things follow.
 
-First, **the page's AI crawler policy is currently a Cloudflare default rather
-than a decision.** Nobody chose it. It arrived with the zone.
+First, **the page's AI crawler policy was a Cloudflare default rather than a
+decision.** Nobody chose it. It arrived with the zone. It was turned off in the
+dashboard on 2026-08-24, which makes it a decision for the first time. The
+served file is now the ten lines this build writes and nothing else.
 
 Second, **it cannot be changed from this repository.** The managed block is
 delimited by `# BEGIN Cloudflare Managed content` markers, which is how
@@ -153,11 +155,18 @@ Shipping a `robots.txt` does not remove those lines. The control is a dashboard
 setting, and any `robots.txt` in `public/` has to be read as one half of the
 served file.
 
-The policy question itself belongs in section 11, and is stated there rather
-than answered here. It is a product and rights question, not an engineering
-one, and it is worth noting that it points both ways: the same block that keeps
-the page out of training corpora also keeps it out of the retrieval systems
-that increasingly answer "what should I read in the morning".
+The policy question is a product and rights question rather than an
+engineering one, and it points both ways: the same block that keeps the page out
+of training corpora also keeps it out of the retrieval systems that increasingly
+answer "what should I read in the morning".
+
+**It is answered for this page and open for the archive.** The landing page is
+marketing for an unreleased app and carries no journalism, so being found is its
+whole job and there is nothing on it worth withholding. That reasoning does not
+transfer. If the published editions ever move onto this domain (see *What this
+does not cover*), the same toggle would then govern real writing, and the answer
+should be reached again rather than inherited. Section 11 carries that
+remainder.
 
 Note for the future: the user-initiated fetchers, `ChatGPT-User`, `Claude-User`
 and `PerplexityBot`, are not on the block list. A person who pastes the link
@@ -178,10 +187,12 @@ For SPEC section 10, which currently ends at #56.
 
 Under the non-app-layer questions:
 
-- Whether AI crawlers may index and train on the landing page. The current
-  answer is Cloudflare's managed robots.txt default, which blocks the major
-  training and retrieval crawlers, and it was never chosen. It cannot be
-  changed from the repository. See 15.4.
+- Whether AI crawlers may index and train on the published editions, if those
+  ever move onto `norm.news`. Settled for the marketing page: Cloudflare's
+  managed robots.txt blocked the major training and retrieval crawlers by
+  default, was never chosen, and was turned off on 2026-08-24. The page is
+  marketing with no journalism on it, so that answer does not transfer to the
+  archive. It cannot be changed from the repository either way. See 15.4.
 
 ## What this does not cover
 

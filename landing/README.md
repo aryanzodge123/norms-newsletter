@@ -151,11 +151,17 @@ imports in `site/src/styles/global.css`, at the weights this page actually uses
 (400 and 500, upright, no italic). The page now makes no third-party request at
 all.
 
+`DISCOVERY-SETUP.md` is the operator guide for the two halves of this that are
+not in the repo: the Cloudflare crawler policy, and registering the site with
+Google and Bing. Neither can be done from here.
+
 `PROPOSED-SPEC-DISCOVERY.md` is what this owes SPEC.md, and it is the second
 proposal in this directory rather than an extension of the first. It also
-records something worth knowing before reading `robots.txt`: **Cloudflare
-currently blocks the major AI crawlers on this zone, and nobody chose that.**
-It arrived with the account defaults and it cannot be changed from this repo.
+records the crawler question, which is worth knowing before reading
+`robots.txt`: Cloudflare blocked the major AI crawlers on this zone by default,
+nobody chose that, and it was turned off in the dashboard on 2026-08-24. The
+served file is now the one this build writes. Shipping a `robots.txt` is not
+what removed the block and could not have been.
 
 ## Things a reader should not mistake for spec
 
