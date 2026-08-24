@@ -14,3 +14,6 @@ site/dist/
 # and is committed.
 .impeccable/hook.cache.json
 landing/.prerender/
+# drawio's scratch file, written beside the diagram while it is open and
+# removed on a clean close. A crash leaves one behind.
+.$*.dtmp
