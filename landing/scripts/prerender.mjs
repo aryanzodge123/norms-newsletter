@@ -163,10 +163,12 @@ const today = new Date().toISOString().slice(0, 10)
 
 writeFileSync(
   join(DIST, 'robots.txt'),
-  `# Cloudflare merges its managed block into whatever file it finds here, so
-# the served robots.txt is this file plus that one. The AI crawler Disallow
-# lines come from the managed block and are removed in the Cloudflare
-# dashboard, not in this repo. See PROPOSED-SPEC-DISCOVERY.md section 15.4.
+  `# Cloudflare can merge a managed block into whatever file it finds here, in
+# which case the served robots.txt is this file plus that one. It did until
+# 2026-08-24, blocking the major AI crawlers by account default. That is a
+# dashboard setting rather than anything in this repo, so if Disallow lines
+# appear below, they came from there and are removed there.
+# See PROPOSED-SPEC-DISCOVERY.md section 15.4.
 
 User-agent: *
 Allow: /
