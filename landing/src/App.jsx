@@ -1643,7 +1643,7 @@ function Footer() {
           <p className="max-w-[62ch] text-[13px] leading-[1.65] text-[var(--muted)]">
             Your email address is used only to tell you how Norm&rsquo;s Newsletter is coming along
             and when it opens. It is never sold, shared, or used to advertise anything. Reply to any
-            message with the word <span className="font-medium text-[var(--ink-soft)]">off</span> and
+            message with the word <span className="font-medium text-[var(--ink-soft)]">OFF</span> and
             you are removed.
           </p>
           {/* No shrink-0 here. The line is 45 characters of letter-spaced mono,
