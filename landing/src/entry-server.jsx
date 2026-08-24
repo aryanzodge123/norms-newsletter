@@ -12,3 +12,9 @@
 
 export { default as App } from './App.jsx'
 export { BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } from './App.jsx'
+
+/* The second page, and its copy. FAQ_ITEMS feeds three things at build time:
+   the FAQPage structured data, the "Common questions" block in llms.txt, and
+   the page itself, which is why it is exported rather than read from a copy. */
+export { default as FaqPage } from './FaqPage.jsx'
+export { FAQ_ITEMS } from './faq-content.js'

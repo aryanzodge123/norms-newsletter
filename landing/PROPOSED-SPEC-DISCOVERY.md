@@ -58,9 +58,16 @@ stating as a contract rather than as a technique, because it survives a change
 of framework. If `landing/` stops being React, 15.2 becomes wrong and this
 stays true.
 
-The page is one document at one URL. There is no router, no pagination, and no
-second view. Anything that makes the page's content depend on a client-side
-route breaks this contract and needs its own decision.
+**There is no router.** Each page the site serves is its own document, rendered
+to static markup at build time and served whole. `/` and `/faq` are two files,
+not two states of one file. Adding a page means adding an entry to the build's
+page list; it does not mean adding routing.
+
+That distinction is the whole of the rule. Anything that makes a page's content
+depend on a client-side route breaks the contract above and needs its own
+decision, because a client that runs no JavaScript never resolves the route and
+therefore never receives the content. A second static document does not, which
+is why `/faq` is one.
 
 ### 15.2 Prerendering
 
@@ -107,9 +114,14 @@ origin constant.
 | Artifact | Contents |
 | --- | --- |
 | `robots.txt` | `Allow: /` and a `Sitemap:` directive |
-| `sitemap.xml` | The one URL, with `lastmod` from the build |
-| `llms.txt` | A plain-text summary of what the product is, composed from the page's own copy constants |
-| JSON-LD | `Organization`, `WebSite`, and `SoftwareApplication`, in one `@graph` in the document head |
+| `sitemap.xml` | Every page the build produced, each with `lastmod` from the build |
+| `llms.txt` | A plain-text summary of what the product is, and the full question and answer set, composed from the pages' own copy constants |
+| JSON-LD | One `@graph` per page. `/` declares `Organization`, `WebSite`, `WebPage` and `SoftwareApplication`; `/faq` declares `FAQPage` and `BreadcrumbList` and points at the first two by `@id` |
+
+**One publisher, described once.** A second page does not restate who publishes
+the site. It references the `Organization` and `WebSite` nodes the front page
+declares, by `@id`, which is what `@id` is for. Two descriptions of one
+publisher is two things to keep in agreement.
 
 **`llms.txt` is generated from the page's copy, not written beside it.** A
 hand-maintained summary of a page that changes is a summary that stops being
@@ -182,6 +194,7 @@ For SPEC section 10, which currently ends at #56.
 | 57 | The landing page is prerendered to static markup at build time, and the served HTML holds every word the page shows. React re-renders over that markup rather than hydrating it, so a server and client mismatch is impossible by construction rather than avoided by discipline. The build asserts the markup is present and fails otherwise, because the failure mode is silent: an empty root is indistinguishable from a working build without fetching production. The page shipped in that state and nobody noticed |
 | 58 | Every self URL in the landing page's generated artifacts derives from one origin constant in its build script, the same way the site derives every self URL from `astro.config` under CLAUDE.md rule 6. A hardcoded self URL is a bug. The pre-launch migration in section 13 is what makes this worth enforcing on a page that today has exactly one URL |
 | 59 | Structured data on the landing page describes only what exists. No `AggregateRating`, no `Offer`, no `Review` until there is a released app and real reviews to report. Fabricated review markup is what search engines issue manual penalties for, and the markup is easy enough to write that the rule has to be explicit rather than assumed |
+| 60 | A second page on the landing site is a second prerendered document, not a client-side route. The contract in 15.1 is about what arrives in the response body, and a static document satisfies it exactly as the front page does, while a route does not: a client that runs no JavaScript never resolves one. The practical form is a top-level `faq.html` rather than `faq/index.html`, because Pages serves the former at `/faq` directly and makes the latter a redirect to `/faq/`, which would point the canonical tag and the sitemap at a hop |
 
 ## Proposed addition to section 11
 
@@ -202,9 +215,10 @@ Recorded so that section 15 landing is not read as closing rule 1's gap for
 - **The page's visual system.** CLAUDE.md lists the app's visual system under
   *Not yet specified*, and DESIGN.md is the site's design system. Nothing here
   changes that.
-- **The copy claims.** `README.md` records three things on the page that the
-  spec does not carry, including the hero's claim about tracked stories and the
-  hourly collector figure. They stay flagged there and are untouched by this.
+- **The copy claims.** `README.md` records the things the pages say that the
+  spec does not carry, including the hero's claim about tracked stories, the
+  hourly collector figure, and the FAQ's claim that the archive stays
+  searchable. They stay flagged there and are untouched by this.
 - **The waiting list.** That is `PROPOSED-SPEC.md`'s subject and its
   recommendation is to name the table in 14.12. Unchanged.
 - **The published edition archive.** The site publishes real writing daily to

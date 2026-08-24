@@ -1,4 +1,6 @@
 import React, { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import Accordion from './Accordion.jsx'
+import { FAQ_TEASER, THE_BRIEF } from './faq-content.js'
 
 const REDUCED =
   typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -37,7 +39,7 @@ function useReveal(delay = 0) {
   return ref
 }
 
-function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }) {
+export function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }) {
   const ref = useReveal(delay)
   return (
     <Tag ref={ref} className={`reveal ${className}`}>
@@ -48,7 +50,7 @@ function Reveal({ children, delay = 0, className = '', as: Tag = 'div' }) {
 
 /* --------------------------------------------------------------- masthead */
 
-function Masthead() {
+export function Masthead({ home = false }) {
   return (
     <header className="pad-x pt-7">
       <div className="mx-auto max-w-[1140px]">
@@ -56,7 +58,18 @@ function Masthead() {
           <span className="eyebrow impress hidden sm:block" style={{ animationDelay: '80ms' }}>
             Est. 2025
           </span>
-          <span className="display impress text-[27px] sm:text-[31px]">Norm&rsquo;s Newsletter</span>
+          {/* A masthead is the way back to the front page, so on a second
+              page the wordmark is the link. The homepage passes nothing and
+              renders exactly what it rendered before. */}
+          <span className="display impress text-[27px] sm:text-[31px]">
+            {home ? (
+              <a href="/" className="masthead-link">
+                Norm&rsquo;s Newsletter
+              </a>
+            ) : (
+              <>Norm&rsquo;s Newsletter</>
+            )}
+          </span>
           <span className="eyebrow impress hidden sm:block" style={{ animationDelay: '160ms' }}>
             No. 057
           </span>
@@ -1614,6 +1627,39 @@ function Build() {
   )
 }
 
+/* ------------------------------------------------------------------- faq
+   Five of the ten questions, and a way to the rest.
+
+   Deliberately the quietest section on the page. It sits directly above the
+   one thing the page is actually for, so its heading is held at the size the
+   benefit cards use rather than the section size, and the only link out is
+   set in the footer's link rule. No button, no oxide fill: the CTA below it
+   has to stay the loudest thing in this half of the document. */
+
+function FaqTeaser() {
+  return (
+    <section id="questions" className="pad-x py-20">
+      <div className="mx-auto max-w-[1140px]">
+        <Reveal>
+          <p className="label-rule eyebrow">Questions</p>
+          <h2 className="display mt-8 max-w-[22ch] text-[clamp(24px,3vw,32px)]">
+            The things people ask before they sign up.
+          </h2>
+        </Reveal>
+
+        <Reveal delay={100} className="mt-8 max-w-[820px]">
+          <Accordion items={FAQ_TEASER} idPrefix="faq-teaser" />
+          <p className="eyebrow mt-6">
+            <a href="/faq" className="footer-link">
+              See all questions &rarr;
+            </a>
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
 /* The page collects email addresses, so the footer has to say who is collecting
    them and what happens to them. Every claim below is one the page or the
    confirmation mail already makes elsewhere: the use limitation restates the
@@ -1623,7 +1669,7 @@ function Build() {
    What is deliberately absent is a retention period. PROPOSED-SPEC.md question
    2 records that there is not one yet, and a footer is not the place to invent
    policy. That is the line this footer still owes. */
-function Footer() {
+export function Footer() {
   return (
     <footer className="pad-x pb-16">
       <div className="mx-auto max-w-[1140px]">
@@ -1638,6 +1684,20 @@ function Footer() {
             </a>
           </p>
         </div>
+
+        {/* Set in .eyebrow, the same weight as the credit line above, so this
+            reads as one more caption rather than a navigation block. The brief
+            is the same project rather than a third party and nothing else on
+            the page opens a tab, so it is a plain link. */}
+        <p className="eyebrow mt-4">
+          <a href="/faq" className="footer-link">
+            FAQ
+          </a>{' '}
+          &middot;{' '}
+          <a href={THE_BRIEF} className="footer-link">
+            The Original Daily Brief
+          </a>
+        </p>
 
         <div className="mt-5 flex flex-wrap items-start justify-between gap-x-8 gap-y-3">
           <p className="max-w-[62ch] text-[13px] leading-[1.65] text-[var(--muted)]">
@@ -1692,6 +1752,7 @@ export default function App() {
         <DeliveryDial idx={idx} setIdx={setIdx} />
         <ThePress />
         <NormAgent />
+        <FaqTeaser />
         <Build />
       </main>
       <Footer />

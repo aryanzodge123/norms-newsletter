@@ -21,12 +21,13 @@ coverage:
   section. This used to read "not wired to any deploy", which was part of why an
   unspecified page was acceptable. That defence is gone; the page is public.
   `astro.config` is still untouched and the Astro site still publishes to GitHub
-  Pages, so rule 6 is unaffected. Three files name the domain and no others:
-  `index.html`, whose Open Graph tags have to be absolute, `wrangler.toml`,
-  which holds the origin the confirmation email loads the mug from, and
-  `scripts/prerender.mjs`, which holds the `SITE_ORIGIN` that robots.txt,
-  sitemap.xml, llms.txt and the JSON-LD all derive from. No component file
-  contains the origin. `App.jsx` carries `norm@norm.news` in the footer and in
+  Pages, so rule 6 is unaffected. Four files name the domain and no others:
+  `index.html` and `faq.html`, whose Open Graph tags and canonical links have to
+  be absolute, `wrangler.toml`, which holds the origin the confirmation email
+  loads the mug from, and `scripts/prerender.mjs`, which holds the `SITE_ORIGIN`
+  that robots.txt, sitemap.xml, llms.txt and every JSON-LD graph derive from.
+  A page's own `.html` names the domain because the format demands it; anything
+  generated derives it. No component file contains the origin. `App.jsx` carries `norm@norm.news` in the footer and in
   a form error, which is a contact address rather than a URL and does not move
   if the domain does.
 - **It now holds personal data**, which nothing else in this project does. The
@@ -119,7 +120,9 @@ Until 2026-08-24 the page shipped 3,166 bytes and an empty root div. Every word
 arrived from React at runtime, so Google saw the page and almost nothing else
 did: not Bing, not a reader-mode parser, not any crawler that feeds a language
 model. `prerender.mjs` renders the app to static markup at build time and writes
-it into `dist/index.html`, which is now about 31 KB with the `<h1>` in it.
+it into `dist/index.html`, which is now about 36 KB with the `<h1>` in it, and
+into `dist/faq.html`, which holds all ten answers whether or not anything ever
+clicks to open them.
 
 Four things follow from that one step, and all four are `dist/` only. Do not
 look for them in `public/`.
@@ -127,9 +130,9 @@ look for them in `public/`.
 | File | Where it comes from |
 | --- | --- |
 | `robots.txt` | Written by the script. Cloudflare merges its own managed block into it at the edge, so the served file is not this file |
-| `sitemap.xml` | Written by the script, one URL |
-| `llms.txt` | Composed from `App.jsx`'s exported copy constants, so it cannot drift from the page |
-| JSON-LD | Injected into the head, `Organization` + `WebSite` + `WebPage` + `SoftwareApplication` |
+| `sitemap.xml` | Written by the script, one entry per page in `PAGES` |
+| `llms.txt` | Composed from `App.jsx`'s exported copy constants and `faq-content.js`, so it cannot drift from the pages |
+| JSON-LD | Injected into each head. `/` gets `Organization` + `WebSite` + `WebPage` + `SoftwareApplication`; `/faq` gets `FAQPage` + `BreadcrumbList` and references the first two by `@id` |
 
 Three things about it are deliberate.
 
@@ -183,6 +186,21 @@ what removed the block and could not have been.
   described the behavior have all been removed.
 - **There is deliberately no past-chats list.** Decision #54 defers it and #41
   forbids storing agent output. The prototype shows one; it is not adopted.
+- **The FAQ says the archive stays searchable.** "Length changes the paper, not
+  the archive. Everything Norm has ever filed stays searchable" is in the answer
+  about changing topics and length. SPEC 14 specifies no archive search: 14.4
+  assembles a newsletter and 14.7 is the app API, and neither carries a query
+  over past editions. The copy was given directly and describes intended
+  behaviour. It is the newest thing on either page that the spec does not carry.
+- **The FAQ says "add a new section any time".** That means choosing from the
+  topics the app offers, which is what `TopicStudio` demonstrates. It does not
+  mean free-text topics, which 14.10 explicitly defers along with the Sunday
+  retrospective. The sentence is fine as long as nobody reads it as a
+  requirement for the deferred feature.
+- **The FAQ restates the hourly collector figure.** Same divergence as the
+  overnight run above, in a second place now: SPEC 6.2 and `collect.yml` say
+  every three hours. The two sentences have to move together if that figure is
+  ever corrected, and both are in copy given directly.
 - **The page names no price, no plan and no tier.** It is a waiting list, and
   SPEC 14.10's tier table is not settled enough to sell from. Any future
   pricing block is a copy decision that has to be checked against 14.10 rather
@@ -199,6 +217,32 @@ what removed the block and could not have been.
   question 2 records that there is not one yet. A footer is not the place to
   invent policy, so it is the one thing the legal line is missing rather than
   something that was overlooked.
+
+## The FAQ copy
+
+`src/faq-content.js` is the only place the questions and answers are written.
+Four things read it: the homepage teaser (the five items flagged `teaser`), the
+`/faq` page, the `FAQPage` structured data, and the "Common questions" block in
+`llms.txt`. The last two are composed from those strings at build time rather
+than restated beside them, for the same reason `llms.txt` is composed from the
+page's copy constants: a second copy of text that changes is a copy that stops
+being true, and nothing in the build would catch it.
+
+So a copy edit happens in that one file. Two things about it are worth knowing
+before editing:
+
+- **The answers are plain strings, not JSX.** They are rendered as React text
+  children, where an HTML entity would appear literally, so the curly quotes and
+  apostrophes are real characters. It is also what lets the same string go into
+  JSON-LD and a plain-text file untouched. Where an answer needs a link, the item
+  carries a `link` and the renderer turns that one substring into an anchor.
+- **No em dashes.** CLAUDE.md rule 7. The supplied copy carried eleven and each
+  one is a full stop or a comma here, which is the same divergence already
+  recorded for the empty-section label and the two ported sentences.
+
+The answers are also in the markup at every state, collapsed by CSS rather than
+by React. That is the point of the page and it is one edit away from being
+undone: see the comment at the top of `src/Accordion.jsx`.
 
 ## Running it
 
