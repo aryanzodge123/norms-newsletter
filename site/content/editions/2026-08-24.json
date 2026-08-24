@@ -1,0 +1,374 @@
+{
+  "date": "2026-08-24",
+  "edition_number": 78,
+  "edition_type": "normal",
+  "headline_of_the_day": "EU repair rules force manufacturers to fix goods rather than replace them",
+  "headline_cluster_id": "98e07ca02ca4d094aaf91e1cb70f4d80",
+  "headline_rationale": "Affects millions of EU consumers and manufacturers immediately, with tangible impact on product lifespan and waste reduction across the bloc.",
+  "key_points": [
+    {
+      "text": "EU rules now require manufacturers to repair goods rather than replace them, targeting 35 million tonnes of waste.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "UK Prime Minister Andy Burnham visited Kyiv to help boost Ukraine's long-range weapon production.",
+      "topic": "World"
+    },
+    {
+      "text": "The FDA cleared the first blood test for early Alzheimer's diagnosis, making it more accessible.",
+      "topic": "Science"
+    },
+    {
+      "text": "China recalled nearly 3 million Teslas because hidden door handles create a safety risk.",
+      "topic": "Tech"
+    },
+    {
+      "text": "New Zealand proposes banning children under 16 from social media, with fines up to 10% of platform revenue.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-24.mp3",
+    "duration_seconds": 356,
+    "size_bytes": 4268448
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "800b2065c4cfa5a4231be7fbebbd5d50",
+          "slug": "china-recalls-nearly-3-million-teslas-over-door-handle",
+          "title": "China recalls nearly 3 million Teslas over door handle safety flaw",
+          "summary": "China recalls nearly 3 million Teslas because hidden door handles may trap occupants inside.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c4g6ggdg030o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c4g6ggdg030o"
+            }
+          ],
+          "article": {
+            "background": "Minimalist retractable door handles became a signature feature of electric vehicles. These handles tuck into the car's door panel and extend outward when needed. Tesla, made famous by billionaire Elon Musk, popularized this sleek design.",
+            "what_happened": "China ordered a recall of more than 4 million vehicles over hidden door handle safety concerns. Nearly 3 million of those recalled vehicles are Chinese-made Teslas. Other affected brands include Chinese carmakers XPeng, Xiaomi, and Geely. Regulators say the handles are hard to locate and open in emergencies.",
+            "why_it_matters": "If you own or plan to buy an electric vehicle, emergency access matters. A handle that is slow to find in a crisis could be dangerous. This recall signals that safety regulators now view sleek design as less important than how quickly drivers can exit their cars.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "80bc645987e4b3da925463a719a18eff",
+          "slug": "china-replaces-windows-with-linux-on-government-desktop",
+          "title": "China replaces Windows with Linux on government desktop computers",
+          "summary": "The Ministry of State Security ordered all state agencies to remove Microsoft Windows software.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.zdnet.com/article/china-drops-windows-for-linux"
+            }
+          ],
+          "article": {
+            "background": "China's government is moving away from Windows, the operating system made by US company Microsoft. In August, the Ministry of State Security ordered state agencies to uninstall Windows 10. Now the country is replacing it with Linux, an open-source system that any country can modify and control. This shift reflects concerns about digital sovereignty: the idea that governments should control the software on their machines rather than rely on American companies.",
+            "what_happened": "China has ordered some government agencies to drop Windows 10 China Government Edition. They will switch to Chinese-made Linux systems instead. The most likely replacements are Kylin OS or UOS, both built domestically.",
+            "why_it_matters": "For most people outside government, this does not change much yet. But it signals that major countries are serious about reducing dependence on US technology. As governments shift away, the software companies that dominate globally could change over time.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "570a23f5a7c6a7b488f6254b19020b1a",
+          "slug": "fast-fashion-giant-shein-targets-27-billion-valuation-in",
+          "title": "Fast-fashion giant Shein targets $27 billion valuation in Hong Kong debut",
+          "summary": "Shein plans to list on the stock market September 1, offering nearly 280 million shares.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cdeweewjdxno?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/aug/24/fashion-giant-shein-27bn-valuation-hong-kong-market-debut"
+            }
+          ],
+          "article": {
+            "background": "Shein is an online fast-fashion retailer founded in China and now based in Singapore. It sells cheap clothing and accessories to young shoppers worldwide. The company tried to list on US and UK stock markets but faced regulatory blocks. Now it is moving ahead in Hong Kong.",
+            "what_happened": "Shein said Monday it will start trading on the Hong Kong stock exchange on 1 September. The company will sell 280 million shares priced between HK$47.60 and HK$49.50 each. At the top price, the sale would raise about $1.77 billion and value Shein at close to $27 billion. This is far less than the $100 billion valuation it hit in private funding four years ago.",
+            "why_it_matters": "Shein's lower valuation shows investor interest in the company has cooled. Slower sales growth and higher costs have made the firm less attractive to backers. For shoppers, the listing does not change how Shein works or what it sells right now.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "61ec54bf2962707245e5077f8c58a57d",
+          "slug": "uk-graduate-job-vacancies-drop-to-decade-low-as-hiring",
+          "title": "UK graduate job vacancies drop to decade low as hiring freezes",
+          "summary": "Just 8,383 positions advertised in July, down 45% from last year.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/aug/24/uk-graduate-job-vacancies-plunge-adzuna"
+            }
+          ],
+          "article": {
+            "background": "Graduate job vacancies are job openings made for people fresh from university. Adzuna, a recruiting website, has tracked these jobs since 2016. The UK job market has been cooling. In August, overall job vacancies fell to a five-year low as smaller businesses cut hiring.",
+            "what_happened": "Just 8,383 graduate jobs were advertised in July, Adzuna reported. That is down 45% from July last year. It is the lowest number since tracking began in 2016. Meanwhile, a record 262,820 people will start university in September.",
+            "why_it_matters": "Far fewer jobs are open for graduates while more people than ever are entering university. This gap means many new graduates will struggle to find work in their field. The mismatch will make the job hunt harder for people leaving school this fall.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "ef2f6ca46a320fb2d1fd818ef3b8bd91",
+          "slug": "uk-prime-minister-visits-ukraine-with-pledge-to-boost",
+          "title": "UK prime minister visits Ukraine with pledge to boost missile production",
+          "summary": "Andy Burnham announces support for Kyiv's long-range weapons manufacturing on independence day.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/politics/2026/aug/24/andy-burnham-ukraine-long-range-missile-technology-kyiv-visit"
+            }
+          ],
+          "article": {
+            "background": "Ukraine has been fighting Russia's invasion for over two years. Long-range missiles are crucial weapons that let Ukraine hit targets far inside Russian territory. Britain has previously supported Ukraine's military efforts.",
+            "what_happened": "British Prime Minister Andy Burnham will visit Kyiv on Monday for Ukraine's independence day. He will announce that Britain will help Ukraine build its own long-range missiles. The UK will allow the defense company MBDA to share details about British parts used in Storm Shadow and Scalp missiles.",
+            "why_it_matters": "Ukraine has asked for help developing its own weapons to reduce dependence on other countries. Better homemade missiles mean Ukraine can sustain its defense longer if foreign aid slows. Burnham's visit signals continued British military backing at a time when Russia is attacking hard.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "dd430afbb4268c556b53dc55e2ef565f",
+          "slug": "new-zealand-proposes-social-media-ban-for-children-under-16",
+          "title": "New Zealand proposes social media ban for children under 16",
+          "summary": "Bill would fine platforms up to 10% of global revenue for non-compliance.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/media/2026/aug/24/nz-social-media-ban-children-under-16-fines-meta-tiktok"
+            }
+          ],
+          "article": {
+            "background": "New Zealand's prime minister Christopher Luxon wants to ban social media use by children under 16. His party plans to introduce a bill in parliament to make this law. The goal is to protect young people from harmful content and addictive design.",
+            "what_happened": "Luxon announced his party will bring a bill to parliament banning children under 16 from social media. Platforms that fail to comply face fines of up to 10% of their global revenue. The law would require platforms to verify users' ages using facial technology, digital ID documents, or existing account data.",
+            "why_it_matters": "If New Zealand passes this law, major social media platforms will have to block younger teens or face steep penalties. Parents and teens in the country could see which apps are legally available change. For most users elsewhere, this matters because New Zealand's approach may influence other countries considering similar rules.",
+            "quote": {
+              "text": "We simply cannot accept the harm being done to a generation of New Zealand children. Social media is exposing them to harmful content, addictive technology and pressures they are not equipped to deal with.",
+              "attribution": "Christopher Luxon, New Zealand prime minister",
+              "source_url": "https://www.theguardian.com/media/2026/aug/24/nz-social-media-ban-children-under-16-fines-meta-tiktok"
+            }
+          }
+        },
+        {
+          "cluster_id": "fc990685d9f78752bca107fa00bebf16",
+          "slug": "landslide-at-guinea-waste-dump-kills-30-after-heavy-rains",
+          "title": "Landslide at Guinea waste dump kills 30 after heavy rains",
+          "summary": "Collapse at Conakry site engulfed nearby tents less than week after closure plans announced.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/23/landslide-waste-mound-conakry-guinea-kills-dozens"
+            }
+          ],
+          "article": {
+            "background": "Guinea's capital city, Conakry, has a large waste dump that poses ongoing risks. The rainy season in West Africa brings heavy downpours that cause landslides and floods each year. Crowded, underdeveloped cities across the region face constant danger from poor waste management.",
+            "what_happened": "Heavy rains fell overnight in Conakry on Sunday. The waste mound collapsed, killing 30 people according to the government. The landslide engulfed nearby tents and shacks where people were living.",
+            "why_it_matters": "The collapse happened less than a week after the government said it would close the site and move the waste. This shows how quickly the danger can strike. Millions of people in crowded cities live near unsafe dumps, especially during seasons when heavy rain triggers deadly slides and floods.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "98e07ca02ca4d094aaf91e1cb70f4d80",
+          "slug": "eu-right-to-repair-rules-take-effect-requiring",
+          "title": "EU right-to-repair rules take effect, requiring manufacturers to fix products",
+          "summary": "New EU rules require companies to repair goods instead of replacing them, cutting 35 million tonnes of annual waste.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.rte.ie/news/business/2026/0824/1588931-repair-rules"
+            }
+          ],
+          "article": {
+            "background": "The European Union has created new repair rules that apply to all member countries. These rules target the 35 million tonnes of waste that comes from throwing away consumer goods too early. Household and electronic products like washing machines, vacuum cleaners, mobile phones, and tablets are covered.",
+            "what_happened": "New EU repair rules came into force designed to encourage people to fix products instead of buying new ones. Manufacturers of certain products must now make repair possible. The EU is also setting up national repair platforms to help consumers find repair services.",
+            "why_it_matters": "When you buy an appliance or phone, it will now be easier and cheaper to repair it rather than replace it. Manufacturers must support repairs, which means you will have more options when something breaks. This shift should save you money and reduce the amount of waste going to landfills.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "41276a06e44f4168e3e96023b3012e2b",
+          "slug": "uk-launches-review-of-business-rates-for-pubs-and-hotels",
+          "title": "UK launches review of business rates for pubs and hotels",
+          "summary": "The UK government will review how property taxes are calculated. Results are due March 2027.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c8xnxy89gv7o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Business rates are yearly taxes that property owners pay based on what their buildings could rent for. Pubs, hotels, and other hospitality businesses in England and Wales say their rates are unfairly high compared to other building types.",
+            "what_happened": "The Treasury has started a review of how business rates are set for pubs and hotels. Jerry Schurder, a business rates expert, will lead the review and report back in March 2027. The government is asking landlords, hoteliers, and business owners to share their views. Last month, Andy Burnham cut business rates by 20% for pubs, social clubs, and live music venues in England starting in April.",
+            "why_it_matters": "Pub and hotel owners have pushed back against high rate bills for years. This review could change how rates are calculated, which would affect what these businesses pay in taxes going forward.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "99fe9f9e3d4b37cef5b370f8a162962d",
+          "slug": "fda-clears-first-blood-test-to-aid-alzheimer-s-diagnosis",
+          "title": "FDA clears first blood test to aid Alzheimer's diagnosis",
+          "summary": "A blood test based on Washington University technology makes early Alzheimer's detection easier to access.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://medicine.washu.edu/news/fda-clears-blood-test-to-aid-evaluation-for-alzheimers-disease"
+            }
+          ],
+          "article": {
+            "background": "Alzheimer's disease damages the brain over time. Scientists have found that amyloid plaques in the brain are linked to the disease. Until now, spotting these plaques meant expensive brain scans or risky procedures.",
+            "what_happened": "The FDA cleared a blood test called PrecivityAD2 to help find amyloid plaques in the brain. The test was developed by C2N Diagnostics, a company based at Washington University School of Medicine in St. Louis. It measures biomarkers, or biological signs, in a patient's blood sample.",
+            "why_it_matters": "A simple blood test is cheaper and safer than the old methods. Catching Alzheimer's signs early gives people and families time to plan and think about treatment options.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a46e80bc3e46e16c10957d13f112148b",
+          "slug": "global-tree-cover-increased-by-area-size-of-texas-and",
+          "title": "Global tree cover increased by area size of Texas and Alaska since 1990",
+          "summary": "The world added 2.24 million square kilometers of tree cover despite deforestation and fires.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://psmag.com/environment/the-planet-now-has-more-trees-than-it-did-35-years-ago"
+            }
+          ],
+          "article": {
+            "background": "A 2018 study from the University of Maryland looked at satellite images from 1982 to 2016. The researchers tracked how tree cover changed across the entire planet over those 35 years. They sorted land into categories based on vegetation height. Trees at least 16 feet tall counted as tall vegetation.",
+            "what_happened": "The world gained 2.24 million square kilometers of tree cover over the 35 years. That is an area the size of Texas and Alaska combined. This happened despite deforestation, fires, droughts, and insect outbreaks. But the study found a major problem. The planet lost large amounts of its most biodiverse forests, mainly in tropical regions.",
+            "why_it_matters": "Tropical forests support far more animal and plant species than other forests. When they shrink, we lose species and wildlife habitat that cannot be replaced. Planting new trees elsewhere does not restore what was lost. So while the overall tree count went up, the quality of forests that remain matters most for nature and for the species that live there.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f057400e5bd290273ca5ff9cbc408e55",
+          "slug": "new-diabetes-pill-that-aids-weight-loss-launches-in-uk",
+          "title": "New diabetes pill that aids weight loss launches in UK pharmacies",
+          "summary": "Orforglipron, sold as Foundayo, launches Monday as an option instead of injectable medicines.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/aug/24/daily-diabetes-pill-foundayo-weight-loss-uk-pharmacies"
+            }
+          ],
+          "article": {
+            "background": "Foundayo is a new daily pill made by Eli Lilly. It treats type 2 diabetes and helps with weight loss. The UK's medicines regulator, the MHRA, approved it earlier this month. The UK is the first country in Europe where it is now available.",
+            "what_happened": "Foundayo launches in UK pharmacies on Monday. It offers an option for people who cannot use weight-loss injections. Pharmacists welcomed the move but warned of a growing problem. Fake, unlicensed, or counterfeit versions of GLP-1 drugs (the class that includes Foundayo) are spreading.",
+            "why_it_matters": "For people with type 2 diabetes who struggle with injections, a daily pill is easier to use. But counterfeit versions could be unsafe or not work at all. Anyone buying these drugs should get them from a licensed pharmacy.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "9e86656e3aa49b6faf694a800f78bfda",
+          "slug": "coco-gauff-wins-cincinnati-title-ahead-of-us-open-defense",
+          "title": "Coco Gauff wins Cincinnati title ahead of US Open defense",
+          "summary": "Coco Gauff beat Jessica Pegula 6-2, 6-4 to win her first tournament of the season.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/aug/24/coco-gauff-beats-pegula-wins-cincinnati-open-title"
+            },
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/tennis/articles/cg7k9g4n3pmo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Coco Gauff is an American tennis player. One year ago she left the Cincinnati Open in crisis. Her serve had failed her. Double faults plagued most matches. She had lost faith in her game and her team. She decided to make big changes.",
+            "what_happened": "Gauff won the Cincinnati Open this week. She beat fellow American Jessica Pegula 6-2, 6-4 in the final. The match took just over an hour. This is her first title of 2026. It is her second Cincinnati title. She becomes only the third two-time winner of this WTA 1,000 event. Serena Williams and Victoria Azarenka are the others.",
+            "why_it_matters": "Gauff's last Cincinnati win was in 2023. Three weeks later she won the US Open, her first major title. She now heads to the US Open again as a two-time major champion. Her serve is working. Her confidence is back. The changes she made have paid off.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "67e990d9c204a3d23f5a8356e716f27c",
+          "slug": "wyndham-clark-holds-off-rory-mcilroy-to-win-bmw-championship",
+          "title": "Wyndham Clark holds off Rory McIlroy to win BMW Championship",
+          "summary": "Wyndham Clark won the BMW Championship in Ohio, finishing 16 under par, two shots ahead.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/golf/articles/cdrvr8nkm5mo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The BMW Championship is a major professional golf tournament. Wyndham Clark, an American golfer, entered the final day with a five-shot lead over the field.",
+            "what_happened": "Clark won the BMW Championship in Missouri with a score of 16 under par. Rory McIlroy, from Northern Ireland, mounted a comeback on the final day but fell short, finishing at 13 under par, two shots behind Clark. Patrick Cantlay finished third at 14 under par.",
+            "why_it_matters": "Tournament wins like this help top golfers earn ranking points and prize money. They also show which players are performing best when it matters most, which shapes how fans and competitors view the sport.",
+            "quote": {
+              "text": "one of the best players in the world",
+              "attribution": "Wyndham Clark",
+              "source_url": "https://www.bbc.co.uk/sport/golf/articles/cdrvr8nkm5mo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "00a8d455b27e2b8fdda28ff25628e823",
+      "title": "Learning to live in a post-American world",
+      "url": "https://www.npr.org/2026/08/23/nx-s1-5939846/learning-to-live-in-a-post-american-world",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b45973b1c82b7281526f92ced9a6f2f9",
+      "title": "Who’s behind the new ‘stealth model’ Ox Alpha?",
+      "url": "https://techcrunch.com/2026/08/23/whos-behind-the-new-stealth-model-ox-alpha",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 145,
+    "clusters_considered": 111,
+    "stories_run": 14,
+    "sources": 12,
+    "sections_held": 1
+  }
+}
