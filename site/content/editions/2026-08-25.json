@@ -1,0 +1,78 @@
+{
+  "date": "2026-08-25",
+  "edition_number": 79,
+  "edition_type": "fallback",
+  "notice": "Today's brief is a short one. The usual edition could not be built, so here are the stories that ranked highest, with links to the sources. Full service resumes tomorrow.",
+  "stories": [
+    {
+      "rank": 1,
+      "title": "Trump administration plans to revoke 200,000 visas of asylum seekers",
+      "score": 8,
+      "url": "https://www.theguardian.com/us-news/2026/aug/24/trump-administration-revoke-asylum-visas",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 2,
+      "title": "Supreme Court Allows Trump Plan to Restrict Mail-In Voting, for Now",
+      "score": 8,
+      "url": "https://www.nytimes.com/2026/08/24/us/politics/supreme-court-trump-mail-ballots.html",
+      "source": "hackernews"
+    },
+    {
+      "rank": 3,
+      "title": "U.S. set for largest mass visa revocation in history targeting up to 200,000 foreigners, officials say",
+      "score": 7,
+      "url": "https://www.pbs.org/newshour/politics/u-s-set-for-largest-mass-visa-revocation-in-history-targeting-up-to-200000-foreigners-officials-say",
+      "source": "pbs_politics"
+    },
+    {
+      "rank": 4,
+      "title": "Zillow and Redfin settle FTC antitrust case",
+      "score": 7,
+      "url": "https://techcrunch.com/2026/08/24/zillow-and-redfin-settle-ftc-antitrust-case",
+      "source": "techcrunch"
+    },
+    {
+      "rank": 5,
+      "title": "US removes Syria from list of state sponsors of terrorism",
+      "score": 7,
+      "url": "https://www.bbc.co.uk/news/articles/c33knmyl0y5o?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_world"
+    },
+    {
+      "rank": 6,
+      "title": "NHS England to offer women ‘gamechanging’ free home testing kits for cervical cancer",
+      "score": 7,
+      "url": "https://www.theguardian.com/society/2026/aug/25/nhs-england-to-offer-women-gamechanging-free-home-testing-kits-for-cervical-cancer",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 7,
+      "title": "US-Canada trade war escalates as Trump threatens tariff hike on autos after Carney vows to retaliate",
+      "score": 7,
+      "url": "https://www.bbc.co.uk/news/articles/c93vpd60654o?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_business"
+    },
+    {
+      "rank": 8,
+      "title": "Nine Indicted by Taiwan over Illegal Export of Nvidia B300 GPUs to China",
+      "score": 7,
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/nine-indicted-by-taiwan-over-illegal-export-of-nvidia-b300-gpus-to-china-details-reveal-five-point-strategy-to-exploit-and-avoid-customs-controls",
+      "source": "hackernews"
+    },
+    {
+      "rank": 9,
+      "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
+      "score": 7,
+      "url": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
+      "source": "the_hacker_news"
+    },
+    {
+      "rank": 10,
+      "title": "Fast-moving Hawk wildfire is about 27% contained in Reno, Nevada, officials say",
+      "score": 7,
+      "url": "https://www.theguardian.com/us-news/2026/aug/24/hawk-fire-reno-nevada-injuries-evacuations",
+      "source": "guardian_world"
+    }
+  ]
+}
