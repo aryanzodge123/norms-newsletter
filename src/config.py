@@ -167,6 +167,13 @@ class AudioConfig(Strict):
     # unpriced backend logs render cost as zero rather than crashing.
     tts_price_input_per_mtok: float = Field(default=0.0, ge=0)
     tts_price_output_per_mtok: float = Field(default=0.0, ge=0)
+    # Wall-clock ceiling on the TTS render call. The audio step is
+    # continue-on-error so a failed render never costs the edition, but that
+    # only contains a call that returns. An un-timed call hung the publish on
+    # 2026-08-26 until the job hit GitHub's 6 hour ceiling, with the day's
+    # edition still uncommitted. The collector bounds its fetches for the same
+    # reason; this is the audio side of that rule.
+    tts_timeout_seconds: float = Field(default=300.0, gt=0)
 
     @model_validator(mode="after")
     def _word_band_ordered(self) -> AudioConfig:

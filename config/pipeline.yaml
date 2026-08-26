@@ -122,6 +122,12 @@ audio:
   # when the model or its pricing changes.
   tts_price_input_per_mtok: 0.50
   tts_price_output_per_mtok: 10.00
+  # Wall-clock ceiling on the Gemini TTS call, in seconds. Normal renders
+  # finish inside two minutes; this is generous headroom, not a target. It
+  # exists so a hung call becomes a contained TTSError (publish without a
+  # player row) instead of blocking the publish until the Actions job is
+  # killed. Keep it below the audio step's timeout-minutes in publish.yml.
+  tts_timeout_seconds: 300.0
 
 archive:
   # SPEC 6.9. The archival job folds each day's bronze + silver into the
