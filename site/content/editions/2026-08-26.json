@@ -1,0 +1,78 @@
+{
+  "date": "2026-08-26",
+  "edition_number": 80,
+  "edition_type": "fallback",
+  "notice": "Today's brief is a short one. The usual edition could not be built, so here are the stories that ranked highest, with links to the sources. Full service resumes tomorrow.",
+  "stories": [
+    {
+      "rank": 1,
+      "title": "US removes Syria from terrorism sponsor list, lifting major investment obstacle",
+      "score": 8,
+      "url": "https://www.reuters.com/world/middle-east/us-removes-syrias-designation-state-sponsor-terrorism-2026-08-24",
+      "source": "hackernews"
+    },
+    {
+      "rank": 2,
+      "title": "US halts all immigrant visa applications amid tightening restrictions",
+      "score": 8,
+      "url": "https://www.theguardian.com/us-news/2026/aug/25/us-immigrant-visa-application-trump-crackdwon",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 3,
+      "title": "Wife of US soldier deported after Trump rollback on military family protections",
+      "score": 7,
+      "url": "https://www.theguardian.com/us-news/2026/aug/25/soldier-wife-deported-honduras",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 4,
+      "title": "Iran faces strait of Hormuz paradox as strategic value of chokehold erodes",
+      "score": 7,
+      "url": "https://www.theguardian.com/world/2026/aug/26/iran-faces-strait-of-hormuz-paradox-as-strategic-value-of-chokehold-erodes",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 5,
+      "title": "Extreme heat linked to deaths of over 40,000 people in England since 1988",
+      "score": 7,
+      "url": "https://www.theguardian.com/environment/2026/aug/26/deaths-england-hottest-days-extreme-weather",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 6,
+      "title": "More than 50 kidnapped as violent gang attack in Haiti leaves 47 dead",
+      "score": 7,
+      "url": "https://www.npr.org/2026/08/26/nx-s1-5944787/50-kidnapped-haiti-gang-attack-47-dead",
+      "source": "npr_world"
+    },
+    {
+      "rank": 7,
+      "title": "FBI raided Spanish vacation rental of wealthy leftwing funder James ‘Fergie’ Chambers after his arrest",
+      "score": 7,
+      "url": "https://www.theguardian.com/us-news/2026/aug/25/fbi-raid-james-fergie-cox-vacation-rental",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 8,
+      "title": "APOD: 2026 August 26 – JWST Images The Lion’s Head Nebula",
+      "score": 7,
+      "url": "https://science.nasa.gov/image-article/apod-2026-august-26-jwst-images-the-lions-head-nebula",
+      "source": "nasa_news"
+    },
+    {
+      "rank": 9,
+      "title": "A Drone Killed Three Ukrainians. It Was Guided by A.I",
+      "score": 7,
+      "url": "https://www.nytimes.com/2026/08/24/world/europe/russia-drones-autonomous-ai-kill-ukraine-war.html",
+      "source": "hackernews"
+    },
+    {
+      "rank": 10,
+      "title": "At least 14 newborn babies die in fire at Pakistan hospital’s maternity ward",
+      "score": 7,
+      "url": "https://www.theguardian.com/world/2026/aug/26/newborn-babies-die-fire-pakistan-hospital-maternity-ward",
+      "source": "guardian_world"
+    }
+  ]
+}
