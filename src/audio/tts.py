@@ -122,6 +122,7 @@ class GeminiSynthesizer:
         if self._client is not None:
             return self._client
         from google import genai
+        from google.genai import types
 
         settings = get_settings()
         if not settings.gemini_api_key:
@@ -129,7 +130,16 @@ class GeminiSynthesizer:
                 "GEMINI_API_KEY is required for audio synthesis. Set it in .env "
                 "locally or as an Actions secret in CI (SETUP.md 4.2)."
             )
-        return genai.Client(api_key=settings.gemini_api_key)
+        # Bound the call. Without this the SDK waits forever, and a hung
+        # render is worse than a failed one: synthesize() contains a raise
+        # into "publish without audio", but it can contain nothing that never
+        # returns. HttpOptions.timeout is milliseconds.
+        return genai.Client(
+            api_key=settings.gemini_api_key,
+            http_options=types.HttpOptions(
+                timeout=int(self.config.tts_timeout_seconds * 1000)
+            ),
+        )
 
     def synthesize(self, script: DialogueScript) -> Synthesized:
         from google.genai import types

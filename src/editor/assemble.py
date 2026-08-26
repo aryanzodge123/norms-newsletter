@@ -89,35 +89,60 @@ def assemble_edition(
     # briefly rather than costing the whole edition a fallback. This is code,
     # not a model instruction, because the API's structured-output subset
     # cannot express "at least 2 items" (it rejects minItems above 1).
-    kept_sections = []
-    spilled_to_briefly: list[str] = []
+    # SPEC 6.5: "a cluster may appear in an edition only once". The editor
+    # sometimes places the same cluster in two sections, which the Edition
+    # validator rejects outright; that is what cost 2026-08-25 its edition.
+    # The first placement in the editor's own order wins and later repeats
+    # are dropped. This runs before the section budget is measured, so a
+    # section left short by a dropped repeat collapses into briefly like any
+    # other under-filled section instead of failing validation, which would
+    # trade one fallback for another.
+    deduped_sections: list[tuple[str, list]] = []
+    placed: set[str] = set()
     for section in editor.sections:
-        known = section.name in SECTION_ORDER
-        if known and len(section.stories) >= MIN_STORIES_PER_SECTION:
-            kept_sections.append(section)
+        kept_stories = []
+        for story in section.stories:
+            if story.cluster_id in placed:
+                log.info(
+                    "dropping repeat placement of cluster %s in section %r; it "
+                    "is already placed earlier in the edition (SPEC 6.5)",
+                    story.cluster_id,
+                    section.name,
+                )
+                continue
+            placed.add(story.cluster_id)
+            kept_stories.append(story)
+        deduped_sections.append((section.name, kept_stories))
+
+    kept_sections: list[tuple[str, list]] = []
+    spilled_to_briefly: list[str] = []
+    for section_name, section_stories in deduped_sections:
+        known = section_name in SECTION_ORDER
+        if known and len(section_stories) >= MIN_STORIES_PER_SECTION:
+            kept_sections.append((section_name, section_stories))
             continue
         # Unknown name (the model sometimes invents one, including a literal
         # "briefly" section) or too few stories to meet the budget. Either
         # way the stories move to briefly rather than costing the edition.
-        spilled_to_briefly.extend(story.cluster_id for story in section.stories)
+        spilled_to_briefly.extend(story.cluster_id for story in section_stories)
         log.info(
             "dropping section %r (%s, %d stories), moving them to briefly (SPEC 6.5)",
-            section.name,
+            section_name,
             "known" if known else "unknown name",
-            len(section.stories),
+            len(section_stories),
         )
 
     # Slugs are assigned across the whole edition at once so collisions are
     # resolved deterministically in story order (plan.unique_slugs).
     ordered: list[tuple[str, str, str, StoryContext]] = []  # section, title, summary, ctx
-    for section in kept_sections:
-        for story in section.stories:
+    for section_name, section_stories in kept_sections:
+        for story in section_stories:
             context = by_id.get(story.cluster_id)
             if context is None:
                 raise _invalid(
                     f"editor selected cluster {story.cluster_id!r} which was not offered"
                 )
-            ordered.append((section.name, story.title, story.summary, context))
+            ordered.append((section_name, story.title, story.summary, context))
 
     slugs = unique_slugs([title for _, title, _, _ in ordered])
 

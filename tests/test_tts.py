@@ -182,3 +182,36 @@ def test_synthesize_without_usage_costs_zero(config) -> None:
     client = FakeGenaiClient(one_second_pcm())  # response carries no usage_metadata
     rendered = tts.GeminiSynthesizer(_priced(config), client=client).synthesize(a_script())
     assert rendered.cost_usd == 0.0
+
+
+# --------------------------------------------------------------------------
+# Client construction: the render call must be bounded
+# --------------------------------------------------------------------------
+def test_client_is_built_with_the_configured_timeout(monkeypatch, config) -> None:
+    """An un-timed TTS call hung the 2026-08-26 publish for six hours with the
+    day's edition built and uncommitted. synthesize() turns a raise into
+    "publish without audio", but it can contain nothing that never returns, so
+    the ceiling has to be on the client itself. HttpOptions.timeout is
+    milliseconds, which is the part that is easy to get wrong."""
+    import google.genai as genai
+
+    captured = {}
+
+    def fake_client(**kwargs):
+        captured.update(kwargs)
+        return SimpleNamespace(models=SimpleNamespace())
+
+    monkeypatch.setattr(genai, "Client", fake_client)
+    monkeypatch.setattr(tts, "get_settings", lambda: SimpleNamespace(gemini_api_key="k"))
+
+    tts.GeminiSynthesizer(config)._get_client()
+
+    assert captured["api_key"] == "k"
+    assert captured["http_options"].timeout == int(config.tts_timeout_seconds * 1000)
+    assert config.tts_timeout_seconds == 300.0  # the shipped default
+
+
+def test_missing_key_raises_rather_than_building_an_untimed_client(monkeypatch, config) -> None:
+    monkeypatch.setattr(tts, "get_settings", lambda: SimpleNamespace(gemini_api_key=None))
+    with pytest.raises(tts.TTSError, match="GEMINI_API_KEY"):
+        tts.GeminiSynthesizer(config)._get_client()

@@ -58,6 +58,9 @@ jobs:
   # what makes a late or repeated cron a safe no-op instead of a second edition.
   gate:
     runs-on: ubuntu-latest
+    # A few seconds of work. The ceiling is here so a wedged runner cannot
+    # hold the `publish` concurrency group and starve the real run behind it.
+    timeout-minutes: 5
     outputs:
       proceed: ${{ steps.check.outputs.proceed }}
     steps:
@@ -88,6 +91,11 @@ jobs:
     needs: gate
     if: needs.gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
+    # A normal publish is 5 to 9 minutes. GitHub's default ceiling is 6 hours,
+    # which on 2026-08-26 meant a hung audio call held the concurrency group
+    # all morning and cancelled every trigger queued behind it. Fail in 45
+    # minutes instead, while the day can still be recovered by a re-run.
+    timeout-minutes: 45
     env:
       R2_CATALOG_URI: ${{ secrets.R2_CATALOG_URI }}
       R2_WAREHOUSE: ${{ secrets.R2_WAREHOUSE }}
@@ -132,8 +140,16 @@ jobs:
       # inject_audio raise) killed the job with the day's edition still
       # uncommitted on the runner, and the site was never published. Audio is
       # non-blocking by spec; a failure of it must not cost the edition.
+      # timeout-minutes is the other half of continue-on-error. That flag
+      # contains a step that FAILS; it does nothing for a step that never
+      # finishes, and on 2026-08-26 an un-timed Gemini TTS call hung here for
+      # six hours with the day's edition built, paid for, and still
+      # uncommitted on the runner. The render is bounded in code too
+      # (audio.tts_timeout_seconds); this is the backstop for the rest of the
+      # step, and both sit well above a normal render of under two minutes.
       - name: Audio build
         continue-on-error: true
+        timeout-minutes: 15
         run: uv run python -m src.audio.run_audio
 
       # SPEC 6.8 step 7: commit the edition.json publication record

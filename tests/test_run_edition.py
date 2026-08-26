@@ -244,6 +244,87 @@ def test_invented_section_name_is_dropped_not_fatal(tmp_path):
     assert "Spilled story" in [b["title"] for b in edition["briefly"]]
 
 
+def test_repeated_cluster_across_sections_is_deduped_not_fatal(tmp_path):
+    """SPEC 6.5: a cluster may appear in an edition only once. The editor
+    sometimes places one twice; the first placement wins and the repeat is
+    dropped, rather than failing validation and costing the day a fallback.
+    This is the 2026-08-25 failure."""
+    contexts = [
+        ctx("a" * 32, topic="Tech"),
+        ctx("b" * 32, topic="Tech"),
+        ctx("c" * 32, topic="Science"),
+        ctx("d" * 32, topic="Science"),
+    ]
+    editor = editor_response(
+        [
+            {"name": "Technology", "stories": [
+                {"cluster_id": "a" * 32, "title": "First tech story", "summary": "It happened."},
+                {"cluster_id": "b" * 32, "title": "Second tech story", "summary": "So did this."},
+            ]},
+            {"name": "Science", "stories": [
+                {"cluster_id": "c" * 32, "title": "First science story", "summary": "A discovery."},
+                {"cluster_id": "d" * 32, "title": "Second science story", "summary": "Another one."},
+                # The same cluster the editor already placed in Technology.
+                {"cluster_id": "a" * 32, "title": "First tech story again", "summary": "Repeat."},
+            ]},
+        ]
+    )
+    edition = assemble.assemble_edition(
+        editor=editor, articles={}, contexts=contexts, edition_type="normal",
+        target_date=TODAY, items_ingested=10, clusters_considered=4,
+        sections_held=0, editions_dir=tmp_path,
+    )
+    validate_edition(edition)  # raises if the repeat survived
+    assert [s["name"] for s in edition["sections"]] == ["Technology", "Science"]
+    placed = [
+        story["cluster_id"]
+        for section in edition["sections"]
+        for story in section["stories"]
+    ]
+    assert placed.count("a" * 32) == 1
+    # The first placement is the one that survives, in the editor's order.
+    tech = next(s for s in edition["sections"] if s["name"] == "Technology")
+    assert [story["cluster_id"] for story in tech["stories"]] == ["a" * 32, "b" * 32]
+    assert edition["stats"]["stories_run"] == 4
+    # A cluster already on the page as a card must not also appear in briefly.
+    assert "a" * 32 not in [b.get("cluster_id") for b in edition["briefly"]]
+
+
+def test_repeat_that_leaves_a_section_short_collapses_into_briefly(tmp_path):
+    """Dedup runs before the section budget is measured, so a section left
+    under-filled by a dropped repeat collapses into briefly like any other
+    short section. Checking the budget first would trade one fallback for
+    another."""
+    contexts = [
+        ctx("a" * 32, topic="Tech"),
+        ctx("b" * 32, topic="Tech"),
+        ctx("c" * 32, topic="Science", headline="Spilled science story"),
+    ]
+    editor = editor_response(
+        [
+            {"name": "Technology", "stories": [
+                {"cluster_id": "a" * 32, "title": "First tech story", "summary": "It happened."},
+                {"cluster_id": "b" * 32, "title": "Second tech story", "summary": "So did this."},
+            ]},
+            # Two stories, but one repeats Technology. After dedup this section
+            # can field only one, so it is a dead section.
+            {"name": "Science", "stories": [
+                {"cluster_id": "a" * 32, "title": "First tech story again", "summary": "Repeat."},
+                {"cluster_id": "c" * 32, "title": "Spilled science story", "summary": "Alone."},
+            ]},
+        ]
+    )
+    edition = assemble.assemble_edition(
+        editor=editor, articles={}, contexts=contexts, edition_type="normal",
+        target_date=TODAY, items_ingested=10, clusters_considered=3,
+        sections_held=0, editions_dir=tmp_path,
+    )
+    validate_edition(edition)
+    assert [s["name"] for s in edition["sections"]] == ["Technology"]
+    assert "Spilled science story" in [b["title"] for b in edition["briefly"]]
+    assert edition["stats"]["stories_run"] == 2
+
+
 def test_empty_section_is_dropped(tmp_path):
     contexts = [ctx("a" * 32, topic="Tech"), ctx("b" * 32, topic="Tech")]
     editor = editor_response(
