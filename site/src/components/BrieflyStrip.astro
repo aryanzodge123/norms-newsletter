@@ -19,7 +19,9 @@ const label = quiet ? 'Briefly, from the quiet sections' : 'Briefly';
       <ul class="lines">
         {items.map((it) => (
           <li class="line mono">
-            <a class="ttl" href={it.url} rel="noopener">{it.title}</a>
+            <a class="ttl" href={it.url} target="_blank" rel="noopener">
+              {it.title}<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
             <span class="mid"> · </span>
             <span class="tag">{it.topic}</span>
           </li>
