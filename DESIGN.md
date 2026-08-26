@@ -113,6 +113,13 @@ One breakpoint at 720px. Below it: mobile layout (section 6).
 
 Names here match Astro component files in `site/src/components/`.
 
+Links to an original source open in a new tab (`target="_blank"` with
+`rel="noopener"`). The brief is read straight through, so following a source
+should not cost the reader the edition they are in. This covers the StoryCard
+sources line, the StoryCard flat card's "Read at:" line, Briefly titles, and
+RankedList titles. Every link inside the site itself (archive, about,
+methodology, permalinks, prev/next, Collapse) opens in the same tab.
+
 ### Masthead.astro
 Three columns on one baseline: date (mono, --muted), wordmark (caps,
 centered), edition number "No. NNN" (mono, --muted). Edition number comes
@@ -282,6 +289,9 @@ the readability gate (SPEC 6.5, run in the 6.8 workflow) enforces it.
   (verified for --muted on --paper at 12px mono; do not lighten further).
 - Keyboard: StoryCard uses native details/summary; visible focus outlines
   in --oxide; skip-to-content link.
+- Outbound links: source links open in a new tab and carry a visually hidden
+  "(opens in a new tab)" so assistive tech announces it. No visible marker,
+  the ledger keeps its plain link.
 - Images: the only images are the pipeline diagram (inline SVG with title/
   desc) and feed artwork. No hero images, no thumbnails in v1.
 - Fonts: self-hosted, `font-display: swap`, subset latin. Total font

@@ -74,6 +74,20 @@ a:hover {
   top: 8px;
 }
 
+/* 9. Accessibility: text that only assistive tech reads. Used to announce
+   that a source link opens a new tab, without a visible marker. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Shared type roles (DESIGN 3.2). */
 .mono {
   font-family: var(--font-mono);

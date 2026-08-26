@@ -32,13 +32,16 @@ const meta = `score ${s.score} · ${nSources} source${nSources === 1 ? '' : 's'}
         <span class="mono">{meta}</span>
       </div>
       {/* No article to expand, so the card links out instead. A story the
-          writer stage could not ground still has to reach its origin. */}
+          writer stage could not ground still has to reach its origin. It
+          opens in a new tab (DESIGN 4) so the reader keeps the edition. */}
       <div class="sources flat-sources">
         <span class="src-lead mono">Read at:</span>
         {s.sources.map((src, i) => (
           <>
             {i > 0 && <span class="mid mono">·</span>}
-            <a class="src" href={src.url} rel="noopener">{src.name}</a>
+            <a class="src" href={src.url} target="_blank" rel="noopener">
+              {src.name}<span class="visually-hidden"> (opens in a new tab)</span>
+            </a>
           </>
         ))}
       </div>
@@ -69,12 +72,18 @@ const meta = `score ${s.score} · ${nSources} source${nSources === 1 ? '' : 's'}
         <p class="art-label">Why it matters</p>
         <p class="art-body">{s.article.why_it_matters}</p>
 
+        {/* Sources open in a new tab (DESIGN 4): reading the origin is a
+            side trip, and the reader keeps their place in the edition with
+            this card still expanded. The Collapse link below is internal and
+            stays in this tab. */}
         <div class="sources">
           <span class="src-lead mono">Sources:</span>
           {s.sources.map((src, i) => (
             <>
               {i > 0 && <span class="mid mono">·</span>}
-              <a class="src" href={src.url} rel="noopener">{src.name}</a>
+              <a class="src" href={src.url} target="_blank" rel="noopener">
+                {src.name}<span class="visually-hidden"> (opens in a new tab)</span>
+              </a>
             </>
           ))}
           <a class="collapse" data-collapse href={`#${s.slug}`}>
