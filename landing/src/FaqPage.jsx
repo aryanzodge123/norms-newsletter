@@ -1,4 +1,4 @@
-import { Footer, Masthead, Reveal } from './App.jsx'
+import { Footer, Header, Reveal } from './App.jsx'
 import Accordion from './Accordion.jsx'
 import { FAQ_ITEMS, THE_BRIEF } from './faq-content.js'
 
@@ -10,7 +10,7 @@ import { FAQ_ITEMS, THE_BRIEF } from './faq-content.js'
  * static markup by scripts/prerender.mjs and written into dist/faq/index.html,
  * exactly as App is written into dist/index.html.
  *
- * Masthead and Footer are imported rather than reimplemented, so the two pages
+ * Header and Footer are imported rather than reimplemented, so the pages
  * cannot drift. The import runs one way: App.jsx knows nothing about this file.
  *
  * No delivery dial on this page, so nothing sets data-tod on the root and the
@@ -20,7 +20,7 @@ import { FAQ_ITEMS, THE_BRIEF } from './faq-content.js'
 export default function FaqPage() {
   return (
     <div className="tod">
-      <Masthead home />
+      <Header />
       <main>
         <section className="pad-x pt-14 pb-6">
           <div className="mx-auto max-w-[1140px]">
@@ -56,7 +56,7 @@ export default function FaqPage() {
                   &larr; Back to the front page
                 </a>{' '}
                 &middot;{' '}
-                <a href={THE_BRIEF} className="footer-link">
+                <a href={THE_BRIEF} className="footer-link" target="_blank" rel="noopener">
                   The Original Daily Brief
                 </a>
               </p>

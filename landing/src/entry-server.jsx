@@ -18,3 +18,7 @@ export { BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } from './App.j
    the page itself, which is why it is exported rather than read from a copy. */
 export { default as FaqPage } from './FaqPage.jsx'
 export { FAQ_ITEMS } from './faq-content.js'
+
+/* The third page. It has no copy constants of its own: there are no posts
+   yet, so there is nothing for llms.txt or the structured data to compose. */
+export { default as BlogPage } from './BlogPage.jsx'

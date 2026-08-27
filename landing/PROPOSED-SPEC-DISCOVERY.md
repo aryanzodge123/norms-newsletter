@@ -195,6 +195,7 @@ For SPEC section 10, which currently ends at #56.
 | 58 | Every self URL in the landing page's generated artifacts derives from one origin constant in its build script, the same way the site derives every self URL from `astro.config` under CLAUDE.md rule 6. A hardcoded self URL is a bug. The pre-launch migration in section 13 is what makes this worth enforcing on a page that today has exactly one URL |
 | 59 | Structured data on the landing page describes only what exists. No `AggregateRating`, no `Offer`, no `Review` until there is a released app and real reviews to report. Fabricated review markup is what search engines issue manual penalties for, and the markup is easy enough to write that the rule has to be explicit rather than assumed |
 | 60 | A second page on the landing site is a second prerendered document, not a client-side route. The contract in 15.1 is about what arrives in the response body, and a static document satisfies it exactly as the front page does, while a route does not: a client that runs no JavaScript never resolves one. The practical form is a top-level `faq.html` rather than `faq/index.html`, because Pages serves the former at `/faq` directly and makes the latter a redirect to `/faq/`, which would point the canonical tag and the sitemap at a hop |
+| 61 | The landing page carries one persistent navigation bar across every document it serves, rather than a masthead per page. It is sticky, it names every other page, and it renders inside the `.tod` wrapper so the time-of-day palette carries it with the rest of the page. It plays no entrance animation, because it is the one element on screen before the page is read and after it, and an element that arrives is an element a reader waits for. Below 768px it collapses to a menu, which is the only control on the site that does nothing without JavaScript, so each document's `noscript` block shows the links in its place |
 
 ## Proposed addition to section 11
 
@@ -234,9 +235,19 @@ Recorded so that section 15 landing is not read as closing rule 1's gap for
   every future edit.
 - **No prerendering service or third-party renderer.** The page is one screen
   of static copy. It renders in the build that already exists.
-- **No keyword pages, no blog, no landing page variants.** Thin pages written
-  for search engines are the technique this project's voice standard exists to
-  prevent. If the domain needs more content it should get the archive, which is
-  real writing that already exists.
+- **No keyword pages, no landing page variants.** Thin pages written for search
+  engines are the technique this project's voice standard exists to prevent. If
+  the domain needs more content it should get the archive, which is real writing
+  that already exists.
+- **A blog was on this list and is no longer.** It was ruled out on the same
+  grounds as keyword pages, and that reasoning still holds against a blog
+  written for search engines. It does not hold against the one being added,
+  which is a place for the person building this to write about building it:
+  real writing, published because there is something to say rather than because
+  a page is needed. `/blog` ships with no posts and says so, which is the test
+  of the distinction. If it ever fills up with posts nobody would have written
+  without a search ranking in mind, this line was wrong. The argument that the
+  archive is the better thing to put on this domain is untouched and still
+  open, above.
 - **No analytics or tag manager.** Nothing here needs one, and a third-party
   script would undo the only benefit of removing the font host.

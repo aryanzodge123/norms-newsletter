@@ -48,34 +48,253 @@ export function Reveal({ children, delay = 0, className = '', as: Tag = 'div' })
   )
 }
 
-/* --------------------------------------------------------------- masthead */
+/* ----------------------------------------------------------------- header */
 
-export function Masthead({ home = false }) {
+/* The one way to reach the signup section, so the hero CTA and the header
+   button cannot drift apart. Split from the click handler because the mobile
+   sheet has to close before it scrolls: the body is overflow: hidden while
+   the sheet is up, and scrolling a locked body is a no-op. */
+function goToBuild() {
+  const target = document.getElementById('build')
+  if (!target) return
+  target.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block: 'start' })
+  // Without this the page moves and the keyboard does not, so the next Tab
+  // resumes back where the reader was.
+  target.focus({ preventScroll: true })
+}
+
+/* The href stays on every anchor that uses this, so each is still a real link
+   for right-click, middle-click and a page whose JS has not run. The click
+   path is intercepted only to keep the address bar at the bare origin: the
+   default would leave /#build behind, which is a URL nobody should share. */
+function scrollToBuild(e) {
+  e.preventDefault()
+  goToBuild()
+}
+
+/* The nav, written once. The bar and the phone sheet render the same three,
+   so a fourth destination is one line rather than two. */
+const NAV = [
+  { label: 'FAQ', href: '/faq' },
+  /* The published brief this app grew out of, on GitHub Pages. THE_BRIEF is
+     the same constant the footer and the FAQ answer use: the origin is named
+     in one place, and a second copy here would be the thing that goes stale. */
+  { label: 'OG Newsletter', href: THE_BRIEF, external: true },
+  { label: 'Blog', href: '/blog' },
+]
+
+function NavLinks({ className, linkClassName, onNavigate }) {
+  return NAV.map(({ label, href, external }) => (
+    <a
+      key={label}
+      href={href}
+      className={linkClassName}
+      onClick={onNavigate}
+      {...(external ? { target: '_blank', rel: 'noopener' } : null)}
+    >
+      {label}
+    </a>
+  ))
+}
+
+/* #build only exists on the front page, so off it this is an ordinary link to
+   /#build and the browser does the work. On the front page it scrolls. */
+function ComingSoon({ isHome, className, onClick }) {
   return (
-    <header className="pad-x pt-7">
-      <div className="mx-auto max-w-[1140px]">
-        <div className="flex items-baseline justify-between gap-4">
-          <span className="eyebrow impress hidden sm:block" style={{ animationDelay: '80ms' }}>
-            Est. 2025
-          </span>
-          {/* A masthead is the way back to the front page, so on a second
-              page the wordmark is the link. The homepage passes nothing and
-              renders exactly what it rendered before. */}
-          <span className="display impress text-[27px] sm:text-[31px]">
-            {home ? (
-              <a href="/" className="masthead-link">
-                Norm&rsquo;s Newsletter
-              </a>
-            ) : (
-              <>Norm&rsquo;s Newsletter</>
-            )}
-          </span>
-          <span className="eyebrow impress hidden sm:block" style={{ animationDelay: '160ms' }}>
-            No. 057
-          </span>
-        </div>
-        <hr className="rule-double rule-draw mt-3" style={{ animationDelay: '240ms' }} />
+    <a href={isHome ? '#build' : '/#build'} className={className} onClick={onClick}>
+      Coming Soon
+    </a>
+  )
+}
+
+function NavBars() {
+  return (
+    <svg
+      width="24"
+      height="16"
+      viewBox="0 0 24 16"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    >
+      <path d="M1 1.5h22" />
+      <path d="M1 8h22" />
+      <path d="M1 14.5h13" />
+    </svg>
+  )
+}
+
+function NavClose() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+    >
+      <path d="M2 2 20 20M20 2 2 20" />
+    </svg>
+  )
+}
+
+/* The bar, on all three pages.
+ *
+ * Sticky rather than fixed, so it keeps its place in the flow and no page
+ * needs a spacer under it. It renders inside the <div className="tod">
+ * wrapper every page already has, which is what makes it follow the delivery
+ * dial: the 900ms palette transition on `.tod *` carries the bar through a
+ * theme change with the rest of the page, for free.
+ *
+ * Nothing here carries .impress. This is the one element that is on screen
+ * before the page is read and still on screen after it, and animating it in
+ * on every refresh made it read as content rather than as furniture.
+ *
+ * `isHome` is the front page. It changes exactly two things: where Coming
+ * Soon points, and whether the wordmark is a link to a page you are already
+ * on. It is deliberately the plain-sense reading of the name; the Masthead
+ * this replaces had a `home` prop that meant the opposite.
+ */
+export function Header({ isHome = false }) {
+  const [open, setOpen] = useState(false)
+  const toggleRef = useRef(null)
+  const panelRef = useRef(null)
+  /* False when the sheet is closing because the reader is going somewhere.
+     Pulling focus back to a hamburger they just navigated away from would
+     undo the move. */
+  const restoreFocus = useRef(true)
+
+  const closeForNav = () => {
+    restoreFocus.current = false
+    setOpen(false)
+  }
+
+  /* Escape closes, focus lands in the panel and comes back to the toggle, and
+     Tab cannot leave. The same shape as the TopicStudio overlay, plus the two
+     things that only a viewport-sized panel needs: the page behind it has to
+     stop scrolling, and widening past the breakpoint has to dismiss it, or a
+     rotated phone is left with a full-screen sheet over a working nav. */
+  useEffect(() => {
+    if (!open) return
+    const panel = panelRef.current
+    panel?.querySelector('[data-nav-close]')?.focus()
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+        return
+      }
+      if (e.key !== 'Tab' || !panel) return
+      const stops = panel.querySelectorAll('a[href], button')
+      if (!stops.length) return
+      const first = stops[0]
+      const last = stops[stops.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    const wide = matchMedia('(min-width: 768px)')
+    const onWide = (e) => {
+      if (e.matches) setOpen(false)
+    }
+
+    addEventListener('keydown', onKey)
+    wide.addEventListener('change', onWide)
+    return () => {
+      removeEventListener('keydown', onKey)
+      wide.removeEventListener('change', onWide)
+      document.body.style.overflow = previousOverflow
+      if (restoreFocus.current) toggleRef.current?.focus()
+      restoreFocus.current = true
+    }
+  }, [open])
+
+  const wordmark = (
+    <a href="/" className="site-wordmark display">
+      Norm
+    </a>
+  )
+
+  return (
+    <header className="site-header pad-x">
+      <div className="site-header-row mx-auto flex max-w-[1140px] items-center justify-between gap-4">
+        {wordmark}
+
+        <nav className="site-nav" aria-label="Primary">
+          <NavLinks linkClassName="nav-link" />
+          <ComingSoon isHome={isHome} className="btn-oxide nav-cta" onClick={isHome ? scrollToBuild : undefined} />
+        </nav>
+
+        <button
+          ref={toggleRef}
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls="site-menu"
+          onClick={() => setOpen(true)}
+        >
+          <span className="sr-only">Open menu</span>
+          <NavBars />
+        </button>
       </div>
+
+      {open && (
+        <div
+          id="site-menu"
+          ref={panelRef}
+          className="nav-sheet"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu"
+        >
+          {/* The one rule in the header, and it belongs to the sheet rather
+              than to the bar: it separates the panel's own top row from the
+              list under it. The bar itself carries none. */}
+          <div className="nav-sheet-top pad-x">
+            <div className="mx-auto flex w-full max-w-[1140px] items-center justify-between">
+              {wordmark}
+              <button data-nav-close type="button" className="nav-toggle" onClick={() => setOpen(false)}>
+                <span className="sr-only">Close menu</span>
+                <NavClose />
+              </button>
+            </div>
+          </div>
+
+          <div className="nav-sheet-body pad-x">
+            <div className="mx-auto w-full max-w-[1140px]">
+              <NavLinks linkClassName="nav-sheet-link display" onNavigate={closeForNav} />
+              <ComingSoon
+                isHome={isHome}
+                className="btn-oxide nav-sheet-cta"
+                onClick={
+                  isHome
+                    ? (e) => {
+                        e.preventDefault()
+                        closeForNav()
+                        /* After the commit, so the body is scrollable again
+                           and the panel is out of the way. */
+                        requestAnimationFrame(goToBuild)
+                      }
+                    : closeForNav
+                }
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
@@ -86,12 +305,26 @@ export function Masthead({ home = false }) {
 
 function Hero() {
   return (
-    <section className="pad-x pt-16 pb-8 sm:pt-24">
+    <section className="pad-x pt-6 pb-8 sm:pt-10">
       {/* Flex + wrap rather than a breakpoint: the columns sit side by side
-          while both can hold their basis, and wrap the moment they cannot. */}
-      <div className="mx-auto flex max-w-[1140px] flex-wrap items-center justify-center gap-x-16 gap-y-14">
+          while both can hold their basis, and wrap the moment they cannot.
+
+          items-start, not items-center. The phone is half again as tall as the
+          copy beside it, so centring pushed the headline 119px down the row and
+          left the widest gap on the page directly under a header that is now
+          only 64px tall. Top-aligned, the two columns start together and the
+          phone runs on below, which is the shape the section was drawn as.
+          On a wrapped phone layout the columns stack and this changes nothing. */}
+      <div className="mx-auto flex max-w-[1140px] flex-wrap items-start justify-center gap-x-16 gap-y-14">
         <div className="min-w-0 flex-[1_1_26rem]">
-          <p className="eyebrow eyebrow-oxide impress" style={{ animationDelay: '420ms' }}>
+          {/* mt-3.5 starts the copy a little below the top of the phone beside
+              it. The column is a flex item and so its own formatting context,
+              so this indents inside rather than collapsing through: the
+              headline and everything under it move with the eyebrow. */}
+          <p
+            className="eyebrow eyebrow-oxide impress mt-3.5"
+            style={{ animationDelay: '420ms' }}
+          >
             A paper, printed for one
           </p>
 
@@ -139,25 +372,11 @@ function Hero() {
           </p>
 
           <div className="impress mt-10" style={{ animationDelay: '780ms' }}>
-            {/* The href stays, so this is still a real link for right-click,
-                middle-click and a page whose JS has not run. The click path is
-                intercepted only to keep the address bar at the bare origin:
-                the default would leave /#build behind, which is a URL nobody
-                should be sharing. */}
+            {/* Shares scrollToBuild with the header button, so the two ways
+                of reaching the signup section cannot drift apart. */}
             <a
               href="#build"
-              onClick={(e) => {
-                e.preventDefault()
-                const target = document.getElementById('build')
-                if (!target) return
-                target.scrollIntoView({
-                  behavior: REDUCED ? 'auto' : 'smooth',
-                  block: 'start',
-                })
-                // Without this the page moves and the keyboard does not, so
-                // the next Tab resumes back at the hero.
-                target.focus({ preventScroll: true })
-              }}
+              onClick={scrollToBuild}
               className="btn-oxide inline-block px-8 py-3.5 text-[15px]"
             >
               Stay in the Loop
@@ -169,48 +388,238 @@ function Hero() {
         </div>
 
         <div className="impress min-w-0 flex-[0_1_21rem]" style={{ animationDelay: '620ms' }}>
-          <PhoneInUse />
+          <PhoneSlides />
         </div>
       </div>
     </section>
   )
 }
 
-/* The product as it is actually used: a recording of the committed prototype,
-   walked end to end. The device frame is part of the recording, so nothing
-   wraps it. A GIF cannot be paused, so reduced-motion users get frame one. */
-function PhoneInUse() {
+/* The product as it is actually used: six stills of the committed prototype,
+   one per screen it is worth seeing. The device frame is part of each image,
+   so nothing wraps it, and the corners are transparent so the page shows
+   through them. The shading is not here: it is a box-shadow on .phone-slides,
+   for the reason written over that rule.
+
+   Every slide and every caption is in the markup at all times. That is what
+   prerendering, a crawler and a visitor without script all get; only the
+   transform that picks one is client state. */
+const SLIDES = [
+  {
+    src: '/app-today.webp',
+    caption: 'Your paper for the day, finished in one sitting.',
+    alt: "The Norm's Newsletter app showing today's edition: the headline of the day and the day at a glance.",
+  },
+  {
+    src: '/app-listen.webp',
+    caption: 'Put the whole edition in your ears.',
+    alt: 'The player open on the edition, with a scrubber, playback speed and every story timed in the brief.',
+  },
+  {
+    src: '/app-story.webp',
+    caption: 'Every story explained from the roots up.',
+    alt: 'A story opened to its background, what happened and why it matters.',
+  },
+  {
+    src: '/app-archive.webp',
+    caption: 'Every edition Norm has filed, kept and searchable.',
+    alt: 'The archive listing every edition by date, with a search box above it.',
+  },
+  {
+    src: '/app-topics.webp',
+    caption: 'Weight the sections and the paper follows.',
+    alt: "The topics screen, showing each section's share of the paper as a percentage.",
+  },
+  {
+    src: '/app-norm.webp',
+    caption: 'Ask about any story in your newsletter.',
+    alt: 'Norm answering a question about the archive, with the editions and sources it drew on.',
+  },
+]
+
+/* Stroked rather than a glyph: the prototype's own back control is a stroked
+   chevron, and a text arrow would be one more font to match. */
+function Chevron({ dir }) {
   return (
-    <figure className="relative mx-auto w-full max-w-[324px]">
-      {REDUCED ? (
-        <img
-          src="/app-walkthrough-poster.jpg"
-          width="434"
-          height="878"
-          alt="The Norm's Newsletter app showing today's edition."
-          className="block h-auto w-full"
-          style={{ filter: 'drop-shadow(0 30px 55px rgb(0 0 0 / 0.32))' }}
-        />
-      ) : (
-        <video
-          width="434"
-          height="878"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/app-walkthrough-poster.jpg"
-          aria-label="The Norm's Newsletter app: today's edition, a story opened to its background, what happened and why it matters, the archive of every edition, and the night paper switched on."
-          className="block h-auto w-full"
-          style={{ filter: 'drop-shadow(0 30px 55px rgb(0 0 0 / 0.32))' }}
+    <svg viewBox="0 0 12 20" width="11" height="18" aria-hidden="true" focusable="false">
+      <path
+        d={dir === 'left' ? 'M10 1L2 10l8 9' : 'M2 1l8 9-8 9'}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+const SLIDE_MS = 5000
+/* Enough of a pull to read as a decision rather than a slip of the thumb.
+   DEAD_BAND is the tremor filter; this is the commit. */
+const SWIPE_COMMIT = 40
+const SLIDE_SETTLE = 'transform 420ms cubic-bezier(0.2, 0.7, 0.25, 1)'
+
+function PhoneSlides() {
+  const [i, setI] = useState(0)
+  const [dx, setDx] = useState(0)
+  /* Once someone steers it, it is theirs. The timer never comes back, so a
+     slide cannot slide out from under a reader mid-sentence. */
+  const [stopped, setStopped] = useState(false)
+  const drag = useRef(null)
+
+  useEffect(() => {
+    if (REDUCED || stopped) return
+    const t = setInterval(() => setI((n) => (n + 1) % SLIDES.length), SLIDE_MS)
+    return () => clearInterval(t)
+  }, [stopped])
+
+  /* The arrows, the dots and the keys all wrap, the same way the timer does.
+     A drag does not: it is clamped with resistance at both ends, because a
+     thumb pushing against nothing should feel the end of the track. Direct
+     manipulation is bounded, the indirect controls cycle. */
+  const step = (d) => {
+    setStopped(true)
+    setI((n) => (n + d + SLIDES.length) % SLIDES.length)
+  }
+
+  const goTo = (n) => {
+    setStopped(true)
+    setI(n)
+  }
+
+  const dragDown = (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return
+    setStopped(true)
+    e.currentTarget.setPointerCapture?.(e.pointerId)
+    drag.current = { x0: e.clientX, off: 0, moved: false }
+  }
+
+  const dragMove = (e) => {
+    const d = drag.current
+    if (!d) return
+    let off = e.clientX - d.x0
+    if (Math.abs(off) < DEAD_BAND && !d.moved) return
+    d.moved = true
+    /* Resistance at the two ends. There is nothing past slide one or slide
+       six, and a track that slides freely into blank space says there is. */
+    if ((i === 0 && off > 0) || (i === SLIDES.length - 1 && off < 0)) off *= 0.28
+    /* The ref is the offset of record and the state is only how it is drawn.
+       A release can land before React has re-rendered the last move, and
+       reading the state there would decide the swipe on a stale number. */
+    d.off = off
+    setDx(off)
+  }
+
+  const dragUp = () => {
+    const d = drag.current
+    if (!d) return
+    drag.current = null
+    setDx(0)
+    if (d.off <= -SWIPE_COMMIT && i < SLIDES.length - 1) setI(i + 1)
+    else if (d.off >= SWIPE_COMMIT && i > 0) setI(i - 1)
+  }
+
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowRight') step(1)
+    else if (e.key === 'ArrowLeft') step(-1)
+    else return
+    e.preventDefault()
+  }
+
+  const dragging = drag.current !== null
+
+  return (
+    <figure className="phone-slides-figure relative mx-auto w-full">
+      <div className="phone-slides-frame relative">
+      <div
+        className="phone-slides overflow-hidden"
+        role="group"
+        aria-roledescription="carousel"
+        aria-label={`The Norm's Newsletter app, screen ${i + 1} of ${SLIDES.length}`}
+        tabIndex={0}
+        onKeyDown={onKeyDown}
+        onPointerDown={dragDown}
+        onPointerMove={dragMove}
+        onPointerUp={dragUp}
+        onPointerCancel={dragUp}
+      >
+        <div
+          className="flex"
+          style={{
+            transform: `translateX(calc(${-i * 100}% + ${dx}px))`,
+            transition: REDUCED || dragging ? 'none' : SLIDE_SETTLE,
+          }}
         >
-          <source src="/app-walkthrough.webm" type="video/webm" />
-          <source src="/app-walkthrough.mp4" type="video/mp4" />
-        </video>
-      )}
-      <figcaption className="eyebrow mt-5 text-center">
-        Recorded from the app &middot; No. 056
+          {SLIDES.map((s, n) => (
+            <img
+              key={s.src}
+              src={s.src}
+              width="603"
+              height="1311"
+              alt={s.alt}
+              draggable="false"
+              loading={n === 0 ? 'eager' : 'lazy'}
+              fetchpriority={n === 0 ? 'high' : 'auto'}
+              className="block h-auto w-full flex-none"
+            />
+          ))}
+        </div>
+      </div>
+
+        {/* Siblings of the track rather than children of it, so a press on an
+            arrow is not also the start of a drag. Only where a pointer can
+            hover: a touch device gets the swipe and would otherwise carry two
+            buttons it can never reveal. */}
+        <button
+          type="button"
+          className="phone-slides-arrow phone-slides-arrow-prev"
+          aria-label="Previous screen"
+          onClick={() => step(-1)}
+        >
+          <Chevron dir="left" />
+        </button>
+        <button
+          type="button"
+          className="phone-slides-arrow phone-slides-arrow-next"
+          aria-label="Next screen"
+          onClick={() => step(1)}
+        >
+          <Chevron dir="right" />
+        </button>
+      </div>
+
+      <div className="phone-slides-dots" role="tablist" aria-label="Choose a screen">
+        {SLIDES.map((s, n) => (
+          <button
+            key={s.src}
+            type="button"
+            role="tab"
+            className="phone-slides-dot"
+            aria-selected={n === i}
+            aria-label={`Screen ${n + 1}, ${s.caption}`}
+            data-on={n === i ? 'true' : undefined}
+            onClick={() => goTo(n)}
+          />
+        ))}
+      </div>
+
+      <figcaption className="mt-4 text-center">
+        <span
+          key={i}
+          className="phone-slides-caption block font-display text-[15px] leading-[1.5] text-[var(--ink-soft)]"
+        >
+          {SLIDES[i].caption}
+        </span>
       </figcaption>
+
+      {/* The caption above changes; these do not, so a reader who cannot see
+          the slideshow still gets all six claims. */}
+      <ul className="sr-only">
+        {SLIDES.map((s) => (
+          <li key={s.src}>{s.caption}</li>
+        ))}
+      </ul>
     </figure>
   )
 }
@@ -1694,7 +2103,10 @@ export function Footer() {
             FAQ
           </a>{' '}
           &middot;{' '}
-          <a href={THE_BRIEF} className="footer-link">
+          {/* New tab, like the header's OG Newsletter. This leaves the site,
+              and a reader who follows it should still have the page they were
+              on when they come back. */}
+          <a href={THE_BRIEF} className="footer-link" target="_blank" rel="noopener">
             The Original Daily Brief
           </a>
         </p>
@@ -1709,7 +2121,7 @@ export function Footer() {
           {/* No shrink-0 here. The line is 45 characters of letter-spaced mono,
               which is wider than a phone gutter allows, and holding it rigid is
               the one thing on the page that made the body scroll sideways. */}
-          <p className="eyebrow">&copy; 2026 &middot; Est. 2025 &middot; set nightly at 6:00 am ET</p>
+          <p className="eyebrow">&copy; 2026 &middot; Est. 2026 &middot; set nightly at 6:00 am ET</p>
         </div>
       </div>
     </footer>
@@ -1743,7 +2155,7 @@ export default function App() {
 
   return (
     <div className="tod">
-      <Masthead />
+      <Header isHome />
       <main>
         <Hero />
         <Benefits />

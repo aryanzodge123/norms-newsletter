@@ -85,7 +85,9 @@ function answer({ a, link }) {
   return (
     <>
       {a.slice(0, at)}
-      <a href={link.href} className="footer-link">
+      {/* The only link an answer carries points off the site, so it opens in
+          a new tab and the reader keeps their place in the questions. */}
+      <a href={link.href} className="footer-link" target="_blank" rel="noopener">
         {link.text}
       </a>
       {a.slice(at + link.text.length)}
