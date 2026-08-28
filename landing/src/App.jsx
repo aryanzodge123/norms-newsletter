@@ -371,7 +371,7 @@ function Hero() {
           only 64px tall. Top-aligned, the two columns start together and the
           phone runs on below, which is the shape the section was drawn as.
           On a wrapped phone layout the columns stack and this changes nothing. */}
-      <div className="mx-auto flex max-w-[1140px] flex-wrap items-start justify-center gap-x-16 gap-y-14">
+      <div className="mx-auto flex max-w-[1140px] flex-wrap items-start justify-center gap-x-16 gap-y-[clamp(36px,7vw,56px)]">
         <div className="min-w-0 flex-[1_1_26rem]">
           {/* mt-3.5 starts the copy a little below the top of the phone beside
               it. The column is a flex item and so its own formatting context,
@@ -768,12 +768,12 @@ export const BENEFITS = [
 
 function Benefits() {
   return (
-    <section className="pad-x py-20">
+    <section className="pad-x pad-y">
       <div className="mx-auto max-w-[1140px]">
         <Reveal>
           <p className="label-rule eyebrow">Why it works</p>
         </Reveal>
-        <div className="mt-12 flex flex-wrap gap-x-14 gap-y-12">
+        <div className="mt-12 flex flex-wrap gap-x-14 gap-y-[clamp(32px,6vw,48px)]">
           {BENEFITS.map(([benefit, why, feature], i) => (
             <Reveal key={benefit} delay={i * 90} className="min-w-0 flex-[1_1_22rem]">
               <h3 className="display max-w-[20ch] text-[clamp(24px,3vw,32px)]">{benefit}</h3>
@@ -1174,13 +1174,13 @@ function TopicStudio() {
   const focus = editing ? { ...rows.find((r) => r.id === editing), band: nsBand(wt[editing]) } : null
 
   return (
-    <section id="topics" className="pad-x py-20">
+    <section id="topics" className="pad-x pad-y">
       <div className="mx-auto max-w-[1140px]">
         <Reveal>
           <p className="label-rule eyebrow">Set your front page</p>
         </Reveal>
 
-        <div className="mt-12 flex flex-wrap items-start gap-x-16 gap-y-12">
+        <div className="mt-12 flex flex-wrap items-start gap-x-16 gap-y-[clamp(32px,6vw,48px)]">
           {/* LEFT: what the weights actually mean */}
           <Reveal delay={80} className="min-w-0 flex-[1_1_23rem]">
             <h2 className="display max-w-[16ch] text-[clamp(30px,4.6vw,50px)]">
@@ -1434,7 +1434,7 @@ function TopicStudio() {
 
 function Reinforce() {
   return (
-    <section className="pad-x py-16">
+    <section className="pad-x pad-y-sm">
       <div className="mx-auto max-w-[1140px]">
         <Reveal>
           <div
@@ -1471,12 +1471,12 @@ function DeliveryDial({ idx, setIdx }) {
   const y = 74 - Math.sin(t * Math.PI) * 54
 
   return (
-    <section id="delivery" className="pad-x py-20">
+    <section id="delivery" className="pad-x pad-y">
       <div className="mx-auto max-w-[1140px]">
         <Reveal>
           <p className="label-rule eyebrow">When it lands</p>
         </Reveal>
-        <div className="mt-12 flex flex-wrap items-center gap-x-16 gap-y-12">
+        <div className="mt-12 flex flex-wrap items-center gap-x-16 gap-y-[clamp(32px,6vw,48px)]">
           <Reveal className="min-w-0 flex-[1_1_24rem]">
             <h2 className="display max-w-[16ch] text-[clamp(30px,4.6vw,50px)]">
               Written overnight. Held until the moment you read.
@@ -1517,7 +1517,7 @@ function DeliveryDial({ idx, setIdx }) {
 
               <input
                 type="range"
-                className="dial mt-8"
+                className="dial"
                 min="0"
                 max={STOPS.length - 1}
                 value={idx}
@@ -1705,10 +1705,10 @@ function ThePress() {
   const [n, label, note] = STAGES[stage]
 
   return (
-    <section ref={wrapRef} className="pad-x relative" style={{ height: '340vh' }}>
+    <section ref={wrapRef} className="pad-x press-runway relative">
       <div className="press-stage mx-auto max-w-[1140px]">
         <p className="label-rule eyebrow">The overnight run</p>
-        <div className="mt-10 flex flex-wrap items-center gap-x-14 gap-y-10">
+        <div className="mt-10 flex flex-wrap items-center gap-x-14 gap-y-[clamp(28px,5vw,40px)]">
           <div className="min-w-0 flex-[1_1_18rem]">
             <p
               key={n}
@@ -1800,7 +1800,17 @@ function Mug({ size = 26, thinking = false }) {
     <svg
       viewBox="16 2 96 106"
       aria-hidden="true"
-      style={{ width: (size * 24) / 26, height: size, display: 'block', flex: 'none' }}
+      /* The size is a default rather than a fixed value: an inline style beats
+         a stylesheet, so a caller that needs the mark to respond to the window
+         has nothing to override. Setting --mug-h on an ancestor is that hook,
+         and with neither property set the fallback is the prop exactly, so
+         every other call site is unchanged. */
+      style={{
+        width: `var(--mug-w, ${(size * 24) / 26}px)`,
+        height: `var(--mug-h, ${size}px)`,
+        display: 'block',
+        flex: 'none',
+      }}
       className="norm-mug"
       data-thinking={thinking}
     >
@@ -1920,13 +1930,13 @@ export const NORM_POINTS = [
 
 function NormAgent() {
   return (
-    <section id="norm" className="pad-x py-20">
+    <section id="norm" className="pad-x pad-y">
       <div className="mx-auto max-w-[1140px]">
         <Reveal>
           <p className="label-rule eyebrow">Ask the paper</p>
         </Reveal>
 
-        <div className="mt-12 flex flex-wrap items-start gap-x-16 gap-y-12">
+        <div className="mt-12 flex flex-wrap items-start gap-x-16 gap-y-[clamp(32px,6vw,48px)]">
           <Reveal delay={80} className="min-w-0 flex-[1_1_23rem]">
             <div className="flex items-center gap-3">
               <span className="text-[var(--oxide)]">
@@ -1998,11 +2008,11 @@ function Build() {
   return (
     /* tabIndex -1 so the hero CTA can move focus here after it scrolls. It is
        not in the tab order; it is only a place focus can be put. */
-    <section id="build" tabIndex={-1} className="pad-x py-24">
+    <section id="build" tabIndex={-1} className="pad-x pad-y-lg">
       {/* The copy column holds a 520px form, so it takes the wider basis and
           the mug wraps under it rather than squeezing the field and button
           apart. */}
-      <div className="mx-auto flex max-w-[1140px] flex-wrap items-center gap-x-16 gap-y-12">
+      <div className="mx-auto flex max-w-[1140px] flex-wrap items-center gap-x-16 gap-y-[clamp(32px,6vw,48px)]">
         <div className="min-w-0 flex-[1_1_30rem]">
           <Reveal>
             <p className="label-rule eyebrow">Coming soon</p>
@@ -2087,7 +2097,7 @@ function Build() {
         {/* The mug, at the size the section can carry. Steam is the prototype's
             own keyframes, running at 10x the scale it was drawn for. */}
         <Reveal delay={160} className="min-w-0 flex-[1_1_16rem]">
-          <div className="mx-auto w-fit text-[var(--oxide)]">
+          <div className="build-mug mx-auto w-fit text-[var(--oxide)]">
             <Mug size={260} />
           </div>
         </Reveal>
@@ -2107,7 +2117,7 @@ function Build() {
 
 function FaqTeaser() {
   return (
-    <section id="questions" className="pad-x py-20">
+    <section id="questions" className="pad-x pad-y">
       <div className="mx-auto max-w-[1140px]">
         <Reveal>
           <p className="label-rule eyebrow">Questions</p>
@@ -2119,7 +2129,7 @@ function FaqTeaser() {
         <Reveal delay={100} className="mt-8 max-w-[820px]">
           <Accordion items={FAQ_TEASER} idPrefix="faq-teaser" />
           <p className="eyebrow mt-6">
-            <a href="/faq" className="footer-link">
+            <a href="/faq" className="footer-link footer-link-lone">
               See all questions &rarr;
             </a>
           </p>

@@ -252,6 +252,90 @@ committed `prototypes/` keeps the prototype's own strings.
    copy. A screenshot is user-facing copy like any other.
 3. `Swipe down. Keeps playing` for the same reason, in the player sheet.
 
+## On a phone
+
+The page was built to wrap on flex bases rather than on breakpoints, which is
+why there are only four Tailwind responsive utilities in it and one nav
+breakpoint. Wrapping is the right instinct for the columns and it did nothing
+at all for the measurements between them, so every vertical number that is
+right on a laptop was being carried down to 390px unchanged. Measured at
+390x730 the page ran **11,744px, 16.1 screens**, against 8,370px and 11.4
+screens at 1470. It was 40 percent longer on the smaller screen.
+
+It is now 10,431px, 14.3 screens, and 8,370px at 1470: the desktop total is
+the same number to the pixel, which is the constraint every change below was
+written to. Each one is either a `clamp()` whose ceiling is the value that was
+already there, or sits behind `max-width: 640px`.
+
+**The vertical gutter is fluid now, the way the horizontal one always was.**
+`.pad-y`, `.pad-y-sm` and `.pad-y-lg` replace a flat `py-20`, `py-16` and
+`py-24` on the seven sections that had them. `clamp(52px, 9vw, 80px)` reaches
+its ceiling at 889px, inside the hero's own wrap point, so nothing above the
+wrap moves. 160px of paper between every two sections is a quarter of a phone
+screen each time, and there are seven of them.
+
+**The press runs 230vh on a phone rather than 340.** It is a scroll-driven
+sticky stage with four states, and at 340vh that is 3.4 screens of scrolling
+during which one number and four bars change: the page reads as stuck rather
+than as deliberate. 230vh gives each stage about 57vh, still a scroll rather
+than a jump, and all four stages land with the fourth complete at 80 percent of
+the runway. The height moved off an inline style and onto `.press-runway` so it
+could take a width at all. `ThePress` derives its stage from
+`r.height - innerHeight` on every scroll event, so nothing in the component
+knows the number and the four states redistribute on their own.
+
+**The signup mug rides the width down**, `clamp(150px, 34vw, 260px)`. At 260px
+it was a third of a phone screen of pure decoration directly above the footer.
+`Mug` sizes itself through `var(--mug-h, <prop>px)` rather than a raw inline
+px, because an inline style beats a stylesheet and a caller that needs the mark
+to answer the window otherwise has nothing to override. With neither property
+set the fallback is the prop exactly, so the 30px in the bar, the 26px in the
+think row and the 34px in the Norm section are untouched.
+
+**Body copy is 16px/1.6 under 640px, and the page's own `.eyebrow` is 12px.**
+15px at the distance an arm holds a laptop is not 15px at the distance a hand
+holds a phone. The `.ns-*` and `.norm-*` families are deliberately not in that
+query: they are the app's own chrome, ported pixel for pixel, and a replica
+drawn larger than the screen it copies is a replica that lies. The rule sits
+after `.eyebrow` rather than up with the body rule, because a media query adds
+no specificity and at 0,1,0 either way the one further down the file wins.
+
+**Four controls reach 44px, and no visible pixel moved to get there.** In every
+case the growth is padding and a negative margin hands the difference back.
+
+| Control | Was | Is | How the layout stayed put |
+| --- | --- | --- | --- |
+| `.nav-toggle` | 40x32 | 48x44 | the bar is a fixed `--header-h` with its items centred, so the height was already there; `margin-right` is the new padding exactly, so the glyph stays flush with the gutter |
+| `.dial` | 22px band | 44px | the runnable track centres in whatever height the input has, so the gap above moved into the rule as `margin-top: 21px` with `margin-bottom: -11px`, and the 5am/12pm/10pm row did not move |
+| `.phone-slides-dot` | 22x22 | 30x44 | `.phone-slides-dots` gives back 11px at the top and 11px at the bottom, so the 18px over the dots and the 5px under them are what they were |
+| `.footer-link` | text height | 32px | inline padding, which grows the target without taking a pixel of flow |
+
+The dial's gap moved out of the markup and into its own rule because a selector
+that specific overrides a `mt-8` utility rather than adding to it, and one
+owner for the height and the gap together is the only way the sum stays right.
+The footer links stop at 32px rather than 44 on purpose: the credit line and
+the FAQ line are 16px apart, and 14px of padding either side would have the two
+links overlapping, with a tap in the overlap landing on whichever came last in
+the DOM. Two targets fighting is worse than one that is short. `See all
+questions` stands alone under the accordion and does take the whole 44, through
+`.footer-link-lone`.
+
+**One real bug, found while measuring.** The slideshow caption was centred with
+`margin-left: calc(50% - 9.5rem)`, half of its `19rem` and not half of the
+`88vw` that actually applies once the window is under about 345px, so on a
+320px phone it sat visibly off centre. It is `calc(50% - min(9.5rem, 44vw))`
+now, half of whichever width is in force. Not `margin-inline: auto`, which was
+the first fix and was wrong in the other direction: the caption is deliberately
+wider than the phone on a tall display, and an auto margin on a box wider than
+its parent resolves to zero and left-aligns it. It has to centre both ways.
+
+**What was left alone.** Topics is still the longest section on a phone at
+2,128px, because shortening it means collapsing part of the ported app replica
+behind a tap, and that changes what the page shows rather than how much room it
+takes. The phone figure keeps its flat 324px cap below 900px for the reason
+already recorded above: below the wrap it has the width to itself, and a page
+that scrolls is the expected thing rather than a fault.
+
 ## The waiting list
 
 The Coming Soon form is the only thing on the page that is not a page. It posts
