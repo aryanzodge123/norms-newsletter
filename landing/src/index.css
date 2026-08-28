@@ -183,6 +183,23 @@ body {
   top: 0;
   z-index: 50;
   background: var(--paper);
+  /* The page's own gutter up to 900px, and a wider one above it. The bar runs
+     the full width of the window while every section under it holds a 1140px
+     column, so its two ends are the only things on the page that ever reach
+     the edge, and at the page's 2.5rem they sat on it.
+
+     The extra margin is a desktop rule rather than a wider clamp on every
+     size, and that is the point of the breakpoint: on a phone the wordmark in
+     the bar sits directly over the copy below it, so a bar with a gutter of
+     its own would put the two a few pixels out of line. 900px is where the
+     hero stops being one column, which is the same place the phone slideshow
+     changes how it sizes itself. */
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+@media (min-width: 900px) {
+  .site-header {
+    padding-inline: clamp(2.5rem, 6vw, 7rem);
+  }
 }
 .site-header-row {
   height: var(--header-h);
@@ -710,13 +727,16 @@ main section[id] {
    caption. 324px still caps it, because past that it outgrows the 21rem
    column, and 210px floors it so a short window cannot shrink it away.
 
-   Only above 820px, which is where the hero is still two columns. Below that
-   it has wrapped, the phone has the width to itself, and a page that scrolls
-   is the expected thing rather than a fault. */
+   Only above 900px, which is where the hero is still two columns. This read
+   820px until the wrap point was measured: the row needs 896px to hold both
+   columns, so between 820 and 896 the phone was being sized out of a height
+   it no longer had to share. Below the wrap it has the width to itself, takes
+   the flat cap, and a page that scrolls is the expected thing rather than a
+   fault. */
 .phone-slides-figure {
   max-width: 324px;
 }
-@media (min-width: 820px) {
+@media (min-width: 900px) {
   .phone-slides-figure {
     max-width: clamp(210px, calc((100vh - 16rem) * 0.46), 324px);
     max-width: clamp(210px, calc((100svh - 16rem) * 0.46), 324px);

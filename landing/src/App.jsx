@@ -230,7 +230,15 @@ export function Header({ isHome = false }) {
 
   return (
     <header className="site-header pad-x">
-      <div className="site-header-row mx-auto flex max-w-[1140px] items-center justify-between gap-4">
+      {/* 1600px rather than the 1140px the sections below hold. The bar is the
+          full width of the window on any ordinary screen, so the wordmark sits
+          out at the left margin and the nav at the right one instead of both
+          pulling into a column with a quarter of the screen empty either side.
+          The cap is there for a very wide monitor, where an unbounded bar puts
+          the two ends too far apart to read as one object. The margin the two
+          ends stop at is .site-header's own, wider than the page gutter, and
+          the rule over it says why. */}
+      <div className="site-header-row mx-auto flex max-w-[1600px] items-center justify-between gap-4">
         {wordmark}
 
         <nav className="site-nav" aria-label="Primary">
@@ -303,9 +311,14 @@ export function Header({ isHome = false }) {
    Block 1 (USP: main + supporting headline), block 2 (hero visual showing the
    product in real use), block 5 (one CTA). */
 
+/* lg:pt-16 on the section: above 1024px the hero starts a little further down
+   the page than the bar leaves it, so the eyebrow reads as the top of a page
+   rather than as a line hanging off the bottom of the nav. A step at 1024
+   rather than a fourth value on the ramp, because a smaller window is short as
+   well as narrow and there the 40px is the right gap. */
 function Hero() {
   return (
-    <section className="pad-x pt-6 pb-8 sm:pt-10">
+    <section className="pad-x pt-6 pb-8 sm:pt-10 lg:pt-16">
       {/* Flex + wrap rather than a breakpoint: the columns sit side by side
           while both can hold their basis, and wrap the moment they cannot.
 
@@ -328,12 +341,16 @@ function Hero() {
             A paper, printed for one
           </p>
 
-          {/* Sized to hold its two intended lines at 1440; the break is the
-              point of the line, so it must not rag. The slash is drawn rather
-              than underlined so it keeps the hand of a proof mark, and it takes
-              its colour from the palette so it follows night paper. */}
+          {/* Sized to hold its two intended lines; the break is the point of
+              the line, so it must not rag, and both lines hold at every size
+              the clamp reaches. 5.6vw is the slope it always had and only the
+              ceiling moved, from 74px to 88px, so nothing under 1320px changes
+              and a large display gets a masthead rather than a headline that
+              stopped growing while the window kept going. The slash is drawn
+              rather than underlined so it keeps the hand of a proof mark, and
+              it takes its colour from the palette so it follows night paper. */}
           <h1
-            className="display impress mt-5 text-[clamp(44px,5.6vw,74px)]"
+            className="display impress mt-5 text-[clamp(44px,5.6vw,88px)]"
             style={{ animationDelay: '520ms' }}
           >
             Read less.

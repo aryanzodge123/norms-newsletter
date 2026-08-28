@@ -68,6 +68,47 @@ rather than the prototype's em dash, and the two ported sentences that carried
 an em dash are punctuated with a full stop instead. The hero slideshow below
 carries the same divergence a third time, for the same reason.
 
+## The bar and the headline
+
+**The bar runs the full width of the window; everything under it holds
+1140px.** `.site-header-row` is capped at 1600px rather than 1140px, so the
+wordmark sits out at the left margin and the nav at the right one instead of
+both pulling into a column with a quarter of the screen empty either side. The
+cap is there for a very wide monitor, where an unbounded bar puts its two ends
+too far apart to read as one object.
+
+**The bar has its own gutter above 900px, and it is the only rule that
+overrides `.pad-x`.** `clamp(2.5rem, 6vw, 7rem)` there, against the page's
+`clamp(1.25rem, 4vw, 2.5rem)` everywhere else: 54px of margin at 900, 98px at
+1633, and past about 1720 the 1600px cap takes over and the margin is whatever
+is left over. The two ends of the bar are the only things on the page that
+ever reach the edge, and at the page's own 2.5rem they sat on it.
+
+The extra margin is a breakpoint rather than a wider clamp at every size, and
+that is the whole reason for the 900px. On a phone the wordmark in the bar
+sits directly over the copy below it, so a bar with a gutter of its own would
+put the two a few pixels out of line. Below 900 the bar takes the page's
+gutter exactly.
+
+**The hero holds the same 1140px column** it always did, top aligned under the
+bar, with the copy and the slideshow spaced as they were. The bar being wider
+than the content under it is deliberate.
+
+The one measurement that moved is the gap under the bar: `lg:pt-16` above
+1024px, 64px rather than 40px, so the eyebrow reads as the top of a page
+rather than as a line hanging off the bottom of the nav. It is a step at 1024
+rather than a fourth value on the ramp, because a smaller window is short as
+well as narrow and there the 40px is the right gap. The 24px comes out of the
+slack the phone figure already had: the caption still clears the fold at 1920
+by 1080, 1633 by 755, 1440 by 900, 1366 by 768, 1280 by 800, 1152 by 700 and
+1024 by 640.
+
+**The headline ceiling is 88px, up from 74px.** The slope is the same `5.6vw`,
+so nothing under 1320px changes; past that a large display gets a masthead
+rather than a headline that stopped growing while the window kept going. Both
+lines still hold without ragging at every size the clamp reaches, which is the
+constraint that decides the ceiling: the break is the point of the line.
+
 ## The hero slideshow
 
 Six stills of the app, five seconds apart, each with one sentence under it.
@@ -128,7 +169,7 @@ flat 324px the phone stood 704px tall, and with the dots and the caption under
 it the figure ran off the bottom of any laptop: the screen and the sentence
 describing it could not be on show at once. `.phone-slides-figure` derives the
 width from `100svh` instead, capped at 324px and floored at 210px, so it is
-324px on a tall display and about 250px on a 800px one. Only above 820px,
+324px on a tall display and about 250px on a 800px one. Only above 900px,
 which is where the hero is still two columns. The caption is deliberately
 wider than the phone and centred on it: held to the phone's width it wrapped
 to two lines on a short window, and those cost more height than the narrowing
