@@ -1,0 +1,376 @@
+{
+  "date": "2026-08-28",
+  "edition_number": 82,
+  "edition_type": "normal",
+  "headline_of_the_day": "Florida jury says DeSantis gave Medicaid money to charity tied to his wife",
+  "headline_cluster_id": "0d380b62bc0c61b650373c0d7b5ea5bf",
+  "headline_rationale": "A concrete finding of public fund misuse affecting a state-level administration, with named officials and specific dollar amounts.",
+  "key_points": [
+    {
+      "text": "A Florida jury found the DeSantis administration took $10 million from Medicaid and gave it to a charity linked to the governor's wife.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Landslides and floods on the Nepal-Tibet border killed or displaced hundreds.",
+      "topic": "World"
+    },
+    {
+      "text": "Congo started Ebola vaccines to fight its worst outbreak ever.",
+      "topic": "Science"
+    },
+    {
+      "text": "Two measles deaths in Pennsylvania sparked debate as cases hit record highs.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "A lawsuit says Elon Musk's xAI trained Grok using child sex abuse material.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-28.mp3",
+    "duration_seconds": 430,
+    "size_bytes": 5158944
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "0d380b62bc0c61b650373c0d7b5ea5bf",
+          "slug": "florida-grand-jury-finds-desantis-administration",
+          "title": "Florida grand jury finds DeSantis administration misappropriated Medicaid settlement funds",
+          "summary": "A jury found DeSantis sent $10 million to a charity tied to his wife.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/27/florida-grand-jury-desantis-administration-misappropriated-funds-medicaid"
+            }
+          ],
+          "article": {
+            "background": "Florida got a $10 million settlement from Medicaid, a government health program for low-income people. The money was meant for a specific public purpose. Instead, state officials moved it into the Hope Florida Foundation, a charity linked to Governor Ron DeSantis's wife.",
+            "what_happened": "A Florida grand jury found the DeSantis administration misappropriated the $10 million. The grand jury said this was part of a sophisticated scheme. From the Hope Florida Foundation, the money went into two political action committees, which are groups that raise money for political causes. The grand jury did not indict anyone.",
+            "why_it_matters": "This raises questions about how government officials handle money set aside for specific public purposes. The finding suggests that settlement funds can move through private charities without clear accountability to the public.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9b24748f95923da14a29258f69976eb8",
+          "slug": "two-measles-related-deaths-in-pennsylvania-spark-political",
+          "title": "Two measles-related deaths in Pennsylvania spark political fight over disease control",
+          "summary": "The deaths came during record measles case numbers across the country.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/08/27/nx-s1-5945759/political-bickering-follows-two-deaths-related-to-measles-in-pennsylvania"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "49b1815885ced0311841106960b3d521",
+          "slug": "hundreds-dead-or-missing-after-nepal-tibet-border-floods",
+          "title": "Hundreds dead or missing after Nepal-Tibet border floods and landslides",
+          "summary": "Floods hit the Nepal-Tibet border region, killing or missing hundreds of people.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cd948kn02e5o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/live/2026/aug/27/nepal-flash-flood-live-updates-tibet-border-death-toll-missing-himalayas-floods-flooding-latest-news"
+            }
+          ],
+          "article": {
+            "background": "On Wednesday, massive landslides and flash floods hit the Nepal-Tibet border. Hundreds are dead or missing. Rescue teams are still searching. Chinese state media confirmed significant casualties. Nepalese officials described \"huge scale loss\".",
+            "what_happened": "The floods swept through the border area, destroying homes and infrastructure on both sides. Nearly 1,400 people are missing, mostly tourists. A new concern has emerged: water is rising in a lake at the disaster site. Officials fear it could burst and trigger more floods.",
+            "why_it_matters": "For people in remote mountain areas, this shows how quickly weather can turn deadly. Rescue operations in remote terrain are difficult even with resources. The rising lake makes rescue efforts more dangerous. It could release water without warning.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ce63aa3c730ec8ded29396a7a661efcc",
+          "slug": "us-patriot-missile-stocks-in-europe-beyond-critical-due-to",
+          "title": "US Patriot missile stocks in Europe beyond critical due to Iran war",
+          "summary": "Europe's military supplies are running so low it may hurt the region's defense.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/ap-exclusive-u-s-patriot-missile-stocks-in-europe-beyond-critical-due-to-iran-war-officials-say"
+            }
+          ],
+          "article": {
+            "background": "The U.S. military stores advanced missiles at bases across Europe. These stockpiles support NATO allies and American troops stationed there. Patriot missiles are air defense weapons that shoot down aircraft and incoming threats.",
+            "what_happened": "U.S. military officials told the Associated Press that missile supplies in Europe have dropped to a \"beyond critical\" level. President Donald Trump's conflict with Iran has largely caused the shortage. The war has drawn down the missiles available for European defense.",
+            "why_it_matters": "Low missile stocks in Europe could slow the military's ability to respond if a crisis breaks out there. The shortage limits what the U.S. can do to defend the region and its allies.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "489877b6056d50bc876bef634fed507d",
+          "slug": "russia-threatens-uk-retaliation-as-cia-chief-reportedly",
+          "title": "Russia threatens UK retaliation as CIA chief reportedly warns Kremlin against attacking NATO",
+          "summary": "Russia said it could attack UK military targets because of UK help for Ukraine's missiles.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/27/britain-ukraine-war-russia"
+            }
+          ],
+          "article": {
+            "background": "The UK has backed Ukraine since Russia's invasion in 2022. Andy Burnham became Britain's prime minister recently. On Monday, he said the UK would give Ukraine secret technology to make its own Storm Shadow missiles. These are long-range cruise missiles. France also agreed to supply similar missile technology.",
+            "what_happened": "Russia said Thursday it could retaliate against the UK and France. The threat came after Burnham's promise to help Ukraine make missiles. Russia's foreign ministry spokesperson Maria Zakharova said the two countries were \"playing with fire.\" Meanwhile, reports said the CIA director warned the Kremlin this week not to attack NATO.",
+            "why_it_matters": "Ukraine's military support matters to you because the war affects global energy and food prices. When Ukraine can make more of its own weapons, it changes how long the conflict might last. Russia's retaliation threats show the conflict is spreading pressure beyond Ukraine's borders, which could pull NATO members into direct conflict.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "24759cf7c9a80f9b62b50ec0e8ac4b0a",
+          "slug": "sec-charges-38-entities-for-fraudulent-filings-posing-as",
+          "title": "SEC charges 38 entities for fraudulent filings posing as legitimate US advisers",
+          "summary": "The firms lied on forms to trick regular investors into giving them money.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "sec_edgar_press",
+              "url": "https://www.sec.gov/newsroom/press-releases/2026-78-sec-38-entities-feigned-legitimacy-us-advisers-through-false-filings-lure-retail-investors"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "6fba4550dea381d986eef0cde1279643",
+          "slug": "meta-s-18-billion-settlement-includes-legal-pass-on-kids",
+          "title": "Meta's $18 billion settlement includes legal pass on kids' data",
+          "summary": "States agreed not to sue Meta for using kids' data to build age-checking tools.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/27/buried-in-metas-18b-settlement-is-a-legal-pass-on-kids-data"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.techdirt.com/2026/08/26/meta-just-paid-nearly-17-billion-to-make-sure-it-gets-to-write-the-kid-safety-rules-for-every-other-social-media-platform"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Facebook and Instagram. Attorneys general from 29 states sued Meta over child safety on these platforms. They claimed Meta designed its products to make children use them compulsively. Meta agreed to settle the case for about $18 billion. The settlement requires Meta to add child safety features like daily use limits for kids.",
+            "what_happened": "The settlement includes a legal carve-out. The 29 states agreed not to sue Meta under existing child safety laws. This covers only Meta's work on age-assurance technology, which detects whether users are children. It does not cover Meta's normal business. The states added guardrails to limit how Meta can use children's data for this testing.",
+            "why_it_matters": "For now this does not change much for most kids or parents. But it sets a new rule. States can trade away legal protections from companies in exchange for safety improvements. This precedent could shape how child safety settlements work in the future. It may also affect how other social media companies negotiate their own deals.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "17d88c8518c02463357887fe2bc52997",
+          "slug": "uk-government-cracks-down-on-rogue-bailiffs-and-cowboy",
+          "title": "UK government cracks down on rogue bailiffs and cowboy builders",
+          "summary": "New rules protect people in debt and create a list of fake tradespeople.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/money/2026/aug/27/burnham-to-tackle-rogue-bailiffs-cowboy-builders-debts"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cx2z44982e4o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Bailiffs are officials who collect debts from people who owe money. In England and Wales, some bailiffs have been accused of overcharging vulnerable people or using aggressive tactics. Prime Minister Andy Burnham is now tightening the rules that apply to them.",
+            "what_happened": "Burnham announced a crackdown on rogue bailiffs and on builders who rip off homeowners. Bailiff rules in England and Wales will be strengthened to better protect people in debt. For builders, a new database of trusted traders will launch next month. Traders on the scheme must meet standards for customer service, honesty, and dispute resolution.",
+            "why_it_matters": "If you owe money and a bailiff shows up at your door, stronger rules mean you are less likely to face unfair charges or harsh treatment. When you hire someone to fix your home, the trusted trader database gives you a safer way to find reliable workers and avoid scams.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "c6cf69efb923692795a1ecc0b35a9d51",
+          "slug": "congo-begins-ebola-vaccinations-to-fight-country-s-worst",
+          "title": "Congo begins Ebola vaccinations to fight country's worst outbreak",
+          "summary": "Congo is vaccinating people during its worst Ebola outbreak.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/health/congo-begins-ebola-vaccinations-to-fight-countrys-worst-outbreak-in-history-health-minister-says"
+            }
+          ],
+          "article": {
+            "background": "Congo faces Ebola outbreaks regularly. Ebola is a rare virus that causes sudden illness and often death. This outbreak is Congo's worst on record. Health officials say vaccination can slow the spread.",
+            "what_happened": "Congo began vaccinating people against Ebola on Thursday. The campaign launched in Kisangani, a city in Tshopo province. Health authorities are working to slow the outbreak's spread.",
+            "why_it_matters": "Ebola kills many people who catch it. A vaccine helps protect people in affected areas. Stopping the spread now prevents more deaths and more cases later.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2bbeb89ea30d2af2ed76e74b2f235d3a",
+          "slug": "doctors-are-learning-to-manage-antidepressant-withdrawal",
+          "title": "Doctors are learning to manage antidepressant withdrawal",
+          "summary": "Doctors are learning how to help millions quit antidepressants without harm.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.newscientist.com/article/2584861-antidepressant-withdrawal-symptoms-are-prompting-a-radical-rethink-of-how-we-treat-depression"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "84231175ecbc8bff7562d53f62b6a01e",
+          "slug": "fda-approves-daily-hiv-pill-designed-to-simplify-treatment",
+          "title": "FDA approves daily HIV pill designed to simplify treatment",
+          "summary": "Gilead's Bixlenvo is a daily pill that makes HIV treatment easier.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/08/27/fda-approves-gilead-hiv-pill-bixlenvo-designed-to-simplify-treatment.html"
+            }
+          ],
+          "article": {
+            "background": "HIV treatment has come a long way. Patients with the virus under control can now take simpler daily regimens instead of multiple pills. Gilead is a major maker of HIV drugs, including a popular pill called Biktarvy.",
+            "what_happened": "The FDA approved a new once-daily HIV pill called Bixlenvo on Thursday. It combines two drugs: bictegravir, which is already in Biktarvy, and lenacapavir, a new type of drug called a capsid inhibitor. The pill is the first single-tablet regimen of its kind.",
+            "why_it_matters": "For people whose HIV is already under control, this pill could mean taking fewer drugs each day. Some patients still take multiple pills or doses daily even when their virus is controlled. This new option gives them a simpler path forward, which can make it easier to stick with treatment.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "2dbd0f60cc0c4073140844efb7e9cd4d",
+          "slug": "lawsuit-accuses-xai-of-training-grok-models-on-child-sex",
+          "title": "Lawsuit accuses xAI of training Grok models on child sex abuse material",
+          "summary": "A lawsuit says xAI used illegal child abuse material to train Grok.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/08/elon-musks-xai-used-child-porn-to-train-grok-models-lawsuit-says"
+            }
+          ],
+          "article": {
+            "background": "xAI is Elon Musk's AI company. It makes Grok, a chatbot designed to answer questions and have conversations. Like other AI systems, Grok learns from huge amounts of data from the internet. Companies are supposed to filter out illegal material before using data to train their systems.",
+            "what_happened": "xAI has been sued for allegedly using child sexual abuse material, known as CSAM, to train Grok. A woman known as Jane Doe filed the complaint on Wednesday. She explained that as a preschool child in the early 2000s, she was abused to create CSAM. Her images were later tagged by child safety groups like the National Center for Missing and Exploited Children.",
+            "why_it_matters": "As AI systems become more common, how companies handle illegal content affects everyone. If companies use CSAM to train their tools, it raises questions about whether those systems are safe and trustworthy. The lawsuit is part of a larger push by regulators and courts to understand how widespread this problem is.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "34972e7807ea525be6906a8473c19921",
+          "slug": "three-uk-airports-hit-by-cyberattack-exposing-data-of-8-7",
+          "title": "Three UK airports hit by cyberattack exposing data of 8.7 million customers",
+          "summary": "Hackers took email, phone numbers, car details, and postcodes from three UK airports.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/business/2026/aug/27/uk-airports-operator-cyber-attack-customer-data-accessed"
+            }
+          ],
+          "article": {
+            "background": "Manchester Airports Group runs three major UK airports: Manchester, London Stansted, and East Midlands. These airports serve millions of travelers each year. They offer services like parking, lounges, fast-track security, and wifi.",
+            "what_happened": "Hackers broke into systems at all three airports and stole data from about 8.7 million customers. The stolen information includes email addresses, phone numbers, vehicle registration numbers, and postcodes. It came from people who booked parking, lounge access, fast-track security, or wifi. The hackers did not access bank or payment details. The airports said passenger safety and aviation security were not affected.",
+            "why_it_matters": "If you booked parking or other services at these airports, your contact details and vehicle information are now exposed. This data could be used for scams or identity theft. The hacker incident did not disrupt airport operations, so flights and security checkpoints worked normally.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9bba572bdab4b4d69013e53064d0f225",
+          "slug": "ai-discovers-critical-flaw-in-bitcoin-lightning-network",
+          "title": "AI discovers critical flaw in Bitcoin Lightning network",
+          "summary": "Core Lightning told operators to install a security update now.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://decrypt.co/376714/ai-critical-flaw-bitcoin-lightning-warning"
+            }
+          ],
+          "article": {
+            "background": "Core Lightning is software that lets people run nodes, or computers, that process Bitcoin payments on the Lightning Network. The Lightning Network is a system built on top of Bitcoin to make payments faster and cheaper. Researchers recently used AI tools to scan the code and found security problems.",
+            "what_happened": "On Wednesday, Core Lightning developers said that the flaws found by AI are real. The team is working on a fix. They told node operators to install the update as soon as it comes out.",
+            "why_it_matters": "If you run a Core Lightning node, you need to update it quickly to stay safe. If you cannot update right away, you should run your node offline instead of leaving it on. This protects you from attackers who might exploit the flaws while they exist.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "353309ea22943c64e56b4cbc1aa6f800",
+      "title": "Military veterans told they owe thousands of pounds over clerical error",
+      "url": "https://www.bbc.co.uk/news/articles/c5y4512mlxdo?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "f9a9f8155c7238b6aba2f25ce8e1a79c",
+      "title": "Dos Santos breaks 400m hurdles world record in Zurich",
+      "url": "https://www.bbc.co.uk/sport/athletics/videos/c23x8np5882o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "dc8089073728b5d666f6cc7a225c7639",
+      "title": "Three journalists sue Pentagon after being fired from military news outlet",
+      "url": "https://www.theguardian.com/us-news/2026/aug/27/journalists-sue-pentagon-stars-and-stripes",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "489af10c257443834e7f7d73e7a997c7",
+      "title": "The AI 'Ghosts' Contaminating Academic Publishing",
+      "url": "https://www.404media.co/the-ai-ghosts-contaminating-academic-publishing",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "153749b358390f36e0d77120e7848021",
+      "title": "Anthropic Announces Hardware Interface Standard (Model Hardware Standard, MHS)",
+      "url": "https://twitter.com/AnthropicAI/status/2093038426140651791",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "41e45b615225e9ee4f915109d8b65dc2",
+      "title": "Americans are cheering for vigilantes who take down Flock cameras",
+      "url": "https://www.theverge.com/tech/985155/flock-camera-destruction-vigilantes",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "503a05ea329352994d69bacb32cd3f16",
+      "title": "YouTube now lets creators tag Amazon products and earn commissions from purchases",
+      "url": "https://techcrunch.com/2026/08/27/youtube-now-lets-creators-tag-amazon-products-and-earn-commissions-from-purchases",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 124,
+    "clusters_considered": 106,
+    "stories_run": 14,
+    "sources": 20,
+    "sections_held": 1
+  }
+}
