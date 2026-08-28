@@ -7,10 +7,10 @@
  * receives the whole page. Before this step, dist/index.html held 3,166 bytes
  * and an empty root div, so everything except Google saw a blank document.
  *
- * There are three pages now, /, /faq and /blog, and each is a separate static
- * document rather than a route. The loop below is the only thing that knows
- * that; the contract and the reasoning are unchanged, and adding a fourth page
- * is adding a fourth entry to PAGES, and a matching line in SITEMAP.
+ * There are four pages now, /, /faq, /blog and the one post, and each is a
+ * separate static document rather than a route. The loop below is the only
+ * thing that knows that; the contract and the reasoning are unchanged, and
+ * adding a page is adding an entry to PAGES, and a matching line in SITEMAP.
  *
  * Deterministic. No model call. Rendering is not something an AI touches.
  */
@@ -64,7 +64,7 @@ await build({
 })
 
 const mod = await import(pathToFileURL(join(TMP, 'entry-server.mjs')).href)
-const { App, FaqPage, BlogPage, FAQ_ITEMS, BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } = mod
+const { App, FaqPage, BlogPage, PostPage, POSTS, FAQ_ITEMS, BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } = mod
 
 const decode = (s) =>
   s.replace(/&middot;/g, '·').replace(/&rsquo;/g, '’').replace(/&amp;/g, '&').trim()
@@ -213,18 +213,17 @@ const PAGES = [
     name: 'blog',
     component: BlogPage,
     file: 'blog.html',
-    /* A heading, a paragraph and two links, plus the header and the footer.
-     * Low, because the page is genuinely short, and still an order of
-     * magnitude above the empty root this exists to catch. It goes up with
-     * the first post. */
-    floor: 2000,
+    /* A heading, a paragraph, and one row per post. The floor went up with
+     * the first post, which is what the note here used to promise. */
+    floor: 3000,
     graph: ({ TITLE, DESCRIPTION }) => [
-      /* A WebPage and nothing more. Decision #59 (proposed): structured data
-       * describes only what exists, and there is no Blog here yet, no
-       * blogPost and no author. Claiming a Blog with an empty blogPost list
-       * would be describing an intention. */
+      /* A Blog now, because one exists. Decision #59 (proposed) says
+       * structured data describes only what exists, which is why this was a
+       * bare WebPage while the page was empty. blogPost is composed from the
+       * same POSTS the page renders, so the markup cannot claim a post the
+       * index does not list. */
       {
-        '@type': 'WebPage',
+        '@type': 'Blog',
         '@id': `${SITE_ORIGIN}/blog#webpage`,
         url: `${SITE_ORIGIN}/blog`,
         name: TITLE,
@@ -232,6 +231,7 @@ const PAGES = [
         inLanguage: 'en',
         isPartOf: { '@id': SITE },
         publisher: { '@id': ORG },
+        blogPost: POSTS.map((post) => ({ '@id': `${SITE_ORIGIN}/blog/${post.slug}#post` })),
       },
       {
         '@type': 'BreadcrumbList',
@@ -243,6 +243,47 @@ const PAGES = [
       },
     ],
   },
+  ...POSTS.map((post) => ({
+    name: `blog/${post.slug}`,
+    component: PostPage,
+    file: `blog/${post.slug}.html`,
+    /* The post body alone is about 4,400 characters. Same reasoning as /faq:
+     * high enough to catch an empty root, low enough that a copy edit does
+     * not fail the build. */
+    floor: 6000,
+    graph: ({ TITLE, DESCRIPTION }) => [
+      {
+        '@type': 'BlogPosting',
+        '@id': `${SITE_ORIGIN}/blog/${post.slug}#post`,
+        url: `${SITE_ORIGIN}/blog/${post.slug}`,
+        /* The headline, not the document title. TITLE carries the site name
+         * after a middot, which belongs in a browser tab and not in a
+         * BlogPosting. */
+        headline: post.title,
+        name: TITLE,
+        description: DESCRIPTION,
+        datePublished: post.date,
+        dateModified: post.date,
+        inLanguage: 'en',
+        wordCount: post.body.reduce((n, b) => n + b.text.split(/\s+/).length, 0),
+        /* A Person, and the only one on the domain. The footer already names
+         * him on every page, so this claims nothing new. */
+        author: { '@type': 'Person', name: post.author },
+        publisher: { '@id': ORG },
+        isPartOf: { '@id': `${SITE_ORIGIN}/blog#webpage` },
+        mainEntityOfPage: { '@id': `${SITE_ORIGIN}/blog/${post.slug}#webpage` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${SITE_ORIGIN}/blog/${post.slug}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: "Norm's Newsletter", item: `${SITE_ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_ORIGIN}/blog` },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_ORIGIN}/blog/${post.slug}` },
+        ],
+      },
+    ],
+  })),
 ]
 
 const rendered = PAGES.map((page) => ({ name: page.name, ...render(page) }))
@@ -271,12 +312,14 @@ Sitemap: ${SITE_ORIGIN}/sitemap.xml
  * changes as the product does; the answers change when somebody asks something
  * new, and the blog when somebody writes something.
  *
- * This list is separate from PAGES on purpose, because not every page has to
- * be advertised. It also means a new page needs a line in both. */
+ * A post is yearly: it is dated, and it says what it said. This list is
+ * separate from PAGES on purpose, because not every page has to be
+ * advertised. It also means a new page needs a line in both. */
 const SITEMAP = [
   { loc: `${SITE_ORIGIN}/`, changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/faq`, changefreq: 'monthly' },
   { loc: `${SITE_ORIGIN}/blog`, changefreq: 'monthly' },
+  ...POSTS.map((post) => ({ loc: `${SITE_ORIGIN}/blog/${post.slug}`, changefreq: 'yearly' })),
 ]
 
 writeFileSync(
@@ -352,7 +395,8 @@ ${FAQ_ITEMS.map(({ q, a }) => `### ${q}\n\n${a}`).join('\n\n')}
 
 - [Norm's Newsletter](${SITE_ORIGIN}/): this page. Product overview and the waiting list signup.
 - [Frequently asked questions](${SITE_ORIGIN}/faq): the questions above, on their own page.
-- [Blog](${SITE_ORIGIN}/blog): notes on building it. Nothing published yet.
+- [Blog](${SITE_ORIGIN}/blog): notes on building it.
+${POSTS.map((p) => `  - [${p.title}](${SITE_ORIGIN}/blog/${p.slug}), ${p.dateLabel}. ${p.dek}`).join('\n')}
 - Contact: ${CONTACT}
 
 Generated from the page's own copy at build time, ${today}.

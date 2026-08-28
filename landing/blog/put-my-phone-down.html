@@ -3,50 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog &middot; Norm&rsquo;s Newsletter</title>
+    <title>I built a newsletter so I could put my phone down &middot; Norm&rsquo;s Newsletter</title>
     <meta
       name="description"
-      content="Notes on building Norm's Newsletter: what we are making, what we got wrong, and why the news reads the way it does."
+      content="I wanted to log off without falling behind. It turned out the thing standing in the way was not my attention span, it was the shape of the news itself."
     />
-    <link rel="canonical" href="https://norm.news/blog" />
+    <link rel="canonical" href="https://norm.news/blog/put-my-phone-down" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <!-- The morning paper. This page carries no delivery dial, so like /faq
-         the value here is the palette the visitor actually gets. -->
+         and /blog the value here is the palette the visitor actually gets. -->
     <meta name="theme-color" content="#f6f4ee" />
 
-    <!-- Absolute URLs, because Open Graph requires them. This is the third
-         page whose head names the domain, for the same reason index.html and
-         faq.html do. Every *generated* self URL still comes from SITE_ORIGIN
-         in scripts/prerender.mjs. See README.md. -->
+    <!-- Absolute URLs, because Open Graph requires them. This is the fourth
+         page whose head names the domain, for the same reason the other three
+         do. Every *generated* self URL still comes from SITE_ORIGIN in
+         scripts/prerender.mjs. See README.md. -->
     <meta property="og:site_name" content="Norm's Newsletter" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Blog · Norm's Newsletter" />
+    <!-- article, not website. This is the first page on the domain that is a
+         piece of writing rather than a description of the product. -->
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-08-28" />
+    <meta property="article:author" content="Aryan Zodge" />
+    <meta property="og:title" content="I built a newsletter so I could put my phone down" />
     <meta
       property="og:description"
-      content="Notes on building Norm's Newsletter: what we are making, what we got wrong, and why the news reads the way it does."
+      content="I wanted to log off without falling behind. It turned out the thing standing in the way was not my attention span, it was the shape of the news itself."
     />
-    <meta property="og:url" content="https://norm.news/blog" />
+    <meta property="og:url" content="https://norm.news/blog/put-my-phone-down" />
     <!-- Shares the front page's card. Bump ?v= with public/og.png, in all
-         three files together: the scrapers key their copy on the URL. -->
+         four files together: the scrapers key their copy on the URL. -->
     <meta property="og:image" content="https://norm.news/og.png?v=2" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blog · Norm's Newsletter" />
+    <meta name="twitter:title" content="I built a newsletter so I could put my phone down" />
     <meta
       name="twitter:description"
-      content="Notes on building Norm's Newsletter: what we are making, what we got wrong, and why the news reads the way it does."
+      content="I wanted to log off without falling behind. It turned out the thing standing in the way was not my attention span, it was the shape of the news itself."
     />
     <meta name="twitter:image" content="https://norm.news/og.png?v=2" />
     <meta name="twitter:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
 
-    <!-- Same reveal defeat as the other two pages: every element starts at
+    <!-- Same reveal defeat as the other three pages: every element starts at
          opacity 0 and is revealed by script, so without this a visitor with
          JavaScript off receives a complete document and sees a blank screen.
+         It matters most here, on the one page whose whole purpose is text.
 
          The nav rule is the header's. The hamburger is the one control here
          that does nothing without JavaScript, so it is hidden and the real
@@ -72,6 +77,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main-blog.jsx"></script>
+    <script type="module" src="/src/main-post.jsx"></script>
   </body>
 </html>

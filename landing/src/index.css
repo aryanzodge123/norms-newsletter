@@ -1695,6 +1695,138 @@ input[type='range'].dial:active::-webkit-slider-thumb {
   outline-offset: 3px;
 }
 
+/* ---- the blog -----------------------------------------------------------
+   Two shapes: the index at /blog, and one post document per entry.
+
+   Everything a Tailwind arbitrary value says well is said in the JSX, the way
+   the rest of this app does it. What lands here is the running text, because a
+   post is fifteen paragraphs and repeating the same four utilities on each one
+   is how a paragraph ends up with three of them and not the fourth. */
+
+/* Layout does the spacing. A flex column with one gap cannot double a margin
+   against its neighbour, and there is no collapse to reason about. */
+.post-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.55em;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+@media (max-width: 640px) {
+  .post-body {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+}
+
+/* One line in the post gets the reader's eye lifted off the column, and it is
+   the one where the thing stopped being his alone. Hairlines above and below
+   rather than a coloured bar down the side: this is a ledger, and a rule is
+   how a ledger separates one thing from the next.
+
+   The margin is on top of the column gap on purpose. Held to the gap alone,
+   the rules read as another paragraph boundary instead of a pause. */
+.post-pull {
+  font-family: var(--font-display);
+  font-size: clamp(21px, 2.6vw, 26px);
+  line-height: 1.34;
+  color: var(--ink);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 28px;
+  margin-block: 0.35em;
+  text-wrap: pretty;
+}
+
+/* The last two lines. Serif, because they are the writer speaking rather than
+   the piece explaining, which is the same rule DESIGN.md section 2 gives the
+   site: the display face carries the human voice. */
+.post-close {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* A browser default belongs to no design system, and a page somebody reads is
+   the page where they will drag across a sentence. Scoped to the article, so
+   nothing on the front page changes underneath the signup form. */
+.post-article ::selection {
+  background: color-mix(in oklab, var(--oxide) 22%, transparent);
+  color: var(--ink);
+}
+
+/* ---- the index ----------------------------------------------------------
+   Story cards, the shape DESIGN.md section 4 gives StoryCard on the site:
+   title, one line of summary, then a meta row with the machine's numbers on
+   the left and the way in on the right. Square corners, because the ledger is
+   square (DESIGN.md 3.3), and --paper-raised on --paper, which is the only
+   boxed surface this design has. */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.post-card {
+  display: block;
+  text-decoration: none;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  padding: clamp(22px, 2.4vw, 32px);
+  /* Its own transition list, which replaces the 900ms one `.tod *` hands
+     every element. That rule exists so the whole page can re-light with the
+     delivery dial, and a hover riding a 900ms colour change arrives long
+     after the pointer did. There is no dial on this page, so nothing is lost
+     by opting out, and the numbers here are .ns-row's. */
+  transition:
+    transform 200ms cubic-bezier(0.2, 0.8, 0.25, 1),
+    box-shadow 200ms ease,
+    background 200ms ease;
+  box-shadow: 0 1px 0 rgb(35 35 31 / 0.03);
+}
+
+/* One gesture, three parts: the card lifts off the paper, the shadow it casts
+   deepens under it, and the chevron steps toward the edge it points at. */
+.post-card:hover,
+.post-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgb(35 35 31 / 0.03),
+    0 16px 32px -18px rgb(35 35 31 / 0.42);
+}
+.post-card:hover .post-card-go,
+.post-card:focus-visible .post-card-go {
+  text-decoration-color: currentColor;
+}
+.post-card:hover .post-card-go svg,
+.post-card:focus-visible .post-card-go svg {
+  transform: translateX(4px);
+}
+
+/* The underline lands on the way in rather than on the headline. Two lines of
+   34px serif carrying a rule underneath is a lot of ink for a hover, and the
+   card is the link, so the affordance belongs where the affordance is. Only
+   the underline answers, for the reason .footer-link gives: text-decoration
+   colour is not in the palette transition, so it arrives immediately. */
+
+.post-card-go {
+  color: var(--oxide);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: transparent;
+}
+.post-card-go svg {
+  transition: transform 200ms cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

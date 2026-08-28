@@ -19,6 +19,10 @@ export { BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } from './App.j
 export { default as FaqPage } from './FaqPage.jsx'
 export { FAQ_ITEMS } from './faq-content.js'
 
-/* The third page. It has no copy constants of its own: there are no posts
-   yet, so there is nothing for llms.txt or the structured data to compose. */
+/* The third and fourth pages, and their copy. POSTS feeds four things at
+   build time: the /blog index, the post document, the Blog and BlogPosting
+   JSON-LD, and the Links block in llms.txt, for the same reason FAQ_ITEMS is
+   exported rather than read from a copy. */
 export { default as BlogPage } from './BlogPage.jsx'
+export { default as PostPage } from './PostPage.jsx'
+export { POSTS } from './blog-content.js'
