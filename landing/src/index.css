@@ -211,13 +211,39 @@ body {
   color: var(--ink);
   text-decoration: none;
   white-space: nowrap;
+  /* The mug and the word are one mark, set the way the drawing sets them.
+     Baseline, not centre: the cup stands on the line the letters stand on and
+     the steam rises past the cap, which is what makes it a mug beside a word
+     rather than an icon in a button. A flex item with no text of its own
+     takes its bottom edge as its baseline, and MugMark's viewBox ends at the
+     bottom of the cup, so the two line up with nothing to nudge.
+
+     The two measurements are the drawing's, taken off it and divided by its
+     cap height so they hold at any font size: the ink is 1.71 cap heights
+     tall and stands 0.64 of one away from the N. Newsreader's cap is 0.676em,
+     and the em values here and on .wordmark-mug were then trued against a
+     screenshot of the rendered bar, because the box is a little larger than
+     the ink inside it. */
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.37em;
   /* No transition of its own. The hover here is a text-decoration, so the
      only thing a local rule would govern is the palette, and `.tod *` already
      carries that at the page's 900ms. Declaring 200ms made the wordmark
      finish its colour change while the page was still a third of the way
      through its own. */
 }
-.site-wordmark:hover {
+.wordmark-mug {
+  height: 1.2em;
+  width: 0.91em;
+  display: block;
+  flex: none;
+}
+
+/* The rule is on the word rather than the link now. On a flex container the
+   underline runs the width of the box, mug included, and a line under the
+   cup reads as a mistake rather than a hover. */
+.site-wordmark:hover .site-wordmark-word {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;

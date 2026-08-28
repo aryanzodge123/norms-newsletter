@@ -50,6 +50,43 @@ export function Reveal({ children, delay = 0, className = '', as: Tag = 'div' })
 
 /* ----------------------------------------------------------------- header */
 
+/* The mark beside the wordmark, and it is the favicon's drawing rather than
+   the animated `Mug` further down this file. Same three steam curls, same
+   handle, same body as public/favicon.svg, with currentColor in place of the
+   hard-coded ink so the glyph follows the palette and rides the bar's
+   entrance with the letters. DESIGN.md section 10 wants one mug across both
+   front ends, and the favicon is where that mug lives; `Mug` is the
+   prototype's own, with a gradient and three keyframe loops on it, and it
+   stays where the prototype's screens are.
+
+   Nothing here animates. The steam is drawn, not breathing.
+
+   The viewBox is cropped to the artwork rather than kept at the favicon's
+   0 0 128 128 square: 27 to 103 across, from the body's left edge to the far
+   side of the handle's 8px stroke, and 0 to 100 down, from the top of the
+   tallest curl to the bottom of the body. That makes the box the mark itself,
+   so a height in em sizes the mark, and the box's bottom edge is the bottom
+   of the cup, which is what the baseline alignment in the CSS hangs on. */
+function MugMark() {
+  return (
+    <svg viewBox="27 0 76 100" aria-hidden="true" className="wordmark-mug">
+      <g fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round">
+        <path d="M41,50 Q33,38 41,30 Q49,22 41,14" />
+        <path d="M58,50 Q50,36 58,26 Q66,14 58,4" />
+        <path d="M75,50 Q67,38 75,30 Q83,22 75,14" />
+      </g>
+      <path
+        d="M84,68 C102,68 102,90 84,90"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="8"
+        strokeLinecap="round"
+      />
+      <rect x="28" y="58" width="56" height="42" rx="6" ry="6" fill="currentColor" />
+    </svg>
+  )
+}
+
 /* The one way to reach the signup section, so the hero CTA and the header
    button cannot drift apart. Split from the click handler because the mobile
    sheet has to close before it scrolls: the body is overflow: hidden while
@@ -222,9 +259,15 @@ export function Header({ isHome = false }) {
     }
   }, [open])
 
+  /* The mug sits inside the link rather than beside it, so the glyph carries
+     whatever the word carries: one target, one hover, one entrance, and a
+     click on the mug goes home like a click on the letters. The svg is
+     aria-hidden, so the accessible name is still "Norm" rather than the mark
+     read out twice. */
   const wordmark = (
     <a href="/" className="site-wordmark display">
-      Norm
+      <MugMark />
+      <span className="site-wordmark-word">Norm</span>
     </a>
   )
 

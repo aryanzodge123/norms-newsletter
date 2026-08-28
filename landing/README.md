@@ -77,6 +77,34 @@ both pulling into a column with a quarter of the screen empty either side. The
 cap is there for a very wide monitor, where an unbounded bar puts its two ends
 too far apart to read as one object.
 
+**The wordmark is the mug and the word together.** The glyph is
+`public/favicon.svg`'s drawing, not the animated `Mug` the Norm section uses:
+the same three steam curls, handle and body, with `currentColor` in place of
+the hard-coded ink so it follows the palette and rides the bar's entrance with
+the letters. DESIGN.md section 10 wants one mug across both front ends, and
+the favicon is where that mug lives. Nothing about it moves. The steam is
+drawn, not breathing.
+
+It sits inside the `/` link rather than beside it: one target, one hover, one
+entrance, and a click on the cup goes home like a click on the letters. The
+svg is `aria-hidden`, so the link's accessible name is still "Norm" rather
+than the mark read out twice. The hover underline moved off the link and onto
+the word, because on a flex container the line runs the width of the box and a
+rule under the cup reads as a mistake rather than as a hover.
+
+**Its size and place come off a drawing of the mark**, measured and divided by
+the cap height so they hold at any font size: the ink is 1.71 cap heights tall
+and stands 0.64 of one clear of the N, with the bottom of the cup on the
+baseline the letters stand on. Newsreader's cap is 0.676em, which is where
+`height: 1.2em` and `gap: 0.37em` come from, trued against a screenshot of the
+rendered bar because the svg's box is a little larger than the ink in it. The
+alignment is `align-items: baseline` and nothing else: a flex item with no text
+of its own takes its bottom edge as its baseline, and `MugMark`'s viewBox is
+cropped to end at the bottom of the cup, so the two meet with nothing to nudge.
+
+Both copies of the wordmark get it, the bar's and the phone sheet's, and so do
+`/faq` and `/blog`, which draw the same `Header`.
+
 **The bar has its own gutter above 900px, and it is the only rule that
 overrides `.pad-x`.** `clamp(2.5rem, 6vw, 7rem)` there, against the page's
 `clamp(1.25rem, 4vw, 2.5rem)` everywhere else: 54px of margin at 900, 98px at
