@@ -111,6 +111,22 @@ body {
   transition: background-color 900ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* 15px at a reading distance of an arm is not 15px at the distance a phone is
+   held, and the mono microcopy at 11px with 0.14em of tracking is the page's
+   own voice rather than the app's, so it takes the step too. One query rather
+   than a clamp because both are a step: the sizes are right either side of it
+   and there is no ramp between them worth drawing.
+
+   The .ns-* and .norm-* families are deliberately not here. They are the app's
+   own chrome, ported pixel for pixel from the prototype, and a replica drawn
+   larger than the screen it copies is a replica that lies. */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
 /* Everything that carries a themed colour transitions at the same rate, so a
    palette change reads as the light changing rather than a repaint. */
 .tod,
@@ -124,6 +140,24 @@ body {
 /* Fluid gutter: grows with the viewport instead of stepping at a breakpoint. */
 .pad-x {
   padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* The horizontal gutter has always been fluid. The vertical one was not, so a
+   phone carried the same 160px of paper between every two sections that a 27
+   inch display does, and the page ran 40 percent longer on the smaller screen.
+   9vw reaches the 80px ceiling at 889px, inside the hero's own wrap point, so
+   nothing above the wrap moves and only a narrow window ever sees the floor.
+   Three steps because the page has three: the ordinary section, the single
+   line of Reinforce, and the signup, which is the one thing that should still
+   sit apart from what is above it. */
+.pad-y {
+  padding-block: clamp(52px, 9vw, 80px);
+}
+.pad-y-sm {
+  padding-block: clamp(44px, 7.5vw, 64px);
+}
+.pad-y-lg {
+  padding-block: clamp(64px, 11vw, 96px);
 }
 
 /* ---- primitives --------------------------------------------------------- */
@@ -147,6 +181,16 @@ body {
   color: var(--oxide);
 }
 
+/* The step the body rule above takes, for the page's own microcopy. It sits
+   here rather than up there with the body because a media query adds no
+   specificity: at 0,1,0 either way, the .eyebrow further up the file loses to
+   this one further down, whatever the window is. */
+@media (max-width: 640px) {
+  .eyebrow {
+    font-size: 12px;
+  }
+}
+
 /* The only text link on the page. Everything else that navigates is a button,
    so this carries its own rule rather than inheriting one. Colour is left to
    the `.tod *` palette transition and only the underline answers the hover,
@@ -160,6 +204,26 @@ body {
 }
 .footer-link:hover {
   text-decoration-color: var(--oxide);
+}
+
+/* Text height and nothing more was the whole target. The padding is on an
+   inline box, so it grows the reach without taking a single pixel of flow.
+   8px rather than the 14 that would reach 44: the credit line and the FAQ line
+   are 16px apart, and 14 either side would have the two links overlapping,
+   with a tap in the overlap landing on whichever came last in the DOM. Two
+   targets fighting is worse than one that is short. */
+@media (max-width: 640px) {
+  .footer-link {
+    padding-block: 8px;
+  }
+  /* Except this one, which stands alone under the accordion and has the room
+     to take the whole 44. The negative margin is exactly the padding, so the
+     line box it sits in is the height it always was. */
+  .footer-link-lone {
+    display: inline-block;
+    padding-block: 13px;
+    margin-block: -13px;
+  }
 }
 
 /* The masthead wordmark, on any page that is not the front page. No underline
@@ -303,10 +367,18 @@ body {
   white-space: nowrap;
 }
 
+/* 48x44 around a 24x16 glyph, all of the growth padding. This is the only way
+   into the navigation on a phone and it was a 40x32 box, under the mark on the
+   axis that matters most for a thumb.
+
+   Nothing moves. The bar is a fixed --header-h with its items centred, so the
+   vertical growth is absorbed by height the row already had, and the negative
+   right margin is the new padding exactly, so the glyph still sits flush with
+   the gutter the way the wordmark does at the other end. */
 .nav-toggle {
   color: var(--ink);
-  padding: 8px;
-  margin-right: -8px;
+  padding: 14px 12px;
+  margin-right: -12px;
   display: inline-flex;
   align-items: center;
 }
@@ -795,9 +867,18 @@ main section[id] {
    more height than the narrowing saved. So it keeps a readable measure and is
    centred on the figure rather than fitted inside it. */
 .phone-slides-figure figcaption {
-  width: 19rem;
-  max-width: 88vw;
-  margin-left: calc(50% - 9.5rem);
+  /* The offset used to be calc(50% - 9.5rem), which is half of the 19rem and
+     not half of the 88vw that actually applies once the window is under about
+     345px. Below that the caption was measurably off centre on the narrowest
+     phones. The min() below is the width actually in force and the one beside
+     it is half of the same thing, so the two agree at every size.
+
+     Not margin-inline: auto. The caption is deliberately wider than the phone
+     on a tall display, and an auto margin on a box wider than its parent
+     resolves to zero and left-aligns it. This has to centre in both
+     directions, so it is an explicit half-width offset. */
+  width: min(19rem, 88vw);
+  margin-inline: calc(50% - min(9.5rem, 44vw));
 }
 
 /* ---- the hero slideshow's controls -------------------------------------
@@ -872,14 +953,20 @@ main section[id] {
 .phone-slides-dots {
   display: flex;
   justify-content: center;
+  /* The row grew 22px taller when the buttons did, 11px above the dots and
+     11px below, so both margins hand their half back. The visible gap over the
+     dots is the 18px it always was and the caption under them has not moved. */
   gap: 4px;
-  margin-top: 18px;
+  margin-top: 7px;
+  margin-bottom: -11px;
 }
-/* The button is 22x22 so a thumb can hit it. The dot inside is 7px, which is
-   what the eye is given to read the position from. */
+/* The button is 30x44 so a thumb can hit it, which is the same target the app's
+   own controls use. The dot inside is 7px, which is what the eye is given to
+   read the position from. Six at 30px with 4px between them is 200px, well
+   inside the 324px the figure caps at. */
 .phone-slides-dot {
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 44px;
   padding: 0;
   border: 0;
   background: none;
@@ -1271,6 +1358,16 @@ main section[id] {
   animation: norm-breathe 1.55s ease-in-out infinite -0.95s;
 }
 
+/* The signup section's mug is the one copy of the mark drawn at a size the
+   window can run out of. 260px is right beside a 30rem column of copy and is a
+   third of a phone screen of pure decoration directly above the footer, so it
+   rides the width down. The ratio is the viewBox's, the same one the component
+   computes from its prop, kept here so the mug never distorts. */
+.build-mug {
+  --mug-h: clamp(150px, 34vw, 260px);
+  --mug-w: calc(var(--mug-h) * 24 / 26);
+}
+
 /* ---- the conversation ---------------------------------------------------- */
 
 .norm-stage {
@@ -1374,6 +1471,19 @@ main section[id] {
 
 /* ---- the press (sticky assembly) ---------------------------------------- */
 
+/* The scroll runway the four stages are spread across. It was inline on the
+   section and so could not take a width, which on a phone meant 3.4 screens of
+   scrolling during which one number and four bars change: the page reads as
+   stuck rather than as deliberate. 230vh gives each stage about 57vh, which is
+   still a scroll rather than a jump, and takes 800px off the page.
+
+   ThePress reads `r.height - innerHeight` on every scroll event and derives the
+   stage from it, so the four states redistribute across the shorter runway on
+   their own. Nothing in the component knows this number. */
+.press-runway {
+  height: 340vh;
+}
+
 .press-stage {
   position: sticky;
   /* 12vh is the composition this section was drawn to, but on a short window
@@ -1426,6 +1536,9 @@ main section[id] {
   .press-floor {
     height: 150px;
     margin-top: 32px;
+  }
+  .press-runway {
+    height: 230vh;
   }
 }
 
@@ -1523,11 +1636,27 @@ main section[id] {
   pointer-events: none;
 }
 
+/* 44px of hit area around a 2px track. The band was 22px with a 13x17px thumb
+   in it, which on a desktop is a precise little control and on a phone is the
+   most tactile thing on the page asking for a pixel-accurate grab.
+
+   Nothing visible moves. The runnable track centres itself in whatever height
+   the input has and the thumb's margin-top is measured from that centre, so
+   the 22px of new height is 11px above the track and 11px below it, and the
+   negative margin hands both back to the layout. The mt-8 above the dial and
+   the mt-1.5 under it are still the gaps they were drawn as. */
 input[type='range'].dial {
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
-  height: 22px;
+  height: 44px;
+  /* The gap above lives here rather than as an mt-8 in the markup, because a
+     rule this specific would override that utility rather than add to it, and
+     one owner for the height and the gap together is the only way the sum
+     stays right. 32px of gap less the 11px of new band above the track, and
+     the 11px below it handed back so the 5am/12pm/10pm row does not move. */
+  margin-top: 21px;
+  margin-bottom: -11px;
   width: 100%;
   cursor: grab;
 }
