@@ -239,6 +239,24 @@ body {
   display: block;
   flex: none;
 }
+/* The wordmark is one mark, the glyph and the letters, and it has to change
+   colour as one. Both are children of the link now, every path in the mug
+   takes currentColor from the svg above it, and `.tod *` gives every element
+   on the page a 900ms colour transition of its own. So each of them was
+   easing towards its parent's colour on its own clock while the parent was
+   already moving: the bar's 700ms entrance walked the link out of the paper
+   and the cup, the handle, the steam and the letters each arrived after it,
+   at slightly different times.
+
+   With no transition of their own they track the link exactly, whatever the
+   link is doing: the entrance animation on the way in, and the delivery
+   dial's 900ms after that. The transition that matters is the one on the
+   link, and there is now only one. */
+.site-wordmark .wordmark-mug,
+.site-wordmark .wordmark-mug *,
+.site-wordmark .site-wordmark-word {
+  transition: none;
+}
 
 /* The rule is on the word rather than the link now. On a flex container the
    underline runs the width of the box, mug included, and a line under the
@@ -327,6 +345,9 @@ body {
   }
 }
 
+/* The link, not its two children. They carry no colour transition of their
+   own (the rule over .wordmark-mug says why), so they take the colour this
+   animation puts on the link, frame for frame. */
 .site-header-row .site-wordmark,
 .site-header-row .nav-link,
 .site-header-row .nav-toggle {

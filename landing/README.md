@@ -102,6 +102,19 @@ alignment is `align-items: baseline` and nothing else: a flex item with no text
 of its own takes its bottom edge as its baseline, and `MugMark`'s viewBox is
 cropped to end at the bottom of the cup, so the two meet with nothing to nudge.
 
+**It changes colour as one mark, and that took a rule.** The glyph and the
+letters are both children of the link now, every path in the mug takes
+`currentColor` from the svg above it, and `.tod *` gives every element on the
+page a 900ms colour transition of its own. So each of them was easing towards
+its parent's colour on its own clock while the parent was already moving: the
+bar's 700ms entrance walked the link up out of the paper and the cup, the
+handle, the steam and the letters each arrived after it, at slightly different
+times. It was visible on a cold load as a mug turning up late to its own word.
+`transition: none` on the link's descendants fixes it: with no clock of their
+own they track the link exactly, frame for frame, through the entrance and
+through the delivery dial afterwards. The only colour transition left in the
+wordmark is the one on the link.
+
 Both copies of the wordmark get it, the bar's and the phone sheet's, and so do
 `/faq` and `/blog`, which draw the same `Header`.
 
