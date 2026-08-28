@@ -21,9 +21,9 @@ coverage:
   section. This used to read "not wired to any deploy", which was part of why an
   unspecified page was acceptable. That defence is gone; the page is public.
   `astro.config` is still untouched and the Astro site still publishes to GitHub
-  Pages, so rule 6 is unaffected. Four files name the domain and no others:
-  `index.html` and `faq.html`, whose Open Graph tags and canonical links have to
-  be absolute, `wrangler.toml`, which holds the origin the confirmation email
+  Pages, so rule 6 is unaffected. Five files name the domain and no others:
+  `index.html`, `faq.html` and `blog.html`, whose Open Graph tags and canonical
+  links have to be absolute, `wrangler.toml`, which holds the origin the confirmation email
   loads the mug from, and `scripts/prerender.mjs`, which holds the `SITE_ORIGIN`
   that robots.txt, sitemap.xml, llms.txt and every JSON-LD graph derive from.
   A page's own `.html` names the domain because the format demands it; anything
@@ -51,6 +51,7 @@ Two sections are ports of real prototype screens rather than new design:
 | --- | --- |
 | Topics | `prototypes/App Interface.dc.html`, More → Topics. Data tables (`NS_TOPICS`, `NS_BANDS`, `NS_INKS`, `NS_LEN`), copy and pixel values are the prototype's |
 | Norm | `prototypes/App Interface.dc.html`, the chat. Mug SVG, steam keyframes, `THINK` phrases and `EXCHANGES` are the prototype's |
+| Hero slideshow | `prototypes/App Interface.dc.html`, six screens captured from the running prototype. See **The hero slideshow** below |
 | Shared-link card | A supplied image, `public/og.png`, 1200x630: the mug and the Norm wordmark on `#ddd9cc`. Nothing generates it. It previously ported `site/public/og-default.svg` via `npm run og`, and that generator was removed so it cannot overwrite the real card |
 
 `public/favicon.svg` and `favicon.ico` are byte copies of the site's. The mug is
@@ -64,9 +65,151 @@ gone along with the card generator.
 Two deliberate divergences from the prototype in that ported copy, both
 required by CLAUDE.md rule 7: a section with nothing in it today reads `none`
 rather than the prototype's em dash, and the two ported sentences that carried
-an em dash are punctuated with a full stop instead.
+an em dash are punctuated with a full stop instead. The hero slideshow below
+carries the same divergence a third time, for the same reason.
 
-The hero video is a recording of the committed prototype, walked end to end.
+## The bar and the headline
+
+**The bar runs the full width of the window; everything under it holds
+1140px.** `.site-header-row` is capped at 1600px rather than 1140px, so the
+wordmark sits out at the left margin and the nav at the right one instead of
+both pulling into a column with a quarter of the screen empty either side. The
+cap is there for a very wide monitor, where an unbounded bar puts its two ends
+too far apart to read as one object.
+
+**The bar has its own gutter above 900px, and it is the only rule that
+overrides `.pad-x`.** `clamp(2.5rem, 6vw, 7rem)` there, against the page's
+`clamp(1.25rem, 4vw, 2.5rem)` everywhere else: 54px of margin at 900, 98px at
+1633, and past about 1720 the 1600px cap takes over and the margin is whatever
+is left over. The two ends of the bar are the only things on the page that
+ever reach the edge, and at the page's own 2.5rem they sat on it.
+
+The extra margin is a breakpoint rather than a wider clamp at every size, and
+that is the whole reason for the 900px. On a phone the wordmark in the bar
+sits directly over the copy below it, so a bar with a gutter of its own would
+put the two a few pixels out of line. Below 900 the bar takes the page's
+gutter exactly.
+
+**The hero holds the same 1140px column** it always did, top aligned under the
+bar, with the copy and the slideshow spaced as they were. The bar being wider
+than the content under it is deliberate.
+
+The one measurement that moved is the gap under the bar: `lg:pt-16` above
+1024px, 64px rather than 40px, so the eyebrow reads as the top of a page
+rather than as a line hanging off the bottom of the nav. It is a step at 1024
+rather than a fourth value on the ramp, because a smaller window is short as
+well as narrow and there the 40px is the right gap. The 24px comes out of the
+slack the phone figure already had: the caption still clears the fold at 1920
+by 1080, 1633 by 755, 1440 by 900, 1366 by 768, 1280 by 800, 1152 by 700 and
+1024 by 640.
+
+**The headline ceiling is 88px, up from 74px.** The slope is the same `5.6vw`,
+so nothing under 1320px changes; past that a large display gets a masthead
+rather than a headline that stopped growing while the window kept going. Both
+lines still hold without ragging at every size the clamp reaches, which is the
+constraint that decides the ceiling: the break is the point of the line.
+
+## The hero slideshow
+
+Six stills of the app, five seconds apart, each with one sentence under it.
+They replaced a looping video of the same prototype, which played one fixed
+walk that nobody could stop or steer and never said what was being shown. The
+video and its poster are deleted rather than left in `public/`, where they
+would have kept deploying with nothing referencing them.
+
+Four ways to move between them, and a rule about the timer.
+
+- **Swipe or drag** the phone. `touch-action: pan-y`, so a vertical swipe still
+  scrolls the page. `.ns-grip` further down records what happens when a
+  full-width region swallows the whole gesture instead.
+- **Dots** under the phone. Always visible, because they are also the only
+  thing that says how many screens there are and which one this is.
+- **Arrows** inset at the left and right edges, revealed when a pointer is over
+  the phone and hidden again when it leaves. Behind `@media (hover: hover)`, so
+  a touch device never carries two buttons it cannot reveal, and repeated on
+  `:focus-visible`, because a keyboard never hovers and would otherwise put a
+  focus ring on something invisible.
+- **Arrow keys**, once the slideshow has focus.
+
+The dots, the arrows, the keys and the timer all **wrap**. A drag does not: it
+is clamped with resistance at both ends. Direct manipulation is bounded so a
+thumb pushing against nothing feels the end of the track, and the indirect
+controls cycle.
+
+**Any of them stops the timer for good.** Not paused, stopped. Once a reader
+has chosen a screen, nothing should slide it out from under them mid-sentence.
+
+**The shading is a `box-shadow` on the carousel box, not on the images.** It
+was a `drop-shadow` filter on each `<img>` first, and that was a bug worth
+recording because it did not look like one: `.phone-slides` carries
+`overflow: hidden` and its box is exactly the image box, so the filter was
+clipped away in full and the hero had no shading at all, in any palette, while
+the declaration sat there in the DOM looking correct. `overflow` clips an
+element's descendants but never its own `box-shadow`, so moving the shadow onto
+the clipping box is the whole fix. The phone is a rounded rectangle, so a
+`box-shadow` on a matching `border-radius` is the exact silhouette and there is
+no rectangle for the shading to fall back into. The radius is `11.94cqw`, the
+prototype's 48px corner over its 402px device width, which also makes the clip
+agree with the image's own alpha corner to within a hundredth of a pixel.
+
+**The shadow is a palette token, `--phone-shadow`.** Four of the five papers are
+light and take black at 30 to 38 percent. Night paper is `#1a1a17`, where that
+is invisible, so it takes black at 60 percent with a shorter throw: on a
+near-black ground a wide soft shadow dissolves, and a tighter one reads as the
+phone sitting on the page. The 900ms transition is scoped to `.phone-slides`
+rather than added to the blanket `.tod *` rule, which carries only background,
+colour and border.
+
+**There is no attribution line under the caption.** It read
+`From the app · No. 074` and was removed. The record of which edition the
+stills are still belongs somewhere, and that somewhere is this file.
+
+**Its width comes from the height going spare, not from a fixed cap.** At a
+flat 324px the phone stood 704px tall, and with the dots and the caption under
+it the figure ran off the bottom of any laptop: the screen and the sentence
+describing it could not be on show at once. `.phone-slides-figure` derives the
+width from `100svh` instead, capped at 324px and floored at 210px, so it is
+324px on a tall display and about 250px on a 800px one. Only above 900px,
+which is where the hero is still two columns. The caption is deliberately
+wider than the phone and centred on it: held to the phone's width it wrapped
+to two lines on a short window, and those cost more height than the narrowing
+saved.
+
+| File | Screen | How it is reached in the prototype |
+| --- | --- | --- |
+| `app-today.webp` | Today | the default state |
+| `app-listen.webp` | Listen | the `Listen to today's brief` row on Today |
+| `app-story.webp` | Story | `Read the full story` on a **grounded** story. Most are not: an ungrounded one shows a `NOT WRITTEN UP` notice instead of the background, what happened and why it matters that the caption promises |
+| `app-archive.webp` | Archive | the Archive tab |
+| `app-topics.webp` | Topics | More, then Topics |
+| `app-norm.webp` | Norm | the round mug button, one question asked. **Leave `Past chats` closed**: decision #54 defers it |
+
+They are edition No. 074 and are regenerated from `prototypes/` when that
+export next changes. The procedure, because nothing in the build does it:
+
+1. Copy `prototypes/` somewhere scratch and edit **that copy only**, per the
+   divergences below. Serve it over HTTP; `file://` silently shows placeholder
+   data. `.claude/skills/render-prototype` is the rest of the procedure.
+2. The device is one element, 402x874 with a 48px radius. Scale it by 1.5 with
+   `transform` and pin it to the top left, then capture two viewport tiles and
+   stitch them. A screen shorter than 874px is why: the browser screenshot
+   comes back at CSS resolution, so the only way to more pixels is to make the
+   device occupy more of them.
+3. Crop each tile to the device's measured rect, stack to 603x1311, mask the
+   corners to transparency at radius 72, and encode WebP. Six files, about
+   300 KB against the video's 1.5 MB. The transparent corners are what let the
+   page show through them; the shading is separate and is described below.
+
+**Three divergences from the prototype, in the scratch copy only.** The
+committed `prototypes/` keeps the prototype's own strings.
+
+1. The Today screen's audio label reads `Norm reads it` rather than the
+   prototype's `Two hosts`. SPEC decision #44 supersedes the two-host format,
+   and a public page should not advertise one that is already replaced.
+2. Six sentences that carried an em dash are punctuated with a full stop.
+   CLAUDE.md rule 7, the same divergence already recorded above for the ported
+   copy. A screenshot is user-facing copy like any other.
+3. `Swipe down. Keeps playing` for the same reason, in the player sheet.
 
 ## The waiting list
 
@@ -186,6 +329,11 @@ what removed the block and could not have been.
   described the behavior have all been removed.
 - **There is deliberately no past-chats list.** Decision #54 defers it and #41
   forbids storing agent output. The prototype shows one; it is not adopted.
+- **The hero's archive caption says searchable, and so does the FAQ.**
+  "Every edition Norm has filed, kept and searchable" is slide four's sentence.
+  The prototype's Archive screen does carry a search box, but SPEC 14 specifies
+  no archive search, per the next entry. The claim is now in two places and the
+  two have to move together, the same way the hourly collector figure does.
 - **The FAQ says the archive stays searchable.** "Length changes the paper, not
   the archive. Everything Norm has ever filed stays searchable" is in the answer
   about changing topics and length. SPEC 14 specifies no archive search: 14.4
@@ -272,6 +420,6 @@ checks, looking after the list, and what to do when mail stops going out.
 1440, 900 and 390 side by side so responsive behavior can be checked in one
 view. `window.setW`, `setFrameScroll` and `scrollAll` are available on it.
 
-Note that Chrome suspends rendering in hidden tabs, so the hero video, the
+Note that Chrome suspends rendering in hidden tabs, so the hero slideshow, the
 scroll reveals and the composing floor will all appear stuck if the tab is not
 visible. That is the browser, not the page.

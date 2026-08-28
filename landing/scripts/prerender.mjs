@@ -7,10 +7,10 @@
  * receives the whole page. Before this step, dist/index.html held 3,166 bytes
  * and an empty root div, so everything except Google saw a blank document.
  *
- * There are two pages now, / and /faq, and each is a separate static document
- * rather than a route. The loop below is the only thing that knows that; the
- * contract and the reasoning are unchanged, and adding a third page is adding
- * a third entry to PAGES.
+ * There are three pages now, /, /faq and /blog, and each is a separate static
+ * document rather than a route. The loop below is the only thing that knows
+ * that; the contract and the reasoning are unchanged, and adding a fourth page
+ * is adding a fourth entry to PAGES, and a matching line in SITEMAP.
  *
  * Deterministic. No model call. Rendering is not something an AI touches.
  */
@@ -64,7 +64,7 @@ await build({
 })
 
 const mod = await import(pathToFileURL(join(TMP, 'entry-server.mjs')).href)
-const { App, FaqPage, FAQ_ITEMS, BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } = mod
+const { App, FaqPage, BlogPage, FAQ_ITEMS, BENEFITS, NS_TOPICS, NS_LEN, STOPS, STAGES, NORM_POINTS } = mod
 
 const decode = (s) =>
   s.replace(/&middot;/g, '·').replace(/&rsquo;/g, '’').replace(/&amp;/g, '&').trim()
@@ -209,6 +209,40 @@ const PAGES = [
       },
     ],
   },
+  {
+    name: 'blog',
+    component: BlogPage,
+    file: 'blog.html',
+    /* A heading, a paragraph and two links, plus the header and the footer.
+     * Low, because the page is genuinely short, and still an order of
+     * magnitude above the empty root this exists to catch. It goes up with
+     * the first post. */
+    floor: 2000,
+    graph: ({ TITLE, DESCRIPTION }) => [
+      /* A WebPage and nothing more. Decision #59 (proposed): structured data
+       * describes only what exists, and there is no Blog here yet, no
+       * blogPost and no author. Claiming a Blog with an empty blogPost list
+       * would be describing an intention. */
+      {
+        '@type': 'WebPage',
+        '@id': `${SITE_ORIGIN}/blog#webpage`,
+        url: `${SITE_ORIGIN}/blog`,
+        name: TITLE,
+        description: DESCRIPTION,
+        inLanguage: 'en',
+        isPartOf: { '@id': SITE },
+        publisher: { '@id': ORG },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${SITE_ORIGIN}/blog#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: "Norm's Newsletter", item: `${SITE_ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_ORIGIN}/blog` },
+        ],
+      },
+    ],
+  },
 ]
 
 const rendered = PAGES.map((page) => ({ name: page.name, ...render(page) }))
@@ -233,11 +267,16 @@ Sitemap: ${SITE_ORIGIN}/sitemap.xml
 `,
 )
 
-/* /faq is monthly against the front page's weekly. The front page changes as
- * the product does; the answers change when somebody asks something new. */
+/* /faq and /blog are monthly against the front page's weekly. The front page
+ * changes as the product does; the answers change when somebody asks something
+ * new, and the blog when somebody writes something.
+ *
+ * This list is separate from PAGES on purpose, because not every page has to
+ * be advertised. It also means a new page needs a line in both. */
 const SITEMAP = [
   { loc: `${SITE_ORIGIN}/`, changefreq: 'weekly' },
   { loc: `${SITE_ORIGIN}/faq`, changefreq: 'monthly' },
+  { loc: `${SITE_ORIGIN}/blog`, changefreq: 'monthly' },
 ]
 
 writeFileSync(
@@ -313,6 +352,7 @@ ${FAQ_ITEMS.map(({ q, a }) => `### ${q}\n\n${a}`).join('\n\n')}
 
 - [Norm's Newsletter](${SITE_ORIGIN}/): this page. Product overview and the waiting list signup.
 - [Frequently asked questions](${SITE_ORIGIN}/faq): the questions above, on their own page.
+- [Blog](${SITE_ORIGIN}/blog): notes on building it. Nothing published yet.
 - Contact: ${CONTACT}
 
 Generated from the page's own copy at build time, ${today}.

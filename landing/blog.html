@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog &middot; Norm&rsquo;s Newsletter</title>
+    <meta
+      name="description"
+      content="Notes on building Norm's Newsletter: what we are making, what we got wrong, and why the news reads the way it does. No posts yet."
+    />
+    <link rel="canonical" href="https://norm.news/blog" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- The morning paper. This page carries no delivery dial, so like /faq
+         the value here is the palette the visitor actually gets. -->
+    <meta name="theme-color" content="#f6f4ee" />
+
+    <!-- Absolute URLs, because Open Graph requires them. This is the third
+         page whose head names the domain, for the same reason index.html and
+         faq.html do. Every *generated* self URL still comes from SITE_ORIGIN
+         in scripts/prerender.mjs. See README.md. -->
+    <meta property="og:site_name" content="Norm's Newsletter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog · Norm's Newsletter" />
+    <meta
+      property="og:description"
+      content="Notes on building Norm's Newsletter: what we are making, what we got wrong, and why the news reads the way it does. No posts yet."
+    />
+    <meta property="og:url" content="https://norm.news/blog" />
+    <!-- Shares the front page's card. Bump ?v= with public/og.png, in all
+         three files together: the scrapers key their copy on the URL. -->
+    <meta property="og:image" content="https://norm.news/og.png?v=2" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog · Norm's Newsletter" />
+    <meta
+      name="twitter:description"
+      content="Notes on building Norm's Newsletter: what we are making, what we got wrong, and why the news reads the way it does. No posts yet."
+    />
+    <meta name="twitter:image" content="https://norm.news/og.png?v=2" />
+    <meta name="twitter:image:alt" content="Norm's Newsletter: a steaming mug beside the word Norm." />
+
+    <!-- Same reveal defeat as the other two pages: every element starts at
+         opacity 0 and is revealed by script, so without this a visitor with
+         JavaScript off receives a complete document and sees a blank screen.
+
+         The nav rule is the header's. The hamburger is the one control here
+         that does nothing without JavaScript, so it is hidden and the real
+         links are shown in its place. -->
+    <noscript>
+      <style>
+        .impress,
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+        }
+        .nav-toggle {
+          display: none !important;
+        }
+        .site-nav {
+          display: flex !important;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main-blog.jsx"></script>
+  </body>
+</html>

@@ -343,7 +343,7 @@ the failure modes differ and it is worth knowing which cliff you would fall off.
 | **Form submissions** | 100,000 / day, resets midnight UTC | Cloudflare error 1027, the form stops working |
 | **Resend** | 100 / day, 3,000 / month, 1 domain | Sends are refused, `emailed_at` stays empty, signups still recorded |
 | **Database size** | 500 MB | Not reachable. An email address is ~40 bytes. |
-| **Files in a deploy** | 20,000 files, 25 MiB each | The hero video is the largest file at under 1 MB |
+| **Files in a deploy** | 20,000 files, 25 MiB each | Nothing is close. The largest are the six hero stills at about 300 KB together, which replaced a 1.5 MB video |
 
 The realistic risk is **Resend's 100 a day**, and only from abuse rather than
 success. Two protections already exist and are worth understanding because they

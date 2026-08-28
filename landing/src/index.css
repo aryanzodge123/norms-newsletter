@@ -27,6 +27,13 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
+/* The height of the sticky bar. A measurement rather than a colour, so it sits
+   here and not in the palettes below: it is the same at every time of day.
+   Two other rules depend on it, and both are about not being covered by it. */
+:root {
+  --header-h: 64px;
+}
+
 /* ---- time-of-day palettes ----------------------------------------------
    'morning' is the prototype's canonical palette, verbatim. The other four
    are that palette carried through the day, and 'night' is the prototype's
@@ -35,6 +42,7 @@
 :root,
 [data-tod='morning'] {
   --paper: #f6f4ee;
+  --phone-shadow: 0 30px 55px rgb(0 0 0 / 0.32);
   --paper-raised: #fbfaf6;
   --ink: #23231f;
   --ink-soft: #44433c;
@@ -46,6 +54,7 @@
 }
 [data-tod='dawn'] {
   --paper: #f7f0e8;
+  --phone-shadow: 0 30px 55px rgb(0 0 0 / 0.30);
   --paper-raised: #fdf8f1;
   --ink: #2a2520;
   --ink-soft: #4c453c;
@@ -56,6 +65,7 @@
 }
 [data-tod='day'] {
   --paper: #f3f4f0;
+  --phone-shadow: 0 30px 55px rgb(0 0 0 / 0.32);
   --paper-raised: #fafbf8;
   --ink: #1f2320;
   --ink-soft: #3e443f;
@@ -66,6 +76,7 @@
 }
 [data-tod='dusk'] {
   --paper: #efe7db;
+  --phone-shadow: 0 30px 55px rgb(0 0 0 / 0.38);
   --paper-raised: #f6efe5;
   --ink: #2b2620;
   --ink-soft: #4f463b;
@@ -76,6 +87,7 @@
 }
 [data-tod='night'] {
   --paper: #1a1a17;
+  --phone-shadow: 0 22px 38px rgb(0 0 0 / 0.60);
   --paper-raised: #232320;
   --ink: #ecebe3;
   --ink-soft: #c9c7bc;
@@ -153,15 +165,227 @@ body {
 /* The masthead wordmark, on any page that is not the front page. No underline
    at rest: a masthead is a masthead, not a link in a paragraph. Only the
    underline answers the hover, which is how .footer-link behaves too. */
-.masthead-link {
-  color: inherit;
-  text-decoration: none;
+/* ---- the header ----------------------------------------------------------
+   One bar on all three pages, locked to the top of the viewport.
+
+   Sticky rather than fixed, so it keeps its place in the flow and no page has
+   to reserve space under it. It renders inside the .tod wrapper every page
+   already has, which is what makes it follow the delivery dial: the 900ms
+   palette transition on `.tod *` carries the bar through a time-of-day change
+   with the rest of the page, and no rule here names a colour that is not a
+   token.
+
+   Nothing here animates on load. This is the one element on screen before the
+   page is read and after it, and an entrance made it read as content. */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  /* The page's own gutter up to 900px, and a wider one above it. The bar runs
+     the full width of the window while every section under it holds a 1140px
+     column, so its two ends are the only things on the page that ever reach
+     the edge, and at the page's 2.5rem they sat on it.
+
+     The extra margin is a desktop rule rather than a wider clamp on every
+     size, and that is the point of the breakpoint: on a phone the wordmark in
+     the bar sits directly over the copy below it, so a bar with a gutter of
+     its own would put the two a few pixels out of line. 900px is where the
+     hero stops being one column, which is the same place the phone slideshow
+     changes how it sizes itself. */
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
 }
-.masthead-link:hover {
+@media (min-width: 900px) {
+  .site-header {
+    padding-inline: clamp(2.5rem, 6vw, 7rem);
+  }
+}
+.site-header-row {
+  height: var(--header-h);
+}
+
+.site-wordmark {
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  /* No transition of its own. The hover here is a text-decoration, so the
+     only thing a local rule would govern is the palette, and `.tod *` already
+     carries that at the page's 900ms. Declaring 200ms made the wordmark
+     finish its colour change while the page was still a third of the way
+     through its own. */
+}
+.site-wordmark:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 6px;
   text-decoration-color: var(--oxide);
+}
+
+/* Hidden below the breakpoint, where the sheet carries the same links. The
+   noscript block in each page's .html turns this back on and hides the
+   toggle, because a hamburger is the one control here that does nothing
+   without JavaScript. */
+.site-nav {
+  display: none;
+  align-items: center;
+  gap: 2px;
+}
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition:
+    color 900ms ease,
+    background-color 200ms ease;
+}
+.nav-link:hover {
+  color: var(--ink);
+  background: var(--rule-faint);
+}
+.nav-cta {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 9px 20px;
+  margin-left: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-toggle {
+  color: var(--ink);
+  padding: 8px;
+  margin-right: -8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---- the header's arrival ------------------------------------------------
+   Colour only. The bar does not move, blur or slide: its background is already
+   the page's paper at first paint, so what arrives is the ink on it, coming up
+   out of the paper while the hero settles beside it.
+
+   An animation rather than a transition, deliberately. Transitions on these
+   elements belong to the palette (the 900ms dial crossing above), and an
+   animation runs once on load without touching them. There is no `to` keyframe
+   because the element's own computed colour is the destination, which is what
+   keeps this correct at every time of day: the ink it settles into is whatever
+   the current palette says, not a colour named twice.
+
+   Scoped to .site-header-row, so the phone sheet's copy of the wordmark does
+   not replay this every time the menu opens. The sheet has its own entrance.
+
+   The blanket prefers-reduced-motion rule at the end of this file zeroes the
+   duration, and nothing here depends on JavaScript, so a client that runs none
+   still gets the finished colours. */
+
+@keyframes header-ink {
+  from {
+    color: var(--paper);
+  }
+}
+/* The button carries a fill as well as a label, so both start as paper and it
+   rises out of the page as one block rather than an empty green box filling
+   with text. */
+@keyframes header-cta-ink {
+  from {
+    background-color: var(--paper);
+    color: var(--paper);
+  }
+}
+
+.site-header-row .site-wordmark,
+.site-header-row .nav-link,
+.site-header-row .nav-toggle {
+  animation: header-ink 700ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+.site-header-row .nav-cta {
+  animation: header-cta-ink 700ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+/* 768px, the one breakpoint this bar needs. Everything else on the page wraps
+   on a flex basis instead, but a nav that half-collapses is not a nav. */
+@media (min-width: 768px) {
+  .site-nav {
+    display: flex;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* ---- the phone menu ------------------------------------------------------
+   Viewport-sized rather than panel-sized, which is what separates it from the
+   TopicStudio overlay it otherwise resembles: fixed, above the bar, and the
+   body stops scrolling underneath it (App.jsx owns that part). */
+
+.nav-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: nav-sheet-in 220ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+@keyframes nav-sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The panel's own top row repeats the bar it covers, so the wordmark does not
+   jump when the sheet opens. The rule under it belongs to the sheet and
+   separates the row from the list; the bar itself still carries none. */
+.nav-sheet-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  height: var(--header-h);
+  border-bottom: 1px solid var(--rule-faint);
+}
+.nav-sheet-body {
+  flex: 1;
+  padding-top: 8px;
+  padding-bottom: 32px;
+}
+.nav-sheet-link {
+  display: block;
+  font-size: clamp(26px, 7vw, 32px);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule-faint);
+}
+.nav-sheet-cta {
+  display: block;
+  margin-top: 26px;
+  padding: 15px 20px;
+  border-radius: 3px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* The bar covers the top of whatever a same-page link lands on. Every jump
+   target on the front page is a section with an id, so one rule covers
+   #build, #topics, #delivery, #norm and #questions together. */
+main section[id] {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
 }
 
 /* ---- the FAQ accordion ---------------------------------------------------
@@ -334,19 +558,6 @@ body {
   animation: impress 780ms cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
 }
 
-@keyframes rule-draw {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-.rule-draw {
-  transform-origin: left center;
-  animation: rule-draw 900ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-
 /* ---- scroll reveal ------------------------------------------------------ */
 
 .reveal {
@@ -466,6 +677,212 @@ body {
   font-size: 11.5px;
   color: var(--muted);
 }
+/* pan-y, not none. The hero slideshow is a full-width target on a phone and
+   swallowing the whole gesture there would refuse to scroll the page, which is
+   the mistake .ns-grip below already records once. pan-y hands vertical
+   scrolling back to the browser and keeps only the horizontal drag. */
+.phone-slides {
+  /* The shadow lives here rather than on the images, and that is the whole
+     point of it. `overflow: hidden` clips an element's descendants but never
+     its own box-shadow, so a drop-shadow filter on the <img> was clipped away
+     to nothing by this very box: the hero had no shading at all, in any
+     palette, and it did not look broken in the DOM.
+
+     A box-shadow on a matching radius is also the exact silhouette. The phone
+     is a rounded rectangle, so there is no rectangle for the shading to fall
+     back into. 11.94cqw is the prototype's own 48px corner over its 402px
+     device width, which keeps the curve right as the figure resizes between
+     210px and 324px. The radius also clips the slides to the phone shape, so
+     the image's alpha and this box now agree rather than one covering for the
+     other. */
+  border-radius: 26px;
+  border-radius: 11.94cqw;
+  box-shadow: var(--phone-shadow);
+  /* Scoped here rather than added to the blanket `.tod *` rule above, which
+     carries only background, colour and border. One element needs this; every
+     shadow on the page does not. */
+  transition: box-shadow 900ms cubic-bezier(0.4, 0, 0.2, 1);
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+.phone-slides:active {
+  cursor: grabbing;
+}
+/* Focusable so the arrow keys have somewhere to land, but the outline is the
+   page's own rather than the browser's default box around a 324px image. */
+.phone-slides:focus-visible {
+  outline: 2px solid var(--oxide);
+  outline-offset: 6px;
+}
+/* The phone is 603x1311. Held at a flat 324px cap it stood 704px tall, and
+   with the dots and the caption under it the figure ran past the bottom of
+   any laptop window: the thing the caption describes and the caption itself
+   could not be on screen at once.
+
+   So the width is derived from the height that is actually going spare.
+   0.46 is the image's own aspect ratio and 15rem is everything else in the
+   column's way: the sticky header, the section's padding, the dots and the
+   caption. 324px still caps it, because past that it outgrows the 21rem
+   column, and 210px floors it so a short window cannot shrink it away.
+
+   Only above 900px, which is where the hero is still two columns. This read
+   820px until the wrap point was measured: the row needs 896px to hold both
+   columns, so between 820 and 896 the phone was being sized out of a height
+   it no longer had to share. Below the wrap it has the width to itself, takes
+   the flat cap, and a page that scrolls is the expected thing rather than a
+   fault. */
+.phone-slides-figure {
+  max-width: 324px;
+}
+@media (min-width: 900px) {
+  .phone-slides-figure {
+    max-width: clamp(210px, calc((100vh - 16rem) * 0.46), 324px);
+    max-width: clamp(210px, calc((100svh - 16rem) * 0.46), 324px);
+  }
+}
+
+/* The caption is not held to the phone's width. Once the phone narrows on a
+   short window the sentence would wrap to two lines, and those two lines cost
+   more height than the narrowing saved. So it keeps a readable measure and is
+   centred on the figure rather than fitted inside it. */
+.phone-slides-figure figcaption {
+  width: 19rem;
+  max-width: 88vw;
+  margin-left: calc(50% - 9.5rem);
+}
+
+/* ---- the hero slideshow's controls -------------------------------------
+   Two sets, because they answer two different questions. The arrows are
+   "give me the next one" and stay out of the way until a pointer is over the
+   phone. The dots are "how many are there and where am I", so they are always
+   on. Both are wrapped in the same 44px touch target the app's own controls
+   use, with the visible mark smaller than the thing you press. */
+
+/* cqw above needs a container, and this is the nearest sensible one. It is
+   already `position: relative` and so already the arrows' containing block,
+   so the containment does not move them. */
+.phone-slides-frame {
+  container-type: inline-size;
+}
+
+.phone-slides-arrow {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--oxide);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.16);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.9);
+  transition:
+    opacity 180ms ease,
+    transform 180ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+/* Inset rather than outside the phone. The hero column is 21rem and the figure
+   caps at 324px, so there is no room beside the image at the width where the
+   two columns are still side by side. */
+.phone-slides-arrow-prev {
+  left: 6px;
+}
+.phone-slides-arrow-next {
+  right: 6px;
+}
+
+/* hover: hover keeps them off touch, where nothing can reveal them and the
+   swipe already does the job. */
+@media (hover: hover) {
+  .phone-slides-arrow {
+    display: flex;
+  }
+  .phone-slides-frame:hover .phone-slides-arrow {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  .phone-slides-arrow:hover {
+    background: var(--paper-raised);
+    box-shadow: 0 8px 22px rgb(0 0 0 / 0.22);
+  }
+}
+/* A keyboard never hovers, so reaching an arrow by tab has to reveal it too.
+   Without this the focus ring lands on something invisible. */
+.phone-slides-arrow:focus-visible {
+  display: flex;
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  outline: 2px solid var(--oxide);
+  outline-offset: 3px;
+}
+
+.phone-slides-dots {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 18px;
+}
+/* The button is 22x22 so a thumb can hit it. The dot inside is 7px, which is
+   what the eye is given to read the position from. */
+.phone-slides-dot {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-slides-dot::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--rule);
+  transition:
+    background-color 240ms ease,
+    transform 240ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+.phone-slides-dot[data-on]::after {
+  background: var(--oxide);
+  transform: scale(1.28);
+}
+.phone-slides-dot:hover::after {
+  background: var(--muted);
+}
+.phone-slides-dot[data-on]:hover::after {
+  background: var(--oxide);
+}
+.phone-slides-dot:focus-visible {
+  outline: 2px solid var(--oxide);
+  outline-offset: -2px;
+  border-radius: 9999px;
+}
+
+/* Keyed on the slide index, so it replays as the caption is replaced. Motion
+   is the only thing tying the sentence to the screen it describes. */
+.phone-slides-caption {
+  animation: slidecap 420ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+@keyframes slidecap {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* touch-action sits here rather than on the whole row. On the row it meant a
    touch drag anywhere in the topic list refused to scroll the page, which on a
    phone is most of the section. Only the grip starts a drag, so only the grip
@@ -912,7 +1329,12 @@ body {
 
 .press-stage {
   position: sticky;
-  top: 12vh;
+  /* 12vh is the composition this section was drawn to, but on a short window
+     it lands under the header, which is sticky too and wins. The max() keeps
+     the intended offset everywhere it fits and clears the bar where it does
+     not. Below the header's z-index for the same reason. */
+  top: max(12vh, calc(var(--header-h) + 1rem));
+  z-index: 1;
 }
 
 /* The composing floor. Every slip is the same block; only the transform
@@ -977,7 +1399,16 @@ body {
   font-weight: 500;
   position: relative;
   overflow: hidden;
+  /* Both colours are listed, and both are the page's 900ms rather than this
+     rule's own 180ms. Naming any transition here overrides the `.tod *` rule
+     that crosses the palette, and listing only transform and box-shadow left
+     the fill with no transition at all: on a dial move every oxide button on
+     the page snapped to the next green while the paper behind it was still
+     crossing. The lift and the pointer bloom are hover feedback and stay
+     quick; the colour goes at the page's pace. */
   transition:
+    background-color 900ms ease,
+    color 900ms ease,
     transform 180ms cubic-bezier(0.2, 0.7, 0.25, 1),
     box-shadow 180ms ease;
 }
