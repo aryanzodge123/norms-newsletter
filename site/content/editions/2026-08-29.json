@@ -1,0 +1,347 @@
+{
+  "date": "2026-08-29",
+  "edition_number": 83,
+  "edition_type": "normal",
+  "headline_of_the_day": "US to cut aid to Iraqi Kurdistan",
+  "headline_cluster_id": "5893b1be70a391612595006c710d47c1",
+  "headline_rationale": "Direct policy shift affecting a strategic US ally facing active attacks, with immediate regional security consequences.",
+  "key_points": [
+    {
+      "text": "The US plans to end military support for Iraqi Kurdistan, a key Middle East ally.",
+      "topic": "World"
+    },
+    {
+      "text": "Hackers stole data from Berlin and demanded 30 bitcoin in ransom.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Donald Trump announced a US oil deal with Venezuela for 65 billion barrels.",
+      "topic": "World"
+    },
+    {
+      "text": "A federal judge blocked the Pentagon from blacklisting Anthropic over free speech rights.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Thirty-three more Australians are missing in Nepal's floods, bringing the total to 41.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-29.mp3",
+    "duration_seconds": 438,
+    "size_bytes": 5261760
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "c495f6b15625bc92c760f3242c3a8272",
+          "slug": "senators-call-for-criminal-probe-of-health-secretary-over",
+          "title": "Senators call for criminal probe of health secretary over alleged false testimony",
+          "summary": "Documents released show Robert F. Kennedy Jr. may have lied to Congress during confirmation hearings.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/08/rfk-jr-has-lied-to-the-senate-lawmakers-call-for-criminal-probe-ouster"
+            }
+          ],
+          "article": {
+            "background": "Robert F. Kennedy Jr. is the Health Secretary, leading the agency that oversees public health policy. He was confirmed by the Senate last year. Senators questioned him then about his skepticism toward vaccines.",
+            "what_happened": "Newly released documents have surfaced that lawmakers say contradict statements Kennedy made during his confirmation hearing. Sen. Edward J. Markey called it a pattern of lies. Sen. Ron Wyden said the documents prove Kennedy lied under oath, which he called a crime, and called for a criminal investigation.",
+            "why_it_matters": "If Kennedy misled the Senate, it raises questions about whether lawmakers had accurate information when they voted to confirm him. It could affect his ability to lead the health agency and shape national health policy.",
+            "quote": {
+              "text": "This is a pattern, not a slip. RFK Jr. has lied to the Senate, lied to the American people, and jeopardized the health of children to advance his anti-vaccine agenda.",
+              "attribution": "Sen. Edward J. Markey (D-Mass.)",
+              "source_url": "https://arstechnica.com/health/2026/08/rfk-jr-has-lied-to-the-senate-lawmakers-call-for-criminal-probe-ouster"
+            }
+          }
+        },
+        {
+          "cluster_id": "3f512bf09dd8a56d1123388928368829",
+          "slug": "los-angeles-fire-survivors-wait-nearly-600-days-for-federal",
+          "title": "Los Angeles fire survivors wait nearly 600 days for federal disaster aid",
+          "summary": "Thousands of fire survivors still wait for more than 15 billion dollars in rebuilding aid.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/28/los-angeles-wildfire-survivors-federal-aid"
+            }
+          ],
+          "article": {
+            "background": "In early 2025, historic wildfires swept through Los Angeles. They destroyed more than 16,000 homes and buildings. Thousands of residents need federal money to rebuild their lives.",
+            "what_happened": "Nearly 600 days after the fires, Los Angeles survivors are still waiting. They have not yet received more than $15 billion in federal aid. This is the longest delay in modern history for disaster funds.",
+            "why_it_matters": "When your home burns down, federal aid is supposed to help you rebuild. These delays mean thousands of people cannot repair or replace their homes. The longer families wait, the harder it becomes to move forward.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "5893b1be70a391612595006c710d47c1",
+          "slug": "us-to-cut-military-aid-to-iraqi-kurdistan-despite-iran",
+          "title": "US to cut military aid to Iraqi Kurdistan despite Iran attacks",
+          "summary": "The Trump administration will stop funding Iraqi Kurdistan, which helped fight Islamic State.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cn74m8e5rleo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Peshmerga is the Kurdish security force in Iraq's Kurdistan region, which runs itself but is part of Iraq. They fought alongside the US to defeat ISIS, the militant group that once held large areas of the Middle East. The US has provided military aid to help them fight.",
+            "what_happened": "The Trump administration told Kurdish leaders it will not renew a military aid agreement with the Peshmerga. US Department of Defense officials made this clear in recent meetings. The aid was set to expire, and the US is now planning to let it end instead of renewing it.",
+            "why_it_matters": "The Peshmerga now faces heavy attacks from Iran. Losing US military support will weaken their ability to defend against these strikes. This also signals a shift in how the Trump administration views its alliances in the Middle East.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "88b1b6c3f1f19390d3587c79f87158d6",
+          "slug": "trump-announces-us-oil-deal-with-venezuela",
+          "title": "Trump announces US oil deal with Venezuela",
+          "summary": "A new US oil deal with Venezuela gives America control of 65 billion barrels.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/28/trump-venezuela-oil-agreement"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/politics/trump-says-u-s-has-entered-deal-with-venezuela-to-control-65-billion-barrels-of-its-oil-reserves"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cx2zlwe7qj1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Venezuela has the world's largest proven oil reserves. Relations between the US and Venezuela were tense under former president Nicolás Maduro, whom the US captured earlier this year. Delcy Rodríguez became interim president after Maduro's capture.",
+            "what_happened": "President Trump announced Friday a new oil agreement with Venezuela's interim president Delcy Rodríguez. The US will have majority control of 65 billion barrels of proven oil reserves at no cost to American taxpayers, Trump said. Secretary of state Marco Rubio and defense secretary Pete Hegseth brokered the deal. Trump said it will more than double American oil reserves.",
+            "why_it_matters": "The deal could increase US oil supply and lower gas prices, if the terms hold. Oil agreements between these countries are rare because of their troubled history. The specific terms have not yet been made public.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d14b6552910c28bae9010c5e412b8567",
+          "slug": "forty-one-australians-now-missing-in-nepal-floods",
+          "title": "Forty-one Australians now missing in Nepal floods",
+          "summary": "Australia sent more rescue workers as the death toll from Nepal's floods keeps rising.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/29/australians-missing-nepal-floods-total-rises-albanese-dfat-personnel-arriving"
+            }
+          ],
+          "article": {
+            "background": "A flash flood hit the Nepal-Tibet border on Wednesday morning near the Bhote Koshi River. It swept away hikers and travelers in one of the region's deadliest disasters. Norm reported on August 27 that at least 341 foreign nationals were missing. Now the confirmed count keeps rising as search teams work through the wreckage.",
+            "what_happened": "The number of missing Australians climbed to 41 as of Friday evening. Three more were confirmed missing overnight. One unaccounted-for woman made contact with her family yesterday, bringing relief to relatives searching for her. Australia's Prime Minister is sending four rapid response team members to Kathmandu to help with rescue work.",
+            "why_it_matters": "If you travel abroad, this shows how your government mobilizes when citizens are in danger overseas. Australia's quick response signals that countries coordinate search efforts across borders when their people go missing. For now, the focus is on finding those still unaccounted for in the wreckage.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "cf7045b4d542e99c05447f42b3eaf3cb",
+          "slug": "federal-judge-blocks-pentagon-from-blacklisting-anthropic",
+          "title": "Federal judge blocks Pentagon from blacklisting Anthropic over AI rules",
+          "summary": "A court ruled the Pentagon punished Anthropic without following the law.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.ibtimes.com/anthropic-just-beat-pentagon-court-judge-said-national-security-was-used-punish-its-ai-rules-3806895"
+            }
+          ],
+          "article": {
+            "background": "Anthropic is an AI company. It makes Claude, an AI assistant. The company sets limits on how Claude can be used, including by the military. The Pentagon wanted Anthropic to ease these limits. Anthropic refused.",
+            "what_happened": "A federal judge blocked the Pentagon from blacklisting Anthropic. Judge Rita Lin ruled the government violated the company's First Amendment rights. The judge found the Pentagon retaliated after Anthropic refused to loosen its military-use rules. The government also denied Anthropic required due-process protections.",
+            "why_it_matters": "This means the government cannot punish a business for declining to loosen safety rules just because officials disagree. AI companies now have legal protection when they resist pressure from the military or other agencies to change their policies.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a269b83a971d12e7b9ad3714d805110b",
+          "slug": "court-rules-prediction-markets-are-gambling-under-state-law",
+          "title": "Court rules prediction markets are gambling under state law",
+          "summary": "A court ruled Nevada can stop Kalshi from offering sports bets as gambling.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/08/kalshi-cant-evade-nevada-gambling-laws-by-calling-bets-swaps-court-rules"
+            }
+          ],
+          "article": {
+            "background": "Kalshi is a prediction market, a platform where people bet on whether events will happen. The company tried to offer sports bets by calling them financial contracts, or \"swaps.\" Under federal law, swaps get different rules than gambling. The Trump administration has been trying to help prediction markets avoid state gambling laws.",
+            "what_happened": "A federal appeals court ruled today that Kalshi cannot use the financial contract label to escape Nevada's gambling laws. A panel of three judges unanimously agreed. Nevada can stop the prediction market from allowing sports bets. The court rejected the argument that federal financial law overrides Nevada's gambling rules.",
+            "why_it_matters": "For now, Kalshi cannot offer sports bets in Nevada. Similar prediction markets likely face the same legal barrier in other states. If you live in Nevada or use these platforms, this ruling means state gambling laws still apply to sports betting, even when companies call them something else.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6f1e82b2b0b53a62f4c87beef97454a2",
+          "slug": "cities-drop-flock-surveillance-cameras-at-record-pace",
+          "title": "Cities drop Flock surveillance cameras at record pace",
+          "summary": "Cities are removing Flock cameras over privacy worries and high costs.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/08/cities-terminate-flock-contracts-at-record-pace-in-august"
+            }
+          ],
+          "article": {
+            "background": "Flock Safety makes cameras that recognize license plates and help police track vehicles. Cities across the US have bought these systems for traffic enforcement and criminal investigations. Since 2021, an Oakland advocacy group called Secure Justice has tracked which cities drop their contracts with Flock.",
+            "what_happened": "Secure Justice found that 214 cities and counties have ended their Flock contracts since 2021. In August 2026 alone, 90 cities dropped Flock. That is four times more than the previous month. Cities from Lansing, Michigan to Pflugerville, Texas are among those leaving.",
+            "why_it_matters": "Cities cite high costs and concerns about how police use the cameras. They worry about data sharing and the scope of surveillance. As more cities walk away, they are signaling that the benefits of these systems may not outweigh the costs and privacy risks. This could reshape how police monitor roads in your area.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "55c08fde7266226c2d4cc71aa6265ab6",
+          "slug": "chinese-rocket-stage-breaks-apart-in-orbit-days-after-launch",
+          "title": "Chinese rocket stage breaks apart in orbit days after launch",
+          "summary": "A Chinese rocket broke apart in orbit after dropping off satellites.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://spacenews.com/long-march-6c-rocket-stage-fragments-in-orbit-creating-cloud-of-debris"
+            }
+          ],
+          "article": {
+            "background": "A rocket's upper stage is the part that delivers satellites to space. It typically stays in orbit for years unless it is destroyed or brought down on purpose. Space debris is a growing problem. Pieces of old rockets and satellites orbit Earth at high speeds. Even small fragments can damage working spacecraft.",
+            "what_happened": "A Chinese Long March 6C rocket launched on August 24 from Taiyuan Satellite Launch Center in north China. It carried seven satellites into orbit. Less than two days after launch, the rocket's upper stage broke apart. The fragmentation created hundreds of pieces of debris in orbit.",
+            "why_it_matters": "Debris in orbit can hit working satellites and spacecraft at very high speeds. These collisions can destroy functioning equipment and create even more debris, a cycle that makes space more dangerous over time. As more companies and countries use orbit for communications, GPS, and other services, this debris threatens infrastructure that people on Earth depend on.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f55a51777bf787b6ceac42d4bc2ccaa1",
+          "slug": "common-sweetener-xylitol-linked-to-strokes-and-heart-attacks",
+          "title": "Common sweetener xylitol linked to strokes and heart attacks",
+          "summary": "A large study found xylitol, used in gum and toothpaste, raises heart attack and stroke risk.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/society/2026/aug/28/sweetener-xylitol-used-in-chewing-gum-and-jam-linked-to-strokes-and-heart-attacks-study"
+            }
+          ],
+          "article": {
+            "background": "Xylitol is a sugar alcohol used to sweeten products like gum, toothpaste, jam, yogurt, and ice cream. It occurs naturally in small amounts in some foods. Manufacturers add it in much larger doses, sometimes 1,000 times higher than natural levels. Until now, long-term health effects from eating xylitol have not been well studied.",
+            "what_happened": "Researchers conducted the largest study of xylitol's health effects. They found that high blood levels of xylitol were tied to increased risk of strokes, heart attacks, and death. The findings were presented at a cardiology conference in Munich.",
+            "why_it_matters": "If you eat packaged foods or use sugar-free products, you likely consume xylitol without knowing it. This study suggests the sweetener may carry cardiovascular risks that were not previously documented. People who use sugar-free gums, toothpastes, or foods regularly may want to check labels and consider limiting xylitol intake.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "629afc9dbee273c98f28013d124d128d",
+          "slug": "berlin-refuses-to-pay-ransom-after-hackers-steal-city-data",
+          "title": "Berlin refuses to pay ransom after hackers steal city data",
+          "summary": "Berlin's mayor said the city will not pay 30 bitcoin to hackers who stole city data.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cm2q7gv3l5qo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Berlin's government uses computer systems to run basic services. These include permits, utilities, and data storage. Earlier this month, hackers broke into these systems and stole data. The Rhysida group, thought to operate from Russia and eastern Europe, was behind the attack.",
+            "what_happened": "On Thursday evening, the hackers sent a ransom demand. Mayor Kai Wegner said the city would not pay. The hackers are asking for 30 bitcoin, worth about €2 million. Some of Berlin's online services have been shut down while investigators figure out what data was taken.",
+            "why_it_matters": "When cities cannot access their computer systems, basic services slow down or stop. Residents may face delays getting permits or paying bills. By refusing to pay, Berlin avoids funding the hackers. But the city now faces costs to repair systems and improve security.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7a7d1833e40261c59b29ec2179fc854b",
+          "slug": "cosmos-blockchain-flaw-exploited-to-drain-funds-from-six",
+          "title": "Cosmos blockchain flaw exploited to drain funds from six networks",
+          "summary": "A security flaw drained funds from six blockchains between August 20 and August 25.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/08/cosmos-evm-flaw-exploited-after-cosmos.html"
+            }
+          ],
+          "article": {
+            "background": "Cosmos is a blockchain framework that lets independent blockchains work together. Cosmos Labs built a shared module called Cosmos EVM that lets these blockchains handle digital assets. This module had a flaw in how it tracked and moved money between accounts.",
+            "what_happened": "A flaw in Cosmos EVM let attackers drain funds from six blockchains between August 20 and August 25, 2026. Cosmos Labs knew the flaw existed before the attacks started. The fix came out on August 19, but not every blockchain running the software had upgraded yet. The fix requires all validators on each chain to upgrade together, which takes time to coordinate.",
+            "why_it_matters": "If you hold crypto on a Cosmos-based blockchain, this shows why fast security updates matter. A known flaw that goes unfixed for even a few days can lead to real losses. Most blockchain users rely on chain operators to apply fixes quickly.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "315dce448e89c45a748c6f5efef67706",
+      "title": "Google further buries search results under AI mode",
+      "url": "https://www.theverge.com/tech/986364/google-search-ai-overviews-auto-expand",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "2a5284b07d500b1a1a7aac489bab7a89",
+      "title": "Close race as Iceland votes on whether to restart talks on joining EU",
+      "url": "https://www.bbc.co.uk/news/articles/cn45vdxyvvlo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "38540b7e1e2867f99d72eb89774a02df",
+      "title": "Ebola outbreak in Congo spreads to 2 new health zones, bringing total to 60 areas affected",
+      "url": "https://www.pbs.org/newshour/health/ebola-outbreak-in-congo-spreads-to-2-new-health-zones-bringing-total-to-60-areas-affected",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "375839991d5e9949ec60acf90d9752fe",
+      "title": "Juul gets OK to sell vaping device with age-gating technology",
+      "url": "https://apnews.com/article/juul-vape-update-fda-age-verification-juul2-10c93d78a67bf5e4be25f437528fb416",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "32c0cebcd98d521b09b4664d702af566",
+      "title": "Far-right British provocateur Milo Yiannopoulos arrested by ICE in New Orleans",
+      "url": "https://www.pbs.org/newshour/world/far-right-british-provocateur-milo-yiannopoulos-arrested-by-ice-in-new-orleans",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "362b7df92ed9f6e9dad73a207776b93c",
+      "title": "Canada poaches dozens of top US researchers for its universities",
+      "url": "https://www.bbc.co.uk/news/articles/c209gd5jnq1o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 100,
+    "clusters_considered": 87,
+    "stories_run": 12,
+    "sources": 13,
+    "sections_held": 0
+  }
+}
