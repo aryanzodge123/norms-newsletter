@@ -1,0 +1,301 @@
+{
+  "date": "2026-08-30",
+  "edition_number": 84,
+  "edition_type": "normal",
+  "headline_of_the_day": "FBI disrupts Chinese hacking network that breached US agencies.",
+  "headline_cluster_id": "fc976437135093e538f2e017f7c8779d",
+  "headline_rationale": "Active cyberattack on federal agencies and infrastructure was stopped, affecting national security systems millions depend on daily",
+  "key_points": [
+    {
+      "text": "The FBI shut down a Chinese network that hacked US agencies and key infrastructure for years.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Nepal and Tibet flash flood death toll climbs as 3,000 remain missing and weather blocks aerial rescue",
+      "topic": "World"
+    },
+    {
+      "text": "Iceland voted no on rejoining the EU talks in a very close referendum.",
+      "topic": "World"
+    },
+    {
+      "text": "Texas added a dollar to car insurance bills to fight catalytic converter theft but spent $30 million on highway cameras.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "The US prison population and racial gaps in jailing both fell sharply from 2000 to 2019.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-08-30.mp3",
+    "duration_seconds": 340,
+    "size_bytes": 4081824
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "8863d6ffbcd0ac45449e039b721473de",
+          "slug": "nepal-and-tibet-flood-search-expands-to-3-000-missing-as",
+          "title": "Nepal and Tibet flood search expands to 3,000 missing as weather grounds helicopters",
+          "summary": "Nepal asked other countries to help with DNA tests and body storage after deadly flash floods.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/29/nepal-tibet-chinese-rescue-team-finds-nothing-but-ruins-after-reaching-border-crossing-hit-by-deadly-flood"
+            }
+          ],
+          "article": {
+            "background": "Massive flash floods hit the Nepal-Tibet border on Wednesday. Landslides blocked rivers, causing water to surge downstream. The disaster killed at least 691 people and left more than 3,000 missing across Nepal and Tibet. Norm covered this story on August 27 when 33 British citizens were among the missing.",
+            "what_happened": "Poor weather on Saturday stopped aerial rescue operations in Nepal. Search teams on the ground kept looking for survivors. China reported 16 dead and 546 missing. Nepal said 675 people had died and 2,498 were missing as of late Saturday. The numbers rose further after China updated its toll on Sunday.",
+            "why_it_matters": "Bad weather will keep slowing rescue efforts. Families still do not know if their loved ones survived. Nepal asked other countries for help identifying bodies, storing them safely, and doing DNA tests to match them with families. Teams also need help rescuing people trapped in collapsed tunnels.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fa8f1c450109aabbb33111e4eb8d85b6",
+          "slug": "iceland-narrowly-rejects-restarting-eu-membership-talks-in",
+          "title": "Iceland narrowly rejects restarting EU membership talks in tight referendum",
+          "summary": "Early results show 50.1 percent voted no with over half the ballots counted in the tight vote.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c70le8ed1plo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Iceland stopped talks about joining the European Union 13 years ago. Prime Minister Kristrún Frostadóttir's centre-left government proposed resuming those talks. She moved up the referendum vote because of global tensions, including US President Donald Trump's statements about Greenland. Norm covered this vote on August 29.",
+            "what_happened": "Icelanders voted on whether to restart EU membership talks. With most votes counted, the result was extremely tight. Public broadcaster RUV reported 50.1% voted no and 49.9% voted yes. Just 435 votes separated the two sides out of 270,000 cast.",
+            "why_it_matters": "This vote shapes whether Iceland moves closer to Europe or stays independent. For Icelanders, the choice affects trade ties, security partnerships, and their place in global affairs. For now the result is too close to call, with the final count still ongoing.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "532c4e9dfe1df81f0ff521c5ce96eed7",
+          "slug": "china-s-planned-himalayan-mega-dam-threatens-water-supply",
+          "title": "China's planned Himalayan mega-dam threatens water supply for two billion people downstream",
+          "summary": "Scientists say the dam is dangerous, but leaders will not admit it.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.project-syndicate.org/commentary/china-himalayan-super-dam-dangerous-and-plan-lacks-transparency-by-brahma-chellaney-2026-08"
+            }
+          ],
+          "article": {
+            "background": "China is building the world's largest dam on the Yarlung Tsangpo, a major river in Tibet. The project sits in a geologically active area close to the militarized border with India. It will generate hydropower, a renewable source of electricity.",
+            "what_happened": "Scientific evidence shows that China's scientific experts understand the dam's dangers more clearly than the country's political leaders have publicly stated. The international community has limited visibility into the project's safety plans and designs. Billions of people downstream depend on this river for water and food.",
+            "why_it_matters": "A major dam failure in this region could threaten water and food security for billions of people across multiple countries. The lack of public information about safety measures means affected nations have little say in decisions that could harm them.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "47d8fcdda7e6cc8a450231f390ae098c",
+          "slug": "renters-file-lawsuits-under-new-state-laws-targeting",
+          "title": "Renters file lawsuits under new state laws targeting algorithmic rent pricing",
+          "summary": "New local rules make it easier for renters to challenge landlords who use software to set rents.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.morganlewis.com/pubs/2026/08/algorithmic-rent-pricing-litigation-expands-under-new-state-and-local-laws"
+            }
+          ],
+          "article": {
+            "background": "Landlords use software called revenue management products to set rental prices. These tools use algorithms to help set rents based on market data. RealPage and Yardi are major vendors of this software. In recent years, courts and regulators have raised concerns that the software may help landlords coordinate prices, keeping rents artificially high.",
+            "what_happened": "States and cities are now passing laws that restrict algorithmic pricing. A new wave of lawsuits is emerging against landlords who violate these local rules. Many of these landlords already face separate federal antitrust cases over their use of revenue management products. The new local laws may offer a simpler path to hold landlords liable.",
+            "why_it_matters": "If courts agree that algorithmic pricing breaks local rules, landlords could face significant penalties. For renters in areas with these new laws, the lawsuits show that regulators are treating algorithmic pricing as a serious problem. This could slow the spread of automated pricing tools in some markets.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ddb6fdb31d5158f1dce98dc2d608d527",
+          "slug": "texas-spent-catalytic-converter-theft-fees-on-statewide",
+          "title": "Texas spent catalytic converter theft fees on statewide surveillance cameras instead",
+          "summary": "A one-dollar insurance fee meant to fight theft paid for $30 million in highway cameras.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.texastribune.org/2026/08/28/texas-flock-cameras-auto-insurance-fee-mvcpa-grants"
+            }
+          ],
+          "article": {
+            "background": "In 2023, Texas lawmakers voted unanimously to raise car insurance by $1 per policy. The goal was to stop catalytic converter theft, which was common across the state. A state agency called the Motor Vehicle Crime Prevention Authority got the job of spending that money.",
+            "what_happened": "The authority used at least $30 million of the $1 fee to buy Flock cameras. Flock cameras read license plates automatically. The agency installed or funded at least 3,200 of these cameras across Texas. They stretch from El Paso to the Louisiana border, placed on highways and streets.",
+            "why_it_matters": "Texans paying the fee likely thought the money would stop car thefts directly. Instead, most of it went to a statewide camera network. If you drive in Texas, you may now be recorded by one of these cameras without knowing it.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "fc976437135093e538f2e017f7c8779d",
+          "slug": "fbi-disrupts-chinese-hacking-network-used-to-breach-us",
+          "title": "FBI disrupts Chinese hacking network used to breach US government and infrastructure",
+          "summary": "Law enforcement shut down a network China's military used for years to hack American targets.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wired.com/story/fbi-disrupts-chinese-proxy-tools-used-in-mass-hacking-of-us-agencies-and-infrastructure"
+            }
+          ],
+          "article": {
+            "background": "China's military and intelligence agencies run hacking campaigns worldwide. For years, they have relied on proxy devices. These are intermediaries that let hackers attack targets while hiding where the attacks came from. The FBI just named and shut down one key network of these proxies.",
+            "what_happened": "On Wednesday, the Department of Justice announced it had taken down two tools called QTRouter and QScan. A Chinese state-sponsored hacking group called QTFY used these tools. The group is part of a Chinese government contractor called Nanji. The takedown revealed how deeply these hackers had penetrated American government agencies and critical infrastructure.",
+            "why_it_matters": "This disruption removes one network that hackers relied on for years. But similar proxy systems likely still exist and remain in use. For now, the disruption does not immediately change what everyday people experience. It shows, though, that US government systems and infrastructure have faced sustained targeting from foreign state-sponsored groups.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "eefa0d7856edda3d95b249b48b6d4c00",
+          "slug": "whatsapp-group-chat-moved-hundreds-of-millions-in",
+          "title": "WhatsApp group chat moved hundreds of millions in untraceable cash for criminals and extremists",
+          "summary": "A 532-member group called Traders of Greater Europe moved billions in cash across borders with no records.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cgk57lg7566o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "WhatsApp is a messaging app that billions of people use daily to text and call. A group of European broadcasters, including the BBC, recently uncovered how criminals use it differently. They found a WhatsApp group called \"Traders of Greater Europe\" with 532 members. The group was used to move cash around the world without leaving a paper trail.",
+            "what_happened": "The investigation found that the group arranged hundreds of millions of euros in cash transfers across borders. Members sent money to clients in British cities like Birmingham and London. In one case, payments from Brussels went to militants from the Islamic State group in Syria. The cash moved with no official record.",
+            "why_it_matters": "Apps like WhatsApp are legal and normal. But the same features that make them useful for everyday messages also let criminals hide money flows. This makes it much harder for authorities to stop illegal funding before harm occurs. The case shows that even large criminal networks can hide in plain sight on tools most people trust.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "e7feb14a13fefed6d12f3362e2d3e898",
+          "slug": "hrgovic-upsets-itauma-to-claim-heavyweight-title-after",
+          "title": "Hrgovic upsets Itauma to claim heavyweight title after Briton punches himself out",
+          "summary": "The 21-year-old controlled most rounds but faded as his relentless pace caught up with him",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/boxing/articles/cpd0n46we13o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/aug/30/filip-hrgovic-stuns-moses-itauma-ibf-world-boxing-heavyweight-title"
+            }
+          ],
+          "article": {
+            "background": "Moses Itauma is a 21-year-old British heavyweight boxer. He was fighting for the IBF world title, one of boxing's major championships. Itauma entered as a heavy favorite. He was on track to become the second-youngest world heavyweight champion ever.",
+            "what_happened": "Itauma controlled the fight early and knocked down Croatian opponent Filip Hrgovic in the second round. But Itauma's relentless pace wore him down. His stamina dipped after the sixth round. Hrgovic, 34, absorbed the early damage and took over. By the ninth round, Itauma could barely stand. His team threw in the towel. Hrgovic won the IBF title and became Croatia's first world heavyweight champion.",
+            "why_it_matters": "Itauma's loss ends his bid for an early world title. At 21, he had been positioned as a future star of boxing. The upset shows that youth and speed alone do not guarantee victory. Experience and durability can overcome early disadvantage.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1a9935bb146a415d0666f15fa6a3de23",
+          "slug": "college-running-back-dies-after-medical-emergency-during",
+          "title": "College running back dies after medical emergency during season opener",
+          "summary": "William Jewell junior Micah Jo Barnett had seizure-like symptoms on the sideline and died at the hospital.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/aug/29/division-ii-running-back-dies-after-experiencing-medical-emergency-on-the-sideline-shortly-after-scoring-touchdown"
+            }
+          ],
+          "article": {
+            "background": "William Jewell College is a Division II school in Liberty, Missouri, near Kansas City. MicahJo Barnett was a junior running back for the team. On Saturday, the school played its season opener against Fort Lewis College on its home campus.",
+            "what_happened": "During the first quarter, Barnett had a medical emergency on the sideline. He experienced seizure-like symptoms and was taken to the hospital. The school later announced his death. The game was suspended and later canceled.",
+            "why_it_matters": "A college athlete died during a game. The school plans to hold a vigil for Barnett and his family.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "ed3a257b8bf9a46ae9e6b48c444bc76c",
+      "title": "Why America's prisons are shrinking and racial gaps are closing",
+      "url": "https://www.nature.com/articles/s41562-026-02536-y",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "6b7104fb7a82fba83eac9a081c2e0c7a",
+      "title": "Anthropic's Claude for Mac desktop app now has built-in browser",
+      "url": "https://thenewstack.io/claude-built-in-browser-cowork",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "2b8c24b442bbd6add2212b28fc2c5571",
+      "title": "Highest-ever ocean temperature measured as powerful El Niño forms",
+      "url": "https://www.latimes.com/environment/story/2026-08-26/highest-ever-ocean-temperature-measured-as-powerful-el-nino-forms",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "36f1f60c943d133f5b8b159fa786ad44",
+      "title": "California lawmakers unanimously pass Linux exemption from age-verification law",
+      "url": "https://www.tomshardware.com/software/linux/california-lawmakers-unanimously-pass-linux-exemption-from-age-verification-law-software-distributed-under-the-gpl-mit-bsd-and-apache-licenses-are-exempt",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "87987fe13a81194cdcfa2ce1687267f0",
+      "title": "Australia could make social media algorithms optional and follow UK ban on pornography depicting strangulation",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/30/australia-could-make-social-media-algorithms-optional-and-follow-uk-ban-on-pornography-depicting-strangulation",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "5b919366e9b181026f84f5f9323f4af9",
+      "title": "Trump hails 'historic' deal for US to control 65bn barrels of Venezuela's oil",
+      "url": "https://www.bbc.co.uk/news/articles/cx2zlwe7qj1o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8310a31320177012e0ec1a430bdecda8",
+      "title": "President Trump Signs Executive Order to Create US Space Academy",
+      "url": "https://www.nasa.gov/news-release/president-trump-signs-executive-order-to-create-us-space-academy",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "ae55818ac4b512fde00efe7797b046f2",
+      "title": "Fire in California’s Big Sur region doubles in size overnight, forcing evacuations",
+      "url": "https://www.theguardian.com/us-news/2026/aug/29/californias-wildfire-big-sur",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5040ecbc1427c520f04a56213dd3c199",
+      "title": "Hovland leads Tour Championship as Scheffler and McIlroy impress",
+      "url": "https://www.bbc.co.uk/sport/golf/articles/ckgx9y2dr1no?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "5f780a153b5caa75c848d45455ee8bcc",
+      "title": "Addisu Gobena smashes Sydney Marathon record as Jepchirchir wins fourth women’s major",
+      "url": "https://www.theguardian.com/sport/2026/aug/30/sydney-marathon-major-addisu-gobena-peres-jepchirchir",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 71,
+    "clusters_considered": 50,
+    "stories_run": 9,
+    "sources": 7,
+    "sections_held": 1
+  }
+}
