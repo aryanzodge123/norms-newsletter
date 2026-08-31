@@ -1,0 +1,236 @@
+{
+  "date": "2026-08-31",
+  "edition_number": 85,
+  "edition_type": "normal",
+  "headline_of_the_day": "US attacks Iranian launchers in Strait of Hormuz, Iran retaliates with strikes on Jordan airbases",
+  "headline_cluster_id": "43215767156446e5e7d3bed95056b103",
+  "headline_rationale": "First direct military exchange between US and Iran in a month, involving critical shipping lane and immediate regional escalation affecting US forces abroad.",
+  "key_points": [
+    {
+      "text": "The US struck Iranian rocket launchers on Larak Island to stop sea mine deployment. Iran then struck back at US airbases in Jordan.",
+      "topic": "World"
+    },
+    {
+      "text": "The EU AI Office sent its first formal requests to global AI model makers under the new AI Act.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Flash floods in Nepal killed 734 people with 2,400 still missing, including dozens of US citizens.",
+      "topic": "World"
+    },
+    {
+      "text": "Flash flooding at the Grand Canyon swept through Bright Angel Canyon on Saturday, leaving 15 hikers missing.",
+      "topic": "World"
+    },
+    {
+      "text": "NHS England will offer free seven-minute cholesterol tests at pharmacies to cut heart disease deaths by 25 percent.",
+      "topic": "Science"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "43215767156446e5e7d3bed95056b103",
+          "slug": "us-strikes-iranian-launchers-iran-hits-jordan-airbases-in",
+          "title": "US strikes Iranian launchers, Iran hits Jordan airbases in retaliation",
+          "summary": "First direct exchange in a month followed US attack on island site in Strait of Hormuz.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/aug/30/us-strikes-iranian-launchers-on-larak-island-amid-strait-of-hormuz-tensions"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cx2z72x5z1po?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Strait of Hormuz is a narrow waterway between Iran and Oman where roughly a third of the world's oil passes through by ship. The US and Iran have clashed repeatedly in this region over the past months. Tensions flared again on Sunday when the US struck Iranian rocket launchers on Larak Island.",
+            "what_happened": "US forces attacked two Iranian rocket launchers on Larak Island in the strait. A US official said the launchers were preparing to fire rockets with sea mines into the strait. Iran's Islamic Revolutionary Guard Corps, known as the IRGC, said the strike killed two people and hurt two others. The IRGC then launched its own attack on US airbases in Jordan. The IRGC also claimed it shot down a US drone over the strait.",
+            "why_it_matters": "The Strait of Hormuz is vital to global oil shipments, so military clashes there can affect energy prices worldwide. These direct exchanges between the US and Iran raise the risk of wider conflict in a region where both sides keep forces and weapons. This marks the first known strikes between them in about a month.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "01e8e9e1e9ab77fde2791a7a7d501ff8",
+          "slug": "nepal-flood-death-toll-reaches-734-with-2-400-missing",
+          "title": "Nepal flood death toll reaches 734, with 2,400 missing including US citizens",
+          "summary": "Officials are using DNA testing and tunnel rescues to find people. Mudslides now threaten towns near the border.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/08/30/nx-s1-5949351/families-of-pilgrims-likely-caught-in-floods-are-desperate-for-news-from-nepal"
+            }
+          ],
+          "article": {
+            "background": "Last week, nearly 30-foot-high waves of water swept through mountain valleys along the Nepal-China border. Nepal's government called it catastrophic flooding. More than 90,000 people were affected. Now, four days later, search teams are still looking for survivors. Authorities worry that more mudslides could hit towns in the area.",
+            "what_happened": "Nepal's Foreign Secretary Amrit Bahadur Rai said Sunday that 734 bodies have been recovered. More than 2,400 people remain missing, including dozens of U.S. citizens. Nepal has sent thousands of rescue workers to the region. Some people were still being found alive over the weekend.",
+            "why_it_matters": "Families waiting to hear from loved ones on pilgrimages to this region face agonizing uncertainty. Communications and access in remote mountain areas are extremely difficult right now. Nepal is asking for help from other countries with body identification and DNA testing. For now, updates are coming slowly.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e80bdc843efe3ab86a57516367c9b882",
+          "slug": "flash-flooding-hits-grand-canyon-15-hikers-missing",
+          "title": "Flash flooding hits Grand Canyon, 15 hikers missing",
+          "summary": "Water swept through Bright Angel Canyon on Saturday. So far, 62 people were rescued by air.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/clylkjyez1do?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/aug/30/grand-canyon-flash-flood-arizona-people-missing-evacuated"
+            }
+          ],
+          "article": {
+            "background": "Bright Angel Canyon and Phantom Ranch are popular hiking and camping areas deep within the Grand Canyon. They sit at the bottom, reachable mostly by foot or water. Hikers visit these spots for multi-day trips into the canyon.",
+            "what_happened": "A flash flood swept through Bright Angel Canyon and Phantom Ranch on Saturday afternoon around 14:30 local time. About 15 people are missing or unaccounted for. The National Park Service airlifted 62 people out of the area by Sunday morning. One person, a 46-year-old man, was found dead near Crystal Rapids along the Colorado River on Sunday evening.",
+            "why_it_matters": "If you hike the Grand Canyon or similar wilderness areas, sudden weather can trap you fast. Knowing local flood risks and how to get out matters for your safety. This flood shows why hikers need to watch weather alerts and follow evacuation orders at these remote spots.",
+            "quote": {
+              "text": "The whole thing was terrifying. It was a beautiful day and then people were",
+              "attribution": "Nikki Baggs, 41, a hiker airlifted from the canyon",
+              "source_url": "https://www.bbc.co.uk/news/articles/clylkjyez1do?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "9f2f2fcd0fabffb714c945c0f8289db8",
+          "slug": "eu-begins-enforcing-ai-act-with-first-requests-to-model",
+          "title": "EU begins enforcing AI Act with first requests to model providers",
+          "summary": "The EU's AI Office sent formal requests to companies around the world.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://tokenstead.ai/guides/eu-ai-act-first-enforcement-security-rfis"
+            }
+          ],
+          "article": {
+            "background": "The EU AI Act is Europe's law governing artificial intelligence. It took effect in phases starting in 2024. The strictest rules apply to high-risk AI and general-purpose models. These are systems like ChatGPT that handle many different tasks.",
+            "what_happened": "On August 29, 2026, the EU's AI Office sent formal requests for information to several major AI providers worldwide. The recipients include OpenAI, Anthropic, and Google. The requests ask about model security, independent outside evaluations, and how companies monitor their models after release.",
+            "why_it_matters": "This is the first formal enforcement action under the new EU rules. It signals that Europe will actively oversee AI development and hold companies accountable for safety. If you use AI tools made by these companies, stricter oversight could affect what features are available in your region or how data is handled.",
+            "quote": {
+              "text": "As a first step in enforcing the AI Act, our AI Office has formally sent requests for information to a number of providers of general-purpose AI models based in different regions of the world.",
+              "attribution": "Henna Virkkunen, European Commission Executive Vice-President for Tech Sovereignty, Security and Democracy",
+              "source_url": "https://tokenstead.ai/guides/eu-ai-act-first-enforcement-security-rfis"
+            }
+          }
+        },
+        {
+          "cluster_id": "591ee1db1ab12f9bfe9daef6ee28f43f",
+          "slug": "us-imposes-steep-tariffs-on-drones-and-robotics-citing",
+          "title": "US imposes steep tariffs on drones and robotics, citing security concerns",
+          "summary": "Drone tariffs start in September. Tariffs on parts begin in 2027.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale"
+            }
+          ],
+          "article": {
+            "background": "The U.S. government has been adding rules around foreign technology in key industries for years. In 2021, it created the FCC's Covered List to block telecom and surveillance gear from Chinese companies like Huawei, ZTE, and Hikvision. That list has since grown to cover drones and advanced robots. The government sees these tools as important to defense and critical infrastructure.",
+            "what_happened": "In July and August, Washington tightened rules on foreign-made advanced robots. It also added steep tariffs on imported drones and their parts. Drone tariffs start in September. Component tariffs follow in 2027. Both moves cite national security concerns.",
+            "why_it_matters": "If tariffs raise prices on drones and robotic equipment, businesses and consumers who buy them will pay more. The government hopes barriers and higher costs will slow adoption of foreign technology. But China has the manufacturing scale to potentially find ways around these restrictions.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "f61acd2de1db2ebdaed8dce892f4f3c7",
+          "slug": "nhs-england-to-offer-free-cholesterol-tests-at-pharmacies",
+          "title": "NHS England to offer free cholesterol tests at pharmacies",
+          "summary": "Free seven-minute finger-prick tests for people 40 to 84 aim to cut strokes by 25 percent.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/aug/31/nhs-free-cholesterol-tests-pharmacies-stroke-heart-attack"
+            }
+          ],
+          "article": {
+            "background": "Heart disease and stroke are leading causes of death in England. High cholesterol is a major risk factor for both conditions, but many people do not know their levels. The NHS is now expanding how people can get tested for it.",
+            "what_happened": "The NHS in England will offer free cholesterol tests at participating pharmacies for the first time. The seven-minute tests use a finger-prick blood sample taken with a small sharp tool called a lancet. People aged 40 to 84 who have not had a blood test in the past year and are not pregnant can walk in without an appointment. A pharmacist can then provide advice based on the results.",
+            "why_it_matters": "Many people have high cholesterol without knowing it, which puts them at risk of a heart attack or stroke. These tests make it easier to find out your cholesterol level at a convenient location without a doctor's appointment. Knowing your number early gives you time to make changes or get treatment that could prevent serious illness.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ab13ccda4b0aaa95e19f9f0a85d42fe4",
+          "slug": "study-finds-domestic-cats-kill-up-to-4-billion-birds",
+          "title": "Study finds domestic cats kill up to 4 billion birds annually in US",
+          "summary": "Free-roaming cats kill up to 4 billion birds and 6 to 22 billion mammals each year, research shows.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nature.com/articles/ncomms2380"
+            }
+          ],
+          "article": {
+            "background": "Domestic cats roam freely in many parts of the world. Cats on islands have driven some wildlife species to extinction. Researchers wanted to measure how many birds and mammals free-ranging cats kill each year in the United States.",
+            "what_happened": "A study used data from multiple sources to estimate cat predation. Researchers found that free-ranging domestic cats kill 1.3 to 4.0 billion birds per year. They also kill 6.3 to 22.3 billion mammals annually.",
+            "why_it_matters": "Pet cats that roam outdoors hunt wild animals at a massive scale. Knowing how many animals cats kill helps explain why some species are shrinking. This data can guide decisions about managing cat populations and protecting wildlife.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "59da7e5666f7b84456fd8e878c89059c",
+      "title": "Gems, ghosts and GTA VI: the biggest video games for autumn 2026",
+      "url": "https://www.theguardian.com/games/ng-interactive/2026/aug/31/the-biggest-video-games-for-autumn-2026-gta-vi",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "10d44a707104e246771f3182a4122cdc",
+      "title": "Djokovic breaks down in tears during US Open first-round exit",
+      "url": "https://www.bbc.co.uk/sport/tennis/articles/c39m1le9gjeo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "8e43df7284cec58b8e7b365492046c98",
+      "title": "Eight killed and 18 missing after ferry capsizes off northern Cyprus",
+      "url": "https://www.bbc.co.uk/news/articles/c770jyd4l7lo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "62c3ecb2a9333f02bd539bd867bdd66a",
+      "title": "Victorian prisoners to be sent out to repair roads under Labor’s pothole plan",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/31/victorian-prisoners-to-be-sent-out-to-repair-roads-under-labors-pothole-plan",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "bb344e471eacfb55492cc7b98fa0d04d",
+      "title": "Yen weakens past ¥160 per dollar, eroding intervention gains",
+      "url": "https://www.japantimes.co.jp/business/2026/08/29/markets/yen-160-dollar-intervention",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 80,
+    "clusters_considered": 58,
+    "stories_run": 7,
+    "sources": 11,
+    "sections_held": 3
+  }
+}
