@@ -1,0 +1,480 @@
+{
+  "date": "2026-09-01",
+  "edition_number": 86,
+  "edition_type": "normal",
+  "headline_of_the_day": "US and Iran trade strikes over Strait of Hormuz for first time in weeks",
+  "headline_cluster_id": "0412d0f86bb94a98c05ba05994b8980c",
+  "headline_rationale": "Direct military confrontation between major powers over a critical shipping chokepoint carries immediate consequences for energy markets and global trade",
+  "key_points": [
+    {
+      "text": "US and Iran exchanged strikes over control of the Strait of Hormuz, escalating regional tension",
+      "topic": "World"
+    },
+    {
+      "text": "FTC accused Amazon of running a secret ad surcharge scheme affecting over a million advertisers",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Tim Cook stepped down as Apple CEO after leading the company for 15 years",
+      "topic": "Tech"
+    },
+    {
+      "text": "Nepal flood death toll passed 1,000 with thousands still missing in mud-filled tunnels",
+      "topic": "World"
+    },
+    {
+      "text": "Florida ordered removal of Flock license plate readers from state highways within 30 days.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-01.mp3",
+    "duration_seconds": 475,
+    "size_bytes": 5702400
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "236da7f83029541e72e931d0e973b81f",
+          "slug": "tim-cook-steps-down-as-apple-ceo",
+          "title": "Tim Cook steps down as Apple CEO",
+          "summary": "Cook announced his last day leading the world's largest tech company by market value",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/tim_cook/status/2094448088199078236"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "90c1bf0fd13d155b7d8f172e2c984c93",
+          "slug": "google-removed-ad-blocking-extensions-from-chrome-web-store",
+          "title": "Google removed ad blocking extensions from Chrome Web Store",
+          "summary": "Chrome removed all MV2 extensions including uBlock Origin, affecting millions of users",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/09/01/g-s1-141349/hindu-pilgrims-on-arduous-trek-among-nepals-missing"
+            }
+          ],
+          "article": {
+            "background": "Last Wednesday, Nepal was hit by devastating floods. Many pilgrims were caught in the disaster. These pilgrims were on a sacred journey to Mount Kailash. This peak is in the Himalayas, located in Chinese-held Tibet.",
+            "what_happened": "Since the floods, families have posted pleas on social media. They are searching for loved ones who went missing. The posts include photos and phone numbers. Most of the missing people were pilgrims on the sacred trek to Mount Kailash.",
+            "why_it_matters": "When disasters strike in remote areas, finding missing people becomes very hard. Families now rely on social media to spread word and ask for help. This story shows how floods in mountainous regions can separate families quickly.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "887634c77cb8ff2c97cb2c78d1b4a802",
+          "slug": "spacex-and-nvidia-adapt-data-center-platform-for-orbital-ai",
+          "title": "SpaceX and Nvidia adapt data center platform for orbital AI use",
+          "summary": "First launch of the Vera Rubin rack-scale system for space is set for late 2027",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://thenewstack.io/spacex-nvidia-orbital-ai"
+            }
+          ],
+          "article": {
+            "background": "Nvidia makes Vera Rubin, an AI chip system designed to run large AI models. SpaceX and Nvidia announced in August that they will adapt this system for use in space. SpaceX plans to put it on satellites in low Earth orbit, the region closest to Earth where most satellites fly.",
+            "what_happened": "SpaceX and Nvidia said they will use Vera Rubin chips to power Starmind AI satellites. These satellites will serve as computing nodes in orbit. SpaceX targets a first launch in the fourth quarter of 2027.",
+            "why_it_matters": "Processing data from space-based sensors in orbit could eventually be faster and cheaper than sending it to Earth first. This moves AI computing from ground data centers into space. The system will need to survive radiation in orbit, which the companies now must test and solve.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f28acaea1f7f6585e1086e4056b54220",
+          "slug": "pentagon-launches-chatgpt-and-grok-versions-for-3-million",
+          "title": "Pentagon launches ChatGPT and Grok versions for 3 million personnel",
+          "summary": "The Pentagon created custom AI tools for 3 million troops on the GenAI.mil portal.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok"
+            }
+          ],
+          "article": {
+            "background": "The Pentagon launched GenAI.mil last year. It is a secure portal that gives Department of Defense employees access to AI tools. AI tools are software that can answer questions and write text. The first version offered Google Gemini. Now it includes two more popular options.",
+            "what_happened": "The Pentagon added two new AI tools to GenAI.mil. ChatGPT Mil is a custom version of OpenAI's ChatGPT. Grok for Government is a custom version of xAI's Grok. These tools are now available to 3 million military and civilian Defense Department staff.",
+            "why_it_matters": "These military versions keep sensitive work off ordinary internet channels. Private companies collect data from regular AI tools. Military versions do not. This means military staff can use popular AI tools safely. They can work with classified or sensitive information without risking a data leak.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "2d92daf5f81f35714143164611e78caf",
+          "slug": "commerce-department-cuts-census-bureau-s-political",
+          "title": "Commerce Department cuts Census Bureau's political interference ban",
+          "summary": "The agency quietly removed rules that stopped politicians from influencing its scientific work.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/08/31/nx-s1-5948057/department-commerce-census-bureau-scientific-integrity"
+            }
+          ],
+          "article": {
+            "background": "The Census Bureau is part of the Commerce Department. It collects data on the US population that cities and states use to plan schools, hospitals, and roads. The department has a scientific integrity policy. This policy is meant to keep politics from shaping the agency's work and reports.",
+            "what_happened": "This month, the Commerce Department removed language from its policy that banned political interference. The removal happened on Aug. 19. It came the day after the Census Bureau released an unusual report. That report made claims about non-citizen voting. The team behind it has ties to a think tank founded by officials from President Trump's first administration.",
+            "why_it_matters": "Population data shapes real decisions. Local officials use Census numbers to decide where to build schools and hospitals. If politics can shape Census reports, those numbers become less reliable. The data Americans depend on for planning their communities could be influenced by officials rather than facts.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "24f6c9a5ad5601608dcc705577ccfa48",
+          "slug": "congress-to-vote-on-bill-denying-federal-funds-to",
+          "title": "Congress to vote on bill denying federal funds to universities boycotting Israel",
+          "summary": "The measure would cut funding to schools that boycott Israeli companies or institutions",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/dylanotes/status/2094229210889965634"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "0412d0f86bb94a98c05ba05994b8980c",
+          "slug": "us-and-iran-trade-strikes-over-strait-of-hormuz-control",
+          "title": "US and Iran trade strikes over Strait of Hormuz control",
+          "summary": "The US and Iran launched direct military strikes over a key shipping route.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/u-s-and-iran-trade-strikes-for-first-time-in-weeks-over-strait-of-hormuz-control"
+            }
+          ],
+          "article": {
+            "background": "The U.S. and Iran have had military tensions in the Middle East for years. The Strait of Hormuz, a narrow waterway between Iran and Oman, carries about one-third of the world's traded oil. Control of this strait matters because disruptions there can affect global energy prices and economic stability. The two countries have clashed over it repeatedly.",
+            "what_happened": "The U.S. and Iran exchanged fire for the first time in over a month. Iran launched missile strikes, and the U.S. responded. The exchange triggered broader missile launches and pushed global oil prices higher. President Trump responded by calling Iran a \"failed nation\" and shared an AI-generated video depicting an Iranian energy hub under attack.",
+            "why_it_matters": "When the U.S. and Iran trade military strikes, oil prices typically spike. This affects what Americans pay at the pump and what businesses pay for fuel and shipping. The Strait of Hormuz disruption also risks broader conflict in a region where the U.S. has military presence. Renewed tensions mean prices could stay elevated or rise further in coming weeks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2a4ebc8d203218b40a2b0d811b940c5c",
+          "slug": "nepal-flood-death-toll-crosses-1-000-as-tunnel-rescues",
+          "title": "Nepal flood death toll crosses 1,000 as tunnel rescues continue",
+          "summary": "More than 3,900 people are missing in Nepal floods, including 600 trapped in hydropower tunnels.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c5ylvgq9q71o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Devastating floods hit Nepal along its border with Tibet. The floods destroyed homes and washed away roads. More than 3,900 people remain missing. Norm covered this disaster on August 30th, when the death toll was lower and rescue teams were just beginning their search.",
+            "what_happened": "The death toll has now crossed 1,000, according to Nepal's disaster agency. About 600 of the missing are workers trapped in mud-filled tunnels at hydropower sites along the Trishuli River. Rescue teams have been pumping air into the tunnels to help them breathe. One team gained entry to a tunnel but found no workers inside.",
+            "why_it_matters": "For the workers' families, the wait is agonizing. For Nepal, the scale of the disaster is straining the country's ability to find people, identify bodies, and treat the injured. Poor weather has also slowed rescue flights and search efforts in remote areas.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "175875f601defd11ad903f03e747e28b",
+          "slug": "japan-shifts-economic-focus-from-china-to-india",
+          "title": "Japan shifts economic focus from China to India",
+          "summary": "Japanese companies are expanding trade and investment ties with Asia's third largest economy",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cz64955d56po?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Japan is shifting more business to India as its ties with China grow riskier. India is Asia's third largest economy. Japanese companies have already opened stores in Indian cities like Mumbai, Delhi, and Bengaluru.",
+            "what_happened": "India's commerce minister Piyush Goyal led the country's largest business delegation to Japan last week. The trip aimed to expand trade and investment between the two nations. Japanese brands like Uniqlo, Muji, and Onitsuka Tiger are now expanding across India.",
+            "why_it_matters": "More Japanese companies in India means more choice and competition for Indian shoppers. It also creates jobs in India and brings in investment. For Japan, India offers a growing market as doing business in China becomes harder.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ee2a2cc741deb8ea9cb753bc2025bd32",
+          "slug": "two-dead-and-14-missing-after-grand-canyon-flash-flood",
+          "title": "Two dead and 14 missing after Grand Canyon flash flood",
+          "summary": "Saturday flooding destroyed footbridges and sent boulders down Bright Angel Canyon, killing two.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/clylkjyez1do?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/ng-interactive/2026/aug/31/grand-canyon-flash-flood-causes"
+            }
+          ],
+          "article": {
+            "background": "A flash flood swept through Bright Angel Canyon and Phantom Ranch in the Grand Canyon on Saturday afternoon. Heavy rain fell in the area and created a surge of water and debris. The flood wiped out footbridges and moved boulders downstream. Sixty-two people were airlifted out by helicopter.",
+            "what_happened": "Two people died in the flooding. One was a 46-year-old man found on Sunday evening near Crystal Rapids along the Colorado River. Fifteen people remain missing or unaccounted for. The National Park Service said more heavy rain and storms are forecast for the area, which could cause more debris flows and floods.",
+            "why_it_matters": "The Grand Canyon is a major tourist destination where thousands of people hike each year. A flash flood can strike quickly in narrow canyons and cut off escape routes. Families of the missing are waiting for updates as rescuers search the remote area.",
+            "quote": {
+              "text": "The whole thing was terrifying.",
+              "attribution": "Nikki Baggs, 41, a visitor who was airlifted out",
+              "source_url": "https://www.bbc.co.uk/news/articles/clylkjyez1do?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "bcea4ef114fe1e97114b25b2a890a36a",
+          "slug": "ftc-accuses-amazon-of-secret-ad-surcharge-scheme",
+          "title": "FTC accuses Amazon of secret ad surcharge scheme",
+          "summary": "The FTC says Amazon secretly raised prices for over a million advertisers for seven years.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/08/31/ftc-accuses-amazon-of-running-a-secret-ad-surcharge-scheme-in-new-lawsuit"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cvgy91nvy27o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/986982/amazon-advertising-prices-ftc-lawsuit"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-states-sue-amazon-over-secret-ad-surcharge-scheme"
+            }
+          ],
+          "article": {
+            "background": "Amazon runs an ad platform where brands and sellers buy space to show their products. When many advertisers want the same spot, an auction decides who gets it and what they pay. The FTC is the federal agency that enforces consumer protection rules.",
+            "what_happened": "On Monday, the FTC and 22 states sued Amazon. They say Amazon secretly rigged its ad auctions for over seven years. Instead of using the actual auction results, Amazon set prices higher on its own. This affected more than 1 million advertisers. The lawsuit claims Amazon made about $20 billion from this scheme since 2019.",
+            "why_it_matters": "When Amazon charges advertisers more, those costs often get passed to shoppers through higher prices. The case targets a huge part of Amazon's profit. It shows regulators are willing to take on major tech companies over how they run their platforms, which could shape what rules other ad systems follow.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "cb5c4bc522b223b71fdbcdd0e1c58cbb",
+          "slug": "florida-orders-removal-of-flock-cameras-from-state-highways",
+          "title": "Florida orders removal of Flock cameras from state highways",
+          "summary": "Transportation agency revoked permits and gave 30 days to remove license plate readers",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.businessinsider.com/florida-orders-removal-flock-camera-state-highways-license-plate-readers-2026-8"
+            }
+          ],
+          "article": {
+            "background": "Flock Safety makes automated license plate readers, or ALPRs. These cameras sit along roads and at intersections to capture and store license plate data. Police use them to help solve crimes. The devices are now in thousands of towns across the US.",
+            "what_happened": "Florida's Department of Transportation revoked permits for Flock cameras on state highways on Monday. The agency ordered the devices removed within 30 days. Flock faces backlash over data privacy concerns and how the cameras track people's movements.",
+            "why_it_matters": "If you drive on Florida's state highways, police will no longer be using these cameras to track your license plate. The decision may signal that other states and cities will reconsider whether the law enforcement benefits of these cameras outweigh privacy risks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fceb3adb4f4fcdb6361c5b8fb2c96b06",
+          "slug": "flock-s-ai-surveillance-network-faces-growing-us-backlash",
+          "title": "Flock's AI surveillance network faces growing US backlash",
+          "summary": "About 130,000 license plate readers now operate across the US, raising privacy concerns.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cvgy4ddx1q8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Flock is a private company that runs a network of AI cameras. These cameras read license plates on vehicles. The network has about 130,000 cameras spread across the US. Most are owned and run by local law enforcement agencies.",
+            "what_happened": "Flock's camera network is growing fast. The expansion has sparked privacy concerns and protests. People worry about how the system collects data on vehicle movements. They also question how that data gets stored and shared.",
+            "why_it_matters": "If you drive, these cameras may track where you go. Law enforcement can use the data to find your location and movements. As the network grows, more of your trips could be recorded and saved.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "4fd109603282ebbc0b46cd539db233c3",
+          "slug": "cardiac-imaging-study-found-plaque-in-35-percent-of-men-in",
+          "title": "Cardiac imaging study found plaque in 35 percent of men in their 30s",
+          "summary": "A large study found that 35 percent of younger adults thought to be healthy had arterial plaque buildup.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.empirical.health/blog/arterial-plaque-men-30s"
+            }
+          ],
+          "article": {
+            "background": "Doctors usually predict heart disease risk from easy measurements: age, cholesterol, blood pressure. A new study in NEJM took a different approach. It used CT angiography, an expensive imaging scan that shows arteries directly. The scan found plaque, fatty deposits that narrow blood vessels, in people who seemed healthy by traditional measures.",
+            "what_happened": "Researchers found arterial plaque in 34.6% of men ages 30 to 39. Plaque showed up in 21% of women in their 30s. In adults over 60, plaque was present in 90% of both sexes. Among 30-to-39-year-olds with plaque, 41.8% of men and 48.4% of women had a coronary calcium score of zero. This score is another heart disease test. The mismatch between visible plaque and a zero score was less common with age.",
+            "why_it_matters": "Young people without traditional risk factors may still be developing heart disease silently. This matters if you are in your 30s, because plaque builds over decades. The test that caught it, CT angiography, is expensive and not routinely offered. For now this does not change how doctors screen most young adults. But it suggests that current risk predictions may miss people early in disease, before plaque becomes dangerous.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "946a3da65975ac2c623f3a8275d6877f",
+          "slug": "new-migraine-prevention-guidelines-offer-more-options-for",
+          "title": "New migraine prevention guidelines offer more options for patients",
+          "summary": "New migraine guidelines, the first in 14 years, include CGRP inhibitors and newer treatments.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "science_news",
+              "url": "https://www.sciencenews.org/article/migraine-drugs-prevention-guidelines"
+            }
+          ],
+          "article": {
+            "background": "Migraine attacks are severe headaches that disable many people. For 14 years, doctors used the same prevention guidelines. New drugs have changed what doctors can offer. The American Academy of Neurology and American Headache Society just released new guidelines on August 31.",
+            "what_happened": "The updated guidelines now include drugs that target CGRP, a protein in the body. CGRP-targeting drugs like Aimovig and Ajovy reduce migraines in up to 70 percent of people who take them. These drugs were not available when doctors last updated their guidelines.",
+            "why_it_matters": "If you get migraines, your doctor now has more tools to help you avoid them. The right drug for one person may not work for another. Better guidelines help doctors pick treatments that fit each patient's needs.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "f2f74e4aaf413075b307cdfa1a1b7647",
+          "slug": "attackers-exploit-critical-flaws-in-langflow-and-ruby-on",
+          "title": "Attackers exploit critical flaws in Langflow and Ruby on Rails",
+          "summary": "Attackers are using software flaws to steal login details and take control of computers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/09/attackers-exploit-critical-langflow-and.html"
+            }
+          ],
+          "article": {
+            "background": "Langflow is a tool for building AI applications. Ruby on Rails is a framework developers use to build websites. Both have critical security flaws that attackers are actively exploiting right now.",
+            "what_happened": "Two vulnerabilities are under active attack. The first, in Langflow, has a severity score of 9.8 out of 10. It lets attackers run harmful code with root access, the highest level of control. The second, in Ruby on Rails, scores 9.5. It lets attackers without login access read files from servers and steal secrets like database passwords and API tokens.",
+            "why_it_matters": "If you use either platform, attackers could take control of your systems or steal the credentials that protect your data. Patching these flaws right away is critical to keep your information safe.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f7e66043b4c023dfb27249cb3f5c70f3",
+          "slug": "dropbox-says-accounts-accessed-without-authorization-for",
+          "title": "Dropbox says accounts accessed without authorization for two weeks",
+          "summary": "Breach occurred through Lenovo identity provider between August 4 and August 21",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.ycombinator.com/item?id=49514427"
+            }
+          ],
+          "article": {
+            "background": "Dropbox is a cloud storage service where people save and access files online. Dropbox lets users log in using a Lenovo ID, a verified account from Lenovo. Lenovo checks email addresses to confirm who people are.",
+            "what_happened": "Between August 4 and August 21, 2026, unauthorized people accessed some Dropbox accounts. Dropbox says a flaw in Lenovo's email check let attackers register fake Lenovo IDs. The attackers used real people's email addresses to create these fake accounts. Then they used those fake IDs to log into the real Dropbox accounts.",
+            "why_it_matters": "If your Dropbox account was affected, someone may have seen or downloaded your files. Check your Dropbox for any suspicious activity. You should also change your password and review any other accounts that share the same email address, since the breach affected how you log in through Lenovo.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "fe74f8ed63395d76c11f8da380caa745",
+      "title": "Apple’s top App Store exec, Phil Schiller, follows wave of exits as CEO Tim Cook steps down",
+      "url": "https://techcrunch.com/2026/08/31/apples-top-app-store-exec-phil-schiller-follows-wave-of-exits-as-ceo-tim-cook-steps-down",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "6f8f8c9986dd82d13e03f8b4c1632ad6",
+      "title": "Trump's plan for economic D-day for Iran has one big hole: China",
+      "url": "https://www.npr.org/2026/08/31/nx-s1-5950325/trumps-plan-for-economic-d-day-for-iran-has-one-big-hole-china",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "58a4c8d3f1444edc3ff97fd00ad5b685",
+      "title": "Colombia's president says soldiers killed a key dissident leader",
+      "url": "https://www.pbs.org/newshour/world/colombias-president-says-soldiers-killed-a-key-dissident-leader",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a8964d09ccf0a719546d9104fa5d3006",
+      "title": "Swinney says reform is at heart of his programme for government",
+      "url": "https://www.bbc.co.uk/news/articles/c9dw5x611gpo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "65d6c690bb50d7a81b92fab2350b528b",
+      "title": "US army secretary Dan Driscoll resigns over reported friction with Pete Hegseth",
+      "url": "https://www.theguardian.com/us-news/2026/aug/31/army-secretary-dan-driscoll-resigns",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "6ae4d383c1907a93ef00c1697b518c4e",
+      "title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
+      "url": "https://www.cnbc.com/2026/08/31/mortgage-rates-surge-middle-east-attacks-oil.html",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "33b11b9b6d14a7d452f7a27a15e85cd8",
+      "title": "Rising microplastics in soil a threat to UK food security, MPs and campaigners say",
+      "url": "https://www.theguardian.com/environment/2026/sep/01/rising-microplastics-in-soil-a-threat-to-uk-food-security-mps-and-campaigners-say",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "3f79220d27a8804a0e88b19340007e32",
+      "title": "Trump tells FCC to punish journalist for calling his election results \"mixed\"",
+      "url": "https://arstechnica.com/tech-policy/2026/08/trump-tells-fcc-to-punish-journalist-for-calling-his-election-results-mixed",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "d188c3c020e3430c4055ba5c482bcd8b",
+      "title": "Boss of City regulator accused of threatening consumer group over £9.1bn car loan scheme",
+      "url": "https://www.theguardian.com/business/2026/sep/01/boss-of-city-regulator-accused-of-threatening-consumer-group-over-91bn-car-loan-scheme",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "c45584f5eef4bcdb97049b38db2fb236",
+      "title": "Kalshi bans George Santos for life over State of the Union bets",
+      "url": "https://techcrunch.com/2026/08/31/kalshi-bans-george-santos-for-life-over-state-of-the-union-bets",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "d6bc0cf7734aa332321461e6146420d8",
+      "title": "Trump strikes new drug pricing deals with nine midsized drugmakers",
+      "url": "https://www.cnbc.com/2026/08/31/trump-drug-pricing-deals.html",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 177,
+    "clusters_considered": 158,
+    "stories_run": 17,
+    "sources": 17,
+    "sections_held": 1
+  }
+}
