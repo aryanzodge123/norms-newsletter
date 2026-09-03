@@ -1,0 +1,205 @@
+{
+  "date": "2026-09-03",
+  "edition_number": 88,
+  "edition_type": "normal",
+  "headline_of_the_day": "Judge blocks Trump order on birthright citizenship",
+  "headline_cluster_id": "4b738ce8e3e810fa0ead1bff272532cd",
+  "headline_rationale": "A federal court striking down a major executive order on a core constitutional question immediately affects how citizenship is determined and creates legal precedent.",
+  "key_points": [
+    {
+      "text": "A federal judge blocked Trump's order to end birthright citizenship under the Fourteenth Amendment.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The US struck Iran again after Tehran attacked American bases and allies in the Gulf.",
+      "topic": "World"
+    },
+    {
+      "text": "The Justice Department backed OpenAI in a lawsuit over using published material to train AI.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "The NBA suspended Clippers owner Steve Ballmer for one year for breaking salary cap rules.",
+      "topic": "Sports"
+    },
+    {
+      "text": "A solar storm in November made US GPS systems off by up to 33 feet nationwide.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-03.mp3",
+    "duration_seconds": 358,
+    "size_bytes": 4296384
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "4b738ce8e3e810fa0ead1bff272532cd",
+          "slug": "federal-judge-blocks-trump-order-limiting-birthright",
+          "title": "Federal judge blocks Trump order limiting birthright citizenship",
+          "summary": "A judge blocked the order because it goes against the Fourteenth Amendment's promise of citizenship.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/world/us-judge-wont-immediately-block-trumps-newest-order-limiting-birthright-2026-08-28"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "ccba667d0652daff1a0c152307492a65",
+          "slug": "postal-service-built-ballot-blocking-system-despite-court",
+          "title": "Postal Service built ballot-blocking system despite court injunction",
+          "summary": "A whistleblower says USPS built a mail ballot check system while a court told it not to.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.techdirt.com/2026/09/02/whistleblower-usps-defied-a-court-injunction-to-build-an-untested-undocumented-ballot-blocking-system-its-own-staff-call-the-process-a-shit-show"
+            }
+          ],
+          "article": {
+            "background": "The U.S. Postal Service handles mail delivered during elections. This includes mail-in ballots. A court had ordered the agency not to build a system to block ballots. A whistleblower is a worker who reports wrongdoing at their company.",
+            "what_happened": "A USPS whistleblower said the agency built a ballot-blocking system anyway. The system was untested and had no written rules. Workers called the process disorganized and badly run.",
+            "why_it_matters": "If mail-in ballots get blocked by mistake, votes may not count. The system's lack of testing and clear rules raises the risk of errors. This affects anyone who votes by mail.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "225dc6f745556200f6ebfc87f7cfb706",
+          "slug": "us-strikes-iran-again-after-tehran-attacks-american-allies",
+          "title": "US strikes Iran again after Tehran attacks American allies in Gulf",
+          "summary": "Iran attacked US bases and allied sites across the region on Wednesday.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/u-s-strikes-iran-again-as-tehran-targets-american-allies-in-gulf-region"
+            }
+          ],
+          "article": {
+            "background": "The U.S. and Iran have clashed militarily in the Persian Gulf region. The Strait of Hormuz, a key shipping route, sits at the center of this tension.",
+            "what_happened": "Iran attacked American bases and allies across the Gulf on Wednesday. It came after U.S. strikes hit Iran's southern coast, killing at least 18 people according to Iran's health minister. At the White House, President Trump said the new campaign would not last long. He also threatened to hit Tehran very hard if the conflict over the Strait of Hormuz continues.",
+            "why_it_matters": "The Strait of Hormuz is vital to global oil shipments. A wider conflict there could disrupt energy markets and affect prices. American allies in the region face direct risk from the escalating attacks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b622046964033ebd87bb9abb898d658f",
+          "slug": "eu-and-nato-vow-stronger-response-to-russian-sabotage-in",
+          "title": "EU and NATO vow stronger response to Russian sabotage in Germany",
+          "summary": "NATO leaders said the Leipzig incident was a new Russian attack on EU soil.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ce9e810pg7ko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia has been conducting drone attacks in Europe. Germany recently blamed Russia for a failed drone attack on Leipzig airport. EU leaders and Nato are now responding to what they see as increasing recklessness from Russia.",
+            "what_happened": "EU Commission President Ursula von der Leyen called the Leipzig attack a new escalation on EU soil caused by Russia. Nato Secretary General Mark Rutte said the alliance stood fully with Germany. Both leaders vowed to step up pressure on Russia in response.",
+            "why_it_matters": "These attacks show Russia is willing to strike targets inside Europe, not just Ukraine. How the EU and Nato respond could shape the level of support for Ukraine and the cost Russia faces for its actions.",
+            "quote": {
+              "text": "Leipzig marks a new escalation on European Union soil directly attributed to Russia.",
+              "attribution": "EU Commission President Ursula von der Leyen",
+              "source_url": "https://www.bbc.co.uk/news/articles/ce9e810pg7ko?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "a85ae76950bc5ebe612b370e77460bb3",
+          "slug": "justice-department-sides-with-openai-in-new-york-times",
+          "title": "Justice Department sides with OpenAI in New York Times copyright lawsuit",
+          "summary": "The federal government said it is okay to use copyrighted material to train AI language models.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/09/02/technology/justice-department-openai-copyright-suit.html"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "6326af3f62460c12f13559d4a153967c",
+          "slug": "uk-names-b-q-and-five-guys-among-600-firms-that-underpaid",
+          "title": "UK names B&Q and Five Guys among 600 firms that underpaid workers",
+          "summary": "The government ordered 600 firms, including B&Q and Five Guys, to pay staff £4 million in back wages.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c39mv4vm7exo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK has a minimum wage law that sets the lowest amount employers can pay workers. More than 600 companies broke this rule. The government's Department for Business and Trade found them and took action.",
+            "what_happened": "B&Q, the DIY store, and Five Guys, the fast food chain, were among 658 named businesses. They paid staff below the legal minimum wage. The companies were ordered to return £4 million in unpaid wages to workers. They also face £7 million in penalties combined. B&Q said the underpayments were not on purpose. It blamed how it calculated geographical allowances. Five Guys blamed technical issues in its payroll system.",
+            "why_it_matters": "If you work in the UK, you have a legal right to earn at least the minimum wage. These cases show the government will find violations and make companies pay back what they owe. The penalties signal that breaking this rule costs money. For most workers, this changes nothing today. But it means the rules that protect your wages have teeth.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "d12b0b6dcbe55a5359ae5dea18078c1b",
+      "title": "Uber beats Waymo as first to launch robotaxis in London",
+      "url": "https://www.theverge.com/news/988415/uber-wayve-robotaxi-london-launch",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "7896aaa8c6726d5922601b72fb61f82b",
+      "title": "GPS Glitched Across US by as Much as 33 Feet. Scientists Have Never Seen Before",
+      "url": "https://www.sciencealert.com/gps-glitched-across-the-us-by-as-much-as-33-feet-scientists-have-never-seen-this-before",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "35c44ac72b1e4e2d2d39e8fe4b2f6c6a",
+      "title": "NBA suspends Clippers owner Ballmer for one year in Kawhi Leonard salary cap probe",
+      "url": "https://www.cnbc.com/2026/09/02/nba-suspends-clippers-ballmer-kawhi-leonard-salary-cap.html",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "3706604c2feb169f2106c8cbf0487e49",
+      "title": "Dutch central bank moves 86 tonnes of gold to UK from US and Canada, citing ‘geopolitical unrest’",
+      "url": "https://www.theguardian.com/world/2026/sep/03/netherlands-gold-dutch-central-bank-uk-us-and-canada-geopolitical-unrest",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "eacf824224f9c301ff8aa83f4fc4506a",
+      "title": "Inside Afghanistan's secret schools where women defy the Taliban to educate girls",
+      "url": "https://www.pbs.org/newshour/show/inside-afghanistans-secret-schools-where-women-defy-the-taliban-to-educate-girls",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "50421cf5957b64a75dd7423b5fd95833",
+      "title": "Almost half of households do not see benefits of economic growth, report says",
+      "url": "https://www.bbc.co.uk/news/articles/crerw510gdzo?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 62,
+    "clusters_considered": 60,
+    "stories_run": 6,
+    "sources": 11,
+    "sections_held": 0
+  }
+}
