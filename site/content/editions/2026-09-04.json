@@ -1,0 +1,308 @@
+{
+  "date": "2026-09-04",
+  "edition_number": 89,
+  "edition_type": "normal",
+  "headline_of_the_day": "Volkswagen to cut 100,000 jobs by 2030 from tariffs and competition",
+  "headline_cluster_id": null,
+  "headline_rationale": "Affects automotive workers across Europe and signals a major shift in the global car industry driven by trade policy and manufacturing competition.",
+  "key_points": [
+    {
+      "text": "Volkswagen will cut 100,000 jobs by 2030 due to US tariffs and Chinese competition.",
+      "topic": "Business"
+    },
+    {
+      "text": "A pig kidney worked in a US patient for 271 days, giving hope to people waiting for transplants.",
+      "topic": "Science"
+    },
+    {
+      "text": "A mysterious kidney disease cluster has appeared in Texas among workers born in Mexico and Central America.",
+      "topic": "Science"
+    },
+    {
+      "text": "Germany's far-right party won its first state election, raising fears among minorities about what comes next.",
+      "topic": "World"
+    },
+    {
+      "text": "GLP-1 drugs are linked to fewer serious infections, including tuberculosis, new data shows.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-04.mp3",
+    "duration_seconds": 351,
+    "size_bytes": 4214880
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "2f068614918d9d14882065bcfbe6dd0f",
+          "slug": "ice-agent-charged-with-lying-about-shooting-venezuelan-man",
+          "title": "ICE agent charged with lying about shooting Venezuelan man during crackdown",
+          "summary": "Christian Castro faces charges for a January shooting in Minnesota and lying about it.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c70dzzkwgg5o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "US Immigration and Customs Enforcement, or ICE, is the federal agency that enforces immigration laws. On January 14, an ICE agent named Christian Castro shot a Venezuelan migrant in Minnesota during an enforcement operation. The Department of Homeland Security said Castro fired in self-defense after being attacked with a shovel and a broom handle.",
+            "what_happened": "Federal investigators now say Castro's account was false. He fired through a closed door, hitting the man in the leg. Castro, who is not yet in custody, faces a six-count federal indictment for lying about the shooting.",
+            "why_it_matters": "This case raises questions about how ICE agents describe their use of force. It is rare for ICE agents to face charges over shooting incidents. The case shows that federal investigators are scrutinizing the justifications agents give for firing weapons.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "46f921a659ddc9192dd3bfa4ffff8bf1",
+          "slug": "trump-names-adam-telle-acting-army-secretary-after-driscoll",
+          "title": "Trump names Adam Telle acting army secretary after Driscoll departure",
+          "summary": "The move follows widespread reports of tensions between the defense secretary and the departed army chief.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/03/adam-telle-acting-army-secretary"
+            }
+          ],
+          "article": {
+            "background": "The army secretary is the top civilian leader of the Army. Daniel Driscoll held this role and reported to defense secretary Pete Hegseth. Norm reported on September 1 that Driscoll resigned this week after tensions with Hegseth. Some of Driscoll's allies in the Army were removed by Hegseth this year.",
+            "what_happened": "Trump named Adam Telle as acting army secretary on Thursday. Telle currently works as assistant secretary of the army for civil works. He has held that role since August 2025. Trump wrote on Truth Social that Telle is a Great Patriot respected by all. Driscoll did not explain why he quit.",
+            "why_it_matters": "The army secretary manages the Army's budget, strategy, and daily work. A leadership change can shift priorities and direction. Telle's appointment signals Trump is aligning Army leadership with Hegseth's vision. For now this change does not directly affect most people, but it shapes how the military operates and plans.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "1a64f0ae51c0baec168c41fb2905b0ce",
+          "slug": "far-right-party-wins-first-german-state-election-raising",
+          "title": "Far-right party wins first German state election, raising minority fears",
+          "summary": "The victory in Saxony-Anhalt marks a breakthrough for the far right and has alarmed immigrant communities.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/04/minorities-fear-first-far-right-win-in-german-state-election-saxony-anhalt-afd"
+            }
+          ],
+          "article": {
+            "background": "Saxony-Anhalt is a state in eastern Germany. On Sunday, voters will choose a new state government. A far-right party called the Alternative for Germany, or AfD, is expected to do very well. If the AfD wins real power in the state, it could change how the government treats immigrants and people seeking asylum.",
+            "what_happened": "Fatemeh, 44, fled Iran three years ago with her son. She was stopped by police during a protest about the death of Mahsa Amini in police custody. They came to Saxony-Anhalt, where her son has become a good athlete and learned to fix vehicles. Now she waits for her final word on whether she can stay in Germany. The state election is Sunday.",
+            "why_it_matters": "Fatemeh thinks about the vote every day. She worries what a far-right win could mean for her family's safety and legal status. Families like hers depend on local government to handle their asylum cases fairly. A change in who holds power could shift how welcome they feel and whether they are allowed to stay.",
+            "quote": {
+              "text": "I worry about it every day. I can't stop thinking about my son and what might happen to us.",
+              "attribution": "Fatemeh, an asylum seeker from Iran",
+              "source_url": "https://www.theguardian.com/world/2026/sep/04/minorities-fear-first-far-right-win-in-german-state-election-saxony-anhalt-afd"
+            }
+          }
+        },
+        {
+          "cluster_id": "d54bf62d10660f572449ac0de8c1ee52",
+          "slug": "us-investigates-if-missile-hit-iranian-wedding-killing-four",
+          "title": "US investigates if missile hit Iranian wedding, killing four including two children",
+          "summary": "Iran says shrapnel from a US strike killed civilians at a wedding ceremony in Sirik.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cy4zvk3z2k1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US and Iran exchanged fire this week. Iran said it launched missiles at American forces. The US fired back the same day. Iran now claims a US missile hit a wedding ceremony in Sirik, a town in southern Iran, on Tuesday.",
+            "what_happened": "Iran's Red Crescent Society said shrapnel from a US missile killed at least four people at the wedding. Two of the dead were children. Iran's foreign ministry called it a war crime. Vice President JD Vance said Thursday that the US military is investigating the claim. A US military spokesperson said the US does not target civilians.",
+            "why_it_matters": "When militaries strike, civilian deaths can violate international law. How countries handle these cases shapes whether they face consequences for their actions. Investigations into strikes that kill civilians set the standard for what accountability looks like in future conflicts.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f586b7e33bd46a27fd40e5a2bad327b5",
+          "slug": "russia-may-expand-conscription-as-battlefield-losses-reach",
+          "title": "Russia may expand conscription as battlefield losses reach 40,000 per month",
+          "summary": "Russia faces heavy losses in Ukraine and may draft more soldiers to fill its military ranks.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/russia-may-force-more-men-to-fight-in-ukraine-as-military-faces-heavy-losses"
+            }
+          ],
+          "article": {
+            "background": "Russia invaded Ukraine in February 2022. The fighting has caused heavy losses. Estimates put Russian military losses at about 40,000 per month.",
+            "what_happened": "Signs suggest Russia is preparing for a broader forced draft. The Kremlin has not announced this formally. But officials and military bloggers have begun discussing it publicly. A call-up could happen after parliamentary elections later this month.",
+            "why_it_matters": "Forced drafts affect millions of men and their families. Wider conscription would show Russia believes the war will last much longer. It could also fuel discontent at home if many more are forced to fight.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "96c7a7c7a25bc1e5d0eada3d7bc95913",
+          "slug": "new-york-bans-ai-in-schools-through-eighth-grade-for-one",
+          "title": "New York bans AI in schools through eighth grade for one year",
+          "summary": "Mayor Mamdani banned artificial intelligence from elementary and middle schools in the city.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "a47d14a550b6b27f879e598f288f6282",
+          "slug": "uk-government-set-to-approve-jackdaw-gas-field-off-scotland",
+          "title": "UK government set to approve Jackdaw gas field off Scotland within weeks",
+          "summary": "The UK government is set to approve the Jackdaw gas field in the North Sea in mid-September.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cj9xe09jz4eo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Jackdaw gas field is an oil and gas project off the coast of Aberdeen, Scotland. The former Conservative government approved it in 2022. A Scottish court then delayed it after environmental groups argued the government had not fully considered climate impact before approving it.",
+            "what_happened": "The UK government is set to approve the project soon. Approval could come by mid-September, before Parliament breaks for party conference season. This timing comes from government and industry sources who spoke to the BBC.",
+            "why_it_matters": "The Jackdaw project would supply about 6% of the UK's gas. New gas infrastructure affects energy prices and supply for households. The approval also signals how the government plans to balance energy needs against climate concerns.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "81fa798d11633dce2e3714019871cb5a",
+          "slug": "transplanted-pig-kidney-works-in-patient-for-record-271-days",
+          "title": "Transplanted pig kidney works in patient for record 271 days",
+          "summary": "A pig kidney worked in a human patient for 271 days, a new record that could help transplant patients.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c305qn2jeggo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Doctors have been trying to transplant organs from animals into humans. A pig kidney was transplanted into Tim Andrews, a patient who needed a new organ. The kidney worked longer than any animal organ transplant on record.",
+            "what_happened": "The pig kidney worked inside Andrews for 271 days. He did not need dialysis during that time. Eventually the kidney failed and doctors removed it. Andrews then received a human kidney from a donor.",
+            "why_it_matters": "Patients waiting for a donated organ often need dialysis, a process that filters their blood at a hospital. If pig organs can bridge that gap, people could skip months of dialysis while waiting. This success shows the approach may eventually help reduce the shortage of organs available for transplant.",
+            "quote": {
+              "text": "The transplant gave him hope.",
+              "attribution": "Tim Andrews, transplant patient",
+              "source_url": "https://www.bbc.co.uk/news/articles/c305qn2jeggo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "c15f8a47443341d54a33173b3894849d",
+          "slug": "mysterious-kidney-disease-cluster-appears-in-texas-among",
+          "title": "Mysterious kidney disease cluster appears in Texas among immigrant workers",
+          "summary": "Workers from Mexico and Central America are getting severe kidney failure from an unknown cause.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.texasmonthly.com/news-politics/ckdu-kidney-disease-immigration"
+            }
+          ],
+          "article": {
+            "background": "Kidney failure means the kidneys stop filtering waste from the blood. People with kidney failure need dialysis, a machine that does this filtering work, three times per week. Typical kidney failure patients are older and have diabetes, high blood pressure, or obesity. But doctors in Texas have noticed something strange: younger workers from Mexico and Central America are arriving with kidney failure, and they do not fit this pattern.",
+            "what_happened": "Workers have been collapsing at job sites across Texas. They work in construction, roofing, and road paving. Many arrived at hospitals exhausted and unable to move. Blood tests showed their kidneys had failed. Doctors are puzzled because these patients are young and do not have the health problems that usually cause kidney failure.",
+            "why_it_matters": "For workers who develop this disease, the impact is severe. Dialysis takes hours three times per week. They cannot do physical labor while receiving treatment. The medical costs are high. If doctors cannot figure out what is causing this pattern, they cannot stop it from spreading to more workers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1fdbaf96c4ec923e40625d3d7b3cca38",
+          "slug": "glp-1-drugs-linked-to-fewer-serious-infections-including",
+          "title": "GLP-1 drugs linked to fewer serious infections including tuberculosis",
+          "summary": "People using GLP-1 diabetes and weight-loss drugs have lower rates of serious infection.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://gizmodo.com/ozempic-and-other-glp-1s-are-being-linked-to-fewer-serious-infections-including-tb-2000806796"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "3a7a7d6f4c8bd7ab23e8af91d12bea67",
+      "title": "Volkswagen announces it will cut 100,000 jobs by 2030",
+      "url": "https://www.theguardian.com/business/2026/sep/03/volkswagen-confirms-100000-job-cuts-by-2030",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "a23b88fead78d887cb9e7fd371f1b1de",
+      "title": "Kyrgios given one-month ban for positive cocaine test",
+      "url": "https://www.bbc.co.uk/sport/tennis/articles/c4gj0x5z10go?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "00d4a1c366ddff147c69c8fc51cbd024",
+      "title": "Fed governor Waller muddies outlook on possible rate hike later this month",
+      "url": "https://www.pbs.org/newshour/economy/fed-governor-waller-muddies-outlook-on-possible-rate-hike-later-this-month",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "2cefef92024fcff1264b543a965d0625",
+      "title": "European countries confront Russian sabotage and shadow warfare",
+      "url": "https://www.pbs.org/newshour/show/european-countries-confront-russian-sabotage-and-shadow-warfare",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1ae53865515f84588926bda20ba3605f",
+      "title": "Argentina to sanction oil firms as Falklands dispute with UK heats up",
+      "url": "https://www.bbc.co.uk/news/articles/clyk18g1l8ko?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "820a7dca62218026cb6145917ec1bffa",
+      "title": "Steve Ballmer got suspended by the NBA because of a podcast and a jumbotron corruption scandal",
+      "url": "https://www.theverge.com/entertainment/989962/steve-ballmer-kawhi-leonard-pablo-torre-finds-out",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "a6eaef45b3d09ec3efa5c8d1d3107948",
+      "title": "Hugging Face is too important to fall into Nvidia's hands",
+      "url": "https://www.theregister.com/ai-and-ml/2026/09/03/hugging-face-is-too-important-to-fall-into-nvidias-hands/5294363",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "3a2952ccd3195c484c219a5bc053d2a0",
+      "title": "Models Don't Go Rogue",
+      "url": "https://mail.cyberneticforests.com/models-dont-go-rogue",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "ede44f4940919e36ff3e39b00ef298ed",
+      "title": "Tesla Begins Offering Rides in a Car Without a Steering Wheel",
+      "url": "https://www.nytimes.com/2026/09/03/business/tesla-cybercab-robotaxi-rides.html",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 69,
+    "clusters_considered": 66,
+    "stories_run": 10,
+    "sources": 13,
+    "sections_held": 1
+  }
+}
