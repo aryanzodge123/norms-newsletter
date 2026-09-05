@@ -1,0 +1,146 @@
+{
+  "date": "2026-09-05",
+  "edition_number": 90,
+  "edition_type": "normal",
+  "headline_of_the_day": "Judge blocks Trump's mail voting limits before midterms",
+  "headline_cluster_id": null,
+  "headline_rationale": "A federal court blocking a sitting president's executive order on voting access just before midterm elections directly affects how Americans vote and the election itself.",
+  "key_points": [
+    {
+      "text": "A federal judge blocked Trump's order to limit mail voting. The block will stay in place through the midterm elections.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Seven aid workers died in an Israeli airstrike in Gaza. The Guardian found the military used a tactic called guilt by association.",
+      "topic": "World"
+    },
+    {
+      "text": "Europe's BepiColombo mission reached Mercury after eight years in space. Mercury is the closest planet to the sun.",
+      "topic": "Science"
+    },
+    {
+      "text": "Germany's far-right AfD party is trying to win control of Saxony-Anhalt. It would be the first far-right state win since World War Two.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-05.mp3",
+    "duration_seconds": 246,
+    "size_bytes": 2952864
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "18a893b3096f3d9ac5dc034962429213",
+          "slug": "israeli-airstrike-killed-seven-aid-workers-under-guilt-by",
+          "title": "Israeli airstrike killed seven aid workers under guilt by association tactic",
+          "summary": "A Guardian investigation found World Central Kitchen convoy was targeted using a widely practiced military method.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/05/aid-workers-gaza-killed-in-israel-airstrike-investigation"
+            }
+          ],
+          "article": {
+            "background": "World Central Kitchen is an aid group that delivers food to hungry places. In April 2024, Gaza faced famine after Israel closed its land crossings for six months. The Israeli army helped plan a food delivery by boat on April 1, 2024.",
+            "what_happened": "Israeli drones fired missiles at three marked World Central Kitchen cars that day. Seven aid workers died in the strike. A top Israeli military prosecutor announced last month he would not pursue criminal charges for the incident.",
+            "why_it_matters": "The Guardian's investigation found the targeting used a military practice of guilt by association. This tactic is widely used by the Israeli military. Aid workers depend on being clearly marked as neutral to stay safe during conflicts.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8d8070e6b4f9e669d7a86df06d0c8ea9",
+          "slug": "germany-s-far-right-afd-seeks-first-state-parliament",
+          "title": "Germany's far-right AfD seeks first state parliament majority",
+          "summary": "The AfD is trying to win control of Saxony-Anhalt's regional parliament. This has never happened in post-war Germany.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cvgypkzgy4wo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Germany's Alternative für Deutschland party, or AfD, is a far-right party. It has grown in popularity over the past decade. This weekend, Germany holds a state election in Saxony-Anhalt, a region in the country's east.",
+            "what_happened": "The AfD is aiming to secure a majority in the state parliament. An outright win would be the first time a far-right party holds state-level power in Germany since World War II. The party sees this as a step toward nationwide power.",
+            "why_it_matters": "A far-right party winning control of a German state would mark a major shift in the country's post-war politics. For those opposed to the AfD, this represents a serious threat to how Germany has governed itself for decades.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "aaec928be0ee895e7602bdf79011f779",
+          "slug": "two-men-rescued-from-nepal-tunnel-nine-days-after",
+          "title": "Two men rescued from Nepal tunnel nine days after catastrophic flood",
+          "summary": "Heavy rain flooded Himalayan river valleys and buried infrastructure. Two men trapped in a tunnel were rescued after nine days.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/news-wrap-2-men-rescued-from-nepal-tunnel-9-days-after-catastrophic-flood"
+            }
+          ],
+          "article": {
+            "background": "Heavy rain flooded river valleys in Nepal's Himalayan region. The water swept through with force, trapping people and damaging infrastructure. Rescuers faced steep terrain and harsh conditions that made finding and reaching survivors very difficult.",
+            "what_happened": "Two men were pulled from a tunnel nine days after the flood. They had been trapped underground when the deluge hit. Rescuers located them and extracted them from the tunnel more than a week later.",
+            "why_it_matters": "This rescue shows how dangerous mountain floods can be. People caught in tunnels or remote areas face long waits for help because terrain makes access slow. Fast-moving water in narrow valleys gives rescuers very little time to warn or reach people.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "fa23aadbdd33c4af1758bf0df6113e5d",
+      "title": "Federal judge extends block on Trump order seeking to limit mail voting in the midterms",
+      "url": "https://www.pbs.org/newshour/politics/federal-judge-extends-block-on-trump-order-seeking-to-limit-mail-voting-in-the-midterms",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "7a68534c83221ffe4e2193c6c94e0ff2",
+      "title": "After 8 years, Europe's BepiColombo mission is on final approach to Mercury",
+      "url": "https://arstechnica.com/space/2026/09/after-8-years-europes-bepicolombo-mission-is-on-final-approach-to-mercury",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "980ee2f57d9da99c01e56f7f12e1a619",
+      "title": "Greaves becomes first woman to win match on European Tour",
+      "url": "https://www.bbc.co.uk/sport/darts/articles/c4gr9nk9rnro?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "f914fe7c035b2ff42261f30b8ef5c196",
+      "title": "Why the U.S. job market remains resilient in face of global pressures and inflation",
+      "url": "https://www.pbs.org/newshour/show/why-the-u-s-job-market-remains-resilient-in-face-of-global-pressures-and-inflation",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "1383f97d9604a6088c54ecea1c4b9c67",
+      "title": "Tate brothers charged with further trafficking and sex crimes in Romania",
+      "url": "https://www.bbc.co.uk/news/articles/c7v4npv1m22o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c2eee321baaeb3bda2a2365b38d03ce6",
+      "title": "OpenAI agents discussed ways to escape their sandbox on public wiki",
+      "url": "https://arstechnica.com/security/2026/09/openai-agents-discussed-ways-to-escape-their-sandbox-on-public-wiki",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "f560e0a36b5e7a72acc485b7ecb4c180",
+      "title": "OpenAI’s rogue agents keep escaping, with no formal process to investigate them",
+      "url": "https://techcrunch.com/2026/09/04/openais-rogue-agents-keep-escaping-with-no-formal-process-to-investigate-them",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 59,
+    "clusters_considered": 53,
+    "stories_run": 3,
+    "sources": 11,
+    "sections_held": 3
+  }
+}
