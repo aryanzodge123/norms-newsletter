@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-06",
+  "edition_number": 91,
+  "edition_type": "fallback",
+  "notice": "Today's brief is a short one. The usual edition could not be built, so here are the stories that ranked highest, with links to the sources. Full service resumes tomorrow.",
+  "stories": [
+    {
+      "rank": 1,
+      "title": "Trump envoys and Putin discussed ‘next steps’ for ending Ukraine war, White House says",
+      "score": 7,
+      "url": "https://www.theguardian.com/world/2026/sep/05/steve-witkoff-jared-kushner-russia-revive-ukraine-talks",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 2,
+      "title": "Seattle Times and Newsday are the latest publications to sue OpenAI and Microsoft",
+      "score": 5,
+      "url": "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft",
+      "source": "techcrunch"
+    },
+    {
+      "rank": 3,
+      "title": "‘Nobody will win’: Zelenskyy adviser warns of mutual destruction if war with Russia continues",
+      "score": 4,
+      "url": "https://www.theguardian.com/world/2026/sep/06/zelenskyy-advisor-warns-mutual-destruction-war-russia",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 4,
+      "title": "Australia news live: up to 6,000 tradies to get free qualifications under Labor scheme",
+      "score": 4,
+      "url": "https://www.theguardian.com/australia-news/live/2026/sep/06/australia-news-live-albanese-labor-party-coaltion-liberal-party-nepal-floods-ntwnfb",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 5,
+      "title": "Majority Russian-speaking city in Ukraine considers language ban in the arts",
+      "score": 4,
+      "url": "https://www.bbc.co.uk/news/articles/c33kzvgn8pyo?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_world"
+    },
+    {
+      "rank": 6,
+      "title": "Watch: Moment 64-year-old Nepali woman is found alive in mud-buried home",
+      "score": 4,
+      "url": "https://www.bbc.co.uk/news/videos/c4gd24d1d0do?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_world"
+    },
+    {
+      "rank": 7,
+      "title": "Trump signs order to remove endangered species protection for grey wolves",
+      "score": 4,
+      "url": "https://www.bbc.com/news/articles/c62k677d4lzo",
+      "source": "hackernews"
+    },
+    {
+      "rank": 8,
+      "title": "Aviation faces hotter, stormier skies – and passengers might have to accept more disruption",
+      "score": 4,
+      "url": "https://www.bbc.co.uk/news/articles/cm274p8m88lo?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_world"
+    },
+    {
+      "rank": 9,
+      "title": "Falling ceiling debris at Kennedy Center may mire debate over renovations",
+      "score": 4,
+      "url": "https://www.theguardian.com/us-news/2026/sep/05/kennedy-center-ceiling-debris-renovations",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 10,
+      "title": "'He was a lifeline' - Families at a loss after Haitian caregivers let go in US",
+      "score": 4,
+      "url": "https://www.bbc.co.uk/news/articles/cg491zp13qqo?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_world"
+    }
+  ]
+}
