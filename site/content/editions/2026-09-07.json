@@ -1,0 +1,258 @@
+{
+  "date": "2026-09-07",
+  "edition_number": 92,
+  "edition_type": "normal",
+  "headline_of_the_day": "Germany's far-right AfD wins 44% in eastern state vote, strongest result yet for party",
+  "headline_cluster_id": "235963fe9c09f3577a3f9fd06e64ec83",
+  "headline_rationale": "A far-right party achieving its strongest result in a major European democracy reshapes that country's political landscape and signals broader shifts in European politics.",
+  "key_points": [
+    {
+      "text": "Germany's far-right AfD won 44% in an eastern state election, its best result ever.",
+      "topic": "World"
+    },
+    {
+      "text": "Hackers stole 320 million dollars from the Liquid cryptocurrency exchange using a security flaw.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "China is pumping 54 billion dollars into state banks to shore up its slowing economy.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Americans without college degrees are finding one of the best job markets in years.",
+      "topic": "Business"
+    },
+    {
+      "text": "Five people died after an Amazon cargo plane overran the runway at Miami airport.",
+      "topic": "World"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "c1354ecba52ce27ea64473af1d682704",
+          "slug": "americans-without-college-degrees-see-strongest-job-market",
+          "title": "Americans without college degrees see strongest job market in years",
+          "summary": "Workers without four-year degrees are finding more opportunities and higher wages.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/lifestyle/careers/americans-without-college-degrees-are-having-one-of-the-best-job-markets-in-years-5f37d00e"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "a1b1ac83b016cb9cd082253e090d9c3e",
+          "slug": "sydney-developer-bathla-stands-down-200-workers-amid-3-4",
+          "title": "Sydney developer Bathla stands down 200 workers amid 3.4 billion dollar debt",
+          "summary": "The company suspended work on most of its 45 construction sites.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/sep/07/more-than-200-people-stood-down-at-embattled-housing-developer-bathla"
+            }
+          ],
+          "article": {
+            "background": "Bathla Group is a Sydney-based property developer. It builds homes and apartments. The company now faces $3.4 billion in debt and has collapsed into administration, a legal process where outside managers take control of an insolvent company to try to save it.",
+            "what_happened": "More than 200 workers were stood down on Monday. Administrators from Teneo, an insolvency firm, took control of the company. They said they could only fund work on some of Bathla's 45 construction sites. This affects about 60% of the workforce.",
+            "why_it_matters": "Construction delays and stoppages often mean higher costs and longer waits for people who bought apartments or homes from the developer. Stood-down workers lose income immediately. The developer's collapse also signals stress in Australia's construction sector.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "52709f7ed95b1b3ef8e8b2d75cb95a9c",
+          "slug": "china-injects-54-billion-dollars-into-state-banks-to-boost",
+          "title": "China injects 54 billion dollars into state banks to boost economy",
+          "summary": "The finance ministry is funding eight state banks and insurance companies.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cx2z37qj4wno?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "China's state-owned banks and insurance companies are central to the country's financial system. They handle most lending and risk management across the economy. China's economy has slowed recently, and Beijing wants to strengthen these institutions so they can support growth.",
+            "what_happened": "China's finance ministry announced a 360 billion yuan injection, worth about $53.6 billion. The money will go to eight state-owned banks and insurance companies. The goal is to boost their ability to operate soundly and resist financial stress.",
+            "why_it_matters": "A stronger Chinese financial system affects global markets and businesses worldwide. China is the world's second-largest economy. When Chinese banks and insurers are healthier, they can lend more freely to businesses, which can boost economic growth both in China and globally.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1f19e69f0d919a8e3b8d2163379f57ba",
+          "slug": "uk-to-send-pension-refund-letters-to-one-million-people",
+          "title": "UK to send pension refund letters to one million people, mostly women",
+          "summary": "Low earners missed pension payments because of how their pensions are run.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c23x0kd8eleo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Pension systems can be complex. Some low earners have missed payments they were owed because of how their pensions are run. Most of those affected are women. HM Revenue and Customs, the UK's tax authority, is now fixing this by sending letters to about one million people.",
+            "what_happened": "HMRC will write to eligible people over the next few months. The letters explain that they qualify for top-up pension payments. Most people will be owed around £70, though the exact amount varies based on their circumstances. The letters are real, not scams.",
+            "why_it_matters": "If you get one of these letters, money owed to you is on its way. The payment happens automatically if you are eligible. HMRC will contact you without you having to do anything.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "235963fe9c09f3577a3f9fd06e64ec83",
+          "slug": "germany-s-far-right-afd-wins-44-in-eastern-state-election",
+          "title": "Germany's far-right AfD wins 44% in eastern state election",
+          "summary": "The party fell short of a majority but claims a mandate to govern.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cy4zejgz3z9o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/07/afd-thanks-elon-musk-german-state-elections-2026-win"
+            }
+          ],
+          "article": {
+            "background": "Germany's Alternative for Germany, or AfD, is a far-right party that opposes immigration and takes populist stands on many issues. Norm covered this election ahead of time on September 5th. No far-right party has run a German state since World War Two. This eastern state election in Saxony-Anhalt was seen as a test of the AfD's power.",
+            "what_happened": "The AfD won 44% of the vote in Saxony-Anhalt, far ahead of the conservative CDU at 17%. The party fell just short of a majority. Leader Ulrich Siegmund called the result \"sensational\" and said the party wants to start governing soon. Talks between parties will decide if the AfD actually gets a role in the state government.",
+            "why_it_matters": "This is the strongest showing by a far-right party in a German state since the end of World War Two. The AfD's success signals real shifts in how eastern Germans are voting. Coalition talks may or may not put the AfD into power, but either way, this result shapes German politics going forward.",
+            "quote": {
+              "text": "sensational",
+              "attribution": "Ulrich Siegmund, AfD leader in Saxony-Anhalt",
+              "source_url": "https://www.bbc.co.uk/news/articles/cy4zejgz3z9o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "fa9293a1a5cd5ab55c2ed14628462372",
+          "slug": "five-dead-after-amazon-cargo-plane-overruns-miami-runway",
+          "title": "Five dead after Amazon cargo plane overruns Miami runway",
+          "summary": "The Boeing 767 crashed while landing from San Juan, injuring five others.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcnews.com/news/us-news/amazon-plane-crash-miami-rcna596369"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c0e3p1j7n3ro?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Amazon uses cargo planes to deliver packages. On Sunday afternoon, one of these planes was landing at Miami International Airport after flying from San Juan, Puerto Rico. The aircraft was a Boeing 767-300, a large cargo jet. It was flight 7598, operated by 21 Air.",
+            "what_happened": "The plane overran the runway just before 2 p.m. ET while landing. It struck multiple vehicles on the ground. The aircraft came to rest in a field next to the airport. Five people died. Five others were injured, with three in critical condition.",
+            "why_it_matters": "This is one of the deadliest aviation accidents in recent years. While cargo plane crashes are rare, they affect airport operations and public safety near major hubs like Miami. The FAA grounded all flights as officials investigated the cause.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "12da4175eaf9e97305e7f8a6bf6177b9",
+          "slug": "austria-bans-headscarves-in-schools-for-girls-under-14",
+          "title": "Austria bans headscarves in schools for girls under 14",
+          "summary": "The law took effect as the new school year began nationwide.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwyz74xn8q8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Austria began its school year with a new law in force. The law bans headscarves, hijabs, and burkas for girls under 14 in all schools. The ban applies to both public and private schools across the country.",
+            "what_happened": "Integration Minister Claudia Bauer says the headscarf is a sign of oppression. She says it is a way to control girls from early childhood. But critics say the new law fuels anti-Muslim feeling in Austria. Some say it may break the constitution.",
+            "why_it_matters": "The ban affects how Muslim families can raise their children in Austrian schools. Girls under 14 cannot wear head coverings now, even if their families want them to. The law raises questions about what freedoms schools can limit and how countries balance different values.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "0839fbf7076326a1dffa5e888d98c89d",
+          "slug": "alcaraz-reaches-us-open-quarterfinals-with-win-over-tommy",
+          "title": "Alcaraz reaches US Open quarterfinals with win over Tommy Paul",
+          "summary": "The Spaniard won in straight sets in his fourth match since returning from injury.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/tennis/articles/cn4kge7gl99o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Carlos Alcaraz is a 23-year-old Spanish tennis player and two-time Grand Slam champion. A wrist injury kept him off the court for more than four months, causing him to miss both the French Open and Wimbledon earlier this summer. He returned to competition at the US Open in New York.",
+            "what_happened": "Alcaraz beat American 20th seed Tommy Paul 6-4 6-3 6-4 in the fourth round. It was only his fourth competitive singles match since his injury. He has dropped just one set in his run to the quarter-finals, where he will face American eighth seed Ben Shelton.",
+            "why_it_matters": "Alcaraz's performance shows he is returning to championship form after a long absence from competition. His dominant play suggests he could soon challenge again for major titles, which matters to tennis fans following the sport's top storylines.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "54053fe3345230e4c80002ddaeca57bd",
+          "slug": "jak-jones-beats-mark-selby-to-win-british-open-snooker-title",
+          "title": "Jak Jones beats Mark Selby to win British Open snooker title",
+          "summary": "Jones won his second ranking title with a ten to six victory.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/snooker/articles/cvgy87npvkno?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Snooker is a cue sport played on a felt table with 15 red balls and 6 colored balls. Players score by hitting balls into pockets, and a frame is one complete game. Ranking titles are major competitions in the sport. Mark Selby is a four-time world champion, one of the game's top players.",
+            "what_happened": "Jak Jones defeated Mark Selby 10-6 in the British Open final to claim the second ranking title of his career. The two players were tied 4-4 after the afternoon session, then tied again at 5-5 before Jones pulled ahead to 7-5. Jones secured victory after Selby missed a shot on the final colors, with breaks of 53 and 62 helping Jones close out the match.",
+            "why_it_matters": "Ranking titles are the sport's most prestigious competitions, and winning one establishes a player as a top contender. Jones' victory shows he is among snooker's elite players and capable of beating the sport's established champions like Selby.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "6e60b407efff9d40d5b62f1dd35c9d25",
+      "title": "Seattle Times and Newsday sue OpenAI and Microsoft for infringement",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "5fd781de909dcfce53c606a2feed0c18",
+      "title": "Is mathematics about to enter the conservatory?",
+      "url": "https://mbmccoy.dev/posts/mathematical-conservatory",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "c032bb9e71fb5bef2791f042df8cf251",
+      "title": "Hackers have withdrawn ~4k BTC (~$320M) from the Liquid Federation wallet",
+      "url": "https://twitter.com/Liquid_BTC/status/2096696272447218108",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 83,
+    "clusters_considered": 61,
+    "stories_run": 9,
+    "sources": 9,
+    "sections_held": 1
+  }
+}
