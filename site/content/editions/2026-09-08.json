@@ -1,0 +1,217 @@
+{
+  "date": "2026-09-08",
+  "edition_number": 93,
+  "edition_type": "normal",
+  "headline_of_the_day": "Canada's tariffs on US goods took effect and escalated the trade dispute.",
+  "headline_cluster_id": "390750b12731f978647a456b1f316b19",
+  "headline_rationale": "Concrete reciprocal trade action now affecting prices and supply chains for both economies, with immediate consequences for consumers and businesses",
+  "key_points": [
+    {
+      "text": "Canada's tariffs on US goods took effect and escalated the trade dispute.",
+      "topic": "World"
+    },
+    {
+      "text": "Germany's far-right AfD won a big election, reshaping the country's politics and worrying many in Europe.",
+      "topic": "World"
+    },
+    {
+      "text": "Europe's largest carbon capture plant opened in the Netherlands and stores carbon dioxide across borders for the first time.",
+      "topic": "Science"
+    },
+    {
+      "text": "China's tree-planting effort has changed water flow, drying some areas and flooding others.",
+      "topic": "Science"
+    },
+    {
+      "text": "Piracy off Somalia hit a ten-year high, raising shipping costs and insurance fees.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-08.mp3",
+    "duration_seconds": 317,
+    "size_bytes": 3807360
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "390750b12731f978647a456b1f316b19",
+          "slug": "canada-imposes-retaliatory-tariffs-on-us-goods",
+          "title": "Canada imposes retaliatory tariffs on US goods",
+          "summary": "Canada taxed US goods after Trump said he would tax Canadian imports at fifty percent.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/07/canada-tariffs-us-trump"
+            }
+          ],
+          "article": {
+            "background": "The US and Canada have clashed over trade policy. US president Donald Trump announced 50% tariffs on Canadian goods. Canada responded with its own tariffs. The two countries' leaders, Trump and Canadian prime minister Mark Carney, have had tense exchanges over the dispute.",
+            "what_happened": "Canada's retaliatory tariffs took effect at 12:01 am on Tuesday. The tariffs range from 15% to 50%. They apply to about $20 billion in US imports. The tariffs hit steel, dairy, appliances, farm equipment, pulp, paper, and electronics.",
+            "why_it_matters": "These tariffs raise prices on goods Americans buy. Items from household appliances to farm equipment will cost more at checkout. The escalating trade fight between the two countries could keep pushing prices up and disrupt supply chains that depend on US-Canada trade.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c343fb397190a2a621f7d66272933a7b",
+          "slug": "germany-s-far-right-afd-wins-major-election",
+          "title": "Germany's far-right AfD wins major election",
+          "summary": "Germany's far-right AfD party won a major election in eastern Saxony and shifted the country's politics.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/far-right-afd-win-signals-shift-in-germany-raises-alarm-in-europe"
+            }
+          ],
+          "article": {
+            "background": "Germany's Alternative for Germany party, called the AfD, is far-right and opposes immigration. German intelligence has called it extremist. The party has been gaining strength in eastern Germany.",
+            "what_happened": "The AfD won a major election in the eastern state of Saxony-Anhalt. It took about 44 percent of the vote, far ahead of its mainstream rivals. The victory marks a growing split in German politics.",
+            "why_it_matters": "Germany's politics shape Europe's direction on issues like immigration and defense. A far-right party gaining real power in Germany signals a significant shift in how the continent approaches these questions. Other European countries are watching closely.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "97190e0587493ec26053774f23e84859",
+          "slug": "somali-piracy-returns-to-ten-year-high",
+          "title": "Somali piracy returns to ten-year high",
+          "summary": "War and political chaos have let pirates attack cargo ships off Somalia again.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/08/hijacking-pirates-somalia-geopolitical-chaos"
+            }
+          ],
+          "article": {
+            "background": "Somali piracy off the Horn of Africa nearly stopped after naval patrols cracked down around 2010. But the threat is returning. Two things are driving it back: the US-Israeli war against Iran is disrupting shipping. Political instability in Somalia is also making the region less secure.",
+            "what_happened": "Since late April, Somali pirates have hijacked eight cargo ships. In August alone, they seized an oil tanker with ties to Iran and another ship, the Lutuf, that was flying a Cameroon flag and carrying military gear for Turkey. These are the most attacks in a decade.",
+            "why_it_matters": "Piracy drives up the cost of shipping goods worldwide. It also puts crew members at risk and can cut off supplies to regions that depend on these trade routes. If piracy keeps growing, prices for shipped goods may rise for consumers far from Somalia.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "2a1b003d41f342b7a974a34f131023f3",
+          "slug": "europe-s-largest-carbon-capture-plant-opens",
+          "title": "Europe's largest carbon capture plant opens",
+          "summary": "A plant in the Netherlands captured and stored carbon dioxide across borders for the first time.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.yara.com/corporate-releases/europes-largest-carbon-capture-facility-officially-inaugurated-at-yara-sluiskil-in-the-netherlands"
+            }
+          ],
+          "article": {
+            "background": "Carbon capture takes CO₂ from the air or from industrial sources. It then stores the gas permanently underground, keeping it out of the atmosphere. This technology is one tool to reduce emissions.",
+            "what_happened": "Europe's largest carbon capture facility opened January 22 at Yara Sluiskil in the Netherlands. The plant captures CO₂ from a fertilizer factory. The facility then transports the gas across the border to Norway for permanent storage underground.",
+            "why_it_matters": "This is the first project to show the full chain works in practice. It moves captured carbon across countries and stores it safely. The success could help other European industries adopt the same method to cut their own emissions.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c8b4c5e8230a6ecb0a3bf58c80339b80",
+          "slug": "china-s-tree-planting-project-disrupted-water-cycle",
+          "title": "China's tree-planting project disrupted water cycle",
+          "summary": "Seventy-eight billion new trees shifted rain patterns, drying some areas and flooding others.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.popularmechanics.com/science/environment/a73385264/china-reforesting-changes-hydrology-study"
+            }
+          ],
+          "article": {
+            "background": "China has planted 78 billion trees over recent decades. The goal was to fight erosion and climate change. Trees do help the environment. But a new study shows they can also change how water moves through a region.",
+            "what_happened": "Researchers found that China's tree-planting altered the country's water cycle. The trees increased evaporation (water rising from soil and surfaces) and transpiration (water that plants release through tiny pores). This shifted rainfall patterns. Some areas got more rain. Others dried out.",
+            "why_it_matters": "Big reforestation projects can backfire if not planned carefully. In dry regions, billions of trees can pull so much water from the ground that there is less for drinking and farming. China's experience shows that saving one area sometimes harms another. Future tree-planting efforts need to account for these water cycle changes.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "b6a64378810126b5e482b0b39468a397",
+      "title": "Trump threatens to stop sale of Canadian Bombardier jets in US",
+      "url": "https://www.bbc.co.uk/news/articles/c4gj8xx5010o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "3275dfca5fedc5e77c27d9f34e7c4088",
+      "title": "Unleashing Unlicensed Spectrum for Direct-to-Device",
+      "url": "https://www.federalregister.gov/documents/2026/09/08/2026-18282/unleashing-unlicensed-spectrum-for-direct-to-device",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "c02ba87e4998c0a860d3968fb648381c",
+      "title": "Gauff's statement win completes stacked US Open line-up",
+      "url": "https://www.bbc.co.uk/sport/tennis/articles/crk368k4e42o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "84fa13f60ccad4db02885307c9a7cd4a",
+      "title": "Ukraine's chief prosecutor resigns over call centre corruption scandal",
+      "url": "https://www.bbc.co.uk/news/articles/c780nlgyd79o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "4013d34520cf45a6c654e5a5a0501d9f",
+      "title": "France Champagne Output Set to Halve on Heat Waves and Drought",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-07/france-champagne-output-set-to-halve-on-heat-waves-and-drought",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "434749919d6823ac37f1f3db13fc0f9e",
+      "title": "UK government expected to announce restrictions on trade with West Bank settlements",
+      "url": "https://www.bbc.co.uk/news/articles/c4grdjnle22o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "d056fb300da6987a2ff5affce7d990d2",
+      "title": "AI cancer cures slowed by chip shortage, says UK's biggest tech boss",
+      "url": "https://www.bbc.co.uk/news/articles/c0m39g7xzevo?at_medium=RSS&at_campaign=rss",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "e04b14662a3bab1e69c060408c19f410",
+      "title": "First Xiaomi, then the world: why Arm might give phone gaming a huge graphics boost",
+      "url": "https://www.theverge.com/games/990676/arm-neural-rendering-mali-g2-ultra-xiaomi-xring-o3",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "cfba61d8f6f7d61ea159af33488330aa",
+      "title": "Eric Wu’s newest company, out of stealth since May, is going after construction’s labor crunch",
+      "url": "https://techcrunch.com/2026/09/07/eric-wus-newest-company-out-of-stealth-since-may-is-going-after-constructions-labor-crunch",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "95a839d81b959335501a8690912fefd2",
+      "title": "Saturday Evening Post Will Stop Printing After 205 Years",
+      "url": "https://www.nytimes.com/2026/09/02/business/media/saturday-evening-post-stop-printing.html",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "c29a961914a500a52544fb07605aa73d",
+      "title": "Jellyfin 12.0",
+      "url": "https://jellyfin.org/posts/jellyfin-release-12.0",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 76,
+    "clusters_considered": 49,
+    "stories_run": 5,
+    "sources": 11,
+    "sections_held": 1
+  }
+}
