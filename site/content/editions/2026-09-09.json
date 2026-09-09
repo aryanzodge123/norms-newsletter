@@ -1,0 +1,250 @@
+{
+  "date": "2026-09-09",
+  "edition_number": 94,
+  "edition_type": "normal",
+  "headline_of_the_day": "US bans Canadian dairy, alcohol, and motor vehicles starting September 29",
+  "headline_cluster_id": "efa8c39886d75505117fd01c0830ca72",
+  "headline_rationale": "Concrete executive action with immediate effect on trade between two major economies, directly affecting prices and availability of goods for American consumers.",
+  "key_points": [
+    {
+      "text": "The US bans Canadian dairy, alcohol, and motor vehicles starting September 29.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The US military destroyed Iranian tankers after Iran fired missiles at an American warship in the Gulf of Oman.",
+      "topic": "World"
+    },
+    {
+      "text": "A UK air traffic control failure stranded hundreds of thousands of passengers through Wednesday.",
+      "topic": "World"
+    },
+    {
+      "text": "A Harvard study predicts 75 percent of suicide attempts a week in advance using a new method.",
+      "topic": "Science"
+    },
+    {
+      "text": "UK announces sanctions on West Bank settlements accusing Israel of turning blind eye to ethnic cleansing",
+      "topic": "World"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "efa8c39886d75505117fd01c0830ca72",
+          "slug": "us-bans-canadian-dairy-alcohol-and-motor-vehicles-starting",
+          "title": "US bans Canadian dairy, alcohol, and motor vehicles starting September 29",
+          "summary": "An order stops most alcohol imports, all dairy products, and motorcycles from Canada.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/business/us-ban-canadian-dairy-alcohol-motor-vehicle-imports-september-29-2026-09-08"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US and Canada are in a trade dispute. Canada recently added tariffs on American goods. In response, the US is banning certain Canadian imports.",
+            "what_happened": "On Tuesday, US President Donald Trump issued executive orders. They ban imports of Canadian alcohol, dairy, and motorcycles. The ban takes effect September 29. Trump said Canada is \"discriminating\" against the US. Canada's Prime Minister Mark Carney said the shift away from US trade \"will come at a cost.\"",
+            "why_it_matters": "If the ban takes effect, Americans may pay more for some alcohol and dairy products. Selection could shrink too. Both countries say they want to make a trade deal, but no agreement has happened yet.",
+            "quote": {
+              "text": "will come at a cost",
+              "attribution": "Canadian Prime Minister Mark Carney",
+              "source_url": "https://www.bbc.co.uk/news/articles/c99dm1000p7o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "1abbea42d3d889feeff910c2c7c01f68",
+          "slug": "us-announces-tariffs-on-canadian-goods-with-immediate",
+          "title": "US announces tariffs on Canadian goods with immediate consumer impact",
+          "summary": "The ban on dairy, motorcycles, and alcohol marks a major shift in how the US trades with Canada.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/economy/u-s-will-ban-dairy-products-motorcycles-and-most-alcoholic-beverages-from-canada"
+            }
+          ],
+          "article": {
+            "background": "The United States and Canada are in a trade war. That means each country is putting taxes or bans on the other's goods to force the other to make changes. The two countries are longtime neighbors and trade partners, but this conflict is escalating.",
+            "what_happened": "The White House said Tuesday it will ban dairy products from Canada. It will also ban most alcoholic drinks and motorcycles from Canada. The announcement marks a major step as the trade dispute between the two nations grows.",
+            "why_it_matters": "The bans will likely raise prices for Americans who buy these products. Canadian dairy, beer, whiskey, and motorcycles may become harder to find or cost more. Riders who prefer Canadian motorcycle brands could face limited choices.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "d7ac90a2a6ffae0fc02c951d13d3aa2e",
+          "slug": "us-military-destroyed-iranian-tankers-after-missile-attack",
+          "title": "US military destroyed Iranian tankers after missile attack on warship",
+          "summary": "Iran tried to hit a US Navy ship with ballistic missiles in the Gulf of Oman.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/08/iran-underwater-drone-strait-of-hormuz"
+            }
+          ],
+          "article": {
+            "background": "The US and Iran have clashed repeatedly in the Persian Gulf and surrounding waters. These waterways carry much of the world's oil. Tensions have escalated into direct military strikes, with each side responding to the other's attacks.",
+            "what_happened": "Iran launched ballistic missiles at a US Navy warship on Tuesday. The US military said it then struck multiple Iranian tankers in the Gulf of Oman and near Iran's Kharg Island. US Central Command said American forces ordered the tanker crews to leave the ships before striking them. The violence pushed oil prices close to $100 a barrel.",
+            "why_it_matters": "This cycle of attacks makes the Middle East less stable and raises energy costs. When oil prices rise, gas prices follow, affecting what people pay at the pump. Disruptions to shipping in these crucial waterways could also drive up prices for goods that travel by sea.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "dabc3506086be16553e581a2437bddd8",
+          "slug": "uk-air-traffic-control-failure-strands-hundreds-of",
+          "title": "UK air traffic control failure strands hundreds of thousands of passengers",
+          "summary": "More than 1,000 flights were cancelled with problems continuing into Wednesday after a third incident in three years.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/sep/08/air-traffic-control-issue-flights-delays-disruption-uk"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/ce8x3dp1zpxo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Air traffic control in the UK is managed by Nats, a company that coordinates flight paths for airports across the country. This is the third major breakdown at Nats in just over three years. Airlines are calling for an overhaul of the system.",
+            "what_happened": "An air traffic control glitch at Nats stopped flights across the UK on Tuesday. More than 1,000 flights were cancelled by Tuesday evening. At least 177 more flights scheduled for Wednesday were cancelled, mostly at London Heathrow. Nats boss Martin Rolfe said the company would investigate why fixing the problem took longer than expected.",
+            "why_it_matters": "Hundreds of thousands of passengers were stranded or delayed. If these outages keep happening, they disrupt travel plans and cost airlines money. Repeated failures suggest the system needs better backup systems to keep planes moving.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "741b79e45c59fe89ff3221911e20bbd6",
+          "slug": "uk-announces-sanctions-on-west-bank-settlements-prompting",
+          "title": "UK announces sanctions on West Bank settlements prompting furious Israeli response",
+          "summary": "Foreign Secretary Ed Miliband said Israel's government ignores ethnic cleansing by settlers in the West Bank.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c4g7zen0vveo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Israeli-Palestinian conflict centers on land. Palestinians seek a state in the West Bank, territory Israel occupies. Israeli settlers have built homes there for decades. The international community views these settlements as illegal. Norm covered UK plans for these sanctions in September.",
+            "what_happened": "The UK announced sanctions on Israeli settlements in the West Bank. Foreign Secretary Ed Miliband said the move signals a new approach. The UK will ban trade in goods from settlements. Israel's Foreign Minister Gideon Saar called this an outrageous lie. He said Israel would shut the UK's consulate in East Jerusalem.",
+            "why_it_matters": "This marks a stronger international stance against settlement expansion. For people who support Palestinian rights, it shows growing pressure on Israel. The sanctions are limited for now. They signal that countries may tighten trade rules with settlements going forward.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "7441ea8b613f0ba8db9cbf24ca8842ff",
+          "slug": "harvard-study-predicts-most-suicide-attempts-a-week-in",
+          "title": "Harvard study predicts most suicide attempts a week in advance",
+          "summary": "A study led by psychologist Matthew Nock predicts 75 percent of suicide attempts a week before they happen.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://current.fas.harvard.edu/stories/harvard-study-predicts-most-suicide-attempts-week-advance"
+            }
+          ],
+          "article": {
+            "background": "Suicide is the second-leading cause of death for Americans aged 10 to 34, after accidents. It kills more people worldwide each year than war, genocide, or homicide. Yet half of people who die by suicide see a doctor in their final month. Current tools fail to predict who will attempt suicide.",
+            "what_happened": "A study led by psychologist Matthew Nock at Harvard found that a new model predicts 75 percent of suicide attempts before they happen. It also forecasts 87 percent of suicide-related crises. This jumps far ahead of existing prediction methods.",
+            "why_it_matters": "Better prediction could let doctors spot and help people in crisis sooner. Right now, most at-risk people slip through even when they see a clinician. A tool this accurate might change who gets offered care and when.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "092315142ebbe9ca52be5ba8bca4a42d",
+          "slug": "babies-born-to-anemic-mothers-have-smaller-brains-study",
+          "title": "Babies born to anemic mothers have smaller brains, study finds",
+          "summary": "Researchers found brain differences in one-year-old babies born to mothers who were anemic.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/global-development/2026/sep/09/babies-born-to-anaemic-mothers-have-smaller-brains-study-finds"
+            }
+          ],
+          "article": {
+            "background": "Anaemia is a condition where the body has fewer red blood cells than normal. It is typically caused by iron deficiency. More than a third of pregnant women worldwide have anaemia. Rates are highest in sub-Saharan Africa and south Asia. Symptoms include fatigue, shortness of breath, and dizziness.",
+            "what_happened": "A study by King's College London and the University of Cape Town found that babies born to mothers with anaemia have smaller brains. The brain differences show up at age one. They appear mainly in regions that control movement, learning, and emotion. Researchers said these differences could lead to cognitive problems when children start school.",
+            "why_it_matters": "A child's brain size and development affect learning and behaviour later in life. Brain differences that start this early may mean some children struggle more when they begin formal schooling. Since anaemia is common in pregnant women, especially in Africa and south Asia, this finding matters for millions of children worldwide.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "8f575c5e484174a02823318a952ff0b7",
+      "title": "Politics live: Trump administration warns Australia after social media algorithm reform; Albanese mourns ‘true one-off’ in d’Alpuget",
+      "url": "https://www.theguardian.com/australia-news/live/2026/sep/09/coalition-victoria-energy-bills-labor-one-nation-super-digital-duty-of-care-ntwnfb",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "126abcceedeeb9437180987a3f8975e8",
+      "title": "LG TV shown scanning LAN for third-party phones and other devices",
+      "url": "https://arstechnica.com/gadgets/2026/09/lg-tv-shown-capable-of-tracking-user-activity-even-when-offline",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "a2c83f63822b9dadda5411cfb7dc2393",
+      "title": "Canadian tariffs on U.S. goods take effect, marking turning point in relations",
+      "url": "https://www.pbs.org/newshour/show/canadian-tariffs-on-u-s-goods-take-effect-marking-turning-point-in-relations",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1b14eb9fd8a67e28c4960dffce3b9827",
+      "title": "Southeast Asia endures punishing year of extreme weather amid super El Ni&ntilde;o",
+      "url": "https://www.pbs.org/newshour/show/southeast-asia-endures-punishing-year-of-extreme-weather-amid-super-el-nino",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "4dc6b1a4903338785d3f6b4ea8927dfc",
+      "title": "Trump-backed John Sununu wins New Hampshire Republican Senate primary",
+      "url": "https://www.theguardian.com/us-news/2026/sep/08/new-hampshire-republican-senate-primary",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "a849e61cf1a625ec2ee57f4f462c0b2e",
+      "title": "Iran says it captured US submarine drone in Strait of Hormuz",
+      "url": "https://www.reuters.com/world/middle-east/iran-says-it-captured-us-submarine-drone-strait-hormuz-2026-09-08",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1511073d0e1ab87e66c23b9bcca8ea4e",
+      "title": "Singaporean man pleads guilty in US to massive crypto heist",
+      "url": "https://www.bbc.co.uk/news/articles/crl6z03pr0do?at_medium=RSS&at_campaign=rss",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "6971a98616dbe0cbd5f0928649a2992d",
+      "title": "Flock worker calls police on investigator filming public camera installation",
+      "url": "https://www.atlantanewsfirst.com/2026/09/08/flock-worker-calls-police-anf-chief-investigator-filming-public-camera-installation",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 59,
+    "clusters_considered": 55,
+    "stories_run": 7,
+    "sources": 9,
+    "sections_held": 1
+  }
+}
