@@ -1,0 +1,230 @@
+{
+  "date": "2026-09-10",
+  "edition_number": 95,
+  "edition_type": "normal",
+  "headline_of_the_day": "Automattic board puts CEO Matt Mullenweg on leave",
+  "headline_cluster_id": "18184e81d0b6c0ae9cde46edf1256b93",
+  "headline_rationale": "A forced leadership change at the parent company of WordPress.com affects millions of websites and is a rare board action against a founder-CEO.",
+  "key_points": [
+    {
+      "text": "Automattic's board put CEO Matt Mullenweg on leave, affecting WordPress.com and millions of sites.",
+      "topic": "Business"
+    },
+    {
+      "text": "Blizzard Entertainment's 1,900 workers approved their first union contract with AI protections and layoff rules.",
+      "topic": "Business"
+    },
+    {
+      "text": "Senator John Fetterman endorsed a GOP colleague at a Republican convention, breaking with his party.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Rhode Island Governor Dan McKee lost his Democratic primary, the first sitting governor to do so in nearly a decade.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Research at the International AIDS Conference shows new paths toward an HIV cure.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-10.mp3",
+    "duration_seconds": 346,
+    "size_bytes": 4157280
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "18184e81d0b6c0ae9cde46edf1256b93",
+          "slug": "automattic-board-forces-ceo-mullenweg-on-leave",
+          "title": "Automattic Board Forces CEO Mullenweg on Leave",
+          "summary": "The board placed WordPress.com parent company's founder on leave against his will.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/09/09/automattics-board-forces-ceo-matt-mullenweg-into-leave-of-absence"
+            }
+          ],
+          "article": {
+            "background": "Automattic is a software company. It owns WordPress.com, a popular website-building platform. A board of directors makes major company decisions.",
+            "what_happened": "The board voted Wednesday to put CEO Matt Mullenweg on paid leave against his will. Mullenweg posted about it in a Slack message visible to all employees. He said CFO Mark Davies worked with board members Ann Dunwoody, Toni Schneider, and Sue Decker to push the vote through.",
+            "why_it_matters": "WordPress.com is used by millions of people to build and run websites. A sudden change in leadership can affect decisions about the platform's future. Users may wonder what comes next for the service they rely on.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e6d0eb9bd43a64bb495ef3773f04496d",
+          "slug": "blizzard-workers-ratify-first-union-contract-with-microsoft",
+          "title": "Blizzard Workers Ratify First Union Contract With Microsoft",
+          "summary": "Nearly 1,900 Blizzard employees won protections on AI use, remote work, and layoffs.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://kotaku.com/blizzard-workers-union-contract-microsoft-2000732422"
+            }
+          ],
+          "article": {
+            "background": "Blizzard Entertainment is a video game company owned by Microsoft. Its workers have been trying to form unions since 2023. This is their first contract after more than two years of talks.",
+            "what_happened": "Nearly 1900 Blizzard workers voted to approve their first union contract with Microsoft. The deal includes new rules on generative AI, work credits, remote work options, and layoff protections. It also merges many small unions into three larger groups for future negotiations.",
+            "why_it_matters": "Game workers now have formal protections on how their work gets used and credited. The contract sets terms that future disputes will follow. Workers at other studios may use this deal as a template for their own talks.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "d0db771b4c22cb0590978f0dbe495194",
+          "slug": "senator-fetterman-endorses-republican-at-gop-convention",
+          "title": "Senator Fetterman Endorses Republican at GOP Convention",
+          "summary": "A Pennsylvania Democrat spoke at a Republican convention to back a GOP Senate colleague, breaking party loyalty.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/09/john-fetterman-democrat-republican-midterm-convention"
+            },
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/09/09/nx-s1-5963916/john-fetterman-gop-midterm-convention-trump"
+            }
+          ],
+          "article": {
+            "background": "John Fetterman is a Democratic senator from Pennsylvania elected in 2022. Since taking office, he has grown distant from his party. He is now more popular with Republican voters in Pennsylvania than with many Democrats who helped elect him.",
+            "what_happened": "On Wednesday, Fetterman recorded a 64-second video for the Republican midterm convention. In it, he introduced Republican senator Dave McCormick, saying McCormick is \"the kind of senator that gets the job done.\" Fetterman called McCormick his friend. He also said he would reject \"extremes and socialism,\" using a common Republican criticism of Democrats.",
+            "why_it_matters": "A Democratic senator publicly backing a Republican colleague at a GOP convention shows deep splits in party loyalty. The appearance fuels talk that Fetterman may switch parties entirely. For now, it signals that some Democrats are willing to work closely with Republicans and echo their talking points.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7b88eeeaf94eed603253eee959bec177",
+          "slug": "rhode-island-governor-loses-primary-over-bridge-frustration",
+          "title": "Rhode Island Governor Loses Primary Over Bridge Frustration",
+          "summary": "Dan McKee became the first sitting governor to lose a primary in nearly a decade.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/09/rhode-island-primary-results-dan-mckee"
+            }
+          ],
+          "article": {
+            "background": "Dan McKee is Rhode Island's governor. He ran for reelection in the Democratic primary on Wednesday. A bridge in the state had become a major source of public anger. McKee lost the primary to Helena Foulkes, a former top executive at CVS, the Rhode Island pharmacy company. This makes McKee the first sitting governor to lose a primary in nearly a decade.",
+            "what_happened": "Foulkes won the Democratic primary on Wednesday, according to the Associated Press. McKee, the sitting governor, came in second. Foulkes said in her victory speech that she would be a governor for everyone and that much work needs doing.",
+            "why_it_matters": "The general election in November will decide who leads Rhode Island next. A bridge's poor state had become a key issue for voters. Foulkes' win shows that frustration over a specific problem can shape an election, even when the candidate is not a typical political challenger.",
+            "quote": {
+              "text": "Tonight, we may have won the Democratic primary for governor, but let me be clear about what happens next: you will have a governor for everyone. Because there is so much work that needs to be done, and we need to do this together.",
+              "attribution": "Helena Foulkes, in her victory speech",
+              "source_url": "https://www.theguardian.com/us-news/2026/sep/09/rhode-island-primary-results-dan-mckee"
+            }
+          }
+        },
+        {
+          "cluster_id": "6acb500d2cf29a262477a768a0b92d48",
+          "slug": "missouri-election-maps-in-chaos-after-conflicting-court",
+          "title": "Missouri Election Maps in Chaos After Conflicting Court Rulings",
+          "summary": "Two months before Election Day, judges gave conflicting orders about voting districts.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/missouris-election-maps-in-chaos-after-conflicting-rulings"
+            }
+          ],
+          "article": {
+            "background": "Every 10 years after the census, states redraw their congressional districts. These districts represent areas that elect members of Congress. The party in power can draw maps to help their own candidates win. This process, called redistricting, often leads to legal fights.",
+            "what_happened": "Missouri's courts issued conflicting rulings on the state's congressional maps. The chaos leaves the maps in limbo less than two months before Election Day. Republicans had hoped to gain seats through redistricting but did not see the gains they wanted.",
+            "why_it_matters": "Unsettled maps this close to an election cause problems. Officials need clear maps to prepare ballots and run registration drives. Campaigns need to know which voters they can reach. Until Missouri's courts resolve the conflict, the state's election planning stays stuck.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "b0a6196e295d4dbd1257bf2c44e0fd74",
+          "slug": "philippines-ferry-fire-leaves-more-than-80-missing",
+          "title": "Philippines Ferry Fire Leaves More Than 80 Missing",
+          "summary": "Five people confirmed dead and 43 rescued after the vessel caught fire off Palawan island.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/10/deadly-philippines-ferry-fire-leaves-scores-of-people-missing"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cy4zd4dn9n9o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Philippines is an island nation that depends heavily on ferries to move people between its regions. The MV June Aster was a passenger ferry traveling from Manila, the capital, to Coron, a tourist town in Palawan province in the western Philippines.",
+            "what_happened": "A fire broke out on the MV June Aster on Wednesday evening at 18:00 local time. The ship was carrying 117 passengers and 17 crew members. Forty-three people were rescued from the water. At least five people died, and more than 80 remained missing. Strong currents and poor weather made rescue and firefighting efforts difficult.",
+            "why_it_matters": "Ferry travel is a common way to get around the Philippines. This disaster shows the serious risks people face when they depend on water transport. If you travel by ferry in Southeast Asia or have family who does, it is a reminder of how dangerous these journeys can be.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d31d405882c07ad432524c3c670eb41a",
+          "slug": "report-says-netanyahu-dismissed-pre-attack-warnings",
+          "title": "Report Says Netanyahu Dismissed Pre-Attack Warnings",
+          "summary": "A report says Israel's prime minister ignored intelligence warnings before the October 7 attack.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/netanyahu-faces-pressure-after-report-alleges-he-brushed-off-warnings-ahead-of-oct-7"
+            }
+          ],
+          "article": {
+            "background": "Prime Minister Benjamin Netanyahu leads Israel's government. On October 7, 2023, Hamas launched a major attack on Israel that killed over 1,000 people. Israeli intelligence agencies had warned of a threat beforehand.",
+            "what_happened": "New reporting in Israel says Netanyahu was warned that Hamas was planning a major attack. He did not order any action to prevent the October 7 attack. Netanyahu denied the allegation. He threatened to sue the journalists who reported the story.",
+            "why_it_matters": "For Israelis, this report shapes current debates about whether the government failed to protect its people. The report could affect public trust in Netanyahu's leadership. It may also influence how Israelis view their current political leadership.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "c0569ccb46b34b6e57e58cf9dd5b9031",
+      "title": "Antibody studies point the way to an HIV cure",
+      "url": "https://www.aidsmap.com/news/sep-2026/we-finally-understand-what-we-have-do-antibody-studies-point-way-hiv-cure",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "bd9d6d5c7cfbd35a691b9f9f642757d7",
+      "title": "Gauff saves match points to set up Rybakina semi-final",
+      "url": "https://www.bbc.co.uk/sport/tennis/articles/c98670d418yo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "1d9a8fcaafec5d04d770f71efc0502f8",
+      "title": "WeWorm",
+      "url": "https://calif.io/research/weworm",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "00ac18ac78732abd39950c29f360b3ec",
+      "title": "Prince William launches sport mental health toolkit",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cp84m835vm2o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 66,
+    "clusters_considered": 59,
+    "stories_run": 7,
+    "sources": 13,
+    "sections_held": 1
+  }
+}
