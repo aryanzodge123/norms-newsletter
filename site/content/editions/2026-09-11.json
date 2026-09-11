@@ -1,0 +1,388 @@
+{
+  "date": "2026-09-11",
+  "edition_number": 96,
+  "edition_type": "normal",
+  "headline_of_the_day": "NATO allies foiled Russian plot to sabotage undersea cables.",
+  "headline_cluster_id": "4f2a1e45a7b9f33570ab3d7b855afb7c",
+  "headline_rationale": "Prevented attack on infrastructure used by millions of people globally, demonstrating active security threats to communications systems.",
+  "key_points": [
+    {
+      "text": "NATO allies stopped a Russian operation targeting undersea internet cables used globally.",
+      "topic": "World"
+    },
+    {
+      "text": "Iran-backed Houthis seized a Red Sea port, threatening oil shipping and global energy prices.",
+      "topic": "World"
+    },
+    {
+      "text": "California signed laws requiring child safety controls on chatbots and social media platforms.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Anthropic found hundreds of attempts to misuse its AI for weapons and bioweapons design.",
+      "topic": "AI"
+    },
+    {
+      "text": "Google committed 13 billion euros to Finland for data centers and nuclear power.",
+      "topic": "Tech"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "ac375a59b6fdc27b7d93f1894cdd2159",
+          "slug": "google-commits-13-billion-to-finland-for-data-centers-and",
+          "title": "Google commits €13 billion to Finland for data centers and nuclear power",
+          "summary": "Google will buy half the output from a Finnish nuclear plant to power its AI systems.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c8r6y4me2g6o"
+            }
+          ],
+          "article": {
+            "background": "Google runs data centres, which are large buildings full of computers. These centres power search, email, and AI services. They use huge amounts of electricity. Google has been building data centres across Europe to handle growing demand for AI.",
+            "what_happened": "Google announced a €13 billion investment in Finland. The company will build three new data centres and expand an existing one. Google will also buy up to half the electricity from one of Finland's nuclear power plants. A Google executive called it the company's largest single investment in Europe.",
+            "why_it_matters": "Tech companies like Google need reliable, carbon-free electricity to run their servers. Nuclear power provides both. Finland's deal signals where big tech companies will build next, which shapes job growth and energy policy in those regions.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a6962b8499711ef696faa563e896b34f",
+          "slug": "developer-creates-app-to-detect-nearby-meta-smart-glasses",
+          "title": "Developer creates app to detect nearby Meta smart glasses",
+          "summary": "A new tool estimates how close Meta smart glasses are, though it has not been fully tested.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.businessinsider.com/zuckoff-app-detects-meta-ai-smart-glasses-recording-privacy-2026-9"
+            }
+          ],
+          "article": {
+            "background": "Smart glasses like those from Meta can record video and identify people without their knowledge. A 30-year-old Polish software developer named Pawel Szydlowski saw videos of people using them this way. He decided to build a tool to help others protect themselves.",
+            "what_happened": "Szydlowski created an app called Zuckoff that detects nearby smart glasses and shows how far away they are. The app launched on Apple's App Store last month. It has gained 5,000 users so far. A paid version called Zuckoff Pro sends alerts when recording glasses are near, even when the app is closed.",
+            "why_it_matters": "Smart glasses are getting smaller and more common. They can record people without their notice, which bothers many. An app that alerts you to nearby recording devices gives you a way to know when someone might be filming you.",
+            "quote": {
+              "text": "There's a need for such an application.",
+              "attribution": "Pawel Szydlowski, developer",
+              "source_url": "https://www.businessinsider.com/zuckoff-app-detects-meta-ai-smart-glasses-recording-privacy-2026-9"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "407d89e3472a08a931c1fcb4a291e372",
+          "slug": "anthropic-details-hundreds-of-attempts-to-misuse-ai-for",
+          "title": "Anthropic details hundreds of attempts to misuse AI for weapons and bioweapons",
+          "summary": "Anthropic stopped hundreds of attempts to use its AI to design missiles, pathogens, and surveillance tools.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/sep/10/anthropic-report-details-ai-misuse"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://thenextweb.com/news/anthropic-claude-misuse-threat-intelligence-report"
+            }
+          ],
+          "article": {
+            "background": "Anthropic makes Claude, a powerful artificial intelligence system that answers questions and helps with complex tasks. The company published a threat intelligence report on Thursday. It documents attempts to misuse Claude between December 2025 and August 2026.",
+            "what_happened": "Criminals, state-sponsored groups, spyware vendors, scientists and propagandists tried to use Claude for harm. They sought to design missiles and bombs. They tried to create deadly pathogens and surveil dissidents. Anthropic detected and shut down these operations. The report covers seven categories of misuse: cyber attacks, influence campaigns, surveillance, conventional weapons, biological research, scams and fraud, and illicit uses.",
+            "why_it_matters": "The report reveals real security gaps in AI systems. It helps Anthropic and other AI companies understand where their safeguards work and where they need improvement. Knowing how bad actors try to misuse AI helps companies build better defenses.",
+            "quote": {
+              "text": "The cases we share here aren't typical misuse, but rather examples of the most notable and novel threat activity we've identified to date.",
+              "attribution": "Anthropic, in its threat intelligence report",
+              "source_url": "https://www.theguardian.com/technology/2026/sep/10/anthropic-report-details-ai-misuse"
+            }
+          }
+        },
+        {
+          "cluster_id": "28716fb744e6120b88db72100a6f6c79",
+          "slug": "openai-pauses-pro-subscriptions-as-astra-model-strains",
+          "title": "OpenAI pauses Pro subscriptions as Astra model strains infrastructure",
+          "summary": "OpenAI paused sales of its $200 monthly plan because demand for the new Astra model exceeded supply.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand"
+            }
+          ],
+          "article": {
+            "background": "OpenAI runs ChatGPT, the popular AI assistant. The company offers different subscription tiers. The Pro plan costs $200 per month and gives users access to the most powerful models. Recently, OpenAI released Astra, its newest and strongest model.",
+            "what_happened": "Demand for Astra has strained OpenAI's servers. The company paused sign-ups for the Pro plan to reduce the load on its systems. OpenAI's product leader, Thibault Sottiaux, announced the move on X. He said the Pro plan uses the most server power. Other plans like the API, Go, and Plus tiers remain available.",
+            "why_it_matters": "If you use OpenAI, you can still sign up for cheaper plans. But if you wanted the Pro plan, you will have to wait. This pause is temporary. It shows that even the biggest AI companies hit limits when demand spikes faster than their equipment can handle.",
+            "quote": {
+              "text": "We wanted to take the smallest step that allows us to continue giving the broadest access possible.",
+              "attribution": "Thibault Sottiaux, OpenAI's product leader",
+              "source_url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "889020b5dc5fd3d2d6ccaee54f6cce41",
+          "slug": "california-governor-signs-child-safety-laws-for-chatbots",
+          "title": "California governor signs child safety laws for chatbots and social media",
+          "summary": "California now requires chatbots to verify age and include safety controls.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.gov.ca.gov/2026/09/10/governor-newsom-signs-the-strongest-child-safety-chatbot-and-social-media-laws-in-the-nation"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "09b3a45cd9e758cd03a26ead2df2085f",
+          "slug": "missouri-reverts-to-former-congressional-districts-after",
+          "title": "Missouri reverts to former congressional districts after court rejection",
+          "summary": "Missouri's top court blocked a Trump-backed redistricting map and restored the previous district lines.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/missouri-is-poised-to-revert-to-former-districts-after-supreme-court-rejects-trump-backed-map"
+            }
+          ],
+          "article": {
+            "background": "Missouri redraws its congressional districts every 10 years after the census. This reflects how the state's population has shifted. Districts determine which areas elect representatives to Congress. In 2022, Missouri adopted new districts that favored Republican candidates.",
+            "what_happened": "The U.S. Supreme Court rejected Missouri's congressional map on Thursday. The state is now poised to use its previous districts for the November election. This means voters will cast ballots under the older boundary lines. The newer map had backing from Trump-allied Republicans.",
+            "why_it_matters": "Congressional district maps shape which party is likely to win seats. Reverting to the old map changes the political math for Missouri's races this fall. Voters will now use the districts that existed before the state's recent overhaul.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4f2a1e45a7b9f33570ab3d7b855afb7c",
+          "slug": "nato-allies-foil-russian-subsea-cable-sabotage-plot",
+          "title": "NATO allies foil Russian subsea cable sabotage plot",
+          "summary": "NATO allies stopped a Russian operation targeting undersea internet cables.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/world/europe/nato-allies-foil-russian-subsea-cable-sabotage-plot-2026-09-10"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "6ca2824280183af7a3f9fa12a73d3838",
+          "slug": "iran-backed-houthis-capture-red-sea-port-threatening-oil",
+          "title": "Iran-backed Houthis capture Red Sea port, threatening oil markets",
+          "summary": "Houthis seized a strategic Red Sea port, straining global shipping and energy prices.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/iran-backed-houthis-capture-red-sea-port-putting-more-pressure-on-oil-markets"
+            }
+          ],
+          "article": {
+            "background": "Yemen has been torn by conflict for years. The Houthis are a militia group backed by Iran. They have fought against Yemen's internationally recognized government and its allies. Mokha is a port city on the Bab el-Mandeb, a narrow waterway between Yemen and Africa. This strait is one of the world's busiest shipping routes. Roughly one tenth of global trade passes through it.",
+            "what_happened": "The Houthis seized Mokha from forces allied with Yemen's government. The capture gives the Houthis control of a key point along the Bab el-Mandeb. This move expands their hold over a critical shipping lane that connects the Red Sea to the Indian Ocean.",
+            "why_it_matters": "The Houthis now control more of the waterway where ships carry oil and goods to the rest of the world. This increases the risk that ships will face attacks or delays. Shipping disruptions in this strait can drive up gas prices and the cost of goods for American consumers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "91593c3dae241c358a49a0f006dcd201",
+          "slug": "russia-trafficking-foreigners-to-fight-in-ukraine-amnesty",
+          "title": "Russia trafficking foreigners to fight in Ukraine, Amnesty reports",
+          "summary": "A human rights group found Russia forcing foreign nationals to fight in Ukraine.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.courthousenews.com/russia-trafficking-foreigners-to-fight-in-ukraine-amnesty-says"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "81154cf264c35b918eebc20bf3edbf9e",
+          "slug": "texas-reports-first-equine-infection-of-flesh-eating",
+          "title": "Texas reports first equine infection of flesh-eating screwworm parasite",
+          "summary": "Ranch horse infected with New World screwworm marks first US case in horses.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/10/texas-horse-screwworm-infection"
+            }
+          ],
+          "article": {
+            "background": "The New World screwworm is a fly larva that can infest open wounds in animals. It was eliminated from the United States in the 1960s. The pest has recently returned to parts of Texas after spreading north from Mexico.",
+            "what_happened": "A working ranch horse in Presidio county, Texas was found infected with the New World screwworm on its hind limb. This is the first reported screwworm infection in a US horse. The US Equestrian Foundation announced the discovery on Thursday.",
+            "why_it_matters": "Horse owners should check their animals daily for wounds, foul odor, or maggots. Keep wounds clean and covered as your veterinarian directs. Use fly control products and physical barriers like sheets to stop flies from reaching wounds. Early action can prevent the parasite from spreading to other horses.",
+            "quote": {
+              "text": "Check horses daily, keep wounds clean and covered as directed by your veterinarian, use veterinarian-recommended fly control products and limit fly access with physical barriers such as",
+              "attribution": "US Equestrian Foundation",
+              "source_url": "https://www.theguardian.com/us-news/2026/sep/10/texas-horse-screwworm-infection"
+            }
+          }
+        },
+        {
+          "cluster_id": "a4997275e24511d4250e42ee72660330",
+          "slug": "mexican-student-builds-acoustic-fire-extinguisher-using",
+          "title": "Mexican student builds acoustic fire extinguisher using sound waves",
+          "summary": "A Mexican student built a device that uses sound waves to put out fires in seconds.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.upsocl.com/en/16-year-old-mexican-student-creates-an-acoustic-fire-extinguisher-that-uses-sound-waves-to-put-out-fires-in-seconds"
+            }
+          ],
+          "article": {
+            "background": "Ángela Karime Venegas Hernández is 16 years old. She attends CETIS 78, a technical school in Altamira, Tamaulipas, Mexico. One day she wondered if sound could put out fire.",
+            "what_happened": "She built a device with a battery, a frequency generator, and a speaker. The speaker emits 30 pulses per second. That vibration pushes oxygen away from flames. Fire goes out in five to eight seconds. She tested it over 100 times on candles, wood, flammable liquids, cooking grease, and electronics.",
+            "why_it_matters": "This method leaves no residue and does not hurt the person using it. It could help put out fires near electronics or materials that water might harm. If it scales up, firefighters may have a new tool to reach fires faster.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "4e69927c19a2a8eefd7728e4f172b06d",
+          "slug": "49ers-rout-rams-in-first-nfl-regular-season-game-in",
+          "title": "49ers rout Rams in first NFL regular season game in Australia",
+          "summary": "San Francisco won 27-7 before 100,021 fans at Melbourne Cricket Ground.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/sep/10/49ers-rams-nfl-australia-melbourne-result-brock-purdy"
+            }
+          ],
+          "article": {
+            "background": "The NFL played its first regular-season game in Australia on Friday. The San Francisco 49ers faced the Los Angeles Rams at the Melbourne Cricket Ground. Over 100,000 fans showed up. It was the seventh-largest crowd in NFL regular-season history.",
+            "what_happened": "The 49ers beat the Rams 27-7. Brock Purdy threw three touchdown passes to Mike Evans, Demarcus Robinson, and Deebo Samuel. Purdy completed 205 passing yards. The Rams' defense struggled throughout the game.",
+            "why_it_matters": "The huge crowd shows strong interest in American football outside the US. This game may lead to more international NFL events. The league could reach new fans and earn more money from other countries. Australia got its first real taste of regular-season NFL play.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e56239638af59a0e36214a51f870a292",
+          "slug": "sabalenka-defeats-pegula-to-reach-third-straight-us-open",
+          "title": "Sabalenka defeats Pegula to reach third straight US Open final",
+          "summary": "Defending champion won 7-5, 6-2, extending her tournament winning streak to 19 matches.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/sep/10/aryna-sabalenka-jessica-pegula-us-open-semi-final-tennis"
+            },
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/tennis/articles/cy9znnpnx5ro?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Aryna Sabalenka is the top-seeded Belarusian player and the two-time defending US Open champion. She is aiming for a third straight title. Her opponent in the final will be Elena Rybakina, the second seed from Kazakhstan, who beat Coco Gauff in the other semi-final.",
+            "what_happened": "Sabalenka beat Jessica Pegula 7-5, 6-2 on Thursday night. She hit 29 winners to Pegula's 12. That victory extended her US Open winning streak to 19 matches. Rybakina won her semi-final against Gauff 3-6, 6-4, 6-4. The final is set for Saturday.",
+            "why_it_matters": "If Sabalenka wins, she will become only the third player in the Open era to win the same Grand Slam tournament three years in a row. The match is also notable because Rybakina is guaranteed to become world number one on Monday, ending Sabalenka's 99-week reign at the top. So the ranking will change no matter who wins on Saturday.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "03e2cceb04f297f61d10838592911adb",
+      "title": "Thrive Capital led VCs into pro sports ownership; Collaborative Fund just upped that play",
+      "url": "https://techcrunch.com/2026/09/10/thrive-capital-showed-vcs-the-way-into-pro-sports-ownership-collaborative-fund-is-now-trying-its-own-version-of-the-same-play",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "a575b4fe910df4aa63808b5ca8747a74",
+      "title": "Are interest rates on the way up again?",
+      "url": "https://www.bbc.co.uk/news/articles/cew9nkx7v9eo?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "440dae9bda2dcab484713b85484fa777",
+      "title": "DeepSeek and Moonshot were quietly relaying customer prompts to Claude",
+      "url": "https://twitter.com/IntCyberDigest/status/2098149671957103005",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "984b06bb651bbb147335f05846bb4aee",
+      "title": "$15m fund launched to create ‘unstoppable momentum’ to end FGM worldwide",
+      "url": "https://www.theguardian.com/global-development/2026/sep/11/15m-fund-launched-to-create-unstoppable-momentum-to-end-fgm-worldwide",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "466677ad13b4ad70abf097c308a8b022",
+      "title": "Watch: Three times Trump has promised money to Americans",
+      "url": "https://www.bbc.co.uk/news/videos/cgk5nn338peo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "1e7ee3369a378073ef093eff1813fc39",
+      "title": "Trump's vow of $5,000 payments to Americans faces bipartisan criticism",
+      "url": "https://www.pbs.org/newshour/show/trumps-vow-of-5000-payments-to-americans-faces-bipartisan-criticism",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "c74be9217c2e162830eff2e2ec9c9291",
+      "title": "Coach crash kills several people in Swiss Alps",
+      "url": "https://www.bbc.co.uk/news/articles/cx2z70xr0y3o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6eb5c6431143510d4dbfdae397d9d014",
+      "title": "Can Europe recharge its battery industry?",
+      "url": "https://www.bbc.co.uk/news/articles/cjeg8ly0qd3o?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "4ea1397f8ce2fd18c9ab5fff7dce27dd",
+      "title": "Customers of UK-owned surrogacy firm in Mexico allegedly face huge bills after insurance denied",
+      "url": "https://www.theguardian.com/lifeandstyle/2026/sep/11/uk-owned-surrogacy-service-mexico-investigation-complaints-health-complications-my-surrogacy-journey",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "4f1ef0f7b8a8c554297e2c56cc448d1e",
+      "title": "Davies sinks world champion Wu at English Open",
+      "url": "https://www.bbc.co.uk/sport/snooker/articles/cr4vqqrwexeo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 70,
+    "clusters_considered": 65,
+    "stories_run": 13,
+    "sources": 10,
+    "sections_held": 1
+  }
+}
