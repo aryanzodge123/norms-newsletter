@@ -1,0 +1,190 @@
+{
+  "date": "2026-09-13",
+  "edition_number": 98,
+  "edition_type": "normal",
+  "headline_of_the_day": "Chinese AI companies copied American models to build their own, US agencies say",
+  "headline_cluster_id": null,
+  "headline_rationale": "First confirmed government statement that a major state-linked practice affected deployed US AI systems, setting a precedent for how governments treat model theft.",
+  "key_points": [
+    {
+      "text": "FBI, NSA and CISA say top Chinese AI firms mined American models including ChatGPT and Claude since 2024.",
+      "topic": "AI"
+    },
+    {
+      "text": "Elena Rybakina won the US Open, beating defending champion Aryna Sabalenka 6-4, 5-7, 6-2.",
+      "topic": "Sports"
+    },
+    {
+      "text": "Al-Qaeda has regrouped in Afghanistan 25 years after the September 11 attacks, raising US security concerns.",
+      "topic": "World"
+    },
+    {
+      "text": "Iran shut down the internet nationwide, affecting millions in one of the largest blackouts ever.",
+      "topic": "World"
+    },
+    {
+      "text": "Matt Mullenweg returned as Automattic CEO after his board tried to remove him this week.",
+      "topic": "Business"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "151e222d29a93a4cef7b35c4251fc930",
+          "slug": "al-qaeda-regroups-in-afghanistan-25-years-after-september-11",
+          "title": "Al-Qaeda regroups in Afghanistan 25 years after September 11",
+          "summary": "Al-Qaeda has rebuilt its presence in Afghanistan, raising US security concerns.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.washingtonpost.com/world/2026/09/12/25-years-after-911-al-qaeda-regroups-afghanistan"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "88ce672257e0f755f1367fc025f8143c",
+          "slug": "iran-shuts-down-internet-nationwide-in-unprecedented",
+          "title": "Iran shuts down internet nationwide in unprecedented blackout",
+          "summary": "A countrywide internet shutdown affected millions with no way to escape it.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bloomberg.com/features/2026-iran-internet"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "8932972d081f3a3097c23824f8320186",
+          "slug": "elena-rybakina-defeats-aryna-sabalenka-to-win-us-open",
+          "title": "Elena Rybakina defeats Aryna Sabalenka to win US Open",
+          "summary": "Rybakina beats two-time defending champion 6-4, 5-7, 6-2 to claim title.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/sep/13/elena-rybakina-beats-aryna-sabalenka-us-open-title-tennis"
+            },
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/tennis/articles/clym434j01xo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Elena Rybakina is a tennis player from Kazakhstan. She hits harder than almost anyone in women's tennis, but many thought other players were tougher or more reliable. Rybakina won Wimbledon in 2022 and the Australian Open earlier this year. She claimed the world No. 1 ranking just before the US Open final. This final matched her against Aryna Sabalenka, the two-time defending US Open champion.",
+            "what_happened": "Rybakina beat Sabalenka 6-4, 5-7, 6-2 in the final on Saturday. She struggled with her first serve early in the match. Sabalenka won the second set, but Rybakina played nearly perfect tennis in the third. Rybakina's power proved too much for Sabalenka on hard courts. This was Rybakina's first US Open title and her third Grand Slam.",
+            "why_it_matters": "For tennis fans, this marks a clear shift in who rules women's tennis. Rybakina replaces Sabalenka as the player to beat at the biggest tournaments. When Rybakina plays her best, no one else can match her on hard courts right now. The sport has a new standard bearer.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "efa5a9368108904976bc1c754e077fff",
+          "slug": "south-africa-defeats-new-zealand-43-28-to-win-rugby-series",
+          "title": "South Africa defeats New Zealand 43-28 to win rugby series",
+          "summary": "South Africa beat New Zealand 43-28 in Baltimore to win the rugby series 3-1.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/rugby-union/articles/c07lmxpmvr9o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/live/2026/sep/12/south-africa-v-new-zealand-fourth-and-final-rugby-union-test-live"
+            }
+          ],
+          "article": {
+            "background": "South Africa and New Zealand play rugby's most storied rivalry. The two teams met in a four-game series this month. New Zealand won the first test and briefly topped the world rankings. South Africa won tests two and three to take control of the series.",
+            "what_happened": "South Africa won the fourth and final test 43-28 in Baltimore. Kurt-Lee Arendse scored a try from his own half in a high-scoring game with ten total tries. South Africa's victory clinched the series 3-1. The team's strength and teamwork proved decisive across all four games.",
+            "why_it_matters": "Rugby's top two teams just played their most important matchup. South Africa's dominant series win shows they remain the world's best rugby team. For fans of the sport, this settles the question of which nation leads international rugby right now.",
+            "quote": {
+              "text": "We do it for you each and every time.",
+              "attribution": "Siya Kolisi, South Africa's captain",
+              "source_url": "https://www.theguardian.com/sport/live/2026/sep/12/south-africa-v-new-zealand-fourth-and-final-rugby-union-test-live"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "c021be5e3d72405458a342ed823321de",
+      "title": "U.S. agencies say top Chinese AI companies systematically copied American models",
+      "url": "https://www.nbcnews.com/tech/tech-news/us-accuses-china-ai-developers-deepseek-alibaba-copying-american-ai-rcna596696",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "7eb7baee0f326c13e14ffeba69f0b86c",
+      "title": "Apple *deletes* your Apple Music library if you unsubscribe",
+      "url": "https://www.reddit.com/r/apple/comments/7niv58/fyi_apple_deletes_your_apple_music_library_if_you",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "517dc4511f0bce67290c1a407cee7d75",
+      "title": "Automattic confirms Mullenweg has returned as CEO after attempted ouster by board",
+      "url": "https://techcrunch.com/2026/09/12/automattic-confirms-mullenweg-has-returned-as-ceo-after-attempted-ouster-by-board",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "da6b3d8b1939ffab01b3b3ac2dee22cf",
+      "title": "Sergey Brin pours more than $100M into fighting California's billionaire tax",
+      "url": "https://www.latimes.com/business/story/2026-08-12/googles-sergey-brin-spent-102-million-fighting-california-wealth-tax",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "e9b7557eebd84ed6c5285612137e830e",
+      "title": "Administrative Declaration of a Disaster for the State of Texas",
+      "url": "https://www.federalregister.gov/documents/2026/09/14/2026-18777/administrative-declaration-of-a-disaster-for-the-state-of-texas",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "7ead5a1efed606973d41f3922a62db83",
+      "title": "OpenAI IPO will not happen in 2026 amid AI safety fears, Sam Altman says",
+      "url": "https://www.theguardian.com/us-news/2026/sep/12/openai-delays-ipo-sam-altman-ai-safety-concerns",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "ba49da60304b860f74c84fe44b5e870b",
+      "title": "One dead and more than 30 missing after ferry sinks off Vanuatu coast in rough seas",
+      "url": "https://www.theguardian.com/world/2026/sep/13/one-dead-and-more-than-30-missing-after-ferry-sinks-off-vanuatu-coast-in-rough-seas",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3b2721a4a6a6bf9fef6d3574c0ad71c4",
+      "title": "NSW to put strict caps on screen time in classrooms while pushing for ‘pen and paper’ learning",
+      "url": "https://www.theguardian.com/australia-news/2026/sep/13/nsw-to-put-strict-caps-on-screen-time-in-classrooms-while-pushing-for-pen-and-paper-learning",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5e283940a76ab4c56528e96f8cb9850a",
+      "title": "Scientists Create a New Form of Ice at More Than 2000°C",
+      "url": "https://www.sciencealert.com/scientists-create-a-new-form-of-ice-at-more-than-2000-c",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "560839d6d47cba076939feef100a0d39",
+      "title": "No Atlantic hurricanes by Sept. 12 breaks a 60-year record",
+      "url": "https://www.accuweather.com/en/hurricane/no-atlantic-hurricanes-by-sept-12-breaks-a-60-year-record/1932278",
+      "topic": "Science"
+    }
+  ],
+  "stats": {
+    "items_ingested": 84,
+    "clusters_considered": 65,
+    "stories_run": 4,
+    "sources": 9,
+    "sections_held": 0
+  }
+}
