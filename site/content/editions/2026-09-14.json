@@ -1,0 +1,319 @@
+{
+  "date": "2026-09-14",
+  "edition_number": 99,
+  "edition_type": "normal",
+  "headline_of_the_day": "Nike exits the S&P 100 after 18 years and a $200 billion market-cap wipeout",
+  "headline_cluster_id": "8db50c90f6253dde413d5980a4d89625",
+  "headline_rationale": "The story marks a concrete shift in Nike's market position, affecting shareholders and signaling broader economic conditions through the loss of a major company from the S&P 100.",
+  "key_points": [
+    {
+      "text": "Nike exits the S&P 100 after 18 years and a $200 billion drop in market value since 2021.",
+      "topic": "Business"
+    },
+    {
+      "text": "AI can now spot colorectal cancer in routine CT scans, which could change how doctors screen for it.",
+      "topic": "Science"
+    },
+    {
+      "text": "Sweden's election is too close to call. Left-wing parties lead by just one seat.",
+      "topic": "World"
+    },
+    {
+      "text": "Boston Scientific fixed a cyberattack that had slowed its manufacturing and order filling.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "8db50c90f6253dde413d5980a4d89625",
+          "slug": "nike-loses-spot-in-top-100-us-companies-after-market-value",
+          "title": "Nike loses spot in top 100 US companies after market value drops $200 billion",
+          "summary": "The sportswear giant fell nearly 80 percent from its 2021 peak, exiting the S&P 100 for the first time in 18 years.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://fortune.com/2026/09/08/nike-stock-plummets-sp500-market-cap-index"
+            }
+          ],
+          "article": {
+            "background": "Nike is one of the world's largest makers of athletic shoes and sportswear. The company has been a fixture of the S&P 100, a ranking of the largest U.S. public companies by market value, for 18 years. That membership signals financial health and stability among the biggest corporations.",
+            "what_happened": "Nike has dropped out of the S&P 100 index. The company's market value has fallen to roughly $57 billion today, down 78% from its peak of $264 billion in November 2021. The loss of more than $200 billion in value in five years was severe enough to push Nike out of the top 100 largest U.S. companies.",
+            "why_it_matters": "For investors and people with retirement accounts, index membership matters because many funds automatically track the S&P 100. Nike's exit means those funds must sell their Nike shares, which can put downward pressure on the stock price. The drop also reflects a sharp loss of confidence in a company many people have relied on for decades.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d5f3e5dcab06cdfa710183602ad03ac9",
+          "slug": "rental-costs-in-uk-accelerate-after-three-year-slowdown",
+          "title": "Rental costs in UK accelerate after three-year slowdown",
+          "summary": "UK rent for new tenants rose 2.6 percent in July, and prices are likely to keep climbing.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c4gqjv476qeo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Renting in the UK has gotten more expensive after three years of slower growth. Property website Zoopla tracks rental costs for new tenancies each month.",
+            "what_happened": "Rent for new tenancies rose 2.6% in July compared with a year earlier. Zoopla now expects annual rent increases to hit 4% or 5% by year's end. Fewer homes are available to rent right now. Higher mortgage rates are pushing would-be buyers into the rental market instead. More people competing for fewer rentals gives landlords more power in negotiations.",
+            "why_it_matters": "Tenants will likely pay more when their leases renew. Those searching for a new place will face steeper prices and less choice. The squeeze is hitting at a time when many households already struggle with higher costs for food and energy.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "6682522f332f2772a1d89730fbb10f3d",
+          "slug": "sweden-s-election-remains-undecided-with-one-seat-margin",
+          "title": "Sweden's election remains undecided with one-seat margin",
+          "summary": "Sweden's election is too close to call. Left-wing parties lead by one seat with most votes in.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/13/voting-under-way-in-sweden-with-far-right-eyeing-first-role-in-government"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c0qx5d79kdeo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Sweden holds parliamentary elections every four years to choose its government. The country's politics divide into left-leaning and right-leaning blocs. This year's race pits the left-wing coalition led by Social Democrat Magdalena Andersson against the right-wing bloc led by Prime Minister Ulf Kristersson. Kristersson's coalition has been supported by the hard-right Sweden Democrats, a party with neo-Nazi roots.",
+            "what_happened": "With 80% of votes counted on Sunday night, the left-wing bloc held a one-seat lead. Sweden's electoral authority projected Andersson's coalition would finish with a three-seat majority. But the race remained too tight to call. Early Monday, with over 90% counted, the left bloc led by roughly 20,000 votes. Officials said it could take days to know the final outcome.",
+            "why_it_matters": "Sweden's next government will shape the country's policies on issues that matter to all voters. If the left wins, the political direction shifts away from the right-wing approach. The extreme closeness means either bloc could still prevail. The wait for a final count will determine which coalition leads Sweden next.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fb5c84fa35101c0bd85d0f080010e0c4",
+          "slug": "turkey-launches-crackdown-on-lgbtq-and-hiv-support-groups",
+          "title": "Turkey launches crackdown on LGBTQ and HIV support groups",
+          "summary": "Turkey's government is shutting down groups that help LGBTQ people and those with HIV.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/turkey-lgbtq-hiv-crackdown-c782f5318613126fe072d29133e6bf5d"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "9e9182f0b52858eaa0e0fe641d881af1",
+          "slug": "uk-committee-calls-for-new-bill-to-address-ai-human-rights",
+          "title": "UK committee calls for new bill to address AI human rights threats",
+          "summary": "A UK group says current laws cannot protect people from risks posed by artificial intelligence.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cwyzvgj70y4o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Artificial intelligence, or AI, is computer software that learns from data to make decisions or predictions. A group of UK lawmakers called the Joint Committee on Human Rights studied how AI affects people's basic rights. They found that current laws do not fully protect against the risks AI creates.",
+            "what_happened": "The committee published a report calling for a new bill focused on AI and human rights. Alex Sobel, the committee's chair, said no country yet has laws strong enough to handle AI's risks. The group argues that AI systems can discriminate, invade privacy, or manipulate people without adequate legal protection.",
+            "why_it_matters": "AI already affects decisions in your life, from loan approvals to job hiring to what content you see online. Without specific rules, these systems can harm you with little recourse. A new law would set standards to protect your rights as AI spreads.",
+            "quote": {
+              "text": "Nowhere in the world, including the UK, has a current legislative and regulatory approach to AI that is fit for purpose.",
+              "attribution": "Alex Sobel MP, chair of the Joint Committee on Human Rights",
+              "source_url": "https://www.bbc.co.uk/news/articles/cwyzvgj70y4o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "ebe3d86e6c30512ef041adea2c8ea776",
+          "slug": "lawyer-cites-fake-witnesses-in-murder-case-blames-chatgpt",
+          "title": "Lawyer cites fake witnesses in murder case, blames ChatGPT",
+          "summary": "A lawyer used fake testimony made by AI in a murder trial and now faces questions.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/legal/government/chatgpt-invented-fake-police-testimony-murder-appeal-new-mexico-high-court-says-2026-09-11"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "d7b9293f61a327bec2029597b0602742",
+          "slug": "ai-detects-colorectal-cancer-using-routine-ct-scans",
+          "title": "AI detects colorectal cancer using routine CT scans",
+          "summary": "AI can now spot a common cancer in regular CT scans without needing contrast dye.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://radiologybusiness.com/topics/artificial-intelligence/opportunistic-ai-detects-colorectal-cancer-using-routine-noncontrast-ct"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "9bc651484f3d95201ce7d2efba71c0f2",
+          "slug": "counterfeit-weight-loss-drug-tears-patient-s-oesophagus",
+          "title": "Counterfeit weight-loss drug tears patient's oesophagus",
+          "summary": "Australian health officials warned after a fake weight loss drug sent someone to the hospital.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/sep/14/counterfeit-retratrutide-warning-peptide-torn-oesophagus-australia-tga"
+            }
+          ],
+          "article": {
+            "background": "Retatrutide is an experimental weight loss drug. It mimics hormones that control appetite. Australia's Therapeutic Goods Administration (TGA), the country's medicines regulator, has not approved it. It cannot be legally prescribed or sold in Australia.",
+            "what_happened": "A patient in Australia was hospitalized after taking a counterfeit version of retatrutide. The person believed they were taking the real experimental drug. Their oesophagus tore as a result. The TGA has now warned of serious risks from counterfeit versions.",
+            "why_it_matters": "Counterfeit medications can contain harmful or completely different substances than what you think you are buying. Buying unapproved drugs online puts you at risk of severe injury. If something goes wrong, you have no way to seek recourse or know what you actually took.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "7c5bfaa4f2c0faaf233990f85d6b3099",
+          "slug": "boston-scientific-restores-operations-after-cybersecurity",
+          "title": "Boston Scientific restores operations after cybersecurity incident",
+          "summary": "Boston Scientific repaired a cyberattack from August 25. Its factories now make and ship more than usual.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.bostonscientific.com/update-on-recent-cybersecurity-incident"
+            }
+          ],
+          "article": {
+            "background": "Boston Scientific makes medical devices for hospitals and doctors' offices. On August 25, the company found a cybersecurity incident that disrupted its operations. This affected manufacturing, order fulfillment, and shipping.",
+            "what_happened": "As of September 9, Boston Scientific said its manufacturing, order fulfillment, and shipping operations are fully restored. Products now move through the distribution network at or above normal levels. The company is working to fulfill orders from before and during the disruption.",
+            "why_it_matters": "Boston Scientific's devices help patients receive needed medical care. When the company's operations slowed, hospitals and doctors faced delays getting those devices. With operations restored, patients should see faster access to the products their doctors ordered.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "405e29c80876675165914055b13464df",
+          "slug": "chess-com-data-appears-online-but-evidence-points-to",
+          "title": "Chess.com data appears online but evidence points to scraping, not breach",
+          "summary": "Someone posted 7.3 million Chess.com user records online for free, but they did not hack the site.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://securityaffairs.com/197174/breaking-news/chess-com-leak-exposes-7-3-million-users-evidence-points-to-scraping.html"
+            }
+          ],
+          "article": {
+            "background": "Chess.com is an online platform where millions of people play chess games and build profiles. This week, a file with data from over 7.3 million chess.com users appeared on public leak forums. No one demanded money for it. Instead, it was simply shared for free.",
+            "what_happened": "Security researchers examined the leaked file and found it likely came from data scraping. Scraping means someone copied information from the site's public pages rather than breaking into the company's systems. The file holds 7.3 million user records. Each record has 38 pieces of data. It includes names, emails, usernames, user IDs, and locations.",
+            "why_it_matters": "If you have a chess.com account, check whether your email and name were in the leak. The good news is that the company's core systems appear safe. Because this came from scraping public data rather than a hack, chess.com's security did not fail. Still, your personal information is now in public hands and could be used for spam or fraud.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "efd6b0e8a141d92474e79b04e94bb4c1",
+          "slug": "top-tennis-players-end-prize-money-battle-with-grand-slams",
+          "title": "Top tennis players end prize-money battle with grand slams",
+          "summary": "Top tennis players ended their 18-month fight with the Grand Slam tournaments over prize money.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/sep/14/worlds-top-tennis-players-call-truce-in-prize-money-battle-with-grand-slams"
+            }
+          ],
+          "article": {
+            "background": "Tennis's four Grand Slam tournaments are the sport's most prestigious events. For 18 months, top players have been pushing these tournaments for better prize money, improved player welfare, and a say in decisions that affect them. The players' campaign included refusing to speak to media at the French Open in May.",
+            "what_happened": "After the men's US Open final on Sunday, leading players announced they would end their campaign against the Grand Slams. The truce came after Wimbledon made concessions to player demands. Top players including Jannik Sinner and Aryna Sabalenka had been the loudest voices pushing for these changes.",
+            "why_it_matters": "Prize money and working conditions at tennis's biggest tournaments affect what players earn and how they are treated. A resolution means these negotiations can now move forward without the disruption of media boycotts. For fans, the deal suggests the sport's top events and its best players have found a path to work together.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9d7a61b7a7c57ff63e78ddecfbf9a26c",
+          "slug": "alexander-zverev-wins-us-open-adds-second-major-title",
+          "title": "Alexander Zverev wins US Open, adds second major title",
+          "summary": "German top seed defeats Ben Shelton 6-3 7-6 5-7 6-2 to claim second Grand Slam after French Open.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/tennis/articles/c1wx9qpxjg3o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Alexander Zverev is a German tennis player. He entered this year ranked at the top but had never won a Grand Slam. A Grand Slam is one of tennis's four most prestigious events. At the start of the season, many wondered if he would ever win one.",
+            "what_happened": "Zverev won the US Open final on Sunday. He beat American Ben Shelton 6-3, 7-6, 5-7, 6-2. Zverev won the French Open earlier this year. The US Open is his second Grand Slam title in 2024.",
+            "why_it_matters": "Zverev's twin titles this year mark a shift in tennis. He has moved from being a top-ranked player without a major win to a multiple Grand Slam champion. For American fans, Shelton's loss means the US remains without a men's Grand Slam winner in singles since 2003.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "e9b7557eebd84ed6c5285612137e830e",
+      "title": "Administrative Declaration of a Disaster for the State of Texas",
+      "url": "https://www.federalregister.gov/documents/2026/09/14/2026-18777/administrative-declaration-of-a-disaster-for-the-state-of-texas",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "0404f638b636cd303770b5a96af40276",
+      "title": "X.com busts Chinese bot farm, incl accounts making claims about AI data centers",
+      "url": "https://www.tomshardware.com/tech-industry/policy/x-busts-200-000-strong-chinese-bot-farm-including-accounts-making-claims-about-ai-data-centers-and-electricity-suspect-accounts-posted-claims-about-pricing-and-grid-strain-to-manipulate-debate",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "e99de7282c8aff03bb2d59fe22107cc2",
+      "title": "Israeli minister threatens to strip Israeli film-makers of citizenship over Gaza documentary NAZA",
+      "url": "https://www.theguardian.com/film/2026/sep/14/gaza-documentary-makers-naza-israel-citizenship-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "81a44731d46792bf1e55170beba52cb7",
+      "title": "Russia hits Ukrainian train shortly after Boris Johnson and top European officials leave station",
+      "url": "https://www.bbc.co.uk/news/articles/cy5zg41dkqwo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8400febd4bd2f2bb8dfefdde1586c3af",
+      "title": "Amazon pauses work with cargo firm after fatal crash",
+      "url": "https://www.bbc.co.uk/news/articles/cx2zg554w9ko?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 96,
+    "clusters_considered": 81,
+    "stories_run": 12,
+    "sources": 9,
+    "sections_held": 0
+  }
+}
