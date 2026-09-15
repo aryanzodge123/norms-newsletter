@@ -19,6 +19,15 @@ and the audio step are bounded, so a hang cannot burn six hours again. It did
 not address why the hang cost the edition, and it fixed only one of the two
 editor slips. Those two remainders are proposals A and B.
 
+**A note on the numbers.** These were originally proposed as #57 and #58.
+`landing/PROPOSED-SPEC-DISCOVERY.md` independently claimed #57 through #61 and
+`landing/PROPOSED-SPEC-BLOG.md` chains off it through #65, so two documents
+claimed the same two numbers. Decisions #66 and #67 have since been approved
+and are referenced throughout `src/`, so they are fixed. Renumbering these two
+to #68 and #69 is the resolution that costs the fewest edits: the landing pair
+fills 57 to 65 exactly, its cross-references stay valid, and this document is
+self-contained. Nothing outside this file referred to #57 or #58.
+
 **The two proposals are independent.** They share a premise and a week of
 evidence, which is why they are in one document, but either can be approved
 without the other.
@@ -28,7 +37,7 @@ without the other.
 ## Proposal A: commit the edition before the audio build
 
 **Touches:** SPEC 6.8 (step order), SPEC 7 (the unpublished-day enumeration),
-decision #17. Proposed new decision **#57**.
+decision #17. Proposed new decision **#68**.
 
 ### This is not a new policy, it is an enforcement gap
 
@@ -107,7 +116,7 @@ are `schedule` plus `workflow_dispatch` only. A second commit therefore cannot
 re-trigger the publish workflow, so the obvious objection to a two-commit
 design does not apply.
 
-### Proposed decision #57
+### Proposed decision #68
 
 > The edition is committed as soon as it validates, before the audio build,
 > and the audio block is committed separately after injection. A date's
@@ -131,7 +140,7 @@ design does not apply.
 ## Proposal B: validate the editor's cluster ids on the response, not the edition
 
 **Touches:** SPEC 6.5, SPEC 7's failure table, section 8's reason codes,
-decisions #25, #26, #27. Proposed new decision **#58**.
+decisions #25, #26, #27. Proposed new decision **#69**.
 
 ### The same slip is contained in one place and fatal in another
 
@@ -227,7 +236,7 @@ being degraded as a side effect of the fix. That is exactly why the new reason
 code is needed regardless of the degraded question: without it, a slip that is
 currently loud becomes invisible rather than merely non-degraded.
 
-### Proposed decision #58
+### Proposed decision #69
 
 > The editor's cluster ids are validated against the offered set on the editor
 > response, where a failure is retryable, and never on the assembled edition,
