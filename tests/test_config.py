@@ -57,6 +57,9 @@ audio:
   speaker_b_voice: Puck
   min_words: 1300
   max_words: 1600
+  tts_timeout_seconds: 360.0
+  tts_max_retries: 1
+  tts_retry_backoff_seconds: 30.0
 archive:
   prior_mention_lookback_days: 30
   continuing_coverage_lookback_days: 7
@@ -82,6 +85,12 @@ def test_the_repo_config_actually_loads() -> None:
     assert {s.name for s in sources} >= {"hackernews", "arstechnica"}
     assert pipeline.collector.since_window_hours > 0
     assert "t.co" in pipeline.canonical_url.shortener_hosts
+    # The shipped audio budget, not just a valid one. These three numbers are
+    # one arithmetic statement about the publish.yml audio step (decision #66),
+    # so a change to any of them should have to change this line too.
+    assert pipeline.audio.tts_timeout_seconds == 360.0
+    assert pipeline.audio.tts_max_retries == 1
+    assert pipeline.audio.tts_retry_backoff_seconds == 30.0
 
 
 def test_loads_a_valid_registry(tmp_path) -> None:
@@ -177,6 +186,59 @@ def test_audio_config_loads(tmp_path) -> None:
     assert pipeline.audio.min_words == 1300
     assert pipeline.audio.max_words == 1600
     assert pipeline.audio.tts_model.startswith("gemini")
+
+
+def test_audio_retry_settings_load(tmp_path) -> None:
+    """SPEC 6.7 / decision #66: a transient render is retried once."""
+    pipeline = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE))
+    assert pipeline.audio.tts_max_retries == 1
+    assert pipeline.audio.tts_retry_backoff_seconds == 30.0
+
+
+def test_audio_retry_budget_fits_the_publish_step(tmp_path) -> None:
+    """The bound is arithmetic, not taste (decision #66).
+
+    The audio step's timeout-minutes is 15 (900 s) in publish.yml. Worst case
+    with one retry, both attempts running to the ceiling, is the script call
+    plus two full renders plus one backoff. A third attempt does not fit, and
+    buying room for one by raising the step ceiling would spend the publish's
+    timeliness margin on a stage that is classed non-blocking.
+    """
+    audio = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE)).audio
+    step_ceiling_seconds = 15 * 60
+    script_call_allowance = 60
+    attempts = audio.tts_max_retries + 1
+    worst_case = (
+        script_call_allowance
+        + attempts * audio.tts_timeout_seconds
+        + audio.tts_max_retries * audio.tts_retry_backoff_seconds
+    )
+    assert worst_case <= step_ceiling_seconds
+
+    one_more = worst_case + audio.tts_timeout_seconds + audio.tts_retry_backoff_seconds
+    assert one_more > step_ceiling_seconds
+
+
+def test_audio_rejects_a_negative_retry_count(tmp_path) -> None:
+    text = VALID_PIPELINE.replace("tts_max_retries: 1", "tts_max_retries: -1")
+    with pytest.raises(ConfigError, match="tts_max_retries"):
+        load_pipeline(write(tmp_path, "pipeline.yaml", text))
+
+
+def test_audio_rejects_a_negative_backoff(tmp_path) -> None:
+    text = VALID_PIPELINE.replace(
+        "tts_retry_backoff_seconds: 30.0", "tts_retry_backoff_seconds: -5.0"
+    )
+    with pytest.raises(ConfigError, match="tts_retry_backoff_seconds"):
+        load_pipeline(write(tmp_path, "pipeline.yaml", text))
+
+
+def test_audio_rejects_a_zero_render_ceiling(tmp_path) -> None:
+    # 0 would be an un-timed call by another name, and an un-timed call hung
+    # the 2026-08-26 publish for six hours.
+    text = VALID_PIPELINE.replace("tts_timeout_seconds: 360.0", "tts_timeout_seconds: 0")
+    with pytest.raises(ConfigError, match="tts_timeout_seconds"):
+        load_pipeline(write(tmp_path, "pipeline.yaml", text))
 
 
 def test_audio_rejects_inverted_word_band(tmp_path) -> None:

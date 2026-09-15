@@ -50,6 +50,7 @@ def test_row_has_the_spec_columns() -> None:
         "reasons",
         "notes",
         "run_date",
+        "tts_wall_seconds",
     }
 
 

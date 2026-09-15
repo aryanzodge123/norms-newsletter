@@ -122,12 +122,41 @@ audio:
   # when the model or its pricing changes.
   tts_price_input_per_mtok: 0.50
   tts_price_output_per_mtok: 10.00
-  # Wall-clock ceiling on the Gemini TTS call, in seconds. Normal renders
-  # finish inside two minutes; this is generous headroom, not a target. It
-  # exists so a hung call becomes a contained TTSError (publish without a
-  # player row) instead of blocking the publish until the Actions job is
-  # killed. Keep it below the audio step's timeout-minutes in publish.yml.
-  tts_timeout_seconds: 300.0
+  # Wall-clock ceiling on the Gemini TTS call, in seconds. It exists so a hung
+  # call becomes a contained TTSError (publish without a player row) instead of
+  # blocking the publish until the Actions job is killed.
+  #
+  # The previous comment here claimed "normal renders finish inside two
+  # minutes", which was an estimate and was wrong. Measured 2026-09-14: a 1,508
+  # word dialogue rendered in 214 seconds of wall clock and returned 442
+  # seconds of audio. Scaled to the 317 to 346 second episodes the successful
+  # editions actually produced, a typical render is about 160 seconds. At the
+  # old 300 s ceiling that is roughly 1.9x a typical render, so a render only
+  # moderately slower than usual hit the ceiling, which is most likely what the
+  # 2026-09-14 "read operation timed out" actually was.
+  #
+  # 360.0 is chosen against the audio step's timeout-minutes: 15 ceiling in
+  # .github/workflows/publish.yml (900 s). Worst case with one retry, both
+  # attempts running to the ceiling, is 60 s of script call + 360 + 30 s of
+  # backoff + 360 = 810 s, which still fits. A second retry would not
+  # (60 + 360 + 30 + 360 + 30 + 360 = 1200 s), and buying room for one by
+  # raising the step ceiling would spend the publish's timeliness margin
+  # (SPEC section 8) on a stage that is classed non-blocking.
+  tts_timeout_seconds: 360.0
+  # SPEC 6.7 / SPEC 7, decision #66: a transient render failure (429, 500,
+  # 502, 503, 504, a connection or read timeout, a server disconnect) is tried
+  # once more before the edition ships without audio. Anything else, including
+  # an error the classifier does not recognize, is permanent and fails on first
+  # contact. One is the bound for the reason set out above: the step budget
+  # affords a second attempt and not a third.
+  tts_max_retries: 1
+  # Fixed backoff between the two attempts, in seconds. Fixed rather than
+  # exponential because there is only ever one gap, so a growth factor would
+  # describe nothing. 30 s is long enough for a capacity 503 to clear (the
+  # 2026-09-12 and 2026-09-13 failures came back in 1 to 2 minutes saying to
+  # try again later) and short enough to leave the arithmetic above inside the
+  # 900 s step ceiling.
+  tts_retry_backoff_seconds: 30.0
 
 archive:
   # SPEC 6.9. The archival job folds each day's bronze + silver into the

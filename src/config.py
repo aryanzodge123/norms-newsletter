@@ -173,7 +173,23 @@ class AudioConfig(Strict):
     # 2026-08-26 until the job hit GitHub's 6 hour ceiling, with the day's
     # edition still uncommitted. The collector bounds its fetches for the same
     # reason; this is the audio side of that rule.
-    tts_timeout_seconds: float = Field(default=300.0, gt=0)
+    #
+    # Measured 2026-09-14 rather than estimated: a 1,508 word dialogue rendered
+    # in 214 s, which scales to about 160 s at the episode lengths the
+    # published editions actually reached. The ceiling is sized against the
+    # audio step's 15 minute budget in publish.yml so that one retry still
+    # fits; config/pipeline.yaml carries the arithmetic.
+    tts_timeout_seconds: float = Field(default=360.0, gt=0)
+    # SPEC 6.7 / decision #66. Extra attempts at a render that failed
+    # transiently (429, 500, 502, 503, 504, timeouts, disconnects). A permanent
+    # failure, and anything unrecognized, still fails on first contact. 0
+    # disables the retry and restores the pre-#66 behavior, which is why the
+    # bound is ge=0 rather than gt=0.
+    tts_max_retries: int = Field(default=1, ge=0)
+    # Fixed wait between the two attempts. Fixed rather than exponential
+    # because there is only ever one gap to size. Bounded by the same step
+    # budget as the ceiling above: the backoff is time the render is not using.
+    tts_retry_backoff_seconds: float = Field(default=30.0, ge=0)
 
     @model_validator(mode="after")
     def _word_band_ordered(self) -> AudioConfig:

@@ -119,11 +119,26 @@ def test_site_run_records_the_trigger_source():
     assert "github.event.inputs.source || github.event_name" in run
 
 
-def test_degraded_check_is_last_and_fail_fast():
+def test_degraded_check_runs_after_the_deploy_and_is_fail_fast():
     # Finding 3: the degraded signal must run after the deploy and the
     # healthcheck ping (so the site is live and green first), and it must NOT
     # be continue-on-error, because a red exit is the whole alert.
     names = [s.get("name") for s in _steps()]
-    assert names[-1] == "Flag degraded publication"
     assert names.index("Flag degraded publication") > names.index("Ping healthchecks")
     assert _step("Flag degraded publication").get("continue-on-error") is not True
+
+
+def test_audio_loss_check_is_last_and_cannot_be_masked():
+    # Decision #67: the sustained audio loss signal is the second post-deploy
+    # alert. It runs last, after the degraded check, and must carry a condition
+    # that survives that step failing. Without one, a degraded morning (a
+    # non-zero exit above) would skip this check on exactly the days something
+    # else is already wrong, and the two signals are independent.
+    names = [s.get("name") for s in _steps()]
+    assert names[-1] == "Flag sustained audio loss"
+    step = _step("Flag sustained audio loss")
+    assert names.index("Flag sustained audio loss") > names.index("Ping healthchecks")
+    assert "cancelled()" in step["if"]
+    # Fail-fast for the same reason the degraded check is: reddening the run is
+    # the alert.
+    assert step.get("continue-on-error") is not True
