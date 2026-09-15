@@ -573,6 +573,28 @@ audio/tts.py: single-speaker TTS, Gemini behind a swappable interface. One
 clip per story, written to R2 and referenced by `audio.url` on the story
 record (14.1). The repo never stores audio.
 
+**A transient render failure is retried once** (decision #66). The synthesizer
+classifies a failed render before it gives up. The transport and availability
+classes, 429, 500, 502, 503, 504, connection and read timeouts, and server
+disconnects, are transient and get one more attempt after a fixed backoff
+(`audio.tts_max_retries`, `audio.tts_retry_backoff_seconds`). Everything else
+is permanent and fails on first contact: authentication, an invalid argument,
+an empty PCM payload, a missing encoder, and any error the classifier does not
+recognize. Treating an unrecognized error as permanent is the deliberate
+direction to be wrong in, because a new transient class then costs one day's
+audio and a log line to classify, where retrying a failure that cannot succeed
+burns the audio step's whole time budget to reach the same end. The retry lives
+behind the `Synthesizer` interface rather than in the per-edition
+orchestration, since decision #44's rework replaces the orchestration and keeps
+the interface. One retry is the bound, because the audio step's 15 minute
+ceiling in publish.yml and the per-call `audio.tts_timeout_seconds` leave room
+for a second attempt and not a third. A render that fails after its retry ships
+the edition without audio exactly as before (SPEC 7).
+
+The audio job's run_log row also records the render's wall-clock duration in
+`tts_wall_seconds` (section 8), including when the render failed, because a
+timed-out render's duration is the number worth having.
+
 **A story clip is written once and reused by everyone.** This is 14.1's
 property applied to the most expensive stage in the system. Per-user rendering
 at 1,000 users is roughly forty to seventy times the cost of per-story
@@ -804,7 +826,8 @@ aspirational.
 | Zero/near-zero data at 6am     | Publish quiet edition                            |
 | Readability gate fails 2x      | Publish, flag in run log                         |
 | Headline repeats a recent one 2x | Publish, flag in run log                       |
-| TTS fails                      | Publish without audio row; log                   |
+| TTS fails, transient           | Retry once after a fixed backoff, within the audio step's budget |
+| TTS fails, permanent or after retry | Publish without audio row; log `audio_missing` |
 | Deploy fails                   | healthchecks.io alert (missing ping)             |
 | Publish cron late or dropped   | External dispatch (6.11) publishes; the gate makes the later cron a no-op |
 | External trigger dead          | GitHub cron still publishes, late; surfaced as sustained lateness (section 8), never as a missed day |
@@ -857,6 +880,7 @@ itself a failure surfaced by the dead man's switch.
 | ai_cost_estimate_usd | double? | null for non-AI jobs; the sum of all AI calls in the job (audio: script + TTS render) |
 | readability_flag   | boolean?  | editor job only, per 6.5                  |
 | headline_repeat_flag | boolean? | editor job only, per 6.5 (gate fired twice) |
+| tts_wall_seconds   | double?   | audio job only; wall-clock seconds of the TTS render, recorded whether it succeeded or failed (6.7) |
 | reasons            | string?   | JSON array of enumerated reason codes (below); null when there is nothing to report |
 | notes              | string?   | nullable                                  |
 | run_date           | date      | partition column                          |
@@ -920,6 +944,22 @@ only routine signal that says the dispatch path has stopped working.
 This measure starts life failing. Every day from 2026-07-21 to 2026-07-27 was
 late under this definition, landing between 07:15 and 08:52 ET. That is the
 honest baseline the external trigger exists to fix, not an untested target.
+
+**Sustained audio loss.** A publish run carrying `audio_missing` is correct
+behavior under SPEC 7 and raises nothing. A run of consecutive publish runs
+carrying it is a broken feature, and that is the signal (decision #67): when
+the last three consecutive `audio` rows, most recent first, all carry
+`audio_missing`, the check reddens the Actions run after a successful deploy,
+in the same way and at the same volume as a degraded publication. Like degraded
+and late it is a derived query over `run_log` rather than a stored flag, so it
+cannot drift from the data. `audio_missing` is **not** in the degraded subset
+and is not added to it: degraded has the specific meaning of a fallback
+link-list published where a real edition was possible (decision #27), which a
+normal edition without audio is not. This is a second signal sharing a delivery
+mechanism, not a widening of the first. It never touches healthchecks, which
+stays published-or-not, and it never affects the published page. The threshold
+counts consecutive runs rather than a rate, because one miss is expected and a
+streak is not, and a rate cannot tell those apart.
 
 **Two independent signals.** healthchecks answers one question, "did the site
 publish," and nothing else is layered onto it: a red check means the site did
@@ -1029,6 +1069,10 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 
 | 56 | Top-up is bounded on both sides: a `general_score` floor of 6 and a cap of half the budget. Rule 7 reads as one sentence but decides what the product feels like for the narrowest subscribers, who are also the likeliest to leave, so its constants are specified rather than left to the implementation. The floor never yields and the budget does: when too few stories clear it the newsletter is simply shorter, because `length` is a maximum the reader chose rather than a quota to hit, and a short good newsletter beats a full padded one. Six is the site's own bar, so nothing reaches a reader that would not have reached the site. The cap exists because a full newsletter is not automatically the reader's newsletter: someone who picks Science and Space and receives eleven stories from Politics and World has a full newsletter they did not subscribe to, and at half the budget a top-up is a supplement while past half it is a substitution. Topped-up stories are labelled and grouped last rather than mixed in, because the same story shown unlabelled under a topic the reader never chose reads as a defect rather than an offer. Both values are constants tuned against 14.5's `topped_up` and 14.11's `story_skipped` rather than logic, so lowering the cap is a configuration change. Decision #26's per-user form is unaffected, since it promises a newsletter and not a full one |
 
+| 66 | A transient TTS failure is retried once after a fixed backoff before the edition ships without audio, and the retry lives behind the `Synthesizer` interface rather than in the per-edition orchestration. Transient means the transport and availability classes, 503, 429, 500, 502, 504, timeouts and disconnects; everything else, including an unrecognized error, is permanent and fails immediately as it does today. The reason is that SPEC 7 already retries a transient infrastructure failure of exactly this shape in the silver commit race, while the TTS row degraded on first contact, and five of the six editions from 2026-09-09 to 2026-09-14 lost their audio to errors whose own messages said to try again later. One retry is the bound because the audio step's 15 minute ceiling and the 360 second per-call timeout leave room for a second attempt and not a third, and buying room for a third by raising the step ceiling would spend the publish's timeliness margin on a stage that is classed non-blocking. The split between transient and permanent is the substance: `tts.py`'s bare `except Exception` currently makes a missing API key and a 503 indistinguishable, and a retry loop over that would burn the budget re-attempting failures that cannot succeed. The placement is behind the `Synthesizer` interface because decision #44's rework replaces the per-edition orchestration and keeps the interface |
+
+| 67 | Sustained audio loss is surfaced as a threshold over consecutive publish runs carrying `audio_missing`, reddening an Actions run after a successful deploy in the same way a degraded publication does, and never touching healthchecks. It is not added to `DEGRADED_REASONS`. The reason is that a single edition without audio is correct behavior under SPEC 7 while four consecutive is a broken feature, and section 8 had no signal that could tell them apart: from 2026-09-09 to 2026-09-14 the run log recorded `audio_missing` faithfully every time and nothing consumed it, so the outage was found by a person noticing rather than by the system. The signal is kept out of the degraded subset because decision #27 gives "degraded" the specific meaning of a fallback link-list published where a real edition was possible, which a normal edition without audio is not, and widening that definition to reuse its alert would cost the precision the definition exists to provide. This follows the existing treatment of sustained lateness, which is likewise a property of a window of runs rather than of one. The same row records the TTS render's wall-clock duration, because the 300 second ceiling was set on an estimate that measured wrong by roughly a factor of two and nothing in the system recorded the number that would have caught it |
+
 ## 11. Remaining open questions
 
 - Whether briefly items get one-line summaries or titles only (v1: titles).
@@ -1039,6 +1083,21 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
   principle. It needs a staleness check so a redundant firing does not double
   metered Actions minutes, and that check is new tested logic, so it lands as
   its own addition after 6.11 proves out.
+- Which text-to-speech model the audio build should pin. Deferred to **M8**,
+  where decision #44's rework already reopens the audio stage. As of 2026-09-14
+  no GA text-to-speech model exists to move to: every candidate is preview or
+  experimental, so the preview label on the current model is not by itself the
+  defect. The measured comparison on that date, on a 1,508 word script:
+  `gemini-2.5-flash-preview-tts` rendered in 214 s for $0.1116, and
+  `gemini-3.1-flash-tts-preview` rendered in 190 s for $0.2961, the latter being
+  twice the per-token price and emitting a third more output tokens. 3.1 is a
+  verified drop-in for both the current multi-speaker call and the single-voice
+  call #44 moves to, and it supports `batchGenerateContent` at half price, which
+  suits 6.7's pre-rendering. The reason to defer rather than decide now is that
+  a 2.65x cost increase buys an 11% latency gain and no reliability guarantee,
+  since both models are preview with no SLA, while the retry in decision #66
+  helps whichever model is pinned. Revisit when #44's rework lands and the
+  latency series from `tts_wall_seconds` (section 8) exists.
 
 ### App layer (section 14)
 

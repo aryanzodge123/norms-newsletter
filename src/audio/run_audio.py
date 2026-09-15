@@ -18,6 +18,7 @@ import argparse
 import json
 import logging
 import sys
+import time
 from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from pathlib import Path
@@ -49,6 +50,14 @@ class AudioResult:
     cost_usd: float
     turns: int
     note: str
+    # Wall-clock seconds spent inside synthesize(), or None when no render was
+    # attempted (a fallback edition, a reused MP3, a dry run, a script that
+    # failed first). Recorded on the failing path too: a timed-out render's
+    # duration is exactly the number worth having, and the absence of it is
+    # why the 300 s ceiling stood on an estimate that measured wrong by
+    # roughly a factor of two (SPEC 6.7, decision #67). With a retry it spans
+    # both attempts and the backoff between them, which the note says.
+    tts_wall_seconds: float | None = None
 
 
 def audio_key(edition_date: str) -> str:
@@ -115,10 +124,22 @@ def build_audio(
         )
 
     synthesizer = synthesizer or GeminiSynthesizer(config)
+    # monotonic, not wall time: this number is a duration and must not move
+    # when the runner's clock is adjusted mid-render.
+    started = time.monotonic()
     try:
         rendered: Synthesized = synthesizer.synthesize(result.script)
     except TTSError as exc:
-        return AudioResult(None, result.cost_usd, turns, f"TTS failed: {exc}")
+        return AudioResult(
+            None,
+            result.cost_usd,
+            turns,
+            f"TTS failed: {exc}",
+            tts_wall_seconds=round(time.monotonic() - started, 3),
+        )
+    tts_wall_seconds = round(time.monotonic() - started, 3)
+    attempts = getattr(rendered, "attempts", 1)
+    retry_note = f", {attempts} attempts" if attempts > 1 else ""
 
     # The TTS render was paid for the moment synthesize() returned, so its
     # cost counts even if the upload then fails.
@@ -127,7 +148,13 @@ def build_audio(
     try:
         url = upload(key, rendered.audio_mpeg)
     except AudioStorageError as exc:
-        return AudioResult(None, total_cost, turns, f"upload failed: {exc}")
+        return AudioResult(
+            None,
+            total_cost,
+            turns,
+            f"upload failed: {exc}",
+            tts_wall_seconds=tts_wall_seconds,
+        )
 
     audio = {
         "url": url,
@@ -139,7 +166,9 @@ def build_audio(
         total_cost,
         turns,
         f"audio {rendered.duration_seconds}s, {rendered.size_bytes} bytes{band_note} "
-        f"(script ${result.cost_usd:.4f} + tts ${rendered.cost_usd:.4f})",
+        f"(script ${result.cost_usd:.4f} + tts ${rendered.cost_usd:.4f}, "
+        f"rendered in {tts_wall_seconds:.1f}s{retry_note})",
+        tts_wall_seconds=tts_wall_seconds,
     )
 
 
@@ -180,6 +209,9 @@ def run(target_date: date | None = None, *, dry_run: bool = False) -> int:
         rec.items_in = result.turns
         rec.items_out = 1 if result.audio else 0
         rec.ai_cost_estimate_usd = round(result.cost_usd, 6)
+        # Section 8: the render latency goes on the row whether or not the
+        # render produced audio.
+        rec.tts_wall_seconds = result.tts_wall_seconds
         if result.note:
             rec.note(result.note)
 

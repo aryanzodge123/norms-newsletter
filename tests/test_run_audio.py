@@ -340,3 +340,151 @@ def test_run_corrupt_edition_is_contained(monkeypatch, tmp_path, config, local_c
 
     assert rc == 1  # honest non-zero exit, but no traceback escaped
     assert _audio_rows(local_catalog)[0]["status"] == "failed"
+
+
+# --------------------------------------------------------------------------
+# Render latency (SPEC 6.7, section 8, decision #67)
+#
+# The 300 s ceiling stood for weeks on the estimate "normal renders finish
+# inside two minutes", which measured wrong by roughly a factor of two. Nobody
+# had measured it because nothing recorded it. This is the field that turns
+# "the ceiling seems too tight" into a distribution.
+# --------------------------------------------------------------------------
+class SlowSynth:
+    """A synthesizer that advances a fake clock before returning or raising."""
+
+    def __init__(self, seconds, *, rendered=None, error=None):
+        self.seconds = seconds
+        self.rendered = rendered
+        self.error = error
+
+    def synthesize(self, script):
+        _CLOCK[0] += self.seconds
+        if self.error is not None:
+            raise self.error
+        return self.rendered
+
+
+_CLOCK = [1000.0]
+
+
+@pytest.fixture
+def fake_clock(monkeypatch):
+    _CLOCK[0] = 1000.0
+    monkeypatch.setattr(run_audio.time, "monotonic", lambda: _CLOCK[0])
+    return _CLOCK
+
+
+def test_a_successful_render_records_its_duration(config, fake_clock) -> None:
+    result = run_audio.build_audio(
+        load_fixture("normal.json"),
+        config,
+        client=ok_client(),
+        synthesizer=SlowSynth(214.0, rendered=rendered()),
+        upload=lambda k, d: "https://x.invalid/" + k,
+        exists=lambda key: False,
+    )
+    assert result.tts_wall_seconds == pytest.approx(214.0)
+    assert "rendered in 214.0s" in result.note
+
+
+def test_a_failed_render_still_records_its_duration(config, fake_clock) -> None:
+    # The interesting one: a timeout's duration is exactly the number that
+    # would have shown the ceiling was set too low.
+    result = run_audio.build_audio(
+        load_fixture("normal.json"),
+        config,
+        client=ok_client(),
+        synthesizer=SlowSynth(360.0, error=TTSError("The read operation timed out")),
+        exists=lambda key: False,
+    )
+    assert result.audio is None
+    assert result.tts_wall_seconds == pytest.approx(360.0)
+
+
+def test_a_failed_upload_keeps_the_render_duration(config, fake_clock) -> None:
+    def boom(key, data):
+        raise AudioStorageError("bucket missing")
+
+    result = run_audio.build_audio(
+        load_fixture("normal.json"),
+        config,
+        client=ok_client(),
+        synthesizer=SlowSynth(150.0, rendered=rendered()),
+        upload=boom,
+        exists=lambda key: False,
+    )
+    assert result.tts_wall_seconds == pytest.approx(150.0)
+
+
+def test_no_render_records_no_duration(config) -> None:
+    # A fallback edition, a dry run and a reused MP3 never call the
+    # synthesizer, so there is no latency to record and the column stays null
+    # rather than recording a zero that would skew the distribution.
+    fallback = run_audio.build_audio(
+        load_fixture("fallback.json"), config, client=ok_client()
+    )
+    assert fallback.tts_wall_seconds is None
+
+    dry = run_audio.build_audio(
+        load_fixture("normal.json"), config, client=ok_client(), dry_run=True
+    )
+    assert dry.tts_wall_seconds is None
+
+
+def test_a_retried_render_says_so_in_the_note(config, fake_clock) -> None:
+    # With a retry the duration spans two attempts and a backoff, so it is not
+    # a render measurement. The note is what says which rows are which.
+    retried = Synthesized(
+        audio_mpeg=b"ID3fakebytes", duration_seconds=540, cost_usd=0.1, attempts=2
+    )
+    result = run_audio.build_audio(
+        load_fixture("normal.json"),
+        config,
+        client=ok_client(),
+        synthesizer=SlowSynth(404.0, rendered=retried),
+        upload=lambda k, d: "https://x.invalid/" + k,
+        exists=lambda key: False,
+    )
+    assert "2 attempts" in result.note
+
+
+def test_run_puts_the_duration_on_the_run_log_row(
+    monkeypatch, tmp_path, config, local_catalog
+) -> None:
+    result = run_audio.AudioResult(
+        {"url": "https://x.invalid/a.mp3", "duration_seconds": 540, "size_bytes": 999},
+        0.01,
+        12,
+        "ok",
+        tts_wall_seconds=214.5,
+    )
+    _wire_run(monkeypatch, tmp_path, config, result, local_catalog)
+    assert run_audio.run(date(2026, 7, 19)) == 0
+    assert _audio_rows(local_catalog)[0]["tts_wall_seconds"] == pytest.approx(214.5)
+
+
+def test_run_records_the_duration_of_a_failed_render(
+    monkeypatch, tmp_path, config, local_catalog
+) -> None:
+    result = run_audio.AudioResult(
+        None, 0.01, 12, "TTS failed: timed out", tts_wall_seconds=360.0
+    )
+    _wire_run(monkeypatch, tmp_path, config, result, local_catalog)
+    assert run_audio.run(date(2026, 7, 19)) == 0
+
+    row = _audio_rows(local_catalog)[0]
+    assert row["status"] == "partial"
+    assert row["tts_wall_seconds"] == pytest.approx(360.0)
+    assert runlog.has_reason(row["reasons"], runlog.REASON_AUDIO_MISSING)
+
+
+def test_a_job_that_never_renders_writes_a_null_duration(
+    monkeypatch, tmp_path, config, local_catalog
+) -> None:
+    # Nullable and additive: every other job, and an audio job that bowed out
+    # before the render, writes exactly the row it always wrote.
+    result = run_audio.AudioResult(None, 0.0, 0, "script failed twice")
+    _wire_run(monkeypatch, tmp_path, config, result, local_catalog)
+    assert run_audio.run(date(2026, 7, 19)) == 0
+    assert _audio_rows(local_catalog)[0]["tts_wall_seconds"] is None

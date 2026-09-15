@@ -92,20 +92,40 @@ DEGRADED_REASONS = frozenset(
 )
 
 
-def is_degraded(reasons: "list[str] | str | None") -> bool:
-    """True if any of a row's reasons is in the degraded subset.
+def parse_reasons(reasons: "list[str] | str | None") -> list[str]:
+    """A row's reason codes as a list.
 
     Accepts the parsed list, the stored JSON string, or None, so it works both
-    on a live RunRecord and on a row read back from run_log.
+    on a live RunRecord and on a row read back from run_log. Unparseable
+    content reads as no reasons rather than raising: a query over the run log
+    is a signal, and a signal that crashes on one malformed row is worse than
+    one that under-reports it.
     """
     if not reasons:
-        return False
+        return []
     if isinstance(reasons, str):
         try:
             reasons = json.loads(reasons)
         except ValueError:
-            return False
-    return any(code in DEGRADED_REASONS for code in reasons)
+            return []
+    return list(reasons)
+
+
+def has_reason(reasons: "list[str] | str | None", code: str) -> bool:
+    """True if a row carries one specific reason code."""
+    return code in parse_reasons(reasons)
+
+
+def is_degraded(reasons: "list[str] | str | None") -> bool:
+    """True if any of a row's reasons is in the degraded subset.
+
+    Deliberately narrow: `audio_missing` is not in that subset and is not
+    added to it (decision #67). Sustained audio loss is a separate signal over
+    a window of runs (`src/audio_loss_check.py`), not a widening of this one,
+    because "degraded" means a fallback link-list published where a real
+    edition was possible and a normal edition without audio is not that.
+    """
+    return any(code in DEGRADED_REASONS for code in parse_reasons(reasons))
 
 RUN_ID_FORMAT = "%Y%m%dT%H%M%SZ"
 
@@ -124,6 +144,12 @@ SCHEMA = Schema(
     NestedField(12, "run_date", DateType(), required=True),
     NestedField(13, "headline_repeat_flag", BooleanType(), required=False),
     NestedField(14, "reasons", StringType(), required=False),
+    # Audio job only: wall-clock seconds spent in the TTS render, recorded
+    # whether it succeeded or failed (SPEC 6.7, section 8, decision #67).
+    # Nullable and job-specific in the same way readability_flag and
+    # headline_repeat_flag are editor-only, so every other job keeps writing
+    # the row it always wrote.
+    NestedField(15, "tts_wall_seconds", DoubleType(), required=False),
 )
 
 PARTITION_SPEC = PartitionSpec(
@@ -148,6 +174,7 @@ ARROW_SCHEMA = pa.schema(
         pa.field("run_date", pa.date32(), nullable=False),
         pa.field("headline_repeat_flag", pa.bool_(), nullable=True),
         pa.field("reasons", pa.string(), nullable=True),
+        pa.field("tts_wall_seconds", pa.float64(), nullable=True),
     ]
 )
 
@@ -175,6 +202,7 @@ def ensure_table(catalog: Catalog) -> Table:
 _ADDED_COLUMNS: tuple[tuple[str, PrimitiveType], ...] = (
     ("headline_repeat_flag", BooleanType()),
     ("reasons", StringType()),
+    ("tts_wall_seconds", DoubleType()),
 )
 
 
@@ -228,6 +256,7 @@ def build_row(
     headline_repeat_flag: bool | None = None,
     reasons: list[str] | None = None,
     notes: str | None = None,
+    tts_wall_seconds: float | None = None,
 ) -> dict:
     """Validate and shape one run_log row (SPEC section 8)."""
     if job not in JOBS:
@@ -257,6 +286,12 @@ def build_row(
         "reasons": json.dumps(sorted(set(reasons))) if reasons else None,
         "notes": notes,
         "run_date": started_at.astimezone(UTC).date(),
+        # None for every job but audio, and for an audio run that never got as
+        # far as a render. A caller that does not set it writes the row it
+        # always wrote (SPEC section 8).
+        "tts_wall_seconds": float(tts_wall_seconds)
+        if tts_wall_seconds is not None
+        else None,
     }
 
 
@@ -297,6 +332,10 @@ class RunRecord:
     adapter_metrics: dict | None = None
     readability_flag: bool | None = None
     headline_repeat_flag: bool | None = None
+    # Audio job only: how long the TTS render took, successful or not
+    # (SPEC 6.7). A failed render's duration is the interesting one, which is
+    # why it is recorded on that path too.
+    tts_wall_seconds: float | None = None
     notes: list[str] = field(default_factory=list)
     # Enumerated codes for why this run was partial or failed (SPEC section 8).
     # Sits beside `notes`: the code drives queries, the note carries the detail.
@@ -371,6 +410,7 @@ def logged_run(
                         headline_repeat_flag=rec.headline_repeat_flag,
                         reasons=rec.reasons or None,
                         notes="; ".join(rec.notes) or None,
+                        tts_wall_seconds=rec.tts_wall_seconds,
                     ),
                 )
             except Exception as exc:  # noqa: BLE001
