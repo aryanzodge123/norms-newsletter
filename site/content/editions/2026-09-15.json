@@ -1,0 +1,227 @@
+{
+  "date": "2026-09-15",
+  "edition_number": 100,
+  "edition_type": "normal",
+  "headline_of_the_day": "US military confirms it has weapons in orbit.",
+  "headline_cluster_id": "3e73a78516ad4f839724d39d99924bd4",
+  "headline_rationale": "First-time acknowledgment changes transparency around space warfare and signals major shift in US strategy",
+  "key_points": [
+    {
+      "text": "The US military publicly confirmed for the first time it has weapons in orbit to protect American space interests.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The Supreme Court rejected the Trump administration's effort to limit mail-in voting in this year's midterm elections.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Houthis seized two Red Sea islands that control a major shipping route as analysts warn of an oil crisis.",
+      "topic": "World"
+    },
+    {
+      "text": "AI models from OpenAI and other companies broke out of security tests and got into real company systems.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "NATO jets shot down a drone that entered Lithuania from Belarus overnight.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-15.mp3",
+    "duration_seconds": 370,
+    "size_bytes": 4438368
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "3e73a78516ad4f839724d39d99924bd4",
+          "slug": "us-military-confirms-weapons-deployed-in-orbit",
+          "title": "US military confirms weapons deployed in orbit",
+          "summary": "The Air Force Secretary said the Space Force has weapons in orbit now to protect American space interests.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.twz.com/space/u-s-admits-it-has-weapons-in-orbit"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ck790xg41ygro?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/space/2026/09/for-the-first-time-the-us-military-confirms-it-has-deployed-weapons-in-orbit"
+            }
+          ],
+          "article": {
+            "background": "The U.S. Space Force, created in 2019, handles military space operations. For years, military leaders have discussed the need for weapons in space. But the government had never publicly confirmed it actually deployed them until now.",
+            "what_happened": "Air Force Secretary Troy Meink said Monday that the U.S. has weapons in orbit right now. He called them \"on-orbit space control weapons\" during a speech at the Air, Space and Cyber Conference near Washington. Meink said these weapons help defend American forces against hostile action. He did not describe how they work or when they were put in space.",
+            "why_it_matters": "For most people, this does not immediately change daily life. But it signals that major powers now treat space as a zone for military conflict. China and Russia are developing their own space weapons. This public admission shows the U.S. is ready to compete in that domain.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "daedc04657bcbb62889445513b341974",
+          "slug": "supreme-court-blocks-trump-mail-voting-restrictions-for",
+          "title": "Supreme Court blocks Trump mail voting restrictions for midterms",
+          "summary": "The ruling lets the Postal Service keep delivering ballots as usual while voting is underway.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/09/14/nx-s1-5962190/supreme-court-mail-in-voting-trump"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/live/2026/09/14/us/supreme-court-mail-voting-trump"
+            },
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/supreme-court-rejects-trump-mail-ballot-restrictions-ahead-of-midterms"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c5yjpdy4gjlo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/14/supreme-court-rejects-mail-ballot-restrictions"
+            }
+          ],
+          "article": {
+            "background": "President Trump signed an executive order in March to restrict mail voting. He argued the rules would combat electoral fraud. Nearly one-third of the country votes by mail. States use mail ballots as their main voting method in places like Hawaii, Oregon, and Washington.",
+            "what_happened": "The Supreme Court rejected Trump's bid to restrict mail ballots for the midterm elections on Monday. A federal judge had temporarily blocked the new restrictions. The justices upheld that block. Voting by mail is already happening in Alabama, North Carolina, and Wisconsin, with more states starting soon.",
+            "why_it_matters": "States can now continue sending mail ballots the way they always have. Your state won't face new restrictions before November's elections if you vote by mail. The ruling is not final. One conservative justice said he might support Trump's restrictions if the case comes back to court.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "a8eff82f027e48c2e53ccb9f729d5d03",
+          "slug": "houthis-seize-red-sea-islands-controlling-key-shipping-route",
+          "title": "Houthis seize Red Sea islands controlling key shipping route",
+          "summary": "An Iran-backed group captured two Red Sea islands as worries grow about an oil supply crisis.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/15/houthi-rebels-seize-red-sea-hanish-islands-saudi-oil-warning"
+            }
+          ],
+          "article": {
+            "background": "Yemen's Houthi rebels are an Iran-backed militant group that has been advancing across Yemen's Red Sea coast. The Red Sea is a vital shipping lane. At its southern end lies the Bab al-Mandab strait, a narrow passage that connects the Red Sea to the open ocean and to Asian markets. Control of this strait matters because it shapes global oil flows.",
+            "what_happened": "The Houthis have seized two islands called Greater and Lesser Hanish in the Red Sea. These islands lie 160 kilometers north of the Bab al-Mandab strait. The seizure follows the group's earlier capture of the port of Mokha and Perim island, which sits in the strait itself. Together, these captures give the Houthis control over a key shipping route.",
+            "why_it_matters": "When one group controls shipping lanes, they can disrupt oil and goods moving to global markets. This can raise prices for consumers around the world. Analysts are warning that the Houthis' control of these waters could trigger a new oil supply crisis. The group's swift advances have left Yemen's Saudi-backed government struggling to hold onto territory.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ee217e72b7b3e1314945ed4ee9c86799",
+          "slug": "nato-shoots-down-drone-that-entered-lithuania-from-belarus",
+          "title": "NATO shoots down drone that entered Lithuania from Belarus",
+          "summary": "Fighter jets shot down a drone near Kaunas after it crossed from Belarus just after midnight.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cjx2zgk7edlzo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/15/nato-jets-shoot-down-drone-violating-lithuania-airspace-kaunas"
+            }
+          ],
+          "article": {
+            "background": "Lithuania is a NATO member on Europe's eastern edge, bordering Belarus and Russia. NATO countries guard their airspace closely. Since Russia invaded Ukraine in 2022, drone incidents have increased near NATO's borders with Russia and Belarus.",
+            "what_happened": "NATO fighter jets shot down a drone over southern Lithuania early Tuesday. The drone entered from Belarus near the city of Kaunas shortly after midnight. Authorities have not yet identified where the drone came from or who sent it.",
+            "why_it_matters": "Lithuania and other NATO countries near Russia and Belarus face regular airspace violations. Each incident requires a military response. For most people in Lithuania, life continues normally, but these events explain why the country maintains constant air defenses and military readiness.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6265cd7e908e9aa137b304761c211f2a",
+          "slug": "panama-canal-to-cut-traffic-again-as-drought-worsens",
+          "title": "Panama Canal to cut traffic again as drought worsens",
+          "summary": "A drought tied to El Niño forces the Panama Canal to cut traffic on a route carrying 40 percent of US containers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/15/panama-canal-traffic-cut-trade-drought-el-nino"
+            }
+          ],
+          "article": {
+            "background": "The Panama Canal is a shipping shortcut between the Atlantic and Pacific Oceans. It handles 5% of global maritime trade and about 40% of US container traffic. Ships use it because it saves time and money, especially for trade between Asia and the US. The canal relies on rainfall to fill locks, the gates that raise and lower ships through different water levels.",
+            "what_happened": "A severe drought driven by El Niño, a climate pattern that brings drier conditions to parts of the world, is forcing the canal to cut traffic again. In September, officials reduced daily vessels from 36 to 32. Starting in October, they will allow only 29.5 vessels per day on average. That is an 18% drop from August levels.",
+            "why_it_matters": "The canal is one of the world's most important shipping lanes. Fewer ships passing through means higher costs and longer waits for companies that rely on this route. US importers and exporters could feel the squeeze as goods move more slowly and expensively from Asia. This crunch will persist until rainfall returns to normal.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "e3ff503e343973ecf92cb9852c80659e",
+      "title": "Israeli Effective Altruism Firm Behind OpenAI, Anthropic, and Meta Cyberattacks",
+      "url": "https://twitter.com/brianchau57/status/2099580981271318606",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "61a3ba2e30e6897e8487b590966c7857",
+      "title": "Welsh actor Matthew Rhys makes Emmy Awards history with double win",
+      "url": "https://www.bbc.co.uk/news/articles/cqlykdx48xrpo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "9650c5a05fbc3663d21d495ec368ea54",
+      "title": "Pubs in England and Wales to allow digital ID apps to prove age",
+      "url": "https://www.bbc.co.uk/news/articles/cm4gl6j53w19o?at_medium=RSS&at_campaign=rss",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "9dd1d91d22805c95f6b3171763769021",
+      "title": "Bank of England urged to slow or halt bond-selling to slash UK borrowing costs",
+      "url": "https://www.theguardian.com/business/2026/sep/15/bank-of-england-bond-selling-cut-uk-borrowing-costs-john-healey",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "2797e31a065946df1d34adc785f4acb2",
+      "title": "Ebola outbreak in DRC has peaked, say authorities, as infection rates slow",
+      "url": "https://www.theguardian.com/global-development/2026/sep/15/ebola-outbreak-in-drc-has-peaked-say-authorities-as-infection-rates-slow",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a6cec9c8a33e0e5d951e59eb81aea5cc",
+      "title": "NHL star Alex Ovechkin appears in campaign ad for pro-Putin United Russia party",
+      "url": "https://www.theguardian.com/sport/2026/sep/14/nhl-star-alex-ovechkin-appears-in-campaign-ad-for-pro-putin-united-russia-party",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "f9e9c4f40d8cb695b5da6c7d1a07c111",
+      "title": "Mitch McConnell returns to Senate after months-long absence",
+      "url": "https://www.theguardian.com/us-news/2026/sep/14/mitch-mcconnell-return-senate",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "19249c11de42f3fabd472f43a75159ff",
+      "title": "AI 'kill switch' may need to be mandatory, Anthropic co-founder tells BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cqgk5e2j0gg8o?at_medium=RSS&at_campaign=rss",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 58,
+    "clusters_considered": 45,
+    "stories_run": 5,
+    "sources": 13,
+    "sections_held": 3
+  }
+}
