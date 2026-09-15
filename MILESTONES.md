@@ -6,6 +6,133 @@ deferred.
 
 ---
 
+## Post-M6: a transient TTS render is retried, and silent audio loss speaks up
+
+Date: 2026-09-15
+Spec: SPEC 6.7 (audio build), 7 (failure table), 8 (observability, run_log
+fields), 11 (open questions), decisions #66 and #67
+
+### The problem
+
+Four consecutive editions published with no audio, 2026-09-11 to 2026-09-14,
+and five of the last six. Every one was a transient Gemini TTS failure:
+`503 UNAVAILABLE` twice with the provider's own message saying to try again
+later, `Server disconnected` twice, and a read timeout.
+
+**Every run behaved exactly as specified.** SPEC 7 said `TTS fails ->
+Publish without audio row; log`, which is what happened, five times,
+correctly. The editions were intact and the workflow was green each morning
+because the audio build is the one stage classed non-blocking. Nothing was
+broken against the spec, which is why this was a spec addition rather than a
+bug fix.
+
+Two defects underneath that:
+
+- **Nothing retried.** `src/audio/tts.py` made one call inside a bare
+  `except Exception`. A 503 whose message said to try again later was never
+  tried again. The script stage above it got two attempts; the render got one.
+- **Nothing was watching.** `REASON_AUDIO_MISSING` already existed and was
+  written faithfully every morning. Nothing read it back, so four silent days
+  were found by a person noticing rather than by the system.
+
+Mining 36 publish runs out of the Actions logs found a third, which had gone
+unnoticed for longer. `config/pipeline.yaml` documented the 300 s ceiling as
+"generous headroom" over renders that "finish inside two minutes." The real
+median was 188 s, and **the slowest successful render was 303.1 s against a
+timeout failure at 301.6 s.** The ceiling sat inside the distribution of
+ordinary renders rather than above it, so it was clipping the tail rather
+than catching hangs, and the 2026-09-14 timeout was most likely an ordinary
+render rather than an upstream stall.
+
+The same series settled two questions that had been guesses. The publish
+window is not the problem: an off-peak control sits around the 75th
+percentile of the 09:35Z distribution. And the failure rate is getting worse
+on its own, 17% in August against 46% in September on identical code.
+
+### What was built
+
+- **`src/audio/tts.py`**: a transient/permanent classifier and a single
+  bounded retry. The retry was the easy half. The classification was the half
+  that had to be right, because the old bare `except Exception` made a missing
+  API key and a 503 indistinguishable and a retry loop over that would spend
+  the step's whole budget re-attempting failures that cannot succeed.
+  Recognized transport and availability failures are transient and
+  **everything else is permanent, including an error the classifier has never
+  seen**. Being wrong about a new transient class costs one day's audio and a
+  log line to classify; being wrong the other way costs the render budget
+  every morning. It lives behind the `Synthesizer` interface, not in
+  `run_audio`, because decision #44's rework replaces the per-edition
+  orchestration and keeps the interface.
+- **`config/pipeline.yaml`**: `tts_timeout_seconds` 300 to 360, sized so one
+  retry still fits the audio step's 900 s budget (60 + 360 + 30 + 360 = 810)
+  and a second would not. Plus `tts_max_retries` and
+  `tts_retry_backoff_seconds`. The comment that had justified 300 on a wrong
+  estimate was replaced with the measurement and its date.
+- **`src/runlog.py`**: nullable field 15, `tts_wall_seconds`, recorded whether
+  or not the render succeeded, because a timed-out render's duration is the
+  number worth having and its absence is why the ceiling stood on a guess.
+  Added to `_ADDED_COLUMNS` so the live table migrates itself.
+- **`src/audio_loss_check.py`** and a `publish.yml` step: three consecutive
+  publishes with no audio reddens the Actions run after a successful deploy.
+  It carries `if: ${{ !cancelled() }}` so a degraded day, which exits non-zero
+  in the step above, does not skip it on exactly the mornings something is
+  already wrong.
+- **SPEC.md**: 6.7 describes the retry and its placement, 7's `TTS fails` row
+  became two rows, 8 documents the new field, 11 defers the model migration to
+  M8 with the measured comparison attached, and decisions #66 and #67 landed.
+
+### How it was verified
+
+- `milestone-verify`: 640 tests pass, 3 fixtures valid, no hardcoded URLs.
+- **The classifier is pinned against all ten TTS failures observed in the
+  Actions logs between 2026-08-07 and 2026-09-14**, so it is calibrated on
+  what actually happened rather than on invented examples. A `500 INTERNAL`
+  arriving as a plain message was the one case the message fragments alone
+  missed, which is why `LEADING_STATUS` exists.
+- Permanent controls (a missing key, 400, 401, 403, 404, a missing encoder)
+  confirmed not retried, including a message beginning "200 items failed to
+  parse" that must not read as a status code.
+- The two candidate replacement models were exercised against the live API
+  before the migration was deferred, rather than compared on version numbers.
+
+### Decisions and notes
+
+- **`audio_missing` was deliberately kept out of `DEGRADED_REASONS`.**
+  Decision #27 gives "degraded" the precise meaning of a fallback link-list
+  published where a real edition was possible, which a normal edition without
+  audio is not. Widening it to reuse its alert would have cost the word the
+  precision it exists for. The new signal shares only the delivery mechanism.
+- **The threshold of 3 is empirical, not a guess.** Across all 57 editions
+  there were nine runs of no-audio days: six of one day, two of two days that
+  recovered on their own, and one of four. A threshold of 2 would have fired
+  three times with two false alarms. Three fires once, on the real outage, on
+  day 3 of 4.
+- **429 is treated as transient** even though a hard quota exhaustion is not
+  retryable, because real rate limiting is the more common cause and the cost
+  of being wrong is one bounded extra attempt on a day that was failing anyway.
+- Decisions #66 and #67 were numbered to clear a collision: two unapproved
+  documents both claimed #57 and #58. `PROPOSED-SPEC-edition-durability.md`
+  was later renumbered to #68 and #69, being the one document whose numbers
+  nothing else referenced.
+
+### Deferred
+
+- **The TTS model migration, to M8**, where decision #44 already reopens the
+  audio stage. No GA text-to-speech model exists to move to; every candidate
+  is preview or experimental, so the preview label is not by itself the
+  defect. `gemini-3.1-flash-tts-preview` is a verified drop-in for both the
+  current multi-speaker call and the single-voice call #44 moves to, and
+  supports `batchGenerateContent` at half price, but costs 2.65x for an 11%
+  latency gain and no SLA. Revisit when the rework lands and a
+  `tts_wall_seconds` series exists.
+
+### Open question raised for the spec
+
+None new. The two that this work could have raised, the alert threshold and
+the treatment of 429, were both settled above rather than left open.
+
+---
+
 ## Post-M6: Sports, the tenth section
 
 Date: 2026-08-02
