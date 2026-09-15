@@ -121,23 +121,56 @@ Four numbers constrain this and they interact.
 | --- | --- | --- |
 | Audio step ceiling | 15 min (900 s) | `.github/workflows/publish.yml:152` |
 | Per-call TTS ceiling | 300 s | `config/pipeline.yaml:130` |
-| A successful full-length render | 214 s measured, about 160 s at production episode length | measured 2026-09-14, see below |
+| A successful render at the publish window | median 188 s, max 303 s | 36 publish runs mined 2026-08-07 to 2026-09-14, see below |
 | 2026-09-14's whole audio step | 6m04s | run 34828775022, 09:38:42 to 09:44:46 |
 
 **The render time was measured rather than assumed**, because the assumption
-turned out to be wrong. `config/pipeline.yaml:125-129` documents the 300 s ceiling
-with "Normal renders finish inside two minutes; this is generous headroom, not a
-target." A 1,508 word dialogue rendered against the current model on 2026-09-14
-took **214 seconds** of wall clock and returned 442 seconds of audio. Scaled to
-the 317 to 346 second episodes the successful editions actually produced, a
-typical render is about **160 seconds**.
+turned out to be wrong. `config/pipeline.yaml:125-129` documented the 300 s
+ceiling with "Normal renders finish inside two minutes; this is generous
+headroom, not a target."
 
-That is not what the comment describes. The ceiling is roughly 1.9x a typical
-render rather than generous headroom, which means a render only moderately
-slower than usual hits it. **The 2026-09-14 timeout may therefore not have been
-an upstream stall at all**, but an ordinary render against a ceiling set on an
-optimistic estimate. This is a second defect in the same config block and it is
-worth fixing whichever way the retry decision goes.
+Two independent measurements say otherwise. A 1,508 word dialogue rendered
+off-peak on 2026-09-14 took **214 seconds** and returned 442 seconds of audio.
+More usefully, the Actions logs carry a render time for every publish since
+2026-08-07, because a successful audio run logs its result line and the script
+stage logs immediately before the render starts. Mining 36 of them:
+
+| | Successful renders at the 09:35Z publish window |
+| --- | --- |
+| count | 26 of 36 days (10 failed) |
+| wall clock | min 95 s, **median 188 s**, p90 254 s, **max 303 s** |
+| normalized | 0.318 to 0.645 seconds of wall clock per second of audio, median 0.440 |
+| TTS cost | $0.0620 to $0.1352 per edition, median $0.1021 |
+
+**The ceiling sat inside that distribution rather than above it.** The slowest
+successful render took 303.1 s. A render that failed with "The read operation
+timed out" on 2026-08-31 took 301.6 s. Netting out the MP3 encode and the R2
+upload, which these figures include, the slowest success had a TTS call within
+roughly ten seconds of the ceiling and got its audio published by luck. Three
+successful renders exceeded 250 s.
+
+A timeout is supposed to catch a call that has stopped making progress. This
+one was clipping the tail of ordinary renders, which is a different thing, and
+it means **the 2026-09-14 timeout was most likely not an upstream stall at
+all.** That is a second defect in the same config block and it is worth fixing
+whichever way the retry decision goes.
+
+Two further things the series settles, both of which were open questions this
+document could not previously answer:
+
+- **The publish window is not the problem.** The off-peak control, 0.484
+  normalized, sits around the 75th percentile of the 09:35Z distribution.
+  Renders at the publish hour are if anything slightly faster than off-peak, so
+  "Google is busy at 09:35Z" is not the explanation.
+- **The failure rate is getting worse.** August ran 4 failures in 23 days
+  (17%). September ran 6 in 13 (46%). Same hour, same code, same model. The
+  variable is time, not load, and the trend is the argument for acting now
+  rather than waiting for #44's rework.
+
+The failures split almost evenly between the two fixes, which is why this
+document proposes both: five were fast-fails between 72 s and 263 s that a
+retry very likely recovers, and five ran 288 s to 342 s against the ceiling.
+Neither change alone addresses more than about half.
 
 The arithmetic, using the measured render time and treating a timed-out attempt
 as consuming the full 300 s:
