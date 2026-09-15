@@ -1,9 +1,11 @@
 # Proposed spec addition: TTS resilience
 
-**Status: a proposal. It governs nothing.** Under CLAUDE.md rule 1 these two
-changes need a spec addition approved before the code that implements them.
-Nothing here has been implemented. Where this document disagrees with SPEC.md,
-SPEC.md wins.
+**Status: approved and implemented on 2026-09-15.** Decisions #66 and #67 are
+in SPEC.md section 10, the section 11 open question defers the model migration
+to M8, and the code landed in pull request #53. **SPEC.md is the authority
+now.** This document is kept as the reasoning and the evidence behind those
+decisions, not as a live proposal, so where it disagrees with SPEC.md, SPEC.md
+wins.
 
 This exists because the last four consecutive editions published without audio,
 every one of them to a transient upstream failure that nothing tried a second
@@ -408,7 +410,9 @@ Flagging it here rather than renumbering anything unilaterally.
 
 ## What is deliberately absent
 
-- **No code.** Both proposals wait for approval under rule 1.
+- **No code, at the time of writing.** All three proposals were approved and
+  implemented on 2026-09-15; see the status note at the top. The rest of this
+  section describes what was deliberately left out of that work.
 - **No change to SPEC 7's guarantee that a TTS failure never blocks a publish.**
   Both proposals keep the audio build non-blocking. A retry that survives its
   bound still ships the edition without audio.
