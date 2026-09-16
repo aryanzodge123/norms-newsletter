@@ -1,0 +1,218 @@
+{
+  "date": "2026-09-16",
+  "edition_number": 101,
+  "edition_type": "normal",
+  "headline_of_the_day": "US to deliver 2,000-pound bombs to Israel, ending Biden pause.",
+  "headline_cluster_id": "46c5cbb1ff3a5209e54c9ed6069493df",
+  "headline_rationale": "The Trump administration is reversing a Biden-era policy pause on powerful weapons due to Gaza casualty concerns, affecting a $2.8 billion arms deal with direct implications for an ongoing conflict.",
+  "key_points": [
+    {
+      "text": "The US will send 2,000-pound bombs to Israel, reversing Biden's pause on the weapons.",
+      "topic": "World"
+    },
+    {
+      "text": "FBI says Russia is plotting to kill Ukraine allies in the US and Europe, charging five people who remain at large.",
+      "topic": "World"
+    },
+    {
+      "text": "The Supreme Court blocked an effort to limit mail-in voting before major elections.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "An NBC helicopter crashed in Los Angeles, killing at least three people.",
+      "topic": "World"
+    },
+    {
+      "text": "Photos show damage at US sites from Iranian missiles and drones in the Middle East.",
+      "topic": "World"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "1afd7c4016fbd3b11149c636880b032d",
+          "slug": "complaints-about-water-companies-jump-84-percent-in-one-year",
+          "title": "Complaints about water companies jump 84 percent in one year",
+          "summary": "A watchdog found complaints about water companies jumped 84 percent in one year.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cjy5z9l0395ro?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Consumer Council for Water (CCW) is the watchdog that handles complaints from households about water companies in England and Wales. Water customers there have faced steep price hikes in recent years. The regulator Ofwat has allowed firms to raise bills by 36% between 2025 and 2030.",
+            "what_happened": "Complaints to the CCW jumped 84% in a year, the biggest increase in its 20-year history. The surge was driven by customer anger and confusion over rising bills. The CCW said the surge showed how dissatisfied many people were.",
+            "why_it_matters": "If you pay a water bill, this matters. The record surge in complaints shows many households are struggling with the costs. It signals that anger over water prices is reaching a peak.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c81744acd6a267136d5d5caf0a6b7f56",
+          "slug": "about-1-500-britons-a-day-quit-jobs-to-become-unpaid-carers",
+          "title": "About 1,500 Britons a day quit jobs to become unpaid carers",
+          "summary": "More than a million left workforce in two years as social care access declines.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/sep/16/britons-leaving-workplace-unpaid-carers"
+            }
+          ],
+          "article": {
+            "background": "Britain's population is aging. More people need care for elderly, ill, or disabled relatives. But state-funded social care services are shrinking. Families are stepping in to fill the gap, often by having one person leave work to become an unpaid carer.",
+            "what_happened": "About 1,500 Britons a day are quitting their jobs to provide care. Research estimates that over a million people left work in the past two years. These people care for aging, ill, or disabled loved ones. One in five employees, roughly 6.7 million people, now juggle paid work with family care.",
+            "why_it_matters": "When someone leaves their job to be a carer, their household loses income. They also lose career progress and job security. As fewer people work, the government collects less tax. This means less money for public services when more families need help. Unpaid caring has become a common burden for British households.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "46c5cbb1ff3a5209e54c9ed6069493df",
+          "slug": "us-to-deliver-2-000-pound-bombs-to-israel-in-new-arms-deal",
+          "title": "US to deliver 2,000-pound bombs to Israel in new arms deal",
+          "summary": "The Trump administration is reversing Biden's pause on sending large bombs to Israel.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/15/trump-administration-bomb-supply-israel-gaza"
+            }
+          ],
+          "article": {
+            "background": "The US regularly supplies military weapons to Israel. Two years ago, the Biden administration paused delivery of 2,000-pound bombs. Officials worried these powerful weapons could cause mass deaths in Gaza during Israel's military operations there.",
+            "what_happened": "The Trump administration is now planning to deliver those same 2,000-pound bombs to Israel. The package is worth $2.8 billion and includes 40,000 bombs total. This consists of 20,000 MK-84s and 20,000 BLU-117s, according to US officials and someone familiar with the plan.",
+            "why_it_matters": "The Biden administration had blocked these bombs because of concerns about civilian harm in Gaza. Their delivery now signals a different approach to military aid under the new administration. This reversal gives Israel access to weapons the previous US officials had deemed too risky to send.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d24e14644e3fe149b5cfd43da9577c49",
+          "slug": "russia-plotting-to-kill-ukraine-allies-in-us-and-europe-fbi",
+          "title": "Russia plotting to kill Ukraine allies in US and Europe, FBI says",
+          "summary": "Federal authorities charged five people with planning to spy on and kill Ukraine allies.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/15/russia-us-killings-plot"
+            }
+          ],
+          "article": {
+            "background": "Russia's intelligence services conduct operations against perceived enemies outside their borders. The United States and European nations have supported Ukraine since Russia's invasion in 2022. Federal authorities said Tuesday they are investigating a plot to carry out targeted killings in the US and in allied European countries.",
+            "what_happened": "Federal prosecutors charged five people, who remain at large, for allegedly working with Russian intelligence. An indictment unsealed in Manhattan federal court said the network paid people and tried to pay others. Their goal was to have them watch targets and then kill them.",
+            "why_it_matters": "These recruitment efforts, if ongoing, represent a direct security threat to people in the US and allied nations. The charges show federal law enforcement is actively investigating and prosecuting these plots. Even if no attack succeeds, the attempt itself signals a shift in how Russia targets its perceived enemies on American soil.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "97fd56698c7dbf0844809f3242836ea0",
+          "slug": "nbc-helicopter-crash-in-los-angeles-kills-at-least-three",
+          "title": "NBC helicopter crash in Los Angeles kills at least three",
+          "summary": "News crew covering earlier bus crash came down near commercial building and burst into flames.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/16/los-angeles-helicopter-crash"
+            }
+          ],
+          "article": {
+            "background": "A news helicopter crashed in the Los Angeles neighborhood of Chatsworth in the San Fernando Valley. The crash happened near a one-story commercial building. It burst into flames when it hit the ground.",
+            "what_happened": "The helicopter crashed as news crews were covering a bus accident from hours earlier. The bus crash had killed at least two people and injured six others. The helicopter crash killed at least three people. Others on the helicopter were also injured.",
+            "why_it_matters": "This shows how emergencies can pile up in the same place at the same time. When news crews and first responders are busy with one crisis, a second one can happen nearby. Journalists often work in crowded or chaotic scenes to cover breaking news, which comes with real risks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "909e2a587c4cf5e75c498be3f67add62",
+          "slug": "photos-show-damage-at-us-positions-from-iranian-attacks",
+          "title": "Photos show damage at US positions from Iranian attacks",
+          "summary": "Photos show widespread damage to buildings and vehicles at US sites in the Middle East.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cbsnews.com/news/new-photos-damage-u-s-kuwait-saudi-arabia-iran-drone-missile-attacks"
+            }
+          ],
+          "article": {
+            "background": "In early April, Iran fired missiles and drones at U.S. military bases in the Middle East. Officials said the damage was limited. But new photos obtained by CBS News tell a different story.",
+            "what_happened": "Service members deployed at U.S. bases sent photos to CBS News showing widespread destruction. Buildings and vehicles were damaged or destroyed at multiple locations. The photos reveal far more harm than military leaders had publicly stated.",
+            "why_it_matters": "When military damage assessments stay hidden, the public gets an incomplete picture of what happened. These photos show the gap between what officials said and what troops actually saw on the ground. That matters because accurate reporting helps Americans understand conflicts affecting their military.",
+            "quote": {
+              "text": "This is major damage to our bases that hasn't been communicated to the American public. We're standing there with our eyes closed getting punched in the face.",
+              "attribution": "A deployed service member",
+              "source_url": "https://www.cbsnews.com/news/new-photos-damage-u-s-kuwait-saudi-arabia-iran-drone-missile-attacks"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "bb511c78109992c633a3d260e42bbca0",
+      "title": "Analyzing the Supreme Court's mail-in voting decision and Trump's reaction",
+      "url": "https://www.pbs.org/newshour/show/analyzing-the-supreme-courts-mail-in-voting-decision-and-trumps-reaction",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "4592b6e8c4d17a42fca2feb7aca9bc9a",
+      "title": "Third Heathrow runway should only go ahead if airlines pay for cleaner flying, say advisers",
+      "url": "https://www.bbc.co.uk/news/articles/c607lxnvn7r4o?at_medium=RSS&at_campaign=rss",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "bd1594a776e92ad41950fc70eeedb3f8",
+      "title": "How rising bond yields impact American consumers",
+      "url": "https://www.bbc.co.uk/news/videos/cwz0zpyzrlr1o?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "35e0cc389392510e390aee62ac7d7816",
+      "title": "Chinese Solar Panels Drop to 12 Cents a Watt, Rooftop Installs Surge Worldwide",
+      "url": "https://oilprice.com/Alternative-Energy/Solar-Energy/Chinese-Solar-Panels-Drop-to-12-Cents-a-Watt-Rooftop-Installs-Surge-Worldwide.html",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "e9d0485071823333eabcfd897a6e6435",
+      "title": "AI and data centers are incredibly unpopular in every poll",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/995917/data-center-nyt-midterm-poll-september",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "1ba50d440bd0d74f2d36f812431d6f1c",
+      "title": "NATO jets shoot down drone in Lithuania as Russia continues to provoke Europe",
+      "url": "https://www.pbs.org/newshour/show/nato-jets-shoot-down-drone-in-lithuania-as-russia-continues-to-provoke-europe",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e0da37650290552a89b4a40520fd2942",
+      "title": "Saudi Arabia warns of ‘red line’ after Houthi drone intercepted close to holy city of Mecca",
+      "url": "https://www.theguardian.com/world/2026/sep/16/saudi-arabia-houthi-drone-shot-down-mecca-iran-middle-east",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "17c35535c41dab765c2aa14bf36ac59f",
+      "title": "Internet shutdown crosses 100 days in Pakistan-administered Kashmir",
+      "url": "https://www.aljazeera.com/news/2026/9/15/internet-shutdown-crosses-100-days-in-pakistan-administered-kashmir",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 64,
+    "clusters_considered": 62,
+    "stories_run": 6,
+    "sources": 13,
+    "sections_held": 0
+  }
+}
