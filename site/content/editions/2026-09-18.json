@@ -1,0 +1,175 @@
+{
+  "date": "2026-09-18",
+  "edition_number": 103,
+  "edition_type": "normal",
+  "headline_of_the_day": "Japan raised interest rates to a 31-year high of 1.25 percent to curb rising prices",
+  "headline_cluster_id": null,
+  "headline_rationale": "Central bank rate increase directly affects mortgage costs and savings for millions across a major economy, marking a concrete policy shift after decades of ultra-low rates.",
+  "key_points": [
+    {
+      "text": "Japan raised interest rates to 1.25 percent, the highest in 31 years, to fight rising prices.",
+      "topic": "Finance"
+    },
+    {
+      "text": "A U.S. court sentenced a former Syrian official who ran a notorious prison to 60 years for torture.",
+      "topic": "World"
+    },
+    {
+      "text": "Pentagon is weighing a plan to pull nearly a third of U.S. forces from Europe despite NATO warnings.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Congress passed tough new sanctions on Russia and countries using Russian energy.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-18.mp3",
+    "duration_seconds": 300,
+    "size_bytes": 3603744
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "cea83514ac8300fc20033caacdd5d14b",
+          "slug": "pentagon-considers-pulling-nearly-a-third-of-u-s-forces",
+          "title": "Pentagon considers pulling nearly a third of U.S. forces from Europe",
+          "summary": "The plan would remove tens of thousands of troops, planes, and ships despite NATO warnings about Russian threats.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcnews.com/politics/national-security/pentagon-weighs-pulling-nearly-third-us-forces-europe-rcna597722"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "4a727b70905661b726c23bf4948cf385",
+          "slug": "congress-passes-new-sanctions-on-russia-and-countries-using",
+          "title": "Congress passes new sanctions on Russia and countries using Russian energy",
+          "summary": "A bill adds tough sanctions on Russia and other countries that could affect energy costs.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/congress-passes-new-sanctions-on-russia-and-countries-using-russian-energy"
+            }
+          ],
+          "article": {
+            "background": "Sanctions are penalties the US puts on countries or companies to change their behavior. Congress has used them against Russia since its 2022 invasion of Ukraine. This new bill tightens those rules.",
+            "what_happened": "The House passed a bill Wednesday night with strong support. It adds broad new sanctions on Russia. It also punishes countries that buy Russian energy. The bill now goes to President Trump.",
+            "why_it_matters": "The US is trying to cut money flowing to Russia's government. Countries that buy Russian energy could face penalties. This may change who buys Russia's oil and gas.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "48ecbc2195e45749bf06d4760ea3792c",
+          "slug": "u-s-court-sentences-ex-syrian-official-to-60-years-for",
+          "title": "U.S. court sentences ex-Syrian official to 60 years for running torture prison",
+          "summary": "A former Syrian official who ran one of Syria's worst prisons got the harshest sentence yet from a foreign court.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/17/court-sentence-ex-syrian-official"
+            }
+          ],
+          "article": {
+            "background": "Syria's government under Bashar al-Assad ran prisons where political opponents were tortured. Adra prison sat on the outskirts of Damascus. It held some of the regime's most notorious detention centers.",
+            "what_happened": "A US federal court in Los Angeles sentenced Samir Ousman al-Sheikh to 60 years in prison on Thursday. Al-Sheikh led Adra prison from 2005 to 2008. He oversaw a secret underground section called \"Wing 13\" where prisoners were interrogated and tortured. This is the most significant punishment a foreign court has given to a Syrian official from al-Assad's regime who was tried in person.",
+            "why_it_matters": "For Syrians who survived torture or lost family members in Assad's prisons, this shows that some officials can face justice in other countries, even after the regime fell. It sets a precedent that those who ran these prisons cannot simply disappear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "522628e2c555a28b25d3a349cca9c69d",
+          "slug": "at-least-48-dead-in-nigeria-after-drinking-alcohol",
+          "title": "At least 48 dead in Nigeria after drinking alcohol suspected to contain methanol",
+          "summary": "About 100 others are being treated after drinking locally made alcohol in southern Nigeria.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/18/nigeria-deaths-suspected-methanol-alcohol-brew-drink"
+            }
+          ],
+          "article": {
+            "background": "Nigeria has a long history of people drinking locally brewed alcohol. It is common in Africa's most populous country. This week, people in two areas of Ondo state consumed a local brew suspected to contain methanol, a poison.",
+            "what_happened": "At least 48 people died after drinking the contaminated alcohol. Officials said cases were found in the Odigbo and Irele areas. About 182 people are believed to have been affected overall. Some 100 are receiving hospital treatment. A 32-year-old patient, Sola Adebayo, told local news: \"I took like two shots and I went out on Friday. On Saturday, I noticed that I could not see.\"",
+            "why_it_matters": "Methanol is toxic and causes blindness and death even in small amounts. People who drink locally made alcohol face a real risk when makers do not follow safety rules or use the wrong ingredients. This outbreak shows how quickly such poisoning can spread in communities where regulation is weak.",
+            "quote": {
+              "text": "I took like two shots and I went out on Friday. On Saturday, I noticed that I could not see.",
+              "attribution": "Sola Adebayo, 32, a patient being treated in hospital",
+              "source_url": "https://www.theguardian.com/world/2026/sep/18/nigeria-deaths-suspected-methanol-alcohol-brew-drink"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "f30bb4e966bcb79b4f972ee3139e08e3",
+      "title": "Japan raises interest rate to new 31-year high to curb rising prices",
+      "url": "https://www.bbc.co.uk/news/articles/cqn74jeek06no?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "2bcce64d593b363b10dbbd6730f9eb72",
+      "title": "Find a credible plan for British Steel, ministers told as ‘startling’ costs soar",
+      "url": "https://www.theguardian.com/business/2026/sep/18/british-steel-mps-labour-spending-watchdog-pac",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "8b8a0f13f2acb5c8e134e36c1e8fb3a3",
+      "title": "Apple May Return to Server Market with Nvidia Technology",
+      "url": "https://www.macrumors.com/2026/09/16/apple-may-return-to-server-market",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "3dfe2f443878632beb130df633001332",
+      "title": "Cognitive resilience helps to predict Alzheimer’s dementia",
+      "url": "https://www.nature.com/articles/d41586-026-02897-4",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "a32c51afd12444ea353ee24395136f6a",
+      "title": "Work has stopped on system that was key to Trump effort to limit mail voting, USPS chief says",
+      "url": "https://www.pbs.org/newshour/politics/work-has-stopped-on-system-that-was-key-to-trump-effort-to-limit-mail-voting-usps-chief-says",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "3d85932efaed4fc442ab6f5ac5c401c2",
+      "title": "Trump administration again denies entry visas to Palestinian officials ahead of UN general assembly",
+      "url": "https://www.theguardian.com/us-news/2026/sep/17/trump-denies-visas-palestine-un",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "e134fe524b8e7c1b749804830ec9fd5f",
+      "title": "Australia news live: Home affairs warns AI enables foreign interference and hackers; BoM updates website to look like ‘old radar view’",
+      "url": "https://www.theguardian.com/australia-news/live/2026/sep/18/labor-migration-plan-tony-burke-coalition-qantas-renewable-energy-ntwnfb",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "78c048343a84ff7b0ac174cc36458b32",
+      "title": "Hackers Used Anthropic's Claude to Break into OpenAI",
+      "url": "https://www.wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 76,
+    "clusters_considered": 75,
+    "stories_run": 4,
+    "sources": 12,
+    "sections_held": 0
+  }
+}
