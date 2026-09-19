@@ -50,3 +50,15 @@
   Cache-Control: public, max-age=86400
 /app-norm.webp
   Cache-Control: public, max-age=86400
+
+# The Claude Design export, dropped in whole and served at /prototype. It is a
+# working reference for one person on a phone, not part of the public page, so
+# it is kept out of every index. robots.txt says Allow: / and the bundle
+# replaces the whole document once it unpacks, which would wipe a meta robots
+# tag in the head, so the header is the only instruction that survives.
+/prototype
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=0, must-revalidate
+/prototype.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=0, must-revalidate
