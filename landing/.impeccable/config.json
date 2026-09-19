@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "src/index.css"
+        ],
+        "createdAt": "2026-09-19T21:58:47.108Z",
+        "reason": "Claude's call, user delegated: .ns-dial-fill is a 2px-tall absolutely positioned line with a 120ms linear width transition, ported from the prototype. Layout cost is negligible and scaleX would change the dial's behavior."
+      }
+    ]
+  }
+}

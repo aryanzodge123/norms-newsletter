@@ -25,6 +25,7 @@ export default defineConfig({
            still answers /blog, because there is no blog/index.html to
            turn that into a redirect. */
         post: fileURLToPath(new URL('blog/put-my-phone-down.html', import.meta.url)),
+        postNews: fileURLToPath(new URL('blog/how-do-you-get-your-news.html', import.meta.url)),
       },
     },
   },
