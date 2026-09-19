@@ -26,8 +26,9 @@ what the thing turned out to be.
 
 ## What exists today
 
-One post, at `/blog/put-my-phone-down`, published 2026-08-28. An index at
-`/blog` listing it. Measured after the deploy on that date:
+Two posts: `/blog/put-my-phone-down`, published 2026-08-28, and
+`/blog/how-do-you-get-your-news`, published 2026-09-19. An index at `/blog`
+listing both. The first was measured after the deploy on its date:
 
 ```
 $ curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' https://norm.news/blog
@@ -41,8 +42,10 @@ Neither is a redirect, which settles the one thing the build could not prove:
 `dist/blog.html` answers `/blog` and `dist/blog/put-my-phone-down.html` answers
 the post, and the two do not collide because there is no `blog/index.html`.
 
-The post is 801 words of first-person prose by a named person. It is the first
-thing on this domain that is neither product copy nor Norm speaking.
+The first post is 801 words of first-person prose by a named person. It is the
+first thing on this domain that is neither product copy nor Norm speaking. The
+second is 740 words in the same voice, an explainer on how people get their news
+and where Norm fits.
 
 The pieces:
 
@@ -50,9 +53,9 @@ The pieces:
 | --- | --- |
 | `src/blog-content.js` | `POSTS`, the only place the copy is written |
 | `src/BlogPage.jsx` | the index, one card per entry in `POSTS` |
-| `src/PostPage.jsx` | the post, which names its own slug |
-| `blog/put-my-phone-down.html` | the post's document: title, description, canonical, Open Graph |
-| `src/main-post.jsx` | the post's client entry |
+| `src/PostPage.jsx` | a post, given its slug as a prop by its client entry and its `PAGES` entry |
+| `blog/<slug>.html` | a post's document: title, description, canonical, Open Graph |
+| `src/main-post*.jsx` | a post's client entry, which passes the slug to `PostPage` |
 | `vite.config.js`, `scripts/prerender.mjs` | one input and one `PAGES` entry per document |
 
 ## Proposed: SPEC 15.5 and 15.6
@@ -117,7 +120,7 @@ the client entry, the Vite input and the `PAGES` entry. That is a real price and
 it is the price of 15.1. A client-side route would make a post one edit and
 would break the contract for every reader that is not a browser.
 
-**This is fine at one post and wrong at twenty.** The proposal is to pay it
+**This is fine at two posts and wrong at twenty.** The proposal is to pay it
 until the count makes it untenable and then generate the four mechanical pieces
 from `POSTS` rather than to reach for a router. The contract is about what
 arrives in the response body; nothing in it requires a human to type the

@@ -11,10 +11,10 @@ import { postBySlug } from './blog-content.js'
  * serves at /blog/put-my-phone-down with no redirect, the same way faq.html is
  * served at /faq.
  *
- * The slug is named here rather than passed in. There is one post, and a
- * second one is a second five-line file beside this one plus its entry in
- * PAGES; parameterising a route this app does not have would be building the
- * router SPEC 15.1 exists to avoid.
+ * The slug is a prop, given by the post's own client entry (main-*.jsx) and by
+ * its PAGES entry in prerender.mjs. That is still not a router: nothing here
+ * reads the URL, so each document names the one post it renders, which is what
+ * SPEC 15.1 asks for. It was hard-coded while there was one post.
  *
  * No eyebrow above the headline, unlike /faq and /blog. Those are supporting
  * pages that need to say which one they are. This is an article, and an
@@ -24,9 +24,9 @@ import { postBySlug } from './blog-content.js'
  * No delivery dial on this page, so nothing sets data-tod and the :root
  * palette applies. That is the morning paper, and it takes no code to get.
  */
-const POST = postBySlug('put-my-phone-down')
-
-export default function PostPage() {
+export default function PostPage({ slug }) {
+  const POST = postBySlug(slug)
+  if (!POST) throw new Error(`PostPage: no post with slug "${slug}" in POSTS`)
   return (
     <div className="tod">
       <Header />
