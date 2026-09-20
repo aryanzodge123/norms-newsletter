@@ -1,0 +1,293 @@
+{
+  "date": "2026-09-20",
+  "edition_number": 105,
+  "edition_type": "normal",
+  "headline_of_the_day": "US and Denmark agree on American control of Greenland security",
+  "headline_cluster_id": "e26aa3eadf60a278f0c07d6c4a5184eb",
+  "headline_rationale": "Resolves weeks-long diplomatic crisis and reshapes Arctic security arrangements within Nato for the first time in decades.",
+  "key_points": [
+    {
+      "text": "The US and Denmark agreed to give America permanent control of Greenland's security.",
+      "topic": "World"
+    },
+    {
+      "text": "Iran-backed Houthi militants fired ballistic missiles at Saudi Arabia's capital Riyadh for the first time.",
+      "topic": "World"
+    },
+    {
+      "text": "North America's largest wildlife overpass cut animal-vehicle collisions by 91 percent, proving the road design works.",
+      "topic": "Science"
+    },
+    {
+      "text": "Congress is investigating how F-35 fighter jet parts ended up in Hong Kong.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-20.mp3",
+    "duration_seconds": 148,
+    "size_bytes": 1776384
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "11084a5169aa96ec53899d44dd9a4f64",
+          "slug": "congress-investigates-f-35-parts-diverted-to-hong-kong",
+          "title": "Congress investigates F-35 parts diverted to Hong Kong",
+          "summary": "F-35 fighter jet parts were shipped to Hong Kong instead of their intended destination.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.politico.com/news/2026/09/18/congress-f-35-china-investigation-01083647"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "008359aa86e9bd2ef7d598c631fc2ab6",
+          "slug": "california-governor-signs-bills-to-block-federal-election",
+          "title": "California governor signs bills to block federal election interference",
+          "summary": "Governor Gavin Newsom signed bills to extend hours at mail-in ballot drop boxes.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/19/gavin-newsom-elections-trump-administration-interference"
+            }
+          ],
+          "article": {
+            "background": "California governor Gavin Newsom has signed a set of bills to strengthen election security. The bills address voting issues at both the state and national level. One key measure extends the hours when voters can drop off mail-in ballots.",
+            "what_happened": "Newsom signed the election security bills into law on Sunday. His office announced the action and highlighted the vote-by-mail protections. The governor framed the mail-in voting measure as a safeguard against the Trump administration's push to restrict the practice. The US Supreme Court recently blocked some of the administration's proposed changes to mail-in voting rules.",
+            "why_it_matters": "These bills protect California voters' ability to vote by mail if federal rules change. The measures give voters more flexibility for when and where they can cast their ballots. For now, the Supreme Court decision shields mail-in voting, but California's new laws add extra protection at the state level.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "e26aa3eadf60a278f0c07d6c4a5184eb",
+          "slug": "us-and-denmark-reach-greenland-security-deal-after-trump",
+          "title": "US and Denmark reach Greenland security deal after Trump threats",
+          "summary": "The US and Denmark agreed that America will control Greenland's security.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c63d7lexyym1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Greenland is a semi-autonomous territory that Denmark has controlled since the 1700s. It sits in the Arctic with mineral resources and strategic importance for military bases. Trump has long sought control of Greenland. His threats to seize it by force sparked a diplomatic dispute with Denmark.",
+            "what_happened": "The US and Denmark announced a deal giving America control over Greenland's security. Trump said Denmark would grant the US \"permanent control over security, and all other needs\" in the territory. The leaders of Denmark and Greenland welcomed the deal to \"strengthen security.\" They said it would be signed next week but did not detail its contents.",
+            "why_it_matters": "The deal ends a months-long dispute between Trump and Denmark over Greenland. For most people, this will not change daily life soon. But it shapes how the US positions itself in the Arctic, a region of growing strategic importance as ice melts and new shipping routes open.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4d5155cdf444eb276262261cfa2f46ac",
+          "slug": "houthis-launch-first-ballistic-missile-attack-on-saudi",
+          "title": "Houthis launch first ballistic missile attack on Saudi capital Riyadh",
+          "summary": "Iran-backed militants targeted the heavily defended capital with drones and missiles in an escalation of the conflict.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwly5d9v7r43o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/19/saudi-arabia-riyadh-airport"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/09/19/nx-s1-5974980/saudi-arabia-houthis-attempted-attack-capital"
+            }
+          ],
+          "article": {
+            "background": "Yemen's Houthis are Iran-aligned militants fighting a Saudi-led military coalition. Since July, they have increased attacks on Saudi Arabia. On Tuesday, Saudi air defenses destroyed a Houthi drone near Mecca. Now the group is striking even closer to home.",
+            "what_happened": "On Saturday, Houthis attacked Riyadh with drones and ballistic missiles. Saudi authorities said they destroyed the missile. Black smoke rose from a fuel tank near the airport, and flights were briefly disrupted. The Houthis also targeted energy sites on the Red Sea coast. Saudi air raid alerts sounded in the capital for the first time since fighting escalated.",
+            "why_it_matters": "The Houthis are now hitting Saudi Arabia's largest city and key infrastructure. This marks a major shift in the conflict. For people in the region, it means more risk. For global energy markets, attacks on Saudi oil infrastructure can affect prices worldwide.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ae8a4626129cdd3ef0bccc8372b65791",
+          "slug": "three-women-killed-in-separate-domestic-violence-incidents",
+          "title": "Three women killed in separate domestic violence incidents within 12 hours in New South Wales",
+          "summary": "A 90-year-old in Bondi Beach, a 23-year-old in Wagga Wagga, and a woman in her 70s died Saturday.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/sep/20/bondi-stabbing-90-year-old-woman-nsw-alleged-domestic-violence-killings-ntwnfb"
+            }
+          ],
+          "article": {
+            "background": "Three women died in separate incidents across New South Wales on Saturday within a 12-hour period. Each death was linked to domestic violence. A woman in her 90s died in Bondi Beach. A 23-year-old died in Wagga Wagga, in south-west NSW. A woman in her 70s died in Mole River.",
+            "what_happened": "Three men were charged with domestic violence-related murders following the deaths. The 23-year-old woman in Wagga Wagga was found with fatal stab wounds inside a home at about 11:45am on Saturday. The other two deaths happened within hours of this one.",
+            "why_it_matters": "Domestic violence killings are not rare in Australia. These three deaths in one day show a pattern that affects many families and communities across the country.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "ff38abb1d5d8ad5a0619e6608d6df3bb",
+          "slug": "north-america-s-largest-wildlife-overpass-cut-animal",
+          "title": "North America's largest wildlife overpass cut animal collisions by 91 percent",
+          "summary": "The wildlife overpass made roads safer and protected animals on a major corridor.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reddit.com/r/nextfuckinglevel/comments/1wkn561/largest_wildlife_overpass_in_north_america"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "b5eee27a740c86409f8a5b5ab9647217",
+          "slug": "more-australians-will-live-into-their-90s-as-life",
+          "title": "More Australians will live into their 90s as life expectancy rises",
+          "summary": "Treasury forecasts show life expectancy at birth will increase significantly over the next 40 years.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/sep/20/intergenerational-report-australian-life-expectancy-forecast-to-rise"
+            }
+          ],
+          "article": {
+            "background": "Australia's Treasury publishes a long-term forecast every five years. It shows how government policies will shape the country over 40 years ahead. The latest report will be released in full on Monday.",
+            "what_happened": "The report projects that women's life expectancy will rise to almost 90 by 2065 to 2066. It is now about 86 years. Australian households will also get smaller over this period.",
+            "why_it_matters": "People living longer changes how much Australians need to save for retirement. It affects when people can stop working and what government services will cost. The shift means fewer young people relative to older ones, which shapes taxes and spending for decades to come.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "1d9db928da00003fa763ac7322438d56",
+          "slug": "aston-villa-striker-nicolas-jackson-overwhelms-tottenham-in",
+          "title": "Aston Villa striker Nicolas Jackson overwhelms Tottenham in 3-2 win",
+          "summary": "Match of the Day pundit Alan Shearer said Spurs' defenders could not keep up with the 25-year-old.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/football/videos/cq1j47731pk3o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Aston Villa and Tottenham Hotspur are Premier League clubs competing in England's top soccer division. Nicolas Jackson is a 25-year-old striker for Villa. Alan Shearer is a former player and current pundit on Match of the Day, the BBC's main soccer analysis show.",
+            "what_happened": "Villa beat Tottenham 3-2 in a Premier League match. Jackson played a standout role in the victory. Shearer praised Jackson's performance, saying Tottenham's centre-halves could not keep up with him.",
+            "why_it_matters": "Strong individual performances in high-profile matches often signal a player's growing importance to their team's success. Jackson's ability to trouble top defenses suggests Villa has a potent attacking threat as the season progresses.",
+            "quote": {
+              "text": "couldn't keep up",
+              "attribution": "Alan Shearer, Match of the Day pundit, on Nicolas Jackson",
+              "source_url": "https://www.bbc.co.uk/sport/football/videos/cq1j47731pk3o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "af16e09b3dd03495f8f18a60f142dd79",
+          "slug": "north-carolina-state-fumbles-in-end-zone-hands-vanderbilt",
+          "title": "North Carolina State fumbles in end zone, hands Vanderbilt improbable 35-31 win",
+          "summary": "Quarterback CJ Bailey lost the ball trying for an intentional safety in the final seconds.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/sep/19/vanderbilt-nc-state-fumble-music-city-miscue-college-football"
+            }
+          ],
+          "article": {
+            "background": "NC State and Vanderbilt met in a college football game in Nashville. Vanderbilt entered as a heavy underdog. The game came down to its final seconds with NC State trying to run down the clock.",
+            "what_happened": "NC State quarterback CJ Bailey fumbled in the end zone while attempting to take an intentional safety in the game's closing moments. Vanderbilt recovered the loose ball and won 35-31. The outcome was so unlikely that college football teams in that situation had won just once in the previous 20 seasons, according to ESPN.",
+            "why_it_matters": "This game shows how quickly a football game can flip on a single play. For fans watching, it is a reminder that improbable finishes can still happen even when the odds seem impossible.",
+            "quote": {
+              "text": "I can't put into words what I felt. You get one of those in a lifetime.",
+              "attribution": "Vanderbilt coach Clark Lea",
+              "source_url": "https://www.theguardian.com/sport/2026/sep/19/vanderbilt-nc-state-fumble-music-city-miscue-college-football"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "d4bbd92041593a2297119baaa8429684",
+      "title": "Our head teacher was an abuser. We joined forces to get justice - now we're married",
+      "url": "https://www.bbc.co.uk/news/articles/cg4d9vly636o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c62685e6e7f08b3554a59439d5e91917",
+      "title": "Future of German chancellor hangs in the balance as two states go to polls",
+      "url": "https://www.theguardian.com/world/2026/sep/20/german-chancellor-friedrich-merz-state-elections-berlin-far-right",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1d0f2e7d8d5f385802e3915468542069",
+      "title": "Baby born via surrogate can leave Texas for treatment in California, court rules",
+      "url": "https://www.theguardian.com/us-news/2026/sep/19/texas-california-surrogate-court",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "99092b5556a0b2aa484f664d34504341",
+      "title": "Mum's viral barefoot race sparks debate over India's education crisis",
+      "url": "https://www.bbc.co.uk/news/articles/cw62m6z7m7zjo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b179f089c621f56e4f70d422b806c56b",
+      "title": "Cultural treasures are being destroyed by war, and people want justice",
+      "url": "https://www.bbc.co.uk/news/articles/cvgy1q2k2z0o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "00f107d3ca424ead33a5fe0787ea7563",
+      "title": "Kemi Badenoch accuses Andy Burnham of ‘fiddling while Europe risks burning’",
+      "url": "https://www.theguardian.com/politics/2026/sep/20/kemi-badenoch-accuses-andy-burnham-fiddling-europe-risks-burning",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "b8c0153f2c450c192cee03c91388656a",
+      "title": "Not all AI workers think the tech could kill everyone",
+      "url": "https://www.bbc.co.uk/news/articles/cm5y7qj54klpo?at_medium=RSS&at_campaign=rss",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "fb4ec314e9b40f8c683bdabfac8d7f1d",
+      "title": "Ed Sheeran admits 'mistakes' as he addresses Macklemore controversy at Philadelphia show",
+      "url": "https://www.bbc.co.uk/news/articles/cm780ll1de18o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "9cae20e2774f9b398ae438fe59c83e03",
+      "title": "Polymarket's Rush to Grow Left a Door Wide Open for Fraudsters",
+      "url": "https://www.wsj.com/business/polymarkets-fraud-regulators-coplan-5f418ab0",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 41,
+    "clusters_considered": 38,
+    "stories_run": 9,
+    "sources": 7,
+    "sections_held": 0
+  }
+}
