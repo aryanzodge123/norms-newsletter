@@ -1,0 +1,200 @@
+{
+  "date": "2026-09-21",
+  "edition_number": 106,
+  "edition_type": "normal",
+  "headline_of_the_day": "UK tells people to stockpile food as climate disrupts supplies",
+  "headline_cluster_id": "d87e756d0319c07ee00dfb5573eb31ec",
+  "headline_rationale": "First time a Western government has publicly advised food stockpiling due to climate-driven supply risks, signals official recognition of climate consequences.",
+  "key_points": [
+    {
+      "text": "UK government tells people to stock long-life food in case extreme weather disrupts supplies.",
+      "topic": "World"
+    },
+    {
+      "text": "Chancellor Merz says he will stay after exit polls show his party lost two local elections badly.",
+      "topic": "World"
+    },
+    {
+      "text": "AI chatbots give wrong answers to financial questions most of the time, study finds.",
+      "topic": "AI"
+    },
+    {
+      "text": "Labour's apprenticeship program signed up only 160 young people in eight months, missing its 30,000 goal.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-21.mp3",
+    "duration_seconds": 341,
+    "size_bytes": 4093344
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "11b617ad20e2c1d0574d3fd612114668",
+          "slug": "ai-chatbots-give-wrong-answers-to-financial-queries-most-of",
+          "title": "AI chatbots give wrong answers to financial queries most of the time",
+          "summary": "A study shows that chatbots being used now often give wrong answers to people asking about money.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.ft.com/content/c0cd359d-df84-4208-a789-ffa864b43666"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "97d06f904a70ab2b31137d27f4707e5f",
+          "slug": "nvidia-ceo-dismisses-ai-extinction-warnings-as-doomsday",
+          "title": "Nvidia CEO dismisses AI extinction warnings as doomsday narratives",
+          "summary": "Jensen Huang said there is zero percent chance AI will end the world by 2030.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cr5ye7p13jg7o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Nvidia makes the computer chips that train large AI systems. In recent weeks, some researchers have warned that advanced AI could pose serious risks to humanity. These warnings have sparked debate about whether AI development should slow down.",
+            "what_happened": "Nvidia CEO Jensen Huang rejected these fears in a CBS News interview. He called them \"doomsday narratives\" and said there is zero chance the world ends by 2030. Huang added that scaring people about AI is unnecessary and irresponsible.",
+            "why_it_matters": "The debate over AI safety shapes how fast companies like Nvidia build new systems. It also influences what rules governments might create. Huang's comments show that major tech leaders are pushing back against calls for caution, which means development will likely continue at current pace.",
+            "quote": {
+              "text": "Scaring people is unnecessary. It is irresponsible.",
+              "attribution": "Jensen Huang, Nvidia CEO",
+              "source_url": "https://www.bbc.co.uk/news/articles/cr5ye7p13jg7o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "b6dc1c00fe4031c0074b3629a6dcad89",
+          "slug": "labour-apprenticeship-scheme-enrolled-only-160-people-in",
+          "title": "Labour apprenticeship scheme enrolled only 160 people in eight months",
+          "summary": "The flagship program is far off track from its 30,000-start target by end of parliament.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/education/2026/sep/21/apprenticeship-starts-labour-scheme-skills-revolution"
+            }
+          ],
+          "article": {
+            "background": "Labour took office last year with a plan to tackle youth joblessness. The government announced what it called a \"skills revolution,\" which includes foundation apprenticeships. These are paid jobs for young adults with attached training. The goal is 30,000 apprenticeship starts by the end of this parliament. Nearly 1 million people aged 16 to 24 are not in employment, education, or training.",
+            "what_happened": "In its first eight months, the scheme signed up only 160 young people. The Fabian Society, a research organization, released a report highlighting this gap. The shortfall means the government is far off track to reach its 30,000 target.",
+            "why_it_matters": "This program is central to Labour's plan to get young people into work and skills training. If enrollment stays this slow, the scheme will miss its goals by a huge margin. Young people looking for pathways to employment may find fewer options than the government promised.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e47eab00cc6e8e16235b34d8348af696",
+          "slug": "ice-agent-shoots-and-wounds-man-at-traffic-stop-in-austin",
+          "title": "ICE agent shoots and wounds man at traffic stop in Austin",
+          "summary": "The man is in serious but stable condition after being shot once in the torso.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/20/man-shot-ice-agent-austin-texas"
+            }
+          ],
+          "article": {
+            "background": "ICE is a federal agency that enforces immigration law. On Sunday afternoon, an ICE officer shot a man during a traffic stop in Austin, Texas's capital. Austin police were not involved in the operation.",
+            "what_happened": "The unnamed man was shot once in the torso on Austin's north side. He was in serious but stable condition at a hospital. Anti-ICE protesters gathered at the scene. The Department of Homeland Security, which oversees ICE, did not attend Austin's police chief's news conference and did not immediately respond to requests for details.",
+            "why_it_matters": "The shooting raises questions about how federal immigration enforcement operates in cities and what oversight exists. Most people in Austin will want to know what rules govern these traffic stops and what happens when force is used.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "d87e756d0319c07ee00dfb5573eb31ec",
+          "slug": "uk-government-tells-people-to-stockpile-food-as-climate",
+          "title": "UK government tells people to stockpile food as climate threatens supply chains",
+          "summary": "The UK Environment Secretary told people to buy extra long-life food in case bad weather stops deliveries.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c20veglyjp8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK government recently urged people to stock up on long-life foods. Environment Secretary Dame Angela Eagle cited El Niño, a natural climate pattern that brings more extreme storms. Supply chains, the networks that move food from producers to stores, can break down. Severe weather, cyber-attacks, disease outbreaks, and conflicts can all cause disruptions.",
+            "what_happened": "The UK government advised people to add more long-life products to their shopping. This is practical preparation for events that could affect what stores have in stock. The advice comes as experts warn about risks to the food supply chain.",
+            "why_it_matters": "Stocking non-perishable foods gives you a buffer if stores run low during crises. Long-life items like canned goods, dried pasta, and shelf-stable milk last months or years. Having them on hand means your family eats normally even if deliveries are delayed.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ec2574a33ebb53f0fe50d3b5f0e04d08",
+          "slug": "german-chancellor-merz-calls-state-election-results-a",
+          "title": "German Chancellor Merz calls state election results a disaster but refuses to resign",
+          "summary": "Exit polls showed big losses for Chancellor Merz's center-right party in two local elections.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cvwyz29n0nn2o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Friedrich Merz is Germany's chancellor. He leads the centre-right Christian Democratic Union (CDU) party. On September 22, voters in two German states held local elections. The far-right Alternative für Deutschland (AfD) party has been gaining strength. Norm covered this race two weeks earlier as Merz faced an uncertain political future.",
+            "what_happened": "Exit polls showed heavy losses for Merz's CDU in both states. In Mecklenburg-Vorpommern, the CDU initially seemed to barely survive. Hours later, results showed it fell below 5 percent, the threshold needed for seats in that state's parliament. This was the party's worst result ever there. Merz called the outcome \"a disaster.\" He said he would stay on as chancellor.",
+            "why_it_matters": "Local election losses often signal trouble for a ruling party's grip on national power. The CDU's collapse in a state parliament means fewer seats and less influence there. It also shows voters turning away from Merz's leadership just months into his term. These defeats make his position as chancellor harder to defend, even if he stays.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "105a271836e8666e96b1a0e564406c3f",
+      "title": "UK urged to strengthen financial muscle of national wealth fund to aid economy",
+      "url": "https://www.theguardian.com/business/2026/sep/21/uk-urged-to-strengthen-financial-muscle-of-national-wealth-fund-to-aid-economy",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "1c4538714d0dc239b62903776c26bd78",
+      "title": "Macron and Carney announce closer France-Canada ties amid Trump tensions",
+      "url": "https://www.theguardian.com/world/2026/sep/21/france-canada-relations-eu-europe-macron-carney",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6a8f9722842c8e1ef0bfbd85b7aa88c8",
+      "title": "Rescission of Rule 14a-8's Federal Regulation of Shareholder Proposals and Amendments to Rule 14a-4",
+      "url": "https://www.federalregister.gov/documents/2026/09/21/2026-19260/rescission-of-rule-14a-8s-federal-regulation-of-shareholder-proposals-and-amendments-to-rule-14a-4",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "ace141ebf31b71f5b887ffd38ddea9a9",
+      "title": "UK should 'team up' with Canada in new Europe alliance, Canadian minister tells BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cmed7p06epxjo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e3ae4b40de8472999b311af0340fa6ee",
+      "title": "More Australians will be dying than being born in 40 years as major report predicts future of lower growth",
+      "url": "https://www.theguardian.com/australia-news/2026/sep/21/jim-chalmers-intergenerational-report-2026-deaths-outnumber-births-australia2060s",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 67,
+    "clusters_considered": 44,
+    "stories_run": 6,
+    "sources": 8,
+    "sections_held": 3
+  }
+}
