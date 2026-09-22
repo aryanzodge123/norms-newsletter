@@ -1,0 +1,429 @@
+{
+  "date": "2026-09-22",
+  "edition_number": 107,
+  "edition_type": "normal",
+  "headline_of_the_day": "Three major outlets sue Trump administration over White House press ban",
+  "headline_cluster_id": null,
+  "headline_rationale": "First Amendment challenge to executive press access sets precedent for how political reporting happens.",
+  "key_points": [
+    {
+      "text": "CNN, Politico and MSNBC sued Trump after he banned them from the White House.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Seven of nine critical Earth systems have now crossed safe limits, showing serious strain.",
+      "topic": "Science"
+    },
+    {
+      "text": "A Verizon fiber cut in New Jersey stopped flights at Newark and Philadelphia for hours.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "New therapy removes hepatitis B virus from the body, potentially curing 250 million people.",
+      "topic": "Science"
+    },
+    {
+      "text": "Google was fined 403 million euros for tracking user location without permission.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "6b3703e20cf76ddf713f61c1e61275f5",
+          "slug": "robin-williams-s-daughter-asks-fans-to-stop-making-ai",
+          "title": "Robin Williams's daughter asks fans to stop making AI videos of father",
+          "summary": "Zelda Williams said a private video online was made with artificial intelligence, not real.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://variety.com/2026/film/news/robin-williams-daughter-ai-videos-1236871568"
+            }
+          ],
+          "article": {
+            "background": "Robin Williams died in 2023. Since then, fans have made AI videos that try to recreate him. Zelda Williams, his daughter and a film director, has asked people to stop multiple times.",
+            "what_happened": "Zelda Williams posted on X Monday about a fake video of her father circulating online. The video claimed to be private footage but was clearly AI-made. She said the fake voice sounded robotic and awful. She called on whoever created it to stop using her father and let him rest.",
+            "why_it_matters": "When someone dies, deepfakes of them can hurt their family. It feels disrespectful to their memory. Zelda's repeated public pleas show fans keep ignoring her wishes. If you see these videos, not sharing them matters to the people who loved the person in them.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "13ed418fd2437bcc303534599bcbcd24",
+          "slug": "apple-retail-architect-rejects-silicon-valley-s-ai-shopping",
+          "title": "Apple retail architect rejects Silicon Valley's AI shopping bet",
+          "summary": "Ron Johnson, who built Apple stores, doubts people will let machines make shopping choices.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping"
+            }
+          ],
+          "article": {
+            "background": "Ron Johnson, 66, joined Apple in 2000 to build its retail stores. This was when online shopping was just starting. He helped create a store network that became central to how Apple sells products and connects with customers. Now Silicon Valley companies are spending billions on AI agents. These agents are designed to do shopping for people online.",
+            "what_happened": "Johnson says the industry is overestimating how much shopping people will give to machines. He believes physical stores will keep thriving despite the AI push. In an interview, Johnson said: \"AI is a new tool that will help online shopping.\" But he doubts it will take over shopping the way some predict.",
+            "why_it_matters": "If Johnson is right, your local stores are not going anywhere soon. The shift to AI shopping may be slower and smaller than Silicon Valley expects. This matters because it affects where you shop, what jobs exist in retail, and how stores will look in five years. Physical spaces may remain central to how people buy things.",
+            "quote": {
+              "text": "AI is a new technology that will improve the online shopping experience.",
+              "attribution": "Ron Johnson",
+              "source_url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "042e0b55b808f1d9792181bf9f45603b",
+          "slug": "essay-argues-readers-should-fear-ai-companies-not-ai-itself",
+          "title": "Essay argues readers should fear AI companies, not AI itself",
+          "summary": "Writer says the real risk is how companies choose to use AI, not AI itself.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://df7sc6o35ljoz.cloudfront.net/posts/do-not-fear-ai-rev-2.html"
+            }
+          ],
+          "article": {
+            "background": "Artificial intelligence tools have become mainstream in just a few years. AI can now write text, create images, and generate music. These tools are spreading through business and everyday life faster than most people expected.",
+            "what_happened": "A recent post argues that the real concern is not AI itself, but how companies use it. The piece notes that AI is already in business ads and cards, in music on Spotify, and in decisions about layoffs. Companies are adopting AI rapidly and using it as justification for major workforce cuts.",
+            "why_it_matters": "How companies deploy AI will shape what you see online, what jobs exist, and what gets automated. When a company uses AI to cut jobs, that affects real people's lives. The way AI gets built and used now sets patterns that will be hard to change later.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f2c5907f17343e983f4d9ca953cc9eb8",
+          "slug": "zero-day-vulnerability-found-in-meta-s-muse-ai-assistant",
+          "title": "Zero-day vulnerability found in Meta's Muse AI assistant",
+          "summary": "A flaw in Meta's Muse AI lets apps take complete control, despite safety promises.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day"
+            }
+          ],
+          "article": {
+            "background": "Meta introduced Muse a few weeks ago. It is an AI assistant that books appointments, fills out forms, handles customer service, makes purchases, and connects with other apps. Founder and CEO Mark Zuckerberg has claimed the tool is built from the ground up for privacy and security.",
+            "what_happened": "A zero-day vulnerability was found in Muse. A zero-day is an unpatched security flaw. The flaw lets locally run apps and terminal commands take complete control of the assistant. Amazon blocked Muse from its site on Sunday, raising concerns about the tool's safety.",
+            "why_it_matters": "If you use Muse to automate tasks on your computer, this vulnerability is a real risk. Malicious software or commands could hijack it and access your sensitive information or take actions without your permission. The flaw undermines Meta's security claims. The Amazon block suggests companies are worried enough to restrict the assistant's use on their platforms.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "7d6d0a52c09d87887ff5e6be3109604f",
+          "slug": "paramount-and-state-attorneys-general-settle-antitrust",
+          "title": "Paramount and state attorneys general settle antitrust lawsuit",
+          "summary": "Agreement clears path for 110 billion dollar Warner Bros Discovery merger.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/09/21/paramount-reaches-settlement-over-warner-bros-merger.html"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cm4gjr1qepr8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Paramount Skydance is merging with Warner Bros. Discovery in a $110 billion deal. This combines major film studios, streaming services, and TV networks into one company. A dozen state attorneys general, led by California's Rob Bonta, sued to block it. They argued the merger would hurt competition in entertainment.",
+            "what_happened": "Paramount and the state attorneys general settled their lawsuit Monday. The deal clears the way for the merger to proceed. Under the settlement, Paramount must produce at least 30 films a year. A certain percentage must be made in the US, or the company faces penalties like selling off parts of its business.",
+            "why_it_matters": "For viewers, consolidation like this can affect what content gets made and which platforms carry which shows and movies. The settlement protects some US jobs in production. It also sets rules that stop one company from controlling too much of the entertainment market.",
+            "quote": {
+              "text": "We are grateful to Attorney General Bonta and his fellow AGs, as well as the WGA, for engaging in good faith to find a path forward to a resolution that serves all parties.",
+              "attribution": "Paramount CEO David Ellison",
+              "source_url": "https://www.cnbc.com/2026/09/21/paramount-reaches-settlement-over-warner-bros-merger.html"
+            }
+          }
+        },
+        {
+          "cluster_id": "9d62dab745327173c815787294cdda95",
+          "slug": "driscoll-s-lost-proprietary-blueberry-growing-secrets-to",
+          "title": "Driscoll's lost proprietary blueberry growing secrets to China",
+          "summary": "The company's secret blueberry methods were stolen, affecting supply and prices.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/business/driscolls-berry-farms-china-competition-b0b49f04"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "5bc741a37eca173fbec3c605b3bab8c6",
+          "slug": "two-million-under-evacuation-orders-as-typhoon-hits-japan",
+          "title": "Two million under evacuation orders as typhoon hits Japan",
+          "summary": "A powerful storm killed two people and left four missing across Japan.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cm3wj2lexl97o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Typhoon Dujuan is a powerful tropical storm that hit Japan. It struck multiple regions across the country, bringing intense winds and heavy rain. Japan's weather agency warned of an imminent threat to life as the storm approached.",
+            "what_happened": "Nearly two million people were placed under evacuation orders. Two people died and four went missing because of the typhoon. Four more were reported missing in Kanagawa prefecture. Strong winds caused power cuts for more than 50,000 people. Hundreds of flights were cancelled and rail services were suspended. Several weather warnings have now been downgraded.",
+            "why_it_matters": "When this many people need to evacuate, it strains emergency services and resources across entire regions. Large typhoons disrupt daily life through power outages, transportation shutdowns, and risk of injury or death.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "eb874cd3054270f96e95bd02735afd9e",
+          "slug": "uk-agrees-to-provide-air-support-for-saudi-arabia-against",
+          "title": "UK agrees to provide air support for Saudi Arabia against Houthis",
+          "summary": "Prime minister said air support will help stabilize the Middle East and lower energy costs.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/politics/2026/sep/21/uk-to-give-support-to-saudi-jets-in-attempt-to-counter-houthi-fighters"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/politics/britains-burnham-to-meet-trump-and-make-un-debut-after-offering-uk-military-support-for-saudis"
+            }
+          ],
+          "article": {
+            "background": "The Houthis are Iran-backed rebels based in Yemen. They have attacked ships and energy infrastructure in the Middle East. Saudi Arabia has been defending its oil and gas facilities against these attacks. The UK now wants to help.",
+            "what_happened": "Prime Minister Andy Burnham agreed to give Saudi Arabia air-to-air refuelling support. This helps Saudi jets defend their energy infrastructure. Burnham said the move will keep oil flowing from the Gulf. He hopes this eases global economic turmoil and lowers UK living costs.",
+            "why_it_matters": "Oil prices affect what you pay for gas, heating, and goods shipped by truck. When Middle East conflict disrupts oil supplies, prices rise for everyone. By helping Saudi Arabia protect its energy facilities, the UK aims to keep oil flowing. This could help bring down prices at home.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "6e8ea9779e5d36c4bdf562b31a3c63e5",
+          "slug": "google-fined-403-million-euros-over-location-data-processing",
+          "title": "Google fined 403 million euros over location data processing",
+          "summary": "Irish regulator fined the company for using user location data without asking permission first.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.dataprotection.ie/en/news-media/latest-news/data-protection-commission-fines-google-eu403-million-following-inquiry-googles-processing-location"
+            }
+          ],
+          "article": {
+            "background": "Google collects location data from users' phones and computers through various services. In February 2020, consumer rights groups complained that Google was processing this data improperly. Europe's Data Protection Commission, the main regulator overseeing Google's privacy practices in the region, launched its own investigation in response.",
+            "what_happened": "On September 21, 2026, the Data Protection Commission announced a final decision. The regulator fined Google Ireland Limited €403 million. The investigation found that Google used user location data without asking permission first.",
+            "why_it_matters": "If you use Google services, this decision may influence how the company handles your location information going forward. Large fines for data misuse signal that regulators are enforcing privacy rules. This shows companies face real costs when they fail to protect user data properly.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "26ff92c7338e9a4ec244c9e8201f6f50",
+          "slug": "abortion-drug-restrictions-limit-treatment-for-unrelated",
+          "title": "Abortion drug restrictions limit treatment for unrelated conditions",
+          "summary": "Rules about mifepristone make it harder for doctors to treat miscarriage, ulcers and other conditions.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/how-abortion-drug-restrictions-make-it-harder-to-treat-other-conditions"
+            }
+          ],
+          "article": {
+            "background": "Mifepristone has been approved in the U.S. for over 25 years. It is mainly known for ending pregnancy. But the drug and a similar medicine also treat other health problems. These include uterine fibroids, which are growths in the uterus, and endometriosis, when tissue grows outside the uterus. Anti-abortion groups are pushing to restrict these drugs further.",
+            "what_happened": "As restrictions on mifepristone have grown, doctors face new barriers. They struggle to prescribe the drug for patients with fibroids and endometriosis. The rules meant to limit abortion access now make it harder to treat other conditions. Doctors also use mifepristone to treat miscarriage and other health issues.",
+            "why_it_matters": "People with fibroids and endometriosis often suffer severe pain. These conditions can also affect fertility. Losing access to these medications means patients may need more surgery or live with worse symptoms. Fewer treatment options make life harder for people already dealing with these painful disorders.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "4c9febb3dc7dcb9dac5c7304c5d4cfcf",
+          "slug": "seven-of-nine-planetary-boundaries-now-breached",
+          "title": "Seven of nine planetary boundaries now breached",
+          "summary": "Most major Earth systems have crossed the safe limits for human survival.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.planetaryhealthcheck.org"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "591cffd60693b759cfd201c67f2e1fef",
+          "slug": "epigenetic-editing-banishes-hepatitis-b-virus-from-infected",
+          "title": "Epigenetic editing banishes hepatitis B virus from infected cells",
+          "summary": "New therapy kills the virus without changing DNA, offering a cure for 250 million people.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nature.com/articles/d41586-026-02981-9"
+            }
+          ],
+          "article": {
+            "background": "Hepatitis B is a liver infection caused by the hepatitis B virus. It affects more than 250 million people worldwide. Most current drugs cannot fully clear the virus from the body. Earlier approaches tried gene editing, which cuts DNA directly. But that method raises cancer risk in hepatitis B patients.",
+            "what_happened": "Researchers at nChroma Bio in Boston and institutes in Milan developed a new method. It is called epigenetic editing. Instead of cutting DNA, it changes markers attached to DNA. These markers control which genes turn on and off. In lab studies, the technique suppressed the hepatitis B virus.",
+            "why_it_matters": "For people with chronic hepatitis B, a cure would end a lifelong infection. It would also stop the liver damage the virus causes over time. This approach could work without the cancer risks linked to older gene-editing methods. If it works safely in people, it would offer a real path to cure.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "59a0b7060c0d0e5c54e92496bf89f834",
+          "slug": "nasa-cancels-mars-sample-return-mission-after-decade-of-work",
+          "title": "NASA cancels Mars Sample Return mission after decade of work",
+          "summary": "Space agency ended program that was meant to bring Martian rocks to Earth.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.science.org/content/article/nasa-s-mars-sample-return-mission-dead"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "1b02196f00e4458a8f49b0960b889927",
+          "slug": "verizon-fiber-cut-halts-flights-at-newark-and-philadelphia",
+          "title": "Verizon fiber cut halts flights at Newark and Philadelphia",
+          "summary": "A construction crew cut a backup power line, grounding hundreds of planes for hours.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/09/21/newark-philadelphia-nyc-flight-disruptions.html"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/ckvgyzzgvv4wo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/transportation/998550/a-cut-cable-disrupted-hundreds-of-flights-across-the-us"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/21/airports-flight-ground-stop-hacking-threat"
+            }
+          ],
+          "article": {
+            "background": "Air traffic controllers use multiple communication systems to guide planes safely. These systems include primary and backup cables that carry critical data. On Monday, construction work in New Jersey accidentally cut a Verizon fiber cable. This cable was a backup feed for air traffic control data across the Northeast.",
+            "what_happened": "The cut cable forced the Federal Aviation Administration to halt flights to Newark and Philadelphia. Nearly 100 planes diverted to other airports. More than 600 flights at Newark were canceled by 6 p.m., over half the day's schedule. More than 200 flights in Philadelphia were also affected. US Transportation Secretary Sean Duffy said the cable was repaired hours later. Airports resumed normal operations, though delays continued.",
+            "why_it_matters": "A single severed cable disrupted travel for thousands of people across the Northeast. Passengers faced cancellations, long delays, and unexpected diversions to distant airports. The incident shows how dependent modern aviation is on a few critical cables. It also highlights the need to protect this infrastructure from accidental damage during construction work.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a3bc66c2fc8793b2b324dbd09d93d21f",
+          "slug": "malicious-code-found-in-widely-used-npm-math-library",
+          "title": "Malicious code found in widely used npm math library",
+          "summary": "A fake version of popular math software hid harmful code that runs on certain equations.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://safedep.io/mathmain-encrypted-loader"
+            }
+          ],
+          "article": {
+            "background": "npm is a repository where JavaScript developers download code packages. Mathjs is a popular math library. Someone created a fake version called mathmain that looks like mathjs. Security researchers discovered it contains hidden malicious code.",
+            "what_happened": "The malicious code ships encrypted and stays inactive. It wakes up when a program using the library solves a specific equation. That equation acts as the key. When the key matches, the code decrypts a payload. The payload takes commands from the attacker and runs them on the host computer. It uses a public chat service and a blockchain network to receive those commands.",
+            "why_it_matters": "Developers who download mathmain by mistake would run hidden malicious code without knowing it. The code can execute any command an attacker sends. This shows why checking the exact name of packages you download matters, since typosquatting (using a similar name to trick people) is a real risk.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "247d6fd67d703565d14306948b590e3d",
+      "title": "CNN, MS NOW and Politico file lawsuit against Trump's White House ban",
+      "url": "https://www.bbc.co.uk/news/articles/cm0e32rwvrryo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "09905e113b8067cf4c465022ef0bf340",
+      "title": "Family tied to suspected Chinese spy Christine Fang gave $4.4M to Newsom",
+      "url": "https://www.cbsnews.com/news/yin-family-christine-fang-4-4-million-gavin-newsom-california",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2acd8b6fbc31e24b317d0e1070c4eb0e",
+      "title": "Wall Street Is Growing Skeptical of the Data Center Boom",
+      "url": "https://www.nytimes.com/2026/09/21/business/ai-data-center-ipos.html",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "20f3c0a1e83c44701bfbe5ce6f6b61c0",
+      "title": "Military milestone: Ukrainian naval drone sinks Russian kamikaze drone boat",
+      "url": "https://arstechnica.com/gadgets/2026/09/military-milestone-ukrainian-naval-drone-sinks-russian-kamikaze-drone-boat",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "f0c6ac47e830cd790432122b42a819ee",
+      "title": "Airlines criticise air traffic control as second glitch causes more disruption in UK",
+      "url": "https://www.bbc.co.uk/news/articles/cqp80p78mxx5o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "bda3131c3619c6628f05736ce44b2bbf",
+      "title": "Black Tesla employees accuse company of fostering racial discrimination in major trial",
+      "url": "https://www.theguardian.com/technology/2026/sep/21/black-employees-accuse-tesla-fostering-discrimination",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "48c4007331b066fef61009b631fded10",
+      "title": "California tightens rules on AI data center energy and water use",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "6d552904293ef45c15b1c88b0ffa0a52",
+      "title": "Datacentres in Victoria to be banned in residential areas",
+      "url": "https://www.theguardian.com/australia-news/2026/sep/22/datacentres-in-victoria-to-be-banned-in-residential-areas",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "ef41984c23a600f4b41fbda620d6920c",
+      "title": "Polo has rapidly intensified to a hurricane and is expected to impact Mexico",
+      "url": "https://www.pbs.org/newshour/science/polo-has-rapidly-intensified-to-a-hurricane-and-is-expected-to-impact-mexico",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 149,
+    "clusters_considered": 130,
+    "stories_run": 15,
+    "sources": 16,
+    "sections_held": 0
+  }
+}
