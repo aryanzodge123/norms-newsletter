@@ -1,0 +1,245 @@
+{
+  "date": "2026-09-23",
+  "edition_number": 108,
+  "edition_type": "normal",
+  "headline_of_the_day": "US Fish and Wildlife Service cuts protections for endangered animals.",
+  "headline_cluster_id": "b3ae3428c872c0570d97b9a52cc78cb4",
+  "headline_rationale": "Federal reinterpretation of a major environmental law changes how endangered species are protected across the country",
+  "key_points": [
+    {
+      "text": "US Fish and Wildlife Service cuts protections for endangered animals.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Trump told the UN he faces a big decision on whether to strike Iran again or pursue a peace deal",
+      "topic": "World"
+    },
+    {
+      "text": "Nearly half of US adults under 30 now live with a parent",
+      "topic": "Business"
+    },
+    {
+      "text": "A federal judge halts the deportation of a Venezuelan man shot by immigration agents in Texas.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Sri Lanka court sentences 15 men to hundreds of years each for 2019 Easter bombings that killed 267",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-23.mp3",
+    "duration_seconds": 408,
+    "size_bytes": 4902624
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "14159d67aee1e8669f3034e9d838f373",
+          "slug": "nearly-half-of-us-adults-under-30-now-live-with-a-parent",
+          "title": "Nearly half of US adults under 30 now live with a parent",
+          "summary": "Forty-nine percent of young adults now live at home, a historic shift.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.federalreserve.gov/publications/files/2025-report-economic-well-being-us-households-202605.pdf"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "650feb3db87c5a450bfee69f1a87e480",
+          "slug": "qantas-to-start-selling-new-york-to-sydney-nonstop-flight",
+          "title": "Qantas to start selling New York to Sydney nonstop flight tickets next year",
+          "summary": "Eighteen-hour route will launch in 2028 with special Airbus planes for the marathon trip.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/09/22/qantas-flight-new-york-sydney-nonstop.html"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/sep/23/qantas-direct-flights-from-sydney-to-new-york"
+            }
+          ],
+          "article": {
+            "background": "Qantas Airways, Australia's main airline, is building ultra long-haul routes. These skip traditional connecting hubs by flying nonstop across the world. The airline already plans Sydney to London flights starting in October 2027. Now it is adding a second marathon route.",
+            "what_happened": "Qantas will start selling tickets next August for nonstop flights between New York and Sydney. The flights will launch in 2028 and take about 18 hours. The airline will use a special Airbus plane designed for these extreme distances. This route will be Qantas's second ultra long-haul nonstop.",
+            "why_it_matters": "The flight cuts at least three hours off current travel times between these cities. Right now, travelers must connect through other hubs to get from New York to Sydney. Direct service means less time in airports and faster trips. Ticket prices are not yet known, so it is unclear what these long flights will cost.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "586440ca1b0b42c17b1ce0c1b35d6403",
+          "slug": "sri-lanka-court-sentences-15-men-to-hundreds-of-years-each",
+          "title": "Sri Lanka court sentences 15 men to hundreds of years each for 2019 Easter bombings",
+          "summary": "Fifteen men are convicted for suicide attacks that killed 267 people at churches and hotels.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/23/sri-lanka-easter-bombings-15-sentenced-prison-terror-attacks"
+            }
+          ],
+          "article": {
+            "background": "On April 21, 2019, suicide bombers struck Sri Lanka during Easter celebrations. The attacks hit three churches and three hotels across the country. Nearly 600 people were wounded. The bombings were inspired by the Islamic State, a designated terror group. They remain among the deadliest attacks in Sri Lanka's history.",
+            "what_happened": "A court in Sri Lanka has convicted 15 men over the bombings. Each was sentenced to at least 200 years in prison. They will spend the rest of their lives behind bars. The attacks killed 267 people.",
+            "why_it_matters": "The convictions hold people accountable for one of Sri Lanka's worst attacks. Families of victims get a measure of justice after years of waiting. The case shows how countries continue to pursue terror cases long after major attacks occur.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9208bd81b861c0407fc95a342fa2bb0c",
+          "slug": "king-charles-refers-jamaica-slavery-reparations-petition-to",
+          "title": "King Charles refers Jamaica slavery reparations petition to privy council",
+          "summary": "Jamaica's culture minister calls the move a really big deal in historic case.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/23/jamaica-king-charles-to-refer-slavery-reparations-petition-to-privy-council"
+            }
+          ],
+          "article": {
+            "background": "Jamaica is seeking reparations for slavery. The nation wants compensation for the harm of forced labor under colonial rule. Culture minister Olivia Grange travelled to the UK earlier this month to lodge a formal petition with King Charles III.",
+            "what_happened": "King Charles referred Jamaica's slavery reparations petition to the privy council. This is a London-based appeals court that handles cases for UK overseas territories and Commonwealth countries. Grange announced the referral to Jamaica's parliament on Tuesday. She called it a \"really big deal.\"",
+            "why_it_matters": "The privy council's legal review is a concrete step in Jamaica's push for accountability and payment for historical wrongs. The referral means Jamaica's case will get formal legal consideration at a high level in the UK system.",
+            "quote": {
+              "text": "really big deal",
+              "attribution": "Olivia Grange, Jamaica's culture minister",
+              "source_url": "https://www.theguardian.com/world/2026/sep/23/jamaica-king-charles-to-refer-slavery-reparations-petition-to-privy-council"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "b3ae3428c872c0570d97b9a52cc78cb4",
+          "slug": "us-fish-and-wildlife-service-memo-reinterprets-endangered",
+          "title": "US Fish and Wildlife Service memo reinterprets Endangered Species Act to reduce protections",
+          "summary": "A memo tells staff to ignore when private interests cause deaths of endangered animals.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/tech-policy/2026/09/trumps-sneaky-plan-to-gut-endangered-species-act-draws-from-1995-scalia-dissent"
+            }
+          ],
+          "article": {
+            "background": "The Endangered Species Act protects animals at risk of dying out. For decades, it has blocked projects that might harm these animals, even by accident. Last week, the New York Times reported that the Fish and Wildlife Service (FWS) quietly sent a memo to field offices across the country. The memo asked staff to reread the law in a new way.",
+            "what_happened": "On September 14, FWS Director Brian Nesvik sent the memo to field offices. It said the agency will now only block actions that specifically target an animal. Under the old reading, the agency stopped projects that might hurt or kill endangered animals by accident. A boat that hits a whale by mistake would not violate the law under this new reading. Conservationists say they were blindsided by the change.",
+            "why_it_matters": "The memo makes it easier for companies and developers to harm endangered animals without legal risk. Accidental deaths from projects like construction, fishing, and shipping would no longer face the same legal barriers. For endangered species already on the brink, this shift could tip populations toward extinction.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d06d16a061914646ccd113556652f652",
+          "slug": "americans-about-to-lose-access-to-prescriptions-from-canada",
+          "title": "Americans about to lose access to prescriptions from Canada",
+          "summary": "A new rule will stop Americans from buying medications from Canada.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/health/healthcare/us-customs-prescription-drugs-canada-71978a47"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "c74d29410c02d9f9092859e918b1204b",
+      "title": "US judge blocks deportation of DoorDash driver shot by ICE",
+      "url": "https://www.bbc.co.uk/news/articles/cr6241825757o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "3d37737a37a3795dc11c3f7d48944c46",
+      "title": "Trump threatens to 'annihilate' Iran in UN speech as officials from both countries meet on sidelines",
+      "url": "https://www.bbc.co.uk/news/articles/c52e0ywl9pr7o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "22b9f5025939f090bd09897bab2b7ce3",
+      "title": "Rich nations must cut debt as global shocks push up borrowing costs, IMF chief tells BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cx305ymq4ldqo?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "b6da37b2778f3b72290c84e387ed8d9a",
+      "title": "New method to minimize immunosuppression after organ transplantation",
+      "url": "https://www.nature.com/articles/s43856-026-01906-x",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "ba0c3fdcf2c597115e5e07dadbb95757",
+      "title": "US criticises Australia's proposed algorithm opt-out laws as 'censorship'",
+      "url": "https://www.bbc.com/news/articles/cqj3dgy8x3vro",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "ad6cdee42d12304d00eb0f68643abb1a",
+      "title": "Discord’s age verification era is upon us, despite community backlash",
+      "url": "https://techcrunch.com/2026/09/22/discords-age-verification-era-is-upon-us-despite-community-backlash",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "fc07979ebb69b0dc62afc31af5e188c0",
+      "title": "Data-Only Attacks Are Easier Than You Think",
+      "url": "https://www.usenix.org/publications/loginonline/data-only-attacks-are-easier-you-think",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "3a842f4cc99a3322fd81108aa0272435",
+      "title": "Cities across US oppose Trump FCC plan to preempt local broadband rules",
+      "url": "https://arstechnica.com/tech-policy/2026/09/cities-across-us-oppose-trump-fcc-plan-to-preempt-local-broadband-rules",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "97cbdeb51bcf11a646943c740413fa47",
+      "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "ab5afaf40d656e78a7fcfdcd16f5f636",
+      "title": "U.S. Government seizes 54-pound Martian meteorite sold at auction last year",
+      "url": "https://www.nytimes.com/2026/09/20/arts/who-owns-this-chunk-of-mars-jeanine-pirro-says-america-does-now.html",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "a5741bf538a08f0c36b64cfd2aa22c14",
+      "title": "Trump says US will henceforth call AI 'super intelligence'",
+      "url": "https://www.reuters.com/legal/government/trump-says-us-will-henceforth-call-ai-super-intelligence-2026-09-22",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "ce0bb92e0afff3b39b02a71af1bfe9c2",
+      "title": "The new CC, an AI agent built for families",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 49,
+    "clusters_considered": 47,
+    "stories_run": 6,
+    "sources": 10,
+    "sections_held": 1
+  }
+}
