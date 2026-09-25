@@ -1,0 +1,283 @@
+{
+  "date": "2026-09-25",
+  "edition_number": 110,
+  "edition_type": "normal",
+  "headline_of_the_day": "White House bars CNN and MS NOW from dinner despite judge ruling ban illegal",
+  "headline_cluster_id": "0f6521d8fb4c19ee7ba8438c0e16f101",
+  "headline_rationale": "Executive branch openly defying a federal court order on press access is a direct constitutional crisis affecting how government accountability works.",
+  "key_points": [
+    {
+      "text": "White House denied CNN and MS NOW entry to a state dinner despite a judge ruling that illegal.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Trump and Xi agreed to extend the tariff truce for six more months at a Washington meeting.",
+      "topic": "World"
+    },
+    {
+      "text": "Saudi Arabia shot down six Houthi missiles aimed at oil facilities, pushing oil prices up.",
+      "topic": "World"
+    },
+    {
+      "text": "OpenAI breach of Australia's Medicare system puts millions of health records at risk, government investigating.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Congo lacks enough health workers to stop Ebola's spread in conflict zones, WHO says.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-09-25.mp3",
+    "duration_seconds": 337,
+    "size_bytes": 4043520
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "2591f6cbea0d1a0dec582f44a620f9f1",
+          "slug": "waymo-robotaxi-fleet-concentrates-in-handful-of-cities",
+          "title": "Waymo robotaxi fleet concentrates in handful of cities despite expansion claims",
+          "summary": "Waymo's self-driving cars are still mostly in the few test cities where they started.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/09/24/waymo-is-scaling-fast-heres-what-the-fleet-data-shows"
+            }
+          ],
+          "article": {
+            "background": "Waymo is a robotaxi company, a self-driving taxi service. It spun out of Google. Alphabet, Google's parent company, is Waymo's majority owner. Self-driving taxis have moved from experiments to real transportation options in more cities.",
+            "what_happened": "In September 2024, Waymo operated in three cities: Phoenix, Los Angeles, and San Francisco. Today it offers robotaxi service in 15 U.S. cities. Most of those launches happened in the past year. Ridership has jumped significantly during this time.",
+            "why_it_matters": "Driverless rideshare is becoming a mainstream service rather than a limited test. This means more people in more places can use self-driving taxis instead of human-driven rides or other transport. The expansion shows that the technology works well enough for real, paying customers to use every day.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3372bf5814de242b99f3984631b11394",
+          "slug": "microsoft-drops-copilot-plus-pc-branding-after-two-years",
+          "title": "Microsoft drops Copilot Plus PC branding after two years",
+          "summary": "Microsoft stopped promoting the Copilot Plus PC label after the brand failed to attract buyers.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1000495/microsoft-is-killing-off-the-copilot-plus-pc-brand"
+            }
+          ],
+          "article": {
+            "background": "Microsoft introduced the Copilot Plus PC brand about two and a half years ago. These were computers with enough built-in AI power to run advanced tasks. The company heavily promoted the label to set these machines apart from ordinary PCs.",
+            "what_happened": "Microsoft is no longer using the Copilot Plus PC name for new devices. The new 12-inch Surface Pro and 13-inch Surface Laptop meet the technical requirements for the brand. Microsoft is not calling them by that name anymore.",
+            "why_it_matters": "The shift shows the brand did not catch on with buyers. Microsoft is moving to a different approach to market its AI-powered computers. If you were waiting for clarity on which PCs have AI features, expect new names and labels going forward.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "0f6521d8fb4c19ee7ba8438c0e16f101",
+          "slug": "white-house-bars-reporters-despite-court-order-restoring",
+          "title": "White House bars reporters despite court order restoring access",
+          "summary": "CNN and MS NOW were kept out of a state dinner hours after a judge ruled the ban illegal.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqe8ek7608mlo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/24/judge-orders-trump-restore-white-house-access-cnn-ms-now-politico-media-ban"
+            }
+          ],
+          "article": {
+            "background": "Trump barred CNN, MS NOW, and Politico from the White House last week. He said they write \"fiction or lies.\" The three outlets sued, asking a court to undo the ban. Norm covered their lawsuit on September 22.",
+            "what_happened": "A federal judge ruled overnight that the ban was likely unconstitutional. The judge ordered the administration to restore their access right away. But on Thursday morning, Secret Service agents turned away journalists from all three outlets. Agents also took back their security passes. That evening, CNN was allowed only a photographer and audio technician. Its reporter and producer were excluded. MS NOW was also denied full access to cover a state dinner for China's president.",
+            "why_it_matters": "When the government blocks news outlets from official events, journalists cannot report what is happening or ask questions. A court order told the White House to let these outlets back in. The White House's decision to deny them anyway shows the conflict is not over. If the ban holds despite the judge's ruling, it signals the White House can ignore court orders and choose which outlets cover its work.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f61c6d85e45ba2e72f669ffa744de226",
+          "slug": "trump-administration-asks-supreme-court-to-allow-third",
+          "title": "Trump administration asks Supreme Court to allow third-country deportations",
+          "summary": "The administration is asking the Supreme Court to allow deportations of asylum seekers to other nations.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/trump-administration-appeals-to-supreme-court-as-3rd-country-deportations-are-thrown-into-question"
+            }
+          ],
+          "article": {
+            "background": "The Trump administration has used a policy to send migrants to countries other than their home nations. A lower court recently halted this practice. The policy is now in legal limbo while the case moves forward.",
+            "what_happened": "A federal court blocked the administration's plan to deport people to third countries. The administration asked the Supreme Court to overturn that ruling. The appeal puts the deportation policy on hold while the high court decides whether to hear the case.",
+            "why_it_matters": "This affects how the government can enforce immigration law and where people facing deportation end up. If the Supreme Court sides with the administration, the policy resumes. If it sides with the court that blocked it, the administration must change how it handles these cases.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "29c1c811d5f8529d730bd1909c9deb25",
+          "slug": "trump-and-xi-agree-to-six-month-tariff-truce-extension",
+          "title": "Trump and Xi agree to six-month tariff truce extension",
+          "summary": "Trump and Xi met in Washington and agreed to pause tariffs for six more months.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cm790gjyw1qxo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Xi Jinping leads China. Donald Trump leads the United States. The two countries have argued over trade for years. Tariffs, or taxes on imports, have been a major point of conflict between them.",
+            "what_happened": "Xi and Trump met in Washington. The visit included formal ceremonies. Xi gave Trump Chinese pandas as gifts. The two leaders agreed to extend a tariff truce for six months. This buys time for talks. But no major new deals were announced.",
+            "why_it_matters": "The tariff truce affects what Americans pay for goods from China. A six-month pause means prices may stay more stable. But the core dispute remains unsettled. What happens after six months is still unclear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "949a0ae38e1f4e1350921113c6003199",
+          "slug": "saudi-arabia-intercepts-houthi-missiles-as-oil-hits-one",
+          "title": "Saudi Arabia intercepts Houthi missiles as oil hits one-week high",
+          "summary": "Six ballistic missiles hit Saudi oil facilities on the Red Sea. Saudi forces shot them all down.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/sep/25/saudi-arabia-intercepts-houthi-missiles-oil-prices-climbs"
+            }
+          ],
+          "article": {
+            "background": "Yemen's Houthis are an Iran-backed militant group. They have repeatedly attacked Saudi Arabia with missiles and drones. Norm covered a similar attack on September 20, when the Houthis claimed they targeted Riyadh and Saudi energy sites.",
+            "what_happened": "Saudi Arabia said it intercepted six ballistic missiles fired by the Houthis on September 25. The missiles targeted Taif in western Saudi Arabia and Yanbu on the Red Sea coast. Yanbu is where Saudi oil exports flow as an alternative route. The Houthis claimed their attacks aimed at a sensitive target in Riyadh and Saudi Aramco facilities in Yanbu.",
+            "why_it_matters": "The interceptions pushed oil prices to a one-week high as traders worried about supply disruptions. Repeated successful attacks on Saudi oil could eventually disrupt exports. That would ripple through fuel and shipping costs worldwide.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d5b6e270b4ba24e03cf20c5320e9f799",
+          "slug": "congo-ebola-outbreak-uncontrolled-as-health-workers-flee",
+          "title": "Congo Ebola outbreak uncontrolled as health workers flee region",
+          "summary": "WHO says lack of medical staff in conflict zones prevents containment of active disease spread.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/health/congo-faces-health-worker-shortage-as-ebola-remains-out-of-control-who-says"
+            }
+          ],
+          "article": {
+            "background": "Congo is dealing with history's fastest-growing Ebola outbreak. Ebola is a rare, serious virus that spreads through contact with blood or body fluids. The World Health Organization, or WHO, is the United Nations agency that tracks disease outbreaks worldwide.",
+            "what_happened": "Congo is running short of health workers to staff treatment centers. Cases have surged 73 percent over three weeks in North Kivu, an eastern province. The WHO said Wednesday that the shortage is limiting the country's ability to respond.",
+            "why_it_matters": "Ebola kills most people who catch it. Without enough health workers and treatment centers, the virus spreads faster and more people die. A short supply of staff means fewer patients can get care, making it harder to stop the outbreak.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f47eef8f43089743196f566fb3b462da",
+          "slug": "xi-proposes-military-coordination-to-avoid-us-china-conflict",
+          "title": "Xi proposes military coordination to avoid US-China conflict",
+          "summary": "Chinese president proposed ways to prevent accidents that could escalate tensions over Taiwan and trade.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/24/xi-jinping-trump-china-cooperation-thucydides-trap"
+            }
+          ],
+          "article": {
+            "background": "The US and China are the world's two largest economies. Their relationship shapes global trade, technology, and security. Tensions between them have grown over artificial intelligence, trade restrictions, and China's claims over Taiwan.",
+            "what_happened": "At a White House summit, Xi Jinping laid out terms for a mutual understanding with Donald Trump. He called for extensive cooperation to avoid the \"Thucydides trap,\" a historical pattern where conflict emerges when a rising power challenges a ruling one. Xi proposed ways to prevent accidents that could escalate tensions over Taiwan and trade.",
+            "why_it_matters": "How the US and China manage their relationship affects prices you pay and the technology available to you. It also shapes global stability. Xi is signaling he wants to reduce the risk of military conflict, but whether both sides will follow through remains unclear.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "83b7f8ce13aad5534c0bbe5b5f167fc8",
+      "title": "UK food and drink trade deficit largest since 2000 at £21bn",
+      "url": "https://www.theguardian.com/business/2026/sep/25/uk-food-drink-trade-deficit-homegrown-produce-national-security",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "60e3758fb4a8664da321bb1efa482c97",
+      "title": "AI bots are flooding researchers with requests for money and time",
+      "url": "https://www.nature.com/articles/d41586-026-03005-2",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "192b4954829411dcc9a37f04d5f83ecb",
+      "title": "Falcons trample punchless Packers as Bijan Robinson runs riot in Penix return",
+      "url": "https://www.theguardian.com/sport/2026/sep/24/falcons-packers-bijan-robinson-michael-penix-nfl",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "cfa7df961a5754fade5a2d219e4f7cac",
+      "title": "OpenAI attacked Australia's health system and doubled down. Time to act",
+      "url": "https://www.theguardian.com/commentisfree/2026/sep/25/open-ai-attacked-australias-health-system-and-then-doubled-down-on-its-negligence-the-time-for-wait-and-see-is-over",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "512de7220fb70b165a087bd3cafe5791",
+      "title": "Man shot and wounded during Trump assassination attempt in Butler dies",
+      "url": "https://www.theguardian.com/us-news/2026/sep/24/trump-assassination-attempt-man-dies-injured",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "f2309e04736a307cd662b5faa7896b19",
+      "title": "Son of Israel's ambassador to U.S. critically injured in attack in occupied West Bank",
+      "url": "https://www.pbs.org/newshour/world/son-of-israels-ambassador-to-u-s-critically-injured-in-attack-in-occupied-west-bank",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "77fce7ba5f5c6cf31b6fbe0c1bac5d59",
+      "title": "New Jersey governor calls on lieutenant governor to resign after ethics investigation",
+      "url": "https://www.theguardian.com/us-news/2026/sep/24/new-jersey-lieutenant-governor-ethics-investigation",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "a56e955b50b7c623a863ab32bbbdcb9b",
+      "title": "AI, trade, Iran and Taiwan top agenda at Trump-Xi summit",
+      "url": "https://www.pbs.org/newshour/show/ai-trade-iran-and-taiwan-top-agenda-at-trump-xi-summit",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "d048350b38fb45eaf682181377f2203f",
+      "title": "Meta employees ordered ‘attorney/client privilege’ hats while fighting child safety disclosures",
+      "url": "https://www.theverge.com/tech/1000370/meta-instagram-attorney-client-privilege-hats",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "0f9883ca888912fa91fb0cc39694debc",
+      "title": "US edge opening session of Presidents Cup",
+      "url": "https://www.bbc.co.uk/sport/golf/articles/cm62k9gx9j37o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "71328146b1e4e59f86e758889feb21b5",
+      "title": "Boy, 11, shot in the face and neck in Sydney dies from his injuries",
+      "url": "https://www.theguardian.com/australia-news/2026/sep/24/boy-11-shot-face-and-neck-sydney-dies-from-his-injuries-ntwnfb",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 49,
+    "clusters_considered": 45,
+    "stories_run": 8,
+    "sources": 12,
+    "sections_held": 1
+  }
+}
