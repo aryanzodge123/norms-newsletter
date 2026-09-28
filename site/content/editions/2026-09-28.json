@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-28",
+  "edition_number": 113,
+  "edition_type": "fallback",
+  "notice": "Today's brief is a short one. The usual edition could not be built, so here are the stories that ranked highest, with links to the sources. Full service resumes tomorrow.",
+  "stories": [
+    {
+      "rank": 1,
+      "title": "France’s far-right National Rally surges in Senate elections",
+      "score": 6,
+      "url": "https://www.theguardian.com/world/2026/sep/28/french-election-2026-far-right-senate-elections",
+      "source": "guardian_world"
+    },
+    {
+      "rank": 2,
+      "title": "Judge orders release of records on Nazi war criminals who settled in Canada",
+      "score": 6,
+      "url": "https://ottawacitizen.com/public-service/defence-watch/judge-orders-release-of-records-on-nazi-war-criminals-who-settled-in-canada",
+      "source": "hackernews"
+    },
+    {
+      "rank": 3,
+      "title": "Research finds 485 chemicals in US pesticide products linked to breast cancer",
+      "score": 6,
+      "url": "https://www.theguardian.com/us-news/2026/sep/26/breast-cancer-us-pesticide-products",
+      "source": "hackernews"
+    },
+    {
+      "rank": 4,
+      "title": "Avanti West Coast services to be nationalised from March",
+      "score": 6,
+      "url": "https://www.bbc.co.uk/news/articles/c60qxk7d2539o?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_business"
+    },
+    {
+      "rank": 5,
+      "title": "As A.I. makes law firms more efficient, clients ask: 'Where's my discount?'",
+      "score": 5,
+      "url": "https://www.nytimes.com/2026/09/26/business/dealbook/ai-law-discount-billable-hour.html",
+      "source": "hackernews"
+    },
+    {
+      "rank": 6,
+      "title": "Washington Taxed Its Millionaires. Now the Rich Want It Repealed",
+      "score": 5,
+      "url": "https://www.nytimes.com/2026/09/27/us/politics/washington-state-millionaires-tax.html",
+      "source": "hackernews"
+    },
+    {
+      "rank": 7,
+      "title": "Russia hits Ukraine's largest mobile provider, strikes data centres",
+      "score": 5,
+      "url": "https://www.reuters.com/business/aerospace-defense/russia-hits-ukraines-largest-mobile-provider-strikes-data-centres-2026-09-27",
+      "source": "hackernews"
+    },
+    {
+      "rank": 8,
+      "title": "The Great Crime Decline Is Happening All Across the Country",
+      "score": 5,
+      "url": "https://www.theatlantic.com/ideas/2026/01/great-crime-decline/685695",
+      "source": "hackernews"
+    },
+    {
+      "rank": 9,
+      "title": "Truecaller takes its scam intelligence to the open web as it looks beyond caller ID",
+      "score": 4,
+      "url": "https://techcrunch.com/2026/09/27/truecaller-takes-its-scam-intelligence-to-the-open-web-as-it-looks-beyond-caller-id",
+      "source": "techcrunch"
+    },
+    {
+      "rank": 10,
+      "title": "When Back-to-School Shopping Includes Bulletproof Backpacks",
+      "score": 4,
+      "url": "https://www.nytimes.com/interactive/2026/09/21/magazine/shooting-fears-school-equipment.html",
+      "source": "hackernews"
+    }
+  ]
+}
