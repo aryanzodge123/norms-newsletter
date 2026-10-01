@@ -1,0 +1,219 @@
+{
+  "date": "2026-10-01",
+  "edition_number": 116,
+  "edition_type": "normal",
+  "headline_of_the_day": "Tennessee woman survives two lethal injections, raising questions about execution methods",
+  "headline_cluster_id": "591c50c9463d3450a922eadd7a0e23d9",
+  "headline_rationale": "An unprecedented execution failure creates immediate constitutional and legal questions about cruel and unusual punishment that affect how states can carry out capital punishment.",
+  "key_points": [
+    {
+      "text": "A Tennessee woman on death row survived two lethal injection doses and went to a hospital, with her lawyers calling it cruel punishment.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Swiss glaciers lost over 5% of their ice this past year, threatening water for millions as summer heat speeds up melting.",
+      "topic": "Science"
+    },
+    {
+      "text": "The federal government is requiring cities to send license plate reader data to White House surveillance centers through an anti-drug grant.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "California banned child marriage, which is still legal in 32 US states, starting January 1.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The 10-year Treasury yield climbed above 5.3%, a level not seen in 24 years, raising mortgage costs.",
+      "topic": "Finance"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-01.mp3",
+    "duration_seconds": 360,
+    "size_bytes": 4326048
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "591c50c9463d3450a922eadd7a0e23d9",
+          "slug": "tennessee-execution-fails-after-woman-survives-two-lethal",
+          "title": "Tennessee execution fails after woman survives two lethal injections",
+          "summary": "Christa Pike survived two doses of lethal injection drug and was taken to hospital, raising constitutional questions.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/sep/30/tennessee-execution-halted-christa-pike"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcnews.com/news/us-news/ahead-rare-execution-lone-woman-tennessee-death-row-says-peace-rcna600279"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cq8r6rjdvlx6o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Christa Pike is 50 years old and has been on Tennessee's death row since 1996. She was convicted of murdering a classmate in 1995 when she was 18. Norm covered Pike's case on Tuesday, when her clemency request was denied. If executed, she would have been the first woman the state put to death in 200 years.",
+            "what_happened": "On Wednesday, Tennessee attempted to execute Pike using lethal injection. Officials gave her two doses of pentobarbital, a lethal drug. Pike's heart kept beating and she remained conscious. Her lawyers filed an emergency motion to stop the execution while it was happening. Officials then took Pike to a hospital instead of completing the execution.",
+            "why_it_matters": "The failed execution raises a legal question about cruel and unusual punishment. Pike's attorneys argue that the prolonged process caused unnecessary suffering. The state says its protocol does not allow for extra steps beyond what happened. This case may shape how courts view execution methods and when a state must stop trying.",
+            "quote": {
+              "text": "This has turned into agony and a violation of Pike's right to be executed free of cruel and unusual punishment.",
+              "attribution": "Pike's attorneys, in a statement to local news",
+              "source_url": "https://www.theguardian.com/us-news/2026/sep/30/tennessee-execution-halted-christa-pike"
+            }
+          }
+        },
+        {
+          "cluster_id": "3a6f5c691edc15d5aabb389019e2b844",
+          "slug": "california-bans-child-marriage-ending-practice-still-legal",
+          "title": "California bans child marriage, ending practice still legal in 32 states",
+          "summary": "New law takes effect January 1, requiring people to be 18 to marry in California.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6rm9mnn0w3eo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Child marriage is still legal in 32 US states. California allowed it under certain conditions until now. Governor Gavin Newsom signed a bill to ban the practice. The law takes effect on January 1. Anyone who wants to marry in California must be at least 18 years old.",
+            "what_happened": "Newsom signed the ban into law alongside Courtney Stodden. Stodden's parents let her marry a 50-year-old Hollywood actor when she was 16. She has been pushing to end child marriage and called the new law a victory.",
+            "why_it_matters": "For young Californians, marriage is no longer an option before 18, even with parental approval. This protects minors from being pushed into marriages they may not want. California joins a small group of states with this rule.",
+            "quote": {
+              "text": "long overdue measure to protect young Californians and minors",
+              "attribution": "Governor Gavin Newsom",
+              "source_url": "https://www.bbc.co.uk/news/articles/c6rm9mnn0w3eo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "80e261aba01d1751a759fe7d2fab7617",
+          "slug": "pilot-stabs-co-pilot-on-israel-bound-flight-plane-diverts",
+          "title": "Pilot stabs co-pilot on Israel-bound flight, plane diverts to Saudi Arabia",
+          "summary": "A flight from Dubai dropped 17,000 feet in two minutes before landing safely in Saudi Arabia.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cwm2r2v42vdeo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Flight FZ1073 was flying to Israel when a pilot apparently stabbed his co-pilot. The plane dropped 17,000 feet in less than two minutes. A passenger on the flight told the BBC what happened.",
+            "what_happened": "Almog Itali was a passenger during the incident. He described the plunge as feeling like a rollercoaster. The plane was diverted to Saudi Arabia. Several passengers took action during the emergency. Two other pilots who were at the rear of the plane came forward to help land it.",
+            "why_it_matters": "Most flights have multiple pilots and crew trained for emergencies. This situation shows why that backup matters. Passengers and crew working together prevented a crash and saved lives on board.",
+            "quote": {
+              "text": "rollercoaster",
+              "attribution": "Almog Itali, passenger on Flight FZ1073",
+              "source_url": "https://www.bbc.co.uk/news/videos/cwm2r2v42vdeo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "04dde046720958ed29722988edbe3d5a",
+          "slug": "england-releases-2-000-prisoners-early-to-ease-overcrowding",
+          "title": "England releases 2,000 prisoners early to ease overcrowding, many without housing",
+          "summary": "Probation officers warn many freed inmates have no home and will be hard to monitor.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/oct/01/prisoners-early-release-england-wales-probation-officers"
+            }
+          ],
+          "article": {
+            "background": "England and Wales prisons are overcrowded. The government is releasing some inmates early to ease the pressure. Prisoners are supposed to get housing before they leave jail. This helps keep them from reoffending. But probation officers say they cannot always find places.",
+            "what_happened": "About 2,000 prisoners will be freed starting Thursday. The group includes domestic abusers and violent offenders. Another 3,000 will be released in stages over the next year. Prime Minister Andy Burnham cut the plan from 6,000 releases. Probation officers warn many inmates will have nowhere to live. Some towns and cities lack enough hostel beds.",
+            "why_it_matters": "Without stable housing, freed prisoners are more likely to commit crimes again. This puts communities at risk. It also strains the probation system that is supposed to monitor these people after release. For now, many inmates may end up homeless.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "039b0176a06c706bb49bb572368c8b72",
+          "slug": "cities-forced-to-share-license-plate-data-with-federal",
+          "title": "Cities forced to share license plate data with federal surveillance program",
+          "summary": "The Trump administration is using an anti-drug grant to send license plate reader data to White House surveillance centers.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.404media.co/how-cities-are-forced-to-funnel-license-plate-data-to-a-massive-federal-surveillance-program-hidta"
+            }
+          ],
+          "article": {
+            "background": "Cities use automated license plate readers (ALPRs) to scan and record vehicle license plates. These cameras capture data about where cars go and when. The Trump administration is now requiring cities to send this data to federal surveillance centers. It is doing this through a grant program called HIDTA. HIDTA was created in the 1980s to fight drug trafficking. The administration is using this old program to gain access to local police data.",
+            "what_happened": "The administration is requiring cities to send their ALPR data to federal servers under White House control. Once the data reaches these servers, other federal, state, and local law enforcement agencies can access it. The administration obtained this data from local police cameras made by companies like Flock and Axon. Public records and court documents show how this system works. Cities are being forced to participate in order to keep their HIDTA grants.",
+            "why_it_matters": "This means your vehicle's movements are now tracked and stored in federal databases. Data that was once only held by your local police is now accessible to many agencies across the country. The system operates with less oversight than normal legal channels would require. You have little say in how your location data is used or who can see it.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "453fb1645d33087a786a73edf362c5c4",
+          "slug": "california-legalizes-plug-in-solar-panels-for-balconies-and",
+          "title": "California legalizes plug-in solar panels for balconies and patios",
+          "summary": "New law removes barriers to solar panels for renters and apartment dwellers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.kqed.org/science/2002120/california-officially-legalizes-balcony-solar-opening-the-market-to-the-new-technology"
+            }
+          ],
+          "article": {
+            "background": "Rooftop solar is expensive and needs to stay put. Balcony solar is different. It is smaller, portable, and costs less. The kits have just a few panels, an inverter that turns solar energy into home power, and cables. You plug them into a standard wall outlet.",
+            "what_happened": "Gov. Gavin Newsom signed a bill Wednesday. It legalizes balcony solar in California. The technology was not legal before. Now people can buy and use these plug-in solar kits at home.",
+            "why_it_matters": "Balcony solar costs far less than rooftop systems. It does not need installation or permission from a landlord. This opens solar energy to renters and people who cannot afford traditional rooftop panels. If balcony solar catches on here like it has in Germany, more Californians could cut their electricity bills.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "43fb98d69642d84a55bee16afd412655",
+      "title": "10-year Treasury yield climbs above 5.3% to a level not seen in 24 years",
+      "url": "https://www.wsj.com/finance/investing/surging-yields-bring-the-bond-market-back-to-the-turn-of-the-century-2b74773f",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "206e210007a6ed3f6288dc9599d7bf64",
+      "title": "Swiss glaciers suffer 'disastrous' year of ice loss, threatening water supplies",
+      "url": "https://www.bbc.co.uk/news/articles/c6n9w0ypjwl9o?at_medium=RSS&at_campaign=rss",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "5fb0888e6c1e85f72c730067fcf2c043",
+      "title": "Citrix NetScaler Post-Exploitation Payload Creates Superuser, Maps Web Shell to CSS-Like URLs",
+      "url": "https://thehackernews.com/2026/10/citrix-netscaler-post-exploitation.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "019e20a71329ba56e3d5f61424bb516e",
+      "title": "Gavin Newsom signs laws to protect California workers from AI threat",
+      "url": "https://www.theguardian.com/us-news/2026/sep/30/gavin-newsom-california-ai-threat",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 53,
+    "clusters_considered": 48,
+    "stories_run": 6,
+    "sources": 10,
+    "sections_held": 1
+  }
+}
