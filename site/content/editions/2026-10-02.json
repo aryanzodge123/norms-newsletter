@@ -1,0 +1,353 @@
+{
+  "date": "2026-10-02",
+  "edition_number": 117,
+  "edition_type": "normal",
+  "headline_of_the_day": "Pentagon says 2 million service members' records stolen in network breach",
+  "headline_cluster_id": "a2f1f2b939549e226fa059501c320cf9",
+  "headline_rationale": "Second major federal breach in a month exposing Social Security numbers and personnel files of millions, signaling systemic vulnerability in government security.",
+  "key_points": [
+    {
+      "text": "Hackers stole personal records of 2 million military members from the Pentagon in a months-long attack.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Tennessee paused executions for a year after an inmate was still alive 40 minutes after lethal injection.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "A fifth of Swiss Alpine ice melted in five years, showing climate change is accelerating.",
+      "topic": "Science"
+    },
+    {
+      "text": "A judge blocked Utah's law to ban VPN tools, saying the state asked for something impossible.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Women's tennis tournaments will pay the same prize money as men's starting in 2027.",
+      "topic": "Sports"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-02.mp3",
+    "duration_seconds": 475,
+    "size_bytes": 5699808
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "023f11b85fb5674212b999dbc294a374",
+          "slug": "nike-shares-drop-as-company-posts-disappointing-sales-and",
+          "title": "Nike shares drop as company posts disappointing sales and announces layoffs",
+          "summary": "Nike stock fell as the company cut its sales forecast and announced a restructuring plan.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/10/01/nike-nke-q1-2027-earnings.html"
+            }
+          ],
+          "article": {
+            "background": "Nike is a global sportswear company that makes and sells shoes, apparel, and athletic gear. On Thursday, Nike reported its fiscal first quarter results to investors and shared its plans for the year ahead.",
+            "what_happened": "Nike beat analyst expectations on profit but missed on revenue. The company earned 48 cents per share versus 43 cents expected. Revenue was $11.21 billion, below the $11.32 billion analysts projected. Nike announced a restructuring plan that will cut jobs starting next year. The company also warned that fiscal 2027 revenue will decline by a high-single digit percentage. Nike expects adjusted earnings per share to range from $1.15 to $1.35 for the full year. Stock fell roughly 3% in extended trading.",
+            "why_it_matters": "Nike's warning that revenue will drop signals the company sees slower sales ahead. That could mean fewer new products in stores or higher prices to offset lower sales volume. For shoppers, slower profit growth sometimes leads brands to cut their product lines or raise prices.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "57e6c6b9dcbf23fb6351c92d36d43d14",
+          "slug": "lyft-pays-272-5-million-to-settle-driver-classification",
+          "title": "Lyft pays $272.5 million to settle driver classification lawsuit",
+          "summary": "Lyft will pay to settle claims it wrongly labeled drivers as independent contractors instead of employees.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/01/lyft-is-paying-272-5m-to-settle-lawsuit-over-how-it-classified-drivers"
+            }
+          ],
+          "article": {
+            "background": "Lyft is a ride-hailing company that lets people request rides through an app. In California, the company classified its drivers as independent contractors rather than employees. The state law at the time required drivers to be employees if they worked regularly for the company.",
+            "what_happened": "Lyft agreed to pay $272.5 million to settle a lawsuit filed by California's Labor Commissioner's Office in August 2020. The lawsuit said Lyft broke state law by misclassifying drivers as independent contractors instead of employees. Lyft said the settlement will help it avoid a long legal fight.",
+            "why_it_matters": "California's rule that gig companies treat drivers as employees has real legal consequences. If you drive for Lyft in California, this settlement reflects your status under state law. The ruling affects how gig companies can operate and what they owe their drivers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9e3b183b797680d1e0823c90acf6dbb5",
+          "slug": "boeing-engineers-approve-new-contract-with-10-percent",
+          "title": "Boeing engineers approve new contract with 10 percent raises, avoiding strike",
+          "summary": "Boeing engineers agreed to a four-year deal with instant pay raises as production ramps up.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/10/01/boeing-contract-engineers-technical-workers.html"
+            }
+          ],
+          "article": {
+            "background": "Boeing makes commercial aircraft. About 13,000 engineers and 4,000 technical workers there are represented by the Society of Professional Engineering Employees in Aerospace, a union. The workers had been negotiating a new contract with the company.",
+            "what_happened": "The workers voted to approve a four-year contract. It includes a 10% raise right away. Then they get 4% annual raises each year for the next four years. Boeing had raised its offer in mid-September after workers rejected an earlier deal. The vote avoids a strike that could have disrupted the company's plans.",
+            "why_it_matters": "Higher pay for Boeing's workers means higher labor costs for the company. This could affect what Boeing charges for planes or its profit margins. But the deal lets Boeing move forward with its plans to win approval for new aircraft and boost production without a strike halting work.",
+            "quote": {
+              "text": "We secured many victories that some thought were completely out of reach when this negotiation cycle started.",
+              "attribution": "the Society of Professional Engineering Employees in Aerospace",
+              "source_url": "https://www.cnbc.com/2026/10/01/boeing-contract-engineers-technical-workers.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "543b914ad88c4732fcd2cac7ae9747f5",
+          "slug": "super-wealthy-use-tax-loss-harvesting-loophole-to-slash",
+          "title": "Super-wealthy use tax-loss harvesting loophole to slash taxes to zero",
+          "summary": "Rich people use a legal tactic to avoid taxes on investment profits.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_economy",
+              "url": "https://www.npr.org/2026/10/01/nx-s1-5983748/some-of-the-super-wealthy-are-plowing-money-into-a-tax-loophole-to-slash-taxes-to-0"
+            }
+          ],
+          "article": {
+            "background": "Tax-loss harvesting is a legal strategy. Wealthy investors sell investments at a loss. They use these losses to offset gains from other investments. This can cut their tax bills sharply, even to zero, for people with millions or billions in wealth.",
+            "what_happened": "Some of the super wealthy are using tax-loss harvesting to slash their taxes to nothing. The strategy involves selling losing investments. The losses offset gains from winning investments. This can eliminate tax liability entirely, even for people with huge overall wealth.",
+            "why_it_matters": "Most workers pay taxes on their paychecks through withholding. The wealthy can use this legal loophole to owe little or nothing on investment income. This means people earning similar amounts can pay vastly different tax rates based on how they make their money.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "da4e35c57f04c40454c9b0b1a516af65",
+          "slug": "average-long-term-us-mortgage-hits-highest-level-in-nearly",
+          "title": "Average long-term US mortgage hits highest level in nearly three years",
+          "summary": "Higher borrowing costs are making homes harder for most people to buy.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_economy",
+              "url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years"
+            }
+          ],
+          "article": {
+            "background": "A long-term mortgage is a 30-year loan people take out to buy a home. The rate is the interest percentage you pay on top of the loan amount each year. Mortgage rates change weekly based on broader economic conditions, especially inflation and Federal Reserve decisions.",
+            "what_happened": "The average 30-year mortgage rate jumped to 7.28% this week, up from 7.03% the previous week. This is the highest level in nearly three years, according to Freddie Mac, a mortgage buyer that tracks rates. The increase of 0.25 percentage points was the biggest single-week jump in four years.",
+            "why_it_matters": "Higher mortgage rates make buying a home more expensive. A higher rate means you pay more in interest over the life of the loan. On a $300,000 home loan, a rate increase of this size adds hundreds of dollars to what you owe each month.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "d3dd8fc63416bf08c482df2bf9ee0706",
+          "slug": "tennessee-suspends-executions-after-failed-lethal-injection",
+          "title": "Tennessee suspends executions after failed lethal injection leaves inmate critical",
+          "summary": "Tennessee paused executions after an inmate was still alive and snoring 40 minutes after lethal injection.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/01/christa-pike-tennessee-governor-executions-year-pause"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmn4540d4z87o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/what-we-know-about-tennessees-botched-execution-of-christa-pike"
+            }
+          ],
+          "article": {
+            "background": "Christa Pike was sentenced to death in 1996 for the 1995 murder of her classmate Colleen Slemmer. Pike was 18 at the time. On Wednesday night, Tennessee officials attempted to execute her by lethal injection in Nashville.",
+            "what_happened": "Pike received two doses of pentobarbital, the lethal drug used in executions. Forty minutes after the injection, she was still alive and snoring. Her lawyers say she is now in critical condition at a hospital. Governor Bill Lee called the outcome \"deeply disturbing\" and suspended all executions in Tennessee through the end of the year. He also ordered an independent review of what went wrong.",
+            "why_it_matters": "The case raises questions about whether the failed execution violated Pike's constitutional right against cruel and unusual punishment. Her lawyers are asking the governor to reduce her sentence. The review will likely influence how Tennessee carries out executions in the future.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1ecc16f261174335ee5fd8625bea2057",
+          "slug": "supreme-court-to-review-mandatory-detention-policy-for",
+          "title": "Supreme Court to review mandatory detention policy for immigrants challenging deportation",
+          "summary": "The Supreme Court will decide if immigrants have a right to a hearing before removal.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/live/2026/oct/01/tennessee-governor-halts-executions-christa-pike-lethal-injection-donald-trump-hegseth-musk-us-politics-latest-news-updates"
+            }
+          ],
+          "article": {
+            "background": "The Supreme Court agreed to review a Trump administration policy on how long immigrants can be held in custody. The policy denies bond hearings to some immigrants. Bond hearings let a judge decide if someone should stay free while their case plays out. This case will decide if immigrants have a right to these hearings.",
+            "what_happened": "The Supreme Court said it will review whether the Trump administration can detain immigrants without a hearing. The hearing would determine if they should be released while challenging their deportation. The policy holds immigrants in jail instead of letting a judge decide their release. This marks a shift toward mandatory detention for people fighting deportation orders.",
+            "why_it_matters": "This case could change who gets detained and for how long while their case is pending. If the Supreme Court backs the policy, immigrants may stay jailed without a hearing. If it blocks the policy, immigrants could get a judge's decision on release. This affects how the immigration system treats people challenging deportation.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "db7117c66cea55f287c46ec7faa185e7",
+          "slug": "federal-court-blocks-utah-law-attempting-to-outlaw-vpn",
+          "title": "Federal court blocks Utah law attempting to outlaw VPN privacy protections",
+          "summary": "A judge blocked Utah's law after saying it asked VPN providers to do the impossible.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.eff.org/deeplinks/2026/10/court-agrees-eff-utahs-vpn-law-demands-technical-impossibility"
+            }
+          ],
+          "article": {
+            "background": "A VPN, or virtual private network, is a tool that hides your internet activity from your internet provider and the websites you visit. Utah passed a law called SB 73 that would have required platforms to detect and block VPNs. The law was designed to verify users' ages online.",
+            "what_happened": "A federal judge issued a preliminary injunction blocking Utah's SB 73. The court agreed that the law demands something technically impossible. It blocked the state's attempt to outlaw the privacy protections that VPNs provide.",
+            "why_it_matters": "This ruling protects your ability to use privacy tools online. VPNs help keep your personal data safe from hackers and companies that track your activity. The decision also shows that courts recognize when laws ask for something the internet cannot actually do.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bf59b8a46e768c04f56defd1a33463a9",
+          "slug": "uk-airlines-to-be-banned-from-charging-parents-to-sit-with",
+          "title": "UK airlines to be banned from charging parents to sit with children",
+          "summary": "New rule will require airlines to seat passengers under 14 with parents free of charge.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/oct/01/uk-airlines-to-be-banned-from-charging-parents-to-sit-with-children"
+            }
+          ],
+          "article": {
+            "background": "UK airlines currently charge extra fees for parents to pick their seats next to their children on flights. The government has announced plans to ban this practice. The rule would apply to children under 14 flying with parents or another adult responsible for them.",
+            "what_happened": "Ministers plan to require airlines to seat children under 14 next to their parents or accompanying adults for free. The government also plans to let passengers fix their name on a booking without paying a fee. Officials aim to introduce these rules before next summer's peak travel season.",
+            "why_it_matters": "Families will save money on flights. Right now, seat selection fees add up quickly when you need to sit with your kids. The new rules cut one of these small charges that make holidays more expensive.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c7272ed49c8575c8a239a5a0f322bfa0",
+          "slug": "states-and-cities-sue-epa-over-repeal-of-power-plant",
+          "title": "States and cities sue EPA over repeal of power plant emissions rules",
+          "summary": "Twenty-one states challenge rollback of greenhouse gas limits on coal and natural gas plants.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/oct/01/us-states-cities-trump-epa-climate-emissions"
+            }
+          ],
+          "article": {
+            "background": "The Environmental Protection Agency had rules that limited greenhouse gas emissions from power plants burning coal or natural gas. These rules were a major climate protection. The Trump administration recently repealed them.",
+            "what_happened": "On Thursday, twenty-one states sued the administration over this repeal. New York led the group. The coalition includes Pennsylvania's governor, the District of Columbia, New York City, Chicago, and Denver. All are Democratic-led. They argue the repeal will set the nation back decades.",
+            "why_it_matters": "Power plants that burn coal and gas produce greenhouse gases that warm the planet. The rules that limited these emissions are gone. The lawsuit aims to restore them, but until it succeeds, these plants face fewer limits on pollution.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "a2f1f2b939549e226fa059501c320cf9",
+          "slug": "pentagon-says-2-million-service-members-records-stolen-in",
+          "title": "Pentagon says 2 million service members' records stolen in network breach",
+          "summary": "Hackers stole Social Security numbers and other personal data from 2 million military members over months.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/10/hacks-of-2-federal-agencies-in-a-month-have-spilled-a-bonanza-of-sensitive-data"
+            }
+          ],
+          "article": {
+            "background": "The Pentagon keeps personnel records for millions of current and former military members. These files hold names, addresses, Social Security numbers, and other sensitive data. Last October, hackers broke into a Pentagon network. They stole records for more than 2 million people over the following months.",
+            "what_happened": "The Pentagon is now notifying military members that their stolen records included Social Security numbers, names, addresses, sex, race, and job specialty. This breach is the second one in recent months to expose sensitive government data. Foreign intelligence agencies could use job specialty information to identify military personnel for spying or recruitment.",
+            "why_it_matters": "If your Social Security number and other personal data are now in the hands of criminals or foreign governments, your identity could be at risk. Hackers can use this information to commit fraud or target you for scams. The fact that they also got job specialty data means military members in certain roles could face extra risk.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "29a60157916105ddc4717dbc477b91ff",
+          "slug": "government-agencies-scramble-to-assess-citrix-netscaler",
+          "title": "Government agencies scramble to assess Citrix NetScaler attack campaign",
+          "summary": "Spies attacked critical infrastructure using flaws in Citrix Netscaler that had existed for over a month.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cybersecuritydive.com/news/exploitation-citrix-netscaler-what-we-know/831780"
+            }
+          ],
+          "article": {
+            "background": "Citrix NetScaler is a network device that manages web traffic. It controls who can access internal systems. Government agencies and critical infrastructure providers rely on it heavily. In October, attackers exploited a NetScaler flaw to steal data and place web shells, which give attackers remote control.",
+            "what_happened": "On Sunday, Citrix disclosed eight security flaws in NetScaler ADC. Attackers have been exploiting at least one of these flaws for more than a month. Government agencies and critical infrastructure providers were targeted. Security teams received urgent warnings over the weekend to disable their systems immediately. Researchers now say dozens of organizations across multiple industries have been hit.",
+            "why_it_matters": "If your organization uses NetScaler, this matters because these flaws are actively being exploited right now. Your IT team needs to patch or disable these systems immediately. For individuals, the risk is that attackers may steal sensitive data from government agencies or infrastructure providers you depend on.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "7bc13a867a9e5cb400a3f473a50c071b",
+      "title": "A fifth of Swiss Alpine ice has vanished in five years",
+      "url": "https://www.swissinfo.ch/eng/glaciers-permafrost/a-fifth-of-swiss-alpine-ice-has-vanished-in-five-years/92132132",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "55100ddb161728849e7aaf4696928a48",
+      "title": "Women’s tennis tour announces prize money parity with men’s events",
+      "url": "https://www.theguardian.com/sport/2026/oct/01/womens-tennis-tour-wta-announces-prize-money-parity-with-mens-events",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "c651f4dfbb3fc56dc7ffc6196a0a28ab",
+      "title": "Fires break out at French schools as students protest nationwide",
+      "url": "https://www.bbc.co.uk/news/articles/c6d080d1e3l4o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "00090b92a2f3e74bf05a27f4189165e3",
+      "title": "Judge dismisses Chegg and Penske antitrust lawsuits targeting Google AI search",
+      "url": "https://arstechnica.com/google/2026/10/antitrust-lawsuits-targeting-google-ai-search-dismissed-by-federal-judge",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "169146d922978d34738f018688b38e6b",
+      "title": "Automatic Transmission – a data-privacy study of connected vehicles",
+      "url": "https://automatictransmission.khoury.northeastern.edu/index.html",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "3ad1a29a017bf35b912dc06d2f7f87e4",
+      "title": "Renee Good: Family of US woman killed by ICE agent sues Trump officials",
+      "url": "https://www.bbc.co.uk/news/articles/cwly7y5gvxlmo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "bbfd4ff758c25e4c36a14d1f84318154",
+      "title": "California issues investigative subpoena to OpenAI over rogue agents’ hacking",
+      "url": "https://www.theguardian.com/us-news/2026/oct/01/california-opens-investigation-openai-hack",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 118,
+    "clusters_considered": 109,
+    "stories_run": 12,
+    "sources": 17,
+    "sections_held": 0
+  }
+}
