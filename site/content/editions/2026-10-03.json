@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-03",
+  "edition_number": 118,
+  "edition_type": "normal",
+  "headline_of_the_day": "Scientists detect radio signals from an exoplanet for the first time",
+  "headline_cluster_id": "1e154f73a26f4a5029ba1b0c6a1d1e1f",
+  "headline_rationale": "First-ever detection of radio emissions from a planet outside our solar system, opening a new method for studying distant planetary atmospheres and magnetic fields.",
+  "key_points": [
+    {
+      "text": "Scientists heard radio signals from a planet outside our solar system for the first time, a new way to study them.",
+      "topic": "Science"
+    },
+    {
+      "text": "The G7 will release 100 million barrels of oil and diesel to help lower energy prices and ease supply concerns.",
+      "topic": "World"
+    },
+    {
+      "text": "FDA inspectors found cyclospora, a parasite, at a Mexican farm tied to the largest food poisoning outbreak in U.S. history.",
+      "topic": "Science"
+    },
+    {
+      "text": "An NTSB preliminary report details a Prime Air cargo plane that overran a runway, injuring no one but raising safety questions.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-03.mp3",
+    "duration_seconds": 252,
+    "size_bytes": 3027168
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "1fbbb690b1c196408d96c2a93328086e",
+          "slug": "g7-to-release-100-million-barrels-of-oil-and-diesel",
+          "title": "G7 to release 100 million barrels of oil and diesel",
+          "summary": "The group will release a large amount of diesel within 20 days to help lower prices and ease supply concerns.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ck87zg8jnwngo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The G7 is a group of seven major economies: the US, the UK, France, Germany, Italy, Japan, and Canada. Oil and diesel prices have risen sharply recently. US President Donald Trump had threatened to ban diesel exports, which prompted the group to act.",
+            "what_happened": "The G7 announced it will release 100 million barrels of oil and diesel over four months. A substantial diesel release will happen within 20 days. The group also said it will release more diesel as needed. G7 members agreed not to restrict energy exports to each other.",
+            "why_it_matters": "Higher fuel prices affect what you pay at the gas pump and for goods shipped by truck. By releasing oil and diesel reserves, the G7 hopes to bring prices down. The ban on export limits between members means fuel can flow more freely where it is needed most.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c0a18747208c2cadc19a574e4ca2c699",
+          "slug": "ntsb-releases-preliminary-report-on-prime-air-runway-overrun",
+          "title": "NTSB releases preliminary report on Prime Air runway overrun",
+          "summary": "A cargo plane overran a runway. The National Transportation Safety Board is investigating.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.ntsb.gov/investigations/Documents/DCA26MA352%20Prelim.pdf"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "1e154f73a26f4a5029ba1b0c6a1d1e1f",
+          "slug": "scientists-detect-radio-signals-from-exoplanet-for-first",
+          "title": "Scientists detect radio signals from exoplanet for first time",
+          "summary": "Astronomers picked up radio waves from a planet outside our solar system, a new way to study distant worlds.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnn.com/2026/10/02/science/radio-signal-detection-exoplanet-beta-pictoris-b"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "f2b7dc7d8883b9b9fce74658a0adb9f2",
+          "slug": "fda-finds-cyclospora-parasite-at-farm-linked-to-largest-us",
+          "title": "FDA finds cyclospora parasite at farm linked to largest US outbreak",
+          "summary": "Inspectors found the parasite cyclospora in a wastewater tank and ditch used to grow lettuce at a Mexican farm.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/02/cyclospora-mexico-farm-lettuce"
+            }
+          ],
+          "article": {
+            "background": "Cyclospora is a parasite that causes stomach illness. Earlier this year, a major outbreak sickened nearly 13,000 people across 21 states. The CDC linked the outbreak to lettuce from a Mexican farm. It caused 570 hospital stays and two deaths.",
+            "what_happened": "FDA inspectors found cyclospora at the Mexican farm blamed for the outbreak. They detected it in two places: a wastewater tank and a drainage ditch used to grow lettuce. The FDA said it is unclear how the lettuce got infected. The announcement came less than a month after the CDC declared the outbreak over.",
+            "why_it_matters": "This is the largest cyclospora outbreak on record in the US. Finding the parasite at the source helps regulators understand how it spreads through food. It may lead to new safety rules for farms that grow and wash leafy greens.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1ece2a83d6a7568e62edd1eecb8cf5ec",
+      "title": "‘Elon is my prophet’: how Musk’s Doge team took a wrecking ball to Washington",
+      "url": "https://www.theguardian.com/us-news/2026/oct/03/elon-is-my-prophet-how-musks-doge-team-took-a-wrecking-ball-to-washington",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "87428a7ab387a8802239c1f609473e73",
+      "title": "Sanders introduces bill to ban the federal government from using Flock",
+      "url": "https://techcrunch.com/2026/10/02/sanders-introduces-bill-to-ban-the-federal-government-from-using-flock",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "0a69aa00e645d5ad87132545a5fec486",
+      "title": "AI bots are flooding researchers with requests for money and time",
+      "url": "https://www.nature.com/articles/d41586-026-03005-2",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "7b19f7154ee601fa6c496f00a704694d",
+      "title": "Inside the U.S.-China battle to lead the AI revolution",
+      "url": "https://www.pbs.org/newshour/video/compass-points/2026/10/inside-the-u-s-china-battle-to-lead-the-ai-revolution",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "eb9f666eaf1fbb71cdc1fefa3c24eab1",
+      "title": "Canada, EU plan to link next-gen payment systems, easing transactions",
+      "url": "https://www.theglobeandmail.com/politics/article-canada-eu-link-payment-systems-joint-statement-says",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "aa2983d68578ee73e50d9d6e5f98b1a2",
+      "title": "Brazil's big political rematch: What to know",
+      "url": "https://www.npr.org/2026/10/02/nx-s1-5989727/brazil-election-lula-bolsonaro-flavio-democracy",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3d0e84939798a6f2d85a8466fa06efc7",
+      "title": "Federal judge halts Big Bend border wall construction in blow to Trump agenda",
+      "url": "https://www.theguardian.com/us-news/2026/oct/02/big-bend-national-park-border-wall-halt",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "ec6e25b306471c68be1fc288abb2d7fa",
+      "title": "FBI gives employees a classified 'Patel Report' about times the agency 'fell short'",
+      "url": "https://www.pbs.org/newshour/politics/fbi-gives-employees-a-classified-patel-report-about-times-the-agency-fell-short",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 51,
+    "clusters_considered": 49,
+    "stories_run": 4,
+    "sources": 11,
+    "sections_held": 1
+  }
+}
