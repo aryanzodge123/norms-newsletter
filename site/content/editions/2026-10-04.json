@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-04",
+  "edition_number": 119,
+  "edition_type": "normal",
+  "headline_of_the_day": "Flydubai co-pilot accused of hijacking spent two years in Australia as student",
+  "headline_cluster_id": "47eef4057d03ded4841ea36972aac58d",
+  "headline_rationale": "A confirmed attempt to hijack a commercial aircraft carrying 170 people, with cross-border security investigations now spanning multiple countries.",
+  "key_points": [
+    {
+      "text": "A Flydubai co-pilot accused of trying to hijack a plane to Israel spent two years in Australia.",
+      "topic": "World"
+    },
+    {
+      "text": "A Boeing 737 MAX survived a nosedive at the speed of sound during extreme conditions.",
+      "topic": "Science"
+    },
+    {
+      "text": "Polish activists set up abortion pill lockers in Warsaw to work around the country's near-total ban.",
+      "topic": "World"
+    },
+    {
+      "text": "China's space plane released an unknown object in orbit, like it did in past missions.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-04.mp3",
+    "duration_seconds": 361,
+    "size_bytes": 4333248
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "47eef4057d03ded4841ea36972aac58d",
+          "slug": "flydubai-co-pilot-who-allegedly-tried-to-hijack-flight",
+          "title": "Flydubai co-pilot who allegedly tried to hijack flight spent two years in Australia",
+          "summary": "Australian security agencies are investigating what the man did during his time in the country.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/04/flydubai-co-pilot-time-in-australia-being-investigated-security-agencies-ntwnfb"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c61wv7lgex13o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "A flydubai co-pilot allegedly tried to take control of a plane flying from Dubai to Tel Aviv on Wednesday. The plane carried over 170 people. During the flight, passengers and crew stopped him. Now Australian security agencies are investigating time he spent in Australia as a student, about two years total.",
+            "what_happened": "The co-pilot attacked the captain with a crash axe, the UAE prosecutor general said. The plane dropped 17,000 feet in about two and a half hours. Passengers overpowered the attacker and took back control. Australian police have confirmed they are looking into his time in the country before the alleged attack.",
+            "why_it_matters": "Security agencies use student visa records and travel history to screen for risks. What officials learn from this case will shape how they check on people in the future. For now, the investigation is still early, but it shows how countries share information about potential threats.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d0b9ab8a5f5ae53c1fe77a43b8eeac59",
+          "slug": "polish-activists-launch-abortion-pill-lockers-to-bypass",
+          "title": "Polish activists launch abortion pill lockers to bypass near-total ban",
+          "summary": "Pink parcel lockers in Warsaw help women get abortion pills secretly despite strict laws.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/04/polish-activists-launch-abortion-pill-locker-to-bypass-near-total-ban"
+            }
+          ],
+          "article": {
+            "background": "Poland has a near-total ban on abortion. Women seeking abortion pills have few legal options. Activists have found ways to distribute the pills outside the medical system, including through mail. Now they have added a new tool.",
+            "what_happened": "Polish campaigners launched the \"AbortOmat\" in Warsaw. The machine is a 22-compartment locker painted pink with zebra-striped curtains. Women access pills anonymously using a six-digit code. The service helps those who cannot wait days for mail or who fear pills arriving at home.",
+            "why_it_matters": "The locker offers a faster way for women facing urgent health needs to get medication when legal options are blocked. For women with missed miscarriages or health issues, waiting for mail delivery can be risky. This tool lets them act quickly and privately.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "dfcfc199bb39e7db0452f821401de0f3",
+          "slug": "china-s-space-plane-released-unknown-object-in-orbit",
+          "title": "China's space plane released unknown object in orbit",
+          "summary": "A private surveillance firm detected the deployment, which matches what the plane did before.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.space.com/space-exploration/launches-spacecraft/chinas-space-plane-appears-to-have-released-a-mystery-object-in-orbit"
+            }
+          ],
+          "article": {
+            "background": "China's Shenlong is a reusable space plane. It launched on its fourth mission on February 6, 2026. A Long March 2F rocket carried it from China's Jiuquan Satellite Launch Center in the Gobi Desert. China keeps the mission goals secret.",
+            "what_happened": "While in orbit, Shenlong released an object. Private space surveillance company LeoLabs detected it. LeoLabs said this matches the space plane's past practice of releasing small satellites.",
+            "why_it_matters": "The object's purpose remains unknown since China disclosed no mission details. For now this is a data point about China's space activities rather than an immediate change affecting most people. The release shows China continues testing its reusable space plane.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "c5265c990e8d0c96e09d21111e9ffbd9",
+          "slug": "boeing-737-max-survived-nosedive-at-speed-of-sound",
+          "title": "Boeing 737 MAX survived nosedive at speed of sound",
+          "summary": "The aircraft design handled an extreme nosedive during a rare and dangerous event.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/business/airlines/how-a-boeing-737-max-survived-a-nosedive-traveling-at-the-speed-of-sound-e8cae3b4"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "67cb9a24b623660446cf4caf40d010f0",
+          "slug": "coast-guard-searches-for-missing-air-ambulance-off",
+          "title": "Coast Guard searches for missing air ambulance off Massachusetts",
+          "summary": "Six people were on a medical plane that lost contact during a Bermuda evacuation flight.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/03/us-coast-guard-missing-air-ambulance-massachusetts"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cme3x85013llo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "A medical transport aircraft was flying from Bermuda to Boston on Saturday morning. The Gulfstream G-100 jet carried six people. At about 1:20 a.m., it lost contact with the Federal Aviation Administration, the federal air traffic agency.",
+            "what_happened": "The US Coast Guard found debris off Nantucket Island, Massachusetts, late Saturday. The debris came from the missing aircraft. The Coast Guard is searching for the six people who were on board. Four were Canadian nationals and two were from Bermuda.",
+            "why_it_matters": "Medical transport planes carry patients who need urgent care between cities and countries. When one disappears, it affects the people aboard and their families. The search effort shows how authorities respond when aircraft go missing during flight.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "eef94d90fda3b44dfa3722f3f53d06d5",
+      "title": "Cornell president says university 'must do better' after frat house rape allegations",
+      "url": "https://www.bbc.co.uk/news/articles/ckly0leelnz4o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "96ed8f3fbdfbf8c891ce1ab598be0a4f",
+      "title": "Proposal of Special Measure Prohibiting the Transmittal of Funds Regarding Transactions Involving the A7 Network's Sub-Agents",
+      "url": "https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "a87c2dbd7c29bf4a9ef4b50785174f19",
+      "title": "Cavan Sullivan’s long-range chip highlights USMNT’s 3-0 romp over Mexico",
+      "url": "https://www.theguardian.com/football/2026/oct/04/usmnt-mexico-match-report",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "8c6cd5079e85a6ad81e16a7926178908",
+      "title": "'Anger in the streets': Tens of thousands protest in Spain over housing crisis",
+      "url": "https://www.bbc.co.uk/news/articles/cm2kej47095no?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b4efe908bcd83a0f16645a0fda51e1df",
+      "title": "UK car industry faces ‘difficult trade-off’ between Chinese and EU markets",
+      "url": "https://www.theguardian.com/business/2026/oct/04/uk-car-industry-trade-off-china-made-in-europe-laws",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6088c4b30da39b8d04240ff9e3c869b7",
+      "title": "Musk explains why Tesla Robotaxi isn't running at night, and Lidar is the answer",
+      "url": "https://electrek.co/2026/10/03/tesla-robotaxi-pets-night-musk-lidar",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "f9d5fc0ca535663d86eeb068cb9d4fe5",
+      "title": "Tell HN: Bob Cringely has died",
+      "url": "https://news.ycombinator.com/item?id=49949438",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "f6fc0a199cd457b8e16bd17e5d451786",
+      "title": "Chalmers says global economic turmoil will drive budget cuts, but Australia should avoid recession",
+      "url": "https://www.theguardian.com/business/2026/oct/04/chalmers-says-global-economic-turmoil-will-drive-budget-cuts-but-australia-should-avoid-recession",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 58,
+    "clusters_considered": 32,
+    "stories_run": 5,
+    "sources": 7,
+    "sections_held": 1
+  }
+}
