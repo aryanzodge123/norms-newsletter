@@ -1,0 +1,226 @@
+{
+  "date": "2026-10-05",
+  "edition_number": 120,
+  "edition_type": "normal",
+  "headline_of_the_day": "Brazil set for runoff as Bolsonaro son edges Lula",
+  "headline_cluster_id": "553b2aa963586ecbdbb0c424d03f5acb",
+  "headline_rationale": "Major upset in a large democracy reshapes regional politics, affecting over 200 million people and the direction of Latin America's largest economy.",
+  "key_points": [
+    {
+      "text": "Brazil's presidential race goes to a runoff. Far-right Flávio Bolsonaro beat Lula but didn't win outright.",
+      "topic": "World"
+    },
+    {
+      "text": "A researcher died at a Russian plague lab from an unknown infection. Nearly 200 people are under observation.",
+      "topic": "World"
+    },
+    {
+      "text": "AI-generated child sexual abuse material online in 2024 already exceeds all of 2023, a monitoring group reports.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "A study of 2.5 million children found no link between the measles, mumps, rubella vaccine and autism.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-05.mp3",
+    "duration_seconds": 332,
+    "size_bytes": 3988224
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "553b2aa963586ecbdbb0c424d03f5acb",
+          "slug": "brazil-presidential-race-goes-to-runoff-after-bolsonaro-son",
+          "title": "Brazil presidential race goes to runoff after Bolsonaro son beats Lula",
+          "summary": "Far-right Flávio Bolsonaro led but fell short of the votes needed to avoid a second round against incumbent Lula.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/05/brazil-presidential-race-election-result-second-round-lula-flavio-bolsonaro"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/10/04/nx-s1-5981181/brazil-presidential-lula-bolsonaro"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ck1l34ed592no?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Brazil's president must win more than 50% of votes to avoid a runoff. Lula, 80, is the incumbent left-wing president. His challenger is Flávio Bolsonaro, 45, a senator and the son of former president Jair Bolsonaro. The elder Bolsonaro is serving a 27-year prison sentence for plotting a coup after he lost the 2022 election. This race echoes that bitter contest from four years ago.",
+            "what_happened": "Flávio Bolsonaro won Sunday's first round with 47% of the vote. Lula came in second with 45%. With 99% of votes counted, Bolsonaro had 56.1 million votes to Lula's 53.8 million. Neither reached 50%, so they will face a runoff on October 25. Lula called the result unexpected.",
+            "why_it_matters": "Brazil will choose its direction in the runoff between a left-wing incumbent and a right-wing challenger from a family now associated with a failed coup attempt. The outcome will shape the country's policies for years to come. Voters will decide between very different visions for Brazil's future.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "84ac71587bc27472fc7a2e1ed49fcfab",
+          "slug": "researcher-dies-at-russian-plague-lab-from-unknown-infection",
+          "title": "Researcher dies at Russian plague lab from unknown infection",
+          "summary": "A researcher died at a Russian plague lab in Siberia from an unknown infection. Nearly 200 people are being watched.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.scrippsnews.com/world/europe/researcher-at-russian-plague-laboratory-dies-of-unknown-infection"
+            }
+          ],
+          "article": {
+            "background": "The Anti-Plague Research Institute in Shelekhov studies dangerous infectious diseases. It is near Irkutsk in Siberia. A laboratory accident at the facility released a suspected dangerous infection.",
+            "what_happened": "A laboratory worker died after being diagnosed with an unspecified form of plague. Nearly 200 people are now under medical observation. Russian authorities initially described the illness as pneumonia of unknown origin. The state agency Rospotrebnadzor has not fully explained what was released or how it escaped.",
+            "why_it_matters": "When authorities do not say what leaked or how it got out, people cannot know if they are safe. The incident shows why safety rules matter at facilities that work with dangerous pathogens.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "fe145a293b756a6af4ce1285af0c5476",
+          "slug": "ai-child-sexual-abuse-material-online-already-exceeds-2025",
+          "title": "AI child sexual abuse material online already exceeds 2025 total",
+          "summary": "Internet Watch Foundation says illegal photorealistic images this year rose 40 percent from last year.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/oct/05/internet-watch-foundation-huge-rise-ai-child-sexual-abuse-material"
+            }
+          ],
+          "article": {
+            "background": "The Internet Watch Foundation is a UK charity. It finds and tracks child sexual abuse material online around the world. AI tools can now create fake images of child abuse. These images did not exist before. They are becoming harder to spot because they look more realistic.",
+            "what_happened": "The foundation assessed 6,310 AI images that met the legal definition of child sexual abuse in the first half of 2026. That is 40% higher than all of 2025, when it found more than 4,500. The amount of illegal material it investigated this year already exceeds the total for 2025.",
+            "why_it_matters": "The rise means law enforcement faces a bigger task trying to find real victims and help them. More fake images online make this work harder and slower. Authorities are struggling to keep pace with how fast AI can create this material.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e80b1be9fa6602859e9eb8d3b74a3463",
+          "slug": "court-overturns-sentence-after-deepfake-video-showed-victim",
+          "title": "Court overturns sentence after deepfake video showed victim forgiving killer",
+          "summary": "A court overturned a sentence after a deepfake video helped the defense. The ruling raises questions about AI-generated evidence in courts.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/10/04/us/manslaughter-conviction-overturned-ai-video-statement.html"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "466cc8a5722bd990d193290cc401c654",
+          "slug": "skull-fractures-suggest-servants-of-ancient-egyptian-kings",
+          "title": "Skull fractures suggest servants of ancient Egyptian kings were sacrificed",
+          "summary": "Remains at an Egyptian royal cemetery show that officials and craftspeople died when kings were buried.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/science/2026/oct/05/skull-fractures-suggest-servants-of-egypts-ancient-kings-were-sacrificed"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/science/2026/10/new-forensice-evidence-supports-egyptian-retainer-sacrifice"
+            }
+          ],
+          "article": {
+            "background": "Ancient Egyptians buried their early kings at Umm el-Qa'ab, a cemetery near Abydos. These First Dynasty rulers lived around 3,000 BC. Around their tombs lay graves of people who served the royal household: officials, craftspeople, seal-bearers, inspectors, and others. Scholars have long asked whether these workers were killed when their king died, to serve him in the afterlife. This practice is called retainer sacrifice.",
+            "what_happened": "Researchers studied skulls dug up from the site in the 1920s. Over one-third of them showed signs of blunt force trauma, or skull fractures. Bioarchaeologist Roselyn Campbell of Purdue University led the work. Her team published their findings in the journal Frontiers in Environmental Archaeology. The fractures suggest these people may have been killed on purpose.",
+            "why_it_matters": "This research offers the first real evidence for a practice that has long been debated by scholars. Finding proof of retainer sacrifice changes how we understand how ancient Egypt treated its workers. It shows that serving a king in the earliest dynasties came with a fatal risk.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "625a1487276603891d9e8e59c6419d54",
+          "slug": "study-of-2-5-million-children-finds-no-link-between-mmr",
+          "title": "Study of 2.5 million children finds no link between MMR vaccine and autism",
+          "summary": "A study of 2.5 million children found no link between MMR vaccine and developmental delays.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.psypost.org/study-of-2-5-million-children-finds-no-link-between-mmr-vaccine-and-autism"
+            }
+          ],
+          "article": {
+            "background": "Autism spectrum disorder affects how children communicate and interact with others. About 3.2 percent of children in the United States have autism. The measles, mumps, and rubella vaccine is a standard childhood shot. A false 1998 study claimed the vaccine caused autism. That study was debunked, but some parents still worry.",
+            "what_happened": "Researchers studied over 2.5 million children. They found no link between the MMR vaccine and autism. The vaccine's timing made no difference either. The findings were published in The Pediatric Infectious Disease Journal.",
+            "why_it_matters": "Parents can use this large study to decide on vaccines with confidence. The MMR vaccine prevents three serious diseases. It does not raise autism risk, no matter when a child gets it.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "6256a22f7f7313a89066a342d932441d",
+      "title": "Exiled separatist leader is likely to return to a very different Catalonia",
+      "url": "https://www.theguardian.com/world/2026/oct/05/exiled-separatist-leader-carles-puigdemont-return-catalonia",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "08e05cec15b1a7ff319161db5f99a2a0",
+      "title": "All six passengers presumed dead after plane went missing off US coast",
+      "url": "https://www.bbc.co.uk/news/articles/cmze4g8r6nr9o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "2fc05396a10d57729579fc22e12a3d9d",
+      "title": "Yemen’s Saudi-backed government launches military drive to retake all Houthi-held territory",
+      "url": "https://www.theguardian.com/world/2026/oct/05/saudi-backed-yemen-government-military-drive-retake-houthi-territory",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3b4e1544e148b1515977636090c3c2bd",
+      "title": "Trump unveils 'Super Intelligence Force' to oversee AI policy",
+      "url": "https://www.bbc.co.uk/news/articles/cqj6jenp26zyo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "96ed8f3fbdfbf8c891ce1ab598be0a4f",
+      "title": "Proposal of Special Measure Prohibiting the Transmittal of Funds Regarding Transactions Involving the A7 Network's Sub-Agents",
+      "url": "https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "bff9e2b7b34b747af91f23e1c18fd613",
+      "title": "Ball in UK’s court: EU ambassador says Brussels will be ‘ready to engage‘ after country decides what it wants",
+      "url": "https://www.theguardian.com/politics/2026/oct/05/eu-ambassador-uk-interview",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "dab4d4c19740b3515df188cee79c030b",
+      "title": "BBC morale dented by gradual ‘bloodletting’ after weeks of job cuts",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/05/bbc-morale-dented-job-cuts",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "f5e137e9be8952098ab34f68d0a78400",
+      "title": "The AI industry is booming. Women are getting left behind",
+      "url": "https://www.theguardian.com/technology/2026/oct/04/women-ai-jobs-inequality",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 73,
+    "clusters_considered": 41,
+    "stories_run": 6,
+    "sources": 10,
+    "sections_held": 0
+  }
+}
