@@ -1,0 +1,290 @@
+{
+  "date": "2026-10-06",
+  "edition_number": 121,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump approves firing squad execution of Fort Hood shooter, first in 60 years",
+  "headline_cluster_id": "22fc054531f533ac354e1ed2aea3f3fd",
+  "headline_rationale": "First US military execution in over six decades marks major shift in military justice precedent and capital punishment policy.",
+  "key_points": [
+    {
+      "text": "Trump approved the first US military firing squad execution in over 60 years. Nidal Hasan killed 13 people at Fort Hood in 2009.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Hackers stole names, addresses and ID numbers for 8.8 million people through a company's legal access to Denmark's registers.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Parti Québécois is projected to win Quebec's election after nine years out of power, testing Canada's unity.",
+      "topic": "World"
+    },
+    {
+      "text": "Cancer diagnoses in people under 50 have surged in England, with prostate cancer cases rising fourfold since 2001.",
+      "topic": "Science"
+    },
+    {
+      "text": "Saudi Arabia could execute a migrant worker for a Facebook post. Rights groups are asking for mercy.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-06.mp3",
+    "duration_seconds": 391,
+    "size_bytes": 4687200
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "22fc054531f533ac354e1ed2aea3f3fd",
+          "slug": "trump-approves-firing-squad-execution-of-fort-hood-shooter",
+          "title": "Trump approves firing squad execution of Fort Hood shooter",
+          "summary": "Nidal Hasan would be the first US soldier executed by the military in over 60 years. He killed 13 people in 2009.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/05/trump-fort-hood-shooter-execution"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cq8ezkkkrpy1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Nidal Hasan was an Army psychiatrist. In 2009, he opened fire at Fort Hood, a major Army base in Texas. He killed 13 unarmed soldiers and wounded 32 others. He was convicted of murder and sentenced to death. No US soldier has been executed since World War Two ended in 1945.",
+            "what_happened": "Defense Secretary Pete Hegseth urged President Trump to approve Hasan's execution. Trump agreed. Pentagon spokesman Sean Parnell announced the approval on social media Monday. Hasan will be executed by firing squad. The Army will set the date and location.",
+            "why_it_matters": "This would be the first military execution in over 60 years. It marks a shift from the prior administration, which did not pursue death sentences in military cases. For most Americans, it does not change daily life. But it signals how the current Pentagon plans to handle the most serious military crimes.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2145550d8f111ebf47a3486536a403c3",
+          "slug": "trump-says-super-pac-will-pay-for-taxpayer-funded-ads-after",
+          "title": "Trump says Super PAC will pay for taxpayer-funded ads after backlash",
+          "summary": "Trump reversed course after pro-Trump ads costing at least 1.5 million dollars in federal funds drew criticism from both parties.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/05/trump-super-pac-ads"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cm9qzlvpqex9o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Donald Trump has been running television ads that praise him and his policies. These ads used federal taxpayer funds. The spending sparked pushback from both Democrats and Republicans. Trump's MAGA Inc is his political action committee, a fundraising vehicle that had raised over $400 million by late July.",
+            "what_happened": "Trump said Monday he would pay for the ads using money from MAGA Inc instead of taxpayer funds. He called the ads a positive promotion for the country and said using federal money was standard practice. He provided no details on how he would reimburse taxpayers for ads that already aired. The ads cost at least $1.5 million in federal funds.",
+            "why_it_matters": "This affects how political campaigns use public money. When elected officials spend federal funds on ads about themselves, taxpayers foot the bill. Trump's move to use campaign money instead sets a new approach, though the ads that already ran still came from public coffers.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "61d783210580069daea0737d5f7eaed6",
+          "slug": "separatist-party-projected-to-win-quebec-election",
+          "title": "Separatist party projected to win Quebec election",
+          "summary": "Parti Québécois is returning to power after nine years, creating a new test for Canada's unity.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/crly09gz7ew4o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Quebec is Canada's second-largest province and mostly French-speaking. The Parti Québécois, or PQ, is a separatist party that wants Quebec to leave Canada. It last governed Quebec from 2012 to 2014.",
+            "what_happened": "Canadian media project the PQ will win Monday's provincial election with a minority government. Paul St-Pierre Plamondon will become premier. The PQ has pledged to hold a referendum on Quebec's independence.",
+            "why_it_matters": "Quebec's size and cultural importance mean its political direction matters for all of Canada. A separatist government could create conflict with Prime Minister Mark Carney over immigration and the monarchy. These disputes could reshape Canadian politics.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0fec8041fd695d5a16e928f8a722b0d4",
+          "slug": "saudi-arabia-urged-to-spare-man-sentenced-to-death-over",
+          "title": "Saudi Arabia urged to spare man sentenced to death over Facebook post",
+          "summary": "A 24-year-old migrant worker faces execution for a social media post. His mother is pleading for mercy.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.co.uk/news/articles/cq14d438vx24o"
+            }
+          ],
+          "article": {
+            "background": "Anojan Sivarasa is a 24-year-old migrant worker from Sri Lanka. He works in Saudi Arabia, where he made a comment on Facebook. An appellate court found him guilty of blasphemy against Islam and the Prophet Muhammad. Saudi Arabia can impose the death penalty for this crime.",
+            "what_happened": "The court sentenced Sivarasa to death for his Facebook post. His mother, Rasamanickam Yogalakshmi, pleaded for his life in tears. She asked Saudi Arabia to show mercy and send him home. The case has drawn petitions and concern from civil society groups in Sri Lanka.",
+            "why_it_matters": "Blasphemy laws in Saudi Arabia can carry severe penalties. Migrant workers have limited legal protections in the country. This case has sparked worry across Sri Lanka about the safety of its citizens working abroad.",
+            "quote": {
+              "text": "I plead for mercy for the wrongs committed by my son. Please forgive him and send him back to us.",
+              "attribution": "Rasamanickam Yogalakshmi, mother of Anojan Sivarasa",
+              "source_url": "https://www.bbc.co.uk/news/articles/cq14d438vx24o"
+            }
+          }
+        },
+        {
+          "cluster_id": "7b5670a19f5056d3d0157bdfd0d7ba5d",
+          "slug": "tigray-rebel-groups-forcibly-recruiting-boys-as-young-as-15",
+          "title": "Tigray rebel groups forcibly recruiting boys as young as 15 as fighting spreads",
+          "summary": "Armed groups are forcing men and boys to join their ranks as renewed conflict risks a humanitarian crisis in Tigray.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/global-development/2026/oct/06/ethiopia-tigray-conflict-tplf-rebels-forcibly-recruit-boys-war-crimes"
+            }
+          ],
+          "article": {
+            "background": "Tigray is a region in northern Ethiopia ruled by the TPLF, a political party and armed group. Fighting between the TPLF and Ethiopia's federal government devastated the region for years. A peace deal signed in November 2022 paused the conflict. Tensions have been rising for months.",
+            "what_happened": "On September 23, renewed fighting broke out between the federal government and the TPLF. The TPLF says it attacked in response to drone strikes by the government. Armed groups allied with the TPLF are now forcibly recruiting men and boys into their ranks. Witnesses told reporters that some recruits are as young as 15.",
+            "why_it_matters": "The region already suffered massive damage from years of earlier fighting. Fresh violence threatens to create a new humanitarian crisis, with more people displaced and in need of aid. The forced recruitment of children disrupts families and puts young people in danger of being killed or hurt in combat.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "682be2e7df92c42b14797067de570213",
+          "slug": "denmark-says-attackers-accessed-personal-data-for-8-8",
+          "title": "Denmark says attackers accessed personal data for 8.8 million people via company account",
+          "summary": "Hackers used a company's lawful access to Denmark's population register to steal names, addresses and ID numbers for 8.8 million people.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/10/denmark-says-attackers-accessed-cpr.html"
+            }
+          ],
+          "article": {
+            "background": "Denmark's Central Person Register, or CPR, holds names, addresses, and ID numbers for nearly everyone in the country. This includes people who are deceased. Private companies can legally access CPR records for business needs. They might check customer identities or verify other information.",
+            "what_happened": "On October 5, Denmark's digitalization ministry said attackers had broken into one company's CPR account. The hackers used that company's lawful access to steal names, addresses, and ID numbers. About 8.8 million people were affected. The CPR administration then cut off the company's access and reported the breach to Datatilsynet. Datatilsynet is Denmark's data protection authority. Police are investigating.",
+            "why_it_matters": "Your name, address, and ID number are now in the hands of people you do not know. This information can be used to impersonate you or to target you in scams. Denmark's ministry is warning people never to share passwords or sensitive details over the phone or email. Even if a caller seems to know your personal details, treat them as a threat.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "49865fc1f3d9513cd0ae6b07872590b3",
+          "slug": "clickfix-attack-smuggles-malware-through-browser-cache-to",
+          "title": "ClickFix attack smuggles malware through browser cache to bypass Windows limits",
+          "summary": "Hackers hide malicious code as image files in a browser's cache instead of downloading it from a distant server.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/10/clickfix-smuggles-payloads-through.html"
+            }
+          ],
+          "article": {
+            "background": "ClickFix is a malware attack that tricks people into running harmful commands. Attackers compromise websites and use them to spread the attack. This new version uses a clever hiding spot: your browser's cache, where websites store files locally.",
+            "what_happened": "Compromised websites now hide malicious code in your browser cache. They disguise the code as an image file, or PNG. When you fall for the scam and paste the command attackers trick you into running, it uses the hidden code already stored on your computer. Microsoft's threat team flagged this new technique on X.",
+            "why_it_matters": "This attack bypasses Windows security features by running code that's already on your device. Your computer doesn't have to download anything, so it looks safer to Windows. This makes the attack harder for security tools to catch. If you visit a compromised website and then follow a ClickFix scam link, you're at real risk.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "832ecd54d68b9fb1ffa2182dbb2b7eba",
+      "title": "OpenAI admits response to Australian government hacks 'not good enough'",
+      "url": "https://www.bbc.co.uk/news/articles/cmx2qne2j88wo?at_medium=RSS&at_campaign=rss",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "f00cc3607031cfe56c668ac94cffb66c",
+      "title": "Anthropic says AI agents didn’t breach Australian government websites – video",
+      "url": "https://www.theguardian.com/media/video/2026/oct/06/anthropic-ai-australia-parliament-inquiry-government-websites-breach-video",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "1af3be070a73a4b8c3d5c2600923e030",
+      "title": "UK regulator FCA to investigate how it handled Epstein whistleblower who took his own life",
+      "url": "https://www.theguardian.com/business/2026/oct/06/uk-regulator-epstein-whistleblower",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "30e889954eb96aae8bea1a202f553807",
+      "title": "Irish budget to tackle childcare and energy costs",
+      "url": "https://www.bbc.co.uk/news/articles/c9kgjn3zng1ko?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "41d2ff6ca714a7009d6f6a7300ecc6fa",
+      "title": "Owner, businessman & player: Messi has big plans as a golden era ends",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cwly3lpmyye9o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "fd6b09fdd107ec75078446be7c7fc180",
+      "title": "Cancer rates rising more quickly among younger people, international study finds",
+      "url": "https://www.theguardian.com/society/2026/oct/06/cancer-rates-rising-more-quickly-among-younger-people-international-study-finds",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "9881cb865a77fbde33740620d80440b2",
+      "title": "Angus Taylor vows biggest cut to migration in Australia’s history, slashing 650,000 temporary visas",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/06/coalition-immigration-policy-angus-taylor-one-nation-labor-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "4370d763428fd957cbf0e1df0119beb1",
+      "title": "What to know about Spain's housing protests sparked by an 87-year-old woman's eviction",
+      "url": "https://www.pbs.org/newshour/world/what-to-know-about-spains-housing-protests-sparked-by-an-87-year-old-womans-eviction",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8cf6d45f225bdb26402503663254cf77",
+      "title": "Student protests erupt at Cornell over mishandling of gang-rape allegations",
+      "url": "https://www.theguardian.com/us-news/2026/oct/05/students-vandalize-cornell-building",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2af3f1b95767ed7558e233969e385ce1",
+      "title": "RSPCA NSW director quits over welfare standards for RSPCA-branded chicken",
+      "url": "https://www.theguardian.com/food/2026/oct/06/rspca-vice-president-quits-chicken-welfare-standards",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "4c569cf610ea438285b13fbdcd16eeba",
+      "title": "Yemeni military says it has 'secured' Red Sea waterway",
+      "url": "https://www.bbc.co.uk/news/articles/cw8rzd6lp0xpo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c4d54ba476a37a2e71703e28f9ad49ff",
+      "title": "Banks still refusing credit cards, watchdog says",
+      "url": "https://www.bbc.co.uk/news/articles/cwvg0lyl3v8eo?at_medium=RSS&at_campaign=rss",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "1d668b6c344820a4978bceb5ca924aaa",
+      "title": "High Diesel Prices Bankrupted 16 Trucking Companies in Just 30 Days",
+      "url": "https://www.thedrive.com/news/high-diesel-prices-bankrupted-16-trucking-companies-in-just-30-days",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "4055050360e366e69fe34275afb3fc13",
+      "title": "Australian consumer confidence plunges to worst level since 1990s after RBA rate rise",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/06/consumer-confidence-index-interest-rate-rise-australia-rba-housing-renter-mortgage",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 44,
+    "clusters_considered": 41,
+    "stories_run": 7,
+    "sources": 9,
+    "sections_held": 1
+  }
+}
