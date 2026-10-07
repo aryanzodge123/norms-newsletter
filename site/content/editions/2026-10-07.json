@@ -1,0 +1,331 @@
+{
+  "date": "2026-10-07",
+  "edition_number": 122,
+  "edition_type": "normal",
+  "headline_of_the_day": "Australia's high court rejects coal mine approval on climate grounds",
+  "headline_cluster_id": "d0b735289e6d752aa31aa9564a03c474",
+  "headline_rationale": "First high court climate precedent affecting how fossil fuel projects are assessed across a major coal region, with lasting legal effect",
+  "key_points": [
+    {
+      "text": "Australia's high court blocked a coal mine approval based on climate concerns, setting a national rule.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Hackers stole fake security certificates for Google and other major services by taking over three country-code domains.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "South Korea says AI agents appear to have been used to hack the country's banks in an active attack",
+      "topic": "Cyber"
+    },
+    {
+      "text": "San Francisco approved a 45-day pause on new data center construction that could last up to 22 months.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "A failed execution in Tennessee left death row inmate Christa Pike conscious in the hospital, raising legal questions.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": null,
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "1f90ebb98dcfcff1eed3f41f9c5069fe",
+          "slug": "tennessee-death-row-inmate-survives-execution-remains",
+          "title": "Tennessee death row inmate survives execution, remains hospitalized",
+          "summary": "Christa Pike survived a lethal injection and is conscious and getting medical care.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c8kgezxn54qko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Christa Pike was sentenced to death in 1995 for murdering Colleen Slemmer. She was set to be executed by lethal injection in Tennessee last week. Tennessee's governor suspended all executions in the state after what happened.",
+            "what_happened": "Pike survived two failed lethal injections on Wednesday. She was taken to a hospital, where she remained unconscious for several days. Doctors worked to clear the injected chemicals from her body. Her lawyers said on Tuesday that she is now conscious and speaking. She remains hospitalized and handcuffed while receiving critical care.",
+            "why_it_matters": "Pike's survival after a failed execution is unprecedented in the US. Her case has raised questions about how executions are carried out. The governor's suspension of executions means the state will investigate what went wrong before any more executions can happen.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ade4285664c936b9fe3155f365af18c3",
+          "slug": "pentagon-study-on-future-warfare-raises-ethics-concerns",
+          "title": "Pentagon study on future warfare raises ethics concerns over authors' conflicts",
+          "summary": "Elon Musk and Palmer Luckey lead Project Meridian, raising ethics questions about defense ties.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://text.npr.org/nx-s1-5991899"
+            }
+          ],
+          "article": {
+            "background": "The Pentagon commissioned a new study called Project Meridian. It will examine automated and AI-powered weapons. Defense Secretary Pete Hegseth named three leaders: former House Speaker Newt Gingrich, SpaceX CEO Elon Musk, and Palmer Luckey. Luckey co-founded Anduril, a defense technology firm. The study will take 120 days.",
+            "what_happened": "The project announcement raised ethics concerns. Both Musk and Luckey lead major companies. Those companies could benefit from Pentagon decisions on AI weapons. When government officials and business leaders work on policy together, their own financial interests can create conflicts. Experts worry the study's authors may favor their own firms.",
+            "why_it_matters": "Pentagon decisions on weapons affect national defense policy for years. If the study authors benefit financially from the outcomes, public trust in the work suffers. Americans depend on government decisions to be made fairly, without hidden incentives pushing the result.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4fa1af6a4979b0d36501c11f2adeb1d9",
+          "slug": "naval-drone-strikes-oil-tanker-off-sochi-triggering-massive",
+          "title": "Naval drone strikes oil tanker off Sochi, triggering massive fire",
+          "summary": "Russian officials say a drone hit a Liberian-flagged tanker in the Black Sea, and crude oil is burning.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/07/ukraine-drone-hits-oil-tanker-russia-sochi"
+            }
+          ],
+          "article": {
+            "background": "The Black Sea, bordered by Russia and other countries, is a major shipping route. Since Russia's war with Ukraine began, both sides have attacked commercial ships in the region, targeting tankers and other vessels.",
+            "what_happened": "A naval drone hit an oil tanker off Sochi, Russia's Black Sea coast. The strike triggered a massive fire. Black smoke blanketed parts of the resort city. The tanker flies a Liberian flag. Crude oil burned openly in the water. All 23 crew members, Indian citizens, were rescued.",
+            "why_it_matters": "The attack shows how the war is disrupting global shipping and energy supplies. Attacks on tankers affect oil prices and food shipments worldwide. Fires at sea also create environmental damage that spreads beyond the immediate area.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a40743cb091df3aed3a0bde7961dc29d",
+          "slug": "man-from-congo-is-kenya-s-first-confirmed-ebola-case-and",
+          "title": "Man from Congo is Kenya's first confirmed Ebola case and death",
+          "summary": "Patient had been living in Congo and traveled back to Kenya before diagnosis.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/health/man-living-in-congo-who-went-back-to-kenya-is-countrys-1st-confirmed-ebola-case-and-death"
+            }
+          ],
+          "article": {
+            "background": "Ebola is a rare but deadly virus that spreads through contact with blood or body fluids. Outbreaks happen mostly in Central Africa, especially Congo, where the virus lives in wildlife. Kenya had never recorded a confirmed Ebola case until now.",
+            "what_happened": "A Kenyan citizen who had been living in Congo returned to Nairobi over the weekend. He tested positive for Ebola and died from the infection. Authorities confirmed the diagnosis on Tuesday.",
+            "why_it_matters": "This is Kenya's first Ebola death and signals the virus has spread to a new country during a fast-moving outbreak. People traveling between affected areas can carry the virus across borders. Kenya's health system now faces the challenge of containing a disease with no cure.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "d0b735289e6d752aa31aa9564a03c474",
+          "slug": "australian-high-court-invalidates-coal-mine-approval-on",
+          "title": "Australian high court invalidates coal mine approval on climate grounds",
+          "summary": "The ruling sets a binding rule for how fossil fuel projects are reviewed in New South Wales.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/oct/07/mount-pleasant-coalmine-case-high-court-climate-change-hunter-valley"
+            }
+          ],
+          "article": {
+            "background": "Australia's highest court just ruled on climate change for the first time. A Hunter Valley community group challenged the approval of MACH Energy's Mount Pleasant coalmine expansion in Muswellbrook. The case asked whether regulators had to consider the climate harm from coal burned overseas.",
+            "what_happened": "The high court ruled 3-2 that the coalmine approval was invalid. The majority found the state's planning commission had to weigh greenhouse gas emissions. The commission failed to do so when it approved the mine expansion. MACH Energy's appeal was rejected.",
+            "why_it_matters": "This ruling sets a new requirement for fossil fuel projects in New South Wales. Companies seeking approval to expand coal mines must now show they considered climate harm. The decision makes it much harder to approve new coal operations without that analysis. Advocates say this precedent will shape how regulators assess future fossil fuel projects.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d3a8f1279d2e5667271de29dc76607d5",
+          "slug": "san-francisco-approves-45-day-pause-on-new-data-centers",
+          "title": "San Francisco approves 45-day pause on new data centers",
+          "summary": "The city paused new data centers for 45 days, which could extend to nearly two years.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://sfstandard.com/2026/10/06/data-center-moratorium-san-francisco"
+            }
+          ],
+          "article": {
+            "background": "Data centers are large facilities that store and run computer servers. They use huge amounts of electricity and water. San Francisco is now looking closely at how many of these facilities the city should allow, especially as artificial intelligence grows and demands more computing power.",
+            "what_happened": "The San Francisco Board of Supervisors voted unanimously Tuesday to approve a 45-day pause on new data center approvals. During this time, the Planning Department will study how data centers affect the city. The moratorium can be extended to 22 months. The measure now goes to the mayor.",
+            "why_it_matters": "Data centers use a lot of energy and water. A pause gives the city time to understand the real cost to residents before approving more. Right now San Francisco has no long-term rules for these facilities. This study could shape what gets built and what does not.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c27ae763404f93e99012b8406193001f",
+          "slug": "privacy-regulator-investigates-smartglasses-app-after",
+          "title": "Privacy regulator investigates smartglasses app after covert surveillance reports",
+          "summary": "An Australian commissioner started an investigation into Shenzhen Qingcheng after the company did not respond to questions.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/oct/07/privacy-regulator-probe-kmart-anko-meta-smartglasses-australia"
+            }
+          ],
+          "article": {
+            "background": "Kmart sold $89 smartglasses under the Anko brand in Australia. These glasses, made by Meta, can take pictures and record video. They run an app called HeyCyan made by Shenzhen Qingcheng, a China-based software company. In August, reporting showed people were using the glasses to secretly photograph and record others without consent.",
+            "what_happened": "Australia's privacy regulator opened an investigation into Shenzhen Qingcheng. The company did not respond to the regulator's questions. Public outrage over the covert use of the devices led to the probe. Kmart has sold out of the smartglasses.",
+            "why_it_matters": "If smartglasses can record video without obvious signs, people around you might capture images or video without your knowledge. The investigation signals that regulators are taking the privacy risk seriously. This could shape what companies are allowed to sell in Australia going forward.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "9de6080d2d7ff9384f91701530755239",
+          "slug": "stanford-scientists-find-method-to-regrow-damaged-knee",
+          "title": "Stanford scientists find method to regrow damaged knee cartilage",
+          "summary": "Stanford researchers found a way to regrow knee cells and treat arthritis without surgery.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.sciencedaily.com/releases/2026/10/261005011249.htm"
+            }
+          ],
+          "article": {
+            "background": "Cartilage is the tough tissue that covers the ends of bones in joints. It wears down over time, causing osteoarthritis, a painful condition that often leads to joint replacement surgery. Stanford scientists found a way to rejuvenate cartilage cells and regrow damaged cartilage.",
+            "what_happened": "The researchers discovered that blocking a protein that builds up with age can restore cartilage in old mice. The treatment also helped prevent osteoarthritis after knee injuries in mice. When tested on human cartilage from knee replacement patients, the tissue started making new, working cartilage.",
+            "why_it_matters": "If this approach works in humans, people with arthritis might avoid joint replacement surgery. That surgery is expensive, requires recovery time, and means living with an artificial joint. A treatment that lets the body regrow its own cartilage could change how doctors handle knee damage.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3184f13a0ed2c650fa5dc072a9e7e443",
+          "slug": "chernobyl-particles-reveal-nuclear-fuel-remained-stable-for",
+          "title": "Chernobyl particles reveal nuclear fuel remained stable for 40 years",
+          "summary": "Researchers found that radioactive fragments stayed stable in the reactor's extreme conditions.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://phys.org/news/2026-10-chernobyl-particles-reveal-unexpectedly-stable.html"
+            }
+          ],
+          "article": {
+            "background": "In 1986, an explosion at the Chernobyl nuclear plant in Ukraine released radioactive material. The blast scattered tiny radioactive pieces, called hot particles, into the environment. Researchers have long studied these fragments to understand the health risks they pose.",
+            "what_happened": "Scientists at two German universities examined six radioactive fragments from Chernobyl. They found that these hot particles are far more stable than experts had thought. The findings could help assess the health risks from such particles more accurately.",
+            "why_it_matters": "Understanding how stable these radioactive particles are matters for measuring danger to people. Better risk assessments help public health officials decide how to protect communities near the affected area. The research also informs how we handle nuclear accidents in the future.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "49a20d97dac5bf41bc09b71bfb09b42f",
+          "slug": "hackers-obtained-fake-security-certificates-for-google-by",
+          "title": "Hackers obtained fake security certificates for Google by hijacking domain registries",
+          "summary": "Hackers took control of three country-code domains and changed DNS records to make fake certificates.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services"
+            }
+          ],
+          "article": {
+            "background": "TLS certificates are digital documents that prove a website is real. Certificate authorities are trusted organizations that issue them. When you visit Google or your bank, your browser checks the certificate to confirm you're talking to the real service, not an impostor.",
+            "what_happened": "Attackers hijacked three country-code top-level domains: .gh, .sl, and .as. These are regional name registries that control what websites exist in those countries. The attackers modified DNS records within those domains to pass automated checks. This let them obtain fake TLS certificates for Google and several other major services. Google discovered this Tuesday and updated Chrome to block the unauthorized certificates.",
+            "why_it_matters": "Fake certificates let attackers intercept your data or impersonate real services. For now, the fake certificates have been blocked. But this shows attackers are actively targeting the system that protects your internet connection.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "dc68b542353fbc918813c171e2245868",
+          "slug": "south-korea-says-ai-agents-used-to-hack-banks",
+          "title": "South Korea says AI agents used to hack banks",
+          "summary": "South Korea said hackers used artificial intelligence to break into banks in an active attack.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "5680d6894d354fe35ff65320d8627dd2",
+      "title": "EU negotiators head to China hoping to curb cheap imports of hybrid electric cars",
+      "url": "https://www.theguardian.com/business/2026/oct/07/eu-negotiators-head-to-china-hoping-to-curb-cheap-imports-of-hybrid-electric-cars",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "51c920ada5d1e2370b90b0f7b17c4155",
+      "title": "Lionel Messi bids Argentina adieu with goal and two assists in 3-0 win over Benin – as it happened",
+      "url": "https://www.theguardian.com/football/live/2026/oct/06/lionel-messi-farewell-match-live-updates-analysis-argentina-benin",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "bc1e8e20865cdecedbcd6d0e13dd1c20",
+      "title": "Former Australian bishop jailed for sexually abusing young men",
+      "url": "https://www.bbc.co.uk/news/articles/cj62ylxqz173o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e5d2a4e03698cc5b168da72bd94807d0",
+      "title": "ABC and Trump's FCC battle in federal court over free speech and jurisdiction issues",
+      "url": "https://www.pbs.org/newshour/politics/abc-and-trumps-fcc-battle-in-federal-court-over-free-speech-and-jurisdiction-issues",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "45ebc792c4f862ba35c099d9223ca7a1",
+      "title": "Flydubai attack investigation widens as alleged hijacker’s training in New Zealand scrutinised",
+      "url": "https://www.theguardian.com/world/2026/oct/07/flydubai-attack-investigation-widens-as-alleged-hijackers-training-in-new-zealand-scrutinised-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a55774bb687cc557f717bf55b6fd202c",
+      "title": "Democrats now favored in key midterm races that could give them control of US Senate, new projections find – as it happened",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/06/donald-trump-ads-diesel-baltimore-midterms-media-latest-news-updates",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "df59afe23a648d70e690c0e8afb0376a",
+      "title": "‘Not exactly his favorite senator’: Susan Collins distances herself from Trump in Maine debate",
+      "url": "https://www.theguardian.com/us-news/2026/oct/06/susan-collins-maine-debate-senate",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "c5b654549e0cab79d584a3ddafcf6309",
+      "title": "Toronto-based VPN provider plans to quit Canada over lawful-access bill",
+      "url": "https://www.theglobeandmail.com/politics/article-psiphon-vpn-provider-plans-to-quit-canada-over-lawful-access-bill",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "caec0d8250c7845aa151c0b66deeed98",
+      "title": "'I've tried everything to keep my pub open'",
+      "url": "https://www.bbc.co.uk/news/articles/c6p3gnq1752po?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "de2f0fd2b882b038deb4dc68f2022e5d",
+      "title": "Pornhub returns to Australia but only for adults with Apple devices",
+      "url": "https://www.bbc.co.uk/news/articles/cwvgdlzvl9ego?at_medium=RSS&at_campaign=rss",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 88,
+    "clusters_considered": 60,
+    "stories_run": 11,
+    "sources": 10,
+    "sections_held": 0
+  }
+}
