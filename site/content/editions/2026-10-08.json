@@ -1,0 +1,297 @@
+{
+  "date": "2026-10-08",
+  "edition_number": 123,
+  "edition_type": "normal",
+  "headline_of_the_day": "Pennsylvania measles hits 1,000 cases, biggest outbreak since 2000",
+  "headline_cluster_id": "b8dae5303ee9c81d13f8c0442eb3a88c",
+  "headline_rationale": "A disease presumed eliminated has returned in the largest outbreak since eradication, signaling a major shift in vaccination coverage and directly affecting public health policy for millions.",
+  "key_points": [
+    {
+      "text": "Pennsylvania measles outbreak passes 1,000 cases, the largest since the disease was declared eliminated in 2000.",
+      "topic": "Science"
+    },
+    {
+      "text": "President Trump approved the first U.S. military firing squad execution since World War II for the 2009 Fort Hood shooter.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Margaret Hamilton, who led Apollo software work at MIT, has died at 90.",
+      "topic": "Science"
+    },
+    {
+      "text": "Canada will not allow mental illness alone as a reason for physician-assisted death.",
+      "topic": "World"
+    },
+    {
+      "text": "A man died after criminals used fake AI images to blackmail and extort money from him.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-08.mp3",
+    "duration_seconds": 352,
+    "size_bytes": 4224960
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "20e2bd68d2d9fe593d874f0f9cb5e344",
+          "slug": "trump-approves-first-us-military-firing-squad-execution",
+          "title": "Trump approves first US military firing squad execution since World War II",
+          "summary": "Nidal Hasan, who killed 13 at Fort Hood in 2009, will be executed by firing squad.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/10/07/nx-s1-5993539/firing-squad-execution-nidal-hasan-fort-hood"
+            }
+          ],
+          "article": {
+            "background": "Nidal Hasan was an Army psychiatrist. In 2009, he opened fire at Fort Hood, Texas, killing 13 people. A military court convicted him and handed down a death sentence. For over 60 years, the military had not carried out any execution. Norm covered Trump's approval of Hasan's execution on October 6.",
+            "what_happened": "President Trump approved executing Hasan by firing squad. The Army will carry out the execution on December 3 at Fort Hood. This will be the first military execution since 1961. It will be the first firing squad execution since World War II. Defense Secretary Pete Hegseth recommended the decision, and Trump approved it.",
+            "why_it_matters": "Military executions are rare and rarely seen. Most Americans alive today have never witnessed one. This decision will shape how the military handles capital punishment going forward. It also revives a method of execution that has not been used by the military in more than 80 years.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4568dba1297c11cdf525c40057ecefe0",
+          "slug": "texas-set-to-carry-out-first-execution-since-botched-lethal",
+          "title": "Texas set to carry out first execution since botched lethal injection",
+          "summary": "Texas will execute Jamaal Howard despite concerns after Tennessee's failed execution attempt last week.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/07/texas-execution-jamaal-howard"
+            }
+          ],
+          "article": {
+            "background": "Christa Pike was executed in Tennessee last week through lethal injection. She remained alive and snoring 40 minutes after receiving a double dose of the drug. Tennessee's governor called the failure",
+            "what_happened": "Texas is set to execute Jamaal Howard on Wednesday. Howard is a man on death row for capital murder. His lawyers asked the Texas court of criminal appeals to stop the execution. They argued it faced the same risks as Pike's failed execution. The court denied the request for a stay. The court also denied a second attempt without explanation. The US Supreme Court denied a late appeal Wednesday evening without comment.",
+            "why_it_matters": "This is the first US execution since Pike's botched lethal injection last week. The case raises questions about whether lethal injection is working as intended. Courts will now decide if they will pause executions to address these concerns.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "686fb9c22606fda748d3bed307713af6",
+          "slug": "canada-indefinitely-bars-mental-illness-as-sole-reason-for",
+          "title": "Canada indefinitely bars mental illness as sole reason for euthanasia access",
+          "summary": "Canada bars people with only mental illness from accessing physician-assisted death, ending a debate over who qualifies.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/07/canada-assisted-dying-mental-illness"
+            }
+          ],
+          "article": {
+            "background": "Canada lets people access medical help to end their lives, a practice known as MAID. Right now, people whose only health problem is mental illness cannot use MAID. That ban was set to end in March. The change has split lawmakers over whether to allow it.",
+            "what_happened": "Canada's federal government said Wednesday it will pass a law to keep the ban permanent. The ruling Liberal party is pushing the change to settle disagreement among lawmakers. The ban will stay in place indefinitely instead of lifting as planned.",
+            "why_it_matters": "This keeps the rules the same for now. People with only mental illness still cannot access MAID. The decision ends the uncertainty about what Canada would allow, though the question of mental illness and euthanasia remains a source of tension in the country.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7914c93110668a9d4ce2976474c5a55f",
+          "slug": "mar-a-del-carmen-abascal-symbol-of-spain-s-housing-protests",
+          "title": "María del Carmen Abascal, symbol of Spain's housing protests, dies at 87",
+          "summary": "The pensioner's eviction two weeks ago sparked nationwide protests against Spain's housing crisis.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/07/maria-del-carmen-abascal-spain-housing-protests-dies"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6e3x21ev9wwo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "María del Carmen Abascal was an 87-year-old pensioner who lived in a Madrid apartment for over 70 years. An investment firm bought the building and tried to raise her rent by 230%. She could not afford it. When she was evicted on September 23, police used teargas during the removal. Her case became a symbol of Spain's housing crisis, where rising rents push out longtime residents.",
+            "what_happened": "Abascal died two weeks after her eviction. News of her death came from Madrid's tenants union. She had been admitted to the hospital before the eviction was carried out. The company that owned her apartment later offered to let her return at a lower rent. She was unable to sign an agreement while hospitalized.",
+            "why_it_matters": "Abascal's eviction sparked nationwide protests and a political row that led to early elections in Spain. Her case shows how investment firms displace elderly people on fixed incomes when rents spike suddenly. For renters across Spain, her story raised urgent questions about tenant protections and housing costs.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "b8dae5303ee9c81d13f8c0442eb3a88c",
+          "slug": "pennsylvania-measles-outbreak-tops-1-000-cases-largest",
+          "title": "Pennsylvania measles outbreak tops 1,000 cases, largest since elimination",
+          "summary": "Over 1,000 cases confirmed in 2026, the most since the disease was declared eliminated in 2000.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/10/pa-measles-outbreak-tops-1000-cases-largest-since-disease-was-eliminated"
+            }
+          ],
+          "article": {
+            "background": "Measles is a highly contagious virus that the US declared eliminated in 2000. It came back because vaccination rates have dropped in some areas. Pennsylvania now has 1,078 cases in 2026, the most the country has seen since the disease was eliminated.",
+            "what_happened": "Pennsylvania reported 1,078 measles cases as of this afternoon. Most cases, 1,066, arrived since April when the outbreak began. The state recorded 145 cases in just the last week. Health officials noted that 40 of the 74 newest cases happened more than two weeks ago.",
+            "why_it_matters": "Measles spreads fast through unvaccinated groups, and one sick person can infect many others. This outbreak shows how quickly the virus spreads when vaccination rates drop. The virus still exists worldwide, and people who skip vaccination remain at risk.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "99711ae7877b08213380e4125856e165",
+          "slug": "margaret-hamilton-apollo-software-engineering-pioneer-dies",
+          "title": "Margaret Hamilton, Apollo software engineering pioneer, dies at 90",
+          "summary": "Margaret Hamilton led the MIT team that wrote Apollo software and helped start software engineering as a field.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/science/2026/oct/07/margaret-hamilton-moon-computer-software"
+            }
+          ],
+          "article": {
+            "background": "Margaret Hamilton was a computer scientist who worked at MIT's Instrumentation Lab starting in 1959. She learned to program under a renowned MIT meteorologist. Later, MIT received a NASA contract to develop software for Apollo spacecraft. Hamilton jumped at the chance to lead the software engineering team. She saw an opportunity to do something that had never been done before.",
+            "what_happened": "Hamilton died on September 30. She was 90. She had authored over 130 publications during her career. After leaving MIT in the mid-1970s, she became a successful entrepreneur and CEO. In 2016, President Barack Obama gave her the Presidential Medal of Freedom.",
+            "why_it_matters": "Hamilton's work on Apollo's flight software was crucial to the moon landing. She helped establish software engineering as a dedicated discipline. Her insight was that writing software for spacecraft required the same rigor and planning as building the hardware itself. That principle shaped how the entire technology industry approaches complex systems today.",
+            "quote": {
+              "text": "I was attracted both by the sheer idea and the fact that it had never been done before.",
+              "attribution": "Margaret Hamilton",
+              "source_url": "https://www.theguardian.com/science/2026/oct/07/margaret-hamilton-moon-computer-software"
+            }
+          }
+        },
+        {
+          "cluster_id": "dada84a9b74ea8cdd4bf975226402f0b",
+          "slug": "gene-therapy-and-special-goggles-give-some-blind-people",
+          "title": "Gene therapy and special goggles give some blind people limited sight",
+          "summary": "Seven trial patients with a rare eye disease could see well enough to find doors and spot objects.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "science_news",
+              "url": "https://www.sciencenews.org/article/gene-therapy-cells-light-blind-vision"
+            }
+          ],
+          "article": {
+            "background": "Retinitis pigmentosa is a genetic disease. It gradually destroys the light-sensing cells in the retina, the back of the eye. This causes progressive blindness. A new treatment uses optogenetics, a technique that gives cells genetic instructions to respond to light. Instead of fixing damaged cells, it makes healthy ones do the work.",
+            "what_happened": "Seven of ten blind people with retinitis pigmentosa gained improved light sensitivity after treatment. They received gene therapy plus custom goggles. The study was published October 7 in the New England Journal of Medicine. Participants could now find doorways or spot objects. This builds on a 2021 case where the same approach helped one blind man see and count objects.",
+            "why_it_matters": "For people with inherited blindness, regaining even limited sight could help with daily tasks. Finding a doorway or locating an object matters for navigation and independence. The treatment requires special goggles, so it is not total vision. But it offers a new option where none existed before.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "ff0beef6d619f4fbc31848767f72b0c2",
+          "slug": "man-took-his-own-life-after-ai-generated-sextortion",
+          "title": "Man took his own life after AI-generated sextortion blackmail",
+          "summary": "A 41-year-old man sent money to criminals using fake AI images, then took his own life.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.rnz.co.nz/news/crime-and-justice/1787553/man-took-his-own-life-after-paying-money-to-sextortion-blackmail-involving-ai-generated-woman"
+            }
+          ],
+          "article": {
+            "background": "Sextortion is a blackmail scam. Criminals trick people into sending intimate images online. Then they use those images to demand money. A 41-year-old man in Auckland fell for this scam in 2024. He thought he was talking to a real woman named Donna Chase. In fact, her profile was AI-generated.",
+            "what_happened": "The man sent intimate images to the fake profile. Criminals then contacted him and threatened to share the images unless he paid them. Distressed by the blackmail, he sent the scammers money. He took his own life later that same day. His death prompted a coroner to issue warnings about the scam.",
+            "why_it_matters": "Sextortion victims often feel ashamed and afraid when blackmailers contact them. The coroner's warning advises people not to pay scammers and to report the threats to police instead. Paying does not guarantee criminals will stop, and it only encourages more scams. If you get a sextortion threat, telling police gives you the best chance of help.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "55c1b97b21d9136f7320f216e785aa2f",
+          "slug": "tp-link-faces-federal-ban-and-four-state-lawsuits-over",
+          "title": "TP-Link faces federal ban and four state lawsuits over China security risks",
+          "summary": "Florida and three other states sued TP-Link for lying about ties to China and router hacking risks.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/10/florida-sues-tp-link-claiming-it-hides-router-security-risks-and-links-to-china"
+            }
+          ],
+          "article": {
+            "background": "TP-Link makes routers, devices that connect computers to the internet. In April, the Federal Communications Commission announced a ban on consumer routers made wholly or partly outside the US. The ban cited security risks. Some router makers got exemptions to keep selling. TP-Link did not.",
+            "what_happened": "Florida and three other states filed lawsuits yesterday against TP-Link. They claim the company lied to consumers about its ties to China. They also claim it hid the risk that Chinese state hackers could exploit its routers. The Trump administration has not given TP-Link an exemption from the FCC ban. Other makers like Netgear, Asus, and Amazon's Eero got exemptions.",
+            "why_it_matters": "If TP-Link routers are compromised, hackers could access your data or use your device as a point of entry into your home network. The lawsuits and the FCC ban suggest officials think the security risk is real enough to act on. This could limit your router choices in the US.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "ef1e87bc75b1d15f6c35c316d280ee61",
+      "title": "Japan beer giants raided over alleged price-fixing cartel",
+      "url": "https://www.bbc.co.uk/news/articles/cm5yn3592xk9o?at_medium=RSS&at_campaign=rss",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "0dabd6c96e409515f0b366aaace92241",
+      "title": "Shock gloves purchased by ICE cause pain, compliance and fear, Army study found",
+      "url": "https://www.pbs.org/newshour/nation/shock-gloves-purchased-by-ice-cause-pain-compliance-and-fear-army-study-found",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "11f55ad89de6717d742ac29d77566be9",
+      "title": "Trump administration proposes a $70,000 fee for international students to work in the U.S.",
+      "url": "https://www.pbs.org/newshour/politics/trump-administration-proposes-a-70000-fee-for-international-students-to-work-in-the-u-s",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "1befa93ad3697347d41fc2a33e208507",
+      "title": "Largest penguin colony suffers 'enormous population crash'",
+      "url": "https://www.theguardian.com/environment/2026/oct/07/penguin-colony-population-crash-zavodovski-island-antarctica",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "500e65f4bc1189089062a291fef38d48",
+      "title": "Jon Rahm’s LIV exit set to trigger mass exodus of players from stricken tour",
+      "url": "https://www.theguardian.com/sport/2026/oct/07/former-world-no-1-jon-rahm-quits-liv-ahead-of-breakway-series-relaunch",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "bd0cacdbd2219c274620743874c365d1",
+      "title": "Why French students are leading massive protests across the country",
+      "url": "https://www.pbs.org/newshour/show/why-french-students-are-leading-massive-protests-across-the-country",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c635724e851e80149c54cc283ee2ee2e",
+      "title": "Fuel prices added to Google Maps as petrol and diesel costs soar",
+      "url": "https://www.bbc.co.uk/news/articles/ckx2d4ddjn2eo?at_medium=RSS&at_campaign=rss",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "fcbfb0b5797061cd491ced76e1354bf4",
+      "title": "Two men serving indefinite jail sentences freed after two decades",
+      "url": "https://www.theguardian.com/law/2026/oct/07/two-men-freed-indefinite-sentences-for-public-protection-ipp",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 106,
+    "clusters_considered": 98,
+    "stories_run": 9,
+    "sources": 17,
+    "sections_held": 0
+  }
+}
