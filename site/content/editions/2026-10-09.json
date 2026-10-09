@@ -1,0 +1,401 @@
+{
+  "date": "2026-10-09",
+  "edition_number": 124,
+  "edition_type": "normal",
+  "headline_of_the_day": "US to livestream execution by firing squad of Fort Hood shooter",
+  "headline_cluster_id": "de6862df8a97bbc9eb39947fa89e10f4",
+  "headline_rationale": "First federal execution by firing squad in decades with novel public livestream method raises fundamental questions about capital punishment policy.",
+  "key_points": [
+    {
+      "text": "The US will livestream Nidal Hasan's firing squad execution. He killed 13 people at Fort Hood in 2009.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Ukrainian drones hit Russia's Yandex data centers, causing a big fire and shutting down many services.",
+      "topic": "World"
+    },
+    {
+      "text": "A Russian strike on Ukrainian buses killed dozens as power outages grow worse in Kyiv.",
+      "topic": "World"
+    },
+    {
+      "text": "A federal judge gave three news outlets White House access while a press ban case is decided.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The Federal Reserve fined American Express for missing suspicious money laundering activity it should have reported.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-09.mp3",
+    "duration_seconds": 436,
+    "size_bytes": 5227200
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "41c86c93ed3320a7efde9cb1ba157371",
+          "slug": "spacex-announces-plan-to-become-major-mobile-carrier",
+          "title": "SpaceX announces plan to become major mobile carrier",
+          "summary": "SpaceX bought spectrum licenses and plans to launch a satellite and ground mobile network.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/science/1008467/spacex-announces-plan-to-become-a-major-mobile-carrier"
+            }
+          ],
+          "article": {
+            "background": "Starlink is SpaceX's internet service using satellites. SpaceX now wants to offer mobile phone service too. To do that, it just bought low-band spectrum licenses. Spectrum is the radio frequency space that carries wireless signals. The company plans to combine satellites with ground towers to compete with AT&T, T-Mobile, and Verizon.",
+            "what_happened": "SpaceX acquired low-band spectrum licenses. The company says this will help its Starlink Mobile service become a major US carrier. Once the Federal Communications Commission approves the deal, SpaceX will blend satellites with ground towers. This new network will compete directly with AT&T, T-Mobile, and Verizon.",
+            "why_it_matters": "More carriers could mean more choices and possibly better prices for phone service. A company that already reaches remote areas by satellite might offer coverage where the big three do not. For now this is still pending approval, so most people will not see changes soon.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "31a29640a154829b2575a9069187f739",
+          "slug": "let-s-encrypt-cuts-certificate-lifetimes-to-64-days",
+          "title": "Let's Encrypt cuts certificate lifetimes to 64 days",
+          "summary": "Starting February 2027, free SSL certificates will expire in 64 days instead of 90 days.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/gadgets/2026/10/lets-encrypt-cuts-certificate-lifetimes-to-64-days-starting-february-2027"
+            }
+          ],
+          "article": {
+            "background": "Let's Encrypt provides free digital certificates that secure websites. These certificates tell browsers a site is safe to visit. Before Let's Encrypt launched in early 2016, certificates usually lasted much longer. Now the organization is shortening that window to tighten security.",
+            "what_happened": "Starting February 10, 2027, Let's Encrypt will issue certificates that expire after 64 days instead of 90 days. On October 14, the organization will begin testing the new timeline. Users can opt in to test their systems before the change goes live.",
+            "why_it_matters": "If you use modern renewal tools that check automatically, nothing changes for you. If you renew by hand or use hardcoded schedules, you must update by February. Otherwise your certificates will expire and visitors will see security warnings.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "de6862df8a97bbc9eb39947fa89e10f4",
+          "slug": "us-plans-first-livestream-of-execution-by-firing-squad",
+          "title": "US plans first livestream of execution by firing squad",
+          "summary": "Nidal Hasan will be executed by firing squad December 3rd in the first such federal execution since World War II.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1008530/us-government-livestream-execution-firing-squad-fort-hood"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cmy0r96xygx6o"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/08/hegseth-fort-hood-shooter-public-execution"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmy0r96xygx6o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Nidal Hasan was an Army psychiatrist who killed 13 soldiers at Fort Hood, Texas, in 2009. He was convicted and sentenced to death. In early October, President Trump approved his execution by firing squad. This will be the first U.S. military execution in more than 60 years.",
+            "what_happened": "The Pentagon announced this week that Hasan's execution will be livestreamed on December 3rd at 2 p.m. ET at Fort Hood. Defense Secretary Pete Hegseth said the military will make the event public so people can watch it online. An official told the BBC the livestream will happen, making it the first military execution by firing squad since World War II.",
+            "why_it_matters": "A livestreamed execution changes how Americans can watch capital punishment. Instead of being limited to a small group of witnesses in a room, anyone with internet access can view it. This raises questions about how the military handles executions and what it means to make such an event public.",
+            "quote": {
+              "text": "We'll make sure that people are able to watch it, that it's public. Because people need to understand that there's serious consequences for these types of things.",
+              "attribution": "Pete Hegseth, U.S. Defense Secretary",
+              "source_url": "https://www.bbc.co.uk/news/articles/cmy0r96xygx6o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "2307a93a230eab2043dbaf433a67258a",
+          "slug": "judge-extends-white-house-access-for-banned-news-outlets",
+          "title": "Judge extends White House access for banned news outlets",
+          "summary": "A federal judge temporarily restored White House access for three news outlets while a press freedom case goes on.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/news-wrap-judge-extends-white-house-access-for-news-outlets"
+            }
+          ],
+          "article": {
+            "background": "President Trump's administration has restricted news outlet access to the White House. A federal judge is now reviewing whether this press ban is legal.",
+            "what_happened": "On Thursday, a federal judge extended White House access for three news outlets. They can keep this access until the court makes a final ruling on the press ban. The judge is deciding if the restrictions violate journalists' rights and public access to news.",
+            "why_it_matters": "This ruling keeps some news outlets able to report from the White House while the courts decide if the ban is legal. The outcome will shape how much access journalists have to cover the president's actions and statements.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "cfd4f6f2a76d915b9dc6cab7487970e0",
+          "slug": "failed-execution-reignites-death-penalty-debate",
+          "title": "Failed execution reignites death penalty debate",
+          "summary": "Christa Pike survived a botched execution and is now awake and talking, her lawyers say.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/botched-execution-reignites-debate-surrounding-death-penalty"
+            }
+          ],
+          "article": {
+            "background": "Christa Pike is a Tennessee death row inmate. She was sentenced to death for murdering Colleen Slemmer in 1995. Norm covered her failed execution in early October. Now the case is reviving questions about how states run executions.",
+            "what_happened": "Pike survived two lethal injections last Wednesday. She remained alive and snoring 40 minutes after receiving a double dose. Six days later, she was conscious, speaking, and had taken a few steps in her hospital room. Tennessee's governor called the botch \"deeply disturbing\" and suspended all executions in the state pending an independent inquiry.",
+            "why_it_matters": "The failed execution is pushing courts and lawmakers to reconsider lethal injection. They are questioning whether the method works as intended and whether current rules protect against cases like Pike's. This shapes what execution looks like in states that still use the death penalty.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "9cc8f1ae0f80f866057d911abe3b0655",
+          "slug": "ukrainian-drones-hit-russia-s-yandex-data-centers",
+          "title": "Ukrainian drones hit Russia's Yandex data centers",
+          "summary": "The strike caused a large fire and shut down two top supercomputers at Yandex.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.tomshardware.com/tech-industry/data-centers/ukrainian-drones-hit-russias-yandex-data-centers-housing-two-top-supercomputers-major-outage-follows-retaliatory-strike"
+            }
+          ],
+          "article": {
+            "background": "Yandex is Russia's largest search engine and internet company. It runs data centers with powerful computers used for AI research. One facility in Sasovo held two of Yandex's three main supercomputers.",
+            "what_happened": "Ukrainian drones struck the Yandex data center in Sasovo, Russia. The attack caused a major fire. Yandex shut down the facility. Many services that rely on Yandex Cloud went down after the strike. It is unclear if the supercomputers were damaged.",
+            "why_it_matters": "The outage disrupted many Russian online services that people depend on daily. Damage to these supercomputers could slow Russia's AI work. The attack shows how conflict can affect civilian technology and the services people rely on.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "afe34574af675ff4134402503d6d9c9c",
+          "slug": "russian-strike-on-ukrainian-buses-kills-dozens",
+          "title": "Russian strike on Ukrainian buses kills dozens",
+          "summary": "Russian forces hit buses in Kyiv as power outages spread across the city.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/russian-strike-on-ukrainian-public-buses-leaves-dozens-dead-as-blackouts-worsen-in-kyiv"
+            }
+          ],
+          "article": {
+            "background": "Russia has attacked Ukraine since 2022, hitting both military sites and civilian infrastructure. Power outages now plague Ukrainian cities. Kyiv, the capital, has been hit especially hard by strikes on electrical systems.",
+            "what_happened": "A Russian-guided bomb exploded next to public buses filled with passengers in eastern Ukraine on Thursday. The attack killed 30 people. The same wave of strikes worsened blackouts already affecting Kyiv.",
+            "why_it_matters": "Damaged power systems mean less electricity for heating, water pumps, and hospitals. This makes daily life harder for people in Ukrainian cities. Without reliable buses and power, getting around and staying safe becomes much more difficult.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a00a00816dc8ddfbfa0c489964496fc9",
+          "slug": "thousands-march-in-madrid-after-eviction-death",
+          "title": "Thousands march in Madrid after eviction death",
+          "summary": "About 20,000 people protested the death of an 87-year-old woman evicted from her home.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/08/thousands-to-march-in-madrid-after-death-of-evicted-pensioner-maricarmen"
+            }
+          ],
+          "article": {
+            "background": "María del Carmen Abascal was an 87-year-old pensioner in Madrid. An investment firm bought her apartment and tried to raise her rent by 230%. She was evicted two weeks ago from the home where she had lived for over 70 years. She died in hospital on Wednesday night. Her case became the face of Spain's housing crisis.",
+            "what_happened": "About 20,000 people marched through central Madrid on Thursday evening to remember Abascal. The march honored the woman whose eviction sparked nationwide protests. Spaniards are angry about housing policies they say favor investment firms over older and poorer residents. The protests signal that many view this as a problem needing political change.",
+            "why_it_matters": "Spain's housing crisis is leaving many people, especially elderly residents, unable to afford their homes. When investment firms buy apartments, rents can jump so high that longtime residents get pushed out. Abascal's story showed that this is not just a money problem. It moved ordinary people to demand that politicians pay attention and act.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "4252e8748520218a5ebb9c088183d3ff",
+          "slug": "federal-reserve-fines-american-express-for-money-laundering",
+          "title": "Federal Reserve fines American Express for money laundering failures",
+          "summary": "The firm failed to sufficiently detect and report suspicious activity, the Fed announced.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "federal_reserve_press",
+              "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm"
+            }
+          ],
+          "article": {
+            "background": "American Express is a company that issues credit cards and processes payments. Federal regulators require banks and payment processors to detect and report suspicious activity. This helps stop criminals from moving illegal money through the financial system.",
+            "what_happened": "On October 8, 2026, the Federal Reserve announced an enforcement action against American Express. The Fed found the firm failed to detect and report certain suspicious activity. The Fed also found significant gaps in how the company ran its anti-money laundering program.",
+            "why_it_matters": "American Express handles payments for millions of customers. When a major payment processor fails to catch suspicious activity, regulators can penalize it. This action signals that large financial companies must follow anti-money laundering rules or face consequences.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "79cc47d48eef6535d83c1fae877f1ece",
+          "slug": "hhs-unveils-sweeping-vaccine-injury-initiative",
+          "title": "HHS unveils sweeping vaccine injury initiative",
+          "summary": "The Department of Health and Human Services launched four programs to study vaccine injury claims and opened a new clinic.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/10/rfk-jr-unveils-sweeping-federal-initiative-to-find-evidence-of-vaccine-injuries"
+            }
+          ],
+          "article": {
+            "background": "The Department of Health and Human Services, or HHS, oversees federal health programs. Health Secretary Robert F. Kennedy Jr. has been critical of vaccines. Under his leadership, HHS is now launching a major effort to study health problems people claim came from vaccines.",
+            "what_happened": "HHS announced four new programs focused on vaccine injuries on Thursday. The centerpiece is a new clinic at the National Institutes of Health. The clinic opened October 5 and is dedicated to studying patients with health problems they link to vaccines. Kennedy attended a private ceremony before the public announcement.",
+            "why_it_matters": "This marks a significant shift in how the federal government approaches vaccine safety. Most vaccine injuries remain rare, but this new focus may change how HHS investigates claims and communicates findings to the public.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "141950b2562293330387a399e99e2854",
+          "slug": "nhs-heading-for-system-failures-as-mental-health-demand",
+          "title": "NHS heading for system failures as mental health demand soars",
+          "summary": "A review found that rising demand for ADHD and autism care is pushing England's health system beyond its limits.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/oct/09/nhs-fonagy-review-autism-adhd-mental-health-conditions-care"
+            }
+          ],
+          "article": {
+            "background": "The NHS in England provides mental health care, ADHD diagnosis, and autism support. Demand for these services has grown sharply over recent decades. The government asked Prof Peter Fonagy to study why in 2025, as waiting lists grew long.",
+            "what_happened": "Fonagy's review, published Friday, found that mental distress has genuinely risen. It cannot be explained by more people knowing to ask for help. The NHS is now at risk of system failures as it struggles to meet this demand.",
+            "why_it_matters": "If the NHS cannot keep up, people needing mental health care, ADHD tests, or autism support will wait longer and suffer more. The review calls for the system to focus on what patients actually need, not just what it can afford to give.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c1f724fb866bd31da8605c2336814c72",
+          "slug": "margaret-hamilton-apollo-software-engineer-dies-at-90",
+          "title": "Margaret Hamilton, Apollo software engineer, dies at 90",
+          "summary": "Margaret Hamilton, who led the software code that saved the Moon landing, has died at 90.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/science/2026/10/r-i-p-margaret-hamilton-whose-code-saved-the-apollo-11-moon-landing"
+            }
+          ],
+          "article": {
+            "background": "Margaret Hamilton died last week at age 90. She led the software team at MIT that built the flight code for NASA's Apollo moon missions in the 1960s. At that time, software barely existed as a field. Hamilton's work proved that writing code deserved serious study and its own name: software engineering.",
+            "what_happened": "Hamilton coined the term \"software engineering\" and headed the team that created Apollo's onboard flight software. In 2016, she received the Presidential Medal of Freedom. A year later, NASA made her a LEGO minifigure in the \"Women of NASA\" set alongside astronauts Mae Jemison and Sally Ride. Over her career, she wrote more than 130 papers and later founded her own tech company.",
+            "why_it_matters": "Hamilton's work set the standard for how software gets built today. She showed that code needs careful planning and strict testing. Every phone and computer you use runs software built on the practices she helped establish. Without pioneers like Hamilton, modern software would not work the way it does.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "24e3af9c045aa5a75422602d32aee6de",
+          "slug": "uk-investigating-spike-in-whatsapp-scam-calls",
+          "title": "UK investigating spike in WhatsApp scam calls",
+          "summary": "The data watchdog got 3,600 complaints about fake calls in September, the highest in five years.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cqd09g4l2k9yo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK's data watchdog is the Information Commissioner's Office, or ICO. It protects people's data and privacy. A new scam has emerged where automated calls, called robo calls, ask people to add them on WhatsApp.",
+            "what_happened": "The ICO got more than 3,600 complaints about these robo calls in September. That is a five-year high and nearly three times the number from July. The calls use recorded voices to ask people to add them on WhatsApp. The ICO suspects these calls lead to recruitment scams but thinks millions more people are getting them without reporting.",
+            "why_it_matters": "Scammers use these calls to trick people into job scams. Once you add them on WhatsApp, they may ask for money or steal your personal details. The ICO tells people to ignore calls from numbers they don't know, block suspicious calls, and report them.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "76dea3f4319d5befc248a0838c7c0d8f",
+          "slug": "ubuntu-suffering-from-sustained-ddos-attack",
+          "title": "Ubuntu suffering from sustained DDoS attack",
+          "summary": "Ubuntu, software used by many developers, is down from an ongoing attack.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.phoronix.com/news/Ubuntu-DDoS-October-2026"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "e2016add2ba2d6ee415a7e000b0cc960",
+      "title": "Firmus pulls biggest ASX float since Telstra amid investor doubt about datacentre company",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/09/firmus-pulls-asx-float-datacentre-investor-doubt-australia",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "028fed1ad92e125eedca87ceff910e1c",
+      "title": "‘One of one’: A’ja Wilson stands alone with record fifth WNBA MVP award",
+      "url": "https://www.theguardian.com/sport/2026/oct/08/aja-wilson-record-fifth-wnba-mvp-award-las-vegas-aces",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "e9d6822a823fd3e38afbd4b89055e6fb",
+      "title": "Judge weighs if Trump can charge $100K for early access to Truth Social posts",
+      "url": "https://arstechnica.com/tech-policy/2026/10/judge-weighs-if-trump-can-charge-100k-for-early-access-to-truth-social-posts",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "0c04963f9ab47419b1e0cf7dc33083d6",
+      "title": "OpenAI cuts ties with 3 safety researchers",
+      "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "5b91f272e6908bde1953808609252dfd",
+      "title": "New U.S. indictment charges former Venezuelan President Nicol&aacute;s Maduro with torture",
+      "url": "https://www.pbs.org/newshour/world/new-u-s-indictment-charges-former-venezuelan-president-nicolas-maduro-with-torture",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "f1357e7cb046bfb6fc4083e7198d9375",
+      "title": "Jim Chalmers delays ATO’s controversial ban on credit card payments following business outcry",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/09/chalmers-delays-controversial-credit-card-ban-business-tax",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "b500508ae94cd70df010ec74ea28e9c7",
+      "title": "Vitalik Buterin backs crypto ‘bunker mode’ amid rapid AI math advances",
+      "url": "https://cointelegraph.com/news/justin-drake-urges-crypto-bunker-mode-as-ai-could-break-wallet-security-within-months",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "d03efe7941ec94c4529ea4aaf66706d0",
+      "title": "Curtis Flowers, US man wrongfully imprisoned for 22 years, dies aged 56",
+      "url": "https://www.theguardian.com/us-news/2026/oct/08/curtis-flowers-wrongful-conviction-mississippi-dead",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 116,
+    "clusters_considered": 109,
+    "stories_run": 14,
+    "sources": 16,
+    "sections_held": 0
+  }
+}
