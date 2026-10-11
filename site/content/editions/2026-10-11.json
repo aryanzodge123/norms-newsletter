@@ -1,0 +1,370 @@
+{
+  "date": "2026-10-11",
+  "edition_number": 126,
+  "edition_type": "normal",
+  "headline_of_the_day": "Twelve killed and hundreds hurt in Houthi missile attack in Riyadh",
+  "headline_cluster_id": "4e74fde423b44fd4c557eb68d857d3d9",
+  "headline_rationale": "Largest casualty event of the day with immediate deaths at major transportation hub and potential US military involvement.",
+  "key_points": [
+    {
+      "text": "A Houthi missile hit Riyadh airport, killing twelve and injuring over three hundred. Iran-backed rebels are blamed.",
+      "topic": "World"
+    },
+    {
+      "text": "Three people received an experimental treatment to restore aging eye cells. Two show early signs of better sight.",
+      "topic": "Science"
+    },
+    {
+      "text": "The Surface Laptop Ultra has an NVIDIA RTX Spark chip for AI developers.",
+      "topic": "Tech"
+    },
+    {
+      "text": "Trump says Ukraine should get a new president after Zelensky condemned a U.S. diesel deal with Russia.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-11.mp3",
+    "duration_seconds": 431,
+    "size_bytes": 5171904
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "964b31d16849b78b881ff03c06e293b3",
+          "slug": "microsoft-launches-surface-laptop-ultra-with-nvidia-rtx",
+          "title": "Microsoft launches Surface Laptop Ultra with NVIDIA RTX Spark processor",
+          "summary": "Microsoft's new Surface Laptop Ultra has an NVIDIA chip for AI work, not just Linux systems.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.servethehome.com/microsoft-launches-surface-laptop-ultra-surface-rtx-spark-dev-box"
+            }
+          ],
+          "article": {
+            "background": "Microsoft makes Surface laptops, high-end computers for professionals. NVIDIA makes chips for artificial intelligence work. NVIDIA's RTX Spark chip has been used in Linux-based AI computers for about a year. Now it is coming to consumer laptops for the first time.",
+            "what_happened": "Microsoft launched the Surface Laptop Ultra today. It is the first laptop to use NVIDIA's RTX Spark chip. The Surface Laptop Ultra is part of Microsoft's push to expand Windows computers that run on ARM processors. ARM is a different processor design from what most laptops use.",
+            "why_it_matters": "If you buy a new laptop, you may soon see AI chips as a standard feature. The Surface Laptop Ultra signals that AI-capable laptops are becoming common products. This means more tools built to run on your machine rather than in the cloud.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "18f541eb11dd81450711b0bf255a7fb3",
+          "slug": "anthropic-bans-extreme-cruelty-toward-claude-ai-in-updated",
+          "title": "Anthropic bans extreme cruelty toward Claude AI in updated usage policy",
+          "summary": "A new rule bans sustained abuse of AI models but allows normal user frustration.",
+          "score": 2,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://rews.cc/a/anthropic-bans-cruelty-to-claude-still-won-t-say-what-it-pro-bd99f6"
+            }
+          ],
+          "article": {
+            "background": "Anthropic makes Claude, an AI assistant that millions of people use. Like other AI companies, Anthropic sets rules for how users can interact with its systems. On October 8, the company announced a new rule in its 2026 Usage Policy.",
+            "what_happened": "Starting November 12, 2026, users cannot show \"sustained and needless abusive or cruel behavior\" toward Claude. Anthropic said the rule applies only to extreme cases. Users who repeatedly act cruelly with no real purpose would violate it. The policy explicitly allows swearing at Claude, dark creative writing, and research testing.",
+            "why_it_matters": "For most people, this rule changes nothing. You can still get frustrated with Claude, write stories with dark themes, or test its limits. Anthropic has not said what would actually break the rule, so it functions more as a statement of values than a clear boundary. The ban signals the company thinks some interaction standards matter even with AI.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "9d544f496471201703746c9f008f6b41",
+          "slug": "microsoft-ceo-says-all-ai-models-should-be-assumed",
+          "title": "Microsoft CEO says all AI models should be assumed compromised",
+          "summary": "Satya Nadella says AI models should be transparent. People should see how they work, not treat them as black boxes.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised"
+            }
+          ],
+          "article": {
+            "background": "AI models are complex systems that learn from data to spot patterns and give responses. We often treat them like black boxes: we accept or reject their advice without understanding why they chose it. As these systems grow more powerful, they shape decisions in business, healthcare, and government.",
+            "what_happened": "Microsoft CEO Satya Nadella posted on X that we should assume all AI models are compromised. He called for building systems where models can be contained and observed. He wants them to leave behind tamper-proof, human-readable evidence of what they did and why.",
+            "why_it_matters": "AI systems now influence hiring, medical diagnoses, and financial advice in your life. If you understand how a system reached its decision, you can better challenge it if it seems wrong. Nadella's push for transparency and evidence could give you better tools to see and question the automated choices that affect you.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e88cc7565bddc15b29fea279fcdfaf33",
+          "slug": "generative-ai-controversy-reaches-nikon-photography",
+          "title": "Generative AI controversy reaches Nikon photography competition",
+          "summary": "A photography contest is arguing over whether AI-made images should be allowed.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.dpreview.com/news/generative-ai-scandal-has-come-to-one-of-nikons-competitions"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "114f27c261a8483d37bd096afd155d05",
+          "slug": "trump-says-ukraine-should-get-new-president-after-zelensky",
+          "title": "Trump says Ukraine should get new president after Zelensky condemns diesel deal",
+          "summary": "President Trump says Ukraine should get a new leader, responding to its leader's criticism of a Russian diesel deal.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqe8r5l7n92jo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "President Trump announced a deal to buy Russian diesel fuel. This marks a shift in U.S. policy. For years, America has pressured Russia over its war with Ukraine. Ukrainian President Volodymyr Zelensky has opposed this diesel deal.",
+            "what_happened": "Trump said Saturday that Ukraine needs a new president. He made the comment after Zelensky warned that buying Russian diesel would fund Moscow's war effort. Zelensky called the deal a gift to Russia. Trump told reporters that Zelensky wants to cause problems by attacking Russian refineries.",
+            "why_it_matters": "The U.S. diesel deal could give Russia money while its war continues. If the deal proceeds, prices at American gas pumps may drop before midterm elections. But the money Russia earns could extend its ability to fight in Ukraine.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "648974021321b47c0d6dcf67b6cbd672",
+          "slug": "botched-execution-of-christa-pike-highlights-problems-as",
+          "title": "Botched execution of Christa Pike highlights problems as Trump expands capital punishment",
+          "summary": "An execution took over an hour to set up IV lines as the state speeds up executions.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/news/ng-interactive/2026/oct/11/executions-us-christa-pike"
+            }
+          ],
+          "article": {
+            "background": "The US uses capital punishment, or government-ordered execution, for the most serious crimes. President Trump has pushed to speed up executions since taking office. But recent execution attempts have gone badly wrong, raising questions about whether the system can work.",
+            "what_happened": "Christa Pike's execution in Tennessee took over an hour just to insert two IV lines. The execution team repeatedly failed to find a vein. Pike tried to help them, pointing to her body and saying things like \"Please try here.\" These botched attempts have drawn attention to serious flaws in how the US runs executions.",
+            "why_it_matters": "When executions go wrong, the person being executed can suffer greatly. These failures show the system lacks basic training and safety measures. As more executions happen, more of these problems will likely happen too. This puts pressure on courts and lawmakers to fix how executions work.",
+            "quote": {
+              "text": "Please try here",
+              "attribution": "Christa Pike, during her execution in Tennessee",
+              "source_url": "https://www.theguardian.com/news/ng-interactive/2026/oct/11/executions-us-christa-pike"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4e74fde423b44fd4c557eb68d857d3d9",
+          "slug": "houthi-missile-attack-kills-twelve-at-riyadh-airport",
+          "title": "Houthi missile attack kills twelve at Riyadh airport, injures hundreds",
+          "summary": "Iran-backed Yemeni rebels struck Saudi Arabia's capital airport, killing twelve and injuring over three hundred.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/10/yemen-government-allied-forces-recapture-bab-al-mandab-strait-houthis-taiz"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/10/10/g-s1-147682/attack-on-riyadh-airport-killed-12-people-and-wounded-over-300-more-saudi-authorities-say"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw33x4y8k82no?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "King Khalid International Airport in Riyadh is one of Saudi Arabia's busiest travel hubs. The airport has faced attacks before from Yemen's Houthis, an Iran-backed rebel group. This latest strike is the deadliest attack on any Gulf Arab airport since fighting between the Houthis and Saudi-backed forces intensified in Yemen.",
+            "what_happened": "A missile hit King Khalid International Airport on Saturday. The strike killed 12 people and injured over 300 others. The dead included four Saudis, two Bangladeshis, and one each from the US, Jordan, Palestine, Syria, Sudan, and Egypt. The airport suspended all flights.",
+            "why_it_matters": "Airport closures disrupt flights and trade across the Middle East's biggest travel hubs. Travelers face canceled plans and long delays. Businesses lose shipping routes and time-sensitive commerce. The attack also marks a major escalation in conflict between Iran-backed rebels and Saudi forces that affects the whole region's stability.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2ec73eec38d3fa729e0501d8d8eec9b7",
+          "slug": "australia-drafts-plan-to-eliminate-invasive-foxes-killing",
+          "title": "Australia drafts plan to eliminate invasive foxes killing million native animals daily",
+          "summary": "European red foxes are one of the biggest threats to Australian mammals, a new wildlife plan says.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/australia-news/2026/oct/11/fox-australia-threatened-native-species-wildlife-national-plan"
+            }
+          ],
+          "article": {
+            "background": "European red foxes are an invasive species in Australia. They hunt native animals across the country, from backyards to wild areas. Australia has lost around 40 native mammal species to extinction. Foxes and cats are the main cause of these extinctions.",
+            "what_happened": "Sarah Legge, a professor at Charles Darwin University, wrote a draft plan to curb fox predation. The plan aims to reduce the threat foxes pose to native wildlife. If the federal environment department approves it, Australia would have its first updated national strategy to protect animals from foxes.",
+            "why_it_matters": "Foxes kill over a million native animals each day across Australia. Without action, more native species will go extinct. A coordinated national plan could protect wildlife better than scattered local efforts and slow extinctions.",
+            "quote": {
+              "text": "Australia has the worst record of mammal extinctions of any country in the world – around 40 species – and the overwhelming cause for those extinctions has been predation by foxes and cats.",
+              "attribution": "Sarah Legge, professor at Charles Darwin University",
+              "source_url": "https://www.theguardian.com/australia-news/2026/oct/11/fox-australia-threatened-native-species-wildlife-national-plan"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "9cb3b569a5e6ae8739daa205d924030a",
+          "slug": "uk-water-companies-made-340-million-pouring-industrial",
+          "title": "UK water companies made £340 million pouring industrial waste into sewage plants",
+          "summary": "Treatment plants cannot remove most chemicals, so pollutants flow into rivers and farmland.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/environment/2026/oct/09/uk-water-companies-industrial-commercial-wastewater-sewage-treatment"
+            }
+          ],
+          "article": {
+            "background": "Water companies in England must accept industrial wastewater from businesses by law. They issue permits called trade-effluent consents that let factories, restaurants, farms, and other businesses send wastewater into sewage treatment works. Sewage treatment plants are built to handle human waste, not the complex chemicals in industrial wastewater.",
+            "what_happened": "UK water companies made more than £340 million in revenue last year from this trade. They accepted billions of litres of industrial and commercial wastewater. Experts say sewage treatment works cannot remove most of these chemicals. The pollutants then flow into rivers, seas, and farmland.",
+            "why_it_matters": "You may drink water or eat food grown near these waterways. The chemicals left in them can affect water quality and soil health. No independent regulator watches this process and there is no public list of permits. This means the public has little way to know what is being discharged near them.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "24127d69d23f0038ad989696cd662294",
+          "slug": "new-gear-marking-requirements-set-for-pacific-coast",
+          "title": "New gear marking requirements set for Pacific coast groundfish fishery",
+          "summary": "New rule requires marking and gives fishing companies ways to reduce harm to sea animals.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "federal_register",
+              "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20873/magnuson-stevens-act-provisions-fisheries-off-west-coast-states-pacific-coast-groundfish-fishery"
+            }
+          ],
+          "article": {
+            "background": "The Magnuson-Stevens Act is a federal law that governs ocean fisheries. The Pacific coast groundfish fishery catches fish like cod and sole off California, Oregon, and Washington. Fishing gear sometimes tangles around whales, seals, and other marine animals, harming or killing them.",
+            "what_happened": "New federal rules now require West Coast groundfish fishers to mark their gear. The rules also include optional steps to reduce entanglement risk. Gear marking helps regulators know which fishery caused a specific entanglement. This lets them track harm from different gear types.",
+            "why_it_matters": "These rules aim to reduce injuries and deaths to marine animals. Better tracking also helps regulators understand which fishing methods cause the most harm. That data will guide future rules to protect ocean wildlife more effectively.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "f52c7d044d4543c2d0d8135ffb36dedf",
+          "slug": "vision-cells-may-have-been-rejuvenated-in-people-for-first",
+          "title": "Vision cells may have been rejuvenated in people for first time",
+          "summary": "Three people got an FDA-approved treatment to restore aging eye cells. Two show improved vision.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://time.com/article/2026/10/08/eye-cells-rejuvenated-for-the-first-time-in-people"
+            }
+          ],
+          "article": {
+            "background": "Scientists have developed a new way to rejuvenate cells. The method works by reprogramming mature adult cells back to an earlier state. This strategy won a Nobel Prize in 2012. Researchers are now testing whether it can restore vision in people with age-related eye damage.",
+            "what_happened": "Three people received a treatment designed to rejuvenate their vision cells. Researchers from Life Biosciences presented the results at the American Academy of Ophthalmology meeting. The treatment appears safe. Two of the three recipients show early signs of improved vision.",
+            "why_it_matters": "This is one of the first treatments the FDA approved using cell reprogramming to restore normal function. The results so far involve only three people, so it is too early to know if this will become a practical treatment. If it works, it could help people with age-related vision loss.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3b99d04611b24169c37972ac2b315610",
+          "slug": "common-plastic-linked-to-fatty-liver-disease-in-preliminary",
+          "title": "Common plastic linked to fatty liver disease in preliminary study",
+          "summary": "Texas researchers linked a common plastic to fatty liver disease. Unhealthy diets may make the damage worse.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.sciencedaily.com/releases/2026/10/261008102718.htm"
+            }
+          ],
+          "article": {
+            "background": "Polyethylene is one of the world's most common plastics. It is used in bags, bottles, and food packaging. Scientists once thought it was harmless. But Texas A&M researchers have found it may damage your liver.",
+            "what_happened": "The researchers discovered that polyethylene microplastics can cause fatty liver disease. The damage gets worse when combined with an unhealthy diet. This plastic was previously considered safe.",
+            "why_it_matters": "Many people are exposed to microplastics through food and drinking water without knowing it. If this plastic harms your liver, limiting ultra-processed foods could help. You might also reduce plastic use where you can.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "dc448b7a2aef0e1083c45f10456ffc39",
+          "slug": "cleveland-guardians-blank-white-sox-to-complete-playoff",
+          "title": "Cleveland Guardians blank White Sox to complete playoff comeback from two-game deficit",
+          "summary": "Gavin Williams struck out twelve and José Ramírez homered in decisive Game Five victory.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/oct/10/cleveland-guardians-chicago-white-sox-alds-game-five-gavin-williams"
+            }
+          ],
+          "article": {
+            "background": "The Cleveland Guardians and Chicago White Sox were playing a best-of-five playoff series called the American League Division Series, or ALDS. The White Sox won the first two games. The Guardians had to win the last three games to advance, or their playoff run would end.",
+            "what_happened": "Gavin Williams pitched for Cleveland and struck out 12 White Sox batters. José Ramírez hit a two-run home run on a pitch just above home plate. The Guardians won 2-0 on Saturday night to complete their comeback and win the series. Cleveland will face the Tampa Bay Rays in the American League Championship Series starting Monday.",
+            "why_it_matters": "The Guardians are now one series away from the World Series. They have not appeared in the World Series since 2016. Their franchise has not won a championship since 1948, the longest drought of any Major League Baseball team, so advancing further matters to fans who have waited generations for a title.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d59bad0884f69ab2cb880b63ebb44a4f",
+          "slug": "eliud-kipchoge-wins-first-marathon-in-three-years-breaks",
+          "title": "Eliud Kipchoge wins first marathon in three years, breaks Melbourne race record",
+          "summary": "Forty-one-year-old Kenyan ran two hours nine minutes ten seconds on debut course.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/sport/2026/oct/11/eliud-kipchoge-sends-message-melbourne-marathon-win-record"
+            }
+          ],
+          "article": {
+            "background": "Eliud Kipchoge is a 41-year-old Kenyan runner widely seen as the greatest marathoner ever. He is a two-time Olympic champion and former world record-holder. On Sunday, Kipchoge ran his first marathon in three years at the Melbourne Marathon.",
+            "what_happened": "Kipchoge won the race in two hours, nine minutes, and 10 seconds. He beat the old course record by two seconds. He ran alongside Jimmy Whelan, a former Australian pro cyclist, until about 30 kilometers. Then Kipchoge pulled ahead and won easily.",
+            "why_it_matters": "Kipchoge showed he is still competitive at the highest level of marathoning at 41. For fans of the sport, this means the top runners can stay sharp and fast even as they age. His win signals he still has races to run.",
+            "quote": {
+              "text": "My body is still peaking.",
+              "attribution": "Eliud Kipchoge",
+              "source_url": "https://www.theguardian.com/sport/2026/oct/11/eliud-kipchoge-sends-message-melbourne-marathon-win-record"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "bc906fc887a33ffc4102e6379666fae7",
+      "title": "P7 DarkSword iOS Exploit Kit Adds Crypto Wallet Data Theft and Remote Commands",
+      "url": "https://thehackernews.com/2026/10/p7-darksword-ios-exploit-kit-adds.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "d9c7cc988b6817efe2d15bbdea106176",
+      "title": "Supreme Court: 401(k) case over private funds and underperformance",
+      "url": "https://www.cnbc.com/2026/10/10/supreme-court-case-401k-private-funds-intel.html",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 64,
+    "clusters_considered": 38,
+    "stories_run": 14,
+    "sources": 9,
+    "sections_held": 2
+  }
+}
