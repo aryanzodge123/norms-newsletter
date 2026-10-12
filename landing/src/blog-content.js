@@ -23,6 +23,140 @@
 
 export const POSTS = [
   {
+    slug: 'how-do-you-get-your-news',
+    title: 'How do you get your news?',
+    dek:
+      'Search, feeds, newsletters and apps all get you the news. Almost none of them ever ' +
+      'tell you when you’re done.',
+    date: '2026-09-19',
+    dateLabel: 'September 19, 2026',
+    author: 'Aryan Zodge',
+    minutes: 4,
+    body: [
+      {
+        kind: 'text',
+        text:
+          'I don’t remember choosing how I get my news. I doubt you do either.',
+      },
+      {
+        kind: 'text',
+        text:
+          'Mine went something like this. A friend sent me a link, so I read it. Later I ' +
+          'searched for something, and read a few more. I signed up for a newsletter because it ' +
+          'looked good. I installed an app for one big story and never deleted it. None of that ' +
+          'was a decision. It just piled up, and one day it was how I got my news.',
+      },
+      {
+        kind: 'text',
+        text:
+          'What I noticed was how it felt. I’d pick up my phone, spend twenty minutes reading, ' +
+          'and put it down unsure what I’d learned. I’d read a lot. I just couldn’t say what I ' +
+          'was now caught up on.',
+      },
+      {
+        kind: 'text',
+        text:
+          'So I started paying attention to how news actually reaches people. There are a ' +
+          'handful of ways, and each is good at something.',
+      },
+      {
+        kind: 'text',
+        text:
+          'The most common is the single article. Someone shares it, or a search finds it, and ' +
+          'you read it. It’s easy, and it costs nothing to start. But you didn’t choose it. ' +
+          'Something decided it was the article to show you, and that something is usually ' +
+          'rewarded for your click, not for whether you understood anything. Each article also ' +
+          'arrives alone, with none of the story around it. You get one piece of a puzzle and ' +
+          'never see the box.',
+      },
+      {
+        kind: 'text',
+        text:
+          'Then there’s RSS, which is the way of people who want control. You pick the ' +
+          'sources, and everything they publish lands in one place. I have real respect for it. ' +
+          'But RSS gives you everything, in the order it arrived, with nothing ranked. There’s ' +
+          'no such thing as caught up. The unread count just climbs until reading the news feels ' +
+          'like clearing a debt.',
+      },
+      {
+        kind: 'text',
+        text:
+          'Newsletters are the calm option. A person picks the stories and writes them up, and ' +
+          'it shows up in your inbox. That’s a real improvement. But it’s one person’s taste, ' +
+          'sent to everyone, so you get their idea of what matters. Subscribe to a few and ' +
+          'you’ll find the same big story in each one, explained three times.',
+      },
+      {
+        kind: 'text',
+        text:
+          'News apps are the fastest of all. They tell you the moment something happens, which ' +
+          'sounds like what you’d want. But an app is judged on how often you open it. Its ' +
+          'alerts are built to pull you back, not to let you leave.',
+      },
+      {
+        kind: 'pull',
+        text: 'Each of these is built to be kept open. None of them is built to be finished.',
+      },
+      {
+        kind: 'text',
+        text:
+          'That’s what took me a while to see. The problem isn’t that there’s too little news. ' +
+          'There’s more than anyone could read in a lifetime. The problem is that nothing tells ' +
+          'you when you’re done, and nothing knows what you actually care about. So you keep ' +
+          'going, because stopping feels like missing something.',
+      },
+      {
+        kind: 'text',
+        text: 'That’s the problem Norm is built to solve.',
+      },
+      {
+        kind: 'text',
+        text:
+          'You start by picking your topics, and then you decide how much each one matters. ' +
+          'Care a lot about technology and only a little about business? Your newsletter is ' +
+          'divided that way. It’s not a general edition sent to everyone. It’s yours, and the ' +
+          'weights you set decide how much room each topic gets.',
+      },
+      {
+        kind: 'text',
+        text:
+          'Norm also reads for you. When several outlets cover the same story, Norm brings them ' +
+          'together into one, so you read it once instead of three times. That one change ' +
+          'removes most of the repetition I used to feel.',
+      },
+      {
+        kind: 'text',
+        text:
+          'Then there’s the part I care about most. You decide how long your newsletter is, and ' +
+          'when it’s done, it’s done. There’s no feed underneath and nothing to scroll into. ' +
+          'You reach the end and you get to stop, knowing you’ve seen what mattered to you. ' +
+          'Being finished is the whole point.',
+      },
+      {
+        kind: 'text',
+        text:
+          'It also arrives when you want it. You choose the time, and the news waits for you, ' +
+          'not the other way around. No alert is trying to get your attention.',
+      },
+      {
+        kind: 'text',
+        text:
+          'And I didn’t want any of this to ask for blind trust. So every story links back to ' +
+          'the original sources it came from. If a summary makes you curious, you can go read ' +
+          'the real thing. If something sounds off, you can check it yourself. Norm gives you ' +
+          'the short version and never gets in the way of the long one.',
+      },
+      {
+        kind: 'text',
+        text:
+          'That’s really the whole idea. You shouldn’t have to read everything to feel ' +
+          'informed, and you shouldn’t need to keep watching for fear of missing something.',
+      },
+      { kind: 'close', text: 'Keep up without keeping watch.' },
+      { kind: 'close', text: 'Read it, and be done.' },
+    ],
+  },
+  {
     slug: 'put-my-phone-down',
     title: 'I built a newsletter so I could put my phone down',
     /* The standing subtitle. It is the page's meta description too, so it has
@@ -155,6 +289,6 @@ export const POSTS = [
   },
 ]
 
-/* The index renders newest first and the post document looks itself up by
-   slug. One post makes both trivial and neither is worth getting wrong later. */
+/* The index renders in POSTS order, so a new post goes at the top of the array.
+   The post document looks itself up by slug. */
 export const postBySlug = (slug) => POSTS.find((p) => p.slug === slug)

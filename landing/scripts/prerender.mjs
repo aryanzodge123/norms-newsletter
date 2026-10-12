@@ -82,8 +82,8 @@ const embed = (data) => JSON.stringify(data, null, 2).replace(/</g, '\\u003c')
  * The failure mode that matters is silent. An empty root looks exactly like a
  * working build until somebody runs curl against production weeks later, which
  * is how the page shipped in that state and nobody noticed. */
-function render({ name, component, file, floor, graph }) {
-  const markup = renderToStaticMarkup(createElement(component))
+function render({ name, component, props, file, floor, graph }) {
+  const markup = renderToStaticMarkup(createElement(component, props))
   if (markup.length < floor) {
     fail(`${name}: markup is ${markup.length} bytes, under the ${floor} byte floor. The page would ship close to empty.`)
   }
@@ -246,6 +246,7 @@ const PAGES = [
   ...POSTS.map((post) => ({
     name: `blog/${post.slug}`,
     component: PostPage,
+    props: { slug: post.slug },
     file: `blog/${post.slug}.html`,
     /* The post body alone is about 4,400 characters. Same reasoning as /faq:
      * high enough to catch an empty root, low enough that a copy edit does
