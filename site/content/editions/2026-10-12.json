@@ -1,0 +1,405 @@
+{
+  "date": "2026-10-12",
+  "edition_number": 127,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump says Russia agreed to stop fighting Ukraine over energy. Zelensky says he knows nothing about it.",
+  "headline_cluster_id": "1e497b24b7539c31f7b6a9dccc6e1622",
+  "headline_rationale": "Unconfirmed ceasefire claim in an active war zone affects global energy markets and regional stability.",
+  "key_points": [
+    {
+      "text": "Trump claimed Ukraine and Russia agreed to stop fighting over energy, but gave no proof and Russia denied it.",
+      "topic": "World"
+    },
+    {
+      "text": "Air strikes killed at least 72 gold miners on the Egypt-Sudan border, a rights group says.",
+      "topic": "World"
+    },
+    {
+      "text": "A projectile hit Riyadh airport for the second day as Houthi attacks on Saudi targets increase.",
+      "topic": "World"
+    },
+    {
+      "text": "An Illinois college tried to end its contract with Flock security cameras over data sharing. The company said no.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "OpenAI fired three safety researchers in a dispute over AI risks and sharing confidential company information.",
+      "topic": "AI"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-12.mp3",
+    "duration_seconds": 413,
+    "size_bytes": 4956768
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "232a523d7f65ea84a2f8cbe996617cd6",
+          "slug": "apple-to-announce-homeview-smart-home-hub-tuesday",
+          "title": "Apple to announce HomeView smart home hub Tuesday",
+          "summary": "Device will have display, A18 chip, and Siri control for home functions.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success"
+            }
+          ],
+          "article": {
+            "background": "Apple has tried to enter the smart home market before. The company created HomeKit, a software system for controlling smart home devices. But it never became as popular as competitors like Amazon Alexa or Google Home. Now Apple is preparing to announce a new device called the HomeView.",
+            "what_happened": "Apple will announce the HomeView on Tuesday, according to Bloomberg reporter Mark Gurman. The device runs on Siri, Apple's voice assistant. It includes a display and an A18 chip. Users can control other smart home devices with it. Apple will offer two versions: one for countertops and one to mount on walls.",
+            "why_it_matters": "Apple users who bought into HomeKit will have a better way to manage their connected devices. The HomeView is Apple's most serious push into smart home hardware so far. That suggests the company is betting bigger on this market than it has before.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5b1476efd65282d350c08d2b0219bfd3",
+          "slug": "uk-to-strengthen-cyber-defenses-as-minister-calls-for-ai",
+          "title": "UK to strengthen cyber defenses as minister calls for AI safety efforts",
+          "summary": "A government minister wants to boost Britain's defenses against cyber attacks and oversee AI.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/oct/12/uk-strengthen-cyber-defences-minister-ai-firms-safety"
+            }
+          ],
+          "article": {
+            "background": "The UK has an AI Security Institute. It tests the most powerful AI models. Britain's government now treats AI as a top priority. It created a cabinet-level minister to lead the field. Kanishka Narayan holds this role.",
+            "what_happened": "Narayan will say companies building advanced AI must do more to keep their systems safe. He will argue Britain cannot rely only on tech companies to police their own models. Instead, he says the UK should build more of its own AI infrastructure. He will make this call in a speech in west London.",
+            "why_it_matters": "The UK is trying to lead in AI while keeping it safe. Right now, a few big tech companies control the most advanced systems. If Britain builds its own AI, it gains more power over how these tools work. It also means the country can set its own rules instead of just following what companies decide.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "0356b6f57471802768bdd7a614ba23b1",
+          "slug": "openai-fires-three-safety-researchers-over-dispute-about-ai",
+          "title": "OpenAI fires three safety researchers over dispute about AI risks",
+          "summary": "Three researchers shared secret company information with an outside safety group without asking first.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/openai-chatgpt-ai-artificial-intelligence-safety-789d4f5293fba45a22fcb62ebfbc2a41"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "80aa15f9583758049944cdcfa3b77abc",
+          "slug": "microsoft-president-says-ai-is-less-regulated-than-milk",
+          "title": "Microsoft president says AI is less regulated than milk",
+          "summary": "Brad Smith wants the world to agree on safety rules for AI, including breach alerts.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c6rmy7zmvx3lo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c6rmy7zmvx3lo"
+            }
+          ],
+          "article": {
+            "background": "Artificial intelligence is computer software that learns and makes decisions on its own. Right now, AI faces far fewer safety rules than many everyday products. Milk, washing machines, and other consumer goods all have strict safety standards in place. Brad Smith, the president of Microsoft, recently highlighted this gap in regulation.",
+            "what_happened": "Smith said AI needs global safety rules. He called for two main changes. First, companies should have to notify people if an AI system breaches their data. Second, outside experts should approve AI products before companies release them. Smith's view puts him at odds with President Trump, who says the AI industry should regulate itself instead.",
+            "why_it_matters": "If AI has fewer safety rules than other products, the systems that affect your data and decisions may have fewer protections. New safety standards could make companies test AI more carefully before launch. They might also require faster action when things go wrong. These changes would likely take time to spread globally.",
+            "quote": {
+              "text": "Right now, your washing machine is subject to more safety rules than AI. Every carton of milk that you see in the gro",
+              "attribution": "Brad Smith, president of Microsoft",
+              "source_url": "https://www.bbc.co.uk/news/articles/c6rmy7zmvx3lo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "a8c4aab5053c0b9964dd08a50b40bebe",
+          "slug": "remote-employee-fired-after-refusing-160-webcam-photos-per",
+          "title": "Remote employee fired after refusing 160 webcam photos per day",
+          "summary": "A company fired a worker who refused to let it monitor her with constant webcam photos.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "fec10c5c77b69987103a9380b6cb5b91",
+          "slug": "companies-using-personal-data-to-control-customer-prices",
+          "title": "Companies using personal data to control customer prices and product selection",
+          "summary": "Companies change what customers see and pay based on data they collect about them.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "npr_economy",
+              "url": "https://www.npr.org/2026/10/11/nx-s1-5995376/how-personal-data-is-being-used-to-control-what-customers-see-and-pay"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "7f3d251e6c970a04ec0e9df97faca7d1",
+          "slug": "trump-diesel-import-plan-from-russia-faces-growing-backlash",
+          "title": "Trump diesel import plan from Russia faces growing backlash",
+          "summary": "Trump plans to buy Russian diesel fuel as energy prices stay high.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cjn5v21py07vo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US has sanctioned Russian oil and gas for years due to Russia's war with Ukraine. Last week, Trump signed a law to punish countries that buy Russian energy. Now he says he has a deal to import Russian diesel anyway. Ukraine's leader warned this would fund Russia's military.",
+            "what_happened": "Trump announced Friday that Putin agreed to send 300,000 tonnes of diesel to US and global markets right away. More shipments would follow. Both Republican and Democratic lawmakers have criticized the deal. They say it breaks US law. Ukraine's president Zelensky called it a gift to Moscow that helps pay for the war.",
+            "why_it_matters": "Diesel prices affect what you pay for goods delivered by truck and heating fuel bills. If Trump imports Russian fuel, the policy on energy sanctions becomes unclear and hard to follow. The move signals that US pressure on Russia may be shifting.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c4545d18664ef7fe00186833d387f048",
+          "slug": "bipartisan-senators-call-on-trump-to-reverse-russian-diesel",
+          "title": "Bipartisan senators call on Trump to reverse Russian diesel plan",
+          "summary": "Senators sent Trump a letter opposing his plan to buy Russian diesel fuel.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/bipartisan-group-of-senators-calls-on-trump-to-reverse-course-on-russian-diesel-plan"
+            }
+          ],
+          "article": {
+            "background": "The US has long avoided buying Russian energy products, especially after Russia invaded Ukraine in 2022. President Trump's administration recently announced a plan to buy diesel fuel from Russia to help lower high fuel prices.",
+            "what_happened": "A bipartisan group of six senators called on Trump's administration to stop the plan immediately. The senators want the US to reverse course on buying Russian diesel.",
+            "why_it_matters": "Buying Russian energy could weaken American energy independence. It might also send a mixed signal to allies about US support for Ukraine at a time when that support matters most.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "1e497b24b7539c31f7b6a9dccc6e1622",
+          "slug": "trump-claims-ukraine-russia-energy-ceasefire-that-zelensky",
+          "title": "Trump claims Ukraine-Russia energy ceasefire that Zelensky says is news to him",
+          "summary": "Trump posted on social media about a ceasefire deal, but had no details or proof.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/live/2026/oct/11/donald-trump-ukraine-russia-energy-ceasefire-diesel-latest-updates"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cwvgde9vrdd9o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Ukraine and Russia have been fighting since 2022. Energy infrastructure like power plants has become a major target. Both sides have attacked each other's energy facilities throughout the conflict.",
+            "what_happened": "US President Donald Trump posted on social media that Russia and Ukraine agreed to stop attacking each other's energy targets right away. He gave no details. Ukraine's President Volodymyr Zelensky said the announcement surprised him and called it \"news to me.\" Later, Zelensky said Ukraine would back such a deal if Russia agreed to it. Russia has not commented yet. Zelensky also said Russia hit Ukrainian energy sites after Trump's post.",
+            "why_it_matters": "If both sides stopped hitting energy targets, Ukrainians could have steadier electricity and heat through winter. For now, it is unclear if Russia will accept the deal. Zelensky's willingness to support it shows Ukraine sees potential value, but without Moscow's agreement nothing changes on the ground.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6bc7ec1d1f51024eb29d1eb19a251fe1",
+          "slug": "air-strikes-kill-72-gold-prospectors-on-egypt-sudan-border",
+          "title": "Air strikes kill 72 gold prospectors on Egypt-Sudan border",
+          "summary": "Bombs killed 72 gold miners on the Sudan side of the Egypt-Sudan border.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqy43vrk8wv8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Sudan and Egypt share a border in the Nile River region. Many people there mine for gold by hand, a practice called artisanal mining. Egypt has previously been accused of air strikes on these miners as part of efforts to stop illegal gold trade along its southern border.",
+            "what_happened": "At least 72 gold miners were killed in air strikes on Saturday in Sudan's River Nile state, near the border with Egypt. A rights group called Emergency Lawyers said jets targeted the miners at a popular mining site. Egypt and Sudan's current leaders have not yet responded to the accusations.",
+            "why_it_matters": "These strikes raise serious questions about protecting civilians during military operations. The incident highlights the risks faced by people who mine gold in this unstable region, where both governments have cracked down on mining they say is illegal.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6d3e40505cdd99e13c51267372ef6f92",
+          "slug": "riyadh-airport-struck-by-projectile-day-after-deadly",
+          "title": "Riyadh airport struck by projectile day after deadly missile attack",
+          "summary": "A Houthi group attacked a major airport in Riyadh for the second day in a row.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/riyadh-airport-hit-by-projectile-a-day-after-deadly-missile-strike"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/11/saudi-coalition-retaliation-houthi-attack-riyadh-airport"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cr93znyk44e1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Saudi Arabia's main airport, King Khalid International Airport in Riyadh, has been hit twice in two days. On Saturday, a missile killed 13 people and hurt 308 others. The attacks came from Yemen's Houthi rebel group, which is backed by Iran. The Houthis have launched several strikes on Saudi targets this week.",
+            "what_happened": "A projectile hit terminal 4 at the airport on Sunday. It started a fire that killed one person, a Pakistani resident. Eleven others were hurt. Saudi air defenses also stopped a cruise missile near the airport. This was the second attack on the same terminal in as many days.",
+            "why_it_matters": "Repeated strikes on a major airport threaten flights and business. Travelers face safety risks. The escalating attacks are drawing more countries' attention to the conflict in Yemen. This could pull additional nations into the fighting in the region.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "0db6631e715c874779a4f725474ad12d",
+          "slug": "illinois-college-tried-to-cancel-flock-camera-contract-and",
+          "title": "Illinois college tried to cancel Flock camera contract and company refused",
+          "summary": "A school tried to cancel its Flock camera contract after learning it shared data with border patrol.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1009411/elgin-community-college-flock-safety-cameras"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://chicago.suntimes.com/education/2026/10/09/to-protect-immigrant-students-a-chicago-area-college-told-flock-to-remove-its-cameras-the-company-refused"
+            }
+          ],
+          "article": {
+            "background": "Flock Safety makes surveillance cameras with license plate readers. These cameras use artificial intelligence to identify and track vehicles. Elgin Community College in Illinois installed six Flock cameras in April 2025. The school hoped they would help find stolen cars and missing people.",
+            "what_happened": "By September 2025, the college's president learned that Flock was sharing camera data with U.S. Customs and Border Protection. She also found that the footage was not secure. Law enforcement and Flock employees were accessing it without proper checks. The college told Flock to remove the cameras. Flock refused and kept them running. The college covered the cameras, but Flock came back and uncovered them.",
+            "why_it_matters": "For students, especially immigrant students, the data sharing created real safety risks. Signing a contract did not give the college the power to stop data collection once problems emerged. Schools need stronger protections when they buy surveillance systems. They should be able to turn them off if the company abuses the data.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "55793ecd5e35d5cc371e5171ac1003cb",
+          "slug": "england-and-wales-failed-to-fit-5-000-offender-tags-report",
+          "title": "England and Wales failed to fit 5,000 offender tags, report finds",
+          "summary": "First half of year saw mass monitoring failures plus 1,600 tags with no signal.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/oct/12/failure-fit-tags-offenders-unmonitored-england-wales"
+            }
+          ],
+          "article": {
+            "background": "Electronic tags let officials watch offenders serving sentences outside prison. The probation system in England and Wales oversees these offenders and enforces the rules of their release.",
+            "what_happened": "More than 5,000 offenders went unmonitored in the first half of the year. Probation staff failed to install their electronic tags. Another 1,600 tags had no signal for more than two weeks due to faults. A report from the Institute for Government revealed these problems, concluding that a lack of staff meant sentences imposed by courts had become unrealistic for most offenders.",
+            "why_it_matters": "When offenders go unmonitored, the system cannot enforce the conditions courts set. This undermines public safety and the fairness of sentences. The failures show the probation system is stretched too thin to do its job.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e61cc325723de60e4dfc140f15b0cde6",
+          "slug": "us-agency-to-rewrite-rules-on-vehicle-headlight-glare",
+          "title": "US agency to rewrite rules on vehicle headlight glare",
+          "summary": "The government will change rules to fix bright headlights that hurt drivers' eyes.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/world/us/us-agency-rewrite-rules-reduce-vehicle-headlight-glare-2026-10-06"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "07f9b85916c515a3ed965abfc9675f3a",
+          "slug": "manchester-city-win-3-0-at-liverpool-in-first-game-since",
+          "title": "Manchester City win 3-0 at Liverpool in first game since guilty verdict",
+          "summary": "City beat Liverpool 3-0, moving past claims that it broke financial rules.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/football/2026/oct/11/enzo-maresca-manchester-city-liverpool-premier-league"
+            },
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/football/articles/cmy0rd4pex7no?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Manchester City won 3-0 at Liverpool on Sunday in their first game since being found guilty of 114 charges. The charges relate to breaking Premier League financial rules between 2009-10 and 2017-18. City faces a potential appeal and punishment, which could include a points deduction. Liverpool's fans feel particular anger, having finished second to City in three recent seasons.",
+            "what_happened": "City beat Liverpool 3-0 at Anfield. Goals came from Erling Haaland, Jérémy Doku, and Rayan Cherki. This was City's sixth straight league win. Manager Enzo Maresca has now matched the best start to a Premier League managerial career.",
+            "why_it_matters": "City showed they can win decisively even while facing serious legal uncertainty. But the win's real significance stays unclear. The club's appeal and any punishment could reshape the season. For now, City leads the league while the Premier League remains in limbo.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0795cdbaddc8cea08948ca417f9d78d2",
+          "slug": "crystal-palace-beat-nottingham-forest-3-1-as-glasner",
+          "title": "Crystal Palace beat Nottingham Forest 3-1 as Glasner returns to Selhurst",
+          "summary": "Nottingham Forest gave up an early lead and lost 3-1 to Crystal Palace.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/football/videos/cwz0zkj27greo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Oliver Glasner is the manager of Nottingham Forest, a team in England's Premier League. Crystal Palace is another Premier League club. Glasner previously managed Crystal Palace before moving to Nottingham Forest, so this match was his first return to his former workplace.",
+            "what_happened": "Nottingham Forest took an early lead against Crystal Palace but let it slip. Crystal Palace scored three goals to win 3-1 at home at Selhurst Park.",
+            "why_it_matters": "The match shows how momentum shifts in football. Forest's failure to hold their lead and concede three goals means they lost ground in the Premier League table, while Palace picked up three points at home.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "731b5e40cd0f67146e9479f16796603b",
+      "title": "Debt advice that may leave you owing even more money",
+      "url": "https://www.bbc.co.uk/news/articles/c84g1xz1l9ddo?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "24127d69d23f0038ad989696cd662294",
+      "title": "Magnuson-Stevens Act Provisions; Fisheries off West Coast States; Pacific Coast Groundfish Fishery; Pacific Coast Groundfish Fishery Management Plan; Fixed Gear Marking and Entanglement Risk Reduction",
+      "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20873/magnuson-stevens-act-provisions-fisheries-off-west-coast-states-pacific-coast-groundfish-fishery",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 127,
+    "clusters_considered": 93,
+    "stories_run": 16,
+    "sources": 14,
+    "sections_held": 2
+  }
+}
