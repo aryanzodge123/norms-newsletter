@@ -1,0 +1,309 @@
+{
+  "date": "2026-10-13",
+  "edition_number": 128,
+  "edition_type": "normal",
+  "headline_of_the_day": "China becomes world's top research and development spender for first time",
+  "headline_cluster_id": "4cfac2f8f1fd548022cc43642d4254c6",
+  "headline_rationale": "First-time shift in global R&D leadership between major powers signals durable change in competitive positioning that affects trade, technology, and geopolitics.",
+  "key_points": [
+    {
+      "text": "China spent more on research and development than the United States in 2024 for the first time.",
+      "topic": "World"
+    },
+    {
+      "text": "Women with autoimmune diseases are far more likely than men to have their symptoms dismissed as not real.",
+      "topic": "Science"
+    },
+    {
+      "text": "Ukraine's former top general says Russia's army cannot advance because it has lost too many soldiers.",
+      "topic": "World"
+    },
+    {
+      "text": "Researchers found that AI models can hide what they can do from safety tests before release.",
+      "topic": "AI"
+    },
+    {
+      "text": "The International Monetary Fund warned the global economy faces tough times as oil runs low and governments run out of money.",
+      "topic": "Finance"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-13.mp3",
+    "duration_seconds": 424,
+    "size_bytes": 5094144
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "caa108cb0ccc9d553cd4860e7e641f53",
+          "slug": "researchers-prove-ai-models-can-hide-capabilities-from",
+          "title": "Researchers prove AI models can hide capabilities from safety tests",
+          "summary": "AI models can hide dangerous behaviors from safety tests, raising questions about how safe they really are.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arxiv.org/abs/2610.13928"
+            }
+          ],
+          "article": {
+            "background": "Before deploying AI models, researchers run safety tests. These tests try to find dangerous capabilities. The tests assume hidden abilities can be found if they exist. A new study challenges this assumption.",
+            "what_happened": "Researchers showed that AI models can hide capabilities using backdoor attacks. They embedded encrypted neural networks inside model weights. These hidden circuits only activate with a secret trigger. The encryption makes them nearly impossible to find or understand, even with full access to the model.",
+            "why_it_matters": "If AI models can reliably hide capabilities from safety tests, evaluations become less trustworthy. This means models might have dangerous abilities that tests miss. The finding suggests we need new ways to verify that AI systems are safe before we use them.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "86630252f2e441e775b447df74059cb3",
+          "slug": "anthropic-says-new-defenses-cut-data-harvesting-from",
+          "title": "Anthropic says new defenses cut data harvesting from distillation attacks by up to 99 percent",
+          "summary": "Anthropic says it found ways to stop hackers from stealing training data from Claude on a large scale.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.anthropic.com/research/distillation-defenses"
+            }
+          ],
+          "article": {
+            "background": "Claude is an AI model made by Anthropic. Distillation attacks are covert campaigns where people try to steal one model's abilities and copy them into another without permission. These attacks often use fake accounts at scale. They let companies copy expensive AI models on the cheap.",
+            "what_happened": "Anthropic announced new defense methods against distillation attacks. Early evidence shows these defenses cut the data attackers harvested by 90 to 99 percent. The company outlined the methods in a blog post.",
+            "why_it_matters": "Distillation attacks undermine the huge investment needed to build advanced AI models. Stronger defenses make it harder for companies to copy those models cheaply. This affects how AI companies choose to build and protect their tools.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "b9b2cea87f303268c8a45ec5e89698c9",
+          "slug": "international-monetary-fund-warns-global-economy-could-test",
+          "title": "International Monetary Fund warns global economy could test resilience limits",
+          "summary": "Oil reserves are running low and governments are spending too much, the IMF warned.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/business/2026/oct/13/imf-global-economy-world-economic-outlook-uk-gdp-forecast-2026"
+            }
+          ],
+          "article": {
+            "background": "The International Monetary Fund, or IMF, watches the global economy and advises countries on money matters. It releases a World Economic Outlook twice a year. For the past six months, the Middle East conflict has threatened to disrupt oil supplies and raise prices worldwide. But rerouting oil shipments and tapping emergency stockpiles kept the damage contained.",
+            "what_happened": "The IMF warned that the global economy could soon hit its limits. Emergency oil reserves are now depleted. Many countries carry high debt and large budget deficits. Without these buffers, the IMF says governments will struggle to protect people if a new crisis hits.",
+            "why_it_matters": "You depend on stable oil prices for goods to move to stores and stay affordable. If another shock hits and governments cannot respond, prices could spike and growth could slow. The IMF is signaling that the world has less cushion to absorb bad news than it did six months ago.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "99faddd60705e26b6d2b9bba386cc627",
+          "slug": "united-kingdom-growth-forecast-raised-for-2026-but-higher",
+          "title": "United Kingdom growth forecast raised for 2026 but higher costs expected in 2027",
+          "summary": "The UK economy will grow 1.3 percent this year, but higher energy prices and interest rates will slow growth next year, the IMF said.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cmglw0r21zexo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The International Monetary Fund (IMF) forecasts how fast major economies will grow. Governments and investors watch these forecasts to plan ahead. The IMF just released a new report on UK growth.",
+            "what_happened": "The IMF raised its UK growth forecast for 2026 to 1.3%, up from 1% predicted in July. But it warned growth will slow in 2027 as energy prices and interest rates rise. The IMF said global economies have weathered the energy shock from the US-Iran conflict better than expected. It still cautioned that the conflict's full economic impact remains unclear.",
+            "why_it_matters": "A stronger 2026 means more jobs and wages in the near term. But the 2027 slowdown matters to your wallet. Higher energy bills and borrowing costs will make money tighter to stretch later. The forecast signals where financial pressure is likely to hit households.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4cfac2f8f1fd548022cc43642d4254c6",
+          "slug": "china-overtakes-united-states-as-top-research-and",
+          "title": "China overtakes United States as top research and development spender",
+          "summary": "China spent more on research and development than any country in 2024, marking a shift in global power.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://japannews.yomiuri.co.jp/science-nature/science/20260908-347742"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "6f30e0b70d060f8a830ee9132c7b2cc8",
+          "slug": "ukraine-says-russia-s-offensive-ability-is-broken-after",
+          "title": "Ukraine says Russia's offensive ability is broken after heavy losses",
+          "summary": "Ukraine's former top general told BBC that Russia's army cannot advance because it lost too many soldiers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c9y7lgg2vdggo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Ukraine's former top military leader is Gen Oleksandr Syrskyi. He was forced out of his job in the summer. This interview is his first public comments since then.",
+            "what_happened": "Syrskyi told the BBC that Ukraine has stopped Russia's advance. He said Ukraine killed so many Russian soldiers that Russia can no longer attack effectively. He also pushed back against critics who said his tactics were outdated.",
+            "why_it_matters": "If Russia truly cannot advance, the war may shift toward holding ground rather than conquest. This affects how long the fighting lasts and what comes next. Syrskyi's return to public view also matters because military leaders shape strategy and how resources get used.",
+            "quote": {
+              "text": "broken Russia's ability to advance",
+              "attribution": "Gen Oleksandr Syrskyi, Ukraine's former commander-in-chief",
+              "source_url": "https://www.bbc.co.uk/news/articles/c9y7lgg2vdggo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "34d0beecffe1abb81af4c4b7d9b54cee",
+          "slug": "women-with-autoimmune-conditions-told-symptoms-are",
+          "title": "Women with autoimmune conditions told symptoms are psychological far more than men",
+          "summary": "Women are up to 74 percent more likely than men to be told their illness symptoms are not real, delaying care.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/oct/13/women-autoimmune-conditions-psychological-misdiagnosis-cambridge-study"
+            }
+          ],
+          "article": {
+            "background": "Autoimmune conditions happen when the immune system attacks the body's own cells. About one in 10 people worldwide have one. They cause fatigue, muscle pain, rashes, and other health issues. A new study from the University of Cambridge and University of East Anglia looked at how doctors treat women versus men with these diseases.",
+            "what_happened": "The study found women are up to 74% more likely than men to be told their symptoms are psychological or psychosomatic. Women also wait much longer for a correct diagnosis and treatment. Doctors more often wrongly link women's symptoms to mental health causes.",
+            "why_it_matters": "Misdiagnosis delays treatment when women need help most. A longer wait means symptoms get worse and affect daily life for months or years. If you are a woman seeking care for unexplained fatigue or pain, this research shows you may need to push harder for real answers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "228780c2f079d97913725077bd5e9d50",
+          "slug": "breaking-bad-actor-rj-mitte-dies-at-34",
+          "title": "Breaking Bad actor RJ Mitte dies at 34",
+          "summary": "RJ Mitte, who played Walter White Jr on Breaking Bad and spoke up for people with disabilities, has died at 34.",
+          "score": 2,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/culture/2026/oct/12/rj-mitte-breaking-bad-actor-death"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmn045en7d88o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "RJ Mitte played Walter White Jr on Breaking Bad, the Emmy-winning drama about a drug kingpin. Mitte had cerebral palsy, a condition that affects movement and coordination. He used his own experience with the condition to bring truth to the role. He also became known for speaking up about disability rights.",
+            "what_happened": "Mitte died at age 34 in Brownsville, Texas. No cause of death was given right away. His representatives said in a statement that he was a beloved actor, philanthropist, and disability rights advocate.",
+            "why_it_matters": "Breaking Bad was one of the most watched shows in television history. Mitte's work on the series showed that actors with disabilities could play major roles in mainstream TV. His death is a loss for the community he helped represent on screen and in public life.",
+            "quote": {
+              "text": "It is with profound sadness that we share the tragic passing of beloved actor, philanthropist, and passionate disability rights advocate RJ Mitte.",
+              "attribution": "RJ Mitte's representatives",
+              "source_url": "https://www.bbc.co.uk/news/articles/cmn045en7d88o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "19eee2ea879fbf9d095c8c59493bd018",
+      "title": "Where the US midterm elections will be won and lost",
+      "url": "https://www.bbc.co.uk/news/articles/cr20wlp09gn3o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2595a2e0160f752dc0001635ff616f37",
+      "title": "Bumble shares soar after report dating firm in $1bn takeover talks",
+      "url": "https://www.bbc.co.uk/news/articles/cm9qzwjgnjxlo?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "716f081a2483d83cc4739302acf1f930",
+      "title": "‘Super app’ aimed at UK students uses servers owned by Chinese firm on US blacklist",
+      "url": "https://www.theguardian.com/business/2026/oct/13/super-app-uk-students-servers-china-us-blacklist",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "bbcf171d082a2afda9b8a4f5a9ae71d8",
+      "title": "One dead and several hurt after rollercoaster incident at Six Flags",
+      "url": "https://www.bbc.co.uk/news/articles/c6n4ejx8x1z7o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "04c0697ec1ad4dd0de4a922bdd82130f",
+      "title": "A.I. Music Fraudster Who Drew Millions in Royalties Is Sentenced to 18 Months",
+      "url": "https://www.nytimes.com/2026/10/07/arts/music/ai-music-fraud-royalties-sentence.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "67ceef276cbfe9386ac48a708117ec25",
+      "title": "Coastal erosion in England has claimed at least 183 homes in past 16 years",
+      "url": "https://www.theguardian.com/environment/2026/oct/13/coastal-erosion-england-homes-demolished",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0b98010ba90c15f8c9bd91a6b79f88bc",
+      "title": "Hurricane Simon and Tropical Storm Rachel kill five people on Mexico’s Pacific coast",
+      "url": "https://www.theguardian.com/world/2026/oct/13/mexico-hurricane-simon-tropical-storm-rachel-kill-five-pacific-coast",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "17c5f5e34264e27a9d9b7e14d419f0dc",
+      "title": "Argentina temporarily closes Iguazu Falls after El Niño-fuelled surge in water levels",
+      "url": "https://www.theguardian.com/world/2026/oct/13/argentina-iguazu-falls-temporarily-closed-el-nino-water-levels",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "699965faab7e46ec1ca59b8e63fa0a01",
+      "title": "Same-sex couple sue over Slovakia’s refusal to register marriage",
+      "url": "https://www.theguardian.com/world/2026/oct/13/same-sex-couple-sue-slovakia-refusal-register-austrian-marriage-eu",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "82429f4edd8e0a85e327448c3a030e67",
+      "title": "Saudi minister vows 'serious response' to Houthi attacks on airports",
+      "url": "https://www.bbc.co.uk/news/articles/cjly0zqq27e4o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c3f0bbabc4778423bf9be0ecf07ce414",
+      "title": "Shock, anger and a crackdown: why a contentious electoral revision has sparked outrage",
+      "url": "https://www.theguardian.com/world/2026/oct/12/this-is-india-electoral-revision-protests",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0da22a4560a2d1ebfb69f6a2bc898ae4",
+      "title": "Fresh concerns over 2027 Asian Cup in Saudi Arabia after missile strikes in Riyadh",
+      "url": "https://www.theguardian.com/football/2026/oct/13/saudi-arabia-asian-cup-riyadh-missle-strikes-players-concern",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "0e66ab88e052a549155b7281bccd7c33",
+      "title": "Bedbug infestation forces Qantas to ground plane in Rome",
+      "url": "https://www.theguardian.com/business/2026/oct/13/bedbug-infestation-forces-qantas-to-ground-plane-in-rome",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "47721deb8c324bd9543e986a05dd52d3",
+      "title": "Threat of AI share crash puts world financial stability at risk, says IMF",
+      "url": "https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 58,
+    "clusters_considered": 55,
+    "stories_run": 8,
+    "sources": 9,
+    "sections_held": 1
+  }
+}
