@@ -1,0 +1,336 @@
+{
+  "date": "2026-10-14",
+  "edition_number": 129,
+  "edition_type": "normal",
+  "headline_of_the_day": "Chinese hackers hit Justice, NASA, Federal Reserve, and Senate",
+  "headline_cluster_id": "d8719def1ec0b08afd13fabc50c5692d",
+  "headline_rationale": "Active attack on multiple critical US government agencies represents immediate national security consequence.",
+  "key_points": [
+    {
+      "text": "Chinese hackers attacked the Justice Department, NASA, Federal Reserve, and Senate in a confirmed breach.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Bank of America was fined $1.2 billion for breaking money-laundering and sanctions rules. It is Treasury's third-largest penalty ever.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "A federal judge let CNN, MSNBC, and Politico keep White House press access during a media lawsuit.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Germany began trial of a Ukrainian man accused of blowing up Nord Stream gas pipelines.",
+      "topic": "World"
+    },
+    {
+      "text": "Global warming is now happening twice as fast, reaching 1.5°C by 2028, five years sooner than expected.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-14.mp3",
+    "duration_seconds": 442,
+    "size_bytes": 5308128
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4ec4c6091ca0b3adb0354c5da81491bc",
+          "slug": "germany-begins-trial-of-ukrainian-accused-of-blowing-up",
+          "title": "Germany begins trial of Ukrainian accused of blowing up Nord Stream pipelines",
+          "summary": "Germany is trying Serhii K for allegedly plotting with other Ukrainians to blow up Russian gas pipelines in 2022.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Nord Stream pipelines carried Russian natural gas to Germany and other European nations. In September 2022, explosions damaged these underwater pipelines in the Baltic Sea. The incident was one of the most dramatic acts of sabotage in modern European history. Now, four years later, a Ukrainian man goes on trial in Hamburg accused of planning the attack.",
+            "what_happened": "German prosecutors say Serhii K plotted with other Ukrainian military personnel to destroy the pipelines. They argue he wanted to stop Russia from financing its war with gas revenue. Serhii K was extradited to Germany to stand trial on Wednesday. The case is sensitive because Germany sees Ukraine as one of its closest allies since Russia's full-scale invasion began in February 2022.",
+            "why_it_matters": "The trial will test how Germany balances its support for Ukraine against investigating a major act of sabotage on its territory. If convicted, it could strain the alliance at a crucial time in the war. For most people in Europe, the outcome shapes whether energy infrastructure stays vulnerable to future attacks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "950113ecf7a8a0c2c4427d4f0b72bdba",
+          "slug": "russian-strike-hits-key-power-plant-supplying-kyiv-with",
+          "title": "Russian strike hits key power plant supplying Kyiv with heating and electricity",
+          "summary": "President Zelensky said the attack on Darnytska CHP-4 came with no early warning from Ukraine's partners.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ck20r9qpw505o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Darnytska CHP-4, also called CHPP-4, is a major power plant. It heats and powers Kyiv, Ukraine's capital. Russia has repeatedly attacked Ukraine's power system since the conflict began.",
+            "what_happened": "A Russian ballistic missile hit the plant on Tuesday night. The same strike hit an apartment building nearby. Kyiv Mayor Vitali Klitschko said two people died and 21 were hurt. President Volodymyr Zelensky said the attack came with no warning from allies. He said other energy sites in Kyiv were also hit.",
+            "why_it_matters": "Damage to power plants cuts off heating and electricity to homes. Winter in Kyiv means freezing temperatures, so losing heat is serious. Power outages also affect water systems and hospitals. Each attack on these plants makes daily life harder for residents.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "59f3ea61606024472b6927398c9fdeb2",
+          "slug": "russia-arrests-japanese-journalist-on-espionage-allegations",
+          "title": "Russia arrests Japanese journalist on espionage allegations",
+          "summary": "Russia detained Yuki Imai, a reporter for Hokkaido Shimbun, on charges of spying.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/14/russia-detains-japanese-journalist-suspicion-spying"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwp9g1el7x9zo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia and Japan have grown tense in recent months. Russian leader Vladimir Putin visited the disputed Kuril Islands in August. These islands are claimed by both countries. Now Russia has arrested a Japanese journalist, accusing him of spying.",
+            "what_happened": "Russia arrested Yuki Imai, a reporter for the Hokkaido Shimbun newspaper, on Sakhalin island. He worked at the paper's bureau in Yuzhno-Sakhalinsk. Russian officials say he collected information about Russia's defence capabilities. Imai was detained a day before he was due to leave the country.",
+            "why_it_matters": "The arrest shows how tense relations between Russia and Japan have become. Japan has not said much about it publicly. For now this mainly affects journalists working in Russia, but it signals that Moscow sees Tokyo as gathering intelligence.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "0005a66f374b00cd7af333ea275af72b",
+          "slug": "bank-of-america-hit-with-1-2-billion-fine-for-anti-money",
+          "title": "Bank of America hit with $1.2 billion fine for anti-money laundering failures",
+          "summary": "Bank of America got its third-largest penalty from Treasury and its largest fine from banking regulator OCC.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/treasury-bank-of-america-money-laundering-29013b2c8f08a3a8d579a96721ed1aa4"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cm3wvxy6n3z8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Banks are required to report suspicious activity to the government. Money laundering is moving illegal money through the financial system to hide its origin. Bank of America is one of the largest banks in the US.",
+            "what_happened": "The US Treasury fined Bank of America $1.2 billion on Tuesday for failing to report suspicious activity. The bank missed reports on over $5 billion in transactions. About $1 billion of those involved national security risks or illegal finance. Some transactions involved Chinese money laundering networks or trade-based schemes near the US southwest border.",
+            "why_it_matters": "Banks that miss suspicious transactions let illegal money move through the system uncaught. This fine signals the government is serious about enforcing reporting rules. The penalty affects how Bank of America operates and may prompt other banks to tighten their systems.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bb8ce64f64e6affb5dab2373e98ac778",
+          "slug": "martin-shkreli-livestreamed-himself-violating-lifetime",
+          "title": "Martin Shkreli livestreamed himself violating lifetime pharmaceutical ban, FTC says",
+          "summary": "Martin Shkreli, a former drug executive, broke his 2022 ban from the drug industry on a livestream video.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/10/martin-shkreli-livestreamed-himself-violating-lifetime-pharma-ban-ftc-says"
+            }
+          ],
+          "article": {
+            "background": "Martin Shkreli ran a drug company that raised the price of Daraprim, an anti-parasitic drug, by over 4,000 percent. He went to prison for seven years for fraud tied to that scheme. In 2022, regulators banned him from the pharmaceutical industry for life.",
+            "what_happened": "The Federal Trade Commission and seven states say Shkreli has broken his ban repeatedly since 2022. He allegedly traded stock in dozens of drug companies. He also talked about the pharmaceutical industry during livestreams on social media. On Tuesday, the FTC and states asked a judge to hold him in contempt.",
+            "why_it_matters": "The case tests whether regulators can enforce these bans against someone breaking them in public. If Shkreli faces real consequences, it may discourage others from violating similar bans. If he does not, lifetime bans may mean less than they appear to.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "b421f72a438668841c1030b033b616b2",
+          "slug": "global-warming-rate-doubled-analysis-shows-1-5-c-breach",
+          "title": "Global warming rate doubled, analysis shows 1.5°C breach projected by 2028",
+          "summary": "A study finds global warming is happening twice as fast and will reach 1.5°C five years sooner than expected.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nature.com/articles/s41612-026-01561-y"
+            }
+          ],
+          "article": {
+            "background": "The Paris Agreement is a 2015 treaty where most countries agreed to limit warming to 1.5 degrees Celsius above pre-industrial levels. Scientists track when we will hit this target to help guide climate policy. Earlier estimates placed this crossing in the early 2030s, but those guesses had big gaps.",
+            "what_happened": "Researchers studied the latest temperature data through 2025. They found warming has sped up sharply. From 2011 to 2025, the planet warmed at 0.40 degrees Celsius per decade. That is double the rate from 1971 to 2025, which was 0.20 degrees per decade. If this faster pace holds, the world will cross the 1.5 degree threshold by 2028.",
+            "why_it_matters": "The Paris target is when climate damage shifts from harmful to severe for many regions. A 2028 breach means we have far less time to cut emissions than most governments assumed. This tightens the timeline for action.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a6c343d12a9a48f987a76138ccde10a6",
+          "slug": "shigella-gut-pathogen-becomes-sexually-transmitted-and",
+          "title": "Shigella gut pathogen becomes sexually transmitted and resistant to antibiotics",
+          "summary": "The bug causing diarrhea is now spreading through sexual contact and is harder to treat.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.sciencealert.com/sexually-transmitted-diarrhea-is-exploding-in-the-us-and-its-growing-resistant-to-medicine"
+            }
+          ],
+          "article": {
+            "background": "Shigella is a gut bacteria that causes diarrhea and vomiting. For decades, people mostly caught it from bad food or dirty water while traveling, or in day care settings. Around the year 2000, the bacteria started spreading through sex as well. Now some strains live in certain communities of gay and bisexual men. The United States sees roughly 450,000 cases each year.",
+            "what_happened": "Some Shigella strains are developing resistance to common antibiotics. This makes the infections much harder to treat. The bacteria have become a serious health concern in certain communities where it spreads through sexual contact.",
+            "why_it_matters": "If antibiotics stop working, a simple bout of diarrhea could become dangerous and last much longer. This matters most to people in high-risk communities, but resistant bacteria can spread. It may force doctors to use different drugs or stronger doses to treat what was once an easy infection to cure.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3babe78d36eaabc7422c90886f391b94",
+          "slug": "science-corporation-implants-vision-restoring-chip-in-first",
+          "title": "Science Corporation implants vision-restoring chip in first Stargardt disease patient",
+          "summary": "Max Hodak's company placed its PRIMA vision chip in a patient with inherited blindness.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient"
+            }
+          ],
+          "article": {
+            "background": "Stargardt disease is an inherited eye condition that slowly destroys central vision. Science Corporation has developed PRIMA, a chip designed to restore sight in patients with this disease.",
+            "what_happened": "Science Corporation CEO Max Hodak announced the company implanted PRIMA in its first patient with Stargardt disease. Hodak, who co-founded Neuralink, a brain implant company, revealed this at TechCrunch Disrupt. He framed the chip as part of the company's work on brain-computer interfaces, or BCIs. These devices connect the nervous system to external technology.",
+            "why_it_matters": "Vision loss from Stargardt disease currently has no cure. A working implant could help people with this condition regain sight. This is the first real-world test of whether PRIMA can do that.",
+            "quote": {
+              "text": "The retina is part of the central nervous system. We consider cochlear implants, retinal prostheses, motor prostheses, these are all different types of BCIs.",
+              "attribution": "Max Hodak, Science Corporation CEO",
+              "source_url": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "d8719def1ec0b08afd13fabc50c5692d",
+          "slug": "chinese-hackers-breached-justice-department-nasa-federal",
+          "title": "Chinese hackers breached Justice Department, NASA, Federal Reserve, and Senate",
+          "summary": "Chinese hackers attacked major US government and financial institutions in an ongoing campaign.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.usatoday.com/story/news/politics/2026/08/26/chinese-hackers-cyberattack-us-government/91473585007"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "220546708e8bbe6cfbbff8e979cfd506",
+          "slug": "openai-engineer-arrested-for-planting-surveillance-device",
+          "title": "OpenAI engineer arrested for planting surveillance device in company office",
+          "summary": "Abdulrahman Alfozan faces charges after OpenAI found a hidden recording device in a conference room.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1010642/openai-employee-arrested-recording-device"
+            },
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/10/openai-employee-arrested-for-allegedly.html"
+            }
+          ],
+          "article": {
+            "background": "OpenAI builds artificial intelligence systems. The company keeps sensitive information about unreleased products and strategy in its offices. Employees with access to that information have security duties.",
+            "what_happened": "An OpenAI engineer named Abdulrahman Alfozan was arrested on October 9, 2026. The 35-year-old Saudi national is charged with using a device to intercept oral communications. OpenAI discovered a hidden recording device plugged into a TV's USB port in an executive conference room at its San Francisco offices. Alfozan worked as an engineering lead at OpenAI since July 2025. The company has fired him.",
+            "why_it_matters": "Companies that handle confidential information rely on employees to protect it. This case shows how that trust can break down from the inside. It signals that tech firms may need stronger physical security in sensitive meeting spaces.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2249db754d41bca666c775a84c0202c1",
+          "slug": "justice-department-says-north-koreans-infiltrated-dozens-of",
+          "title": "Justice Department says North Koreans infiltrated dozens of US companies",
+          "summary": "Prosecutors charged two people and raided laptop farms in Texas used by North Korean hackers.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/13/justice-department-says-north-koreans-have-infiltrated-dozens-of-u-s-companies"
+            }
+          ],
+          "article": {
+            "background": "North Korea runs hacking operations that target U.S. companies to steal data and money. For years, these attacks came from outside U.S. borders. Now the Justice Department says North Korean hackers are hiring Americans to help them. These helpers use laptop farms, which are collections of computers set up to launch attacks remotely.",
+            "what_happened": "On Tuesday, federal prosecutors announced they indicted and arrested at least two people for aiding North Korean hackers. Agents raided dozens of suspected laptop farms in Texas. They seized over 180 computers that the companies had sent to their new employees. Those employees were actually North Korean spies using stolen identities.",
+            "why_it_matters": "If hackers can pose as new hires, companies will send them equipment. From there, they can access sensitive data and internal systems. This shows a new threat: North Korean operations now have American helpers inside U.S. companies. The more they succeed, the more companies may face theft of trade secrets and financial systems.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8dcbea3c4e71c3a20d676ac57e61224f",
+          "slug": "justice-seizes-187-devices-in-north-korean-laptop-farm",
+          "title": "Justice seizes 187 devices in North Korean laptop farm crackdown in Texas",
+          "summary": "Federal agents arrested two people and seized computers used for hacking and theft backed by North Korea.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/legal/government/doj-arrests-two-seizes-187-devices-north-korean-laptop-farm-crackdown-texas-2026-10-13"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "01f031498f312d0461dfc4802d5ea4c2",
+      "title": "Judge extends White House access to banned media outlets CNN, MS Now and Politico",
+      "url": "https://www.theguardian.com/us-news/2026/oct/14/white-house-media-ban-lifted-cnn-msnow-politico",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "12dc25c46b181f7f2bb0a96847814c67",
+      "title": "Mobile phone sales plunge to lowest level in 14 years",
+      "url": "https://www.computerworld.com/article/4234747/cell-phone-sales-plunge-lowest-level-in-14-years.html",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "86329a0aabcea209ba88d22989fd6647",
+      "title": "‘Chip on his shoulder’: Brian Flores lawyers condemn racial stereotypes in NFL coaching report",
+      "url": "https://www.theguardian.com/sport/2026/oct/13/brian-flores-nfl-racial-discrimination-korn-ferry-report",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "a78b09d2731599da13fefcde44da7e9b",
+      "title": "Cryptocurrency exchange founded by Reform donor Ben Delo sued for £20m",
+      "url": "https://www.theguardian.com/politics/2026/oct/14/cryptocurrency-exchange-founded-by-reform-donor-ben-delo-sued-for-20m",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "6df74e64aa8fbde7fd17b40258c2ed0a",
+      "title": "Man who died in Six Flags rollercoaster fall in Georgia was a father and educator",
+      "url": "https://www.theguardian.com/us-news/2026/oct/13/six-flags-rollercoaster-death",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "459682ea05025b54cce7b9b4f1290e3b",
+      "title": "Royal Mail losing 400 postal workers a week, says union",
+      "url": "https://www.bbc.co.uk/news/articles/cm5ynp0vz3p7o?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 80,
+    "clusters_considered": 75,
+    "stories_run": 12,
+    "sources": 13,
+    "sections_held": 1
+  }
+}
