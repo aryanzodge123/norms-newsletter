@@ -1,0 +1,331 @@
+{
+  "date": "2026-10-15",
+  "edition_number": 130,
+  "edition_type": "normal",
+  "headline_of_the_day": "Nvidia's China chip share falls to 34% as Huawei reaches 28%",
+  "headline_cluster_id": "df6a17e5a823a6d8fa79b3954437ae19",
+  "headline_rationale": "Concrete market shift in semiconductor competition with geopolitical implications affecting global tech supply chains",
+  "key_points": [
+    {
+      "text": "Huawei's China AI chip share rose to 28% while Nvidia fell to 34%, a major shift.",
+      "topic": "Tech"
+    },
+    {
+      "text": "The TSA is not protecting facial recognition data properly for millions of travelers, a watchdog found.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Brazil cut the work week to 40 hours maximum, affecting up to 30 million workers",
+      "topic": "World"
+    },
+    {
+      "text": "The first new sunscreen ingredient in 25 years reached US stores",
+      "topic": "Science"
+    },
+    {
+      "text": "GLP-1 drugs cut schizophrenia hospital visits in a large real-world study",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-15.mp3",
+    "duration_seconds": 353,
+    "size_bytes": 4232160
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "df6a17e5a823a6d8fa79b3954437ae19",
+          "slug": "nvidia-china-chip-share-falls-to-34-as-huawei-reaches-28",
+          "title": "Nvidia China chip share falls to 34% as Huawei reaches 28%",
+          "summary": "Huawei now has 28% of China's AI chip market while Nvidia dropped to 34%.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://technode.com/2026/10/14/nvidias-china-ai-chip-share-falls-to-34-as-huawei-reaches-28"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "403b148e15ffb24598d5734f7b812813",
+          "slug": "open-source-developer-proposes-closed-pull-requests-open",
+          "title": "Open source developer proposes closed pull requests, open remixing model",
+          "summary": "A developer says projects should stop accepting outside code but let anyone copy and change the work.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://ghuntley.com/remix"
+            }
+          ],
+          "article": {
+            "background": "Open source software has long followed two paths. The cathedral model keeps code private until release, controlled by a small group. The bazaar model, used by GitHub, lets anyone inspect code and submit changes via pull requests. A developer is now proposing a third option.",
+            "what_happened": "The new model allows people to copy and modify code freely. It stops short of accepting pull requests from others. Think of it as sharing code for others to build on, without managing outside contributors.",
+            "why_it_matters": "This matters if you use or build open source tools. The new approach could attract developers who want to share work but avoid the work of reviewing contributions. It splits the difference between keeping code closed and running a full community project.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "cd5a8f4d82f2d08be912ed8ad093184c",
+          "slug": "anthropic-revenue-surged-45-ahead-of-possible-stock-debut",
+          "title": "Anthropic revenue surged 45% ahead of possible stock debut",
+          "summary": "Claude's maker told investors revenue hit $16.8 billion per quarter as it plans to go public.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqzjx448vxkgo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Anthropic makes Claude, an AI chatbot that competes with OpenAI's ChatGPT. The company is preparing to sell stock to the public before year's end, a move that signals investors still see big opportunity in AI despite recent doubts about spending on data centers and chips.",
+            "what_happened": "Anthropic told potential investors on Wednesday that revenue jumped 45% in the three months ending September, reaching $16.8 billion. The company made this pitch at its San Francisco headquarters as it prepares for a stock market listing expected before the end of the year.",
+            "why_it_matters": "A public Anthropic would likely give Claude more resources to develop and improve. But the company would also face pressure to prioritize profits over other goals. For consumers, that trade-off will shape what Claude becomes as it grows.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9b4195fa1be1e834161c4ab409bcc391",
+          "slug": "startup-releases-24-billion-parameter-model-with-2-billion",
+          "title": "Startup releases 24 billion parameter model with 2 billion active parameters",
+          "summary": "LFM2.5-24B-A2B uses a new method to run fast AI agents on devices while using less power.",
+          "score": 2,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b"
+            }
+          ],
+          "article": {
+            "background": "Liquid AI released LFM2.5-24B-A2B today. It is a large language model, a type of AI that understands and generates text. The model has 24 billion parameters, which are the values the AI learned during training. Only 2 billion of those activate at once, using a technique called mixture of experts. This method makes the model faster than traditional models of the same size.",
+            "what_happened": "Liquid AI released LFM2.5-24B-A2B, the largest model in its LFM2.5 family. It runs up to 1.7 times faster than comparable models on personal devices. On an Apple M5 Max, it reaches 184 tokens per second, the speed at which it processes text. On five of eight tests for agent tasks and tool use, it matches Qwen3.6-35B-A3B, a model with about 50% more parameters.",
+            "why_it_matters": "Faster models on your own device mean AI assistants can respond quicker without sending data to the cloud. This keeps your information private while making the AI more useful for everyday tasks. A model this fast, using this little power, makes it practical to run advanced AI on phones and laptops instead of relying on company servers.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "fb251c196b6c47dc9723d646faf8b457",
+          "slug": "uk-minimum-wage-rose-for-2-7-million-workers-april-1",
+          "title": "UK minimum wage rose for 2.7 million workers April 1",
+          "summary": "Britain raised minimum wage for over 21 and for younger workers starting April 1.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cy7e8mpdxpro?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK sets official minimum wage rates that workers must receive based on their age. Workers over 21 follow the National Living Wage. Younger workers aged 18 to 20 follow the National Minimum Wage. These rates apply across the entire country.",
+            "what_happened": "On April 1, 2026, the minimum wage rates increased for 2.7 million workers. The National Living Wage for those over 21 rose to £12.71 an hour, up 50p from 2025. Workers aged 18 to 20 now earn £10.85 an hour.",
+            "why_it_matters": "If you work full time at the new National Living Wage rate, you will earn about £24,784.50 a year, roughly £900 more than the previous year. These increases mean workers keep more of their paycheck, though the change depends on your age and how many hours you work.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4a044234350f42d8bc5f031a26db4ff9",
+          "slug": "mckinsey-adds-ai-client-simulation-to-entry-level-interviews",
+          "title": "McKinsey adds AI client simulation to entry-level interviews",
+          "summary": "McKinsey will have some job candidates talk to a computer for 10 minutes during interviews.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview"
+            }
+          ],
+          "article": {
+            "background": "McKinsey & Company is a consulting firm that helps businesses solve strategy and operations problems. Consulting interviews have traditionally asked candidates to solve business cases posed by interviewers. Now McKinsey is adding something new to its entry-level hiring process.",
+            "what_happened": "McKinsey will ask some entry-level job candidates to have a 10-minute conversation with an AI simulation of a client. The simulation aims to reflect 80% of the scenarios McKinsey consultants encounter in daily work. This becomes part of the official interview process.",
+            "why_it_matters": "If this spreads to other consulting firms, more job applicants could face AI evaluators during interviews. For now it affects only some entry-level McKinsey candidates. But it signals how companies might use AI to standardize and scale parts of hiring.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "52a40d11eb1ed33ec1e397d90fd21264",
+          "slug": "brazil-cuts-work-week-to-40-hours-in-constitutional-change",
+          "title": "Brazil cuts work week to 40 hours in constitutional change",
+          "summary": "Brazil's Congress banned six-day workweeks, affecting up to 30 million workers before a runoff election.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/15/brazil-cuts-work-week-to-40-hours-lula-bolsonaro-election-runoff"
+            }
+          ],
+          "article": {
+            "background": "Brazil's Congress just passed a change to the country's constitution. The change cuts the maximum workweek to 40 hours. It bans six-day workweeks. Up to 30 million workers could be affected. The vote comes two weeks before a presidential runoff election.",
+            "what_happened": "Congress approved a constitutional amendment to shorten the work week. The new limit is 40 hours maximum per week. The change will ban six-day workweeks. President Luiz Inácio Lula da Silva strongly supported the amendment. He is using the win to build momentum before the runoff vote.",
+            "why_it_matters": "Workers who currently work six days a week will gain an extra day off. This affects millions of people across the country. The change makes life easier for workers who have been working longer weeks. For now it is a political moment, but it will reshape how many Brazilians spend their time.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "18eeeadd57b9e3f23c60d81f518191f4",
+          "slug": "starlink-disruptions-affected-ukraine-battlefield",
+          "title": "Starlink disruptions affected Ukraine battlefield communications",
+          "summary": "Ukraine's military relies on a private satellite service that has had outages affecting combat.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/how-starlink-disruptions-affected-ukraines-battlefield-operations"
+            }
+          ],
+          "article": {
+            "background": "Ukraine's military uses Starshield, a satellite network funded by the Pentagon and run by SpaceX. The system helps Ukrainian troops communicate across the country. Reliable communications are vital for military coordination and safety.",
+            "what_happened": "Starshield was partially disabled on Wednesday. The network did not operate at full capacity. This disruption hampered communications within the Ukrainian military during active operations.",
+            "why_it_matters": "When a key communications system goes down, orders reach troops more slowly. Units have trouble coordinating with each other on the battlefield. Even partial outages can affect how quickly Ukraine's military responds to developments in the field.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6af090ee774f931d52bd8ded460805e9",
+          "slug": "iran-says-cargo-ship-sank-after-hitting-mine-in-strait-of",
+          "title": "Iran says cargo ship sank after hitting mine in Strait of Hormuz",
+          "summary": "Iran claims a cargo ship hit a mine in a key shipping route, but no one has confirmed it.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/news-wrap-iran-says-cargo-ship-sank-after-hitting-a-mine-in-strait-of-hormuz"
+            }
+          ],
+          "article": {
+            "background": "The Strait of Hormuz is a narrow waterway between Iran and Oman. It connects the Persian Gulf to the Arabian Sea. About one-third of the world's oil shipped by sea passes through it. The strait has seen tensions and disputes over shipping safety.",
+            "what_happened": "Iran says a cargo ship sank after hitting a mine in the Strait of Hormuz. Iran did not say what ship it was. Iran did not say what cargo it carried. Iran did not say when the sinking happened.",
+            "why_it_matters": "The Strait of Hormuz is one of the world's busiest trade routes. Ships carry oil, goods, and supplies through it every day. Mines and ship damage in the strait threaten the safety of these vessels. Attacks or accidents there can disrupt global shipping and raise energy prices.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "2db863efdded7143c83b4a4aa16dd2e8",
+          "slug": "first-new-sunscreen-type-in-25-years-reaches-us-stores",
+          "title": "First new sunscreen type in 25 years reaches US stores",
+          "summary": "A new active ingredient approved for sunscreen offers better sun protection than older options.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/bemotrizinol-bemt-new-sunscreen-ingredient-fda-7892cc598c0b553b8c9c6715d7a36d6a"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "36798d4965e89d7f712ccfc8aa01aee3",
+          "slug": "glp-1-drugs-cut-schizophrenia-hospital-visits-in-study",
+          "title": "GLP-1 drugs cut schizophrenia hospital visits in study",
+          "summary": "Large drug class showed measurable effect on serious condition in real medical data.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-14/glp-1-drugs-cut-schizophrenia-hospital-visits-study-finds"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1695792817bbd4dc940074a7cda568d0",
+      "title": "The Social Security COLA for 2027 is set. Here's what experts say you need to know",
+      "url": "https://www.pbs.org/newshour/economy/what-is-the-social-security-cola-for-2027-heres-how-it-could-affect-you",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "47c327dad20056bb0f59b3ffaac8f54c",
+      "title": "Bank of America added 1k contractors to patch AI-exposed software flaws",
+      "url": "https://runtimewire.com/article/bank-of-america-mythos-contractors-software-patching",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "53ed4bad780457df85e88b0fd3ee02af",
+      "title": "DHS Inspector General: TSA Is Not Safeguarding Passenger Facial Recognition Data",
+      "url": "https://www.eff.org/deeplinks/2026/10/dhs-inspector-general-finds-tsa-not-properly-safeguarding-passenger-facial",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "3fbdcde0a5ee854995d7feefc5ee40a1",
+      "title": "Lawyers for man shot by ICE in New York City say agent did not identify himself",
+      "url": "https://www.theguardian.com/us-news/2026/oct/14/ice-shooting-new-york-city-oscar-belgal",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "829564a685a7618e75c31175cf1c14ae",
+      "title": "Attorney for banned outlets on legal fight over White House press access",
+      "url": "https://www.pbs.org/newshour/show/attorney-for-banned-outlets-on-legal-fight-over-white-house-press-access",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "b6f2ecd393c56f20f22176f75b2d4dd5",
+      "title": "Victoria to become first state to make abortions free as Coalition matches Labor election promise",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/15/victoria-to-become-first-state-to-make-abortions-free",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "2aa1a262e340dd70b14fb0d9c197ac3e",
+      "title": "Flock CEO defends surveillance technology amid national backlash: ‘We shouldn’t pause progress’",
+      "url": "https://techcrunch.com/2026/10/14/flock-ceo-defends-surveillance-technology-amid-national-backlash-we-shouldnt-pause-progress",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "5bff37f0d74ea2283922a328c01b6df8",
+      "title": "SK Hynix conditions new US factory on more US chip equipment exports to China",
+      "url": "https://www.reuters.com/world/asia-pacific/sk-hynix-conditions-new-us-factory-more-us-chip-equipment-exports-china-sources-2026-10-15",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "9be66a05316de0441189ac04a72854c8",
+      "title": "ICE Wants to Use AI to Monitor Detainee Calls and Movements",
+      "url": "https://www.washingtonsun.com/immigration/ice-ai-monitor-detainees",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "b4c7f57b7d2a144cd524e3618416de68",
+      "title": "Intero Biosystems wants drugmakers to test on mini human intestines, not animals",
+      "url": "https://techcrunch.com/2026/10/14/intero-biosystems-wants-drugmakers-to-test-on-mini-human-intestines-not-animals",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "fe3a7c504f5ae98aaccc91f247e45018",
+      "title": "Ricursive Intelligence is betting on AI-designed chips to help solve the compute crisis",
+      "url": "https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 71,
+    "clusters_considered": 70,
+    "stories_run": 11,
+    "sources": 11,
+    "sections_held": 1
+  }
+}
