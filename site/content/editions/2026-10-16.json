@@ -1,0 +1,306 @@
+{
+  "date": "2026-10-16",
+  "edition_number": 131,
+  "edition_type": "normal",
+  "headline_of_the_day": "Shooter kills four including three children at Oregon school",
+  "headline_cluster_id": "3e610b0b08f62798a790422ba1903df4",
+  "headline_rationale": "A mass shooting at an elementary school killing three children is the most immediate tragedy affecting families and communities today.",
+  "key_points": [
+    {
+      "text": "A shooter killed four people including children aged 5, 8, and 11 at an Oregon school, then died.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Iran attacked energy facilities in the Gulf region that the US military needs.",
+      "topic": "World"
+    },
+    {
+      "text": "A drone hit a ship in Romanian waters near Ukraine, raising fears the conflict may spread to NATO.",
+      "topic": "World"
+    },
+    {
+      "text": "The Milwaukee Brewers reached the World Series for the first time since 1982 by beating the Dodgers.",
+      "topic": "Sports"
+    },
+    {
+      "text": "The UK punished Cryptomus, a cryptocurrency platform, for helping Russia hide money and break sanctions.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-16.mp3",
+    "duration_seconds": 358,
+    "size_bytes": 4297824
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "83d94f9befca87701ebd6e51b6919619",
+          "slug": "chatgpt-browser-extension-can-now-read-your-open-chrome-tabs",
+          "title": "ChatGPT browser extension can now read your open Chrome tabs",
+          "summary": "OpenAI's ChatGPT tool can now see your browser tabs when you mention it in chats.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs"
+            }
+          ],
+          "article": {
+            "background": "OpenAI stopped offering ChatGPT Atlas, a dedicated browser it built for using ChatGPT. Now the company is improving its Chrome extension instead. The extension lets ChatGPT access what you are reading on the web when you ask it to.",
+            "what_happened": "OpenAI updated the ChatGPT Chrome extension so it can view the tabs you have open in your browser. When you tag Chrome in ChatGPT, the AI can read the content of those tabs and answer questions about them. OpenAI shared a demo showing someone asking ChatGPT to compare sofas from three different tabs at once.",
+            "why_it_matters": "This makes ChatGPT more useful for research and comparison shopping. Instead of copying text between tabs or describing what you are seeing, you can let ChatGPT read the pages directly. The extension only reads tabs when you explicitly ask it to, so it is not constantly monitoring what you browse.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "81b205cfee41d48e4491656f05092d95",
+          "slug": "deno-runtime-project-winds-down-as-team-joins-cloudflare",
+          "title": "Deno runtime project winds down as team joins Cloudflare",
+          "summary": "The JavaScript runtime will phase out over the next year after its creator moved to Cloudflare.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.vlt.io/blog/competition-keeps-javascript-moving"
+            }
+          ],
+          "article": {
+            "background": "Deno is a JavaScript runtime, a tool that runs JavaScript code outside a web browser. Ryan Dahl created it in 2018 as an alternative to Node.js, the dominant runtime. Deno pushed the field toward better security, simpler ways to manage code libraries, and modern language features.",
+            "what_happened": "Last week Dahl announced that the Deno team is joining Cloudflare, a web infrastructure company. The Deno runtime will wind down over the next year. JSR, a code library registry that Deno created, will keep running on Cloudflare's servers. The team's new work is merging Deno's engine into workerd, Cloudflare's own JavaScript runtime.",
+            "why_it_matters": "Deno itself is ending, but the ideas it pushed are now built into other tools. Developers benefit from Deno's improvements in security and code management whether or not Deno survives. The competition it created made the whole JavaScript ecosystem better.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "3e610b0b08f62798a790422ba1903df4",
+          "slug": "four-killed-including-three-children-in-oregon-school",
+          "title": "Four killed including three children in Oregon school shooting",
+          "summary": "A 16-year-old shot at locked doors to get inside before an armed citizen killed him.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cwe8r29mjd05o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/15/oregon-elementary-school-shooting"
+            }
+          ],
+          "article": {
+            "background": "Silver Rail Elementary School is a primary school in Bend, Oregon. Bend is a city of about 100,000 people roughly 170 miles southeast of Portland. School shootings happen often in the United States, and this one adds to that pattern.",
+            "what_happened": "A 16-year-old shot his way into Silver Rail Elementary on Thursday by firing at locked doors. He killed a teacher and three children aged 5, 8, and 11. A community member who followed him into the school shot and killed him. Two others were hurt: a 7-year-old child and a 54-year-old teacher. Both were taken to the hospital in critical condition.",
+            "why_it_matters": "This shooting shows that locked doors alone do not stop someone set on entering a school. How communities respond when someone tries to do this, and what rules might help, are questions many families are asking now.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "124576e2e27d1b71553395287ced67bc",
+          "slug": "chicago-area-teen-s-plot-to-attack-hindu-temple-foiled-by",
+          "title": "Chicago-area teen's plot to attack Hindu temple foiled by coworker tip",
+          "summary": "A Taco Bell employee was charged after a colleague reported his alleged mass shooting plan.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqgm0j4kjvevo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Alexandros Paporakis, 19, worked as a Taco Bell cashier in Palatine, Illinois. Police say he planned a mass shooting at a Hindu temple near Chicago. On Sunday, he sent a message about the plot to a coworker. That coworker alerted authorities instead of staying silent.",
+            "what_happened": "Paporakis appeared in court Wednesday. He faced one charge of making a terrorist threat. He also faced one charge of unlawful possession of a weapon. Police found writings where he identified as a white supremacist. The writings showed his hatred for non-white people.",
+            "why_it_matters": "This case shows how coworkers can stop violence by reporting threats to police. When someone tells you about a plan to hurt people, reporting it can save lives and prevent attacks on religious communities.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "71d07ab6f94a6f6488e1ec65373b68fb",
+          "slug": "fbi-investigates-suspicious-letters-sent-to-senators-and",
+          "title": "FBI investigates suspicious letters sent to senators and election offices",
+          "summary": "The FBI is tracing dangerous packages with suspicious powder sent to officials across the US.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmq8n513x523o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/15/fbi-usps-letters-unknown-substance-election"
+            }
+          ],
+          "article": {
+            "background": "Election offices handle voter registration and ballot counting across the US. Congress members and state election leaders work in offices nationwide. This story arrives weeks before November's midterm elections.",
+            "what_happened": "Federal authorities are investigating letters with suspicious powder sent to election offices and senators around the country. Some letters were stopped by the postal service before arrival. Others reached their targets, including offices in Louisiana, Oklahoma, Arizona, and Ohio. Several triggered evacuations and hazmat responses.",
+            "why_it_matters": "Election offices need to operate normally during voting season. Security threats targeting these workplaces can disrupt voting and ballot counting. The timing, just before a major election, makes the disruption riskier.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "a7a6d5e4333414b6fa1ec5222d74af80",
+          "slug": "drone-strike-hits-ship-in-romanian-waters-near-ukraine",
+          "title": "Drone strike hits ship in Romanian waters near Ukraine border",
+          "summary": "A drone hit a ship in Romanian waters near Ukraine, raising questions about the conflict spreading.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/drone-strike-on-ship-in-romanian-waters-raises-fear-that-war-in-ukraine-is-spreading"
+            }
+          ],
+          "article": {
+            "background": "Russia invaded Ukraine in 2022. The war has mostly stayed within Ukraine's borders. But recently, attacks have hit ships and targets in the Black Sea, a major shipping route between Europe and Asia. Romania sits on the Black Sea coast.",
+            "what_happened": "A drone struck a ship in Romanian waters on Thursday. The ship caught fire after the strike. Romanian authorities launched search and rescue operations. This is the latest in a series of attacks on vessels in the Black Sea.",
+            "why_it_matters": "The strikes suggest the war is spreading beyond Ukraine. Romania is a NATO member, so attacks there raise tensions between Russia and the Western alliance. Ships use the Black Sea to carry goods to and from Europe and Asia, so disruptions affect global trade and prices.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "17971909a55e2c00278bfc8b0893107b",
+          "slug": "iran-strikes-gulf-infrastructure-in-attack-on-us-military",
+          "title": "Iran strikes Gulf infrastructure in attack on US military supply lines",
+          "summary": "Attacks hit energy facilities that the US military needs in the region.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/investigates/special-report/iran-crisis-infrastructure-attacks"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "d954b7739bf0c7257cf1e1eb9c9192c1",
+          "slug": "houthi-missile-kills-five-in-attack-on-yemeni-presidential",
+          "title": "Houthi missile kills five in attack on Yemeni presidential palace",
+          "summary": "A strike hit Aden, where Yemen's recognized government is based.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cm62y6lp73zdo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/15/houthi-missiles-strike-aden-yemen"
+            }
+          ],
+          "article": {
+            "background": "Yemen's southern city of Aden hosts the presidential palace, al-Maashiq. It is the seat of Yemen's government, which is backed by Saudi Arabia and recognized by other countries. A Saudi-led military coalition supports this government in its fight against the Houthis, an Iran-aligned armed group.",
+            "what_happened": "Houthi forces fired five ballistic missiles at al-Maashiq Palace in Aden on Thursday. Five people were killed and 16 injured in the strike. Yemen's Information Minister Moammar al-Eryani told the BBC that the prime minister and other ministers were unhurt. The Houthis' military spokesman, Yahya Sarea, said they hit a Saudi military operations center.",
+            "why_it_matters": "This was the first Houthi attack on the palace in the current conflict. It shows the armed group can strike at the heart of the government Yemen's allies are trying to protect. The Saudi-led coalition has been fighting the Houthis for years, and these ongoing attacks complicate efforts to stabilize the country.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e875e18bc0ebab6d697e842cc8fbde9f",
+          "slug": "russia-and-ukraine-resume-infrastructure-attacks-as",
+          "title": "Russia and Ukraine resume infrastructure attacks as ceasefire effort collapses",
+          "summary": "Russia sent drones at central Ukraine while Ukraine hit Russian oil refineries.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/15/us-effort-to-get-russia-ukraine-energy-ceasefire-collapses"
+            }
+          ],
+          "article": {
+            "background": "Trump's White House tried to arrange an energy ceasefire between Russia and Ukraine. Neither country said they had agreed to it. The deal was meant to protect power plants and fuel supplies from attack.",
+            "what_happened": "Moscow sent a record number of drones overnight to attack infrastructure in central Ukraine. Ukraine then appeared to resume strikes on a Russian oil refinery in the Ryazan region. This was Ukraine's first such strike since Trump announced the ceasefire.",
+            "why_it_matters": "Energy infrastructure attacks affect both countries' ability to heat homes and run factories through winter. When either side targets the other's oil and power systems, it raises the cost of living for ordinary people. The collapse of this ceasefire means these strikes will likely continue.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "4a8001a710a4af9b5b8810bc42058cac",
+          "slug": "uk-sanctions-cryptocurrency-platform-cryptomus-for-russian",
+          "title": "UK sanctions cryptocurrency platform Cryptomus for Russian money laundering",
+          "summary": "Britain punished the payment platform for helping with ransomware, fraud, and breaking sanctions.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://krebsonsecurity.com/2026/10/u-k-sanctions-cryptomus-for-ru-money-laundering"
+            }
+          ],
+          "article": {
+            "background": "Cryptomus is a cryptocurrency platform that moves money across borders. It has used different names over time, including Certa Payments and Xeltox Enterprises. Experts say it helps criminals and Russia avoid financial rules that other countries set up.",
+            "what_happened": "On October 8, the United Kingdom sanctioned Cryptomus. The sanctions freeze any of the platform's money held at U.K. banks. British companies can no longer do business with it.",
+            "why_it_matters": "Cryptocurrencies can move money fast and with less watching than regular banks. When a platform helps criminals and hostile governments hide money, it makes those crimes harder to stop. These sanctions tell the world that processing such payments has a cost.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2fd7a43278c72f5cc2c9b00f1042ad4c",
+          "slug": "cloned-vehicle-license-plates-in-uk-reach-record-high",
+          "title": "Cloned vehicle license plates in UK reach record high",
+          "summary": "Over 11,400 drivers were fined for crimes they didn't commit using fake copied plates.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/uk-news/2026/oct/16/cloned-number-plates-uk-roads-record-high"
+            }
+          ],
+          "article": {
+            "background": "Number plate cloning happens when criminals copy a vehicle's registration plate onto another car. This lets them avoid traffic cameras when breaking traffic laws. The fake plate's violations get sent to the real owner's address instead of the actual driver.",
+            "what_happened": "More than 11,400 UK drivers contacted the DVLA last year saying they got fines for offences they didn't commit. Most cases involved cloned plates. Complaints rose 9% from 2024 and have nearly doubled since 2018, according to analysis by the RAC.",
+            "why_it_matters": "If your number plate gets cloned, you could receive fines for offences you never committed. You then have to contact authorities to clear your name. As cloning grows more common, more innocent drivers risk getting caught in this problem.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "e67dffc05ececf9e57febf2dd88fe74b",
+      "title": "Brilliant Brewers reach first World Series since 1982 as Dodgers blow 4-0 lead",
+      "url": "https://www.theguardian.com/sport/2026/oct/15/milwaukee-brewers-los-angeles-dodgers-mlb-playoffs-nlcs",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "a92fe9392040491acb096e55d4ebd399",
+      "title": "Evacuations issued as multiple wildfires ignite in hot, windy California",
+      "url": "https://www.theguardian.com/us-news/2026/oct/15/wildfire-california-high-temperatures-strong-winds",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "05d7c1d7d67a44f6549974f9469fade9",
+      "title": "Tesla reveals SpaceX-powered Roadster that flies and falls with style",
+      "url": "https://techcrunch.com/2026/10/15/tesla-reveals-spacex-powered-roadster-that-flies-and-falls-with-style",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "993156eebef0fc58b3af6723ea9cfabc",
+      "title": "RPKI now protects 70% of internet routes",
+      "url": "https://ipinfo.io/blog/rpki-protects-70-internet-routes",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 78,
+    "clusters_considered": 71,
+    "stories_run": 11,
+    "sources": 11,
+    "sections_held": 1
+  }
+}
