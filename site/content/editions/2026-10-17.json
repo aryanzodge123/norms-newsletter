@@ -1,0 +1,334 @@
+{
+  "date": "2026-10-17",
+  "edition_number": 132,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump waives Russia sanctions passed by Congress to punish the war on Ukraine",
+  "headline_cluster_id": "ccd49dc013a1ef94c33f08b52cb8557f",
+  "headline_rationale": "President using executive authority to override congressional foreign policy on an active conflict sets significant precedent for executive power",
+  "key_points": [
+    {
+      "text": "Trump dropped Russia sanctions Congress passed for the Ukraine war, saying it helps the US.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "A cyberattack on BAE Systems shut down the system federal courts use to send bankruptcy notices across the US.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Burger King Japan said hackers broke into company servers and stole data on 11 million customers.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Apple banned apps from its store that use AI to create intimate images without consent.",
+      "topic": "Tech"
+    },
+    {
+      "text": "Removing dams in the northeastern US lets migratory fish return to rivers.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-17.mp3",
+    "duration_seconds": 456,
+    "size_bytes": 5477184
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "415e6d8c787d50c175583e60400e78df",
+          "slug": "apple-bans-apps-that-generate-intimate-images-without",
+          "title": "Apple bans apps that generate intimate images without consent",
+          "summary": "Apple banned apps that use AI to create nude images without permission.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1013314/apple-app-store-nudify-ai-apps-harassment"
+            }
+          ],
+          "article": {
+            "background": "Apple runs the App Store, where iPhone users download apps. Some apps use AI to create fake intimate images of real people without their consent. These are called \"nudify\" apps. The practice has grown as AI tools become easier to use.",
+            "what_happened": "Apple updated its App Store rules to ban these apps more clearly. The new rules explicitly forbid apps that create nonconsensual intimate images. The change came after X users used an AI tool called Grok to make fake sexual images of real people, some of them minors.",
+            "why_it_matters": "These fake images can harm the people in them, from embarrassment to blackmail. Clearer rules mean Apple will reject more of these apps from its store. This makes it harder for people to find and use tools to create such images on iPhones.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d6228af6c692cb02c7752d968b788323",
+          "slug": "android-adds-ai-defenses-against-messaging-scams-and-fake",
+          "title": "Android adds AI defenses against messaging scams and fake calls",
+          "summary": "Google added features to Android phones to catch fake bank alerts and voice cloning attacks.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/android-gets-ai-defenses-against-messaging-scams-fake-calls"
+            }
+          ],
+          "article": {
+            "background": "Scammers have gotten better at fooling people on Android phones. They now use spoofed numbers, fake bank alerts, and AI voice cloning. Google's Phone and Messages apps already catch over 5 million scams each day. But the attacks keep getting harder to spot.",
+            "what_happened": "Google rolled out new AI defenses to Android devices. These tools block scam texts and stop call-forwarding abuse. The defenses work on eligible Android phones right now. Google built them to handle modern scams users cannot easily catch on their own.",
+            "why_it_matters": "If you use Android, these tools give you extra protection when checking messages and taking calls. You will still need to stay alert. But AI screening now catches more fakes before they reach you, cutting your odds of losing money to fraud.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3469074832a53216d64c29c2e347dd68",
+          "slug": "meta-smart-glasses-recorded-audio-without-user-activation",
+          "title": "Meta smart glasses recorded audio without user activation",
+          "summary": "Meta Ray-Ban glasses recorded audio without the wearer turning on the feature.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://mashable.com/tech/meta-confirms-smart-glasses-recording-without-being-activated"
+            }
+          ],
+          "article": {
+            "background": "Meta Ray-Ban smart glasses are eyeglasses with built-in cameras and microphones. Users can talk to Meta AI, the company's artificial intelligence tool, through the glasses. The glasses let people record video and audio of what they see and hear.",
+            "what_happened": "Multiple users found that their Meta Ray-Ban smart glasses were recording audio without being turned on. Meta confirmed the issue had occurred. The company said it has now fixed the problem. Users can review, manage, and delete their voice recordings through the glasses' settings at any time.",
+            "why_it_matters": "Smart glasses are becoming more common, and people wear them in private moments. If they record without permission, they could capture conversations you thought were private. This incident shows the risks when always-on devices handle audio and video.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "ccd49dc013a1ef94c33f08b52cb8557f",
+          "slug": "trump-waives-russia-sanctions-passed-by-congress",
+          "title": "Trump waives Russia sanctions passed by Congress",
+          "summary": "Trump used executive power to block Russia sanctions that Congress had passed.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cxr5yvzv7rp0o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Congress passed sanctions on Russia to punish its war on Ukraine. Trump signed the bill into law in September. The sanctions were set to take effect on Sunday.",
+            "what_happened": "On Friday night, Trump issued an executive order. He blocked many of the Russia sanctions Congress had approved. Trump said blocking them was in the US national interests.",
+            "why_it_matters": "When a president blocks sanctions Congress approved, it weakens how the US can respond to conflicts abroad. The move signals uncertainty about US policy toward Russia and Ukraine at a critical time.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f004fe346a087a7cfb89b610a67a46f3",
+          "slug": "justice-department-warns-california-officials-on-noncitizen",
+          "title": "Justice Department warns California officials on noncitizen ballots",
+          "summary": "DOJ told state officials they risk prosecution if they process ballots from suspected noncitizens.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/doj-says-california-officials-who-process-ballots-from-suspected-noncitizens-risk-prosecution"
+            }
+          ],
+          "article": {
+            "background": "Federal law bars noncitizens from voting in federal elections. California allows some noncitizens to register for local elections only. The state has processes to keep noncitizen ballots out of federal races.",
+            "what_happened": "The Department of Justice warned California officials they could face prosecution. The warning applies if they process ballots from people the government thinks are not citizens. The Trump administration made this threat ahead of next month's midterm election.",
+            "why_it_matters": "Election officials in California may now hesitate to process any ballots they are unsure about. That hesitation could delay vote counts or create confusion on election night. The warning also signals a new level of federal pressure on how states run their elections.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "4d6d76d96632e4b38c03a17e2ae2663f",
+          "slug": "israeli-settlers-attack-palestinians-and-beat-us-journalist",
+          "title": "Israeli settlers attack Palestinians and beat US journalist during olive harvest",
+          "summary": "Israeli settlers attacked Palestinians and beat an American photojournalist in the West Bank.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/israeli-settlers-attack-palestinians-during-west-bank-olive-harvest-and-beat-u-s-photojournalist"
+            }
+          ],
+          "article": {
+            "background": "Each fall, Palestinians harvest olives across the West Bank, an occupied territory. Israeli settlers live in communities throughout the region. These two groups clash regularly during harvest season over land and access.",
+            "what_happened": "On Friday, Israeli settlers attacked Palestinian villages in the West Bank. They set fires to cars and trees. They beat residents and a U.S. photojournalist during the violence.",
+            "why_it_matters": "The olive harvest is crucial for Palestinian farmers and their income. Violence during this season disrupts livelihoods and deepens tensions in the occupied territory. These attacks show the ongoing conflict affects both residents and journalists trying to document events.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "594bd273e0f117473fc7c3b16e9977f9",
+          "slug": "brazil-reports-record-fall-in-amazon-deforestation-ahead-of",
+          "title": "Brazil reports record fall in Amazon deforestation ahead of election",
+          "summary": "Brazil says forest loss hit record lows in the Amazon before the presidential runoff.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqe8rzg6zl00o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Brazil's Amazon rainforest has been shrinking for decades. When left-wing President Luiz Inácio Lula da Silva took office three years ago, he pledged to end deforestation by 2030. The forest had grown smaller faster under his right-wing predecessor, Jair Bolsonaro.",
+            "what_happened": "Brazil's government reported record-low deforestation rates in the Amazon and savanna regions. This drop comes before a presidential run-off on October 25. Lula will face Flavio Bolsonaro, the predecessor's son. Polls show the race is very close.",
+            "why_it_matters": "The rainforest absorbs huge amounts of carbon dioxide and affects global climate patterns. Brazil's policies on the forest matter to everyone who depends on stable weather and air quality. The election result will set the country's course on protecting or clearing the rainforest for years to come.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b84087232e8d2a4177293bc5589346d8",
+          "slug": "three-men-sentenced-to-158-years-each-for-murders-of",
+          "title": "Three men sentenced to 158 years each for murders of surfers in Mexico",
+          "summary": "A Mexican judge convicted three men for killing two Australian brothers and an American in 2024.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/oct/17/mexican-judge-sentences-three-men-to-158-years-in-prison-for-murders-of-australian-and-us-surfers-ntwnfb"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c3kgqjkzw29wo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Australian brothers Jake and Callum Robinson and American friend Carter Rhoad went surfing in Baja California, Mexico in 2024. The area is usually safe from the violence seen elsewhere in Mexico. All three were shot and killed in an apparent robbery of their truck on a secluded beach. Norm covered the guilty verdict in October.",
+            "what_happened": "A Mexican judge sentenced three men to 158 years and nine months in prison each. The men were convicted of homicide, aggravated robbery, robbery with violence, and vehicle theft with violence. The guilty verdict came down a week before this sentencing.",
+            "why_it_matters": "The deaths of three young surfers sparked grief and outrage across Australia and the United States. Safety during travel abroad is a real concern for tourists. This case shows how quickly violence can strike in places tourists may think are secure.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "d76b1bb0a0203ed609eded941c20d49b",
+          "slug": "dam-removals-bring-fish-back-to-northeastern-us-rivers",
+          "title": "Dam removals bring fish back to northeastern US rivers",
+          "summary": "Removing small dams lets herring and other fish swim back up northeastern rivers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.smithsonianmag.com/science-nature/dam-removals-are-bringing-fish-back-across-the-northeastern-united-states-striking-down-one-tiny-barrier-at-a-time-180989679"
+            }
+          ],
+          "article": {
+            "background": "Dams power mills and control water. But many small dams in the Northeast are old and no longer needed. When they stay in place, they block fish from swimming upstream to spawn. Now communities are taking them out. In 1859, farmers in Billerica, Massachusetts got tired of a dam on the Concord River. It flooded their fields and ruined their hay. They hired a surveyor to prove the dam should go.",
+            "what_happened": "Small dams are coming down across northeastern streams and rivers. Unlike the big dam removals that make headlines out West, these are quiet work on forgotten barriers. As the dams come out, fish are returning. Herring, in particular, are coming back in large numbers.",
+            "why_it_matters": "When dams block rivers, fish cannot swim upstream to lay eggs. Removing dams lets this cycle work again on its own. For people who fish commercially or for sport, this means more fish in the water. The Northeast is discovering that tearing down old, unused dams can undo decades of harm.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "41e5d28223a5e104179bf4a25b8661a5",
+          "slug": "bleached-corals-restored-rapidly-in-laboratory-experiment",
+          "title": "Bleached corals restored rapidly in laboratory experiment",
+          "summary": "Scientists brought bleached coral back to life in just days using a lab technique.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nature.com/articles/d41586-026-03266-x"
+            }
+          ],
+          "article": {
+            "background": "Coral bleaching happens when ocean temperatures rise. Stressed corals expel the algae living in their tissues. Those algae give corals their color and food. Without them, corals turn white and weaken.",
+            "what_happened": "Scientists placed bleached coral next to a healthy coral fragment in a lab. Within days, the bleached coral recovered. It regained its color and health by contact with the healthy piece.",
+            "why_it_matters": "Coral reefs face damage from warming oceans. This lab discovery suggests we might help reefs recover faster. If the method works in real reefs, it could protect ecosystems that millions of people depend on for food and income.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "cb2103be04f751a866df3f8428dc0cae",
+          "slug": "bae-systems-cyberattack-disrupts-federal-bankruptcy-courts",
+          "title": "BAE Systems cyberattack disrupts federal bankruptcy courts",
+          "summary": "An attack on BAE Systems shut down the notice system courts use nationwide.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/bae-systems-cyberattack-disrupts-us-federal-court-operations"
+            }
+          ],
+          "article": {
+            "background": "BAE Systems is a large defense contractor that builds weapons and technology for the US military. The company also runs computer systems for federal courts, including the Bankruptcy Noticing Center. This system sends notices to people involved in bankruptcy cases.",
+            "what_happened": "A cyberattack on BAE Systems shut down the notice system used by federal bankruptcy courts. The attack also stopped the production and delivery of bankruptcy notices. BAE is investigating and working to restore the system. The courts and BAE Systems are coordinating on recovery.",
+            "why_it_matters": "Bankruptcy notices tell people about court filings and deadlines they need to meet. Without these notices, people may miss important dates and deadlines in their cases. The courts are talking to BAE to fix this as fast as possible.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1a47bab9a5db66b96849ea43f3d5d8dc",
+          "slug": "burger-king-japan-breach-exposes-11-million-customer-records",
+          "title": "Burger King Japan breach exposes 11 million customer records",
+          "summary": "Hackers broke into a server holding customer data from Burger King Japan.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/burger-king-japan-data-breach-exposes-11-million-customer-records"
+            }
+          ],
+          "article": {
+            "background": "Burger King Japan is the Japanese arm of the global fast-food chain. The company has 350 locations in Japan. In early October, attackers broke into a server. The server held data for 11.18 million customers.",
+            "what_happened": "Burger King Japan disclosed the breach on Thursday. Attackers stole names, birth dates, gender, email addresses, and phone numbers. The company stores this data on servers for its official smartphone app. Burger King Japan finished its investigation on October 13. The company apologized to customers whose data was stolen.",
+            "why_it_matters": "If you use the Burger King Japan app, your personal information may have been exposed. The company now knows the breach happened and says it is taking steps to prevent future attacks. You may want to monitor your email and phone for fraud.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "becd6f63909b82ab1647b5144ea6a590",
+          "slug": "hackers-remotely-overheated-french-supermarket-fridges",
+          "title": "Hackers remotely overheated French supermarket fridges",
+          "summary": "Attack pushed temperatures from minus 27 Celsius to over 50, affecting hundreds of stores.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/world/2026/oct/17/who-hacked-frances-supermarket-fridges"
+            }
+          ],
+          "article": {
+            "background": "French supermarkets use digital thermostats to control cold display cases. These systems manage freezers, fridges, and chiller cabinets where stores keep food fresh. On Sunday night, hackers found a way in.",
+            "what_happened": "Shortly before midnight, hackers remotely raised temperatures on thousands of these systems across France. Freezers dropped from minus 27 Celsius to over 50 Celsius in hours. Food thawed and then cooked. Staff arriving early found hot air blasting from the cases, like opening an oven. One store in Normandy reported freezers hit 80 Celsius.",
+            "why_it_matters": "This attack shows that hackers can target physical systems that seem offline but are not. They can hit the supply chain for everyday goods like food. Stores will likely review security to stop this from happening again.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "0d930adeccf6dbd4784254ba2a305ca1",
+      "title": "China is second only to the U.S. in healthcare costs as a percentage of income",
+      "url": "https://www.cnbc.com/2026/10/15/chinese-spending-nearly-as-much-of-income-as-americans-on-healthcare.html",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "de860913857e8a9622be21dc003fa334",
+      "title": "Red Roses’ unbeaten streak ends in a thriller as Canada claim win with late try",
+      "url": "https://www.theguardian.com/sport/2026/oct/17/canada-england-red-roses-wxv-rugby-union-match-report",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 54,
+    "clusters_considered": 51,
+    "stories_run": 13,
+    "sources": 10,
+    "sections_held": 1
+  }
+}
