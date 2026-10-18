@@ -70,7 +70,15 @@ silver:
 editor:
   # SPEC 6.5 stage 1 and stage 2. The editor curates, the writers draft.
   editor_model: claude-sonnet-4-5-20250929
-  writer_model: claude-haiku-4-5-20251001
+  # Moved from claude-haiku-4-5-20251001 on 2026-10-18 on the writer eval
+  # (scripts/writer_eval.py, PR #61): 105 stories from 2026-10-08 to 10-17.
+  # Median first-draft grade 8.4 against 11.9, 28 articles over the gate's 9
+  # against 100, about 85% cheaper. Both models added background from their
+  # own knowledge, 5.5 somewhat less often (about 5 numbers against 10).
+  # The simplify pass uses this model too.
+  writer_model: claude-haiku-5-5
+  # Medium is what the eval measured. Remove for Haiku 4.5, which rejects it.
+  writer_effort: medium
   # SPEC 6.5: invalid twice -> fallback edition (editor) or a story with no
   # article block (writer). One retry, then contain the failure.
   max_retries: 1

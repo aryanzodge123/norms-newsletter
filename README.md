@@ -185,8 +185,8 @@ reviewed weekly.
 |--------------|----------------------------------------|-----|
 | Scoring      | Claude Haiku 5.5 (`claude-haiku-5-5`), effort low | Cheap, high-volume, prompt-cached |
 | Editor       | Claude Sonnet 4.5 (`claude-sonnet-4-5`)| One larger curation call per day |
-| Writers      | Claude Haiku 4.5                       | One small call per story, in parallel |
-| Simplify     | Claude Haiku 4.5                       | Readability-gate rewrites |
+| Writers      | Claude Haiku 5.5, effort medium        | One small call per story, in parallel |
+| Simplify     | Claude Haiku 5.5, effort medium        | Readability-gate rewrites |
 | Audio script | Claude Haiku 5.5, effort medium        | Turns the edition into a two-host dialogue |
 | Audio voice  | Gemini 2.5 Flash TTS (multi-speaker)   | Two prebuilt voices, behind a swappable interface |
 | Embeddings   | `BAAI/bge-small-en-v1.5` (local)       | Clustering, no API, no cost |
