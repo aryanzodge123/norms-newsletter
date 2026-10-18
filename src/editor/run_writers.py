@@ -29,7 +29,11 @@ log = logging.getLogger(__name__)
 
 PROMPT_VERSION = "writer_v1"
 PROMPTS_DIR = REPO_ROOT / "prompts"
-MAX_OUTPUT_TOKENS = 2048
+# An article is about 300 tokens of JSON. The rest is room for thinking,
+# which Haiku 5.5 does by default and which counts against this cap. In the
+# 2026-10-18 writer eval (105 stories) 5.5 used up to 2,748 tokens, and one
+# article in twenty went past the old 2048.
+MAX_OUTPUT_TOKENS = 8192
 
 # Decision #15: "short (1-2 sentences)". The schema caps it at 320 chars;
 # this is the same cap the lint applies so a borderline quote is stripped
@@ -178,6 +182,7 @@ def write_one(
             max_tokens=MAX_OUTPUT_TOKENS,
             max_retries=config.max_retries,
             label=f"writer[{context.cluster_id}]",
+            effort=config.writer_effort,
         )
     except llm.AIFailure as failure:
         log.warning(

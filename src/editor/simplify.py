@@ -31,7 +31,9 @@ from .schema import EM_DASH, _api_schema
 log = logging.getLogger(__name__)
 
 PROMPT_VERSION = "simplify_v1"
-MAX_OUTPUT_TOKENS = 4096
+# Raised from 4096 when this stage moved to Haiku 5.5 with the writer:
+# thinking counts against the cap, as it does for the writer.
+MAX_OUTPUT_TOKENS = 8192
 
 # Ids the pass addresses. A summary is keyed by its story's slug, which is
 # already unique within an edition (SPEC 6.5), so the rewrite maps back
@@ -177,6 +179,7 @@ def simplify_edition(
             max_tokens=MAX_OUTPUT_TOKENS,
             max_retries=config.max_retries,
             label="simplify",
+            effort=config.writer_effort,
         )
     except llm.AIFailure as failure:
         log.warning("simplify failed, keeping the original text: %s", failure)

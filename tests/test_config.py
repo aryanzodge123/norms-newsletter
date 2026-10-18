@@ -248,6 +248,7 @@ def test_audio_rejects_a_zero_render_ceiling(tmp_path) -> None:
     [
         ("scoring_model", "scoring_effort", "claude-haiku-4-5-20251001"),
         ("script_model", "script_effort", "claude-haiku-4-5-20251001"),
+        ("writer_model", "writer_effort", "claude-haiku-4-5-20251001"),
     ],
 )
 def test_rejects_effort_on_a_model_that_refuses_it(tmp_path, model_key, effort_key, model) -> None:
@@ -271,6 +272,7 @@ def test_the_repo_config_sends_effort_only_where_accepted() -> None:
     pipeline = load_pipeline()
     assert pipeline.silver.scoring_effort == "low"
     assert pipeline.audio.script_effort == "medium"
+    assert pipeline.editor.writer_effort == "medium"
 
 
 def test_audio_rejects_inverted_word_band(tmp_path) -> None:
