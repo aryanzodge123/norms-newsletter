@@ -37,3 +37,37 @@ than showing a traceback.
 > **Why is it not called `inspect.py`?** Because that would shadow Python's
 > standard-library `inspect` module, which PyIceberg imports. A file named
 > `inspect.py` on the path breaks the import. The name `norm.py` avoids that.
+
+## `writer_eval.py` - compare writer models before switching
+
+The measured comparison SPEC 6.5 and section 11 require before the writer stage
+changes model. It reruns the real writer stage over past editions, once per
+model, on exactly the inputs production used that day: the stories the editor
+picked, their excerpts from gold, and the same prior mentions. Only the model
+changes.
+
+**Unlike `norm.py`, it calls the API and costs money**, about $0.50 for ten
+days comparing Haiku 4.5 with Haiku 5.5. It never writes to the lake. Always
+look at the dry run first.
+
+```bash
+uv run python scripts/writer_eval.py --days 10 --dry-run   # list the stories, no API calls
+uv run python scripts/writer_eval.py --days 10             # run both default models
+uv run python scripts/writer_eval.py --days 10 \
+    --arm old=claude-haiku-4-5-20251001 \
+    --arm new=claude-haiku-5-5:high:8192                    # label=model[:effort[:max_tokens]]
+```
+
+It writes `eval-out/writer/<timestamp>/report.md` (and `results.json` with
+every article). The report has two parts:
+
+- **A summary table** per model: articles written, retries, first-draft
+  readability grade against the gate's 9, cost, and time.
+- **Grounding candidates to review.** Every number or capitalised name in an
+  article that never appears in what the writer was shown, with its sentence.
+  These are candidates, not findings: a person ticks the ones that are real
+  additions, which is the part a script cannot judge. The check is tested in
+  `tests/test_writer_eval.py`.
+
+Effort and output cap are applied to the request by the script, so a setting
+can be evaluated before any production code changes.
