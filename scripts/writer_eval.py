@@ -88,8 +88,12 @@ def _norm_word(token: str) -> str:
 
 
 def _norm_number(token: str) -> str:
-    """ "$1,200.50%" -> "1200.50". Trailing sentence punctuation is dropped."""
-    return token.strip("$%").replace(",", "").rstrip(".")
+    """ "$1,200.50%" -> "1200.50", "02" -> "2". Trailing punctuation is dropped.
+
+    Leading zeros go so a prior mention dated 2026-10-02 grounds "October 2".
+    """
+    number = token.strip("$%").replace(",", "").rstrip(".")
+    return number.lstrip("0") or number
 
 
 @dataclass(frozen=True)

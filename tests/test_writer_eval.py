@@ -51,6 +51,11 @@ class TestDoesNotFlagFaithfulRewording:
     def test_a_number_the_source_spelled_out(self) -> None:
         assert tokens("Officials said 3 vehicles were damaged.") == set()
 
+    def test_a_day_from_an_iso_date_in_prior_mentions(self) -> None:
+        """Prior mentions carry ISO dates; "2026-10-02" grounds "October 2"."""
+        source = SOURCE + "\nPrior mentions:\n- 2026-10-02: Earlier coverage."
+        assert {c.token for c in ungrounded_candidates("Norm covered it on October 2.", source)} == set()
+
     def test_an_abbreviated_month(self) -> None:
         assert tokens("The attack happened on Oct. 19 near Ramallah.") == set()
 
