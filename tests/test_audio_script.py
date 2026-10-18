@@ -113,3 +113,35 @@ def test_invalid_twice_raises(config) -> None:
     with pytest.raises(AIFailure):
         script_stage.generate_script(client, {"date": "2026-07-19"}, config, "sys")
     assert client.messages.calls == 2
+
+
+# --------------------------------------------------------------------------
+# Request shape
+# --------------------------------------------------------------------------
+class RecordingClient(FakeClient):
+    def __init__(self, replies):
+        super().__init__(replies)
+        self.requests: list[dict] = []
+        create = self.messages.create
+
+        def recording_create(**kwargs):
+            self.requests.append(kwargs)
+            return create(**kwargs)
+
+        self.messages.create = recording_create
+
+
+def test_effort_is_omitted_when_not_configured(config: AudioConfig) -> None:
+    """Haiku 4.5 rejects the parameter, so None must send nothing."""
+    client = RecordingClient([make_script_json(15)])
+    script_stage.generate_script(client, {"stories": []}, config, "SYSTEM")
+    assert "effort" not in client.requests[0]["output_config"]
+
+
+def test_effort_is_sent_when_configured(config: AudioConfig) -> None:
+    config = config.model_copy(
+        update={"script_model": "claude-haiku-5-5", "script_effort": "medium"}
+    )
+    client = RecordingClient([make_script_json(15)])
+    script_stage.generate_script(client, {"stories": []}, config, "SYSTEM")
+    assert client.requests[0]["output_config"]["effort"] == "medium"

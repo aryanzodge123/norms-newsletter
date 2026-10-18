@@ -53,7 +53,17 @@ silver:
   embed_chars: 500
   # Decision #2. Observed for two weeks before it is trusted.
   cluster_threshold: 0.82
-  scoring_model: claude-haiku-4-5-20251001
+  # Moved from claude-haiku-4-5-20251001 on 2026-10-18, measured on the
+  # 2026-10-17 partition: 60 clusters, no invalid replies, about 6x cheaper
+  # per call. Scores are not interchangeable across models (83% within one
+  # point of Haiku 4.5, against 93% for Haiku 4.5 re-scoring itself), so a
+  # model change lands at a day boundary, never mid-day, or the editor ranks
+  # a partition scored by two rubrics at once.
+  scoring_model: claude-haiku-5-5
+  # Low: a 1 to 10 rubric score needs little thinking, and at the default
+  # (medium) replies ran up to 447 tokens. Remove this line if the model
+  # goes back to Haiku 4.5, which rejects the parameter.
+  scoring_effort: low
   # SPEC 6.4c: invalid twice -> score null, editor ignores the cluster.
   scoring_max_retries: 1
 
@@ -102,7 +112,16 @@ audio:
   # two-host dialogue; deterministic code does the TTS, duration, upload and
   # the audio block. The script model is pinned like the other AI stages so
   # the audio eval set does not shift under a version bump.
-  script_model: claude-haiku-4-5-20251001
+  #
+  # Moved from claude-haiku-4-5-20251001 on 2026-10-18. On three editions
+  # Haiku 4.5 wrote 1,135 to 1,273 words, under the band every time;
+  # Haiku 5.5 at medium effort landed two of three inside it, about 4x
+  # cheaper per script.
+  script_model: claude-haiku-5-5
+  # Medium is the model's default, set explicitly so a change of default
+  # upstream does not move the script length. Remove for Haiku 4.5, which
+  # rejects the parameter.
+  script_effort: medium
   # SPEC 6.7 / SPEC 7: script invalid twice -> no audio, edition ships
   # without a player row. One retry, then contain.
   max_retries: 1
@@ -137,9 +156,12 @@ audio:
   #
   # 360.0 is chosen against the audio step's timeout-minutes: 15 ceiling in
   # .github/workflows/publish.yml (900 s). Worst case with one retry, both
-  # attempts running to the ceiling, is 60 s of script call + 360 + 30 s of
-  # backoff + 360 = 810 s, which still fits. A second retry would not
-  # (60 + 360 + 30 + 360 + 30 + 360 = 1200 s), and buying room for one by
+  # attempts running to the ceiling, is 120 s of script call + 360 + 30 s of
+  # backoff + 360 = 870 s, which still fits. The script allowance was 60 s
+  # until 2026-10-18: Haiku 5.5 thinks before it writes, single script calls
+  # measured up to 47 s, and the stage makes two when the first lands off
+  # the word band. A second render retry would not fit
+  # (120 + 360 + 30 + 360 + 30 + 360 = 1260 s), and buying room for one by
   # raising the step ceiling would spend the publish's timeliness margin
   # (SPEC section 8) on a stage that is classed non-blocking.
   tts_timeout_seconds: 360.0

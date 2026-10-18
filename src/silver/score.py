@@ -24,6 +24,8 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 
 from ..config import SilverConfig, get_settings
+# Pricing and reply reading are shared with the edition stages.
+from ..editor import llm
 from .cluster import Cluster
 
 log = logging.getLogger(__name__)
@@ -51,20 +53,31 @@ Topic = Literal[
     "Regulation", "Science", "Cyber", "Sports",
 ]
 
-# Haiku 4.5 pricing, USD per million tokens. Cache reads are 0.1x input,
-# cache writes 1.25x input at the default 5 minute TTL.
-PRICE_INPUT_PER_MTOK = 1.00
-PRICE_OUTPUT_PER_MTOK = 5.00
-PRICE_CACHE_READ_PER_MTOK = 0.10
-PRICE_CACHE_WRITE_PER_MTOK = 1.25
-
-# Haiku 4.5 will not cache a prefix shorter than this. Below it,
+# The shortest prefix each model will cache, by model id prefix. Below it,
 # cache_control is silently ignored: no error, just no cache. The rubric
 # has to clear the bar for SPEC 6.4c's "prompt caching on" to mean
 # anything, so ensure_cacheable() checks it rather than trusting it.
-MIN_CACHEABLE_TOKENS = 4096
+MIN_CACHEABLE_TOKENS: dict[str, int] = {
+    "claude-haiku-4-5": 4096,
+    "claude-haiku-5-5": 512,
+}
+# For a model not listed: the strictest known bar, so the check warns
+# rather than passing on a guess.
+DEFAULT_MIN_CACHEABLE_TOKENS = max(MIN_CACHEABLE_TOKENS.values())
 
-MAX_OUTPUT_TOKENS = 512
+# A reply is about 60 to 120 tokens of JSON. The headroom is for thinking,
+# which Haiku 5.5 does by default and which counts against this cap. At the
+# default effort it reached 447 tokens in the 2026-10-18 comparison, close
+# enough to the old 512 that a day's ~190 clusters would eventually lose
+# some to a max_tokens stop and a null score.
+MAX_OUTPUT_TOKENS = 2048
+
+
+def min_cacheable_tokens(model: str) -> int:
+    for prefix, tokens in MIN_CACHEABLE_TOKENS.items():
+        if model.startswith(prefix):
+            return tokens
+    return DEFAULT_MIN_CACHEABLE_TOKENS
 
 
 class ScoreResponse(BaseModel):
@@ -153,18 +166,9 @@ def build_user_message(cluster: Cluster) -> str:
     return "\n".join(lines)
 
 
-def estimate_cost_usd(usage) -> float:
+def estimate_cost_usd(usage, model: str) -> float:
     """Dollars for one call, from the usage block (SPEC section 8)."""
-    read = getattr(usage, "cache_read_input_tokens", 0) or 0
-    write = getattr(usage, "cache_creation_input_tokens", 0) or 0
-    uncached = getattr(usage, "input_tokens", 0) or 0
-    output = getattr(usage, "output_tokens", 0) or 0
-    return (
-        uncached * PRICE_INPUT_PER_MTOK
-        + write * PRICE_CACHE_WRITE_PER_MTOK
-        + read * PRICE_CACHE_READ_PER_MTOK
-        + output * PRICE_OUTPUT_PER_MTOK
-    ) / 1_000_000
+    return llm.estimate_cost_usd(usage, model)
 
 
 def get_client():
@@ -184,7 +188,7 @@ def get_client():
 def ensure_cacheable(client, system_prompt: str, model: str) -> int:
     """Confirm the rubric is long enough for prompt caching to engage.
 
-    Returns the token count. Below MIN_CACHEABLE_TOKENS the API accepts
+    Returns the token count. Below the model's minimum the API accepts
     cache_control and silently declines to cache, which would quietly
     multiply the scoring bill by roughly ten. Better to know.
     """
@@ -193,19 +197,23 @@ def ensure_cacheable(client, system_prompt: str, model: str) -> int:
         system=[{"type": "text", "text": system_prompt}],
         messages=[{"role": "user", "content": "x"}],
     ).input_tokens
-    if counted < MIN_CACHEABLE_TOKENS:
+    minimum = min_cacheable_tokens(model)
+    if counted < minimum:
         log.warning(
             "scoring prompt is %d tokens, below the %d-token minimum for %s. "
             "Prompt caching will not engage and scoring will cost ~10x more "
             "per run. Lengthen prompts/scoring_v1.md.",
             counted,
-            MIN_CACHEABLE_TOKENS,
+            minimum,
             model,
         )
     return counted
 
 
 def _call(client, config: SilverConfig, system_prompt: str, user_message: str):
+    output_config: dict = {"format": {"type": "json_schema", "schema": RESPONSE_SCHEMA}}
+    if config.scoring_effort is not None:
+        output_config["effort"] = config.scoring_effort
     return client.messages.create(
         model=config.scoring_model,
         max_tokens=MAX_OUTPUT_TOKENS,
@@ -219,7 +227,7 @@ def _call(client, config: SilverConfig, system_prompt: str, user_message: str):
                 "cache_control": {"type": "ephemeral"},
             }
         ],
-        output_config={"format": {"type": "json_schema", "schema": RESPONSE_SCHEMA}},
+        output_config=output_config,
         messages=[{"role": "user", "content": user_message}],
     )
 
@@ -246,9 +254,8 @@ def score_cluster(
             )
         try:
             response = _call(client, config, system_prompt, message)
-            cost += estimate_cost_usd(response.usage)
-            text = next(b.text for b in response.content if b.type == "text")
-            parsed = parse_response(text)
+            cost += estimate_cost_usd(response.usage, config.scoring_model)
+            parsed = parse_response(llm.response_text(response))
         except Exception as exc:  # noqa: BLE001
             last_error = str(exc)
             log.warning(

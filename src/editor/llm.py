@@ -27,6 +27,9 @@ T = TypeVar("T", bound=BaseModel)
 PRICING: dict[str, tuple[float, float]] = {
     "claude-sonnet-4-5": (3.00, 15.00),
     "claude-haiku-4-5": (1.00, 5.00),
+    # The rate for prompts of 100K tokens or fewer. Above that Haiku 5.5
+    # bills $0.50 / $2.50, which no stage here comes near.
+    "claude-haiku-5-5": (0.10, 0.50),
     "claude-opus-4": (15.00, 75.00),
 }
 
@@ -87,6 +90,23 @@ def get_client():
             ".env locally or as an Actions secret in CI (SETUP.md 4.2)."
         )
     return anthropic.Anthropic(api_key=settings.anthropic_api_key)
+
+
+def response_text(response) -> str:
+    """The reply's text block. Raises ValueError naming why there is none.
+
+    A reply can carry no text block at all: a refusal, or a max_tokens stop
+    that spent the whole budget thinking. Read by type rather than position,
+    because a model that thinks puts its thinking blocks first.
+    """
+    for block in response.content:
+        if block.type == "text":
+            return block.text
+    stop = getattr(response, "stop_reason", None)
+    details = getattr(response, "stop_details", None)
+    category = getattr(details, "category", None)
+    reason = f"stop_reason={stop}" + (f", category={category}" if category else "")
+    raise ValueError(f"reply has no text block ({reason})")
 
 
 def parse_into(model: type[T], text: str) -> T:
@@ -157,8 +177,7 @@ def call_validated(
                 messages=[{"role": "user", "content": message}],
             )
             cost += estimate_cost_usd(response.usage, model)
-            text = next(block.text for block in response.content if block.type == "text")
-            value = parse_into(response_model, text)
+            value = parse_into(response_model, response_text(response))
         except Exception as exc:  # noqa: BLE001
             last_error = str(exc)
             log.warning("%s attempt %d failed: %s", label, attempt + 1, last_error)

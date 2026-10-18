@@ -206,7 +206,9 @@ def test_audio_retry_budget_fits_the_publish_step(tmp_path) -> None:
     """
     audio = load_pipeline(write(tmp_path, "pipeline.yaml", VALID_PIPELINE)).audio
     step_ceiling_seconds = 15 * 60
-    script_call_allowance = 60
+    # Two script calls (the off-band retry) at Haiku 5.5's measured latency,
+    # up to 47 s each on 2026-10-18, rounded up.
+    script_call_allowance = 120
     attempts = audio.tts_max_retries + 1
     worst_case = (
         script_call_allowance
@@ -239,6 +241,36 @@ def test_audio_rejects_a_zero_render_ceiling(tmp_path) -> None:
     text = VALID_PIPELINE.replace("tts_timeout_seconds: 360.0", "tts_timeout_seconds: 0")
     with pytest.raises(ConfigError, match="tts_timeout_seconds"):
         load_pipeline(write(tmp_path, "pipeline.yaml", text))
+
+
+@pytest.mark.parametrize(
+    ("model_key", "effort_key", "model"),
+    [
+        ("scoring_model", "scoring_effort", "claude-haiku-4-5-20251001"),
+        ("script_model", "script_effort", "claude-haiku-4-5-20251001"),
+    ],
+)
+def test_rejects_effort_on_a_model_that_refuses_it(tmp_path, model_key, effort_key, model) -> None:
+    """Haiku 4.5 returns a 400 for any effort level, so every call would fail.
+
+    Refused at load, where a rollback that forgets the effort line fails
+    loudly, rather than as a day of null scores or a day without audio.
+    """
+    lines = []
+    for line in VALID_PIPELINE.splitlines():
+        lines.append(line)
+        if line.strip().startswith(f"{model_key}:"):
+            indent = line[: len(line) - len(line.lstrip())]
+            lines[-1] = f"{indent}{model_key}: {model}"
+            lines.append(f"{indent}{effort_key}: low")
+    with pytest.raises(ConfigError, match=effort_key):
+        load_pipeline(write(tmp_path, "pipeline.yaml", "\n".join(lines)))
+
+
+def test_the_repo_config_sends_effort_only_where_accepted() -> None:
+    pipeline = load_pipeline()
+    assert pipeline.silver.scoring_effort == "low"
+    assert pipeline.audio.script_effort == "medium"
 
 
 def test_audio_rejects_inverted_word_band(tmp_path) -> None:
