@@ -17,3 +17,6 @@ landing/.prerender/
 # drawio's scratch file, written beside the diagram while it is open and
 # removed on a clean close. A crash leaves one behind.
 .$*.dtmp
+# scripts/writer_eval.py reports. Regenerated per run, and they quote source
+# excerpts, so they are read locally and attached to a PR, never committed.
+eval-out/
