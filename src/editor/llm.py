@@ -137,6 +137,7 @@ def call_validated(
     max_retries: int,
     label: str,
     on_invalid: Callable[[int, str], None] | None = None,
+    effort: str | None = None,
 ) -> Call:
     """One AI call with validation and one retry. Raises AIFailure at the end.
 
@@ -145,6 +146,10 @@ def call_validated(
     same mistake. Cost accumulates across attempts because a rejected reply
     was still billed.
     """
+    output_config: dict = {"format": {"type": "json_schema", "schema": response_schema}}
+    # Omitted when None: models before the 5 family reject the parameter.
+    if effort is not None:
+        output_config["effort"] = effort
     cost = 0.0
     last_error: str | None = None
 
@@ -171,9 +176,7 @@ def call_validated(
                         "cache_control": {"type": "ephemeral"},
                     }
                 ],
-                output_config={
-                    "format": {"type": "json_schema", "schema": response_schema}
-                },
+                output_config=output_config,
                 messages=[{"role": "user", "content": message}],
             )
             cost += estimate_cost_usd(response.usage, model)

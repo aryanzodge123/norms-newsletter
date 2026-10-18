@@ -179,3 +179,13 @@ def test_em_dash_is_rejected(config) -> None:
     client = FakeClient([bad, bad])
     applied, _ = simplify.simplify_edition(client, edition, config, "sys")
     assert applied == 0
+
+
+def test_simplify_sends_the_writer_effort(config) -> None:
+    """Simplify shares writer_model, so it shares writer_effort too."""
+    config = config.model_copy(update={"writer_model": "claude-haiku-5-5", "writer_effort": "medium"})
+    edition = edition_with(headline=HARD, summary=HARD)
+    reply = json.dumps({"items": [{"id": "headline", "text": EASY}]})
+    client = FakeClient([reply])
+    simplify.simplify_edition(client, edition, config, "sys")
+    assert client.messages.requests[0]["output_config"]["effort"] == "medium"
