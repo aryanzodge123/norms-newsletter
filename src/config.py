@@ -14,6 +14,7 @@ import os
 import re
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 import yaml
 from dotenv import load_dotenv
@@ -25,6 +26,21 @@ CONFIG_DIR = REPO_ROOT / "config"
 # "adapters.hackernews.HackerNewsAdapter": at least module.Class, resolved
 # under src/ by the collector. Kept in the SPEC 6.1 form in the yaml.
 ADAPTER_PATH_RE = re.compile(r"^[a-z_][a-z0-9_]*(\.[a-z_][a-z0-9_]*)+\.[A-Z]\w*$")
+
+# The API's output_config.effort levels.
+Effort = Literal["low", "medium", "high", "xhigh", "max"]
+
+# Models that reject output_config.effort with a 400. A stage configured
+# with effort on one of these would fail every call, so loading refuses it.
+NO_EFFORT_MODELS = ("claude-haiku-4-5", "claude-sonnet-4-5")
+
+
+def _check_effort(model: str, effort: str | None, field: str) -> None:
+    if effort is not None and model.startswith(NO_EFFORT_MODELS):
+        raise ValueError(
+            f"{field} is set but {model} does not accept an effort level; "
+            f"remove {field} or change the model"
+        )
 
 
 class ConfigError(RuntimeError):
@@ -112,6 +128,14 @@ class SilverConfig(Strict):
     cluster_threshold: float = Field(gt=0.0, le=1.0)
     scoring_model: str
     scoring_max_retries: int = Field(ge=0)
+    # Sent as output_config.effort when set. None sends nothing, which is
+    # what Haiku 4.5 needs: it rejects the parameter outright.
+    scoring_effort: Effort | None = None
+
+    @model_validator(mode="after")
+    def _effort_supported(self) -> SilverConfig:
+        _check_effort(self.scoring_model, self.scoring_effort, "scoring_effort")
+        return self
 
 
 class EditorConfig(Strict):
@@ -152,6 +176,8 @@ class AudioConfig(Strict):
 
     script_model: str
     max_retries: int = Field(ge=0)
+    # As SilverConfig.scoring_effort: omitted from the request when None.
+    script_effort: Effort | None = None
     tts_model: str
     speaker_a_voice: str
     speaker_b_voice: str
@@ -190,6 +216,11 @@ class AudioConfig(Strict):
     # because there is only ever one gap to size. Bounded by the same step
     # budget as the ceiling above: the backoff is time the render is not using.
     tts_retry_backoff_seconds: float = Field(default=30.0, ge=0)
+
+    @model_validator(mode="after")
+    def _effort_supported(self) -> AudioConfig:
+        _check_effort(self.script_model, self.script_effort, "script_effort")
+        return self
 
     @model_validator(mode="after")
     def _word_band_ordered(self) -> AudioConfig:

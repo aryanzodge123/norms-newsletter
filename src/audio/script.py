@@ -26,7 +26,12 @@ log = logging.getLogger(__name__)
 
 PROMPT_VERSION = "audio_script_v1"
 PROMPTS_DIR = REPO_ROOT / "prompts"
-MAX_OUTPUT_TOKENS = 8192
+# A 1,300 to 1,600 word script is about 2,000 tokens of JSON. The rest is
+# room for thinking, which Haiku 5.5 does by default and which counts
+# against this cap. At 8192 it stopped on max_tokens in three of five calls
+# in the 2026-10-18 comparison, and one edition got no script at all; at
+# 16384 with effort set its largest reply was 11,692 tokens.
+MAX_OUTPUT_TOKENS = 16384
 
 
 @dataclass(frozen=True)
@@ -66,6 +71,9 @@ def generate_script(
     """One script call with validation and one retry. Raises llm.AIFailure
     if no structurally valid script comes back after every attempt."""
     base_message = build_user_message(edition)
+    output_config: dict = {"format": {"type": "json_schema", "schema": SCRIPT_SCHEMA}}
+    if config.script_effort is not None:
+        output_config["effort"] = config.script_effort
     cost = 0.0
     last_error: str | None = None
     last_valid: DialogueScript | None = None
@@ -89,12 +97,11 @@ def generate_script(
                         "cache_control": {"type": "ephemeral"},
                     }
                 ],
-                output_config={"format": {"type": "json_schema", "schema": SCRIPT_SCHEMA}},
+                output_config=output_config,
                 messages=[{"role": "user", "content": message}],
             )
             cost += llm.estimate_cost_usd(response.usage, config.script_model)
-            text = next(block.text for block in response.content if block.type == "text")
-            payload = json.loads(text)
+            payload = json.loads(llm.response_text(response))
             script = validate_script(payload)
         except Exception as exc:  # noqa: BLE001
             last_error = str(exc)
