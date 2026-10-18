@@ -186,8 +186,12 @@ class RecordingClient:
     def create(self, **kwargs):
         if self._arm.max_tokens:
             kwargs["max_tokens"] = self._arm.max_tokens
+        # The arm decides effort, not the repo config: the writer stage sends
+        # config.writer_effort, which a Haiku 4.5 arm must not pass on.
+        output_config = {k: v for k, v in kwargs.get("output_config", {}).items() if k != "effort"}
         if self._arm.effort:
-            kwargs["output_config"] = {**kwargs.get("output_config", {}), "effort": self._arm.effort}
+            output_config["effort"] = self._arm.effort
+        kwargs["output_config"] = output_config
         started = time.monotonic()
         response = self._client.messages.create(**kwargs)
         with self._lock:

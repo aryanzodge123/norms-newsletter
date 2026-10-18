@@ -12,7 +12,7 @@ import argparse
 
 import pytest
 
-from scripts.writer_eval import Arm, parse_arm, ungrounded_candidates
+from scripts.writer_eval import Arm, RecordingClient, parse_arm, ungrounded_candidates
 
 SOURCE = (
     "Title: Masked settlers attack European diplomats in the occupied West Bank\n"
@@ -84,3 +84,38 @@ class TestArmParsing:
     def test_rejects_malformed(self, spec: str) -> None:
         with pytest.raises(argparse.ArgumentTypeError):
             parse_arm(spec)
+
+
+class TestRecordingClient:
+    """The arm's effort wins over whatever the writer stage sent."""
+
+    class _Inner:
+        def __init__(self) -> None:
+            self.sent: dict = {}
+            self.messages = self
+
+        def create(self, **kwargs):
+            self.sent = kwargs
+
+            class _Usage:
+                output_tokens = 1
+
+            class _Response:
+                stop_reason = "end_turn"
+                usage = _Usage()
+
+            return _Response()
+
+    def send(self, arm: Arm, output_config: dict) -> dict:
+        inner = self._Inner()
+        RecordingClient(inner, arm, []).create(max_tokens=2048, output_config=output_config)
+        return inner.sent
+
+    def test_an_arm_without_effort_strips_the_configs_effort(self) -> None:
+        sent = self.send(Arm("old", "claude-haiku-4-5-20251001"), {"format": "f", "effort": "medium"})
+        assert sent["output_config"] == {"format": "f"}
+
+    def test_an_arm_with_effort_overrides_it(self) -> None:
+        sent = self.send(Arm("new", "claude-haiku-5-5", "low", 8192), {"format": "f", "effort": "medium"})
+        assert sent["output_config"] == {"format": "f", "effort": "low"}
+        assert sent["max_tokens"] == 8192
