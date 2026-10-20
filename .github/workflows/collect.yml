@@ -60,3 +60,10 @@ jobs:
       # zero when nothing changed (decision #6).
       - name: Silver
         run: uv run python -m src.silver.run_silver
+
+      # SPEC section 8 / decision #68: a failed step after Collect (Silver,
+      # most likely) would otherwise leave the check green, because Collect
+      # has already pinged success. This turns the check red within the run.
+      - name: Report failure to the collector check
+        if: failure()
+        run: curl -fsS -m 10 --retry 3 "$HEALTHCHECKS_COLLECT_URL/fail" || true

@@ -817,6 +817,7 @@ aspirational.
 |--------------------------------|--------------------------------------------------|
 | One adapter fails              | Log, skip, continue                              |
 | All sources return nothing     | run_log `failed` + healthchecks `/fail` (blind collector) |
+| Silver fails (bad key, crash) | Collect workflow pings collector check `/fail`; next successful run clears it |
 | Missed collector cycles        | Next cycle backfills via `since`; bronze dedups  |
 | Silver write loses a commit race | Reload table, retry bounded; only then run_log `write_failed` |
 | One story's article fails 2x   | Story publishes without article block            |
@@ -974,8 +975,12 @@ one check for 6am publish, one for the collector cadence. The collector
 pings `/fail` when a cycle fetches zero items across all sources, not only
 when the bronze write fails, so the cadence check catches a running-but-blind
 collector (a source-wide outage or a datacenter-IP block), not just a stalled
-process or an R2 failure. Weekly 10-minute review: cluster quality, score
-distribution, readability flags; tune cluster_threshold and rubric anchors.
+process or an R2 failure. The collect workflow also pings `/fail` when any
+of its steps fails, so a silver failure after a successful collection (an
+expired API key, a crash) turns the same check red instead of hiding behind
+the collector's success ping (decision #68). Weekly 10-minute review:
+cluster quality, score distribution, readability flags; tune
+cluster_threshold and rubric anchors.
 
 ## 9. Cost budget (monthly, target < $25)
 
@@ -1072,6 +1077,7 @@ Levers if over: max_items_per_run, re-scoring rule, article length.
 | 66 | A transient TTS failure is retried once after a fixed backoff before the edition ships without audio, and the retry lives behind the `Synthesizer` interface rather than in the per-edition orchestration. Transient means the transport and availability classes, 503, 429, 500, 502, 504, timeouts and disconnects; everything else, including an unrecognized error, is permanent and fails immediately as it does today. The reason is that SPEC 7 already retries a transient infrastructure failure of exactly this shape in the silver commit race, while the TTS row degraded on first contact, and five of the six editions from 2026-09-09 to 2026-09-14 lost their audio to errors whose own messages said to try again later. One retry is the bound because the audio step's 15 minute ceiling and the 360 second per-call timeout leave room for a second attempt and not a third, and buying room for a third by raising the step ceiling would spend the publish's timeliness margin on a stage that is classed non-blocking. The split between transient and permanent is the substance: `tts.py`'s bare `except Exception` currently makes a missing API key and a 503 indistinguishable, and a retry loop over that would burn the budget re-attempting failures that cannot succeed. The placement is behind the `Synthesizer` interface because decision #44's rework replaces the per-edition orchestration and keeps the interface |
 
 | 67 | Sustained audio loss is surfaced as a threshold over consecutive publish runs carrying `audio_missing`, reddening an Actions run after a successful deploy in the same way a degraded publication does, and never touching healthchecks. It is not added to `DEGRADED_REASONS`. The reason is that a single edition without audio is correct behavior under SPEC 7 while four consecutive is a broken feature, and section 8 had no signal that could tell them apart: from 2026-09-09 to 2026-09-14 the run log recorded `audio_missing` faithfully every time and nothing consumed it, so the outage was found by a person noticing rather than by the system. The signal is kept out of the degraded subset because decision #27 gives "degraded" the specific meaning of a fallback link-list published where a real edition was possible, which a normal edition without audio is not, and widening that definition to reuse its alert would cost the precision the definition exists to provide. This follows the existing treatment of sustained lateness, which is likewise a property of a window of runs rather than of one. The same row records the TTS render's wall-clock duration, because the 300 second ceiling was set on an estimate that measured wrong by roughly a factor of two and nothing in the system recorded the number that would have caught it |
+| 68 | A failed collect workflow pings the collector cadence check's `/fail`, so a silver failure alerts through the channel the project already watches. On 2026-10-17 to 18 an expired Anthropic key failed silver five runs in a row while the Collect step reported success each time, and the day published a fallback with ten hours of unused warning. The ping is a workflow step rather than code so it also covers crashes that never reach Python's error handling. This is the collector check, not the publish check; decision #27's rule that the publish check stays a pure published-or-not signal is untouched |
 
 ## 11. Remaining open questions
 

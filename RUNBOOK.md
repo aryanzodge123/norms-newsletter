@@ -432,6 +432,11 @@ It prints the edition type it would choose and how many usable clusters it found
 **Symptoms:** the editor falls back repeatedly, scoring stores lots of null
 scores, or a stage's notes mention an Anthropic/authentication error.
 
+A red collector check whose collect run failed at the Silver step with
+`AuthenticationError` is this section: the key has expired or been revoked.
+Rotate it before the next publish (SETUP.md 2.1, then the Actions secret), or
+that morning's edition is a fallback (decision #68).
+
 **Check:**
 
 1. Is the key valid and in funds?
