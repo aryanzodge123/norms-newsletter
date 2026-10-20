@@ -1,9 +1,12 @@
 # Proposed spec addition: alert when the collect workflow fails after collecting
 
-**Status: proposed 2026-10-18, awaiting Milind's approval.** Nothing is built.
-If approved, the three text changes below go into SPEC.md as written and this
-document stays as the reasoning behind them, the way
-`PROPOSED-SPEC-tts-resilience.md` does.
+**Status: approved 2026-10-20.** The three text changes below are in SPEC.md
+as written, and the step is in `collect.yml`. This document stays as the
+reasoning behind them, the way `PROPOSED-SPEC-tts-resilience.md` does.
+
+Both open questions were answered at approval: decision #27 covers the publish
+check only, so this widens the collector check as proposed; and the mini PC no
+longer runs the collector, so no local success ping can clear the alert.
 
 This exists because an expired Anthropic key cost the 2026-10-18 edition, with
 ten hours of warning that nothing passed on.
