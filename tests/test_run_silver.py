@@ -94,15 +94,17 @@ class TestSystemPrompt:
         assert "—" not in load_system_prompt()
 
     def test_is_long_enough_for_prompt_caching(self) -> None:
-        """Haiku 4.5 silently declines to cache a prefix under 4096 tokens.
+        """A model silently declines to cache a prefix under its minimum.
 
-        A rough characters-per-token estimate is enough here; the real
-        count is checked against the API in ensure_cacheable().
+        Checked against the strictest known minimum (Haiku 4.5's 4096), so
+        the prompt still caches if the model is ever moved back. A rough
+        characters-per-token estimate is enough here; the real count is
+        checked against the API in ensure_cacheable().
         """
-        from src.silver.score import MIN_CACHEABLE_TOKENS
+        from src.silver.score import DEFAULT_MIN_CACHEABLE_TOKENS
 
         estimated_tokens = len(load_system_prompt()) / 4
-        assert estimated_tokens > MIN_CACHEABLE_TOKENS, (
+        assert estimated_tokens > DEFAULT_MIN_CACHEABLE_TOKENS, (
             f"prompt is roughly {estimated_tokens:.0f} tokens, under the "
-            f"{MIN_CACHEABLE_TOKENS} needed for caching to engage"
+            f"{DEFAULT_MIN_CACHEABLE_TOKENS} needed for caching to engage"
         )

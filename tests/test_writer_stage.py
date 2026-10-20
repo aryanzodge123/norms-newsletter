@@ -45,9 +45,11 @@ class FakeMessages:
     def __init__(self, replies):
         self._replies = list(replies)
         self.calls = 0
+        self.requests: list[dict] = []
 
     def create(self, **kwargs):
         self.calls += 1
+        self.requests.append(kwargs)
         reply = self._replies.pop(0)
         if isinstance(reply, Exception):
             raise reply
@@ -191,3 +193,29 @@ def test_run_writers_keys_by_cluster_id(config):
     results = run_writers.run_writers(client, contexts, config, SYSTEM, TODAY)
     assert set(results) == {"a", "b"}
     assert all(r.article is not None for r in results.values())
+
+
+# --------------------------------------------------------------------------
+# Effort: sent only when configured (Haiku 4.5 rejects the parameter)
+# --------------------------------------------------------------------------
+def test_writer_sends_no_effort_when_not_configured(config):
+    client = FakeClient([valid_article()])
+    run_writers.write_one(client, context_with_body("x" * 400), config, SYSTEM, TODAY)
+    assert "effort" not in client.messages.requests[0]["output_config"]
+
+
+def test_writer_sends_the_configured_effort(config):
+    config = config.model_copy(update={"writer_model": "claude-haiku-5-5", "writer_effort": "medium"})
+    client = FakeClient([valid_article()])
+    run_writers.write_one(client, context_with_body("x" * 400), config, SYSTEM, TODAY)
+    output_config = client.messages.requests[0]["output_config"]
+    assert output_config["effort"] == "medium"
+    assert output_config["format"]["type"] == "json_schema"
+
+
+def test_effort_survives_the_retry(config):
+    """The retry is a second request; it must carry the same setting."""
+    config = config.model_copy(update={"writer_model": "claude-haiku-5-5", "writer_effort": "medium"})
+    client = FakeClient(["not json", valid_article()])
+    run_writers.write_one(client, context_with_body("x" * 400), config, SYSTEM, TODAY)
+    assert [r["output_config"]["effort"] for r in client.messages.requests] == ["medium", "medium"]

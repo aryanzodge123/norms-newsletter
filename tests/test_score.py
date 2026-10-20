@@ -252,35 +252,95 @@ class TestUserMessage:
 
 
 class TestCostEstimate:
+    HAIKU_45 = "claude-haiku-4-5-20251001"
+    HAIKU_55 = "claude-haiku-5-5"
+
+    @staticmethod
+    def usage(**tokens) -> SimpleNamespace:
+        fields = {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 0,
+        }
+        fields.update(tokens)
+        return SimpleNamespace(**fields)
+
     def test_uncached_call(self) -> None:
-        usage = SimpleNamespace(
-            input_tokens=1_000_000,
-            output_tokens=0,
-            cache_read_input_tokens=0,
-            cache_creation_input_tokens=0,
-        )
-        assert estimate_cost_usd(usage) == pytest.approx(1.00)
+        usage = self.usage(input_tokens=1_000_000)
+        assert estimate_cost_usd(usage, self.HAIKU_45) == pytest.approx(1.00)
+        assert estimate_cost_usd(usage, self.HAIKU_55) == pytest.approx(0.10)
 
     def test_cache_reads_are_a_tenth_of_input(self) -> None:
-        usage = SimpleNamespace(
-            input_tokens=0,
-            output_tokens=0,
-            cache_read_input_tokens=1_000_000,
-            cache_creation_input_tokens=0,
-        )
-        assert estimate_cost_usd(usage) == pytest.approx(0.10)
+        usage = self.usage(cache_read_input_tokens=1_000_000)
+        assert estimate_cost_usd(usage, self.HAIKU_45) == pytest.approx(0.10)
+        assert estimate_cost_usd(usage, self.HAIKU_55) == pytest.approx(0.01)
 
-    def test_output_is_five_dollars_per_mtok(self) -> None:
-        usage = SimpleNamespace(
-            input_tokens=0,
-            output_tokens=1_000_000,
-            cache_read_input_tokens=0,
-            cache_creation_input_tokens=0,
-        )
-        assert estimate_cost_usd(usage) == pytest.approx(5.00)
+    def test_output_is_priced_per_model(self) -> None:
+        usage = self.usage(output_tokens=1_000_000)
+        assert estimate_cost_usd(usage, self.HAIKU_45) == pytest.approx(5.00)
+        assert estimate_cost_usd(usage, self.HAIKU_55) == pytest.approx(0.50)
 
     def test_missing_usage_fields_are_treated_as_zero(self) -> None:
-        assert estimate_cost_usd(SimpleNamespace(input_tokens=1_000_000)) == pytest.approx(1.00)
+        usage = SimpleNamespace(input_tokens=1_000_000)
+        assert estimate_cost_usd(usage, self.HAIKU_45) == pytest.approx(1.00)
+
+
+class TestEffort:
+    def test_omitted_when_not_configured(self) -> None:
+        """Haiku 4.5 rejects the parameter, so None must send nothing."""
+        client = FakeClient(json.dumps(VALID))
+        score_cluster(client, a_cluster(), CONFIG, "RUBRIC")
+        assert "effort" not in client.requests[0]["output_config"]
+
+    def test_sent_when_configured(self) -> None:
+        config = CONFIG.model_copy(
+            update={"scoring_model": "claude-haiku-5-5", "scoring_effort": "low"}
+        )
+        client = FakeClient(json.dumps(VALID))
+        score_cluster(client, a_cluster(), config, "RUBRIC")
+        output_config = client.requests[0]["output_config"]
+        assert output_config["effort"] == "low"
+        assert output_config["format"]["type"] == "json_schema"
+
+
+class TestReplyWithoutText:
+    """A refusal or a max_tokens stop spent on thinking carries no text block."""
+
+    @staticmethod
+    def client_returning(*responses) -> SimpleNamespace:
+        queue = list(responses)
+        return SimpleNamespace(messages=SimpleNamespace(create=lambda **_: queue.pop(0)))
+
+    @staticmethod
+    def reply(blocks, stop_reason="end_turn", category=None) -> SimpleNamespace:
+        return SimpleNamespace(
+            content=blocks,
+            stop_reason=stop_reason,
+            stop_details=SimpleNamespace(category=category) if category else None,
+            usage=SimpleNamespace(input_tokens=100, output_tokens=50),
+        )
+
+    def test_thinking_first_then_text_is_read_by_type(self) -> None:
+        blocks = [
+            SimpleNamespace(type="thinking", thinking=""),
+            SimpleNamespace(type="text", text=json.dumps(VALID)),
+        ]
+        result = score_cluster(self.client_returning(self.reply(blocks)), a_cluster(), CONFIG, "RUBRIC")
+        assert result.score == 7
+
+    def test_refusal_twice_is_a_null_score_naming_the_reason(self, caplog) -> None:
+        refusal = self.reply([], stop_reason="refusal", category="cyber")
+        client = self.client_returning(refusal, refusal)
+        result = score_cluster(client, a_cluster(), CONFIG, "RUBRIC")
+        assert result.is_null_score
+        assert "stop_reason=refusal, category=cyber" in caplog.text
+
+    def test_max_tokens_on_thinking_is_named_too(self, caplog) -> None:
+        stopped = self.reply([SimpleNamespace(type="thinking", thinking="")], stop_reason="max_tokens")
+        result = score_cluster(self.client_returning(stopped, stopped), a_cluster(), CONFIG, "RUBRIC")
+        assert result.is_null_score
+        assert "stop_reason=max_tokens" in caplog.text
 
 
 def test_topics_match_the_editor_schema():
