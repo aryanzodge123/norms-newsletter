@@ -1,0 +1,430 @@
+{
+  "date": "2026-10-20",
+  "edition_number": 135,
+  "edition_type": "normal",
+  "headline_of_the_day": "US bans DeepSeek AI from civilian agencies and tools built on it",
+  "headline_cluster_id": "ced29151b9cc95c7266a3a6e927afd7a",
+  "headline_rationale": "A binding federal order affecting AI use across all civilian government systems, forcing removal of widely deployed Chinese AI technology.",
+  "key_points": [
+    {
+      "text": "US bans DeepSeek AI from all civilian agencies and anything built on its models.",
+      "topic": "AI"
+    },
+    {
+      "text": "Australian MP Helen Haines is critically hurt after being run down on purpose in a suspected political attack.",
+      "topic": "World"
+    },
+    {
+      "text": "Former OpenAI engineer, arrested for a surveillance device, was in touch with Saudi royals and planned to leave the US.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Alberta voters rejected leaving Canada, with about 76 percent voting to stay.",
+      "topic": "World"
+    },
+    {
+      "text": "Russian satellite moved very close, without permission, to a commercial satellite Ukraine uses for images.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-20.mp3",
+    "duration_seconds": 619,
+    "size_bytes": 7430688
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "ced29151b9cc95c7266a3a6e927afd7a",
+          "slug": "us-bans-deepseek-ai-from-government-systems-over-security",
+          "title": "US bans DeepSeek AI from government systems over security concerns",
+          "summary": "All civilian agencies must remove DeepSeek and anything built with its models from government systems.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cjkgeq0k1wevo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://madrobot.blog/2026/10/19/us-bans-deepseek-federal-agencies-dhs-order-remove-third-party"
+            }
+          ],
+          "article": {
+            "background": "DeepSeek is an artificial intelligence (AI) model made by a Chinese company. An AI model is software that can answer questions, write text, and do other tasks. DeepSeek is open source, which means it is free to access and less expensive to use. Because of this, it has been seen as a disruptive force in the race to build AI. US and Chinese tech relations have been tense.",
+            "what_happened": "The Department of Homeland Security ordered all civilian federal agencies to remove DeepSeek products from their computers. Agencies must also stop buying DeepSeek. The order covers any third-party product built on DeepSeek's AI. The order is numbered 2026-01 and is signed by Homeland Security Secretary Markwayne Mullin. It is dated July 24, 2026. It was filed with the Federal Register under a 2018 supply chain law that lets the department bar risky technology from government systems. The notice did not give the exact security concerns.",
+            "why_it_matters": "For most people, this changes little right away. It mainly affects federal workers and the computer systems they use. It may also affect software that government contractors build on DeepSeek's AI. The notice does not explain the risk, so it is not yet clear how far the rule will reach.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9ae48a942082b6706e32aeef3ec2c66e",
+          "slug": "openai-announces-solution-to-famous-unsolved-math-problem",
+          "title": "OpenAI announces solution to famous unsolved math problem",
+          "summary": "OpenAI says it solved the Navier-Stokes problem, one of seven famous Millennium Prize math challenges.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.dailycal.org/news/campus/academics/uc-berkeley-math-community-left-at-crossroads-in-wake-of-openai-navier-stokes-proof/article_2253ca6c-39c0-45be-947a-f0fd5b48bd6c.html"
+            }
+          ],
+          "article": {
+            "background": "The Navier-Stokes problem is a math question about how fluids like water and air move. It is one of seven \"Millennium Prize Problems,\" unsolved questions chosen by the Clay Mathematics Institute in 2000. Anyone who solves one of them receives a $1 million prize. Mathematicians have worked on this one for decades without a full answer.",
+            "what_happened": "OpenAI announced that it had produced a solution to the Navier-Stokes problem. The solution came from an internal AI model. The model used about 10,000 AI agents, which are autonomous AI systems that carry out tasks on their own. OpenAI research scientist Noam Brown posted about the result on X.",
+            "why_it_matters": "For most people, this does not change daily life yet. It does raise a question about how math research may be done in the future. UC Berkeley mathematicians are now considering what AI could mean for their field.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "0b3c2b0280c971c48ea35ef055af7ccb",
+          "slug": "ukrainians-dying-because-us-restricted-intelligence-sharing",
+          "title": "Ukrainians dying because US restricted intelligence sharing, Zelensky adviser says",
+          "summary": "Kyiv no longer gets reliable warnings of Russian attacks, which is costing lives, an adviser says.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmj47yx572z5o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia and Ukraine have been at war since 2022. Ukraine depends on intelligence from its partners to spot incoming missile and drone attacks. The United States is one of those partners. Serhii Beskrestnov is an adviser to Ukraine's president, Volodymyr Zelensky.",
+            "what_happened": "Beskrestnov told the BBC that Ukraine is still not getting reliable US warnings of incoming Russian attacks. He said there was not enough time to warn citizens about ballistic missile strikes, and that people have died as a result. He also said limits on Ukraine's use of the Starlink internet network are still in place. The White House said there have been no changes to intelligence sharing with Ukraine.",
+            "why_it_matters": "Early warnings can give people minutes to reach shelter. When those warnings are late or missing, more people can be caught outside during a strike. The dispute is also about whether a close partner is still sharing the information a country needs to protect its people.",
+            "quote": {
+              "text": "It's dangerous... I think it's really very bad... People [have] already died.",
+              "attribution": "Serhii Beskrestnov, adviser to Volodymyr Zelensky",
+              "source_url": "https://www.bbc.co.uk/news/articles/cmj47yx572z5o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "e7d2549cecf081c6672b0ba1766856ea",
+          "slug": "homeland-security-grants-deportation-reprieve-for-over-100",
+          "title": "Homeland Security grants deportation reprieve for over 100,000 Ukrainians and Sudanese",
+          "summary": "Temporary protection extended to migrants from both countries while their home nations remain in crisis.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/homeland-security-grants-temporary-deportation-reprieve-for-more-than-100000-ukrainians-and-sudanese"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/19/us-migrants-deportation-ukraine-sudan"
+            }
+          ],
+          "article": {
+            "background": "Temporary protected status, or TPS, is a government program. It lets people from certain countries stay in the United States for a set time. Their right to stay was set to end on Monday. That deadline covered about 101,000 Ukrainians and 1,800 Sudanese people.",
+            "what_happened": "The Department of Homeland Security said more than 100,000 people from Ukraine and Sudan can stay for now. They will not face immediate deportation. The department called this a temporary reprieve, or short pause. It said an announcement 'will be made at the appropriate time.' Until then, the department said these people keep their protections.",
+            "why_it_matters": "For now, this changes little for most people. It keeps people from Ukraine and Sudan in the country without immediate removal. The longer-term plan has not been announced, so affected families should watch for official notices.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "467bab0ce4fd82a3a0bf822c2c8c0ffc",
+          "slug": "australian-mp-helen-haines-in-critical-condition-after",
+          "title": "Australian MP Helen Haines in critical condition after deliberate vehicle attack",
+          "summary": "Independent MP was hit at a dog park, and police are investigating it as a targeted attack.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/oct/20/helen-haines-was-chatting-with-locals-at-a-dog-park-on-monday-morning-by-the-afternoon-she-was-fighting-for-her-life-ntwnfb"
+            }
+          ],
+          "article": {
+            "background": "Helen Haines is an independent member of Australia's federal Parliament. Independent means she is not part of a major party. She represents Indi, a large area in northern Victoria. Australia's politicians have faced rising threats and abuse, according to the reporting.",
+            "what_happened": "On Monday, Haines opened a dog park in Mansfield and talked with locals. Later, at 3.35pm, she was unpacking her car outside her Wangaratta office. Reports say a man known to authorities hit her with his car. Witnesses said he made a U-turn and hit her twice. A barber, Ricky Jefferies, ran from his shop and held the driver. Haines was flown to Melbourne's Alfred hospital for emergency surgery. She is in critical but stable condition. She has lost one leg. Surgeons are trying to save the other. A joint taskforce that looks into terror cases is investigating.",
+            "why_it_matters": "For most people, this will not change daily life. It does raise questions about how safe public officials are when they meet voters in their towns.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5833068d12662d5bd3da93385a67d0ae",
+          "slug": "alberta-voters-reject-separation-from-canada-in-provincial",
+          "title": "Alberta voters reject separation from Canada in provincial referendum",
+          "summary": "About 76 percent voted to stay in Canada, ending the push to leave.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/10/19/nx-s1-6005810/alberta-voters-decide-whether-to-take-a-step-toward-separating-from-canada"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/20/canada-alberta-rejects-independence-succession-referendum"
+            }
+          ],
+          "article": {
+            "background": "Alberta is a province of Canada. It is known for its oil. Some people in Alberta have long wanted more independence from Ottawa. Ottawa is Canada's capital city, where the federal government sits.",
+            "what_happened": "Alberta voters rejected the proposal in a vote on Monday, October 19. The ballot did not ask about independence directly. A yes vote would have set Alberta on a path toward separation. About 76% to 77% backed staying in Canada. About 23% backed starting a path toward separation. Only about a third of ballots had been counted at first. The results are unofficial until Elections Alberta confirms them.",
+            "why_it_matters": "For now, Alberta stays part of Canada. The result shows where Alberta voters stand on staying in Canada. The vote also showed divisions in Alberta's politics. It raised questions about how lasting national unity is.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ba7baa90910fb2687f78a335c86f1120",
+          "slug": "france-imposes-curfews-in-multiple-cities-after-weekend-of",
+          "title": "France imposes curfews in multiple cities after weekend of riots",
+          "summary": "Interior minister admits police lost control during violent protests that spread across the country.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/19/french-police-lost-control-during-riots-concedes-interior-minister"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cx30ez03djyqo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/french-authorities-impose-curfews-after-weekend-rioting"
+            }
+          ],
+          "article": {
+            "background": "France has been hit by a weekend of violent protests, with rioting and looting in several cities. Police are the force that keeps public order in French towns and cities. A curfew is an order that bars people from being outside during set hours. Officials said the protests were serious enough to need one.",
+            "what_happened": "Authorities put partial curfews in place in several French cities, including parts of central Paris. In Paris, the overnight curfew runs from 11pm to 6am in Place de la République and the Les Halles shopping area. Other curfews or limits were announced for Lille, Marseille, Bordeaux, Nice, and Lyon. The government admitted police had \"lost control\" during the weekend protests. Prime Minister Sébastien Lecornu said the curfews were \"local and partial\" and not full curfews on entire cities.",
+            "why_it_matters": "If you live in or near these areas, you may not be allowed out during the overnight hours. Officials said the curfews helped calm the cities overnight. An investigation is underway to find those responsible for the violence.",
+            "quote": {
+              "text": "fully resolved to restore public order",
+              "attribution": "Sébastien Lecornu, French prime minister",
+              "source_url": "https://www.theguardian.com/world/2026/oct/19/french-police-lost-control-during-riots-concedes-interior-minister"
+            }
+          }
+        },
+        {
+          "cluster_id": "9c823c3555fa4dedc3a403310c67217b",
+          "slug": "russian-military-satellite-makes-unsanctioned-close",
+          "title": "Russian military satellite makes unsanctioned close approach to imaging satellite used by Ukraine",
+          "summary": "Russian satellite Kosmos 2612 moved right up to US-operated ICEYE-X36, the first known case in low orbit.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/space/2026/10/russian-spacecraft-maneuvers-in-extreme-proximity-to-satellite-used-by-ukraine"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.scientificamerican.com/article/alarm-grows-over-russian-satellites-provocative-approach-to-u-s-owned-satellite"
+            }
+          ],
+          "article": {
+            "background": "Kosmos 2612 is a Russian military satellite. Russia launched it in April with few public details. ICEYE-X36 is an imaging satellite. Imaging satellites take photos of Earth from orbit. It is made by the Finnish company ICEYE and owned by its US subsidiary. The Ukrainian military has used it.",
+            "what_happened": "The orbital intelligence company LeoLabs says Kosmos 2612 moved toward ICEYE-X36 in recent days. It came from hundreds of kilometers away to extreme proximity. Then it moved around the satellite. It stayed nearby for a long time before moving away. LeoLabs calls this the first known unsanctioned rendezvous in low-Earth orbit. That means a close meeting in orbit that was not agreed to in advance. Tracking data put the satellites a few hundred meters apart at most. Some estimates put them within 30 meters.",
+            "why_it_matters": "Nobody knows what Kosmos 2612 intended. Experts worry this kind of close approach may point to a new kind of threat in space. For most people, this changes nothing right away. Satellites like these help power everyday services, so experts watch them closely.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "32265bb3802fb0dbc88960eab9e1a215",
+          "slug": "pennsylvania-issues-alert-on-congenital-measles-as-outbreak",
+          "title": "Pennsylvania issues alert on congenital measles as outbreak spreads",
+          "summary": "Cases of measles in pregnancy and congenital measles not seen in decades are rising in the state.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/10/pennsylvania-issues-alert-on-congenital-measles-something-us-hasnt-seen-for-decades"
+            }
+          ],
+          "article": {
+            "background": "Measles is a virus that spreads very easily from person to person. A vaccine has kept measles rare in the United States for decades. Congenital measles means a baby gets the virus before birth, passed on from the mother during pregnancy. Doctors have seen few of these cases in their careers.",
+            "what_happened": "Pennsylvania's health department issued a health alert on Monday. Cases of measles in pregnant people have kept rising. Cases of congenital measles have risen with them. The department said congenital measles had not been seen in decades before the current outbreak. The alert gives doctors detailed guidance on measles exposure and cases during pregnancy and in newborns.",
+            "why_it_matters": "If you are pregnant, or care for someone who is, measles is worth knowing about. The main protection is the measles, mumps, and rubella vaccine, which has been used for decades. The reporting says vaccination rates are slipping nationwide, which lets the virus spread more easily.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d703d9a54ae08661a422f59f532270fd",
+          "slug": "japan-launches-mission-to-collect-samples-from-mars-moon",
+          "title": "Japan launches mission to collect samples from Mars moon Phobos",
+          "summary": "Martian Moons eXploration mission will land on Phobos and return samples to Earth in multi-year journey.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://nextspaceflight.com/launches/details/4361"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/space/2026/10/japan-launches-mission-to-bring-home-a-piece-of-the-martian-moon-phobos"
+            }
+          ],
+          "article": {
+            "background": "Phobos is one of the two small moons of Mars. It is the larger and closer of the two, and scientists think it may hold material from the early Solar System. The Martian Moons eXploration mission, called MMX, is a robotic spacecraft from Japan. Its goal is to bring a piece of Phobos back to Earth.",
+            "what_happened": "Japan launched the MMX mission on Monday from Tanegashima Space Center in southern Japan. The spacecraft rode atop an H3 rocket, Japan's flagship launch vehicle. The mission is planned to last five years and cost about $578 million. It will land on Phobos, collect samples, and send them back to Earth. A small rover built by France in cooperation with Germany will also explore the surface.",
+            "why_it_matters": "For most people this launch changes nothing right away. The samples could help scientists learn how the planets and moons in our Solar System formed. That kind of knowledge can shape future space missions and science.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "55d982e3ab2c24783033c43857eac4cf",
+          "slug": "former-openai-engineer-accused-of-planting-listening-device",
+          "title": "Former OpenAI engineer accused of planting listening device was preparing to flee to Saudi Arabia",
+          "summary": "Abdulrahman Alfozan was in touch with the Saudi royal family when arrested for hiding a bug in a conference room.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cbsnews.com/news/ex-openai-engineer-recording-device-saudi-royal-family"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/10/accused-openai-spy-had-folder-called-saudi-gov-docs-fbi-says"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/ex-openai-worker-accused-of-bugging-conference-room-planned-to-fly-to-saudi-arabia-prosecutors-say"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6gel2dlyxvyo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/10/ex-openai-engineer-detained-in-spy.html"
+            }
+          ],
+          "article": {
+            "background": "Abdulrahman Alfozan is a 35-year-old Saudi national who worked as an engineer at OpenAI, the San Francisco company that makes ChatGPT. Norm covered his arrest earlier this month, after OpenAI said it found a recording device hidden in one of its offices. He was charged with using or trying to use a device to secretly record spoken conversations. The device was reportedly found plugged into a conference room.",
+            "what_happened": "Federal prosecutors filed a court memo on Sunday that makes new claims about Alfozan. They say he was in frequent contact through WhatsApp with a member of the Saudi royal family during 2025 and 2026. They say he last spoke with that person on October 5, four days before his arrest. Prosecutors also say he was planning to move to Saudi Arabia. On Monday, a judge ordered him held without bail until trial, saying he was a flight risk.",
+            "why_it_matters": "For now, this case is about one person and one company. It shows how seriously the U.S. treats efforts to steal secrets from AI companies. Those companies hold large amounts of valuable research and data. The case is still unproven, and a judge has not decided whether the charges are true.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ad429d63f09541b35e664f01909be88f",
+          "slug": "cyberattack-on-french-supermarkets-pushed-fridges-to",
+          "title": "Cyberattack on French supermarkets pushed fridges to dangerous temperatures for days",
+          "summary": "Attackers pushed cooling units at French supermarkets into defrost, some reaching 50 degrees Celsius.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://ipinfo.io/blog/france-fridges-hack"
+            }
+          ],
+          "article": {
+            "background": "Many supermarkets use controllers to run their cold units. A controller is a device that sets how cold a unit runs. Reports pointed to Danfoss, a Danish industrial company. Danfoss makes refrigeration controllers of this kind. Norm first covered this story on October 17, 2026.",
+            "what_happened": "Fridges in hundreds of French supermarkets began to warm up. This happened on the night of October 11 to 12, 2026. Attackers had pushed the cooling units into defrost mode. Some units reached 50 degrees Celsius, or 122 degrees Fahrenheit. The Paris prosecutor said some equipment caught fire.",
+            "why_it_matters": "Supermarkets keep food cold so it stays safe to eat. In this case, stores threw away fresh and frozen food. Cold systems linked to the internet can be attacked.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1f41cfbca07390257b961473f368fe94",
+          "slug": "ovh-cloud-command-line-tool-compromised-by-russian-hackers",
+          "title": "OVH Cloud command line tool compromised by Russian hackers",
+          "summary": "Russian hacker group Glassworm posted five malicious versions to GitHub and Brew, aimed at cloud developers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://opensourcemalware.com/blog/glassworm-hacks-ovh-clouds-cli-tool"
+            }
+          ],
+          "article": {
+            "background": "OVHcloud publishes an official command-line tool, called a CLI. Users type commands into a CLI instead of clicking through a screen. Developers often download tools like this from GitHub, a site where software code is shared.",
+            "what_happened": "On 19 October 2026, between 12:47 and 13:12 UTC, an attacker replaced the release files of five earlier versions of the tool. The versions ran from v0.11.0 to v0.15.0. The new files were built to steal secrets, such as passwords and access keys. The uploads went through a GitHub account called HassenBF. That account belongs to a real OVH contributor, but the GlassWorm group had taken it over. The bad versions were also published through Brew, a package manager.",
+            "why_it_matters": "Anyone who downloaded one of these versions could have had passwords or access keys taken. People who used the tool should check which version they have. They should also change any keys they used with it.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "111d80ebbe5dfdf295185085aa40bab6",
+      "title": "Burnham vows end to 'rip-off parking charges' under new rules",
+      "url": "https://www.bbc.co.uk/news/articles/ck87ze7wl4qno?at_medium=RSS&at_campaign=rss",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "960853be79886513fa1264aa4f27cb49",
+      "title": "World Series will have first-time champion as Rays set up showdown with Brewers",
+      "url": "https://www.theguardian.com/sport/2026/oct/19/rays-guardians-mlb-playoffs-world-series-alcs",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "2ce5262825b19ec8872c46861096e225",
+      "title": "US gave us no warning of Russian strikes on Kyiv power plants, Zelenskyy says",
+      "url": "https://www.theguardian.com/world/2026/oct/19/no-us-warning-russian-strikes-kyiv-power-plants-zelenskyy-ukraine-trump",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a2dfb6da23bcaf02742930e6d2cfe87b",
+      "title": "Clean up begins after French riots but police remain",
+      "url": "https://www.bbc.co.uk/news/videos/cwr7y0e57r50o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "60939dfaf88926e48bd9a68dbf2f3ea1",
+      "title": "Trump slams Zelenskyy amid Russia sanctions rift and says ‘somebody else’ should negotiate for Ukraine - live",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/19/donald-trump-kansas-roger-marshall-golf-ukraine-midterms-latest-news-updates",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "84506a42d487d0cba1d6781aa666f994",
+      "title": "Seventh day of violent clashes between Albanian protesters and police",
+      "url": "https://www.bbc.co.uk/news/articles/cmy4xjlpqgd3o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8733568e27a4cecb3129adad9a4a15b6",
+      "title": "PSA: Patch your Plex media server before someone hacks it",
+      "url": "https://arstechnica.com/security/2026/10/recently-fixed-plex-media-vulnerabilities-are-being-exploited-to-install-malware",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "f470022b232f68de8ef234887fc70ba7",
+      "title": "Uefa gives Infantino two-week deadline to release key documents",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cq398rkpjljlo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "17b2823dd6796adcc8c4253ed52b8547",
+      "title": "Healey to reject calls to raise capital gains tax in budget",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/20/john-healey-no-capital-gains-tax-rise-budget",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "40275839bc728999fd674de0cdeafa2b",
+      "title": "U.S. Supreme Court to review 1868 federal ban on home distilling of liquor",
+      "url": "https://www.staradvertiser.com/2026/10/19/breaking-news/u-s-supreme-court-to-review-1868-federal-ban-on-home-distilling-of-liquor",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 195,
+    "clusters_considered": 163,
+    "stories_run": 13,
+    "sources": 21,
+    "sections_held": 0
+  }
+}
