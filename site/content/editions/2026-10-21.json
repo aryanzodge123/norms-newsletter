@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-21",
+  "edition_number": 136,
+  "edition_type": "normal",
+  "headline_of_the_day": "Finland orders one million landmines after leaving treaty that bans them",
+  "headline_cluster_id": "f8039ba3b01c72ad4c2265116c22319a",
+  "headline_rationale": "A NATO member reversing a major humanitarian treaty commitment to prepare for a military threat affects European security and reflects a concrete policy shift.",
+  "key_points": [
+    {
+      "text": "Finland is ordering one million landmines to guard against Russia after leaving the ban treaty.",
+      "topic": "World"
+    },
+    {
+      "text": "Nigeria confirmed its first Ebola case in its capital, in a traveler from Uganda.",
+      "topic": "World"
+    },
+    {
+      "text": "Australia's central bank deputy warned inflation is worsening, raising odds of a fifth rate hike.",
+      "topic": "Finance"
+    },
+    {
+      "text": "PHP maintainers scheduled emergency fixes for two critical security flaws rated 9.2 out of 10.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "A Premier League regulator says it can force Manchester City to sell if it is improperly run.",
+      "topic": "Sports"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-21.mp3",
+    "duration_seconds": 410,
+    "size_bytes": 4924800
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "f8039ba3b01c72ad4c2265116c22319a",
+          "slug": "finland-to-order-one-million-landmines-after-leaving-anti",
+          "title": "Finland to order one million landmines after leaving anti-personnel mine treaty",
+          "summary": "Finland quit the Ottawa Convention and will soon sign a deal to strengthen defenses against Russia.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.twz.com/news-features/finland-plans-to-build-a-million-landmines-as-russian-threat-looms"
+            }
+          ],
+          "article": {
+            "background": "Finland is a member of NATO, a military alliance of Western countries. Anti-personnel landmines are hidden explosives meant to hurt people. They are not built to stop tanks. Finland had agreed to the Ottawa Convention, a treaty that bans these mines.",
+            "what_happened": "Finland plans to bring anti-personnel landmines back into its military. A contract for around one million mines should be signed soon. Finland has left the Ottawa Convention. The exit took effect on January 10. The treaty bans the use, stockpiling, production, and transfer of these mines.",
+            "why_it_matters": "The move comes as Finland faces a long-standing threat from Russia. Finland may face a larger Russian force on its eastern border in the years ahead. For most people, daily life will not change soon. The decision reflects Finland's concern about its border.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "148055e0c03716b7eaf941830dbde370",
+          "slug": "nigeria-confirms-ebola-case-in-capital-after-traveler",
+          "title": "Nigeria confirms Ebola case in capital after traveler arrives from Uganda",
+          "summary": "A woman from Uganda tested positive in Abuja, Nigeria's first case in its capital.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/nigeria-confirms-ebola-case-in-its-capital-as-woman-who-arrived-from-uganda-tests-positive"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/21/nigeria-first-ebola-case-africa-outbreak-latest"
+            }
+          ],
+          "article": {
+            "background": "Ebola is a rare but serious virus. It spreads through close contact with the body fluids of a sick person. Nigeria is in West Africa. It is Africa's most populous country. The woman had come from Uganda, in East Africa.",
+            "what_happened": "Nigeria confirmed an Ebola case in Abuja on Tuesday. Abuja is the country's capital. The Health Ministry said a woman tested positive for the virus. She had arrived from Uganda. It is not clear when she came to Nigeria. She began showing symptoms on October 7. Four days later, she was admitted to a hospital in Abuja. Doctors there later diagnosed her with Ebola.",
+            "why_it_matters": "For now, this is one confirmed case in Nigeria. Officials are tracing 44 people who may have had contact with her. Their work will show whether the virus has spread further.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "638211e9e6e625d1438793043bb9e27f",
+          "slug": "ukrainian-president-meets-us-envoy-ahead-of-talks-between",
+          "title": "Ukrainian president meets US envoy ahead of talks between envoy and Putin",
+          "summary": "Zelenskyy seeks better ties with Trump before Steve Witkoff meets Russia's leader to end the war.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/zelenskyy-seeks-to-mend-ties-with-trump-ahead-of-witkoff-putin-meeting"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cq5ynkx3xy11o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia and Ukraine have fought a conflict for years. An envoy is a government official sent to negotiate. US envoy Steve Witkoff is working on proposals to end the war. Ukraine accused the US of holding back key intelligence. The US called that claim scandalous.",
+            "what_happened": "Zelensky met US envoy Steve Witkoff in Oslo, Norway. European officials were at the meeting too. The aim was to avoid a bigger split with President Trump. Trump has criticized Zelenskyy this past week. He took issue with Ukraine's push to cause heavy losses for Russia. Zelensky said US intelligence sharing on Russian missile attacks now works. Witkoff will meet Russian President Vladimir Putin on Wednesday. That meeting is in St Petersburg, Russia.",
+            "why_it_matters": "The talks could affect whether the war ends. For most people, daily life will not change yet.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "1762878ce36584bed07cb80eef4c4cc0",
+          "slug": "php-plans-emergency-patches-for-two-critical",
+          "title": "PHP plans emergency patches for two critical vulnerabilities rated 9.2",
+          "summary": "Maintainers set the release for Wednesday, 14:00 UTC, and urged users to upgrade now.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/10/php-maintainers-tell-web-devs-to-prepare-themselves-for-critical-security-patches"
+            }
+          ],
+          "article": {
+            "background": "PHP is a programming language that runs many of the websites and web apps people use every day. Its maintainers are the volunteers and staff who write and update it. Security patches are updates that fix flaws attackers could use to break into software. The flaws here are rated 9.2 out of 10 for severity.",
+            "what_happened": "PHP maintainers said Monday that they plan to release patches for two vulnerabilities. Both carry a severity rating of 9.2 out of a possible 10. The fixes are scheduled to arrive in a little more than 12 hours. The maintainers urged all PHP users to prepare now so they can upgrade quickly. They said they may release the fixes sooner if details become public or if attacks appear in the wild.",
+            "why_it_matters": "If you use a website or app built with PHP, its owner will likely need to install these updates soon. Website owners who act quickly keep their sites safer from attack. Most people will not need to do anything themselves, but it is worth checking that the sites you use stay updated.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "aeef38db4b44dd5e452d4bc1823fc67a",
+          "slug": "meta-s-muse-ai-agent-exposed-sensitive-information-when",
+          "title": "Meta's Muse AI agent exposed sensitive information when users shared conversations",
+          "summary": "Researchers found the agent shared personal and business secrets through web links before Meta paused it.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations"
+            }
+          ],
+          "article": {
+            "background": "Muse is a general-purpose AI agent from Meta. An AI agent is a program that carries out tasks for a user. Like many online services, Muse lets people share searches, conversations, and images with others. Share features like this usually create a unique web link that anyone with the link can open.",
+            "what_happened": "Researchers reported Monday that Muse can expose sensitive information when users share conversations through web links. Ars Technica asked Meta about the behavior. Meta said it is suspending the sharing feature while it reviews the issue. The company said it is considering changes.",
+            "why_it_matters": "If you use Muse, shared links may show more than you intended. For now, the sharing feature is paused. If you have shared a Muse conversation before, it may be worth thinking about what that conversation contained.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1869e734d3727ff7c1255198a8736229",
+      "title": "Odds of fifth interest rate hike this year shorten as RBA deputy warns inflation outlook ‘worsening’",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/21/odds-of-fifth-interest-rate-hike-this-year-likely-to-shorten-as-rba-deputy-warns-inflation-outlook-worsening",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "8ddd6878afafed2df0779fbe61ee21a1",
+      "title": "Some on DOJ's 20,000 \"likely\" noncitizen list in Calif. appear to be U.S.-born",
+      "url": "https://www.npr.org/2026/10/20/nx-s1-6009873/california-doj-voter-rolls-noncitizens",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "9ae60aa04baa21f02912bf542619de18",
+      "title": "Trump DHS admits it invented child abuse claims against activist to unlock phone",
+      "url": "https://www.rawstory.com/samuel-tunick-trump-border-patrol",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "8ca97f1917c22aefc90df4423daa255d",
+      "title": "Football regulator has ‘absolute power’ to force Manchester City sale if verdict upheld",
+      "url": "https://www.theguardian.com/football/2026/oct/21/manchester-city-david-kogan-independent-football-regulator",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "0774a1d518ff4d422e26beeae6597744",
+      "title": "SpaceX revenue soars 161% as AI business grows",
+      "url": "https://abcnews.com/Business/spacex-revenue-soars-161-ai-business-grows/story?id=137408509",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "95bcb44548278e35d8c9635ef58339f0",
+      "title": "PingCap TiDB Leaks",
+      "url": "https://fulcrumsec.vg/pingcap",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "054b3752b9c57df388e1d84c4e47258f",
+      "title": "News Wrap: Britain sending air support to Saudi Arabia amid Houthi attacks",
+      "url": "https://www.pbs.org/newshour/show/news-wrap-britain-sending-air-support-to-saudi-arabia-amid-houthi-attacks",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "9768cdb682ba8559da45fc67c4987613",
+      "title": "Is Ebola under control in Kenya after nine cases confirmed?",
+      "url": "https://www.bbc.co.uk/news/articles/c693z948px0jo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a2f6a29a18ad54734e5dd292227138b9",
+      "title": "A student protest movement has gripped Serbia for two years. This weekend it will try to take power",
+      "url": "https://www.theguardian.com/world/2026/oct/21/protest-movement-serbia-student-list-try-to-take-power",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c3bf5ad5b9107953f9dfbbb1b807fe14",
+      "title": "Police charge accused Brendan Nugent with additional offences – as it happened",
+      "url": "https://www.theguardian.com/australia-news/live/2026/oct/21/helen-haines-independent-mp-alleged-attack-wangaratta-vigils-court-ntwnfb",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "63c6bb8174f0c908253d972c29ca95f0",
+      "title": "Florida kills 77-year-old man in state’s 18th execution of year",
+      "url": "https://www.theguardian.com/us-news/2026/oct/20/florida-execution-18th",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "8032239deae7eecbbfcbf95f1c2d127b",
+      "title": "Alabama governor commutes sentence of prisoner on death row",
+      "url": "https://www.theguardian.com/us-news/2026/oct/20/alabama-governor-commutes-death-row-sentence",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "b080674709d72b87a2e3024413cd3db3",
+      "title": "Firefighters voice growing concerns over water supplies to tackle UK wildfires",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/21/firefighters-growing-concerns-water-supplies-tackle-wildfires",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "4ac5a40ea46232a8c455891c07a23148",
+      "title": "Elon Musk says Tesla-SpaceX merger being considered",
+      "url": "https://www.bbc.co.uk/news/articles/cmlyl09xjke4o?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 68,
+    "clusters_considered": 65,
+    "stories_run": 5,
+    "sources": 14,
+    "sections_held": 1
+  }
+}
