@@ -1,0 +1,461 @@
+{
+  "date": "2026-10-22",
+  "edition_number": 137,
+  "edition_type": "normal",
+  "headline_of_the_day": "Justice Department begins notifying counties where it will monitor elections on Tuesday",
+  "headline_cluster_id": "01280cd43cb357faa0224d5111653a2c",
+  "headline_rationale": "Federal election monitoring reaches polling places in at least five states, a direct step affecting how votes are observed this week.",
+  "key_points": [
+    {
+      "text": "Justice Department notified counties in five states where it will monitor polls on Election Day.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "US ordered some diplomats and families out of Saudi Arabia after deadly Houthi attacks.",
+      "topic": "World"
+    },
+    {
+      "text": "Node.js released security updates fixing a high-severity flaw that can leak memory or run attacker code.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Hackers installed malware on up to 26,739 customer servers at a Japanese hosting provider.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Meta confirmed it will issue non-voting stock to help fund its AI spending.",
+      "topic": "Business"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-22.mp3",
+    "duration_seconds": 401,
+    "size_bytes": 4815648
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "855530da36f76b3b8bd38315de14c0b2",
+          "slug": "meta-shifts-liability-for-ai-mistakes-to-enterprise",
+          "title": "Meta shifts liability for AI mistakes to enterprise customers in new terms",
+          "summary": "Changes taking effect October 30 make IT executives responsible for any errors Meta's AI models produce.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cio.com/article/4237395/metas-new-enterprise-contract-says-if-its-ai-makes-a-mistake-it-will-legally-be-the-customers-fault.html"
+            }
+          ],
+          "article": {
+            "background": "Meta offers its AI models to business customers, and contracts set who is responsible when something goes wrong. Robots.txt is a small file that websites use to tell automated programs, called crawlers, which pages they may visit. Those programs copy content from across the web.",
+            "what_happened": "Meta is changing its commercial terms for enterprise customers. The changes are scheduled to take effect October 30. Under the new language, Meta would shift liability for mistakes made by its AI models onto those customers. Customers would also be responsible for anything done by a partner or contractor. The terms also let Meta take and use content associated with a Meta account for its own purposes, and allow automated software such as web scrapers and bots.",
+            "why_it_matters": "If your business uses Meta's AI tools, you may be the one legally responsible when those tools get something wrong. If you have a Meta account, the company can use content tied to that account. The changes take effect October 30.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5dd317c018f9a26eb548ae03dcfefdc4",
+          "slug": "claude-now-works-with-google-docs-sheets-and-slides",
+          "title": "Claude now works with Google Docs, Sheets and Slides",
+          "summary": "Teams on paid Claude plans can now bring the AI into Google Workspace files in public beta.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides"
+            }
+          ],
+          "article": {
+            "background": "Google Workspace is Google's set of office apps, including Docs for word processing, Sheets for spreadsheets, and Slides for presentations. Claude is the AI assistant made by Anthropic. Until now, people who wanted Claude's help with a file had to copy text back and forth between the apps.",
+            "what_happened": "Claude now works inside Google Docs, Sheets, and Slides. Teams that use Google Workspace can add a Claude add-on to these apps. Claude opens in a sidebar next to the open file. Claude can also edit Google files directly from the Claude app, using new connectors that are in beta, which means they are still in testing. The add-on is in public beta on all paid Claude plans.",
+            "why_it_matters": "If your work or school uses Google Workspace and you pay for Claude, you can ask for help without leaving your document or spreadsheet. The change makes Claude easier to use for everyday office tasks. It does not change how your files are stored or who can see them.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "665102848c630e500afdc2e98366ef70",
+          "slug": "meta-will-issue-non-voting-stock-to-fund-ai-buildout",
+          "title": "Meta will issue non-voting stock to fund AI buildout",
+          "summary": "The company confirmed it may create shares that carry no vote on company decisions to pay for AI.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/21/meta-wants-to-pay-for-its-broad-ai-buildout-with-a-newly-created-class-of-stock"
+            }
+          ],
+          "article": {
+            "background": "Meta owns Facebook, Instagram, and WhatsApp. It is putting a lot of money into artificial intelligence, or AI, which is software that can write, summarize, and make predictions. Building AI takes large amounts of money for computers and data centers. Companies often raise money by selling stock, which is a share of ownership in the company.",
+            "what_happened": "On Wednesday, as Meta reported its third-quarter earnings, Semafor reported that Meta might issue non-voting stock. Non-voting stock gives owners no say in company decisions. During Meta's earnings call, the company confirmed the report. Meta's chief financial officer, Susan Li, said the company plans to create a new class of non-voting stock. She said it will be given to all existing shareholders as a stock dividend.",
+            "why_it_matters": "For most people, this does not change anything directly. It matters most to Meta shareholders, who would receive the new shares. It also shows how large AI spending is becoming for big tech companies.",
+            "quote": {
+              "text": "create a new class of non-voting capital stock, which will be distributed to all existing shareholders through a stock dividend.",
+              "attribution": "Susan Li, Meta chief financial officer",
+              "source_url": "https://techcrunch.com/2026/10/21/meta-wants-to-pay-for-its-broad-ai-buildout-with-a-newly-created-class-of-stock"
+            }
+          }
+        },
+        {
+          "cluster_id": "402c344db6a485e186bd978a46b6860a",
+          "slug": "airbnb-limits-what-hosts-can-ask-guests-to-do-before",
+          "title": "Airbnb limits what hosts can ask guests to do before checkout",
+          "summary": "New rules say hosts can set seven standard house rules and cannot require guests to strip beds or wash dishes.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6n049gg75r4o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.theverge.com/tech/1015844/airbnb-chores-house-rules-update"
+            }
+          ],
+          "article": {
+            "background": "Airbnb is an online marketplace where people rent out homes, rooms, and other places to stay. Hosts create listings and set rules for their guests. Airbnb has now changed its rules for what hosts may ask guests to do during a stay. Guests usually pay a cleaning fee when they book.",
+            "what_happened": "Airbnb has updated its house rules policy. Hosts can still set seven standard house rules, and they can add other requests that are reasonable. Airbnb says hosts can no longer ask guests to do tasks that take significant effort or time, or that a cleaner would normally do. Airbnb lists washing dishes and stripping beds as examples. The new rules apply to reservations booked on or after November 20.",
+            "why_it_matters": "If you rent an Airbnb, you may not have to strip the bed or wash the dishes before you leave. Simple requests, like putting dirty dishes in the sink, are still allowed. Guests who already pay a cleaning fee can expect that fee to cover the cleaning work.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fb210581b174fa08d317f3026e5d6152",
+          "slug": "tesla-profits-drop-43-percent-in-third-quarter",
+          "title": "Tesla profits drop 43 percent in third quarter",
+          "summary": "The carmaker brought in twenty-eight billion dollars in revenue, nearly flat from last year, with sharply lower profit.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/cars/2026/10/tesla-profits-drop-43-in-q3"
+            }
+          ],
+          "article": {
+            "background": "Tesla is a company that makes electric cars. It also sells solar panels and storage batteries. Storage batteries hold electricity so it can be used later. Financial analysts are outside experts who study companies and predict how they will perform.",
+            "what_happened": "Tesla released its third-quarter 2026 financial results this afternoon. Earlier in October, it reported how many cars it sold and delivered in the quarter. It sold fewer cars than in the same quarter of 2025, but still beat analysts' projections. Tesla brought in $28 billion in revenue, almost the same as a year earlier. Car sales brought in $20.6 billion, down 3 percent. Revenue from solar panels and batteries fell 16 percent to $2.9 billion.",
+            "why_it_matters": "For most people, this changes little right away. It matters most to Tesla shareholders, whose investments depend on how much profit the company keeps. The drop in solar and battery sales is worth watching, since that business had been growing.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "01280cd43cb357faa0224d5111653a2c",
+          "slug": "justice-department-notifies-counties-it-will-monitor-on",
+          "title": "Justice Department notifies counties it will monitor on Election Day",
+          "summary": "Federal officials began telling counties in Colorado, Florida, Minnesota, Texas and Washington they will send monitors Tuesday.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/10/21/nx-s1-6009896/justice-department-monitors"
+            }
+          ],
+          "article": {
+            "background": "The Justice Department enforces federal law, including laws about voting. For a long time it has sent monitors to some polling places to check that elections follow the rules. Local election offices run voting in most of the country, so the federal role is often a point of debate. The current administration has taken steps that some people see as pushing more control over elections toward Washington.",
+            "what_happened": "This week the Justice Department began telling counties where it wants to send monitors on Election Day. NPR learned of the notices. So far, counties in Colorado, Florida, Minnesota, Texas and Washington have received them. The list appears to be growing. At least one county official has raised concerns about the plan.",
+            "why_it_matters": "For now, this changes nothing about how you vote. If you live in a county that gets a monitor, you may see federal workers at your polling place on Election Day. Monitors generally watch how voting is run and do not decide who can vote. Whether this grows into a bigger change will depend on how many counties are added and what the monitors are allowed to do.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "665963084f1989e4799f39693af13b3a",
+          "slug": "aipac-stops-endorsing-candidates-and-making-direct",
+          "title": "AIPAC stops endorsing candidates and making direct contributions",
+          "summary": "The pro-Israel lobbying group will no longer issue endorsements, contribute directly, or earmark funds for campaigns.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/10/21/nx-s1-6011531/aipac-campaign-contributions-israel-democrats"
+            }
+          ],
+          "article": {
+            "background": "AIPAC stands for the American Israel Public Affairs Committee, a pro-Israel political organization. It is a longtime and influential lobbying group. Five years ago it started getting directly involved in elections. Since then, it has faced growing criticism, especially in this midterm election cycle.",
+            "what_happened": "On Wednesday, AIPAC announced it will stop issuing endorsements. It will also stop making direct PAC contributions to candidates and stop earmarking funds for them. The group has faced criticism over its positions on the wars in Gaza and Iran. Candidates it endorsed have also faced tough opposition from both the political right and the political left.",
+            "why_it_matters": "For most people, this changes how money reaches candidates who support Israel. It shows how much pressure a single interest group can face from voters. Readers who follow elections may see fewer AIPAC-backed candidates on their ballots.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "56317702f78d4cde17551ab378ef62e3",
+          "slug": "us-orders-some-diplomats-to-leave-saudi-arabia-amid-houthi",
+          "title": "US orders some diplomats to leave Saudi Arabia amid Houthi attacks",
+          "summary": "The State Department withdrew diplomats and families from Saudi Arabia after near-daily attacks killed three people Wednesday.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/22/us-diplomats-told-to-leave-saudi-arabia-amid-houthi-attacks"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6x2vpk93770o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Houthis are a group in Yemen that is backed by Iran. Saudi Arabia and the Houthis have been in conflict, and that conflict has grown over the past month. The Houthis have answered Saudi strikes by firing missiles and drones at airports, energy sites and military bases in Saudi Arabia. Reports say the US is not the only country pulling people out. Similar withdrawals have been reported in the United Arab Emirates, Jordan, Qatar and Bahrain.",
+            "what_happened": "The US State Department has ordered some diplomats to leave Saudi Arabia. It has also told the families of some US government workers to leave. The order follows attacks that happen almost every day. On Wednesday evening, at least three people were killed. Saudi authorities said two people died from debris of a drone that was shot down during an attempted attack on an oil field. One person died after a strike at King Fahd International Airport in Dammam. The State Department cited attacks on civilian airports and other critical infrastructure as the reason for the order.",
+            "why_it_matters": "For most people, this does not change daily life yet. Its main effect is on US government staff and their families in the region. Travelers and residents of Saudi Arabia may want to check official travel guidance before they plan trips. The moves in several nearby countries also suggest that concern about a wider conflict with Iran is growing.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "db420378aecb8f0ae135ad7fa17c3be2",
+          "slug": "putin-releases-american-stephen-hubbard-from-russian-prison",
+          "title": "Putin releases American Stephen Hubbard from Russian prison",
+          "summary": "Russia freed the 74-year-old Michigan native following a direct request from President Trump.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/10/21/nx-s1-6010608/putin-releases-american-stephen-hubbard-from-russian-prison"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/american-imprisoned-by-russia-released-as-witkoff-meets-and-praises-putin"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/21/putin-witkoff-russia-ukraine-trump-stephen-hubbard-release"
+            }
+          ],
+          "article": {
+            "background": "Stephen Hubbard is a 74-year-old former teacher from Michigan. He had spent more than four years in Russian prisons. Russia convicted him of fighting as a mercenary for Ukraine, which means a paid foreign fighter. The United States and Russia have been holding talks about ending the war in Ukraine.",
+            "what_happened": "Russian President Vladimir Putin ordered Hubbard's release on Wednesday. Reports say the release followed a request from President Trump. Hubbard was captured in eastern Ukraine, and he was reportedly freed without a prisoner swap. White House envoy Steve Witkoff met Putin in St. Petersburg that day and greeted Hubbard there. Witkoff also praised Putin in unusually warm terms.",
+            "why_it_matters": "For most people, this does not change daily life right away. It does show that direct talks between Washington and Moscow can lead to a prisoner release. Americans held abroad may watch how cases like this are handled.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fc7fd66e7f7f20bdd113140524ca130a",
+          "slug": "north-korea-prepares-to-restart-propaganda-loudspeakers",
+          "title": "North Korea prepares to restart propaganda loudspeakers along entire border",
+          "summary": "Kim Yo-jong said the loudspeakers aimed at South Korea will be ready within days as ties worsen.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/22/north-korea-to-restart-propaganda-loudspeakers-south-korea"
+            }
+          ],
+          "article": {
+            "background": "North and South Korea have been enemies since the Korean War ended in 1953 without a peace treaty. For years both sides blasted propaganda across the border using giant loudspeakers. The North played harsh noises, and the South played K-pop and news criticising Pyongyang. Ties between the two countries have been getting worse.",
+            "what_happened": "Kim Yo-jong, sister of North Korean leader Kim Jong-un, said the loudspeakers aimed at South Korea will be ready to restart within days along the whole border. The statement was carried by the state news agency KCNA on Thursday. A day earlier, she had said the loudspeakers would run along the border from some time in October.",
+            "why_it_matters": "For most people, this changes little day to day. It is a sign that tensions between the two Koreas are rising again. Border tension can affect travel, trade, and news about the region, so people following the area may want to watch what comes next.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "72160925d1bcd6fc62c454769f121332",
+          "slug": "flesh-eating-parasite-confirmed-in-us-wildlife-for-first",
+          "title": "Flesh-eating parasite confirmed in US wildlife for first time",
+          "summary": "USDA detected New World screwworm in an elk on a Texas game ranch after a hunter reported it.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/21/new-world-screwworm-texas"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/us-agriculture-dept-confirms-first-detection-new-world-screwworm-us-wildlife-2026-10-21"
+            }
+          ],
+          "article": {
+            "background": "The New World screwworm is a fly whose young eat living flesh. Farmers and vets track it because it can harm livestock and wildlife. Pecos County is in West Texas. The excerpts do not give more history of this outbreak.",
+            "what_happened": "The US Department of Agriculture said on Wednesday that it confirmed the first case of the New World screwworm in US wildlife. The animal was an elk in Pecos County, Texas. The elk was on a game ranch. A hunter shot it, and it was reported after that. The Texas Animal Health Commission will change an infested zone that was already set up. The USDA and the Texas Parks and Wildlife Department are checking more wildlife in the area.",
+            "why_it_matters": "For most people, this does not change daily life yet. Hunters and landowners in the area are being asked to watch for signs of the parasite while they are outdoors this season. The screwworm is a concern for farm animals and wildlife, so the search for it may continue.",
+            "quote": {
+              "text": "We encourage all hunters and landowners to be vigilant for signs of New World screwworm while they are out in the field this season.",
+              "attribution": "Al, Texas wildlife division director",
+              "source_url": "https://www.theguardian.com/us-news/2026/oct/21/new-world-screwworm-texas"
+            }
+          }
+        },
+        {
+          "cluster_id": "127c6c4887571a60ec77985b5b7d04a5",
+          "slug": "data-center-growth-could-reverse-decades-of-texas-air",
+          "title": "Data center growth could reverse decades of Texas air quality gains",
+          "summary": "New research projects data center expansion may push pollution back to levels not seen since the 2000s.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1015958/data-center-pollution-rising-report"
+            }
+          ],
+          "article": {
+            "background": "Generative AI is a type of artificial intelligence that creates text, images, and other content. It runs in large buildings called data centers, which house rows of powerful computers. Texas has become a center for this physical infrastructure.",
+            "what_happened": "New research out of Texas looks at how data centers are driving up air pollution. A rush of new data centers could bring pollution back to levels not seen since the 2000s. These facilities need a large amount of electricity. How developers and utilities meet that demand will shape how dirty the air gets. One option is gas turbines, which burn natural gas to make power. The other is renewable energy, such as wind and solar.",
+            "why_it_matters": "Decades of cleaner air could be lost in the places where these buildings go up. People who live nearby would be the ones breathing the difference. The choice of power source will help decide whether that happens.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "346bd9c9f167671e2399a7929b3ff0d0",
+          "slug": "node-js-releases-fix-for-high-severity-brotli-decoder-flaw",
+          "title": "Node.js releases fix for high-severity Brotli decoder flaw",
+          "summary": "The vulnerability lets attackers who control Brotli data leak memory or run arbitrary code in Node processes.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://vercel.com/kb/bulletin/node-js-security-advisory"
+            }
+          ],
+          "article": {
+            "background": "Node.js is a tool that lets developers run JavaScript on servers instead of inside a web browser. Many websites and apps are built with it. Brotli is a method for shrinking data so it moves faster across the internet. Node includes a Brotli decoder, which is the part that unpacks this shrunken data.",
+            "what_happened": "On October 21, 2026, Node.js released security updates for versions 22, 24, and 26. The most serious problem is CVE-2026-111497, a flaw in the Brotli decoder rated high severity. A Node.js process that decodes Brotli data from an attacker can be made to leak memory or run arbitrary code, meaning code the attacker chooses. The release also fixes nine other issues, including two high-severity flaws that weaken how Node checks a secure connection's identity. Vercel, a web hosting company, deployed web application firewall rules the same day. These rules block this attack route for every project on Vercel.",
+            "why_it_matters": "If you use a website or app built with Node.js, the risk depends on who runs its servers. If you run Node.js yourself, outside Vercel's managed hosting, you may need to install the update. Vercel says it is rolling the patched versions across its own systems and will update its notice as that work finishes.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "40cab3aee10b34ea029bbc4c669c50f5",
+          "slug": "hackers-installed-malware-on-up-to-27-000-servers-at",
+          "title": "Hackers installed malware on up to 27,000 servers at Japanese hosting provider",
+          "summary": "Onamae Desktop Cloud confirmed unauthorized access and progressively shut down customer servers after detecting the breach.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/japans-onamae-desktop-cloud-hacked-up-to-27-000-servers-affected"
+            }
+          ],
+          "article": {
+            "background": "Onamae Desktop Cloud rents out virtual private servers, or VPS. A VPS is a slice of a powerful computer in a data center that customers rent to run websites and apps. Onamae.com, the brand behind the service, is operated by GMO Internet.",
+            "what_happened": "Hackers broke into the infrastructure of Onamae Desktop Cloud and installed malware on up to 26,739 customer servers. The company confirmed on October 20 that an unauthorized party installed \"malicious programs\" in some customer environments. After finding the intrusion, the company began shutting down customer servers in stages, starting at 04:00 local time on October 21, 2026.",
+            "why_it_matters": "If you run a website or app on one of these servers, it may have gone offline or been affected. Customers should watch for notices from the company and check their own accounts. Breaches like this show why people who host sites should keep their passwords and software up to date.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "53199ee368ec775ea3bd8a541cf90705",
+          "slug": "single-connection-can-exhaust-memory-on-most-http-3-servers",
+          "title": "Single connection can exhaust memory on most HTTP/3 servers",
+          "summary": "A remote client can force an HTTP/3 server to allocate thousands of times more memory than sent.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://foxio.io/blog/header-accordions-qpack-amplification-attacks-against-http-3-servers"
+            }
+          ],
+          "article": {
+            "background": "HTTP/3 is a newer version of the protocol web browsers and servers use to exchange web pages and data. QPACK is the part of HTTP/3 that shrinks header information, the short metadata sent with each request and response, so less data crosses the network. A server must rebuild those headers in memory when it receives them.",
+            "what_happened": "A security researcher, Sébastien Féry, tested ten HTTP/3 server implementations. Seven of them were vulnerable. A remote client that does not need to log in can send a small set of headers that the server expands in memory. In the tests, the expansion used tens to thousands of times more memory than the data sent. One connection was enough to run a default-configured server out of memory or tie up its resources. Several of the affected implementations have already been fixed.",
+            "why_it_matters": "For most people, this is a problem for the companies and groups that run these servers, not a direct risk to personal data. A server that runs out of memory can slow down or stop responding for everyone using it. Fixes are already reaching several implementations, so sites that update their server software are better protected.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "10b3ae5c093856d4f0e378cf16816c79",
+      "title": "The 'trillion pound' oil fund the government believes Britain could have built",
+      "url": "https://www.bbc.co.uk/news/articles/cm4g1zrl2nrqo?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "9cf395235abad989f13fb8af650fe5df",
+      "title": "Former Australia sprint champion Jake Doran charged with alleged child abuse",
+      "url": "https://www.theguardian.com/sport/2026/oct/22/australia-sprint-champion-jake-doran-charged-alleged-child-abuse-ntwnfb",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "56965f0f86d2cd69f1c80e88512beb29",
+      "title": "How Elon Musk gained so much power over U.S. security interests",
+      "url": "https://www.pbs.org/newshour/show/how-elon-musk-gained-so-much-power-over-u-s-security-interests",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "57e22c1f651ed0de7fbf9e9fc3792415",
+      "title": "Tesla beats earnings projections after Musk floats SpaceX merger plan",
+      "url": "https://www.theguardian.com/technology/2026/oct/21/elon-musk-tesla-spacex",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "607597d9916074cc1a2c2acebedf230c",
+      "title": "Nancy Pelosi’s office latest recipient of letter containing white powder",
+      "url": "https://www.theguardian.com/us-news/2026/oct/21/nancy-pelosi-office-letter-white-powder",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "e54085799204b81e3029331692785456",
+      "title": "A company says its polls were fake. Here's what happened",
+      "url": "https://www.pbs.org/newshour/politics/a-company-says-its-polls-were-fake-heres-what-happened",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "8e613798e3512fc039e3fa404462bc8a",
+      "title": "Trump's green card curbs test Indian tech workers' American dream",
+      "url": "https://www.bbc.co.uk/news/articles/cqj34j7dk771o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "2a96991c9db189b6bf819c4bc974d296",
+      "title": "Macron accuses Trump and other foreign leaders of ‘stupid comments’ about France unrest",
+      "url": "https://www.theguardian.com/world/2026/oct/21/macron-trump-foreign-leaders-stupid-comments-france-unrest",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5418af41e92f4ce5255210640b19798e",
+      "title": "California gas prices have long plagued Democratic candidates. This year is different",
+      "url": "https://www.npr.org/2026/10/21/nx-s1-6009571/california-gas-prices-have-long-plagued-democratic-candidates-this-year-is-different",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "55a7d0834d9b3b9f2e6a0dc4cc4a806e",
+      "title": "Royal Navy lacks resources to counter Russian threat in high north, MPs warn",
+      "url": "https://www.theguardian.com/politics/2026/oct/22/uk-risk-russian-aggression-lack-submarines-warships-mps-warn",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a5c9a9407d01129d48b101bcac480197",
+      "title": "‘Man, I loved that’: Trump cheers South Carolina rally attender who hit protester",
+      "url": "https://www.theguardian.com/us-news/2026/oct/21/trump-south-carolina-rally-darline-graham",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "cbbcf6dcfba76b8b491bd62a6d3c24b1",
+      "title": "What is PHP and why did it spark a global cyber-security scramble?",
+      "url": "https://www.bbc.co.uk/news/articles/c3qjnwye0ep5o?at_medium=RSS&at_campaign=rss",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 83,
+    "clusters_considered": 74,
+    "stories_run": 15,
+    "sources": 14,
+    "sections_held": 0
+  }
+}
