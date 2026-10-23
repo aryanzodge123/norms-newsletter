@@ -1,0 +1,296 @@
+{
+  "date": "2026-10-23",
+  "edition_number": 138,
+  "edition_type": "normal",
+  "headline_of_the_day": "Magnitude-7 earthquake in Tibet kills at least 16 and destroys hundreds of homes",
+  "headline_cluster_id": "2fe4d15c1423bd885e8fab1247ad81b9",
+  "headline_rationale": "A major earthquake with confirmed deaths and large-scale property destruction affecting thousands of residents in a populated region",
+  "key_points": [
+    {
+      "text": "A magnitude-7 earthquake hit Tibet, killing at least 16 people and collapsing more than 300 homes in Nagqu.",
+      "topic": "World"
+    },
+    {
+      "text": "Heat killed 50,000 people across European cities this summer, with scientists blaming climate change for two-thirds of deaths.",
+      "topic": "Science"
+    },
+    {
+      "text": "Americans 60 and older lost $3 billion to fraud in 2025, a 25 percent jump from 2024.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "UK consumer confidence fell at the fastest rate since the Brexit vote, down 11 percentage points in October.",
+      "topic": "Finance"
+    },
+    {
+      "text": "A BBC investigation found Sudan's RSF fighters systematically destroyed hospitals in el-Fasher during their siege last year.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-23.mp3",
+    "duration_seconds": 448,
+    "size_bytes": 5377824
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "3865511ac1125e7b10ef08e356aafd2e",
+          "slug": "fraud-losses-among-older-americans-hit-3-billion-in-2025",
+          "title": "Fraud losses among older Americans hit $3 billion in 2025",
+          "summary": "Losses jumped 25 percent from 2024, driven by more victims losing six-figure sums or more.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnbc.com/2026/10/22/older-americans-fraud-losses-2025.html"
+            }
+          ],
+          "article": {
+            "background": "The Federal Trade Commission, or FTC, is the US agency that works to protect consumers from scams and unfair business practices. Each year it reports to Congress on fraud against older adults. Fraud means deliberate deception used to take someone's money. The figures count losses that people reported to the agency.",
+            "what_happened": "Americans ages 60 and older reported losing about $3 billion to fraud in 2025. That is a 25% increase from $2.4 billion in 2024. The FTC released the figures Monday in its annual report to Congress. Reported losses are up 400% from $600 million in 2020. The rise was driven largely by victims who lost $100,000 or more. Only 6% of older fraud victims lost that much, but those losses made up 70% of the group's total.",
+            "why_it_matters": "Scams that take large sums can wipe out savings that people rely on in retirement. If you have older relatives, it helps to know that big losses are becoming more common. Talking with them about common scam tactics is one practical step.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6ee346a9aa03b0282d0c3e2dbd50a281",
+          "slug": "federal-election-monitoring-plans-spark-legal-fight-over",
+          "title": "Federal election monitoring plans spark legal fight over interference concerns",
+          "summary": "Justice Department and Homeland Security voter checks face court challenges two weeks before midterms.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/doj-monitoring-plans-and-dhs-voter-checks-raise-concerns-of-election-interference"
+            }
+          ],
+          "article": {
+            "background": "The midterm elections are national votes held in the middle of a president's term. Voters choose members of Congress and state officials. Each state keeps a list of registered voters, called voter rolls, and decides who is eligible to be on it. Citizenship is a basic requirement to vote in federal elections.",
+            "what_happened": "A federal judge in California has blocked an effort by the Department of Homeland Security. The effort aimed to identify noncitizens on voter rolls. The ruling came less than two weeks before the midterm elections. The story also covers plans from the Department of Justice tied to monitoring the vote.",
+            "why_it_matters": "Voter rolls decide who is allowed to cast a ballot, so rules about checking them affect every registered voter. For now, the court order pauses the Homeland Security effort. The reporting does not say how the case will end.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "2fe4d15c1423bd885e8fab1247ad81b9",
+          "slug": "magnitude-7-earthquake-in-tibet-kills-at-least-16-people",
+          "title": "Magnitude-7 earthquake in Tibet kills at least 16 people",
+          "summary": "Search crews are looking for survivors after 339 homes and 20 livestock sheds collapsed in Nagqu.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/23/magnitude-7-earthquake-hits-china-tibet"
+            }
+          ],
+          "article": {
+            "background": "Tibet is a high plateau region in southwest China. Nagqu is a large city in its northern part, where many people live in rural areas and herd livestock. Earthquakes are a known risk in this part of the world because the land is geologically active.",
+            "what_happened": "A magnitude-7 earthquake struck the Tibet region of China, according to official media. The quake hit at 10.33pm local time on Thursday, according to the US Geological Survey. Official media said it killed at least 16 people and injured 54. The Nagqu media office said at least 339 homes and 20 livestock sheds collapsed, and rescue work continued. More than 1,600 people from the local county were sent to help. Supplies, including 1,000 prefabricated housing units and about 3,000 tents, arrived in the region.",
+            "why_it_matters": "For people outside the region, this does not change daily life. For people in Nagqu, it means many families now need shelter while homes are rebuilt. Aid supplies like tents and winter clothing matter most in cold months at high altitude.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "af3422cdc5e551912399ee241f9247a3",
+          "slug": "sudan-fighters-deliberately-destroyed-hospitals-during-el",
+          "title": "Sudan fighters deliberately destroyed hospitals during el-Fasher siege, BBC finds",
+          "summary": "UN human rights chief called the findings deeply disturbing after multiple attacks on healthcare facilities were documented.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c54g1kxw4nvvo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Rapid Support Forces, or RSF, are a paramilitary group in Sudan. A paramilitary force is an armed group that works like an army but is not part of the official military. The fighting centered on el-Fasher, a city in the Darfur region. The RSF carried out a long siege of the city. A siege means an armed force surrounds a city and cuts off its supplies.",
+            "what_happened": "A BBC investigation found evidence that RSF fighters systematically destroyed the healthcare system in el-Fasher. The damage happened during the siege and the takeover of the city, which took place about a year ago. UN human rights chief Volker Türk called the findings deeply disturbing. He said several RSF attacks on civilian sites, including health facilities, broke international humanitarian law. He said those attacks may amount to war crimes. The RSF has rejected the BBC's findings, and its health minister has also responded to the allegations.",
+            "why_it_matters": "Hospitals and clinics are where people go for care during wars. When they are destroyed, sick and injured people have fewer places to turn. The UN says these attacks may count as war crimes. A finding like that could shape how future attacks on medical sites are judged.",
+            "quote": {
+              "text": "deeply disturbing",
+              "attribution": "Volker Türk, UN human rights chief",
+              "source_url": "https://www.bbc.co.uk/news/articles/c54g1kxw4nvvo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "2f5b849e62500236f00f2797f5242c1d",
+          "slug": "iran-reports-seven-oil-tankers-damaged-in-strait-of-hormuz",
+          "title": "Iran reports seven oil tankers damaged in Strait of Hormuz",
+          "summary": "The incident occurred in a shipping route that handles a fifth of global oil traffic.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/iran-says-7-oil-tankers-damaged-in-strait-of-hormuz-and-other-middle-east-news"
+            }
+          ],
+          "article": {
+            "background": "The Strait of Hormuz is a narrow waterway between Iran and Oman that many of the world's oil tankers pass through. Iran's state television reported this week on damage to ships there. The reporting says the Iran war began on Feb. 28. The excerpt gives no further detail about the conflict.",
+            "what_happened": "Iran's state television said on Thursday that seven oil tankers were hit overnight in the Strait of Hormuz. The report said the ships were either struck by attacks or hit naval mines. The reporting describes this as possibly the largest single-day number of vessels damaged in the waterway since the Iran war started.",
+            "why_it_matters": "Oil moves through this strait, so damage to tankers can affect fuel supply and prices. For now the excerpt does not say how much the damage will change what people pay. Readers should watch for official confirmation and any later reports on oil prices.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "f2f7e046879ed98d1f140ff785ec5857",
+          "slug": "heat-killed-50-000-people-in-european-cities-this-summer",
+          "title": "Heat killed 50,000 people in European cities this summer, scientists say",
+          "summary": "Climate change caused two-thirds of the deaths as morgues and funeral homes filled in June through August.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/oct/23/heat-killed-staggering-50000-people-european-cities-this-summer-experts"
+            }
+          ],
+          "article": {
+            "background": "Heat is a known killer, and it hits older people and those with existing illness the hardest. Climate breakdown is long-term warming of the planet, mainly caused by gases from burning fossil fuels. This study estimated deaths by comparing past links between heat and health in 854 cities.",
+            "what_happened": "New research suggests heat killed a record 50,000 people in European cities this summer. Scientists say climate breakdown caused two in every three of those deaths. Morgues and funeral homes filled with bodies from June to August. The researchers found that extra heat from pollution cut short 32,000 lives in urban areas. They said this was the worst on record.",
+            "why_it_matters": "For most readers, this shows that extreme heat is now a serious health risk in cities. Older adults and people with long illnesses face the greatest danger. Hot nights matter too, because the body needs cooler hours to recover from hot days.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "936ab98ebf67ef3dccd13a6a78282d09",
+          "slug": "un-warns-breaching-1-5-degrees-celsius-warming-limit-is-now",
+          "title": "UN warns breaching 1.5 degrees Celsius warming limit is now unavoidable",
+          "summary": "The threshold set by the Paris Agreement is expected to be crossed in the coming years.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnn.com/2026/10/21/climate/cop31-un-climate-report-emissions-gap"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "6d2bbc0a2e608fcf55a8d8a65705bb5a",
+          "slug": "child-nhs-waiting-times-in-england-hit-sharpest-rise-in",
+          "title": "Child NHS waiting times in England hit sharpest rise in agency history",
+          "summary": "Thousands of children face record delays for healthcare as demand soars and staff numbers fall.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/oct/23/child-health-england-at-risk-sharp-rise-nhs-waiting-times"
+            }
+          ],
+          "article": {
+            "background": "The NHS is England's public health service. Waiting times measure how long people wait for care after they are referred. The Care Quality Commission, the body that checks health and care services in England, publishes an annual state of care report. This year's report looks at how long people are waiting for care.",
+            "what_happened": "Thousands of children in England are facing some of the sharpest rises in waiting times in NHS history, according to the report. Waiting times have improved for some adults. Children and young people are being hit hardest, as demand rises and staff numbers fall. In community health services alone, 80,000 children and young people have waited more than a year for an appointment. That is almost 11 times the number of adults in the same position.",
+            "why_it_matters": "If your child needs care, a long wait can make their health problem worse. The report said children's health conditions are getting worse and becoming harder to treat as a result. Experts called the situation wholly unacceptable.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "828d40f3c532c255316ec77623ca5ce2",
+      "title": "UK consumer confidence falls at fastest rate since Covid as cost of living bites",
+      "url": "https://www.theguardian.com/business/2026/oct/23/uk-consumer-confidence-falls-fastest-since-covid-cost-of-living",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "b9d6f87ef79e14536ebc0c8acff22ee1",
+      "title": "Getty Images files for US bankruptcy, advances restructuring plan",
+      "url": "https://www.reuters.com/legal/litigation/getty-images-files-us-bankruptcy-advances-restructuring-plan-2026-10-21",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "02f13ae0e72d234e33cd50c9d91abb3e",
+      "title": "Canadians Are Running Out of Time to Oppose the Dangerous C-22 Surveillance Bill",
+      "url": "https://www.eff.org/deeplinks/2026/10/canadians-are-running-out-time-oppose-dangerous-c-22-surveillance-bill",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "05ba48eba1f2e351cf5c9179404495b7",
+      "title": "Massive student-led rally marches in Belgrade ahead of Serbian election",
+      "url": "https://www.theguardian.com/world/2026/oct/23/serbia-election-student-list-rally-belgrade-aleksandar-vucic",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "08c05cf0a0dda18777d9b768f2b3220a",
+      "title": "Never-Before-Seen Images Reveal Damage at U.S. Bases in Middle East",
+      "url": "https://meidasnews.com/news/so-much-worse-than-people-realize-never-before-seen-images-reveal-damage-at-u-s-bases-as-troops-describe-being-abandoned",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0a20d77300693ae7db58a91e4d3e63f6",
+      "title": "Mother sought advice from Alan Jones after broadcaster’s alleged indecent assault of her son, court hears",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/23/alan-jones-trial-mother-of-alleged-victim-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3438b632c1b63f133fcd788c8e8e4f31",
+      "title": "Inside the race to build Patriot missiles as stocks run low",
+      "url": "https://www.pbs.org/newshour/show/inside-the-race-to-build-patriot-missiles-as-stocks-run-low",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "db5b13d5ce4002ccc8b8b905b9ec7dc8",
+      "title": "Department of Justice opens criminal investigation into Corey Lewandowski",
+      "url": "https://www.theguardian.com/us-news/2026/oct/22/corey-lewandowski-trump-criminal-investigation",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "fc6172ce15141d41fb06da96c9b26479",
+      "title": "Liechtenstein prince’s ‘surreal’ abortion veto dismays campaigners",
+      "url": "https://www.theguardian.com/world/2026/oct/23/liechtenstein-princes-surreal-abortion-veto-dismays-campaigners",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1cc580cd4702190e4800fc92cf5aba20",
+      "title": "Elon Musk pours $366M into midterm Republican campaigns",
+      "url": "https://www.cnbc.com/2026/10/22/elon-musk-midterm-election-spacex-tesla.html",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "4a984a7aa9d52de2b4ad4112833c44e4",
+      "title": "Mississippi AG says use of force was 'justified' in fatal shooting of toddler",
+      "url": "https://www.npr.org/2026/10/21/nx-s1-6009535/mississippi-ag-says-use-of-force-was-justified-in-fatal-shooting-of-toddler",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "a6655f934ee3e077a022cd41d7d4e66b",
+      "title": "RFK Jr. adviser Calley Means resigns amid growing MAHA discontent over lack of progress",
+      "url": "https://www.pbs.org/newshour/politics/rfk-jr-adviser-calley-means-resigns-amid-growing-maha-discontent-over-lack-of-progress",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "ffc4dc4488ee39a6dfa74bede1b81c1b",
+      "title": "Rep. Ilhan Omar says she will move out of her Washington, DC, home after federal search",
+      "url": "https://www.pbs.org/newshour/politics/rep-ilhan-omar-says-she-will-move-out-of-her-washington-dc-home-after-federal-search",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "537fbb78159d49e12be169aba630c7cc",
+      "title": "US appeals court ejects judge from case over AI errors",
+      "url": "https://www.reuters.com/legal/government/appeals-court-lifts-block-mississippis-dei-ban-ejects-judge-over-ai-errors-2026-10-22",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 72,
+    "clusters_considered": 70,
+    "stories_run": 8,
+    "sources": 11,
+    "sections_held": 0
+  }
+}
