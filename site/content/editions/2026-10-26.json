@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-26",
+  "edition_number": 141,
+  "edition_type": "normal",
+  "headline_of_the_day": "Lula wins fourth term in tight Brazil runoff against Bolsonaro's son",
+  "headline_cluster_id": "ef2d785562d18c6fff99ae115a5d096e",
+  "headline_rationale": "A change of leadership in Brazil, the largest economy in South America, with the losing candidate refusing to concede and raising instability risk",
+  "key_points": [
+    {
+      "text": "Lula wins Brazil's tight runoff, a fourth presidential term, as Bolsonaro's son refuses to concede.",
+      "topic": "World"
+    },
+    {
+      "text": "Serbian students oust longtime leader Aleksandar Vučić in an election driven by two years of protests.",
+      "topic": "World"
+    },
+    {
+      "text": "The FCC finalized a rule letting people end robocall consent through automated systems, simplifying opt-out.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Apollo Global says AI revenue gains stay with a few tech firms outside the industry.",
+      "topic": "Finance"
+    },
+    {
+      "text": "U.S. birth rate falls to a record low, though women over 35 are having more babies",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-26.mp3",
+    "duration_seconds": 473,
+    "size_bytes": 5681088
+  },
+  "sections": [
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "ef2d785562d18c6fff99ae115a5d096e",
+          "slug": "lula-wins-reelection-in-brazil-securing-fourth-presidential",
+          "title": "Lula wins reelection in Brazil, securing fourth presidential term",
+          "summary": "The sitting president beat Flávio Bolsonaro in a runoff, but he refuses to concede.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/ng-interactive/2026/oct/25/brazil-election-2026-live-second-round-results"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/10/25/nx-s1-6016299/brazil-lula-bolsonaro-election"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cmvg7p001qj9o"
+            }
+          ],
+          "article": {
+            "background": "Brazil elects its president by popular vote. A winner needs more than 50% of votes cast. No candidate reached 50% in the first round on 4 October. So the top two, Lula and Flávio Bolsonaro, faced a runoff. Flávio is the son of far-right former president Jair Bolsonaro, who is in prison.",
+            "what_happened": "Lula won the runoff with 51.79% of the vote. Flávio Bolsonaro received 48.21%. Official counts were 100% complete, according to Brazil's Superior Electoral Court. Lula narrowly lost the first round to Flávio in early October. Reporting says no first-round runner-up had won a runoff since democracy returned. Flávio Bolsonaro has not conceded.",
+            "why_it_matters": "The president sets national policy, so this result shapes the rules people live under. Flávio Bolsonaro says he will seek to overturn the result, so the dispute may continue. Lula will govern with a Congress that opposes him, which could slow his plans.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "47a4e3e1bb419019e72d59cbf7858345",
+          "slug": "serbian-students-oust-longtime-leader-aleksandar-vu-i-in",
+          "title": "Serbian students oust longtime leader Aleksandar Vučić in historic election",
+          "summary": "Student protesters who spent two years challenging Vučić's government won a majority of seats.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/25/serbian-leader-aleksandar-vucic-concedes-defeat-in-fiercely-contested-parliamentary-election"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Aleksandar Vučić has led Serbia for many years, and critics say he has grown more authoritarian, meaning he holds power in a way that limits checks on it. Since late 2024, a student-led protest movement has demanded change after the collapse of a train station canopy. Vučić called early elections after two years of protests. Norm covered the run-up to the vote earlier this week, when about 150,000 supporters of the movement rallied in Belgrade.",
+            "what_happened": "Vučić conceded defeat late on Sunday. He told supporters at his party headquarters in Belgrade that the Student List had won. Preliminary figures from Serbia's election commission showed record turnout. Vučić said that a sample of results suggested the Student List would win between 135 and 140 seats in the 250-seat parliament. He also said the final results were not yet in.",
+            "why_it_matters": "A new parliament could shape Serbia's laws, its government, and its path toward the European Union. For most people, daily life will not change right away. Still, a change in leadership after years of protest is a rare event in the country.",
+            "quote": {
+              "text": "We still do not have final results... it is clear that we have lost these elections, the Student List has won",
+              "attribution": "Aleksandar Vučić, Serbian leader, speaking to supporters in Belgrade",
+              "source_url": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "a59a3932d8b56bb5093971d295873695",
+          "slug": "venezuelan-opposition-leader-mar-a-machado-returns-after",
+          "title": "Venezuelan opposition leader María Machado returns after ten months in exile",
+          "summary": "She landed Sunday after repeated attempts to reenter the country were blocked.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cq8ez592pp0eo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "María Corina Machado is a leading opposition politician in Venezuela. Opposition politicians challenge the people in power. She had been living outside the country for more than 10 months. In January, she left Venezuela by speedboat at night to accept the Nobel Peace Prize, a major international award, in Norway.",
+            "what_happened": "Machado has now returned home to Venezuela. She wrote on X on Sunday, \"I am here. With you.\" Her earlier attempts to re-enter the country had failed. In January, the United States seized Venezuela's president, Nicolás Maduro. The Trump administration then backed Maduro's deputy, Delcy Rodríguez. Rodríguez was sworn in as interim president, or temporary leader.",
+            "why_it_matters": "Her return comes at an uncertain time in Venezuela. The country's leadership has changed quickly this year. For most people outside Venezuela, the day-to-day effects are not yet clear.",
+            "quote": {
+              "text": "I am here. With you.",
+              "attribution": "María Corina Machado, Venezuelan opposition leader, on X",
+              "source_url": "https://www.bbc.co.uk/news/articles/cq8ez592pp0eo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1ad2628799d758bc18fd5a082aae6e54",
+      "title": "Apollo says AI has delivered 'zero financial payoff' outside the tech industry",
+      "url": "https://www.businessinsider.com/apollo-ai-zero-financial-payoff-corporate-america-economic-analysis-2026-10",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "c0940f015771480db73c9734b0780999",
+      "title": "Enhancing the Ability of Consumers To Control the Robocalls",
+      "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21821/enhancing-the-ability-of-consumers-to-control-the-robocalls",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "a17b376f6503060d9c461d4bbd423190",
+      "title": "U.S. birth rate drops to record low, but older women are having more babies",
+      "url": "https://www.npr.org/2026/10/24/nx-s1-6012804/birth-rate-population-cdc",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "bb5883eb5e21fd6880ac24998f0054ae",
+      "title": "Drone warfare is evolving faster than armies can adapt",
+      "url": "https://www.thestar.com/news/canada/drone-warfare-is-evolving-faster-than-armies-can-adapt-experts-warn/article_756362b6-0ef8-5e7e-8c97-94e6f12ca77e.html",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "9c32b52b01537512a70f1fd89cee814a",
+      "title": "iPhone Duo Teardown",
+      "url": "https://www.ifixit.com/News/119895/iphone-duo-teardown",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 81,
+    "clusters_considered": 58,
+    "stories_run": 3,
+    "sources": 9,
+    "sections_held": 0
+  }
+}
