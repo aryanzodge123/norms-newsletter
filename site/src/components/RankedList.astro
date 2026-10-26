@@ -14,7 +14,9 @@ const { stories } = Astro.props;
       <li class="row">
         <span class="rank mono">{String(s.rank).padStart(2, '0')}</span>
         <span class="body">
-          <a class="ttl" href={s.url} rel="noopener">{s.title}</a>
+          <a class="ttl" href={s.url} target="_blank" rel="noopener">
+            {s.title}<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
           <span class="meta mono">score {s.score} · {s.source}</span>
         </span>
       </li>
