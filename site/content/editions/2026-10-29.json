@@ -1,0 +1,360 @@
+{
+  "date": "2026-10-29",
+  "edition_number": 144,
+  "edition_type": "normal",
+  "headline_of_the_day": "Two high-speed trains collide in Spain, killing at least 68 people",
+  "headline_cluster_id": "bc3b86aeeb69d61c932ba804351f6993",
+  "headline_rationale": "A deadly passenger rail disaster with dozens dead and more injured is the most severe loss of life in today's news and the most immediate human tragedy.",
+  "key_points": [
+    {
+      "text": "At least 68 people died when two high-speed trains crashed in Toledo province, Spain.",
+      "topic": "World"
+    },
+    {
+      "text": "Israel's election left Netanyahu's coalition short of a majority. Palestinian-backed parties gained influence.",
+      "topic": "World"
+    },
+    {
+      "text": "A hacker stole contact details for over 40,000 US Homeland Security employees, including undercover agents.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Britain's budget raised taxes on banks and landlords to pay £100 to 20 million households.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Colorectal cancer rates are rising in nearly all US age groups, a new study finds.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-29.mp3",
+    "duration_seconds": 425,
+    "size_bytes": 5095008
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "abd6d66c3fc5bd009591480dad632eca",
+          "slug": "microsoft-reveals-strong-cloud-growth-and-offers-buyouts-to",
+          "title": "Microsoft reveals strong cloud growth and offers buyouts to 60,000 employees",
+          "summary": "Revenue rose 19 percent and the company disclosed cloud figures for the first time.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1020785/microsoft-earnings-revenue-q1-2027"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/oct/28/microsoft-earnings"
+            }
+          ],
+          "article": {
+            "background": "Microsoft makes Windows, the Office software suite, and the Xbox game console. It also runs Azure, a cloud computing business. Cloud computing means renting computing power and storage over the internet instead of owning your own servers. For its new financial year, Microsoft is changing how it reports results. It is splitting its businesses into two segments for the first time.",
+            "what_happened": "Microsoft reported results for July through September, the first quarter of its new financial year. The company brought in $92.3 billion in revenue, which is money from sales. Revenue is up 19 percent. Azure grew 48 percent to $33.2 billion, and this is the first time Microsoft has shared Azure's revenue in dollars. Windows and Xbox revenue fell during the quarter. Microsoft's stock value rose after the results came out, and the results beat analysts' expectations.",
+            "why_it_matters": "For now, this changes little for most people directly. Azure runs many of the apps and websites people use, so its growth shows how heavily businesses rely on cloud services. The new reporting split will give investors a clearer view of each part of Microsoft's business.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "20ca93b1b3ccf8f65d3767a974feb70e",
+          "slug": "microsoft-offers-voluntary-buyouts-to-one-in-four-workers",
+          "title": "Microsoft offers voluntary buyouts to one in four workers after posting $36.6 billion profit",
+          "summary": "About 60,000 workers can take a voluntary buyout offered by Microsoft.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c6m24klyjr8no?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Microsoft makes Windows, the software that runs many personal computers. Companies like Microsoft are spending heavily on artificial intelligence (AI), software that can write, sort, and make predictions from data. Microsoft is pouring money into the computer systems that power AI. Other tech firms are doing the same. Questions remain about whether that spending will pay off.",
+            "what_happened": "Microsoft said its profit for the three months to the end of September jumped to more than $36.6bn (£27.5bn). The report came just days after the company announced plans to cut its workforce by more than a quarter. On Monday, Microsoft said it would offer voluntary buyouts to around 60,000 workers. Buyouts are payments that encourage workers to leave. The goal is to cut costs. Microsoft shares rose almost 2.9% in after-hours trading.",
+            "why_it_matters": "If you work in tech, these cuts could affect your job or your team. For most people, this changes nothing right away. It does show how much money big tech is putting into AI.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "459f0b7226ae838c1ed50b05f029a9b8",
+          "slug": "uk-budget-raises-bank-and-landlord-taxes-to-fund-100",
+          "title": "UK budget raises bank and landlord taxes to fund £100 household handouts",
+          "summary": "Twenty million families will get a £100 winter payment under the new budget.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/uk-news/2026/oct/28/budget-2026-healey-hikes-taxes-on-banks-and-landlords-to-fund-100-handouts-to-20m-households"
+            }
+          ],
+          "article": {
+            "background": "The chancellor is the UK's top money minister. Each year they present a budget, which sets out how the government will raise tax and spend money. A cost of living crisis means everyday prices, such as energy and food, have risen sharply and squeezed household budgets. This budget came as official forecasts showed that pressure is not expected to end soon.",
+            "what_happened": "John Healey, in his first budget as chancellor, raised taxes on banks and landlords. He used the money to fund a £100 winter handout for 20 million families. In a low-key speech, he blamed \"global economic storms\" for the grim outlook. He said the war in Iran is driving up oil and gas prices. Few surprises came in the speech.",
+            "why_it_matters": "If your family is one of the 20 million getting the £100, it is direct cash help this winter. Official forecasts show no end in sight for high living costs, so the payment is the near-term relief in this plan. Whether the taxes on banks and landlords change what people pay for housing or services is not yet clear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b51a1aa14d229dfff23b499a6f9ed3b3",
+          "slug": "uk-economy-faces-energy-driven-inflation-and-weaker-growth",
+          "title": "UK economy faces energy-driven inflation and weaker growth, official forecast shows",
+          "summary": "Soaring energy prices will dent growth and leave living standards in a grim place.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c9x28350ly07o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK is not part of the US-Iran war. Still, the conflict is hitting the UK economy. The Office for Budget Responsibility (OBR) is the government's official forecaster. It publishes regular economic outlooks.",
+            "what_happened": "Energy prices are rising fast. The OBR's latest official forecast says this will slow growth for a short time. It also expects inflation to rise. Inflation means prices go up faster. Living standards are in a \"grim\" place. Interest rates are also expected to rise. That makes borrowing more expensive. Government debt repayments will also cost more.",
+            "why_it_matters": "If you borrow money, it may cost more. Your money may also buy less as prices rise. Chancellor John Healey has announced policies he says offer \"breathing space\" for households. He has also warned of real challenges ahead.",
+            "quote": {
+              "text": "real challenges ahead",
+              "attribution": "Chancellor John Healey",
+              "source_url": "https://www.bbc.co.uk/news/articles/c9x28350ly07o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "bc3b86aeeb69d61c932ba804351f6993",
+          "slug": "two-high-speed-trains-collide-in-spain-killing-at-least-68",
+          "title": "Two high-speed trains collide in Spain, killing at least 68 people",
+          "summary": "At least 68 people died in Toledo province early Wednesday, and dozens were hurt.",
+          "score": 10,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/live/2026/oct/28/spain-train-crash-toledo-europe-latest-news-updates"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6p3g84kjqjlo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "High-speed trains are fast passenger trains that run between cities on dedicated tracks. Many people in Spain use them for regular travel. Crashes on this kind of railway are rare, so each one draws close attention.",
+            "what_happened": "Two high-speed trains collided in Toledo province in central Spain on a Wednesday morning. A train travelling from Madrid to Seville ran into another train that was stopped on the tracks. Several carriages fell down an embankment. At least 68 people died, and dozens more were injured. The two trains were Iryo 7076, with 146 passengers and one baby on board, and AVE 2080, with 397 passengers.",
+            "why_it_matters": "For most riders, this crash does not change how they book or take a train today. It does raise questions about how train systems are controlled and checked. The transport minister said a computer failure followed by human error caused the crash. Anyone who rides high-speed trains will want to know what the official investigation finds.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7fdb9c0d206ddddd446e12a6e6bff39c",
+          "slug": "israel-election-leaves-netanyahu-without-majority",
+          "title": "Israel election leaves Netanyahu without majority, Palestinian parties gain ground",
+          "summary": "Netanyahu's far-right bloc lost its majority, giving Palestinian-backed parties more say in talks.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/28/israel-elections-choice-netanyahu-remaining-power-or-palestinian-backed-coalition"
+            }
+          ],
+          "article": {
+            "background": "Israel held national elections on Tuesday. Benjamin Netanyahu has led a far-right governing coalition. Parties led by Palestinian citizens of Israel also run in these elections. Their role in the Knesset, Israel's parliament, is now a major question.",
+            "what_happened": "Netanyahu's bloc lost its governing majority as most ballots were counted. Votes for Palestinian-led parties rose sharply. Turnout was the highest in decades. Gadi Eisenkot, a retired general, leads the Jewish opposition bloc. He appeared to declare victory early. Most Jewish opposition parties have ruled out governing with Palestinian-led parties.",
+            "why_it_matters": "Opposition parties now face a choice. If they refuse to work with Palestinian-led parties, Netanyahu could keep power. Coalition talks are next.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2d27b74b39117801d1bb57491dc210fd",
+          "slug": "australian-sas-officers-knew-troops-planted-weapons-on-dead",
+          "title": "Australian SAS officers knew troops planted weapons on dead Afghans, inquiry finds",
+          "summary": "Senior officers knew soldiers planted weapons on the dead but did nothing to stop it.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/oct/29/australian-sas-officers-knew-about-unlawful-throwdowns-on-dead-afghans-report-says-ntwnfb"
+            }
+          ],
+          "article": {
+            "background": "The Australian Defence Force, or ADF, is the country's military. The SAS is an elite special forces unit within it. The special operations command oversees units like the SAS.",
+            "what_happened": "Some Australian SAS officers knew soldiers were using throwdowns. A throwdown means planting a weapon on a dead Afghan civilian. Soldiers did this to make the dead look like fighters. The officers did nothing to stop the practice. A previously unpublished report describes this. The report was posted online this week. It is the executive summary of a 2021 review. The review was done by the inspector general of the ADF.",
+            "why_it_matters": "The inspector general calls the failure a breakdown of command. That breakdown let egregious behaviour continue. Egregious means very bad. For most people, this is about whether leaders hold soldiers to the law.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "f0e6ef90d0af8cc4629990aab17550c8",
+          "slug": "health-secretary-overrules-fda-to-allow-pharmacies-to-sell",
+          "title": "Health secretary overrules FDA to allow pharmacies to sell six peptide drugs",
+          "summary": "Robert Kennedy passed a rule letting specialty pharmacies sell the drugs.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/10/peptide-peddlers-cheer-as-rfk-jr-unilaterally-grants-access-overruling-fda"
+            }
+          ],
+          "article": {
+            "background": "Peptides are short chains of amino acids, the building blocks of proteins. Some are sold as drugs. Specialty pharmacies are pharmacies that prepare certain drugs that regular stores often do not make. In 2023, the Food and Drug Administration (FDA) removed six peptides from a list of drugs that specialty pharmacies can make, citing safety concerns. Many people in Kennedy's Make America Health Again movement use these peptides, and many of its figures sell them.",
+            "what_happened": "Health Secretary Robert F. Kennedy Jr. has passed a rule that lets specialty pharmacies sell six peptide drugs. He did this on his own, overruling scientists at the FDA. Kennedy said he uses some of the peptides and called himself a big fan. FDA scientists still say there is not enough evidence that the drugs work. They also say the drugs could be dangerous.",
+            "why_it_matters": "For most people, this changes little right away. It could mean more of these products become available through pharmacies. FDA scientists still say the evidence is not there, so anyone considering them should talk with a doctor first.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8d197442bf8395e7211540f05f218af7",
+          "slug": "trump-administration-sues-utah-to-save-prediction-market",
+          "title": "Trump administration sues Utah to save prediction market from gambling ban",
+          "summary": "Federal regulators are trying to stop Utah from enforcing its gambling ban against Kalshi.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/10/trump-admin-sues-utah-to-save-kalshi-from-the-states-total-ban-on-gambling"
+            }
+          ],
+          "article": {
+            "background": "Kalshi is a company that runs a prediction market. A prediction market lets people buy and sell bets on whether future events will happen. Utah prohibits gambling under its state laws. It is one of only two states where gambling is also banned under the state constitution. The dispute is over whether Kalshi's markets count as illegal gambling in Utah.",
+            "what_happened": "The Trump administration is trying to stop Utah from enforcing its gambling ban against Kalshi. That makes Utah the 10th state sued by the US government agency that regulates prediction markets. Utah sued Kalshi in a state court last week. The state's lawsuit asks a court to bar Kalshi from offering bets on sports, elections, politics, and other events. Utah's attorney general, Derek Brown, a Republican, said the company runs an online casino.",
+            "why_it_matters": "If you live in Utah, this case affects whether Kalshi can keep offering these bets to people in your state. The outcome could also influence how other states treat similar markets. The case is now in court, so the answer is not settled yet.",
+            "quote": {
+              "text": "Kalshi runs an online casino in Utah and calls it a prediction market. That violates Utah law.",
+              "attribution": "Derek Brown, Utah Attorney General",
+              "source_url": "https://arstechnica.com/tech-policy/2026/10/trump-admin-sues-utah-to-save-kalshi-from-the-states-total-ban-on-gambling"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "6a46d8677c62c4a65f454f5cd656c4c9",
+          "slug": "hacker-steals-personnel-data-for-over-40-000-homeland",
+          "title": "Hacker steals personnel data for over 40,000 Homeland Security employees",
+          "summary": "The breach exposed names, job titles, and contact details, including data on undercover agents.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/28/hacker-stole-personnel-data-about-thousands-of-homeland-security-employees-including-cbp-and-ice-agents"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.wired.com/story/massive-leak-exposes-41000-homeland-security-workers-including-undercover-ice-agents"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1021528/ice-cbp-data-leak"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/28/homeland-security-data-leak"
+            }
+          ],
+          "article": {
+            "background": "The Department of Homeland Security, or DHS, is a federal agency. It oversees border security, immigration enforcement, and cybersecurity. Its agencies include Customs and Border Protection, or CBP. Immigration and Customs Enforcement, or ICE, is another.",
+            "what_happened": "A hacker stole the data earlier this year. The breach had not been disclosed before. The hacker uses the name Department of Peace. They claimed the data came from Okta, a login system DHS uses. The nonprofit Distributed Denial of Secrets posted the records. The records cover more than 40,000 people. They list names, job titles, and work contact details. That includes email addresses, cell phone numbers, and office locations. They include border and immigration agents, cybersecurity staff, and senior officials. Wired reported that some records mention internal systems. Some also mention undercover and surveillance programs.",
+            "why_it_matters": "For most people, daily life will not change because of this leak. The records cover DHS workers and contractors. Leaked work contact details can fuel scam calls and phishing. Phishing means fake messages meant to trick people into giving up passwords. For the people listed, scams are the main thing to watch.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c4f84e1575f905242ea139f93583d89c",
+          "slug": "chinese-government-hackers-burrow-into-critical-networks",
+          "title": "Chinese government hackers burrow into critical networks using new methods",
+          "summary": "Chinese government hackers are secretly getting into key infrastructure, a research group finds.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/10/28/nx-s1-6019538/a-breakthrough-for-the-group-on-the-trail-of-chinese-hackers"
+            }
+          ],
+          "article": {
+            "background": "Governments sometimes use hackers to break into computer systems in other countries. These hackers try to get in quietly and stay hidden for a long time. Security researchers track these groups by studying their methods and tools. The excerpt for this story does not give more detail about the group's background.",
+            "what_happened": "The reporting says Chinese government hackers are secretly getting into critical networks. It says they are using creative new methods to do it. The excerpt also points to a breakthrough for the group that tracks these hackers. It does not say what that breakthrough was.",
+            "why_it_matters": "For most people, this does not change anything right away. Critical networks can include systems that power, water, and communications depend on. Hacks of those systems can affect ordinary people, so security work on them matters over time.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "6af84032e2229d8bb54d6ac9b6935ea6",
+      "title": "Rising rates of colorectal cancer found in nearly all age groups",
+      "url": "https://www.uchicagomedicine.org/forefront/cancer-articles/rising-rates-of-colorectal-cancer",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "4a297787fabeab727f86e134d12f968c",
+      "title": "American taxpayers' bill for Iran war grows to estimated $47.1 billion",
+      "url": "https://www.pbs.org/newshour/world/american-taxpayers-bill-for-iran-war-grows-to-estimated-47-1-billion",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "24bd30324681d5d3e184187c2f60286c",
+      "title": "Healey tells departments to make 1% cuts to fund defence",
+      "url": "https://www.bbc.co.uk/news/articles/c65ynl0px107o?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "6be995f8dde3fb2f618c22d4989689cf",
+      "title": "Foreign gadget bans: all the news about the FCC’s clampdown on Chinese tech",
+      "url": "https://www.theverge.com/policy/1019851/fcc-foreign-gadget-ban-drone-robot-roomba-storystream",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "ba0b8a2aa06a804a825feddd91e6af68",
+      "title": "How did Flávio Bolsonaro end up in Miami?",
+      "url": "https://www.bbc.co.uk/news/videos/ck4g1xe5xny4o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "da673c7130821dded2ce7b47b301f209",
+      "title": "What the Budget offers for under 25s - and what it leaves out",
+      "url": "https://www.bbc.co.uk/news/articles/c60e05yn3w9zo?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "d5df0b625a6dd42a30dd918595ade057",
+      "title": "Obama campaigns in Georgia as Trump stumps in Ohio in dueling midterms rallies – live",
+      "url": "https://www.theguardian.com/us-news/live/2026/oct/28/trump-administration-bill-essayli-republicans-flavio-bolsonaro-us-news-latest",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2f42d340ae1521725431c29bfcd0c17f",
+      "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+      "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 134,
+    "clusters_considered": 115,
+    "stories_run": 11,
+    "sources": 16,
+    "sections_held": 0
+  }
+}
