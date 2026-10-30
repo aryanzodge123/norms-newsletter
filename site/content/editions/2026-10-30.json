@@ -1,0 +1,487 @@
+{
+  "date": "2026-10-30",
+  "edition_number": 145,
+  "edition_type": "normal",
+  "headline_of_the_day": "At least 69 people killed in central Spain train crash near Urda",
+  "headline_cluster_id": "22f70b65bcbf7ca6cb0386cba6affdcb",
+  "headline_rationale": "The deadliest single event today, affecting dozens of families and raising questions about rail safety in a major European country.",
+  "key_points": [
+    {
+      "text": "At least 69 people died when a high-speed train hit a stationary train near Urda in central Spain, with more than 100 injured.",
+      "topic": "World"
+    },
+    {
+      "text": "Binance paused withdrawals after a suspected security breach that may have drained billions in cryptocurrency from user wallets.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Google lost half a trillion dollars in value after revealing AI search summaries are reducing ad revenue.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Israel's opposition accused Prime Minister Netanyahu of trying to delegitimize the election after his coalition lost its majority.",
+      "topic": "World"
+    },
+    {
+      "text": "Reddit will require users to log in to browse the site, ending years of open access.",
+      "topic": "Tech"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-30.mp3",
+    "duration_seconds": 539,
+    "size_bytes": 6463584
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "72505efd7213725c953745acb7f73942",
+          "slug": "reddit-will-require-users-to-log-in-ending-open-browsing",
+          "title": "Reddit will require users to log in, ending open browsing",
+          "summary": "Chief executive Steve Huffman says the site is becoming a logged-in-only experience after years of public access.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1022571/reddit-login-requirement-q3-2026-earnings"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/gadgets/2026/10/reddit-will-require-you-to-log-in-eventually-ceo-confirms"
+            }
+          ],
+          "article": {
+            "background": "Reddit is a large website where people post questions, links, and discussions in topic groups called communities. Until now, anyone could read most of Reddit without an account. Reddit has also sued companies it says took its content without permission, a practice called scraping, where automated programs copy large amounts of a site's posts.",
+            "what_happened": "Reddit CEO Steve Huffman confirmed the change in a letter to shareholders about the company's third-quarter results. He said Reddit is shifting to a logged-in-only experience. The company says logged-in users get content better matched to their interests. It also says sign-ins give it more data for ads and protect its collection of posts from automated copying.",
+            "why_it_matters": "If you use Reddit now, you may soon need an account to see its posts. Signing in means Reddit can track more of what you do on the site. The timing of the change has not been reported in the excerpts, so for now it is not clear when it will reach everyone.",
+            "quote": {
+              "text": "Moving to primarily logged-in will ensure our users have the best Reddit experience possible, and can find the content and communities most relevant to them.",
+              "attribution": "Steve Huffman, CEO of Reddit",
+              "source_url": "https://arstechnica.com/gadgets/2026/10/reddit-will-require-you-to-log-in-eventually-ceo-confirms"
+            }
+          }
+        },
+        {
+          "cluster_id": "9abe96bf163c920ddb55d9b20b0ca60a",
+          "slug": "reddit-shifts-to-logged-in-model-as-google-search-traffic",
+          "title": "Reddit shifts to logged-in model as Google search traffic dries up",
+          "summary": "The company announced the change as it transitions away from reliance on search referrals.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic"
+            }
+          ],
+          "article": {
+            "background": "Reddit is a large website where people post questions, discussions, and replies on many topics. For years, many visitors found Reddit pages through Google search, often by adding the word \"Reddit\" to their search to get real people's answers. Google now shows AI-generated answers at the top of many results, and fewer people click through to websites as a result.",
+            "what_happened": "On its third-quarter earnings call on Thursday, Reddit said it is moving toward a mainly \"logged-in experience.\" That means most of the site would be used by people who sign in. Reddit CEO Steve Huffman said Google's AI search modes do not help send traffic to the platform. Reddit also said its search traffic dropped by more than 1 million referrals on average per week in October.",
+            "why_it_matters": "If you use Reddit without an account, you may need to sign in to see more of it. The change also means Reddit can sell access to its content to AI companies, instead of letting AI tools collect it for free. For now, the exact effect on everyday users is not yet clear.",
+            "quote": {
+              "text": "does not drive traffic",
+              "attribution": "Steve Huffman, Reddit CEO",
+              "source_url": "https://www.theverge.com/tech/1022848/reddit-ceo-google-ai-mode-traffic"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "d0ea467858d9162716a28ca15e0fb0b1",
+          "slug": "doordash-offers-17-billion-dollars-to-buy-instacart",
+          "title": "DoorDash offers 17 billion dollars to buy Instacart",
+          "summary": "The deal would consolidate the two largest grocery delivery platforms in the United States.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_economy",
+              "url": "https://www.pbs.org/newshour/economy/doordash-offers-17-billion-for-instacart-in-what-would-be-big-grocery-delivery-consolidation"
+            }
+          ],
+          "article": {
+            "background": "Grocery delivery apps let people order food from stores and have it brought to their door. DoorDash and Instacart are two companies in this business. A deal between them would bring their businesses together.",
+            "what_happened": "DoorDash is offering $17 billion to buy Instacart. The deal could combine grocery delivery businesses in the U.S. and in other countries. The companies say the tie-up would pair DoorDash's global reach and logistics skill with Instacart's operations.",
+            "why_it_matters": "If the deal happens, fewer large companies would run grocery delivery. Shoppers could see changes in prices, fees, or service later, but this article does not show that yet. For now, this is an offer, and nothing changes for customers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "955e1ae6a39e17d55709f3d9f7fe98ba",
+          "slug": "openai-backed-thrive-holdings-acquires-home-security",
+          "title": "OpenAI-backed Thrive Holdings acquires home security company ADT for 15 billion dollars",
+          "summary": "The deal values ADT at ten dollars per share in a 7.6 billion dollar equity transaction.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt"
+            }
+          ],
+          "article": {
+            "background": "Thrive Holdings is a holding company, which means it owns other businesses. It was split off from Thrive Capital, a venture capital firm that invests in young companies. Thrive Holdings says it plans to hold its companies for the long term and improve them with AI. It says it now holds over 75 companies.",
+            "what_happened": "Thrive Holdings has acquired ADT, a physical security company. The deal values ADT at $10 per share, or about $7.6 billion in equity. Equity is the value of a company's shares. ADT says the total enterprise value, which also counts debt, is $15.3 billion. The companies announced the deal on Thursday. OpenAI is both a partner and an investor in Thrive Holdings. It supplies AI models, technology, and staff called forward-deployed engineers to Thrive's companies.",
+            "why_it_matters": "For most people, this changes nothing right away. Customers and employees of ADT may see changes over time if the new owner changes how the company runs. The deal also shows how AI-focused investors are buying established businesses to bring AI into them.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "88a5165fef0d03961a3ef8b9cc02ffad",
+          "slug": "google-loses-500-billion-dollars-in-value-as-ai-search-hits",
+          "title": "Google loses 500 billion dollars in value as AI search hits ad revenue",
+          "summary": "Alphabet revealed its AI summaries on search are reducing the ads people see and click.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cm9qzdqpxy48o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cm9qzdqpxy48o"
+            }
+          ],
+          "article": {
+            "background": "Alphabet is the parent company of Google. Google makes most of its money from ads that appear next to search results. Companies like Google, Microsoft and Amazon are spending huge sums on artificial intelligence (AI), which are computer systems that can write text and answer questions. Investors watch closely to see whether that spending will pay off.",
+            "what_happened": "Alphabet lost just over $500bn in value on Thursday. Its stock hit a six-month low. The company said its AI summaries on search were affecting ad revenue. Microsoft and Amazon also updated investors this week. Both said they plan to keep spending heavily on AI.",
+            "why_it_matters": "For most people, this does not change what they use today. It does show that investors are doubting whether big AI spending will bring in enough money. Companies that are unsure of their profits may cut costs or change the free services people rely on.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "670246dc99cc3880391dc90eb3f8d472",
+          "slug": "uk-budget-faces-28-billion-pound-shortfall-after-healey",
+          "title": "UK budget faces 28 billion pound shortfall after Healey backs away from welfare cuts",
+          "summary": "Experts warn the chancellor ducked big tax decisions and left a mountain to climb on spending.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/uk-news/2026/oct/29/john-healey-budget-backs-away-from-cutting-welfare-public-finance-shortfall"
+            }
+          ],
+          "article": {
+            "background": "John Healey has delivered his first budget. A budget is the government's plan for how much it will spend and collect in tax. The public finances are short by £28bn, meaning the money coming in falls £28 billion short of what the government plans to spend. The Institute for Fiscal Studies, a UK research group that studies tax and spending, has commented on the plan.",
+            "what_happened": "John Healey has backed away from cutting the cost of welfare during this parliament. Parliament is the elected body that makes the laws, and this parliament is its current term. Experts criticized the budget on Thursday. The Institute for Fiscal Studies said Healey avoided big tax and spending decisions, which makes the job ahead harder. The institute said he would need an extra £28bn a year to cover rising prices and to meet a target of spending 3% of GDP, the total output of the economy, on defence by 2030.",
+            "why_it_matters": "Warnings say the gap could lead to brutal spending cuts later. Cuts like that would reach the public services people use, though the excerpts do not say which ones or when. For now, the change for most people is not yet clear.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "6929ce5e117f55e142457a90b3ab8ad4",
+          "slug": "defense-secretary-fires-army-strategist-over-alleged",
+          "title": "Defense secretary fires army strategist over alleged classified leaks",
+          "summary": "Pete Hegseth dismissed Lieutenant General Brett Sylvia and referred the case for criminal investigation.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/29/hegseth-fires-general-leak-inquiry-pentagon"
+            }
+          ],
+          "article": {
+            "background": "Lt Gen Brett Sylvia is a senior officer in the US Army. A lieutenant general is a high rank, just below the very top. He had served as director for strategy, plans and policy on the Pentagon's joint staff. The joint staff is a group of officers who help plan work for the military's top leaders.",
+            "what_happened": "US Defense Secretary Pete Hegseth has reportedly dismissed Sylvia. The dismissal followed allegations that Sylvia disclosed classified information to the public. On Thursday, the Pentagon said it had referred an alleged leak case for criminal investigation. The Pentagon said removing the general was essential to protect sensitive information, the Washington Post reported. Pentagon spokesman Sean Parnell acknowledged the dismissal on social media but did not name Sylvia.",
+            "why_it_matters": "Classified information is material the government keeps secret to protect national security. Cases like this show how seriously the government treats who is allowed to share it. For most people, daily life does not change because of this news. It does show that leak allegations can now lead to criminal investigations and the removal of senior officers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a687cea25f259eee0a46f01859835ca4",
+          "slug": "federal-judge-blocks-trump-medicaid-work-requirement-rule",
+          "title": "Federal judge blocks Trump Medicaid work requirement rule",
+          "summary": "The rule would have forced beneficiaries to prove medical frailty to keep coverage.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/judge-blocks-trump-administrations-medicaid-work-requirement-rule-forcing-proof-of-medical-frailty"
+            }
+          ],
+          "article": {
+            "background": "Medicaid is a government health insurance program for people with low incomes. Some Medicaid enrollees must meet work requirements to keep their coverage. People who are \"medically frail,\" meaning they have serious health conditions, can qualify for an exemption from those rules. The Trump administration issued new guidance on what proof people must give to qualify.",
+            "what_happened": "A federal judge ruled Thursday that chronically ill people on Medicaid will not be bound by the new work requirement rules. The rules tied the exemption to proof of medical frailty. The judge's ruling blocks that requirement for these enrollees.",
+            "why_it_matters": "If you have a long-term illness and rely on Medicaid, this ruling may affect whether you must meet work rules to keep your coverage. The ruling covers chronically ill people. It does not settle what happens to other enrollees.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "22f70b65bcbf7ca6cb0386cba6affdcb",
+          "slug": "at-least-69-people-killed-in-central-spain-train-crash",
+          "title": "At least 69 people killed in central Spain train crash",
+          "summary": "A high-speed train collided with a stationary train on the same track near Urda on Wednesday morning.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cr78plp1p9yvo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Spain runs high-speed trains that carry passengers between cities. Norm first reported this crash on October 29, when at least 30 people were believed dead after two high-speed trains collided in the province of Toledo. Later reports describe a high-speed Renfe train and a stationary Iryo train on the same track.",
+            "what_happened": "A high-speed Renfe train crashed into a stationary Iryo train near Urda, in central Spain, on Wednesday morning. The crash killed 69 people. More than 100 others were injured, many seriously. The impact caused carriages to derail. Among the dead are a 24-year-old athlete and a former government minister.",
+            "why_it_matters": "For most people, the immediate impact is on families searching hospitals for missing relatives. There are fears the death toll could still rise. Spain's government has said it will act quickly to find out what happened. Anyone who rides high-speed trains will want to see those findings.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bc410dadf51bf131ff85235cc740d2b9",
+          "slug": "israeli-opposition-accuses-netanyahu-of-trying-to",
+          "title": "Israeli opposition accuses Netanyahu of trying to delegitimize election",
+          "summary": "Netanyahu's coalition lost its majority and his party alleged foreign interference and ballot theft without evidence.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/29/israeli-leader-netanyahu-accused-of-using-ugly-smear-tactics-to-cling-to-power"
+            }
+          ],
+          "article": {
+            "background": "Israel held a national election on Tuesday. Prime Minister Benjamin Netanyahu's coalition lost its parliamentary majority in the vote. Netanyahu leads the Likud party. The main opposition leader is Gadi Eisenkot, and Arab-led parties also play a role in the country's parliament.",
+            "what_happened": "After the vote, Netanyahu's Likud party said Arab-led parties had used foreign money to \"steal\" the election. Netanyahu and his allies asked Shin Bet, Israel's internal security service, to investigate alleged vote buying and other irregularities in Arab communities. Shin Bet is checking whether these parties received illegal funding from Qatar and Turkey. Qatar's foreign ministry denied the claims, calling them \"ridiculous and dangerous\" and accusing Israeli politicians of a disinformation campaign against Doha. Opposition leader Gadi Eisenkot and Arab-led party leaders said Netanyahu was trying to delegitimise the result.",
+            "why_it_matters": "For now, this changes nothing about how Israelis vote or how the government runs day to day. It does raise a question about whether the election result will be accepted. Officials will decide how the Shin Bet inquiry goes, and that could affect how future votes are run.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "61c8b3c733a6a786c9ffc3fafc96b7de",
+          "slug": "patrick-stewart-dies-at-age-86",
+          "title": "Patrick Stewart dies at age 86",
+          "summary": "The Star Trek and X-Men actor died at his Los Angeles home following dementia.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/news/1022626/patrick-stewart-star-trek-death"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/culture/2026/oct/29/patrick-stewart-dead"
+            }
+          ],
+          "article": {
+            "background": "Patrick Stewart was a British actor who worked for decades in theater and on screen. He was born in 1940 in Mirfield, Yorkshire, England, and started out on stage. He became best known for playing Captain Jean-Luc Picard in Star Trek: The Next Generation, which ran from 1987 to 1994. He also played Professor X in the X-Men films.",
+            "what_happened": "Patrick Stewart has died at age 86. A message posted to his Instagram account said he died on Wednesday at his home in Los Angeles. The message said he had a brief journey with Alzheimer's disease and Lewy body dementia. Lewy body dementia is a brain disease that affects thinking and movement.",
+            "why_it_matters": "Many people grew up watching his work in Star Trek and X-Men. His death ends a long career that reached both stage and screen audiences. Fans may now revisit his films and shows.",
+            "quote": {
+              "text": "following a brief and poignant journey with Alzheimer's Disease and Lewy Body Dementia",
+              "attribution": "Patrick Stewart's Instagram account message, posted by his team",
+              "source_url": "https://www.theverge.com/news/1022626/patrick-stewart-star-trek-death"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "db05f0bd8d957670b821335d22ccbc27",
+          "slug": "general-motors-to-pay-220-million-dollars-for-selling",
+          "title": "General Motors to pay 220 million dollars for selling driver data without consent",
+          "summary": "The settlement with 36 states requires GM to get express permission before collecting driving habits.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/transportation/1022555/gm-data-privacy-attorneys-general-lawsuit"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/29/gm-reaches-220m-settlement-over-selling-drivers-private-data"
+            }
+          ],
+          "article": {
+            "background": "General Motors is one of the largest car companies in the United States. Cars today can collect data about how people drive, such as speed, braking, and where the car goes. Data brokers are companies that buy and sell personal information from many sources. The allegations center on whether GM sent this kind of driving and location information to those buyers.",
+            "what_happened": "General Motors will pay $220 million to settle claims that it illegally sold driver and location information to data brokers. A coalition of 36 state attorneys general brought the complaint and secured the settlement. Under the agreement, GM must get drivers' express consent before it collects or shares their driving and location data. GM must also limit the driving data it collects. The settlement adds a requirement that a third party assess GM's compliance with its privacy program.",
+            "why_it_matters": "If you own or drive a GM vehicle, the company now has to ask before it collects or shares your driving and location data. The rules limit what GM can collect and who it can pass that information to. Similar terms were already part of earlier agreements with California and the Federal Trade Commission, so this adds a outside check on whether GM follows them.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fef19dc81404b44bfa138b5a90ec826d",
+          "slug": "utah-files-criminal-gambling-charges-against-prediction",
+          "title": "Utah files criminal gambling charges against prediction market Kalshi and its founders",
+          "summary": "The state says the platform broke gambling laws with sports betting on professional hockey and other events.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.sltrib.com/news/2026/10/28/utah-files-14-criminal-charges"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "4313f046a85f4144bc0590cd41f47462",
+          "slug": "binance-pauses-withdrawals-after-suspected-multibillion",
+          "title": "Binance pauses withdrawals after suspected multibillion-dollar hack",
+          "summary": "The world's largest cryptocurrency exchange is investigating reports that funds were drained from user wallets.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/29/binance-pauses-withdrawals-as-hackers-suspected-of-stealing-billions-in-crypto"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/oct/29/binance-crypto-exchange-hack"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cwg7xp8kx4v5o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Binance is a crypto exchange, meaning a website where people buy and sell digital currencies. The company calls itself the world's largest crypto exchange. Users keep money on the platform, in wallets that the company holds for them. Crypto is digital money that is not issued by a government.",
+            "what_happened": "On Thursday, Binance said it was investigating a potential security issue. Users reported that funds were being drained from the exchange's wallets. Binance paused all deposits and withdrawals while its teams run security checks. The company has not confirmed whether funds were stolen. Other crypto firms froze more than $2.5 billion in funds by Thursday evening. Former boss Changpeng Zhao, who still owns most of the firm, said it looks like a hack.",
+            "why_it_matters": "If you hold money on Binance, you may not be able to move it until the checks finish. Binance said it will cover all losses. How much was taken is still unclear, so the full effect on users is not yet known.",
+            "quote": {
+              "text": "It does look like a hack on Binance.",
+              "attribution": "Changpeng Zhao, Binance's former boss and majority shareholder",
+              "source_url": "https://www.bbc.co.uk/news/articles/cwg7xp8kx4v5o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "7b84c60342293d90ce85913dc37cd5ec",
+          "slug": "thieves-use-gps-spoofing-to-steal-over-100-million-dollars",
+          "title": "Thieves use GPS spoofing to steal over 100 million dollars in data center cargo",
+          "summary": "Highway robbers are using digital tricks to hijack trucks carrying expensive server equipment since June.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo"
+            }
+          ],
+          "article": {
+            "background": "Freight brokers are companies that match businesses needing goods moved with trucking companies that can haul them. Shipment-listing websites are online boards where those moving jobs get posted and bid on. Data centers are large buildings full of computer servers that run online services. The equipment that goes into them is expensive, and it often travels by truck.",
+            "what_happened": "NBC News spoke with industry leaders, consultants, and investigators advising law enforcement. They are looking into the largest thefts of this kind so far. NBC reported that since June, thieves have taken more than $100 million in data center freight. Thieves first hack freight brokers' accounts on shipment-listing websites. They post fake shipments to attract real bids from trucking companies. Then they send a malicious link, a harmful web address, to any company that responds. Once victims click it, thieves install software that lets them take control of systems.",
+            "why_it_matters": "Most people will not notice this directly in their daily lives. It shows how online job boards used for shipping can be turned into tools for theft. Companies that move goods this way may need to check more carefully who they are working with.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "abc11f5c449ec4be9fcb97af4264bb13",
+      "title": "What killed 500-plus penguins? How scientists solved the mystery",
+      "url": "https://www.npr.org/2026/10/29/nx-s1-6020451/avian-flu-penguins-pathogen-antarctica-cholera",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "f6f0c0abce26abf38b3139063edc59e5",
+      "title": "Milwaukee Brewers fans celebrate their team's first-ever World Series win",
+      "url": "https://www.npr.org/2026/10/29/nx-s1-6022048/milwaukee-brewers-fans-celebrate-their-teams-first-ever-world-series-win",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "3091bb98c74c88f60d1870faa3ec347b",
+      "title": "JD Vance letter may offer last chance to avert fresh conflict between US and Iran",
+      "url": "https://www.theguardian.com/world/2026/oct/29/jd-vance-letter-may-offer-last-chance-to-avert-fresh-conflict-between-us-and-iran",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ca1e764b95ad23346e12a8839f51d61e",
+      "title": "Hegseth fires the Pentagon's top military planner even as Trump considers new Iran strikes",
+      "url": "https://www.pbs.org/newshour/politics/hegseth-fires-the-pentagons-top-military-planner-even-as-trump-considers-new-iran-strikes",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "f6e03644fcee1dc67f4579499b4c0c3c",
+      "title": "Alaska's all-important Senate race is roiled by a report on alleged spoiler candidate",
+      "url": "https://www.npr.org/2026/10/29/nx-s1-6022069/alaskas-all-important-senate-race-is-roiled-by-report-on-alleged-spoiler-candidate",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "d84f9202009ca7a3d6f42f6b1f6e679b",
+      "title": "Judge denies federal request to segregate California ballots, says it would 'wreak havoc' on voting",
+      "url": "https://www.pbs.org/newshour/politics/judge-denies-federal-request-to-segregate-california-ballots-says-it-would-wreak-havoc-on-voting",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "deaa6ca0af7a8f775a5567d7343a6c93",
+      "title": "Open-weight AI models can exploit the patch gap",
+      "url": "https://epoch.ai/publications/open-weight-models-patch-gap",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "88eeaf23045e5bceaf7738705dda41fd",
+      "title": "Polymarket halts trading after compromise, impacted users will be 'made whole'",
+      "url": "https://www.nbcnews.com/business/consumer/polymarket-trading-halt-hack-wallets-rcna606405",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "d7b75e538f1bb59b58edfbfec1a55c3a",
+      "title": "Erin Patterson to die in prison after losing bid to overturn mushroom murder convictions",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/29/erin-patterson-mushroom-murders-appeal-ruling-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3ed3402167a3743dcf03e35610653357",
+      "title": "'The city is alive': A brief peace in Kherson, but residents fear what comes next",
+      "url": "https://www.bbc.co.uk/news/articles/ck1l393pyrylo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6f3f61c79e8edd76d80179b8fc5f06f4",
+      "title": "DoJ reportedly issues subpoenas over same-name Alaska candidates",
+      "url": "https://www.theguardian.com/us-news/2026/oct/29/alaska-senate-race-subpoenas",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "1254aa60779e32dc2822255039d39e51",
+      "title": "Pentagon IG refuses to investigate Starlink/Starshield slowdown in Ukraine",
+      "url": "https://arstechnica.com/tech-policy/2026/10/pentagon-ig-refuses-to-investigate-starlink-starshield-slowdown-in-ukraine",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "858d34b3cc0a0c055800e9135f4f9a5b",
+      "title": "Trump declares robot imports a national security threat",
+      "url": "https://arstechnica.com/gadgets/2026/10/trump-declares-robot-imports-a-national-security-threat",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 140,
+    "clusters_considered": 117,
+    "stories_run": 15,
+    "sources": 21,
+    "sections_held": 0
+  }
+}
