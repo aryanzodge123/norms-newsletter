@@ -1,0 +1,357 @@
+{
+  "date": "2026-10-31",
+  "edition_number": 146,
+  "edition_type": "normal",
+  "headline_of_the_day": "Blockchain analysts say North Korean hackers likely stole $6.3 billion from Binance exchange",
+  "headline_cluster_id": "03f859031e3978b20f2cf3cf9ed72b2f",
+  "headline_rationale": "Largest single cryptocurrency theft ever attributed to state actors, affecting users of the world's largest exchange.",
+  "key_points": [
+    {
+      "text": "Blockchain analysts say North Korean hackers likely stole $6.3 billion from Binance, the world's largest cryptocurrency exchange.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "At least nine AI developer platforms were breached this month in what security firms call a coordinated industry-wide attack.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "The Trump administration approved a $2.1 billion sale of 500 Patriot missiles to Ukraine, funded by Canada, Germany, and Norway.",
+      "topic": "World"
+    },
+    {
+      "text": "Riot police deployed at Poland's Constitutional Court after the government suspended the court's top judge in a constitutional dispute.",
+      "topic": "World"
+    },
+    {
+      "text": "A Linux kernel flaw allows remote code execution on servers running certain TCP configurations, with patches now available.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-10-31.mp3",
+    "duration_seconds": 428,
+    "size_bytes": 5142240
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "6b89d961731e9f30a5668468e957d56f",
+          "slug": "luigi-mangione-s-lawyers-seek-dismissal-of-state-charges",
+          "title": "Luigi Mangione's lawyers seek dismissal of state charges after federal guilty plea",
+          "summary": "Defense argues double jeopardy in the case following his August plea to federal charges for killing UnitedHealthcare executive.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/oct/31/luigi-mangione-new-york-case"
+            }
+          ],
+          "article": {
+            "background": "Brian Thompson was an executive at UnitedHealthcare, a large US healthcare company. He was killed on 4 December 2024 outside a hotel in Manhattan, New York. Luigi Mangione faces charges in his death. Double jeopardy is a legal rule that bars a person from being tried twice for the same crime. The killing sparked a wide search for the killer and public anger toward the for-profit US healthcare industry.",
+            "what_happened": "Mangione's lawyers filed paperwork on Friday asking a court to dismiss the state case against him. They made this request after he pleaded guilty to federal charges. Mangione entered that plea on 14 August. His state murder and weapons trial had been set for 8 September. The plea came less than a month before that trial date.",
+            "why_it_matters": "The filing asks whether Mangione can face a second trial for the same death under state law. A judge has not ruled yet, and the answer will show how double jeopardy applies when federal and state cases overlap. For most people, the ruling will matter mainly as a sign of how the justice system handles cases like this.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d32e90d377a8f980f7b74f957031d26a",
+          "slug": "alaska-senate-candidate-denies-knowledge-of-alleged-ballot",
+          "title": "Alaska Senate candidate denies knowledge of alleged ballot confusion scheme",
+          "summary": "Democrat Mary Peltola says she knew nothing about a plot that put two Dan Sullivans on the ballot.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmwyq2gg1yzzo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Alaska holds a U.S. Senate race this year. Dan S. Sullivan, a Republican, is the incumbent trying to win another term. Mary Peltola, a Democrat, is his main challenger. Norm covered earlier reports that a second candidate named Dan Sullivan was on the ballot. Those reports said the Peltola campaign may have worked with party operatives to get him there. The goal, as critics describe it, was to confuse voters. Peltola's campaign has denied any link to the other candidate.",
+            "what_happened": "Peltola has denied knowing anything about an alleged scheme. The scheme led to two men named Dan Sullivan running in the race. The Trump administration is continuing a criminal investigation into the matter. Officials have asked election workers to separate ballots that list Dan J. Sullivan, a retired teacher. The U.S. Justice Department reportedly issued subpoenas after a report that the Peltola campaign worked with party operatives. Sullivan and his allies have accused Democrats of trying to confuse voters.",
+            "why_it_matters": "If you vote in Alaska, the ballot may list two candidates with nearly the same name. Election officials are now working to separate those ballots. Analysts consider the race one of the closest in the country, so the outcome could affect which party controls the Senate. For now, the claims are allegations, and no one has been charged.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "cb1fa87c2f6711e41b0acb7ee4fe2ee1",
+          "slug": "us-approves-2-1-billion-patriot-missile-sale-to-ukraine",
+          "title": "US approves $2.1 billion Patriot missile sale to Ukraine with allied funding",
+          "summary": "Canada, Germany, and Norway are paying for 500 interceptors through a US program without American funds.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcnews.com/world/ukraine/us-approves-21-billion-sale-patriot-interceptors-ukraine-rcna606641"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c3vgxznlx7jzo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/31/ukraines-zelenskyy-praises-us-over-21bn-patriot-missile-deal-but-warns-it-could-take-years"
+            }
+          ],
+          "article": {
+            "background": "Patriot is an air defense system made by the United States. It fires interceptor missiles that shoot down incoming attacks. The PAC-3 is an advanced interceptor missile used with that system. Russia has carried out repeated aerial attacks on Ukraine. The BBC describes Patriot as the only effective weapon against Russia's ballistic missiles, which are fast missiles that fly a high arc.",
+            "what_happened": "The U.S. State Department approved the sale of 500 PAC-3 Patriot missiles to Ukraine on Friday. The deal is valued at about $2.1 billion. Canada, Germany and Norway are paying for the missiles through a U.S. program. The State Department said no American funds were involved. Ukrainian President Volodymyr Zelenskyy praised the decision but warned that deliveries could take several years. The State Department did not say when the missiles would arrive.",
+            "why_it_matters": "For most Americans, this changes little right away, because the State Department said no U.S. money is being spent. For people in Ukraine, the missiles could mean better protection against missile attacks, but only after they arrive. Zelenskyy has said that could take years.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ae2eb1383447a71458cb71a83250a433",
+          "slug": "riot-police-deployed-at-poland-s-constitutional-court-in",
+          "title": "Riot police deployed at Poland's Constitutional Court in government standoff",
+          "summary": "The intervention follows Justice Minister's suspension of the court's top judge in an escalating power dispute.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/crz9824d5e88o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/31/riot-police-deployed-to-polands-constitutional-court-after-judge-suspended"
+            }
+          ],
+          "article": {
+            "background": "Poland's Constitutional Court checks whether laws follow the country's constitution. A long dispute has split the court since the right-wing Law and Justice (PiS) party governed. Many people, including the current government, question whether some of the court's judges were properly chosen. Prime Minister Donald Tusk now leads a government that wants to change the courts he says were captured by the old ruling party.",
+            "what_happened": "Riot police were deployed at the Constitutional Court in Warsaw. Justice Minister Waldemar Żurek said he asked to strip the court's president, Bogdan Święczkowski, and vice-president, Bartłomiej Sochański, of their immunity from prosecution. That would let prosecutors bring criminal charges against them. Protesters clashed with police outside the court on Friday night. A group of judges appointed by the government then suspended Święczkowski and Sochański.",
+            "why_it_matters": "For most people this does not change daily life yet. The fight decides who controls the country's top court, and that court can strike down laws. If the court's control shifts, future laws on rights and public life could be decided differently.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b76fc96a51ef95a36d15a13df0ae2337",
+          "slug": "thai-man-sentenced-to-34-years-in-prison-for-questioning",
+          "title": "Thai man sentenced to 34 years in prison for questioning monarchy",
+          "summary": "The defendant faced multiple prosecutions for political speech, including comments made while dressed as Harry Potter.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmjwepvd0qq9o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Arnon Nampa is a 42-year-old human rights lawyer in Thailand. Thailand has a royal family and a king. Talking openly about the monarchy is a sensitive matter there. Nampa has spent much of the past five years going back and forth to court. He faces several criminal cases at the same time.",
+            "what_happened": "Nampa has been sentenced to 34 years in jail. He questioned the monarchy while dressed as Harry Potter. When he came into the courtroom, he was wearing shackles on his ankles. He held his three-year-old son, whom his partner brought to court to see him.",
+            "why_it_matters": "For most readers outside Thailand, this changes nothing day to day. It is a clear example of what can happen to a person who publicly criticizes the monarchy there. Anyone who follows free speech cases will want to know how the courts handle them.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "03f859031e3978b20f2cf3cf9ed72b2f",
+          "slug": "north-korean-hackers-suspected-in-6-3-billion-binance",
+          "title": "North Korean hackers suspected in $6.3 billion Binance cryptocurrency theft",
+          "summary": "Two blockchain analytics firms linked the breach to the Lazarus Group, a state-backed hacking unit.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "A cryptocurrency exchange is a company where people buy and trade digital money. Binance is the world's largest one. Blockchain analytics firms study digital money movements to trace where funds go. North Korea is one of the poorest countries in the world, and access to the internet there is severely restricted. Experts accuse the government of North Korean leader Kim Jong Un of relying on cybercrime.",
+            "what_happened": "Two blockchain analytics firms say they have strong intelligence pointing to a North Korean state-backed group. That group is the likely culprit in a hack of Binance worth $6.3bn (£4.7bn). TRM Labs identified the group as the Lazarus Group, also known as TraderTraitor, with high confidence. Chainalysis also points to the group.",
+            "why_it_matters": "If you use a crypto exchange, this case shows that large platforms can be targeted. The reporting does not say how customers were affected, so the impact on everyday users is not yet clear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "23a679e7d7e715ce4f8150a781a22fc1",
+          "slug": "at-least-nine-ai-developer-platforms-breached-in",
+          "title": "At least nine AI developer platforms breached in coordinated October attack",
+          "summary": "Security firms report an industry-wide campaign targeting AI companies with agent swarm attacks and distillation attempts.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms"
+            }
+          ],
+          "article": {
+            "background": "AI developer platforms are services that programmers use to build and run AI software. A breach means someone got into a system without permission. The Wiz blog post reports that at least nine of these platforms were breached this month.",
+            "what_happened": "Fireworks, OpenCode, and Warp have each reported signs of an \"agent swarm\" attack. The term refers to many automated AI programs working together. Andromeda's incident report calls the attacks part of an \"industry-wide attack.\" OpenCode and CommandCode say their incidents were attempts at \"distillation,\" a way of copying an AI model by learning from its answers. Most incidents are still being analyzed, and detailed technical information is not yet public. Zeabur has published a full write-up and says it will shut down.",
+            "why_it_matters": "The excerpts do not say whether user data was taken. If you use one of these platforms, check its notice for what happened to your account. Few reports have linked these incidents together yet, so the full pattern is still unclear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "38f3e161582e6a594ec3d4c526477ecf",
+          "slug": "linux-kernel-flaw-allows-remote-code-execution-on-servers",
+          "title": "Linux kernel flaw allows remote code execution on servers with multipath TCP enabled",
+          "summary": "The use-after-free vulnerability in IPv4 TCP handling has a patch available for affected systems.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://groups.google.com/g/golang-announce/c/PCoQcdxoScw?pli=1"
+            }
+          ],
+          "article": {
+            "background": "Go is a programming language used to build many servers and online services. Linux is an open-source operating system that runs on a large share of servers. TCP is the basic method computers use to send data reliably over a network. Multipath TCP, or MPTCP, is a version of TCP that can use more than one network path at once. As of Go 1.24, Go programs turn on MPTCP by default for servers that wait for incoming connections on Linux.",
+            "what_happened": "A security flaw, tracked as CVE-2026-98432, has been disclosed. A CVE is a public ID number for a known security flaw. The flaw is a use-after-free bug in the Linux kernel, the core part of the operating system. It affects how IPv4 TCP connections are handled. An exploit described by Anthropic showed that a server with an MPTCP listener can be attacked. The attack can lead to remote code execution, which means an attacker can run their own commands on the machine over the network.",
+            "why_it_matters": "If you run Linux servers, the main fix is to install a patched kernel. The Go team's announcement says the bug is not specific to MPTCP. Systems without MPTCP listeners may also be open to similar attacks. For most people who only use apps and websites, this changes nothing directly, but the servers behind those services may need updates.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d47b5593dffe1b46a0423851c39e12d0",
+          "slug": "scribd-notifies-users-of-security-breach-affecting-account",
+          "title": "Scribd notifies users of security breach affecting account data",
+          "summary": "The parent company of Scribd, Slideshare, Everand, and Fable sent notices this week about the incident.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.ycombinator.com/item?id=50312756"
+            }
+          ],
+          "article": {
+            "background": "Scribd is an online platform for reading and sharing documents, books, and presentations. Its family of services includes Slideshare, Everand, and Fable. Users create accounts to read and upload content. Companies that hold personal data are required to notify people when that data may have been exposed.",
+            "what_happened": "A Hacker News user posted a notice they say they received on Monday, October 26, 2026. The notice comes from Epiq, a company that handles breach notices for Scribd, Inc. It says an unauthorized third party may have gained access to certain user data in one of Scribd's systems. The notice says the data may include email addresses and the last 4 digits of credit cards.",
+            "why_it_matters": "If you have a Scribd account, the exposed data could be used to target you with scam emails or phone calls. Watch for messages asking you to log in or confirm card details. Check your card statements, and consider changing your Scribd password.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "d1676daf57c64fb43ed69bb3c901d14b",
+          "slug": "england-women-s-rugby-team-extends-35-year-winning-streak",
+          "title": "England women's rugby team extends 35-year winning streak against USA",
+          "summary": "The Red Roses won 55-12 to maintain their unbeaten record since the 1991 World Cup.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/oct/30/england-return-to-winning-ways-with-comfortable-victory-over-usa"
+            },
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/rugby-union/videos/c65yn0w2w152o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "England's women's rugby team, known as the Red Roses, are the world champions. The USA team is called the Eagles. The two sides meet in the WXV Global Series, an annual run of women's international matches. England have not lost to the USA since the 1991 Rugby World Cup, and they have won all 22 matches since then. Recent losses to Canada had raised questions about whether England were still on top.",
+            "what_happened": "England beat the USA 55-12 on Friday in the WXV Global Series. Claudia Moloney-MacDonald scored four tries. The win came after England lost to Canada earlier in the series. The USA arrived in good form, having won five straight matches.",
+            "why_it_matters": "For fans, this result shows England are still strong at the top of the sport. It also shows the gap between the top three teams and the rest is still there. The series continues, so the next few results will show whether England's form holds.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ecb7886fae8bc0c7b37300ba2582c7cd",
+          "slug": "fallon-sherrock-defeats-luke-littler-in-one-leg-darts-match",
+          "title": "Fallon Sherrock defeats Luke Littler in one-leg darts match for $501,000 prize",
+          "summary": "The exhibition event aired globally on Netflix from Manchester Central on Friday.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/darts/articles/crkg7p1z3p3lo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Darts is a game where players throw small arrows at a numbered circular board. A leg is one game inside a longer match. Luke Littler is the reigning world champion and the world's top-ranked player. Beat Luke Littler is an event where amateur players, who are not members of the main professional tour, face him in one-leg matches.",
+            "what_happened": "On Friday, Fallon Sherrock beat Luke Littler in one leg of darts. She won £501,000 for the win. The event was broadcast live around the world on Netflix. It was held at Manchester Central in England. Littler had already beaten 14 amateurs, some as young as 14, before facing Sherrock, who is 32. In December 2019 she became the first woman to beat a man at the PDC World Championship.",
+            "why_it_matters": "For most viewers, this was a one-off special event, not a change to how darts works. It shows that a player outside the main tour can beat a top star in a single game. Fans who do not usually watch darts could see it on Netflix.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "459bcd409d2e5f194416c890ce7e6898",
+      "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+      "url": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "958e8e0ba06e41d14cefb8f01ee131d8",
+      "title": "Once again, NASA is asking for ideas to rescue Hubble from certain death",
+      "url": "https://arstechnica.com/space/2026/10/think-you-can-save-the-hubble-space-telescope-nasa-wants-to-know",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "4dcab4da455e707577c3490b20ab53a8",
+      "title": "Tell HN: X is opening any tweet link in a webview whether you press it or not",
+      "url": "https://news.ycombinator.com/item?id=50312174",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "09ea544dbfb90839b2d318b8c2b06cbe",
+      "title": "Trump's tariffs could shutter this Canadian town - its residents are fighting to save it",
+      "url": "https://www.bbc.co.uk/news/articles/cmly016ep243o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ed1e3c8111dbc3023d68573d8ea5097a",
+      "title": "Global nature talks reach deal but money remains an issue",
+      "url": "https://www.bbc.co.uk/news/articles/cw1l32qyj8pqo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a1ebaf6091eba587f9f77bb6236c5c89",
+      "title": "US cancels G20 ‘family photo’ after Australia, UK and others refuse to appear with Russia",
+      "url": "https://www.theguardian.com/world/2026/oct/31/us-cancels-g20-family-photo-after-australia-uk-and-others-refuse-to-appear-with-russia",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "09f9ec392d7c86c3de64ecfb8c762884",
+      "title": "A top-secret spy mission, a decades-old scandal – and the Austin Powers-esque saga to lift the lid",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/31/timor-leste-australia-bugging-rex-patrick-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "be124084eafb3f7b1b8001f82e69e0b8",
+      "title": "What Israel's election deadlock means for Netanyahu and the region",
+      "url": "https://www.pbs.org/newshour/video/compass-points/2026/10/575057",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "45bbf7b8e07ad9f5084bf002ff147e33",
+      "title": "Suited and booted: How Joseph Kabila went from president to rebel leader",
+      "url": "https://www.bbc.co.uk/news/articles/cr3wv311dwnlo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b7ccaee42a32ec89077d49a7111c0371",
+      "title": "Flock camera searches fell 95% after a dispatcher's misconduct was caught",
+      "url": "https://www.wkyc.com/article/news/investigations/flock-camera-searches-fall-95-percent-highland-heights-dispatcher-misconduct-caught/95-94b18f33-60e2-4bc7-a00f-d71d1e1fdd5e",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "67b836170690ae330f7c082a6b8ae0c3",
+      "title": "Aston Villa to take legal action against Jamie Carragher for ‘unacceptable insults’",
+      "url": "https://www.theguardian.com/football/2026/oct/30/aston-villa-to-take-legal-action-against-jamie-carragher-for-unacceptable-insults",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 39,
+    "clusters_considered": 34,
+    "stories_run": 11,
+    "sources": 9,
+    "sections_held": 1
+  }
+}
