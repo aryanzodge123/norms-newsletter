@@ -1,0 +1,390 @@
+{
+  "date": "2026-11-01",
+  "edition_number": 147,
+  "edition_type": "normal",
+  "headline_of_the_day": "Binance covers 90% of losses after record $6.3 billion cryptocurrency theft",
+  "headline_cluster_id": "f6da3c3a5dbb4b2adbf7bc7ad5eb4c2f",
+  "headline_rationale": "Largest cryptocurrency hack on record with FBI attributing it to a state-backed group, affecting the world's largest exchange",
+  "key_points": [
+    {
+      "text": "Binance covered 90% of the $6.3 billion stolen in what the FBI calls the largest cryptocurrency hack ever, with North Korean hackers suspected",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Linux kernel shipped fixes for a critical unauthenticated remote vulnerability that could compromise servers and devices running affected versions",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Hundreds of thousands protested across France for a third weekend over living costs, with a general strike planned",
+      "topic": "World"
+    },
+    {
+      "text": "Golden State Valkyries won their first WNBA championship in just their second season, defeating Atlanta Dream in Game 7",
+      "topic": "Sports"
+    },
+    {
+      "text": "Computer science enrollment at US colleges dropped more than 12% as artificial intelligence reportedly replaces entry-level programming jobs",
+      "topic": "Business"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-01.mp3",
+    "duration_seconds": 594,
+    "size_bytes": 7134624
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "f1b3624d127c27a6ef6fd65d7d0531ca",
+          "slug": "computer-science-enrollment-drops-over-12-as-ai-reportedly",
+          "title": "Computer science enrollment drops over 12% as AI reportedly replaces jobs",
+          "summary": "US college programs saw undergraduate and graduate enrollment decline for second consecutive year.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-29/computer-science-degree-programs-lose-students-as-ai-takes-jobs"
+            }
+          ],
+          "article": {
+            "background": "Computer and information science is the study of how computers, software, and data systems work. Colleges offer these as degree programs, and many students choose them for jobs in software and tech. Enrollment in these programs had grown for years until last year, when it dropped.",
+            "what_happened": "Enrollment fell this fall at computer and information science departments at US colleges. Undergraduate enrollment dropped more than 12%. Graduate enrollment dropped more than 10%. The figures are preliminary fall data from the National Student Clearinghouse, a group that tracks college enrollment, released Thursday. The drop follows a decline last year that ended years of growth.",
+            "why_it_matters": "For now, this does not change much for most people. The data shows fewer students but does not give their reasons. Fewer graduates in these fields could shape who gets hired for tech jobs in the years ahead. Readers who are weighing a computing degree may want to watch how the job market changes.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "06d5b5dc9c30631a970dc74fe91377a6",
+          "slug": "hermantown-city-council-approves-controversial-google-data",
+          "title": "Hermantown city council approves controversial Google data center in late-night vote",
+          "summary": "Council unanimously approved key agreements for the facility after twice rescheduling due to protests.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.mprnews.org/story/2026/10/31/hermantown-approves-controversial-google-data-center-during-late-night-meeting"
+            }
+          ],
+          "article": {
+            "background": "A data center is a large building filled with computer servers. Those servers store and process internet data for websites, apps, and online services. Google proposed building one in Hermantown, a city in northeast Minnesota. Local opposition to the plan was strong, and the project drew protests before the vote.",
+            "what_happened": "The Hermantown City Council unanimously approved several key agreements late Friday night. The vote came after the meeting was rescheduled twice. The council heard about four hours of public comment before holding about an hour of discussion. The meeting ended just before midnight. The council approved a development agreement for a 1.7 million-square-foot Google data center.",
+            "why_it_matters": "For most people outside Hermantown, this vote changes nothing yet. For residents there, the approval moves the project closer to construction. Data centers use large amounts of electricity and water, so decisions like this one shape how local utilities and land are used.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "d0b946aa9f94bba5862624c488081652",
+          "slug": "justice-department-to-monitor-polling-stations-in-tuesday-s",
+          "title": "Justice Department to monitor polling stations in Tuesday's midterm vote",
+          "summary": "Some election officials received notification that federal monitors will be present at polls.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/10/31/nx-s1-6019312/election-officials-worry-about-doj-monitoring-of-tuesdays-vote"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "b7f980aed675f8a557a81449b17fbf07",
+          "slug": "over-40-of-names-on-federal-noncitizen-voter-list-absent",
+          "title": "Over 40% of names on federal noncitizen voter list absent from California rolls",
+          "summary": "AP analysis checks Justice Department claim against state voter registration records, finding major discrepancy.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/analysis-more-than-40-of-names-on-doj-list-of-alleged-noncitizens-not-on-californias-voter-rolls"
+            }
+          ],
+          "article": {
+            "background": "Voter rolls are the official lists of people registered to vote in a state. Only U.S. citizens can vote in federal elections. The Trump administration flagged names as possible noncitizen voters in California, and the Justice Department's list was part of that effort.",
+            "what_happened": "According to reporting by The Associated Press, more than 40% of the names on the list cannot be found on California's voter rolls. That means more than 4 out of every 10 flagged names are not registered in the state. The story was published October 31, 2026. The source excerpt does not give the full details of the review behind the figure.",
+            "why_it_matters": "For now, this does not change how most people vote. It does show that names on federal lists may not match state voter records. Accurate voter rolls matter because they decide who is allowed to receive a ballot.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "a71c37a215c15b047b71cc5695393ce5",
+          "slug": "hundreds-of-thousands-protest-across-france-for-third",
+          "title": "Hundreds of thousands protest across France for third consecutive weekend",
+          "summary": "Youth-led demonstrations over living costs and education swept multiple cities, with general strike approaching.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/10/31/g-s1-151121/france-seethes-again-as-youth-led-protests-sweep-europe"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/ck0j0y87j303o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "France has seen a run of large street protests this autumn. Young people have marched over the rising cost of living and the state of education. Earlier protests on October 17 turned into some of the worst rioting France has seen in years. Norm covered an earlier weekend of clashes on October 25, when nearly 1,000 people were arrested.",
+            "what_happened": "On Saturday, hundreds of thousands of mostly young people marched across France. It was the third weekend in a row of demonstrations. Police and gendarmes, a type of French police force, were deployed in large numbers, about 70,000 in all. Paris marches were moved to the edge of the capital. Officials said about 320,000 people took part nationwide, fewer than at earlier protests. At least 290 people were arrested, according to the interior ministry.",
+            "why_it_matters": "For now, the protests mean more street closures and possible delays for people in French cities. They also show how strongly young people feel about costs and schools. Youth-led protests were also reported in Germany and Italy, so the issues may be spreading across Europe.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "32d856193f01468b5ed0f11fcc6fc07e",
+          "slug": "ukrainian-families-reunite-after-rare-truce-allows-crossing",
+          "title": "Ukrainian families reunite after rare truce allows crossing from occupied Oleshky",
+          "summary": "Major rescue operation under significant ceasefire brought evacuees back across the war front.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/oct/31/oleshky-evacuees-reunite-with-families-after-truce-allows-crossing-into-ukraine"
+            }
+          ],
+          "article": {
+            "background": "Oleshky is a town now under Russian occupation. Occupied means a foreign army controls the area. A truce is a temporary agreement to pause fighting. Russia launched its full-scale invasion of Ukraine four and a half years ago, and this truce is described as the most significant since then.",
+            "what_happened": "Evacuees from Oleshky crossed back into Ukrainian-held territory on Saturday. The rescue operation began on Friday and ran under the truce. The evacuees stepped off buses at the border between Ukraine and Belarus. Family members were waiting for them there. Volunteers handed out coffee to people who had travelled by bus and plane through Russia and Belarus.",
+            "why_it_matters": "For most readers, this does not change daily life directly. It does show that people can be moved out of occupied areas during a pause in fighting.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f4a694524f8e413805feb1a913fae3cd",
+          "slug": "shops-looted-as-cost-of-living-protests-turn-violent-in",
+          "title": "Shops looted as cost of living protests turn violent in German cities",
+          "summary": "Riots erupted in Frankfurt, Berlin, Cologne and Hamburg after largely peaceful mass demonstrations.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqj34gnd3n30o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Germany's cost of living protests were organised by a campaign group called Gen Z regelt, which means \"Gen Z takes charge\". The protests target underfunding in schools, the high cost of living, and public services. Frankfurt is Germany's financial hub, the country's center for banks and large companies.",
+            "what_happened": "Late on Saturday, rioters looted shops in central Frankfurt. Clashes broke out with police there and in other German cities. The protests had been largely peaceful before that. Police said violence also happened in Berlin, Cologne and Hamburg. Officers used water cannon to disperse crowds that threw fireworks, stones and bottles at emergency workers.",
+            "why_it_matters": "For most people, this does not change daily life yet. It does show how strained some people feel about prices and public services. Shops and workers near protest areas may face disruption while police respond.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "30ea7e94ab4c09d191dfcff5af0f6057",
+          "slug": "brazilian-court-sanctions-lawyers-for-hiding-ai-prompt-in",
+          "title": "Brazilian court sanctions lawyers for hiding AI prompt in court filing",
+          "summary": "Lawyers intentionally embedded command to manipulate AI system used to review legal documents.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://jetstream.security/insights/brazilian-court-sanctions-prompt-injection-filing"
+            }
+          ],
+          "article": {
+            "background": "Prompt injection is a way of hiding instructions inside text so that an AI system reads them as commands. Courts in Brazil have started using AI tools to review filings submitted by lawyers. A filing is a document a lawyer sends to a court to support a case. The reporting says the lawyers knew the court, and possibly the other side's lawyers, used an AI system to read these documents.",
+            "what_happened": "A Brazilian labor court censured and fined two lawyers. The court found that the lawyers had put a hidden prompt-injection command into a court filing on purpose. The source reports that this may be the first court ruling anywhere to address a deliberate attempt to manipulate a court's AI system this way. The ruling was first published in Portuguese by Vladimir Aras, a Brazilian prosecutor and law professor, on X.",
+            "why_it_matters": "For now this case mainly shows that courts can punish people who try to trick their AI tools. Anyone who files documents or relies on court records may see more rules about how AI is used in legal work. The case is an early example, so its effect on everyday legal matters is still unclear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e01b8621efa4b29e4f74581eb300abfb",
+          "slug": "judge-allows-lawsuit-over-unpermitted-gas-turbines-at-ai",
+          "title": "Judge allows lawsuit over unpermitted gas turbines at AI data center",
+          "summary": "NAACP case against xAI alleging air pollution violations near Memphis can proceed forward.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward"
+            }
+          ],
+          "article": {
+            "background": "xAI is an artificial intelligence company owned by SpaceX. Its Colossus data center sits outside Memphis, Tennessee. A data center is a building full of computers that run online services and AI tools. The gas turbines there are machines that burn gas to make the power those computers need. The NAACP, a civil rights group, is the party bringing the lawsuit.",
+            "what_happened": "A federal judge refused xAI's request to dismiss the lawsuit. That means the case can move forward. The lawsuit says xAI installed and operated at least 35 combustion turbines and other pollution sources at the site. It says xAI never got the required air permits, which are government approvals that limit what a facility can release into the air. The suit also says xAI violated the Clean Air Act, the main federal law on air pollution. xAI argued that its turbines do not need permits because they are mobile.",
+            "why_it_matters": "People who live near the Colossus site breathe the air these machines could affect. For now, the ruling only lets the case continue. It does not decide whether xAI broke the law. A court will make that decision later.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "f6da3c3a5dbb4b2adbf7bc7ad5eb4c2f",
+          "slug": "binance-covers-losses-from-record-6-3-billion",
+          "title": "Binance covers losses from record $6.3 billion cryptocurrency hack",
+          "summary": "The world's largest crypto exchange says it has covered ninety percent of stolen assets.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/ckpdg3ql4169o"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1024091/binance-ceo-90-percent-stolen-crypto"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ckpdg3ql4169o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/nov/01/binance-losses-covered-hack-fbi-north-korea-cryptocurrency"
+            }
+          ],
+          "article": {
+            "background": "Binance is the world's largest cryptocurrency exchange, a company where people buy and sell digital money like bitcoin. Crypto exchanges hold assets for their users, so a theft from the exchange can hit customers directly. Norm covered the early days of this incident on October 30, when users reported funds were being drained from Binance's wallets. Binance said it was investigating and that user funds were safe at the time.",
+            "what_happened": "Binance says it has covered 90% of the $6.3 billion in assets stolen in a hack on Thursday. The company says the remaining 10% may take longer to obtain because those tokens are less liquid, meaning they are harder to buy quickly. Binance says it has set aside more than $6.34 billion in company funds to cover the losses. On Saturday, the FBI said a group it linked to North Korea was behind the attack. Binance says withdrawals are expected to resume on Sunday.",
+            "why_it_matters": "If you hold money on an exchange, this shows that a company can cover losses from a theft, but the process took several days. Binance says customers will not pay for this loss. Still, the case shows that funds kept on an exchange can be lost to a hack, so people may want to think about where they store their crypto.",
+            "quote": {
+              "text": "Binance will absorb the financial impact of these stolen funds, not our users.",
+              "attribution": "Binance, in a statement",
+              "source_url": "https://www.bbc.com/news/articles/ckpdg3ql4169o"
+            }
+          }
+        },
+        {
+          "cluster_id": "dadb9d6462595a0c8522a873dcb56bfd",
+          "slug": "linux-kernel-fixes-critical-remote-vulnerability-in-tcp",
+          "title": "Linux kernel fixes critical remote vulnerability in TCP handshake",
+          "summary": "The flaw scored 9.8 critical and affects systems back to Linux 4.4.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf"
+            }
+          ],
+          "article": {
+            "background": "TCP is the basic set of rules computers use to open connections over the internet. Linux is an open-source operating system, and its kernel is the core part that runs servers and many devices. A use-after-free is a memory bug where a program keeps using memory it has already released. CVE-2026-98432 is the ID number for this bug, and its CVSS score is 9.8 out of 10, rated Critical.",
+            "what_happened": "Linux's stable kernels shipped a fix on October 11 and 15, 2026. The bug sits in the IPv4 TCP handshake, the first step when two computers connect. A remote peer with no login can reach it. The bug goes back to Linux 4.4, and the fixed versions include 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10, and 7.3. An earlier report described a working exploit against servers that run Multipath TCP listeners, a specific feature.",
+            "why_it_matters": "Most servers run a Linux version packaged by a distribution, such as Ubuntu or Red Hat, not the upstream kernel directly. As of 5:15 PM CDT on October 31, Ubuntu's tracker still listed its kernels as vulnerable. Red Hat listed RHEL 8, 9, and 10 as affected with no fix yet. If you run or rent a Linux server, ask your provider about updates.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "8eeedec99e3b06df86274f1ce1beb3cf",
+          "slug": "golden-state-valkyries-win-wnba-championship-in-historic",
+          "title": "Golden State Valkyries win WNBA championship in historic Game 7 victory",
+          "summary": "Second-year franchise captured its first title, defeating Atlanta Dream at home in finale.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/oct/31/golden-state-valkyries-atlanta-dream-wnba-finals-game-7-gabby-williams"
+            }
+          ],
+          "article": {
+            "background": "The Golden State Valkyries are a professional women's basketball team in the WNBA, the top league for women's basketball in the United States. They are only in their second season. Their home arena is Chase Center in San Francisco. The team was built to compete at the highest level of the sport very quickly.",
+            "what_happened": "On Saturday night, the Valkyries beat the Atlanta Dream 68-63 in Game 7 of the WNBA Finals. Gabby Williams scored 30 points, most of them in a second-half stretch where she carried the team. The win gave Golden State its first championship in franchise history. Players celebrated together on the court at Chase Center.",
+            "why_it_matters": "For fans, this shows that a new team can reach the top of the sport in just two seasons. It may draw more attention to women's basketball and the WNBA. For now, this does not change how most people watch or follow games.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d7d050a92df82e325f3c5e5dd22d8f4f",
+          "slug": "lewis-hamilton-takes-pole-position-for-ferrari-at-mexican",
+          "title": "Lewis Hamilton takes pole position for Ferrari at Mexican Grand Prix",
+          "summary": "Seven-time champion secured first Ferrari pole with George Russell second and Antonelli fourth.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/oct/31/lewis-hamilton-storms-to-first-ferrari-pole-at-f1-mexican-grand-prix-with-antonelli-fifth"
+            },
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/formula1/articles/c6reyl8zp3jwo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Formula One is the top level of car racing, with teams and drivers from many countries. Kimi Antonelli is a 20-year-old Italian driver for Mercedes. He is close to winning the season's world championship, the sport's main title. Lewis Hamilton, a seven-time champion, drove for Mercedes before Antonelli took his seat there.",
+            "what_happened": "Hamilton set the fastest time in qualifying in Mexico City. That gives him pole position, the best spot on the starting grid. It is his first pole for Ferrari and his first in more than three years. He beat Mercedes driver George Russell by 0.009 seconds, so Russell starts second. Antonelli qualified fifth, behind Ferrari's Charles Leclerc and Red Bull's Max Verstappen. A one-place grid penalty for Verstappen moves Antonelli up to fourth.",
+            "why_it_matters": "The race takes place on Sunday. Antonelli is well placed to win the title, and a win would make him the youngest world champion in the sport's history. For most fans, Sunday's result decides who takes the season's top prize.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "5340a9c4b6a13ce3cb934a7de4fcf922",
+      "title": "Chinese markets lose trillions as race for AI supremacy with US takes its toll",
+      "url": "https://www.theguardian.com/world/2026/oct/27/chinese-markets-lose-trillions-ai-race-beijing",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "26e148b1e70c1252687735bd02452d98",
+      "title": "Key takeaways from this week's political meeting in Beijing",
+      "url": "https://www.npr.org/2026/10/31/nx-s1-6024695/political-meeting-beijing-takeaways",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5d7d50be58fff98d8a2f1eb1d605b560",
+      "title": "A new political era in the Southern Philippines",
+      "url": "https://www.npr.org/2026/10/31/nx-s1-6020639/a-new-political-era-in-the-southern-philippines",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "357a455f1ac878ea4eef08f2c6795850",
+      "title": "Judge dismisses Trump suit against Wall Street Journal over Epstein birthday letter",
+      "url": "https://www.pbs.org/newshour/politics/judge-dismisses-trump-suit-against-wall-street-journal-over-epstein-birthday-letter",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "6e3361b2a67e2c341c43fce419188cf2",
+      "title": "Virginia and D.C. sue over Trump's arch, adding to legal challenges as government wants work to begin",
+      "url": "https://www.pbs.org/newshour/politics/virginia-and-d-c-sue-over-trumps-arch-adding-to-legal-challenges-as-government-wants-work-to-begin",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "a84cb342cd19353c65c9044909a8dc1f",
+      "title": "Tusk defends overhaul of Poland’s constitutional court despite protests",
+      "url": "https://www.theguardian.com/world/2026/oct/31/donald-tusk-defends-overhaul-poland-constitutional-court-despite-protests",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "d80fc61f839bb72a30fb5e54ccdfb91c",
+      "title": "Attorneys for Alaska say 'meritless' Trump demand to set aside Senate ballots 'not even possible'",
+      "url": "https://www.pbs.org/newshour/politics/attorneys-for-alaska-say-meritless-trump-demand-to-set-aside-senate-ballots-not-even-possible",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "fee2bf8f968889c435302d3cdea6f871",
+      "title": "FBI visits Dan J. Sullivan donor in candidate's hometown as Alaska Senate inquiry widens",
+      "url": "https://www.pbs.org/newshour/politics/fbi-visits-dan-j-sullivan-donor-in-candidates-hometown-as-alaska-senate-inquiry-widens",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 144,
+    "clusters_considered": 108,
+    "stories_run": 13,
+    "sources": 13,
+    "sections_held": 0
+  }
+}
