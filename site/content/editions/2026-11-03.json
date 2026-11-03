@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-03",
+  "edition_number": 149,
+  "edition_type": "normal",
+  "headline_of_the_day": "US strikes Iranian military targets in the Strait of Hormuz as peace talks continue",
+  "headline_cluster_id": "551abd6b65fe2e22f1136eeb97fbe8e7",
+  "headline_rationale": "A US military strike on Iranian territory during active war and parallel diplomatic efforts is a major escalation affecting global oil transit and regional stability.",
+  "key_points": [
+    {
+      "text": "US launched limited strikes on Iran's Qeshm Island in the Strait of Hormuz hours after the vice president voiced optimism about a diplomatic deal.",
+      "topic": "World"
+    },
+    {
+      "text": "Russia bombed a Ukrainian aid center and shelter, killing at least 26 people including rescue workers and police, Ukraine says.",
+      "topic": "World"
+    },
+    {
+      "text": "Australia's central bank raised interest rates to 4.85 percent, an 18-year high, increasing borrowing costs for mortgage holders.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Google dismantled a botnet of over 1.3 million Android TV boxes secretly renting users' internet connections to strangers.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "A New York child died from measles, the state's first measles death in 30 years, officials announced.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-03.mp3",
+    "duration_seconds": 422,
+    "size_bytes": 5063328
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "fc6454eeadf529cf7f5de53c9f06ae83",
+          "slug": "supreme-court-blocks-trump-bid-to-exclude-california-ballots",
+          "title": "Supreme Court blocks Trump bid to exclude California ballots",
+          "summary": "The court rejected the justice department's emergency request to segregate roughly 20,000 mail ballots it claims belong to noncitizens.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/02/supreme-court-trump-california-ballots"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cm5ynekkn5qko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "California is one of the largest US states, and it runs its own elections. The Justice Department, which is the federal government's law enforcement arm, says it found about 20,000 people on California's voter rolls who are likely not US citizens. Only citizens can vote in federal elections. Norm covered this dispute in late October, when a federal appeals court refused to let the government block California from counting those mail ballots. Two lower courts had already sided with state election officials. State officials said the process used to flag these voters was inaccurate.",
+            "what_happened": "On Monday, the Supreme Court refused to take up an emergency request from the Trump administration. The administration had asked the court to force California to set aside and not count ballots from those 20,000 people. The request came just hours before the ruling. The court did not explain its decision, which is common for emergency cases. No justices publicly disagreed.",
+            "why_it_matters": "For now, this ruling keeps California's vote count moving as normal. Voters in the state will not see their mail ballots pulled from the count while the case goes on. The ruling also shows how courts have treated federal efforts to change state election rules before the midterms.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3f46f96a2643fae68b2303aea4917238",
+          "slug": "tennessee-national-guard-troops-aimed-guns-at-dying-man",
+          "title": "Tennessee National Guard troops aimed guns at dying man after shooting him",
+          "summary": "Body camera footage shows Guard members pointing weapons at a man bleeding on a sidewalk after one shot him.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/02/tennessee-shooting-tyrin-johnson-video"
+            }
+          ],
+          "article": {
+            "background": "The National Guard is a military force run by each state. Governors can call it into action to help during emergencies and other local situations. In this case, Guard troops were on the streets of Memphis, Tennessee, last summer. Tyrin Johnson, 20, was shot on 5 July during that time.",
+            "what_happened": "Video released Monday by Shelby County prosecutors shows Guard troops aiming their handguns at Johnson as he lay dying on a sidewalk. A Guard member had shot him in the back. A Memphis police officer's body camera recorded the officer calling for an ambulance. The officer then asked the troops whether they had a medical kit. The footage also includes stationary cameras and a bystander's cellphone video. The Tennessee Bureau of Investigation is still investigating the shooting. Johnson had been armed, according to the reporting.",
+            "why_it_matters": "Most people will never be in a situation like this one. Still, the case shows how video can give the public a clearer record of what happened during a police or Guard response. The investigation is ongoing, so the full account of the shooting is not yet settled.",
+            "quote": {
+              "text": "Hey, you guys got a medical kit or anything?",
+              "attribution": "Memphis police officer, as heard on body camera footage released by Shelby County prosecutors",
+              "source_url": "https://www.theguardian.com/us-news/2026/nov/02/tennessee-shooting-tyrin-johnson-video"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "551abd6b65fe2e22f1136eeb97fbe8e7",
+          "slug": "us-strikes-iranian-military-targets-in-strait-of-hormuz",
+          "title": "US strikes Iranian military targets in Strait of Hormuz",
+          "summary": "Iranian state media reported explosions on Qeshm Island shortly after JD Vance expressed optimism about diplomatic progress.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/03/us-strikes-irans-qeshm-island"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cx240mrm3g8vo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Iran and the United States have been in a war, and talks to end it are ongoing. Qeshm Island sits in the Strait of Hormuz, a narrow waterway that ships use to move oil out of the Gulf. Vice-president JD Vance has said he is hopeful about the diplomatic effort. The United States holds midterm elections this week, which will decide control of Congress.",
+            "what_happened": "US media reported that the United States launched limited strikes on Qeshm Island late on Monday. US officials told CBS the strikes were a response to Iran's Revolutionary Guard firing on a US aircraft. Iranian state news agency IRNA reported several explosions on the island. The strikes came hours after Vance said diplomatic efforts were moving in the right direction.",
+            "why_it_matters": "The strikes were described as defensive, and they are not thought to signal a return to full fighting. For now, the main effect for most Americans is the cost of living, which the war has pushed up. Voters head to the polls just after the strikes, and the outcome will shape how Congress handles the war going forward.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b49a56f306e331fa5d4ae8566b3c73dc",
+          "slug": "russian-bombing-kills-26-at-ukrainian-aid-center",
+          "title": "Russian bombing kills 26 at Ukrainian aid center",
+          "summary": "The strike in Zaporizhzhia region killed rescue crew members and police alongside civilians at a distribution point.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/03/russia-bombs-ukrainian-aid-centre-komyshuvakha"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cjy56dndlyz0o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Komyshuvakha is a village in the Zaporizhzhia region of southern Ukraine. The school there was being used as a shelter and as a place to hand out humanitarian aid. Ukraine and Russia have been at war since 2022. Aid centres like this one give food and supplies to people who live near the front.",
+            "what_happened": "On Monday, Russian forces bombed an aid distribution centre and a nearby shelter in the village. Emergency services said at least 26 people were killed. Among the dead were two members of a rescue crew and four police officers. Five people were in hospital, including two rescue workers. Ukrainian President Volodymyr Zelenskyy said the first strike hit a school used for humanitarian needs. A second attack then hit the place where people were sheltering.",
+            "why_it_matters": "Attacks on aid sites can make it harder for people in war zones to get food and shelter. For readers outside the region, this shows how close the fighting has come to ordinary civilian places. It is one more example of the risks facing people who help others during the war.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0e8950c806b3e62b2954720de4cd42ec",
+          "slug": "uk-and-eu-agree-draft-deal-removing-post-brexit-food-export",
+          "title": "UK and EU agree draft deal removing post-Brexit food export checks",
+          "summary": "The 200-page agreement would end customs red tape on agriculture shipments but still awaits final approval.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cmp3grwre9xdo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Brexit is the UK's exit from the European Union. Since then, food and farm goods moving between the UK and EU have faced extra checks. These checks come from SPS rules, short for sanitary and phytosanitary rules. SPS rules aim to keep food safe and protect plants and animals from disease. The UK and EU are now trying to repair their ties, a effort they call the Brexit reset.",
+            "what_happened": "The UK and EU have agreed a draft deal to remove post-Brexit checks on food and farm exports. The BBC understands the draft text runs 200 pages. It has been sent to EU countries in Brussels for review at a meeting on Wednesday. Draft texts for deals on emissions trading and a youth travel and work scheme were sent too. A 15-page draft joint statement for the top leaders came with them. The leaders are set to meet at a UK-EU summit later this month.",
+            "why_it_matters": "This is still a draft. EU countries must review it, and leaders must approve it at the summit. If it goes ahead, food and farm goods sent between the UK and EU could face fewer checks. For now, most people will not notice a change in what they buy.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "ce92ff55d644b81f73bcc811975318fa",
+          "slug": "google-takes-down-botnet-of-1-3-million-compromised-tv-boxes",
+          "title": "Google takes down botnet of 1.3 million compromised TV boxes",
+          "summary": "The infected Android devices were secretly selling users' bandwidth and running advertising fraud at massive scale.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "krebs_on_security",
+              "url": "https://krebsonsecurity.com/2026/11/tech-firms-dismantle-botnet-that-turned-1-3m-tv-boxes-into-proxies"
+            }
+          ],
+          "article": {
+            "background": "A botnet is a group of devices that have been secretly taken over by malicious software and are controlled remotely. The devices in this case are Android TV set-top boxes, the small boxes that connect a television to the internet and run streaming apps. The malicious software on these boxes rents out the owner's internet connection to strangers. It also takes part in advertising fraud, which means faking views or clicks to collect ad money.",
+            "what_happened": "Google said it worked with industry partners to take down this botnet. The network included more than 1.3 million Android TV boxes that shipped with the malicious software already installed. Experts involved in the takedown say it is likely to cut the botnet's access to more than 10 million other compromised devices. Those include other internet-connected products, such as Android-based healthcare devices and karaoke machines. Google also said it has cut ties with Videostrong Technology Co., a Chinese TV box maker that its researchers and other industry groups linked to the problem.",
+            "why_it_matters": "If you own one of these TV boxes, your internet connection may have been used by strangers without your knowledge. The takedown is meant to stop that use. Other connected devices in your home could also be affected, so it is worth checking what is plugged into your network.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "89c7cbaa02c454d110062b64e059316f",
+          "slug": "stolen-ai-keys-ran-up-nearly-one-million-dollars-in-cloud",
+          "title": "Stolen AI keys ran up nearly one million dollars in cloud charges",
+          "summary": "Attackers hijacked enterprise access to large language models and resold compute time for cryptocurrency mining.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models"
+            }
+          ],
+          "article": {
+            "background": "Large language models, or LLMs, are the AI systems behind many chatbots and writing tools. Companies pay cloud providers to use them, often based on how much they use. Access is controlled by secret codes that let software use the service, much like a password.",
+            "what_happened": "Google's Mandiant security team says it responded to multiple incidents in 2026. In these cases, attackers took over companies' access to LLMs. The report calls this tactic LLMJacking. The affected organizations were in North America, South America, and Asia Pacific. They worked in financial services, retail, technology, and transportation. One case involved nearly $1 million in charges for a single company.",
+            "why_it_matters": "If someone steals a company's AI access, they can run up charges that the company has to pay. For now, this mostly affects businesses that use these tools. Anyone who works for or buys from such a business has a stake in how well those accounts are protected.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "867005cb613dc896478987d702740cfc",
+      "title": "RBA interest rates: Bullock says ‘some pain now’ will prevent worse pain later as Reserve Bank hikes rates for fifth time",
+      "url": "https://www.theguardian.com/australia-news/2026/nov/03/rba-interest-rates-decision-cash-rate-november-reserve-bank-australia",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "dc36d599d52f03527b5a6da98a83a2e7",
+      "title": "New York child dies from measles in state’s first fatal case in 30 years",
+      "url": "https://www.theguardian.com/society/2026/nov/03/new-york-child-measles-death-first-in-30-years",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "86f281f85b124ce505f9b7bc92c05866",
+      "title": "‘A serious failure’: CPS prosecutor cites imaginary case to high court after AI search",
+      "url": "https://www.theguardian.com/technology/2026/nov/03/a-serious-failure-cps-prosecutor-cites-imaginary-case-to-high-court-after-ai-search",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "7f5c2b8f45a01ae531b76be757b28390",
+      "title": "Trump to remove Rwanda and South Africa from US trade deal",
+      "url": "https://www.bbc.co.uk/news/articles/c9j346xg0mkvo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b2ba54b4ae5d19f1aa08e767ba3bb7ef",
+      "title": "Socceroos and Matildas sue Football Australia over revenue share dispute",
+      "url": "https://www.theguardian.com/sport/2026/nov/03/socceroos-matildas-sue-football-australia-revenue-dispute",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "e22c5046315f6104b10c8d9c48db0db0",
+      "title": "Denmark pushes for EU ban on ‘turbo chickens’ as secret footage causes outrage",
+      "url": "https://www.theguardian.com/world/2026/nov/03/denmark-pushes-for-eu-ban-on-turbo-chickens-as-secret-footage-causes-outrage",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b6e7a35b65ff68118201237a831a5a63",
+      "title": "NASA's Swift space telescope predicted to crash back to Earth tomorrow",
+      "url": "https://www.abc.net.au/news/science/2026-11-03/nasa-swift-telescope-crash-landing/100018476",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "1d23f8167106a8da138c8c1f6a82f948",
+      "title": "Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials",
+      "url": "https://thehackernews.com/2026/11/attackers-target-unpatched.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "e3eb9edaa5f6a15f7df997bf2dbd6519",
+      "title": "Melbourne Cup 2026: King Charles’ former horse Point of Law storms home to win",
+      "url": "https://www.theguardian.com/sport/2026/nov/03/melbourne-cup-2026-point-of-law-winner-result-places",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 59,
+    "clusters_considered": 53,
+    "stories_run": 7,
+    "sources": 13,
+    "sections_held": 0
+  }
+}
