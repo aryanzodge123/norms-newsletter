@@ -1,0 +1,419 @@
+{
+  "date": "2026-11-04",
+  "edition_number": 150,
+  "edition_type": "normal",
+  "headline_of_the_day": "Democrats win Senate control, flipping seats in Texas, Kansas, and Maine",
+  "headline_cluster_id": "42551064b3be9eca3765da5510903a65",
+  "headline_rationale": "Democratic takeover of the Senate changes which laws can pass and which appointments can be confirmed for the next two years of the Trump presidency.",
+  "key_points": [
+    {
+      "text": "Democrats won control of the US Senate, flipping seats in Texas, Kansas, Maine, and other traditionally Republican states.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Democrat Gina Hinojosa defeated Governor Greg Abbott in Texas, ending over three decades of Republican control of the state.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "US military strikes near the Strait of Hormuz hours before midterm voting raised questions about timing and energy security.",
+      "topic": "World"
+    },
+    {
+      "text": "Canva announced it will cut or relocate 22 percent of its workforce, about 1,271 employees, after what the CEO called the hardest year yet.",
+      "topic": "Business"
+    },
+    {
+      "text": "Australia's high court ruled Uber must pay over $80 million in unpaid payroll taxes, saying drivers receive wages.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-04.mp3",
+    "duration_seconds": 379,
+    "size_bytes": 4544640
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "a673c642f2d6a2adc7cd21277be79905",
+          "slug": "canva-cuts-22-percent-of-workforce-after-hardest-year",
+          "title": "Canva cuts 22 percent of workforce after hardest year",
+          "summary": "The Australian startup will eliminate or relocate 1,271 positions, CEO Melanie Perkins announced.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cw77pg7neydmo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/australia-news/2026/nov/04/canva-layoffs-job-cuts-restructure"
+            }
+          ],
+          "article": {
+            "background": "Canva is a design platform, a web tool that lets people make posters, slides, social posts and other graphics. It was founded in Australia and is one of the country's best known start-ups. Many software companies now face pressure from cheaper artificial intelligence (AI) tools, which can produce text and images on request. Canva's value has reportedly dropped over the past year because of worries about how AI will affect its business.",
+            "what_happened": "Canva has announced a major restructure that will affect 22% of its workers. Chief executive and co-founder Melanie Perkins said 1,271 people will either lose their jobs, be asked to relocate or change roles. Perkins called it \"without doubt the hardest moment in our thirteen-year history.\" The changes also include laying off staff who helped build the company.",
+            "why_it_matters": "If you use Canva, the company's direction may shift as it reorganizes. For most people the change is about jobs in the tech sector. It also shows how software firms are trying to keep up with AI tools.",
+            "quote": {
+              "text": "without doubt the hardest moment in our thirteen-year history",
+              "attribution": "Melanie Perkins, co-founder and CEO of Canva",
+              "source_url": "https://www.bbc.co.uk/news/articles/cw77pg7neydmo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "0109d6ab82b6943b18231ce70c2bc849",
+          "slug": "poundland-supplier-warns-of-millions-in-losses-if-retailer",
+          "title": "Poundland supplier warns of millions in losses if retailer collapses",
+          "summary": "One supplier said it would survive, but smaller firms and thousands of jobs could be lost.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/ck240mm3e42do?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Poundland is a chain of discount shops in the UK. Its owner is Gordon Brothers. A supplier is a business that makes or sells goods to a store. Highcrest Retail Brands is one of Poundland's suppliers. It is a family-owned business based in Bradford.",
+            "what_happened": "Adam Turner, sales director at Highcrest, told the BBC that Poundland is one of its biggest customers. He said Highcrest would lose millions if Poundland collapsed. He also said Highcrest will survive. The BBC reports that some smaller suppliers could go under. Politicians this week asked representatives of Gordon Brothers for clarity on plans for the chain.",
+            "why_it_matters": "Poundland employs many people, and the BBC reports potentially thousands of jobs could be lost if it fails. Smaller suppliers that depend on the chain could also close. For shoppers, the future of the store is uncertain for now.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "42551064b3be9eca3765da5510903a65",
+          "slug": "democrats-win-senate-control-ending-republican-majority",
+          "title": "Democrats win Senate control, ending Republican majority",
+          "summary": "Democratic victories in Texas, Kansas, Maine, and other states give the party control of the chamber.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/03/g-s1-149526/2026-midterms-congress-balance-of-power"
+            }
+          ],
+          "article": {
+            "background": "Congress is the national lawmaking body, and the Senate is one of its two chambers. For two years, Republicans held unified control of the government in Washington. That means one party ran the key levers of power. That is now changing.",
+            "what_happened": "Democrats have won a majority in the U.S. Senate. NPR reached this conclusion using a tally of race calls from The Associated Press, a news agency that reports election winners. The result creates divided government. One party now holds the presidency, and the other holds the Senate.",
+            "why_it_matters": "A Senate majority gives Democrats oversight power. That lets them question the administration and open investigations. NPR reports those probes could dominate much of the rest of Trump's second term. For most readers, the first visible change will likely be more public scrutiny of the administration.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f6a4517397e23f7c83452fb7f9708386",
+          "slug": "democrat-wins-texas-governor-race-ending-30-years-of",
+          "title": "Democrat wins Texas governor race, ending 30 years of Republican control",
+          "summary": "Gina Hinojosa defeated incumbent Governor Greg Abbott in one of the midterms' biggest upsets.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/03/g-s1-150844/gina-hinojosa-texas-governor-abbott"
+            },
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/democrat-gina-hinojosa-wins-election-for-governor-in-texas"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/03/democrat-gina-hinojosa-greg-abbott-texas"
+            }
+          ],
+          "article": {
+            "background": "Texas has elected Republicans to its governor's office for more than three decades. Greg Abbott, a Republican, had served three terms and was seeking a fourth. Gina Hinojosa is a state representative from Austin, a member of the Texas House who represents part of the state's capital city.",
+            "what_happened": "Democrat Gina Hinojosa defeated Abbott on Tuesday, according to a race call by the Associated Press. The win ends Abbott's bid for a fourth term. Hinojosa, 52, built her campaign around public education, household costs, and criticism of the state's Republican leadership. She will take office in January 2027. She will be the first Latina governor in Texas history.",
+            "why_it_matters": "The governor sets much of the state's agenda, including its approach to public schools. Hinojosa's campaign focused on public education and the rising cost of household bills. Her win means that policy direction in Texas could change starting in January 2027. For now, the change is a new leader, not new laws.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3e81ce48e80730fc439c3957bad8396b",
+          "slug": "democrat-defeats-susan-collins-for-maine-senate-seat",
+          "title": "Democrat defeats Susan Collins for Maine Senate seat",
+          "summary": "Troy Jackson toppled the five-term Republican incumbent in one of the most watched midterm races.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/03/maine-senate-midterm-results"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/live/cj1dw0ydn595t"
+            }
+          ],
+          "article": {
+            "background": "The US Senate is one of two chambers of Congress, the national lawmaking body. Maine sends two senators to it. Susan Collins, a Republican, has held one of those seats since 1997, nearly 30 years. The 2026 midterm elections are held halfway through a president's term.",
+            "what_happened": "Democrat Troy Jackson won Maine's US Senate race. He beat Republican Susan Collins, who had served five terms. Jackson is 58 years old. The race was close and often bitter, with both sides accusing the other of corruption. Much of the campaign focused on the cost of living in the mostly rural state. CBS News projected the result.",
+            "why_it_matters": "Collins was the longest-serving Republican woman in Senate history, so this seat is changing hands. Senate votes shape laws on prices, health care, and jobs. How much this changes your life will depend on what the new Senate majority does next.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "133cfaaf499044e2b56c87c79a157667",
+          "slug": "democrat-james-talarico-wins-texas-senate-seat",
+          "title": "Democrat James Talarico wins Texas Senate seat",
+          "summary": "The victory flips a Senate seat in a state that has been reliably Republican for decades.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/democrat-james-talarico-wins-election-to-u-s-senate-from-texas"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/03/james-talarico-ken-paxton-texas-senate"
+            }
+          ],
+          "article": {
+            "background": "Texas has elected Republicans to the U.S. Senate for decades. The Senate is one of two chambers of Congress, and each state sends two senators. Ken Paxton is Texas's state attorney general, the state's top lawyer, and a close ally of President Trump.",
+            "what_happened": "Democrat James Talarico won the U.S. Senate race in Texas on Tuesday, November 3, 2026. He defeated Republican Ken Paxton. The Associated Press called it the first statewide win for a Democrat in more than 30 years. The Guardian described it as breaking a 38-year drought for the party in the state.",
+            "why_it_matters": "The result changes who represents Texas in the Senate. The Senate helps decide which laws pass and who gets confirmed to federal jobs. This race was also one of the most closely watched contests in the midterm elections, which help decide which party controls Congress.",
+            "quote": {
+              "text": "Tonight we defeated Goliath",
+              "attribution": "James Talarico, Democratic U.S. Senate candidate from Texas",
+              "source_url": "https://www.theguardian.com/us-news/2026/nov/03/james-talarico-ken-paxton-texas-senate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "cff8855a11caeb54f3f4c744fbd3e652",
+          "slug": "us-strikes-near-strait-of-hormuz-hours-before-midterm-voting",
+          "title": "US strikes near Strait of Hormuz hours before midterm voting",
+          "summary": "Military action near the key shipping route raised questions about timing and regional stability.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/u-s-strikes-strait-of-hormuz-hours-before-tuesday-midterms"
+            }
+          ],
+          "article": {
+            "background": "The Strait of Hormuz is a narrow waterway between Iran and Oman. It links the Persian Gulf to the open ocean. Many oil tankers pass through it. The reporting describes a recent U.S. action there involving Iranian targets.",
+            "what_happened": "According to Associated Press reporting, the United States carried out what appeared to be a limited strike on Iranian targets in the Strait of Hormuz. The strike came hours before Tuesday's midterm elections in the United States. The reporting raises questions about what comes next.",
+            "why_it_matters": "Trouble in this waterway can affect shipping and fuel prices, so events there can reach ordinary households. For now, the reporting does not show a direct change to daily life. Readers can watch whether the situation grows or settles.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1bcb7f4cba9cc17d20935e14301d252f",
+          "slug": "public-inquiry-calls-australia-s-nuclear-submarine-deal-the",
+          "title": "Public inquiry calls Australia's nuclear submarine deal the worst defense decision ever",
+          "summary": "Report led by Peter Garrett urges suspending the $368 billion Aukus agreement and launching a royal commission.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/nov/04/aukus-worst-australian-defence-decision-ever-public-inquiry"
+            }
+          ],
+          "article": {
+            "background": "Aukus is a defence partnership between Australia, the United Kingdom and the United States. Its main project is a plan to build nuclear-powered submarines. Nuclear-powered means the boats run on a reactor instead of diesel fuel. The agreement is worth $368 billion, according to the report. Peter Garrett, a former Labor politician and frontman of the rock band Midnight Oil, helped lead the review.",
+            "what_happened": "A public inquiry into the deal has now reported. Former defence chief Adm Chris Barrie co-led the inquiry, with Garrett. Adm is short for admiral, a senior naval officer. The report calls the plan the worst, riskiest and most costly defence decision ever made by an Australian government. It urges the deal end immediately and recommends pausing plans for new bases. It also calls for a royal commission, a high-level public inquiry, into the agreement.",
+            "why_it_matters": "The deal decides how Australia spends public money on its military. A decision this large can affect taxpayers for many years. The report's recommendations do not change the deal on their own. Any change would need the government to act.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "cdc12ef88ca5be33090e9566adacaec5",
+          "slug": "uber-must-pay-81-million-in-payroll-taxes-australia-court",
+          "title": "Uber must pay $81 million in payroll taxes, Australia court rules",
+          "summary": "High court rejected the company's claim that drivers are not employees and payments are not wages.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/04/uber-australia-high-court-loss-driver-wages-81m-payroll-tax-bill-ntwnfb"
+            }
+          ],
+          "article": {
+            "background": "Uber is a ride-hailing app that connects riders with drivers. Australian states collect payroll tax, a tax paid by businesses on wages they pay to workers. The question here was whether money Uber pays its drivers counts as wages under New South Wales state law. Uber argued it does not employ drivers and that these payments were not wages.",
+            "what_happened": "Australia's high court ruled against Uber on Wednesday. The court dismissed Uber's claim that it did not owe payroll tax in New South Wales. The decision was six to one. Uber must pay $81m for the tax years from 2015 to 2020. Uber had first won an appeal against the state revenue chief commissioner before the case reached the high court.",
+            "why_it_matters": "For most people this does not change what they pay for a ride. The ruling sets how state payroll tax applies to app-based drivers. Uber is likely to owe more for later years, which could push the total well over $100m. The case may shape how other gig companies are taxed.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "36b74e25242a9791cacfa00731fe172d",
+          "slug": "80-cent-plastic-pouch-is-saving-women-from-dying-in",
+          "title": "80-cent plastic pouch is saving women from dying in childbirth",
+          "summary": "Low-cost medical tool is reducing maternal deaths, though deployment scale remains unclear.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/11/03/health/maternal-drapes-nigeria-childbirth.html"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "c663d377c276614d8dc4007eb0d63ac8",
+          "slug": "younger-colorectal-cancer-patients-show-distinct-cellular",
+          "title": "Younger colorectal cancer patients show distinct cellular and genetic differences",
+          "summary": "Study identifies age-related tumor differences that may explain why the disease is more aggressive in younger adults.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.dana-farber.org/newsroom/news-releases/2026/study-reveals-distinct-cellular-and-genetic-differences-in-colorectal-cancer-in-younger-patients"
+            }
+          ],
+          "article": {
+            "background": "Colorectal cancer starts in the colon or rectum, the lower end of the digestive tract. Doctors have long seen it in older adults most often. Researchers have noticed that some younger patients develop more aggressive forms of it. The excerpts describe age-related differences in tumors as the area being studied.",
+            "what_happened": "Researchers from Dana-Farber Cancer Institute, Mass General Brigham, and the Broad Institute studied tumors from patients of different ages. They looked at the mix of cell types in the tumors and how certain genes were turned on or off. The study was published in Nature Medicine and is described as the largest of its kind. The team found age-associated differences in both tumor makeup and gene activity.",
+            "why_it_matters": "For now, these findings do not change how anyone is screened or treated. The study provides a starting point for finding out why colorectal cancer can act more aggressively in younger adults. Anyone who has a family history or symptoms in the lower digestive tract should keep talking with their doctor about screening.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "43aa2ba79933b4578f339e3db23fee5b",
+          "slug": "french-blood-bank-hit-by-cyberattack-that-heated-samples",
+          "title": "French blood bank hit by cyberattack that heated samples",
+          "summary": "Blood samples were reportedly heated to 110 degrees Celsius from their required minus-30 storage temperature.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/etnshow/status/2117728420477936043"
+            }
+          ],
+          "article": {
+            "background": "Blood banks store blood and blood parts in cold conditions so they stay safe to use. Plasma is the liquid part of blood, and it is used in medical treatments. Storage equipment has to hold a steady temperature, and many modern facilities run it through computer controls.",
+            "what_happened": "The French satirical weekly Le Canard Enchaîné reported that a French blood storage facility was hit by a cyberattack. According to the report, hacked equipment was set to heat blood samples to 110 degrees Celsius. Those samples were normally kept at minus 30 degrees Celsius. The 110-degree figure was the setting the equipment was changed to, not a confirmed temperature inside the storage rooms. France's health ministry said the problems were spotted in time and had no effect on operations.",
+            "why_it_matters": "If you give blood or receive a transfusion, the storage system behind it has to work. The health ministry says this attack caused no operational harm. Investigators still have to confirm what the attackers actually changed and whether any samples were affected.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fbededa6b9756dcaa5b38f2c5e5bc34d",
+          "slug": "hacker-claims-to-have-stolen-100-000-documents-from-new",
+          "title": "Hacker claims to have stolen 100,000 documents from New South Wales Health server",
+          "summary": "Officials say no patient data was affected by the breach of a dental voucher site.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.smh.com.au/national/nsw/100-000-documents-stolen-from-isolated-nsw-health-server-20261104-p61b78.html"
+            }
+          ],
+          "article": {
+            "background": "New South Wales, or NSW, is a state in Australia. NSW Health is the state government agency that runs its public health system. The website in this case was used to access dental vouchers. A voucher is a credit that pays for a specific service. Cybercrime detectives are police officers who investigate crimes carried out online.",
+            "what_happened": "A hacker claims to have accessed about 100,000 sensitive documents. The documents came from a NSW Health website used to access dental vouchers. The hacker says they crashed the server. NSW Health discovered the alleged breach on Thursday. NSW Police cybercrime detectives were notified on Friday and are now probing it.",
+            "why_it_matters": "Officials say no patient data has been affected at this time. They also say none is currently at risk. The breach is described as limited and tied to one isolated server. The investigation is still early, so more details may come out.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "a89885f98b0323bfcac368effbc3da61",
+      "title": "Canada joins coalition refusing to play ice hockey against Russia over Ukraine war",
+      "url": "https://www.theguardian.com/world/2026/nov/04/canada-bans-russian-players-junior-ice-hockey-championships-ukraine-war",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "9922bdaf93f656a264678f6369f80093",
+      "title": "Tesla allegedly misled South Korean customers about automated-driving tech",
+      "url": "https://www.reuters.com/business/autos-transportation/tesla-misled-south-korean-customers-about-automated-driving-tech-consumer-group-2026-11-04",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "334116c2b140ea5edc4b12ed9ddce581",
+      "title": "Adam Hamilton becomes the first Democratic senator from Kansas in nearly a century",
+      "url": "https://www.npr.org/2026/11/03/g-s1-151587/kansas-senate-race-hamilton-marshall",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "355411af18c469536e7b659936627770",
+      "title": "Republican Byron Donalds is elected Florida's first Black governor",
+      "url": "https://www.pbs.org/newshour/politics/watch-republican-byron-donalds-speaks-after-winning-election-for-governor-in-florida",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "1a4c20db3e1cb845e21bf11f0f7c6639",
+      "title": "Democrat David Crowley will be Wisconsin's first Black governor",
+      "url": "https://www.npr.org/2026/11/03/g-s1-151235/democrat-david-crowley-will-be-wisconsins-first-black-governor",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "955b3540040d92360fcfbd4de687d2cf",
+      "title": "Democratic socialist Janeese Lewis George wins D.C. mayoral election",
+      "url": "https://www.pbs.org/newshour/politics/janeese-lewis-george-is-washingtons-next-mayor-now-come-the-challenges-starting-with-trump",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "c3adca183260a5a63a2a0c7f2dc34fa0",
+      "title": "Democrat Josh Turek wins the Senate seat in Iowa",
+      "url": "https://www.npr.org/2026/11/03/g-s1-148956/iowa-senate-race-josh-turek",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "fb12d808f16008013d874f4bb781e331",
+      "title": "Democrat Xavier Becerra wins California governor's race, defeating Republican Steve Hilton",
+      "url": "https://www.pbs.org/newshour/politics/democrat-xavier-becerra-wins-california-governors-race-defeating-republican-steve-hilton",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "12ea07d25b4ea8a3a3c8af46548848ff",
+      "title": "Democrat Rob Sand wins Iowa governor's race, ending GOP control of the office",
+      "url": "https://www.npr.org/2026/11/03/g-s1-151136/democrat-rob-sand-wins-iowa-governors-race-ending-gop-control-of-the-office",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "0cba69fa7c272f2f7af21f8e792ce777",
+      "title": "Missourians reject ballot proposal that would have re-imposed an abortion ban",
+      "url": "https://www.npr.org/2026/11/03/g-s1-151063/missouri-abortion-ban-transgender",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "634ce781f6012214b1c68e1f114521d4",
+      "title": "Democratic rising star Ossoff projected to hold Georgia seat",
+      "url": "https://www.bbc.co.uk/news/articles/cqwyrmm2k4mpo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "ec9d3847da7dd73906bd763a44b75861",
+      "title": "South Carolina elects Democratic senator for first time in almost three decades",
+      "url": "https://www.bbc.co.uk/news/articles/cjy56z440nl9o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "b85279dc9483196ec154cb6385620fc5",
+      "title": "Greenland approves trilateral deal with Denmark and U.S. following pressure from Trump",
+      "url": "https://www.pbs.org/newshour/world/greenland-approves-trilateral-deal-with-denmark-and-u-s-following-pressure-from-trump",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 80,
+    "clusters_considered": 67,
+    "stories_run": 13,
+    "sources": 13,
+    "sections_held": 1
+  }
+}
