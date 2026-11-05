@@ -1,0 +1,239 @@
+{
+  "date": "2026-11-05",
+  "edition_number": 151,
+  "edition_type": "normal",
+  "headline_of_the_day": "American voters rejected data centers in 38 out of more than 40 local ballot measures across 13 states",
+  "headline_cluster_id": null,
+  "headline_rationale": "Grassroots voting pattern across 13 states shows voters directly blocking AI infrastructure expansion in their communities",
+  "key_points": [
+    {
+      "text": "Voters rejected data centers in 38 of 40-plus ballot measures across 13 states. Six cities banned them.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Hong Kong activist Joshua Wong was sentenced to 10 years for colluding with foreign forces.",
+      "topic": "World"
+    },
+    {
+      "text": "Australia's 188-year-old David Jones department store entered administration, putting thousands of jobs at risk.",
+      "topic": "Business"
+    },
+    {
+      "text": "Apple released a patch for a flaw hackers actively use to deliver malware that steals information.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "South Korea plans to move anti-piracy naval operations closer to the Strait of Hormuz after Trump pressure.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-05.mp3",
+    "duration_seconds": 463,
+    "size_bytes": 5562720
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "4e9dc4576aa94801fb9fe56fd9676053",
+          "slug": "david-jones-collapses-into-administration-after-188-years",
+          "title": "David Jones collapses into administration after 188 years",
+          "summary": "Australia's oldest department store chain entered voluntary administration, putting thousands of jobs at risk.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/nov/05/david-jones-stores-closing-down-collapse-administration"
+            }
+          ],
+          "article": {
+            "background": "David Jones is Australia's premier upmarket department store, a large shop that sells many kinds of goods under one roof. The retailer is 188 years old. It rents the space its stores use, and its main landlord is Scentre Group, the owner of Westfield malls. Years of steep losses left the company behind on rent. Many of its stores were not performing well.",
+            "what_happened": "David Jones has collapsed into voluntary administration. Voluntary administration is a process where an outside expert takes control of a company to see if it can be saved. The move puts thousands of jobs at risk. Talks with its main landlord, Scentre Group, broke down. Store closures are expected, and outer suburban and regional stores are seen as vulnerable.",
+            "why_it_matters": "If you shop at David Jones, your local store could close or change. Thousands of workers may lose their jobs. The company has warned that difficult decisions lie ahead. Which stores stay open is not yet known.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c3276f4383d599208f1efe135d6ec0f7",
+          "slug": "cvs-to-split-off-drugstore-business",
+          "title": "CVS to split off drugstore business",
+          "summary": "The pharmacy and health company plans to separate its retail drugstore business from the rest.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/11/04/business/cvs-health-split.html"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "6e7e7bb21a020ab4ae4bcbefa50cf8bb",
+          "slug": "hong-kong-activist-joshua-wong-jailed-for-10-years",
+          "title": "Hong Kong activist Joshua Wong jailed for 10 years",
+          "summary": "Wong was sentenced under the national security law for colluding with foreign forces. Critics say it silences opposition.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwp9g3rlp8jlo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/05/hong-kong-joshua-wong-sentenced-national-security-case"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/11/05/g-s1-152032/hong-kong-activist-wong-sentenced"
+            }
+          ],
+          "article": {
+            "background": "Joshua Wong led student protests in Hong Kong in 2014, when he was a teenager. Those protests pushed for more democratic voting rights in the city. In 2020, Beijing imposed a national security law on Hong Kong after large pro-democracy protests. Critics say the law has been used to silence opposition. Authorities say it is needed to keep the city stable.",
+            "what_happened": "Joshua Wong, 30, has been sentenced to 10 years in prison. He was convicted of colluding with foreign forces under the national security law. This is his second conviction under the law. He had been accused of working with exiled activist Nathan Law to urge foreign powers to impose sanctions on China. He pleaded guilty in September, a move that can typically reduce a sentence. He has already been in prison since 2020.",
+            "why_it_matters": "For most people outside Hong Kong, this sentence does not change daily life. It does show how the national security law is applied. Critics say it limits what people can say about politics and public protest in the city. Wong is among hundreds of campaigners and ordinary people arrested under the law.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9e838a5d7833d5a3f3d5d781210e225f",
+          "slug": "south-korea-to-expand-naval-operations-toward-strait-of",
+          "title": "South Korea to expand naval operations toward Strait of Hormuz",
+          "summary": "Seoul will seek parliament's approval to widen its anti-piracy unit's range after Trump pressed it on Iran.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/05/south-korea-to-expand-anti-piracy-unit-strait-of-hormuz"
+            }
+          ],
+          "article": {
+            "background": "South Korea runs a naval unit called Cheonghae. Its main job is to guard ships against pirates, especially near the Horn of Africa. The strait of Hormuz is a narrow passage between Iran and Oman that many of the world's oil tankers pass through. Any change to where the unit can operate needs parliament's approval.",
+            "what_happened": "South Korea's defence ministry said the government plans to expand the area where the Cheonghae anti-piracy unit can operate. The move comes after pressure from US President Donald Trump for support in his war with Iran. The government will submit a motion to parliament. The new area would reach waters near the port of Duqm in Oman, about 650 km (403 miles) from the strait. President Lee Jae Myung and the cabinet must also approve the motion.",
+            "why_it_matters": "For now this changes little for most people. It shows how the US and Iran conflict is pulling in countries far from the fighting. Fuel prices can shift when shipping through the strait is at risk, so the outcome could matter to drivers and households later.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "53b95e84220caa12709fd9e41b2291b6",
+          "slug": "german-politician-hubert-aiwanger-found-dead-in-berlin-hotel",
+          "title": "German politician Hubert Aiwanger found dead in Berlin hotel",
+          "summary": "Bavaria's deputy leader was found dead in his hotel room, and police opened an investigation.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/05/hubert-aiwanger-dead-german-politician-berlin-hotel"
+            }
+          ],
+          "article": {
+            "background": "Germany is split into states, and Bavaria is one of them, in the south of the country. Hubert Aiwanger was the deputy leader of Bavaria, a senior role in the state government. Bavaria is a large state with its own government and elected leaders.",
+            "what_happened": "Police said a prominent German politician was found dead in his hotel room on Wednesday. He was Hubert Aiwanger, 55. The hotel is in Berlin-Mitte, a central district of the German capital. Police did not say how he died. Police and prosecutors opened an investigation to find the cause and the circumstances of his death, and to rule out any third-party responsibility.",
+            "why_it_matters": "For most people, this will not change daily life. The main open question is how Aiwanger died. Police have not given further details, so the cause is still unknown.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "68c993ee1e1f599d485f9741eb1183ec",
+          "slug": "apple-flaw-actively-exploited-to-deliver-info-stealing",
+          "title": "Apple flaw actively exploited to deliver info-stealing malware",
+          "summary": "CISA added a patched Apple login flaw to its list of actively exploited bugs, so users should update devices.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/11/hackers-exploit-patched-apple-flaw-to.html"
+            }
+          ],
+          "article": {
+            "background": "The Cybersecurity and Infrastructure Security Agency, or CISA, tracks computer security threats. It keeps a list of security flaws that attackers are known to use. That list is called the Known Exploited Vulnerabilities catalog, or KEV. A security flaw is a bug that lets someone break into software or devices. Pointer Authentication is a security feature in Apple devices that makes some attacks harder.",
+            "what_happened": "CISA added a flaw in several Apple operating systems to its KEV list on Wednesday. The flaw is CVE-2024-27834, a medium-severity bug with a score of 5.5. CISA acted after reports that attackers are actively using it. Attackers used it to deliver malware that steals information. An attacker with full read and write access could bypass Pointer Authentication with it. Apple fixed the flaw in May 2024.",
+            "why_it_matters": "If you own an iPhone, iPad, or Mac, install the latest updates from Apple. Malware that steals information can expose passwords and private files. Apple's fix closes this flaw, so an updated device is safer.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fa1d70a22cc4b80c1568fa98cd259dca",
+          "slug": "white-house-staffers-use-devices-tied-to-residential-proxy",
+          "title": "White House staffers use devices tied to residential proxy services",
+          "summary": "Some staff devices run services that rent out their internet address, one linked to a Russian company.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "krebs_on_security",
+              "url": "https://krebsonsecurity.com/2026/11/want-to-rent-an-internet-address-at-the-white-house"
+            }
+          ],
+          "article": {
+            "background": "A residential proxy service lets others rent a home internet address. Researchers say these services are often used for fraud and cyberattacks. One such service is a Russian company. Its founder ran a web hosting business tied to 2016 attacks. Those attacks hit election systems in Arizona and Illinois.",
+            "what_happened": "Security experts warned today. Several White House staffers used devices tied to residential proxy services. The security firm Layer3 Intel found multiple proxy nodes. Traffic came from the Executive Office of the President's internet address network. The activity kept going from October 5 to November 3.",
+            "why_it_matters": "Government networks hold sensitive information. Outside access through them is a security concern. Most people will not feel a direct change from this.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1460cda5af5457f1b7d9001bf9f394a3",
+      "title": "American Voters Overwhelmingly Reject AI Data Centers",
+      "url": "https://www.404media.co/american-voters-overwhelmingly-reject-ai-data-centers",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "51425e809e497c77555542d971787d27",
+      "title": "Smiling can make you happier – unless someone forces you to do it",
+      "url": "https://news.ufl.edu/2026/11/smiling-happiness",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "b2adb5a5c3eb487c71f2ae058f56b901",
+      "title": "Australian F1 world champion Alan Jones dies aged 80",
+      "url": "https://www.theguardian.com/sport/2026/nov/05/australian-f1-champion-alan-jones-dies-aged-80",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "bd5aa7b159baf1b5fedff4e0886016bb",
+      "title": "UK found to be ‘dangerously’ reliant on China for critical minerals needed for defence and AI",
+      "url": "https://www.theguardian.com/world/2026/nov/05/uk-dangerously-reliant-on-china-critical-minerals-military-ai-renewable-energy",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "be67e88ab25c28d6832f8b8c523e12ad",
+      "title": "Protesters to join nationwide march as France braces for day of strike action",
+      "url": "https://www.theguardian.com/world/2026/nov/05/protesters-france-march-strikes-education-cost-of-living",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "66ff87253845f592aab619fd350edf42",
+      "title": "OpenAI AI Pipeline Generates 948 Linux Root Escalation Exploits in 30-Hour Run",
+      "url": "https://thehackernews.com/2026/11/openai-ai-pipeline-generates-948-linux.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "921f650c8c83701b991d355e7b576077",
+      "title": "Beau Lamarre-Condon tells double murder trial he suffered ‘daily bullying’ when working for NSW police",
+      "url": "https://www.theguardian.com/australia-news/2026/nov/05/beau-lamarre-condon-witness-trial-ntwnfb",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 46,
+    "clusters_considered": 42,
+    "stories_run": 7,
+    "sources": 13,
+    "sections_held": 2
+  }
+}
