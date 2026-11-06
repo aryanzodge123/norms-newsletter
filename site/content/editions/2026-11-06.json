@@ -1,0 +1,290 @@
+{
+  "date": "2026-11-06",
+  "edition_number": 152,
+  "edition_type": "normal",
+  "headline_of_the_day": "Democrats exceed 250 House seats as blue wave sweeps Congress",
+  "headline_cluster_id": "4d6ec99c78a843ba7f6f34ef1fca7342",
+  "headline_rationale": "A shift in House control changes federal legislative power and what Congress can pass for at least the next two years.",
+  "key_points": [
+    {
+      "text": "Democrats gained over 250 House seats in midterms, flipping control of Congress.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The UK will spend £2.5 billion to clear unpaid energy bills for 2.4 million households.",
+      "topic": "World"
+    },
+    {
+      "text": "Anthropic filed a warning that it is nearing AI that can improve itself.",
+      "topic": "AI"
+    },
+    {
+      "text": "Tech stocks lost trillions of dollars in value as midterm results raised AI development fears.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Fake bomb threats hit at least 25 flights across Europe this week, possibly in a coordinated effort.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-06.mp3",
+    "duration_seconds": 464,
+    "size_bytes": 5569344
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "e91dd2f24cc7412e529dd6b7b8385c2d",
+          "slug": "anthropic-warns-it-is-close-to-self-improving-ai-capability",
+          "title": "Anthropic warns it is close to self-improving AI capability",
+          "summary": "A filing suggests the lab is nearing an AI model that trains itself recursively.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai"
+            }
+          ],
+          "article": {
+            "background": "Anthropic is an AI lab, a company that builds advanced AI models. Recursive self-improvement, or RSI, is when an AI gets so good at training itself that AI progress speeds up sharply. To some AI critics, RSI is a point of no return. In their view, an AI could become powerful enough that people cannot control it.",
+            "what_happened": "On Monday, Anthropic revealed updated financials in a revised filing called an S-1/A. Revenue is rising fast, but so are its expenses. In the fine print, the filing appears to warn that the company is close to creating a model capable of RSI.",
+            "why_it_matters": "For most people, this changes nothing right away. It is a warning inside a company filing, and the reporting does not say when such a system might exist. It is worth watching because it shows how close the company believes its own work has come to this threshold.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "44fe655321309a81f96c593d228d050c",
+          "slug": "openai-pledges-no-ndas-with-public-officials-on-data-center",
+          "title": "OpenAI pledges no NDAs with public officials on data center projects",
+          "summary": "The company pledged no secrecy deals with officials after midterm voters opposed data centers.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda"
+            }
+          ],
+          "article": {
+            "background": "Data centers are large buildings full of computer servers. Companies use them to run online services and AI tools. Many data center projects have faced scrutiny. Some relied on NDAs to keep talks with local officials hidden. An NDA is a legal promise to keep information private.",
+            "what_happened": "OpenAI, the maker of ChatGPT, announced new commitments today. The commitments cover communities where OpenAI works on data center projects. The company said it will not use NDAs with public officials. The announcement came the week after midterm elections. In those elections, voters strongly opposed data center expansion.",
+            "why_it_matters": "For most people, this changes little right away. It is a company promise, not a new law. It shows that local opposition to data centers is shaping how companies act. If a data center is planned near you, you may want to know who is talking to officials.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "4d6ec99c78a843ba7f6f34ef1fca7342",
+          "slug": "democrats-exceed-250-house-seats-as-blue-wave-sweeps",
+          "title": "Democrats exceed 250 House seats as blue wave sweeps Congress",
+          "summary": "Results show Democrats flipping seats in Ohio, Arizona, and North Carolina, widening their chamber gap.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/live/2026/nov/05/midterm-elections-live-latest-updates-mississippi-senate-race"
+            }
+          ],
+          "article": {
+            "background": "US midterm elections happen halfway through a president's term. Voters choose every seat in the House of Representatives. They also choose some seats in the Senate. The House is one half of Congress, the group that writes laws.",
+            "what_happened": "Democrats gained House seats on election night. Their total is now above 250. They flipped seats in Ohio, Arizona, and North Carolina. To flip a seat means to win it from the other party. Ted Cruz called the election a 'Watergate-level repudiation.' A repudiation is a strong rejection. The Senate race in Mississippi drew close attention. Republican Cindy Hyde-Smith is the incumbent, meaning she already holds the seat. She faces Democrat Scott Colom.",
+            "why_it_matters": "Control of the House helps decide which laws get a vote. Those laws can touch daily life, like costs and workplace rules. For now, the results change no laws by themselves.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "006facb35f44f08b1b78a47464f7f2a0",
+          "slug": "federal-judge-blocks-trump-arch-construction-for-14-days",
+          "title": "Federal judge blocks Trump arch construction for 14 days",
+          "summary": "A court order halts 14 days of work on the Trump arch the administration wanted soon.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/06/nx-s1-6031990/trump-arch-planning-commission-injunction"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cq99zd93ryvko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "President Trump wants to build an arch in Washington, D.C. The National Capital Planning Commission, a federal panel that reviews major building projects in the capital, voted 8-4 on Thursday to approve it. The planned arch is 250 feet tall, about 72 meters. Opponents argued it would block the view of Arlington National Cemetery, across the Potomac River in Virginia.",
+            "what_happened": "Early Friday, federal District Judge Tanya Chutkan blocked construction for 14 days. The order came just before midnight and granted a request from the governments of D.C. and Virginia. The administration had hoped to start work right away. In a 33-page opinion, Chutkan questioned the administration's reasons for the arch. She noted its sudden focus on national security. She also agreed that the local governments are likely to be harmed.",
+            "why_it_matters": "For now, the pause means no work on the arch can start for two weeks. The judge's ruling is temporary, so the project could still move forward later. Residents of the area may care about how the arch changes the view of the cemetery and the city skyline.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "1807b39a63317ca399c455bb8c0fafc3",
+          "slug": "uk-minister-tells-energy-suppliers-to-help-write-off-2-5",
+          "title": "UK minister tells energy suppliers to help write off £2.5 billion in unpaid bills",
+          "summary": "A UK plan aims to clear record energy debts for 2.4 million households this winter.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/nov/06/minister-energy-suppliers-help-households-unpaid-bills-debt-relief"
+            }
+          ],
+          "article": {
+            "background": "Energy suppliers are the companies that sell gas and electricity to homes in Great Britain. When a household falls behind on those bills, the unpaid amount becomes debt. The chancellor, the government's top money minister, set out a wider plan in the annual budget statement last month. That plan is called a \"circuit-breaker\" strategy, meaning a set of steps meant to stop a problem from getting worse.",
+            "what_happened": "An energy minister has told the bosses of Great Britain's biggest energy suppliers to do more to help households this winter. The bosses were called to a roundtable meeting on Thursday. The government plans to spend almost £2.5bn to pay down the energy debts of about 2.4m of the hardest-hit households. The debt relief is one part of the wider plan.",
+            "why_it_matters": "For most households this changes nothing directly yet. It does show how the government plans to deal with record energy debt. Household energy debt could reach £7bn by the end of the year, so suppliers are being asked to act now.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3ba566e20643a31fbdff6022d0293f7c",
+          "slug": "bomb-threats-disrupt-at-least-25-flights-across-europe",
+          "title": "Bomb threats disrupt at least 25 flights across Europe",
+          "summary": "Fake bomb threats forced emergency landings, and officials are probing a coordinated hybrid threat.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/world/2026/nov/05/bomb-threats-disrupt-flights-across-europe-and-renew-hybrid-warfare-fears"
+            }
+          ],
+          "article": {
+            "background": "A hybrid war is a hostile campaign that stops short of open fighting. Such campaigns can use sabotage, disruption, and other acts meant to cause unrest. Bomb threats can force planes to land and stop travel for many people.",
+            "what_happened": "Hoax bomb threats have disrupted at least 34 flights across Europe this week. Some planes made emergency landings. On Thursday alone, at least 25 bomb threats affected flights. The threats reached countries including Italy, Ireland, the UK, Spain and Poland. Affected airlines include Ryanair, Aer Lingus, Wizz Air and Finnair. Others include easyJet and Aegean Airlines. All flights landed safely. Searches of the planes found nothing suspicious. Questions are growing about whether the threats were coordinated. Governments in Europe are looking at whether they are part of a wider pattern of hostile activity.",
+            "why_it_matters": "For travelers, this meant lost time and, in some cases, emergency landings. Whether a wider pattern exists could shape how governments respond next.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "b57eb75a95ad505fb86874fa2f5d34c1",
+          "slug": "regulators-approve-generic-hiv-prevention-drug-for-low",
+          "title": "Regulators approve generic HIV-prevention drug for low-income countries",
+          "summary": "Approval of a generic HIV prevention drug expands access in vulnerable regions.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/generic-lenacapavir-gilead-who-prep-hiv-c3537796e84c54d60179eba3c56561e6"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "7608eb1b892c351cf33f3c880e02d637",
+          "slug": "new-batteries-store-blistering-heat-for-energy-grid-use",
+          "title": "New batteries store blistering heat for energy grid use",
+          "summary": "A new technology stores very hot heat and turns it into electricity later.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/10/29/climate/heat-battery-thermal-energy-storage.html"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "30469d52f5a1191accc5f84bbdeb5a13",
+      "title": "Global tech stocks plunge as US midterms add to AI slowdown fears",
+      "url": "https://www.bbc.co.uk/news/articles/cmn04705rd8jo?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "67833849cc3bb2d6ad1c729836b063e4",
+      "title": "No Intel, no Qualcomm: Huawei unveils its first '100% domestic' desktop",
+      "url": "https://www.scmp.com/tech/tech-trends/article/3373435/no-intel-no-qualcomm-huawei-unveils-desktop-built-entirely-china-made-components",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "bd83d2742869b29f6e3beba28f6ae5af",
+      "title": "Why your Mac may not scan for malware",
+      "url": "https://eclecticlight.co/2026/11/05/why-your-mac-may-not-scan-for-malware",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "53f1b1f6d006713dd98bfd5ff822c904",
+      "title": "Cape Verde captain Ryan Mendes cleared of rape allegation as woman charged with false statement",
+      "url": "https://www.theguardian.com/football/2026/nov/06/cape-verde-football-ryan-mendes-sexual-assault-allegation-dismissed-ntwnfb",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "650c161e1cb661968da661eb06d826c1",
+      "title": "US FAA says it will phase out floppy disks from air traffic control by 2028",
+      "url": "https://www.reuters.com/world/us/us-faa-says-it-will-phase-out-floppy-disks-air-traffic-control-by-2028-2026-11-05",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "0f6644635c6ac230835847e349e2942b",
+      "title": "Police turn to charities for help with teenagers caught up in online child abuse",
+      "url": "https://www.theguardian.com/society/2026/nov/06/police-charities-pornography-online-child-abuse",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "c90ed58facd66f0a7a3bcf76c28dd59e",
+      "title": "Alabama, Florida and Indiana carry out executions on same day",
+      "url": "https://www.theguardian.com/us-news/2026/nov/05/executions-florida-alabama-indiana",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "e1145789f4a4189cefd33acd563ddc89",
+      "title": "Democratic socialist defeats incumbent Karen Bass in Los Angeles mayor's race",
+      "url": "https://www.bbc.co.uk/news/articles/c6e3xxwk3k11o?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "4c006d4e530598fe52b43b0540d9ffda",
+      "title": "Trump signs proclamation to try to prevent changes to gold-covered Oval Office",
+      "url": "https://www.theguardian.com/us-news/2026/nov/05/trump-oval-office-design-proclamation",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "c488456a665ac9f08396538b54b29e90",
+      "title": "Bondi beach shooting: Eva Geller, 90, shot during massacre dies in hospital year after antisemitic attack",
+      "url": "https://www.theguardian.com/australia-news/2026/nov/06/bondi-beach-shooting-woman-dies-year-after-terror-attack-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "f7104bf90485692e3c74fa210bbd0ee2",
+      "title": "BBL veteran Chris Lynn serves secret drugs ban after allegedly testing positive for cocaine",
+      "url": "https://www.theguardian.com/sport/2026/nov/06/cricket-chris-lynn-secret-drugs-ban-revealed",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "cbca6e4050a2444e73e7ccbec68ddb37",
+      "title": "Socceroos urge FA to move Jordan friendly in Middle East due to safety concerns",
+      "url": "https://www.theguardian.com/football/2026/nov/06/socceroos-football-australia-jordan-friendly-middle-east-safety-concerns",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "b1c585ae746ef0f1da5bc5907b34f66d",
+      "title": "'I've taken an extra job to pay for heating oil'",
+      "url": "https://www.bbc.co.uk/news/articles/cmj47j7e92gvo?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 57,
+    "clusters_considered": 54,
+    "stories_run": 8,
+    "sources": 10,
+    "sections_held": 1
+  }
+}
