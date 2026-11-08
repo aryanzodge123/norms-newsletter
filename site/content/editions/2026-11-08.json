@@ -1,0 +1,373 @@
+{
+  "date": "2026-11-08",
+  "edition_number": 154,
+  "edition_type": "normal",
+  "headline_of_the_day": "Gunman kills six in Kraków market square shooting, Poland calls it terror",
+  "headline_cluster_id": "1eadb4966f939cee7abc6ba6271eaa57",
+  "headline_rationale": "A mass shooting in a major European city with six dead, 16 wounded, and officials calling it an act of terror is the day's most serious and consequential event.",
+  "key_points": [
+    {
+      "text": "A gunman killed six people and wounded 16 in a crowded market square in Kraków, Poland, in what officials called an act of terror.",
+      "topic": "World"
+    },
+    {
+      "text": "Israel's president picked Netanyahu rival Gadi Eisenkot to try forming a government after a deadlocked election left neither man with a clear path.",
+      "topic": "World"
+    },
+    {
+      "text": "Hackers stole up to 133 million dollars from French bank Crédit Mutuel Arkéa using a service provider, though customer assets were unaffected.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "UK public bodies are flooded with AI-generated complaints and requests, often complex and time-consuming to answer.",
+      "topic": "AI"
+    },
+    {
+      "text": "NASA awarded contracts for Moon Base transportation, technology, and science projects to expand lunar exploration capabilities.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-08.mp3",
+    "duration_seconds": 421,
+    "size_bytes": 5054688
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "b0f3286a0224472017d9d53b90a3f57e",
+          "slug": "uk-public-bodies-battle-flood-of-chatbot-generated",
+          "title": "UK public bodies battle flood of chatbot-generated complaints and requests",
+          "summary": "MPs, councils, lawyers, and schools are receiving surges of AI-written correspondence, often complex to answer.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/nov/08/ai-clog-public-bodies-local-authorities-onslaught-chatbot-generated-correspondence"
+            }
+          ],
+          "article": {
+            "background": "Many UK public bodies handle letters, emails, and complaints from members of the public. These include MPs, local councils, schools, and some law firms. Public bodies usually must read and answer each message. Some of the messages now come from AI chatbots, which are computer programs that write text on request. Before now, most of this work was written by people.",
+            "what_happened": "Floods of grievances, requests and legal challenges are reaching these bodies. Many are hard to read and hard to answer. Hollie Wickens is a senior caseworker in a Labour MP's office. She says the volume started small in 2024 and has grown fast since. She says about half of the emails her office gets are some form of AI-generated text.",
+            "why_it_matters": "If you write to a council or your MP, your message may now compete with many machine-written ones. Staff may take longer to reply to each person. For now this changes little for most people, but slower replies are a real risk for anyone who needs help from these offices.",
+            "quote": {
+              "text": "Half the emails we receive are some form of AI.",
+              "attribution": "Hollie Wickens, senior caseworker in a Labour MP's office",
+              "source_url": "https://www.theguardian.com/technology/2026/nov/08/ai-clog-public-bodies-local-authorities-onslaught-chatbot-generated-correspondence"
+            }
+          }
+        },
+        {
+          "cluster_id": "3ffc6fecb09246608b46ce99385af4d1",
+          "slug": "anthropic-blocks-russian-users-after-taking-subscription",
+          "title": "Anthropic blocks Russian users after taking subscription fees, retains biometric data",
+          "summary": "Users report subscriptions charged before verification, then access revoked with no refund path available.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/make_claude/status/2119091439623721443"
+            }
+          ],
+          "article": {
+            "background": "Claude is an AI assistant made by Anthropic. People pay a subscription to use it. Online services often limit access by country, usually because of sanctions or other legal rules. The main source for this story is one post on Twitter from an account called make_claude. The post describes what it says Russian-speaking users face.",
+            "what_happened": "The post lists several problems it says Russian-speaking Claude users face. It says users are charged first and asked to verify their identity afterward. People with virtual cards or gift subscriptions may have no clear way to get a refund, the post says. The verification step can collect biometric data, which means data about a person's body, and the post says it can be kept for three years. It also says device IDs and email addresses are logged and blocked, and linked GitHub repositories, where developers store code, are shut down.",
+            "why_it_matters": "If you live in Russia, or log in from a Russian internet address, this could cut off your access to Claude. The post says the block follows nationality, not just location. It says an American in Russia can use Claude, but a Russian with legal residence in the EU cannot. Before paying, check the refund rules for the payment method you plan to use.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "d56739554fd5efd5093d97c64af6aa5c",
+          "slug": "gen-z-voters-gave-democrats-a-50-point-margin-fueling",
+          "title": "Gen Z voters gave Democrats a 50-point margin, fueling election gains",
+          "summary": "Voters under 30 swung sharply toward Democrats compared to 2024, when the party lost ground with young people.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/08/nx-s1-6032829/gen-z-voters-midterm-elections"
+            }
+          ],
+          "article": {
+            "background": "Gen Z means people under 30. Democrats have done well in recent elections when they win young voters by at least 20 points. Young voters have not always stayed loyal to one party. In 2024, voters under 30 moved toward Donald Trump, who promised to improve their economic prospects.",
+            "what_happened": "On Tuesday, Democrats carried voters under 30 by nearly 50 points. That figure comes from exit polling, which surveys people as they leave polling places. The result is a sharp change from 2024, when the party lost ground with young people. Young voters gave Republicans a strong rebuke this week. They chose Democrats and the party's message of change.",
+            "why_it_matters": "Young voters make up a large share of the electorate, so their choices can shift who holds power. For most people, one election changes daily life slowly. The policies that follow will show what this shift means for jobs and costs.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2fa82bd74694c6d3ed760028874ed56b",
+          "slug": "beto-o-rourke-says-texas-midterm-results-have-him-over-the",
+          "title": "Beto O'Rourke says Texas midterm results have him over the moon",
+          "summary": "The former congressman credits past Democratic efforts for the party's strong performance in Texas this week.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/07/nx-s1-6030966/texass-blue-tsunami-has-former-texas-congressman-beto-orourke-over-the-moon"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "1eadb4966f939cee7abc6ba6271eaa57",
+          "slug": "gunman-kills-six-in-krak-w-market-square-poland-calls",
+          "title": "Gunman kills six in Kraków market square, Poland calls attack terrorism",
+          "summary": "A 25-year-old Polish man opened fire with an automatic weapon in the city's main square Saturday afternoon.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/07/krakow-poland-shooting-market-square-deaths-gunman"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Kraków is Poland's second largest city. Its Main Market Square is a busy central point where many people gather. The suspect was reported to have ties to the far-right, a political movement that holds extreme nationalist views.",
+            "what_happened": "On Saturday, shortly before 3pm local time, a gunman drove into the Main Market Square and began firing at people from his car. Police said he used military weapons. Authorities said six people were killed and 16 were wounded. Four women and two men died, and one of the dead was a British citizen. Police later found three more bodies at the suspect's home. The suspect is a 25-year-old Polish citizen.",
+            "why_it_matters": "For most people, this attack is a reminder that public places can be targets of violence. Officials have called it an act of terror, and the investigation into the suspect's motives and any wider links is ongoing. Readers who want updates can follow official statements as they are released.",
+            "quote": {
+              "text": "Act of terror on the people of the city.",
+              "attribution": "Poland's defence minister",
+              "source_url": "https://www.theguardian.com/world/2026/nov/07/krakow-poland-shooting-market-square-deaths-gunman"
+            }
+          }
+        },
+        {
+          "cluster_id": "403e9949faf895629a5dae1cbcf2a456",
+          "slug": "israel-s-president-picks-netanyahu-rival-to-try-forming-new",
+          "title": "Israel's president picks Netanyahu rival to try forming new government",
+          "summary": "Gadi Eisenkot received the mandate after a deadlocked election left no clear path to power for either leader.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/07/israel-president-gadi-eisenkot-form-government"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/11/07/g-s1-152536/netanyahu-israel-government-eisenkot-herzog"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/israels-president-taps-opposition-candidate-eisenkot-to-form-a-government-in-setback-for-netanyahu"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Israel's parliament is called the Knesset, and it has 120 seats. After a recent election, neither Prime Minister Benjamin Netanyahu's Likud party nor the opposition did well enough to form a majority. Netanyahu's Likud won 27 seats, six more than Yashar, the party led by Gadi Eisenkot. Eisenkot is a former chief of staff of the Israel Defense Forces, the country's military. The president does not pick a winner outright. He picks a person to try to build a coalition, meaning a group of parties that together hold a majority.",
+            "what_happened": "President Isaac Herzog told Eisenkot on Saturday night that he would give him the chance to form a government. The formal appointment is set for a ceremony on Sunday at the president's residence in Jerusalem. Eisenkot will have 28 days to try to build a government, with a possible 14-day extension. In a post on X, Eisenkot wrote that Israel needs a national emergency government.",
+            "why_it_matters": "For now this changes nothing about daily life for most people, since no new government has been formed yet. It is a setback for Netanyahu, who remains in power only in a caretaker role until a new government is in place. If Eisenkot succeeds, the policies that shape Israel's government, including its military and its relations with neighbors, could shift.",
+            "quote": {
+              "text": "Now is the time to form a national emergency government. I will do everything to ensure we are worthy.",
+              "attribution": "Gadi Eisenkot, leader of the Yashar party, in a post on X",
+              "source_url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "25e8b72b1b022a2a17345cce1e39f074",
+          "slug": "paraguay-charges-former-president-over-bank-collapse-that",
+          "title": "Paraguay charges former president over bank collapse that triggered national crisis",
+          "summary": "Santiago Peña faces breach of trust charges after a bank failure that forced him from office last year.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c68jzzvjgdy9o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Paraguay is a country in South America. Its former president, Santiago Peña, was removed from office after lawmakers voted to impeach him. Impeachment means lawmakers vote to remove a leader from office. The crisis began when Ueno Bank collapsed, and more than half of the country's people lost access to their bank accounts. Norm covered this story earlier, when Peña was detained minutes after Congress impeached him.",
+            "what_happened": "Prosecutors have now charged Peña over his alleged role in a banking scandal. They say he misused his power, which is a charge known as breach of trust. They also accuse him of administration for personal gain. Ueno Bank has links to Peña's private business interests. Peña denies any wrongdoing. He was arrested on Friday, minutes after lawmakers, including members of his own party, unanimously voted to remove him.",
+            "why_it_matters": "For most people outside Paraguay, this changes little right now. For Paraguayans, the case will test whether a former leader can be held to account for helping a bank tied to his own business. Many people were cut off from their money during the crisis. The outcome may shape how much people trust their banks and their officials.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "f50cd398a26b9e25126638ef79afac6d",
+          "slug": "nasa-awards-contracts-for-moon-base-transportation-and",
+          "title": "NASA awards contracts for Moon Base transportation and nuclear-powered rover",
+          "summary": "The agency announced projects for commercial robotic deliveries, launch services, and lunar surface infrastructure.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "nasa_news",
+              "url": "https://www.nasa.gov/news-release/nasa-awards-moon-base-transportation-technology-science-projects"
+            }
+          ],
+          "article": {
+            "background": "NASA is building what it calls a Moon Base, a long-term effort to work on the Moon. The goal is a sustained presence at the Moon's South Pole. Sustained means people and equipment working there over long stretches, not brief visits. NASA is doing much of this work with American industry, meaning private companies.",
+            "what_happened": "On Saturday, NASA announced a set of awards and mission updates. The projects cover commercial robotic deliveries, which are cargo sent by automated machines run by private companies. They also cover a nuclear-powered rover named PROMISE, plus launch and orbital transfer services. Surface infrastructure is also part of the work. NASA shared the news at the MAX POWER aerospace expo and air show at Kennedy Space Center in Florida.",
+            "why_it_matters": "For now, this changes little for most people. It is an early step in a long plan to work on the Moon. The awards show which companies NASA is choosing to help build that plan, and NASA's work is paid for with public money.",
+            "quote": {
+              "text": "We are building the Moon Base mission by mission.",
+              "attribution": "Jared Isaacman, NASA Administrator",
+              "source_url": "https://www.nasa.gov/news-release/nasa-awards-moon-base-transportation-technology-science-projects"
+            }
+          }
+        },
+        {
+          "cluster_id": "90f6ec09ddb68706b466cdb0c645df36",
+          "slug": "reintroduced-white-tailed-eagles-risk-wiping-out-endangered",
+          "title": "Reintroduced white-tailed eagles risk wiping out endangered seabird colonies, experts warn",
+          "summary": "Ecologists say puffins, guillemots, and other breeding populations could collapse if large numbers are released.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/environment/2026/nov/08/reintroduction-white-tailed-eagles-seabird-colonies-risk-england-wales"
+            }
+          ],
+          "article": {
+            "background": "White-tailed eagles are large birds of prey. They are being brought back to England and Wales through reintroduction, which means releasing animals into places they once lived. Seabirds spend most of their lives at sea and nest in large groups called colonies, often on cliffs and islands. Several of the seabirds in this story are already endangered.",
+            "what_happened": "Ecologists and conservationists are warning that reintroduced white-tailed eagles could harm endangered seabird populations. The birds at risk include puffins, guillemots, razorbills, fulmars and kittiwakes. Some colonies could be wiped out. Some academics and conservationists say breeding groups could collapse if large numbers of eagles are released. Tim Birkhead, an emeritus professor of ecology and evolution at the University of Sheffield, says the risk seems to have been overlooked.",
+            "why_it_matters": "For now, the warning is about what could happen if large numbers of eagles are released. Puffins and other seabirds are part of the coastal wildlife many people see on trips to the coast. If their colonies shrink or disappear, that change would be visible to the people who visit those places.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "690c3beaece7eb2957f7365a5fff1cd9",
+          "slug": "hackers-steal-133-million-dollars-from-french-bank-via",
+          "title": "Hackers steal 133 million dollars from French bank via service provider",
+          "summary": "Crédit Mutuel Arkéa says the attacker used its own account but customer assets remain unaffected.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider"
+            }
+          ],
+          "article": {
+            "background": "Crédit Mutuel Arkéa is a French cooperative bank, a bank owned by its members. The group has more than 5.8 million members and 211.5 billion euros in assets. Banks hold customers' money and move it between banks every day. A cyberattack is an attack carried out through computer systems.",
+            "what_happened": "Hackers targeted Crédit Mutuel Arkéa in a cyberattack. The attack enabled fraudulent transactions of up to $133 million. The bank suspended some of its systems in response. The bank says the attacker used the bank's own account to start transactions to other banking organizations. It also says customer assets were not affected. Reports first emerged on November 2, initially from blockchain fraud investigator ZachXBT. He had warned of a large unauthorized withdrawal from several centralized exchange accounts a day earlier.",
+            "why_it_matters": "If you bank with Crédit Mutuel Arkéa, the bank says your assets were not affected. The case shows that a break-in at one bank can send money to other banks. For most people, the main question is whether their own money is safe, and the bank says it is.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "428040e372a0115d11704dbf34fa68a7",
+          "slug": "us-intelligence-memo-claims-china-recruited-executive-to",
+          "title": "US intelligence memo claims China recruited executive to spy on Nvidia CEO",
+          "summary": "The memo alleges technology executive Alice Huang was recruited by China's Ministry of State Security, according to reports.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo"
+            }
+          ],
+          "article": {
+            "background": "Nvidia is a major chip company, and Jensen Huang is its chief executive. Megaspeed is a company based in Singapore. China's Ministry of State Security is the country's main intelligence agency. The New York Times had earlier reported that Nvidia's chief executive was a target of Chinese intelligence.",
+            "what_happened": "A memo circulated earlier this year. It claimed that Alice Huang, an executive at Megaspeed, was recruited by China's Ministry of State Security to spy on Jensen Huang. The New York Times was the first to report on the memo, which was reportedly based on U.S. intelligence. The Financial Times later reported that the memo also claimed Jensen Huang had a romantic relationship with Alice Huang. An Nvidia spokesperson told the New York Times that Jensen Huang's interactions with Alice Huang were not unusual.",
+            "why_it_matters": "The claims come from a memo as described by news outlets, so they are not settled facts. For most people, this changes nothing right now. It does show how closely governments watch the leaders of major technology companies, and that attention can affect the rules those companies face.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1c60286202c903520541a2204ac99acb",
+      "title": "GitHub New pull request overview page in public preview",
+      "url": "https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "3b463bcecb37ee458c36d4b3d4fc44f7",
+      "title": "Hutchinson beats Buatsi to win WBC light-heavyweight title",
+      "url": "https://www.bbc.co.uk/sport/boxing/articles/cqx2vw8demexo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "961f1695c5869660e5c59d839664982d",
+      "title": "FAA announces first US digital air traffic control towers in Florida and Alaska",
+      "url": "https://www.theguardian.com/us-news/2026/nov/07/faa-digital-air-traffic-control-tower-technology",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "0178d2f9805111c8450509258999525a",
+      "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
+      "url": "https://www.bbc.com/news/articles/ckjrwx1r2d5ro",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "694e50865e8bae94109fd6f70f878036",
+      "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+      "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "8361887cb8912dd5f1b3d8efca0af807",
+      "title": "Hot fridges, a fake nuclear alert and a $6bn heist: are we in the foothills of a hacking epidemic?",
+      "url": "https://www.theguardian.com/news/ng-interactive/2026/nov/08/hot-fridges-a-fake-nuclear-alert-and-a-6bn-heist-are-we-in-the-foothills-of-a-hacking-epidemic",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "5a2cf1e67f5506cfd48061ab4cb73383",
+      "title": "Psychiatrists and paediatricians among specialists most likely to charge ‘extreme’ fees, thinktank finds",
+      "url": "https://www.theguardian.com/australia-news/2026/nov/08/psychiatrists-paediatricians-extreme-specialist-fees-health-australia",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "fdd32db64ef7197020474d6312e1f0d5",
+      "title": "‘Windrush’ accusations over sharp rise in Turkish nationals facing removal from UK",
+      "url": "https://www.theguardian.com/politics/2026/nov/08/turkish-nationals-uk-indefinite-leave-to-remain-home-office-windrush",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0c9d79ec8839fc9f9b5565610565dfe7",
+      "title": "Sen. Chris Murphy's stroke at 53 highlights a trend: Strokes among younger adults have risen",
+      "url": "https://www.pbs.org/newshour/health/sen-chris-murphys-stroke-at-53-highlights-a-trend-strokes-among-younger-adults-have-risen",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "9c1bffff1f57558aff149f94c890de6c",
+      "title": "Melania Trump and LSU announce a scholarship program for students who were in foster care",
+      "url": "https://www.pbs.org/newshour/politics/melania-trump-and-lsu-announce-a-scholarship-program-for-students-who-were-in-foster-care",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "96e4205bb2fdb84769df5bd064d483f7",
+      "title": "Trump says he's asked UFC's Dana White to be his press secretary",
+      "url": "https://www.pbs.org/newshour/politics/trump-says-hes-asked-ufcs-dana-white-to-be-his-press-secretary",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 112,
+    "clusters_considered": 97,
+    "stories_run": 11,
+    "sources": 13,
+    "sections_held": 1
+  }
+}
