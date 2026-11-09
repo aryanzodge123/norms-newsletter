@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-09",
+  "edition_number": 155,
+  "edition_type": "normal",
+  "headline_of_the_day": "Nvidia opens investigation into CEO Jensen Huang after intelligence report of foreign targeting",
+  "headline_cluster_id": "868151ef474ce33e53b6d1d9e904b56a",
+  "headline_rationale": "A Fortune 500 company investigating whether its CEO was targeted by foreign intelligence affects corporate governance and national security in the chip industry.",
+  "key_points": [
+    {
+      "text": "Nvidia is investigating CEO Jensen Huang after reports he was targeted by a foreign intelligence effort.",
+      "topic": "Business"
+    },
+    {
+      "text": "Trump told CBS his deportation policy was too tough and offered to strike an immigration deal with Democrats.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Kyle Larson won his third NASCAR Cup title in six years, becoming the first back-to-back champion since 2010.",
+      "topic": "Sports"
+    },
+    {
+      "text": "Pope Leo criticized Argentine president Javier Milei's austerity measures, saying the economy must serve people.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-09.mp3",
+    "duration_seconds": 406,
+    "size_bytes": 4868928
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "868151ef474ce33e53b6d1d9e904b56a",
+          "slug": "nvidia-investigating-ceo-after-foreign-intelligence",
+          "title": "Nvidia investigating CEO after foreign intelligence targeting report",
+          "summary": "The company opened an independent probe following reports Jensen Huang had ties to a suspected Chinese spy.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/08/nvidia-jensen-huang-investigation"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c3dxw10rjn9no?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50"
+            }
+          ],
+          "article": {
+            "background": "Nvidia is one of the most valuable companies in the world. It sits at the center of the booming AI economy, and many tech and financial partners depend on it. Earlier this year, a memo circulated that claimed Alice Huang, a technology executive at Megaspeed, was recruited by China's Ministry of State Security, a state intelligence service, to spy on Nvidia's CEO. The New York Times reported on the memo first.",
+            "what_happened": "On Sunday, Nvidia said it is starting an independent investigation. The company acted after recent reports that CEO Jensen Huang was the target of a foreign intelligence effort. The New York Times reported in October that Donald Trump had been briefed last year on intelligence about Huang. That intelligence said Huang had a close relationship with a Chinese businesswoman who passed information to Beijing. Huang has also admitted he was unfaithful to his wife and apologized to her and their children.",
+            "why_it_matters": "Many tech and financial firms depend on Nvidia, so its leadership decisions can reach beyond the company. The board says it has no reason to believe company secrets or national security were compromised. For most people, nothing changes yet, but the investigation's findings will show how seriously the company treats the case.",
+            "quote": {
+              "text": "I think he’s an honorable guy. I think he probably has an excuse for it.",
+              "attribution": "Donald Trump, US president",
+              "source_url": "https://www.theguardian.com/us-news/2026/nov/08/nvidia-jensen-huang-investigation"
+            }
+          }
+        },
+        {
+          "cluster_id": "bd496e657809370c6221e01588834bd5",
+          "slug": "starbucks-plans-to-hire-7-500-workers-in-uk-expansion",
+          "title": "Starbucks plans to hire 7,500 workers in UK expansion",
+          "summary": "The coffee chain will focus hiring in the Midlands, north of England, Wales and Scotland over five years.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/nov/09/starbucks-hire-7500-staff-uk-expansion-plan"
+            }
+          ],
+          "article": {
+            "background": "Starbucks is a US coffee shop chain that also runs stores in other countries. It employs more than 18,000 people in the UK. Last year it shut dozens of underperforming shops in Britain. Those closures were part of a $1bn (£750m) global restructuring, which is a large reorganisation of how the company runs. The company set out this growth plan earlier this year.",
+            "what_happened": "Starbucks has set out plans to hire 7,500 new baristas, the staff who make drinks, over the next five years. The company said the hiring will focus on the Midlands, the north of England, Wales and Scotland. The roles are expected to staff 500 new coffee shops. Starbucks hopes to open those shops across the country by 2031. The hiring is also expected to boost youth employment.",
+            "why_it_matters": "If you are looking for work, these jobs could be open in the Midlands, the north of England, Wales and Scotland. If you live in those areas, new shops could open near you by 2031. For now this is a company plan with targets, so the number of jobs and shops will depend on how it goes.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "86995f0bafa79057c91c1720331d5180",
+          "slug": "pope-leo-rebukes-argentina-s-president-over-austerity-in",
+          "title": "Pope Leo rebukes Argentina's president over austerity in Buenos Aires speech",
+          "summary": "He told a crowd the economy must serve people, drawing applause during his Latin America visit.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/09/pope-leo-argentina-visit-speech-javier-milei-austerity"
+            }
+          ],
+          "article": {
+            "background": "Pope Leo XIV leads the Catholic Church. Argentina's president, Javier Milei, has pursued austerity, which means cutting government spending. Governments often use austerity to balance their budgets. The pope arrived in Argentina on the second stop of a tour of Latin America.",
+            "what_happened": "On Sunday, Pope Leo gave a speech in Buenos Aires. He said the economy must serve people, not the other way around. He spoke about people who work hard but still struggle to meet their household's needs. He asked for special concern for those affected by illness, dependency and disability. The speech drew loud applause from the crowd.",
+            "why_it_matters": "This is a statement from a religious leader about how government budgets affect ordinary families. Cuts to public spending can change the help people receive and the costs they face. The pope's words add a moral voice to that debate. They do not change any law or policy on their own.",
+            "quote": {
+              "text": "The economy must be at the service of the people, rather than people being at the service of the economy.",
+              "attribution": "Pope Leo XIV, speaking in Buenos Aires",
+              "source_url": "https://www.theguardian.com/world/2026/nov/09/pope-leo-argentina-visit-speech-javier-milei-austerity"
+            }
+          }
+        },
+        {
+          "cluster_id": "4e03b6ad1179a14281cfe60d23e20e2a",
+          "slug": "promise-to-end-rough-sleeping-in-england-by-christmas-at",
+          "title": "Promise to end rough sleeping in England by Christmas at risk",
+          "summary": "Rough sleeper numbers rose nearly 1,000 between January and June to 8,748, the highest on record.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/nov/09/burnham-homelessness-pledge-rough-sleeping-england"
+            }
+          ],
+          "article": {
+            "background": "Rough sleeping means sleeping outdoors or in places not meant for sleeping, such as doorways or tents. Councils often place people in temporary housing while they look for a longer-term home. A severe housing shortage means there are not enough homes people can afford. Andy Burnham has pledged to get everyone off the streets by Christmas.",
+            "what_happened": "Official figures show nearly 1,000 more people sleeping rough in England between January and June. In June, there were 8,748 rough sleepers in England. That is the highest number since November 2025. By the end of June, only 15% of them had been found accommodation, the lowest level since August 2025. Councils are struggling to meet demand for temporary and affordable homes.",
+            "why_it_matters": "If the pledge is missed, more people may spend the winter outside. Cold weather raises the risk of serious illness for people without shelter. The figures also show how hard it is to find a home for people who have nowhere to go.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "9701232689bac9ccaf82253e4a23f2d1",
+          "slug": "china-s-intelligence-service-recruited-woman-who-targeted",
+          "title": "China's intelligence service recruited woman who targeted Nvidia CEO",
+          "summary": "The Ministry of State Security recruited a businesswoman to pass information from Jensen Huang to Beijing.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/11/06/us/politics/chinese-spy-agency-nvidia-jensen-huang.html"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "bd21b82b6540bf10b68f791b5d060f28",
+          "slug": "security-researcher-finds-vulnerability-in-connected-car",
+          "title": "Security researcher finds vulnerability in connected car platform",
+          "summary": "One car brand's platform allowed unlocking vehicles remotely in most of the world, researcher reports.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world"
+            }
+          ],
+          "article": {
+            "background": "A connected car platform is software that links a car to the internet. It lets owners do things from a phone, such as locking or unlocking the car. The author bought a new SUV from a brand they call X in 2023, their first car with this kind of system. They had looked at similar platforms before and were doubtful about how safe they were.",
+            "what_happened": "In July, the author worked with security researcher Sam Curry. Together they examined the security of one large automaker's connected car systems. The post refers to that automaker only as X. The headline says the problem reaches cars in most of the world.",
+            "why_it_matters": "If you own a car you control with a phone app, this kind of system may be on your car too. Security weaknesses in these systems could affect who can open or start your vehicle. The material here does not show what was found, so the practical risk to owners is not yet clear.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "513f344191d65b2ae5e522f63bdff0e2",
+      "title": "Trump tells 60 Minutes that deportation policy was ‘too tough’",
+      "url": "https://www.theguardian.com/us-news/2026/nov/09/trump-tells-60-minutes-deportation-policy-too-tough-ice-immigration",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "8ef30ccf0956b898dc6b90b1ff4b282e",
+      "title": "Kyle Larson joins Nascar’s all-time greats with third Cup title in six years",
+      "url": "https://www.theguardian.com/sport/2026/nov/08/kyle-larson-nascar-cup-series-championship-homestead",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "c45baa5f9e959f0566901a5a1235df18",
+      "title": "Ozone Hole Reaches Its 2026 Maximum",
+      "url": "https://science.nasa.gov/earth/earth-observatory/ozone-hole-reaches-its-2026-maximum",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "4240986069b0a77d11680b5e11f02f83",
+      "title": "Cryptocurrencies slide to two-month lows after US midterms",
+      "url": "https://www.reuters.com/business/cryptocurrencies-slide-two-month-lows-after-us-midterms-2026-11-08",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "60696669b80ada842b904089ab98f976",
+      "title": "Asahi Linux Drops MIT, Goes Full GPL After AI Used to Steal Unreleased Code",
+      "url": "https://itsfoss.com/news/asahi-linux-drops-mit-for-gpl",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 33,
+    "clusters_considered": 31,
+    "stories_run": 6,
+    "sources": 8,
+    "sections_held": 0
+  }
+}
