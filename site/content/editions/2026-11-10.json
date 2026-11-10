@@ -1,0 +1,373 @@
+{
+  "date": "2026-11-10",
+  "edition_number": 156,
+  "edition_type": "normal",
+  "headline_of_the_day": "Nvidia falls 4% as board probes CEO's alleged Chinese spy affair.",
+  "headline_cluster_id": null,
+  "headline_rationale": "Hundreds of billions in market value wiped out at world's most valuable chip company, with FBI involved and national security implications.",
+  "key_points": [
+    {
+      "text": "Nvidia shares fell 4 percent as its board probes CEO Jensen Huang's alleged affair with a Chinese spy.",
+      "topic": "Tech"
+    },
+    {
+      "text": "France says Iran was behind a cyberattack that overheated freezers at 700 supermarket sites.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Hackers are exploiting a critical Linux flaw to log into privileged accounts through SSH.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Republican Thomas Massie filed impeachment articles against Defense Secretary Pete Hegseth, forcing a vote in two days.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The College Football Playoff will expand to 24 teams starting next fall, tripling the field after just three years at 12 teams.",
+      "topic": "Sports"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-10.mp3",
+    "duration_seconds": 464,
+    "size_bytes": 5573088
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "1344d029dcbf441ccf1a0adbf6d2db63",
+          "slug": "boeing-to-cut-5-percent-of-its-commercial-airplane-workforce",
+          "title": "Boeing to cut 5 percent of its commercial airplane workforce",
+          "summary": "Boeing says output is slower than expected, so it will cut 5 percent of commercial jobs.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/11/09/boeing-layoffs-commercial-airplane.html"
+            }
+          ],
+          "article": {
+            "background": "Boeing builds commercial airplanes, the large jets airlines use to fly passengers. The 737 Max is the company's bestselling model. Boeing is still working to stabilize production of these planes, which are made outside Seattle. Production rate means how many planes the company builds in a set period.",
+            "what_happened": "On Monday, Boeing said it plans to cut 5% of its commercial airplane workforce. The company said its production increase is moving more slowly than it expected. The cuts will come through a mix of attrition, meaning workers who leave and are not replaced, and layoffs. Stephanie Pope, who heads the commercial aircraft unit, shared the plan in a memo to staff. Boeing CEO Kelly Ortberg told investors last month that the company will not significantly increase 737 Max production until the second half of next year. He said wing production has been slower than expected.",
+            "why_it_matters": "If you fly, this news may not change your trip soon. The slower build pace could mean airlines wait longer for new Max jets. The job cuts will affect Boeing workers in the commercial airplane unit most directly.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "435134f988c6feecac8296b741e85804",
+          "slug": "pepsico-cutting-about-1-000-jobs-across-north-america",
+          "title": "PepsiCo cutting about 1,000 jobs across North America",
+          "summary": "The company is restructuring to fix slow sales in its home market.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/11/09/pepsico-north-america-job-cuts.html"
+            }
+          ],
+          "article": {
+            "background": "PepsiCo is a large food and drink company. Its North American business covers the company's operations in that region. The company says sales in its home market have been lagging. A turnaround means getting sales growing again. Companies in this position often change how their teams are organized.",
+            "what_happened": "PepsiCo is cutting about 1,000 jobs across North America. The cuts are part of an effort to turn around sales in its home market. Ram Krishnan, CEO of PepsiCo North America, wrote in a Monday letter to employees, which CNBC obtained. In the letter, he said the company needs to be faster, more connected, and more capable. Pepsi plans to make the cuts over the next week, and says it aims to streamline its operations.",
+            "why_it_matters": "If you work for PepsiCo in North America, this affects your job directly. For most other readers, it is a sign of how a large food and drink company is responding to weaker sales. The reporting does not say what it will change for customers.",
+            "quote": {
+              "text": "We have a clear ambition for PepsiCo North America: to build a stronger, more future-fit business that delivers industry-leading growth.",
+              "attribution": "Ram Krishnan, CEO of PepsiCo North America",
+              "source_url": "https://www.cnbc.com/2026/11/09/pepsico-north-america-job-cuts.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "afaa38ea229d67476a14412b59551f23",
+          "slug": "house-republican-files-articles-of-impeachment-against",
+          "title": "House Republican files articles of impeachment against Defense Secretary Pete Hegseth",
+          "summary": "Thomas Massie's resolution triggers a House vote within the next two days on high crimes charges.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/09/nx-s1-6034483/thomas-massie-impeachment-pete-hegseth"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://massie.house.gov/uploadedfiles/hegseth_articles_of_impeachment.pdf"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwr5y58jjp8ro?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/live/2026/nov/09/donald-trump-stephen-miller-immigration-midterms-iran-qatar-economy-latest-news-updates"
+            }
+          ],
+          "article": {
+            "background": "Thomas Massie is a Republican congressman from Kentucky. He has brought back articles of impeachment against Defense Secretary Pete Hegseth. Impeachment is how the House formally charges an official with wrongdoing. The War Powers Resolution sets rules for military action without Congress's approval.",
+            "what_happened": "Massie says Hegseth has been fighting Iran for more than 90 days. Massie says Congress never gave approval. The resolution lists eight charges against Hegseth. Three charges say he illegally waged war against Iran. One charge says he ignored laws meant to limit civilian deaths. A House vote could come within the next two days.",
+            "why_it_matters": "The effort will likely fail. Republicans control Congress until January. Massie hopes the push leads Trump to replace Hegseth. For most people, nothing changes right away.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0dc6c18560b80441ea131db388307bcf",
+          "slug": "supreme-court-clears-construction-of-trump-border-wall",
+          "title": "Supreme Court clears construction of Trump border wall through Big Bend national park",
+          "summary": "The ruling suspends a lower court order that had halted the project in part of Texas.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/09/us-supreme-court-border-wall-texas-big-bend"
+            }
+          ],
+          "article": {
+            "background": "The US Supreme Court is the highest court in the country. Its nine justices make the final decision in many major cases. The Trump administration is building a border wall in Texas's Big Bend region. The construction includes parts of Big Bend National Park. Last month, a lower court temporarily stopped the project.",
+            "what_happened": "The Supreme Court has allowed construction to continue. In an unsigned, five-page ruling, the court granted the administration's emergency request. An emergency request asks a court to act quickly, before a case is fully decided. The request asked the court to pause the lower court order that had stopped the project. Justice Ketanji Brown Jackson, a liberal, was the only one of the nine justices to dissent.",
+            "why_it_matters": "For now, the ruling lets the wall keep going up in this part of Texas. The project reaches Big Bend National Park, a public land area that visitors may plan to see. The people who challenged the project, including the Center for Biological Diversity, argued that the work would cause harm in the area.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1ff978bbb7fe7ba641bf834e54b949e8",
+          "slug": "senate-advances-bipartisan-bill-to-speed-up-infrastructure",
+          "title": "Senate advances bipartisan bill to speed up infrastructure permit reviews",
+          "summary": "The bill shortens timelines for pipelines and clean energy but rolls back environmental protections.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/09/senate-energy-infrastructure-bill-vote"
+            }
+          ],
+          "article": {
+            "background": "The bill is called the Bipartisan American Affordability and Jobs Act, or Baaja. It would make it easier to build large infrastructure projects in the United States. Those projects include fossil fuel pipelines and transmission lines, which carry electricity across long distances. Transmission lines could add more clean energy to the power grid. Supporters say the goal is faster building. The bill would also roll back some environmental and social protections to get there.",
+            "what_happened": "The Senate voted on Monday to open debate on Baaja. It was the first of several procedural votes, which are steps that move a bill forward. Senators voted 73 to 25 on the cloture motion, a vote to end debate and move to a final decision. Key environmental groups oppose the bill. They worry it could encourage new datacenters and ICE jails.",
+            "why_it_matters": "For now this changes nothing in your daily life, because the bill has not passed. If it becomes law, it could make it faster to build pipelines, power lines, and other large projects near where you live. Whether that helps your power bill or your local environment depends on what the final bill says.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "e88196396cab0165d3849db94848f8c4",
+          "slug": "russia-and-ukraine-show-flexibility-in-resumed-peace-talks",
+          "title": "Russia and Ukraine show flexibility in resumed peace talks, US officials say",
+          "summary": "Both sides quietly shift positions on who would control eastern regions after war.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqpvgvrpjvv8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia invaded Ukraine in February 2022, and the war has continued since. Peace efforts have stalled many times. The talks in Abu Dhabi are the first three-way meeting of Russia, Ukraine and the United States since February. The excerpts describe the fifth anniversary of the full-scale invasion as approaching.",
+            "what_happened": "US officials say Moscow and Kyiv are privately showing a little flexibility. The issue is who would control Ukraine's eastern regions after the war. Senior officials from Russia, Ukraine and the US will meet in Abu Dhabi. Jared Kushner, part of the US delegation, said the talks would focus on the political questions.",
+            "why_it_matters": "For now, these talks do not change daily life for most people. A deal would decide who controls land in eastern Ukraine, and that would shape the country's future. Any outcome would be a first step, and nothing is settled yet.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3114caa4ea9647a8e5c121643920a03a",
+          "slug": "russia-s-top-independent-newspaper-closes-its-office-after",
+          "title": "Russia's top independent newspaper closes its office after three decades",
+          "summary": "The paper says government pressure on its operations led to the closure.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/citing-government-pressure-russias-top-independent-newspaper-closes-its-office-after-three-decades"
+            }
+          ],
+          "article": {
+            "background": "Novaya Gazeta is a Russian newspaper. The Associated Press calls it the country's most celebrated independent newspaper. Independent here means the paper is not run by the state. The Kremlin is the name often used for Russia's government.",
+            "what_happened": "Novaya Gazeta closed its Moscow offices on Monday, November 9, 2026. The paper cited relentless pressure from government officials. It was the last major independent outlet still active in Russia. It was critical of the Kremlin, according to the Associated Press.",
+            "why_it_matters": "With this closure, fewer independent outlets report on the Russian government. For people outside Russia, there are fewer independent sources to read.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "e467194eb2fdbb30620ed2690f2b63de",
+          "slug": "france-says-iran-was-behind-cyberattack-on-700-supermarket",
+          "title": "France says Iran was behind cyberattack on 700 supermarket refrigeration systems",
+          "summary": "Hackers took control of thermostats and pushed temperatures to dangerous levels at French stores.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges"
+            },
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/nov/09/cyber-attack-french-supermarket-freezers-iran-europe"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/france-blames-iran-for-last-months-cyberattack-on-supermarket-fridges"
+            },
+            {
+              "name": "npr_world",
+              "url": "https://www.npr.org/2026/11/09/g-s1-152724/france-iran-cyber-sabotage-fridge-attacks"
+            }
+          ],
+          "article": {
+            "background": "The Islamic Revolutionary Guard Corps, or IRGC, is part of Iran's military. In 2023, a state-backed group interrupted TV streaming services. It happened in the United Arab Emirates. Hackers linked to Iran have carried out other attacks in recent years.",
+            "what_happened": "France's cybersecurity agency, called ANSSI, says Iranian military hackers are responsible. On October 12, hackers took over cooling controls at about 700 shops. The hackers turned up temperatures overnight, spoiling food worth millions of dollars. On Monday, France blamed Iran's Revolutionary Guards. France said it will seek European sanctions against those responsible.",
+            "why_it_matters": "Store fridges keep food safe to eat. This attack showed hackers can make cold food go bad. The sanctions France wants would be set across Europe, not only in France.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8816e7427b2d584ef384248588465ca8",
+          "slug": "hackers-are-actively-exploiting-a-critical-linux-ssh",
+          "title": "Hackers are actively exploiting a critical Linux SSH vulnerability",
+          "summary": "The flaw lets attackers log into privileged accounts on many systems using OpenSSH and musl.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/11/vulnerability-that-lets-hackers-ssh-into-linux-devices-is-under-active-exploitation"
+            }
+          ],
+          "article": {
+            "background": "Linux is a free operating system. Many servers, routers, and other devices run it. OpenSSH is a common program that lets people log in to a computer remotely over a network. Musl is a small code library that some Linux systems use for basic tasks. The flaw comes from how these two pieces work together.",
+            "what_happened": "Hackers are actively using a newly found critical flaw to break into Linux systems, according to multiple security researchers. The flaw is tracked under the name *sshole. It became public last Thursday. Systems that use both OpenSSH and musl, and meet certain other conditions, can be taken over in seconds. Attackers do not need a password to get in. Four days later, researchers say signs of real attacks are now appearing.",
+            "why_it_matters": "If you use a Linux computer, server, or device, this flaw could affect you. Check whether your system uses OpenSSH and musl, and ask whoever manages it about updates. Attacks that work in seconds leave little time to react, so checking early matters.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fba809a79e97a9df71daa81ad6edd38f",
+          "slug": "hackers-tampered-with-french-blood-bank-cold-storage-in",
+          "title": "Hackers tampered with French blood bank cold storage in cyberattack",
+          "summary": "Hackers pushed temperatures to high levels at three facilities, putting stored blood at risk.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/technology/2026/nov/04/france-national-blood-service-hack-cyber-attack-europe"
+            }
+          ],
+          "article": {
+            "background": "France's national blood service, called EFS, collects, tests, and prepares blood, plasma, and platelets. It sends these products to more than 1,900 hospitals across the country. Hospitals use them for patients who need transfusions. Recent cyber-attacks have also targeted fridges and freezers elsewhere in Europe. An early social media post cited a figure of 110 degrees Celsius. That number appears to be the setting the equipment was changed to reach, not a confirmed temperature.",
+            "what_happened": "EFS said hackers accessed the control systems at three cold stores. The stores hold blood products. The attackers raised temperature and defrosting limits to what EFS called very high levels. EFS said its alarm systems alerted technicians. The technicians acted before the products were compromised, according to the service.",
+            "why_it_matters": "If you ever need a transfusion, the blood supply must stay safe and usable. EFS says the affected products were not compromised. The case shows that the equipment that keeps medical supplies cold can also be a target.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2a267096d81308f72cfb90aa5a337efd",
+          "slug": "supply-chain-attack-on-qubole-exposed-multiple-customers",
+          "title": "Supply chain attack on Qubole exposed multiple customers through one stolen vendor key",
+          "summary": "A third-party breach created a path into dozens of organizations using the data platform.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://sentra.io/blog/breaches/inside-the-qubole-supply-chain-attack"
+            }
+          ],
+          "article": {
+            "background": "Qubole is a big-data platform. That means it helps companies store and process very large amounts of data. Many companies gave Qubole access to their data so it could do that work. A supply chain attack reaches a target through a trusted vendor instead of breaking in directly.",
+            "what_happened": "Sentra, the company behind the report, uncovered a wide supply chain attack. An attacker obtained credentials that belonged to Qubole. Credentials are the keys that prove who is allowed in. The attacker used the access that customers had granted Qubole to pull their data. Dozens of Qubole customers were affected. Sentra said it found the attack in less than 24 hours.",
+            "why_it_matters": "If a company you use shares data with an outside vendor, that vendor's security affects you too. A stolen vendor key can open doors meant only for the vendor. The lesson is that a trusted service can become the way in.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "870300b61c499e994f8a44b952059e1a",
+      "title": "Nvidia shares tumble over investigation into Huang's affair with alleged Chinese spy",
+      "url": "https://www.bbc.co.uk/news/articles/c6zxjx01vyleo?at_medium=RSS&at_campaign=rss",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "f85bab94ffefb825df29c07e8c9736c2",
+      "title": "Fossil fuel emissions are down in 2026. Green energy isn’t the reason",
+      "url": "https://www.sciencenews.org/article/fossil-fuel-emissions-down-2026-gas",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "90a8e9d74624847e25258cb57ca8c459",
+      "title": "College Football Playoff will expand to 24 teams in another sea change for the sport",
+      "url": "https://www.npr.org/2026/11/09/nx-s1-6034560/college-football-playoff-will-expand-to-24-teams-in-another-sea-change-for-the-sport",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "00b1036cf86099774e278e4ea864a6c9",
+      "title": "Epstein associate who still runs model agency 'put me in danger' says abuse survivor",
+      "url": "https://www.bbc.co.uk/news/articles/cm86z6w59gggo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6ff1631e917c0e059f6847216b9081df",
+      "title": "A teen used her school Chromebook and Google AI Mode to plan her suicide",
+      "url": "https://mashable.com/tech/google-gemini-chromebook-lawsuit-teen-planned-suicide",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "c631066a7e64ddfa3b3c7d61df073dc1",
+      "title": "Norway has purchased 500k drones for Ukraine (Norwegian)",
+      "url": "https://www.forsvaretsforum.no/droner-fma-forsvarsmateriell/noreg-har-kjopt-500000-dronar-til-ukraina/531540",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a2bee978bf31edb9fcb6829c08da546a",
+      "title": "Hotel giant Wyndham exposed customer data after app security lapse",
+      "url": "https://techcrunch.com/2026/11/09/hotel-giant-wyndham-exposed-customer-data-after-app-security-lapse",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "9cc456f6953a42458b151d902935050d",
+      "title": "Fireworks AI Hacked",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-09/nvidia-backed-fireworks-ai-notifies-customers-of-its-second-hack-in-weeks",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "b425aec735e225072360004798f8d905",
+      "title": "Fervo now has $12B in orders for its geothermal power tech",
+      "url": "https://techcrunch.com/2026/11/09/fervo-now-has-12b-in-orders-for-its-geothermal-power-tech",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "d979f9a1ddb41526217d77f3f73aecde",
+      "title": "Children’s Place files for bankruptcy protection, seeks buyer",
+      "url": "https://www.cnbc.com/2026/11/09/childrens-place-chapter-11-sale.html",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "da411c087b7c212905afec4c0a6a500a",
+      "title": "Turkey steel factory blast kills at least 17 people",
+      "url": "https://www.bbc.co.uk/news/articles/cq2d6d5z9y5jo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 130,
+    "clusters_considered": 103,
+    "stories_run": 11,
+    "sources": 19,
+    "sections_held": 0
+  }
+}
