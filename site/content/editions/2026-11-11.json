@@ -1,0 +1,405 @@
+{
+  "date": "2026-11-11",
+  "edition_number": 157,
+  "edition_type": "normal",
+  "headline_of_the_day": "House votes to end Pete Hegseth impeachment effort, sending articles to committee",
+  "headline_cluster_id": "f19c5d5d6b791c4f783301b79f704b7d",
+  "headline_rationale": "A concrete procedural vote that ends a high-profile impeachment attempt against a sitting defense secretary",
+  "key_points": [
+    {
+      "text": "House voted 211 to 204 to refer Defense Secretary Pete Hegseth impeachment articles to committee, effectively ending the effort",
+      "topic": "US Politics"
+    },
+    {
+      "text": "US soldier arrested in UK on suspicion of spying for Russia, the first such arrest of a senior American serviceman",
+      "topic": "World"
+    },
+    {
+      "text": "Federal prosecutors charge three Iran-backed suspects over plots including a foiled attack on a UK air base",
+      "topic": "World"
+    },
+    {
+      "text": "Credit card debt in the US climbed to a record $1.29 trillion in the third quarter, up 4.2 percent from last year",
+      "topic": "Finance"
+    },
+    {
+      "text": "Microsoft released fixes for nearly 1,100 security vulnerabilities including a zero-day flaw in Outlook",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-11.mp3",
+    "duration_seconds": 436,
+    "size_bytes": 5236128
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "49f3065bc0db70ba51a0ed38fcd6c8c9",
+          "slug": "poundland-seeks-last-minute-rescue-deal-as-11-000-jobs-at",
+          "title": "Poundland seeks last-minute rescue deal as 11,000 jobs at risk",
+          "summary": "Discount chain hopes to delay administration after owners blocked access to bank accounts.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c3702jjkez4ko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Poundland is a discount chain. Its owner is Gordon Brothers, a US company. Administration is a legal process for a business that cannot pay its debts. It can lead to a company being sold or closed.",
+            "what_happened": "Poundland and its 11,000 employees are hoping for more time before the chain collapses. Its owners blocked it from using the cash in its bank accounts, pushing it toward administration. A deadline to find a buyer for the business was set to expire at midnight. BBC sources expect more time to be given, after £10m in funding was released. A committee of MPs will question Gordon Brothers on Wednesday.",
+            "why_it_matters": "Thousands of workers depend on the chain for their jobs, so the outcome matters to them directly. For shoppers, a sale or rescue could decide whether the stores stay open. The deadline may be extended, but no final outcome has been reported yet.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "90bca0a82303bed48d44ff7e2e471f22",
+          "slug": "honda-to-build-3-billion-auto-plant-in-ohio-adding-2-000",
+          "title": "Honda to build $3 billion auto plant in Ohio, adding 2,000 jobs",
+          "summary": "New facility represents major manufacturing investment in state with concrete workforce expansion.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/business/autos-transportation/honda-build-new-3-billion-auto-plant-ohio-adding-2000-jobs-2026-11-09"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "stories": [
+        {
+          "cluster_id": "29d898e10d589833058fb3be924a4f32",
+          "slug": "us-credit-card-debt-hits-record-1-29-trillion",
+          "title": "US credit card debt hits record $1.29 trillion",
+          "summary": "Balances climbed $22 billion in third quarter as financial pressures mount, New York Fed reports.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnbc.com/2026/11/10/credit-card-debt-record.html"
+            }
+          ],
+          "article": {
+            "background": "A credit card lets you borrow money to pay for things now and pay later. Any amount you do not pay off by the due date usually carries interest, which is a fee on the unpaid balance. The Federal Reserve Bank of New York publishes a regular household debt report. It tracks credit cards, mortgages, auto loans and student loans.",
+            "what_happened": "Credit card balances rose by $22 billion in the third quarter, the three months from July through September. The total reached a record $1.29 trillion. That is up 4.2% from a year earlier. Total household debt grew by $334 billion over the same period, to a record $19.1 trillion. The figures come from the New York Fed's latest household debt report, released Tuesday.",
+            "why_it_matters": "If you carry a balance from month to month, interest adds to what you pay over time. Credit cards are among the more expensive ways to borrow. The researchers said the rise reflects financial hardship.",
+            "quote": {
+              "text": "This does reflect financial hardship out there.",
+              "attribution": "New York Fed researchers, speaking on a press call",
+              "source_url": "https://www.cnbc.com/2026/11/10/credit-card-debt-record.html"
+            }
+          }
+        },
+        {
+          "cluster_id": "a25e3c66c36850e802071951415fc874",
+          "slug": "inflation-report-shows-rising-food-energy-and-housing-costs",
+          "title": "Inflation report shows rising food, energy and housing costs persist",
+          "summary": "High inflation continued last month with little relief for household budgets across major categories.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_economy",
+              "url": "https://www.pbs.org/newshour/show/u-s-inflation-report-highlights-strain-of-rising-food-energy-and-housing-costs"
+            }
+          ],
+          "article": {
+            "background": "Inflation means prices rise over time. When inflation is high, the same amount of money buys less than it did before. This story looks at the latest read on how fast prices are rising across the U.S. economy.",
+            "what_happened": "High inflation continued last month. The increase came mostly from food and energy prices. Housing costs also rose. The country appears headed for annual inflation of about 4% this year. Geoff Bennett spoke with an economist about what this means for the economy.",
+            "why_it_matters": "Food, energy, and housing are costs most households pay every month. When they rise, less money is left for other needs. If prices keep rising about 4% a year, household budgets may stay tight unless pay keeps pace.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "f19c5d5d6b791c4f783301b79f704b7d",
+          "slug": "house-votes-to-end-pete-hegseth-impeachment-effort",
+          "title": "House votes to end Pete Hegseth impeachment effort",
+          "summary": "Vote referred articles to committee, short-circuiting floor proceedings after Republican lawmaker filed charges.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/10/nx-s1-6036813/house-votes-to-effectively-end-the-impeachment-effort-against-pete-hegseth"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/10/pete-hegseth-impeachment-effort"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cxly4y5jzl0qo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Pete Hegseth is the US Defense Secretary, the head of the Pentagon, which runs the military. Rep. Thomas Massie, a Republican from Kentucky, filed articles of impeachment against him. Impeachment is the House process for formally accusing a federal official of misconduct. Norm covered the filing of these articles earlier this week. The articles accuse Hegseth of waging war on Iran without congressional approval, and of other illegal acts tied to the Iran war and other conflicts.",
+            "what_happened": "On Tuesday, the House voted 211 to 204 to send the articles of impeachment to committee. That move blocks a full House vote on them. Sending a bill or measure to committee usually stops it from moving forward. Hegseth called the effort a farce and sabotage. He said the attacks were lawful and ordered by the commander-in-chief. Republicans also lost control of both chambers of Congress in last week's midterm elections.",
+            "why_it_matters": "For now, this does not change anything in most people's daily lives. Hegseth stays in his job. The vote shows that many lawmakers are cautious about going against President Trump, who supports Hegseth. The House session ends soon, so the articles are unlikely to come up again in this Congress.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "943746cc9e7f32f33a36258f7558a847",
+          "slug": "house-republicans-pick-jim-jordan-as-minority-leader-reject",
+          "title": "House Republicans pick Jim Jordan as minority leader, reject Hegseth impeachment",
+          "summary": "GOP selected new party leaders for both chambers as Democrats prepare to take majority in January.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/house-rejects-hegseth-impeachment-as-gop-selects-jordan-and-thune-as-leaders"
+            }
+          ],
+          "article": {
+            "background": "Congress has two chambers, the House and the Senate. Each chamber picks its own leaders, and Republicans, often called the GOP, are choosing new ones now. Power in Washington is shifting as the new party leadership takes shape. The source gives few details beyond these leadership picks and one impeachment vote.",
+            "what_happened": "House Republicans picked Jim Jordan to be their new leader. Senate Republicans re-elected John Thune. In the same period, the House voted against an effort to impeach Defense Secretary Pete Hegseth. Impeachment is a formal process for charging a government official with wrongdoing.",
+            "why_it_matters": "Leaders help decide which votes and bills come up in Congress. For most people, these picks alone do not change daily life right away. The House vote means it did not move to impeach Hegseth.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "70295a2e101bbe14fae37decfbdf7f13",
+          "slug": "senior-us-soldier-arrested-in-uk-on-suspicion-of-spying-for",
+          "title": "Senior US soldier arrested in UK on suspicion of spying for Russia",
+          "summary": "British counter-terror police detained 41-year-old serviceman near Gloucester under National Security Act.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c6d7q77xgw0vo"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6d7q77xgw0vo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US Army is the land force of the American military. The UK's National Security Act 2023 is a law that covers spying. It makes obtaining or sharing protected information a crime. It also makes helping a foreign intelligence service a crime.",
+            "what_happened": "British counter-terror police said a soldier in the US Army was arrested on suspicion of spying for Russia. The 41-year-old senior serviceman was arrested near Gloucester on Tuesday. Officers are searching two locations in Gloucestershire as part of the investigation.",
+            "why_it_matters": "This case involves an alleged attempt by a foreign power to reach secrets through a member of a military. For most people, daily life does not change because of it. It does show how the UK is using its newer spying law.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e6280234d8f209d579267bf5207808ff",
+          "slug": "us-charges-three-men-with-plotting-terror-attacks-on-jewish",
+          "title": "US charges three men with plotting terror attacks on Jewish communities and UK air base",
+          "summary": "Federal prosecutors allege Iran-backed operatives planned coordinated attacks in US and Europe.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/nation/u-s-charges-3-men-with-plotting-terror-attacks-including-planned-assault-on-uk-airbase"
+            }
+          ],
+          "article": {
+            "background": "Iran is a country in the Middle East. Some armed groups around the world receive support from Iran's government. U.S. authorities describe these groups as Iran-backed. An operative is a person who carries out secret work for a group.",
+            "what_happened": "On Tuesday, U.S. authorities charged three men. They accused the men of being Iran-supported operatives. One of the men is already in jail in the United States. The charges say the group plotted nearly 20 attacks on Jewish communities. The plans also included an attack on a British air base.",
+            "why_it_matters": "For most people, this does not change daily life. It shows that U.S. authorities are pursuing alleged plots linked to a foreign government. These are charges, not proven facts, so a court will decide what the evidence shows.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3efb12887b0ed5c607d30c4bb43e404b",
+          "slug": "federal-failures-could-have-prevented-epstein-crimes-after",
+          "title": "Federal failures could have prevented Epstein crimes after 2005, report finds",
+          "summary": "Congressional investigation concluded investigators and prosecutors missed chances to stop later offenses.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cq5ynyn8zyr8o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/10/nx-s1-6035872/house-gop-faults-the-federal-government-for-failing-to-hold-epstein-accountable"
+            }
+          ],
+          "article": {
+            "background": "Jeffrey Epstein was a financier. NPR described him as a sex offender. He died in 2019. His long-term associate was Ghislaine Maxwell. The House Oversight Committee is a panel in the US House of Representatives that looks into government conduct.",
+            "what_happened": "The Republican-led House Oversight Committee released its final report on Tuesday. The committee concluded that crimes Epstein committed after 2005 could have been prevented. It blamed \"failures\" by federal investigators and prosecutors. It described the handling of the criminal cases as \"decades-long\" mishandling. The findings are based on interviews, depositions, government files, and financial records gathered over 15 months.",
+            "why_it_matters": "The report is a congressional finding, not a court ruling. It does not by itself bring new charges. It does show how federal agencies can miss warning signs of abuse. People who rely on those agencies to protect them may want to watch what happens next.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "2b599f9f763f6640f2cc31eba409b967",
+          "slug": "new-york-ai-safety-law-takes-effect-requiring-major",
+          "title": "New York AI safety law takes effect, requiring major developers to register",
+          "summary": "OpenAI and Anthropic must register with state regulators by January under new oversight rules.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect"
+            }
+          ],
+          "article": {
+            "background": "New York passed the RAISE Act, a state law about the safety of advanced AI systems. The law targets large frontier developers, which are companies building the most powerful AI models. Under the law, a company must have more than $500 million in annual revenue to count. The state has now opened a registration portal for these companies.",
+            "what_happened": "New York opened a registration portal on Tuesday. Large AI developers like Anthropic and OpenAI must register by January 1, 2027. The RAISE Act takes effect at the start of the year. Covered companies must publish safety frameworks on their websites. They must also report critical safety incidents within 72 hours and issue public model transparency reports. A newly formed state office, the Office of Digital Innovation, Governance, Integrity, and Trust (DIGIT), will carry out the law.",
+            "why_it_matters": "For most people, the law changes little right away. It sets public rules for how the biggest AI companies must describe their safety work and report serious problems. Over time, that means more public information about the AI tools people use every day.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fb4eedb8395981747b028a4a3a582981",
+          "slug": "federal-regulators-approve-construction-permit-for-four",
+          "title": "Federal regulators approve construction permit for four small nuclear reactors",
+          "summary": "X-energy cleared to build first commercial units at Dow chemical plant in Texas.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/10/x-energy-gets-green-light-to-build-its-first-small-modular-nuclear-reactors"
+            }
+          ],
+          "article": {
+            "background": "X-energy is a nuclear startup that is developing small modular reactors, or SMRs. A small modular reactor is a nuclear reactor smaller than a traditional plant, built in parts that can be assembled at a site. The U.S. nuclear industry has pinned its hopes on these smaller designs. Supporters say shrinking the reactor can speed up construction and lower costs.",
+            "what_happened": "X-energy announced Monday that federal officials had approved its construction permit application. The Nuclear Regulatory Commission, the federal agency that oversees nuclear power, approved plans for four of X-energy's Xe-100 reactors. The reactors will be built at a Dow chemical plant in Texas. Each reactor can generate 80 megawatts of electricity and 200 megawatts of heat. X-energy says this is the first approval for an advanced nuclear reactor at an industrial site in the United States.",
+            "why_it_matters": "For now this changes nothing for most people's power bills or daily lives. It is a major step for nuclear power, which supplies a large share of U.S. electricity. If these smaller reactors work at a factory site, later projects may follow the same path.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "bdde1fa98bfe132ef3cfc4c83cc6db6c",
+          "slug": "microsoft-fixes-nearly-1-100-security-flaws-in-november",
+          "title": "Microsoft fixes nearly 1,100 security flaws in November patch release",
+          "summary": "Update addresses 63 critical vulnerabilities including zero-day in Outlook that attackers could exploit.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "krebs_on_security",
+              "url": "https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities"
+            }
+          ],
+          "article": {
+            "background": "Patch Tuesday is Microsoft's regular monthly release of security updates for its products. Each update fixes software flaws, called vulnerabilities, that could let attackers break into a computer. Windows is Microsoft's operating system, the core software that runs a PC. Many people install these updates without thinking about them.",
+            "what_happened": "Microsoft released updates this month to fix 1,093 security vulnerabilities in Windows and other supported software. Of those, 63 are rated critical. Critical flaws can be used to take control of a Windows system with little or no help from the user. One of the flaws is a zero-day in Microsoft Outlook, which means it was being exploited before a fix existed. Other software makers, including Adobe, Apple, Google and Mozilla, also released security updates around the same time.",
+            "why_it_matters": "If you use Windows, install this update soon. Critical flaws are the ones attackers most want to use, so a delay leaves your computer open for longer. Most people only need to restart and accept the update when prompted.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "247be0ab8f02c5fb9f0d5d6afd47bcc8",
+          "slug": "alpine-linux-and-openssh-patch-critical-remote-takeover-flaw",
+          "title": "Alpine Linux and OpenSSH patch critical remote takeover flaw",
+          "summary": "Unauthenticated attackers could reach SSH port and take control; users must patch immediately.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.zdnet.com/tech/alpine-linux-openssh-patch-flaw"
+            }
+          ],
+          "article": {
+            "background": "Alpine Linux is a lightweight version of Linux, the operating system used on many servers. SSH, short for Secure Shell, is a common way to log in to a server over a network. It uses a specific network door, called a port, to accept those logins. Linux distributions are versions of Linux that different groups package and maintain.",
+            "what_happened": "An old bug is affecting Alpine Linux and a few other Linux versions, according to ZDNET. The reporting says an attacker only needs to reach a server's SSH port to take it over. Alpine Linux was hit by this flaw. The news came only days after Alpine Linux avoided a separate security hole in its GitLab setup. GitLab is a tool that teams use to store and manage software code.",
+            "why_it_matters": "If you run a Linux server, the reporting says you should install the patch as soon as possible. You should also restart the patched software so the fix takes effect. If you only use a phone or laptop, this news likely changes little for you directly.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "c49af061941bf0d32c82cea71f6978ee",
+          "slug": "sglang-flaw-let-attacker-breach-near-ai-server-and-access",
+          "title": "SGLang flaw let attacker breach NEAR AI server and access user data",
+          "summary": "Remote code execution exploit exposed requests from about 100 users and 18 agents last Sunday.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html"
+            }
+          ],
+          "article": {
+            "background": "SGLang is open-source software that runs AI models so they can answer requests. Open-source means anyone can read, use, and change its code. NEAR AI operates inference servers, the computers that handle these requests. Some requests are sent in a confidential mode. That mode uses a trusted execution environment (TEE), a protected area of a computer processor meant to keep data private, even from the company running the service.",
+            "what_happened": "An attacker exploited a remote code execution flaw in SGLang. That flaw let the attacker run code on one of NEAR AI's inference servers last Sunday. The attacker could also have seen requests processed on that server that day, including requests sent in confidential mode, the company said earlier this week. SGLang runs inside the protected environment, and that is how the attacker could reach those requests. Reporting says data was taken from 18 agents and about 100 users, and the access has since been closed.",
+            "why_it_matters": "This matters most to people who sent requests to NEAR AI's services that day. Confidential mode is meant to keep requests private, so this shows where that protection stops. The protected area guards against outside access, but it does not guard against bugs in the software running inside it.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "637bf3182612de7a8a631ad06abeca37",
+      "title": "Grok Build coding agent leaks oodles of confidential info, some belonging to SpaceXSI",
+      "url": "https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "029ead597d3c70845ac286c8bef7ccac",
+      "title": "What we know so far about Jensen Huang's affair with suspected Chinese spy",
+      "url": "https://www.bbc.co.uk/news/articles/ckgel338xql3o?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "977b3e69047c12d805162146229ac7c4",
+      "title": "Hotel giant Wyndham exposed customer data after app security lapse",
+      "url": "https://techcrunch.com/2026/11/09/hotel-giant-wyndham-exposed-customer-data-after-app-security-lapse",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "df17ce5107b763366e8f90a223b62221",
+      "title": "Git Patches Flaw That Lets Malicious Repositories Execute Code During Recursive Clones",
+      "url": "https://thehackernews.com/2026/11/git-patches-flaw-that-lets-malicious.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "29fe3daa3415782be948f361c38cf3b6",
+      "title": "Supreme Court seems split over federal agencies' ability to fine for law violations",
+      "url": "https://www.npr.org/2026/11/10/nx-s1-6034950/2026-11-10-nx-s1-6034950-supreme-court-seems-divided-over-federal-agencies-ability-to-fine-for-law-violations",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "d399eb833a9935b2460b3e7e94be9a6e",
+      "title": "First day of Ukraine peace talks constructive, Zelensky says",
+      "url": "https://www.bbc.co.uk/news/articles/cqpvgvrpjvv8o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "91902ef7c6b32808d8dad28ae249dcbc",
+      "title": "French police raid Ritz hotel in Mohamed Al Fayed sexual abuse investigation",
+      "url": "https://www.theguardian.com/world/2026/nov/10/french-police-raid-ritz-hotel-in-mohamed-al-fayed-sexual-abuse-investigation",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ab1c5c6a9d5e7602c5866f8ae3504df6",
+      "title": "Israeli opposition hurries to seize control as new Knesset is sworn in",
+      "url": "https://www.theguardian.com/world/2026/nov/10/israeli-opposition-hurries-to-seize-control-as-new-knesset-is-sworn-in",
+      "topic": "World"
+    }
+  ],
+  "stats": {
+    "items_ingested": 131,
+    "clusters_considered": 114,
+    "stories_run": 14,
+    "sources": 18,
+    "sections_held": 0
+  }
+}
