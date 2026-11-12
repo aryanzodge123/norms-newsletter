@@ -1,0 +1,424 @@
+{
+  "date": "2026-11-12",
+  "edition_number": 158,
+  "edition_type": "normal",
+  "headline_of_the_day": "Mississippi elects its first Democratic senator since 1982 in razor-thin race",
+  "headline_cluster_id": "331f90b27553769a1f21dc306b03af51",
+  "headline_rationale": "First flip of a Mississippi Senate seat to Democrats in over four decades, decided by narrow margin after week-long count, shifts chamber balance",
+  "key_points": [
+    {
+      "text": "Scott Colom won Mississippi's Senate race by a razor-thin margin, the first Democrat elected there since 1982.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Nvidia's board will meet to decide CEO Jensen Huang's future after reports of a second affair with an employee.",
+      "topic": "Business"
+    },
+    {
+      "text": "A police watchdog says faulty data used as evidence puts ethnic minorities at risk of wrongful arrest.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "United Airlines bans AI agents from booking flights, citing security risks and possible federal rule breaches.",
+      "topic": "Business"
+    },
+    {
+      "text": "Russia and Ukraine agreed to a large prisoner exchange as talks ended with no major breakthrough on other issues.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-12.mp3",
+    "duration_seconds": 440,
+    "size_bytes": 5277024
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "3db50887fce5321b34e70bd46e3d1e68",
+          "slug": "ai-makes-it-nearly-impossible-to-assess-university",
+          "title": "AI makes it nearly impossible to assess university coursework, regulator finds",
+          "summary": "England's university regulator wants traditional exams back after lecturers said AI made coursework untrustworthy.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/education/2026/nov/11/ai-close-to-impossible-assess-university-coursework-regulator"
+            }
+          ],
+          "article": {
+            "background": "The Office for Students (OfS) is England's higher education regulator. It oversees universities and checks that degrees keep their value. Universities often grade students with essays, dissertations, and take-home 'open book' exams. In these exams, students may use notes or other materials.",
+            "what_happened": "After an investigation, the OfS said lecturers find it 'close to impossible' to assess coursework. The regulator said universities should go back to traditional exams. It also said universities should use in-person presentations. The OfS warned that AI use is threatening the credibility of England's degrees. Students said their peers boasted of using AI without staff noticing.",
+            "why_it_matters": "The advice could change how English universities test students. A degree should show what a student really knows. The OfS warns that AI is making that harder to prove.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9e8c5746b83f34e2a89a71f265a05e27",
+          "slug": "music-publishers-cite-anthropic-staff-chats-praising-piracy",
+          "title": "Music publishers cite Anthropic staff chats praising piracy in copyright suit",
+          "summary": "Publishers say internal messages praising piracy sites show a 1.5 billion dollar book piracy settlement was too weak.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/tech-policy/2026/08/zlibrary-my-beloved-anthropic-staff-chats-extolling-piracy-cited-in-sony-suit"
+            }
+          ],
+          "article": {
+            "background": "Anthropic makes Claude, its AI system. AI companies train their models on large amounts of text. Many creators have sued over unpaid use of their work. Anthropic recently settled with authors. It agreed to pay $1.5 billion. It admitted it pirated more than 7 million books to train its AI.",
+            "what_happened": "Music publishers have now sued Anthropic. Music publishers manage the rights to songs. Sony, EMI, and Warner Chappell are among them. The lawsuit was filed on Friday. The publishers say the $1.5 billion book settlement was too small. They say it will not stop the company from copying work. They point to its $2 trillion value. They say the company illegally downloaded thousands of their songs. The method is called torrenting. The lawsuit also cites internal chats from Anthropic staff. Staff members praised Z-Library, a site that shares pirated books.",
+            "why_it_matters": "For most people, nothing changes right away. The case could set rules for how AI companies pay creators. Songwriters and authors are among those creators.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "278187bd9fcc45b99ba7e50e74ffa6b6",
+          "slug": "nvidia-board-prepares-to-meet-on-ceo-huang-s-future-after",
+          "title": "Nvidia board prepares to meet on CEO Huang's future after second affair report",
+          "summary": "Shares fell 9 percent after the Wall Street Journal reported the board will decide Huang's future over a second employee relationship.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1031652/jensen-huang-rumor"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/gadgets/2026/11/ceo-jensen-huangs-job-is-suddenly-on-the-line-at-nvidia"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/11/jensen-huang-accused-of-having-another-affair-with-a-nvidia-exec"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/live/2026/nov/12/nvidia-ceo-jensen-huang-affairs-share-price-plunges-live-latest"
+            }
+          ],
+          "article": {
+            "background": "Nvidia makes the computer chips that power artificial intelligence, or AI, tools. Jensen Huang co-founded the company and has led it for 33 years. On Sunday, Huang admitted to an affair outside his marriage. U.S. intelligence reportedly believes the woman involved may be a Chinese spy. Nvidia then said it was starting an independent investigation.",
+            "what_happened": "On Wednesday, The New York Times reported that Huang had a second affair. The Times said it was with Kimberly Powell, Nvidia's vice president of healthcare. Powell reports to Huang, and the Times said she is also married. Soon after, The Wall Street Journal reported that Nvidia's board is preparing to remove Huang as CEO. The board may meet as soon as Wednesday. Nvidia shares fell more than 9% in after-hours trading.",
+            "why_it_matters": "Nvidia is one of the most valuable companies in the world, so changes at the top can move the stock market. If you own a retirement fund or index fund, you may own Nvidia shares. The board has not made a decision yet, so the outcome is still unknown.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b02bc0889ad9277912464af151b3a644",
+          "slug": "united-airlines-bans-ai-agents-from-booking-flights-for",
+          "title": "United Airlines bans AI agents from booking flights for travelers",
+          "summary": "The airline says AI booking agents pose security risks and may break federal rules, though few people use them.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents"
+            }
+          ],
+          "article": {
+            "background": "An AI agent is a program that completes tasks for you online. People use them to research products, find deals, or buy things. Meta's Muse and OpenAI's dots are two examples. To book a flight, an agent needs your personal details. This includes payment information.",
+            "what_happened": "United Airlines said Wednesday it will ban AI agents from booking flights. The airline cited security risks. It also said such bookings could break federal rules. United is worried agents could expose customer information. They could also buy tickets a customer did not mean to buy. United said it has not seen many people try this yet.",
+            "why_it_matters": "Airlines must share some information with customers under federal rules. For now, this changes little for most travelers. United says few people have tried using AI agents for flights.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d0091f3f4da7dbba37b80f3376cdb453",
+          "slug": "poundland-gets-more-time-to-secure-rescue-deal-as-collapse",
+          "title": "Poundland gets more time to secure rescue deal as collapse looms",
+          "summary": "The discount chain's US owners told MPs they favor extending the deadline to find a deal for its 11,000 employees.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c3702jjkez4ko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Poundland is a discount chain with 11,000 employees. Its US owners have blocked it from using the cash in its bank accounts. That has pushed the chain toward administration, a formal process where outside experts take control of a failing company. Norm reported in November that the chain hoped for a last-minute rescue deal to delay its collapse.",
+            "what_happened": "Poundland looks set to avoid an immediate collapse. Its US owners told MPs on Wednesday that they support extending the deadline to find a rescue deal. A deadline to find a buyer for the business was due to expire at midnight. Sources close to the situation told the BBC they expect more time will be given. Recent releases of funding are part of the reason, according to those sources. MPs also questioned Gordon Brothers, the owner, after accusations about its conduct.",
+            "why_it_matters": "For the 11,000 people who work at Poundland, more time means the chain does not close right away. Shoppers may see no change while talks continue. Whether a buyer is found will decide what happens to the stores next.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "331f90b27553769a1f21dc306b03af51",
+          "slug": "mississippi-elects-first-democratic-senator-since-1982",
+          "title": "Mississippi elects first Democratic senator since 1982",
+          "summary": "Scott Colom won the Senate seat after a week of counting in a state without a Democratic senator in four decades.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/scott-colom-wins-senate-election-in-mississippi"
+            },
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/11/g-s1-151688/mississippi-senate-race-scott-colom"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/11/scott-colom-mississippi-senate-race"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw7vppyr80eeo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Mississippi has elected Republicans to the U.S. Senate for decades. NPR reports the state had not elected a Democrat to the Senate in more than 40 years. The Guardian reports the last Democrat it sent to the Senate was elected in 1982. The U.S. Senate has 100 seats, and each state sends two senators to serve six-year terms. Incumbent Republican Sen. Cindy Hyde-Smith was the sitting senator in this race.",
+            "what_happened": "Democrat Scott Colom defeated Republican Sen. Cindy Hyde-Smith in the midterm election. The race was very close. Ballot counting took more than a week, including absentee and provisional ballots. Colom's lead grew as those ballots were counted. The Associated Press called the race on Wednesday, after Hyde-Smith could not close the gap. NPR reports Colom won the closest Senate race in the country by just a few thousand votes. The Guardian reports he is the first Black senator elected from Mississippi since Reconstruction.",
+            "why_it_matters": "Colom's win changes who represents Mississippi in the Senate. NPR reports it also adds to the Democratic majority in the new Congress, which will have 55 seats. The race in Alaska was still undecided when the reports were written. For most readers, the result shows how close elections in the South can be.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d6c179cb1a39da93bc4859f935466e78",
+          "slug": "court-blocks-trump-administration-from-demanding",
+          "title": "Court blocks Trump administration from demanding journalists' LinkedIn messages",
+          "summary": "An appeals court ruled the Justice Department cannot collect confidential sources from journalists with no link to a leak.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://arstechnica.com/tech-policy/2026/11/trump-admin-loses-fight-to-spy-on-random-journalists-linkedin-dms"
+            }
+          ],
+          "article": {
+            "background": "LinkedIn is a job-focused social network. People use it to share work histories and send private messages. The Justice Department is investigating suspected leaks of top-secret military information. A leak means secret government information shared without permission. Some of those leaks were suspected to have happened on LinkedIn.",
+            "what_happened": "An appeals court ruled Tuesday against a Justice Department request. The department asked LinkedIn for 18 months of communications from targeted journalists. Those journalists together published more than 1,000 articles on many topics. The order would have reached confidential sources of unrelated journalists. The request was not limited to reporters tied to one controversial report. Trump said that report exposed confidential military information in a foreign country.",
+            "why_it_matters": "The ruling limits how far one investigation can reach into private messages. For most people, this changes little for now. It does show that courts can block broad requests for private messages.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "45d2efb5451a9349f84dd139d0fc98ed",
+          "slug": "democrats-push-to-rein-in-trump-immigration-enforcement",
+          "title": "Democrats push to rein in Trump immigration enforcement after voter backlash",
+          "summary": "Congressional Democrats want quick action to fix immigration enforcement that Trump admitted was too harsh.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/11/democrats-trump-immigration-agenda"
+            }
+          ],
+          "article": {
+            "background": "Immigration enforcement became a major political fight in Trump's second term. ICE is short for Immigration and Customs Enforcement. It finds and removes people in the US illegally. Federal agents, including ICE agents, ran large operations across the country. After the midterms, Trump said parts of the system were 'too tough.'",
+            "what_happened": "On Wednesday, a group of congressional Democrats gathered outside the US Capitol. They want both parties to work together. They want quick steps to limit the immigration crackdown. They want to bring more sanity to the immigration system. They did not say how they would reform or abolish ICE.",
+            "why_it_matters": "The lawmakers have not shared plans, so no change is set yet. Any future change would reach families and workplaces.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "92a60235187b05b5ed7415f939736c00",
+          "slug": "russia-and-ukraine-agree-to-prisoner-exchange-as-talks-end",
+          "title": "Russia and Ukraine agree to prisoner exchange as talks end without breakthrough",
+          "summary": "The two countries completed a large prisoner exchange but talks ended with no major progress on other issues.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/russia-and-ukraine-agree-to-a-large-prisoner-exchange-as-talks-end-with-no-major-breakthrough"
+            }
+          ],
+          "article": {
+            "background": "Russia and Ukraine have been at war since Russia launched a full-scale invasion of Ukraine nearly five years ago. A full-scale invasion is an attack by a large army across the whole country. Prisoner exchanges, where each side returns captured soldiers, are one of the few areas where the two countries have worked together.",
+            "what_happened": "Russia and Ukraine said Wednesday that they agreed to a large exchange of prisoners of war. Both sides confirmed the deal. It came at the end of two days of talks in Abu Dhabi, in the United Arab Emirates. The United States helped mediate the talks. The talks did not produce a major breakthrough on ending the war.",
+            "why_it_matters": "For most people, a prisoner swap does not change daily life right away. It does mean some families may soon see relatives come home. The lack of a major breakthrough means the larger question of how to end the war is still open.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b643cd891e1a5fa1c4f79b4c78976a19",
+          "slug": "building-collapse-in-new-york-kills-one-person-and-injures",
+          "title": "Building collapse in New York kills one person and injures 12",
+          "summary": "Rescuers are searching for survivors after a three-story building collapsed in Brooklyn's Flatbush neighborhood.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/c60rkwjj7x7go?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/11/deadly-brooklyn-building-collapse"
+            }
+          ],
+          "article": {
+            "background": "Flatbush is a neighborhood in Brooklyn, one of the five boroughs of New York City. The building that collapsed was a three-story building at the edge of a construction site. A construction site is an area where new building or repair work is underway. Footage also showed exposed bedrooms and stairwells in a neighboring building after the collapse.",
+            "what_happened": "Firefighters were called to the scene at about 4 p.m. on Wednesday. The building fell and trapped people under the rubble. Firefighters dug through the debris, and one group appeared to use a saw to cut through the wreckage. The Guardian reported at least two people killed, and four people were described as critical in hospital. The BBC headline put the number of injured at 12.",
+            "why_it_matters": "For most people, this is a local safety story that is still developing. It raises a practical question about how close construction work can come to homes and shops. Residents near building sites may want to know how nearby buildings are checked for damage.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "851d318b854975c52f4c8a4d98340f15",
+          "slug": "police-facial-recognition-errors-risk-wrongful-arrest-of",
+          "title": "Police facial recognition errors risk wrongful arrest of ethnic minorities, watchdog warns",
+          "summary": "A report warns police could wrongly arrest innocent people by treating faulty facial recognition data as proof.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/12/facial-recognition-errors-put-ethnic-minorities-at-risk-of-wrongful-arrest-police-watchdog-warns"
+            }
+          ],
+          "article": {
+            "background": "Facial recognition is software that compares faces. It matches a face in one photo to faces in a database. Live facial recognition is used in real time to find suspects. Retrospective facial recognition runs on images collected earlier, after a crime has happened. Police use both kinds.",
+            "what_happened": "His Majesty's Inspectorate of Constabulary wrote the report. It is a body that inspects police forces. The inspectorate published its report on Wednesday. It found police could arrest innocent people. That could happen if officers treat faulty facial recognition results as evidence. The risk falls especially on people from ethnic minorities. The report covers only retrospective facial recognition. The report says the technology has errors and biases. Some operators do not always know they must check results.",
+            "why_it_matters": "If a faulty match points to you, police could wrongly arrest you. The report says officers should check results before they act. For most people, this changes nothing yet. It shows a face match is a lead, not proof.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7a692dab5035e3ad5d4a0c850d5fc7bb",
+          "slug": "new-york-forces-t-mobile-to-remove-data-cap-on-low-income",
+          "title": "New York forces T-Mobile to remove data cap on low-income Internet plan",
+          "summary": "The state said T-Mobile illegally set a 50 gigabyte monthly cap and must drop speed and data limits.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/11/t-mobile-illegally-imposed-50-gb-cap-on-low-income-home-internet-plan-ny-says"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-improve-access-affordable-home"
+            }
+          ],
+          "article": {
+            "background": "New York has a state law called the Affordable Broadband Act (ABA). Broadband means high-speed internet. The law requires certain internet companies to offer low-priced home internet to eligible New Yorkers. T-Mobile offers wireless home internet. That service uses cell signals, not a wired line.",
+            "what_happened": "Attorney General Letitia James and Governor Kathy Hochul announced the deal. The Attorney General's office looked into T-Mobile's low-price plans. Investigators found the plans did not meet the law's rules. New York officials say T-Mobile put a 50GB monthly data cap on the plans. They also say T-Mobile slowed speeds to under 1 megabit per second. T-Mobile agreed to a settlement. It must remove the data and speed limits within 120 days. It must also offer the plans in more parts of the state. It must make the plans easier to find and sign up for.",
+            "why_it_matters": "If you are a low-income New Yorker, this may matter to you. Under the deal, plans will have no data cap or speed limit. The changes must happen within 120 days. The plans will also reach more parts of the state.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "06d2e6cc9da9995837ca288383ca95b8",
+          "slug": "hacker-claims-to-have-sold-exam-papers-after-breaching",
+          "title": "Hacker claims to have sold exam papers after breaching Australian government website",
+          "summary": "Victoria's exam authority says there is no leak and a hacker is preying on anxious year 12 students.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/nov/12/vce-exams-hack-year-12-papers-vcaa-victorian-curriculum-and-assessment-authority"
+            }
+          ],
+          "article": {
+            "background": "The Victorian Curriculum and Assessment Authority, called VCAA, runs the state's school exams. Its work includes the Victorian Certificate of Education, called VCE. Year 12 is the final year of high school. Year 12 exams are under way now.",
+            "what_happened": "The VCAA website was hacked during the state's exam period. On Wednesday evening, a message appeared on the homepage banner. It was attributed to a person using the alias “DaggerElite.” The message claimed the person sold exam papers. It said the sales reached “hundreds of students” across Victoria. The message also used many swear words. The hacker gave no evidence for the claim.",
+            "why_it_matters": "VCAA says it has no evidence that any exam papers have leaked. The agency said the hacker appears to be targeting anxious students. For students sitting these exams, the claims could add stress during a hard time.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5dd59fcf468e15d7c111c7d748e4768f",
+          "slug": "researcher-earns-over-one-million-dollars-from-single",
+          "title": "Researcher earns over one million dollars from single Google bug bounty",
+          "summary": "Google paid a record 1.33 million dollars for a Chrome security flaw, pushing the researcher's net worth past one million.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://lyra.horse/blog/2026/11/disinformation-machine"
+            }
+          ],
+          "article": {
+            "background": "Lyra Rebane is a computer security researcher. Security researchers look for flaws in software so companies can fix them. Google Chrome is the web browser made by Google. Companies often pay outside researchers a reward, called a bounty, for reporting a serious flaw. According to the post, Rebane has 14 Chrome CVEs, which are public IDs given to known security flaws.",
+            "what_happened": "A blog post on lyra.horse, titled \"I Accidentally Became a Millionaire,\" makes the claim. The post says Rebane's net worth passed $1 million on November 7, 2026. It says Google paid her a single bounty of $1,333,337 for a critical flaw in Chrome. The post also questions whether she is the best hacker and whether she could find a flaw worth that much. The excerpts include no statement from Google or any other outlet confirming the payment.",
+            "why_it_matters": "If true, the claim shows that some browser flaws can pay out very large rewards. For most people, this changes nothing about how they use Chrome. Before trusting a big number like this, check it against Google or another source.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "13be99b1eee3ed6c2112caab81285ea9",
+      "title": "US withdraw from U-17 World Cup in Qatar due to safety concerns",
+      "url": "https://www.theguardian.com/football/2026/nov/11/usa-u-17-world-cup-qatar-withdrawal-middle-east-conflict",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "1baab93d43d21873bad1993a3630b70f",
+      "title": "'Not the answer': Labour MPs speak out against Rosebank as decision looms",
+      "url": "https://www.bbc.co.uk/news/articles/cqp9dr79jkrzo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e368405b9d2a83366cd5816caf6fec88",
+      "title": "Indictment sheds light on alleged Iran-backed plots across U.S. and Europe",
+      "url": "https://www.pbs.org/newshour/show/indictment-sheds-light-on-alleged-iran-backed-plots-across-u-s-and-europe",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0dfadf5f49b59843dfa73fa4686c6130",
+      "title": "Feds arrest top official of healthcare company, alleging illegal drug importation",
+      "url": "https://www.cnbc.com/2026/11/11/canarx-official-arrested-drug-importation.html",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "9403eab4e7b936e2e350e378fb079a22",
+      "title": "Two skulls likely belonging to enslaved people returned to Brazil after Harvard used them in eugenics studies",
+      "url": "https://www.theguardian.com/news/2026/nov/11/harvard-skulls-repatriated-brazil",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a0b25e5ca030f49becaa1019720774fe",
+      "title": "Clashes erupt in Barcelona after thousands join Spain general strike",
+      "url": "https://www.bbc.co.uk/news/articles/cwvg25nypmrvo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8d12c89524ed269200182ce8471700ce",
+      "title": "JetBlue unveils new first-class seats to bring back profits",
+      "url": "https://www.cnbc.com/2026/11/11/jetblue-ceo-premium.html",
+      "topic": "Business"
+    }
+  ],
+  "stats": {
+    "items_ingested": 127,
+    "clusters_considered": 91,
+    "stories_run": 14,
+    "sources": 17,
+    "sections_held": 1
+  }
+}
