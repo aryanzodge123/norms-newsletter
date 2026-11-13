@@ -1,0 +1,522 @@
+{
+  "date": "2026-11-13",
+  "edition_number": 159,
+  "edition_type": "normal",
+  "headline_of_the_day": "Nvidia CEO Jensen Huang resigns as shares drop 13 percent amid congressional scrutiny",
+  "headline_cluster_id": "d9bf3b0fd76ea34fe0949c91acda191a",
+  "headline_rationale": "The sudden resignation of the CEO of the world's most valuable chip company, with a major share drop and government investigation underway, affects global markets and national security.",
+  "key_points": [
+    {
+      "text": "Nvidia CEO Jensen Huang resigned, triggering a 13 percent share drop and congressional inquiry.",
+      "topic": "Business"
+    },
+    {
+      "text": "Ukraine reports renewed restrictions on its Starlink military communications amid US-Russia talks.",
+      "topic": "World"
+    },
+    {
+      "text": "A Microsoft 365 outage lasting several hours disrupted email and Teams access worldwide.",
+      "topic": "Tech"
+    },
+    {
+      "text": "American Cancer Society now recommends all men get prostate cancer screening every two years from age 50 to 69.",
+      "topic": "Science"
+    },
+    {
+      "text": "A forensic researcher claims top Chinese AI labs trained models on export-restricted Nvidia Blackwell chips.",
+      "topic": "AI"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-13.mp3",
+    "duration_seconds": 413,
+    "size_bytes": 4961664
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "3d635da873b31f7e6cbd330606ec9931",
+          "slug": "microsoft-365-outage-disrupts-outlook-and-teams-for-hours",
+          "title": "Microsoft 365 outage disrupts Outlook and Teams for hours",
+          "summary": "Hundreds of thousands worldwide lost access to email, Teams, and other work tools for nearly six hours.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://globalnews.ca/news/12148204/microsoft-outage-2026"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/13/microsoft-outage-outlook-teams-word-excel-reports"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c5gm3g9ldz8xo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Microsoft 365 is a set of online work tools from Microsoft. It includes email through Outlook, chat and video calls through Teams, and document apps like Word and Excel. Many businesses, schools, and people rely on it every day. When the service goes down, people often cannot read email, join meetings, or open files stored online.",
+            "what_happened": "Microsoft 365 went down for thousands of users on Thursday, and some reports said hundreds of thousands. Reports of problems spiked shortly after noon Eastern time. Microsoft said it was investigating issues reaching Exchange Online mailboxes, the servers that hold email, in the Americas. Nearly six hours later, Microsoft said it was still working to bring affected servers back and had seen only limited recovery. A Microsoft spokesperson said the company had no sign of a cyber attack.",
+            "why_it_matters": "If you use Outlook, Teams, or Word through work or school, you may have been unable to reach email, meetings, or files during the outage. Outages like this show how much daily work depends on a few online services. For most people, the effect was a lost afternoon of access, not lasting harm to their data.",
+            "quote": {
+              "text": "We're aggressively pursuing all pathways to reduce impact.",
+              "attribution": "Microsoft, in a post on X",
+              "source_url": "https://www.bbc.co.uk/news/articles/c5gm3g9ldz8xo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "1c41c7e478b1883a7239a017d879fc02",
+          "slug": "microsoft-outlook-email-service-went-down-globally",
+          "title": "Microsoft Outlook email service went down globally",
+          "summary": "Users worldwide could not access Outlook through web or apps starting just before 1 PM Eastern.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1032226/microsoft-outlook-is-down"
+            }
+          ],
+          "article": {
+            "background": "Outlook is Microsoft's email program, used through a web browser or an app on phones and computers. Many people and businesses rely on it to send and receive work and personal email. Microsoft 365 is the subscription software package that includes Outlook.",
+            "what_happened": "Starting just before 1 PM ET on Thursday, people around the world reported they could not reach their Outlook email. The problem affected both the web version and the apps. Microsoft said on its Microsoft 365 Status account that a part of its infrastructure was under heavy load across several regions. Microsoft said this was likely causing the connection errors. As of the latest reporting, the problem had not been fixed.",
+            "why_it_matters": "If you use Outlook for email, you may have been unable to read or send messages during the outage. Outages like this usually end once the company fixes the load problem, but the excerpts do not say when that will happen. If your work depends on email, it helps to have a backup way to reach people while the problem lasts.",
+            "quote": {
+              "text": "We’ve determined a portion of infrastructure is experiencing elevated load across multiple regions, which is likely contributing to the connectivity errors.",
+              "attribution": "Microsoft 365 Status account, Microsoft",
+              "source_url": "https://www.theverge.com/tech/1032226/microsoft-outlook-is-down"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "cd733ebd86b85030dd3f757a41f06a8f",
+          "slug": "forensic-analysis-finds-chinese-ai-labs-used-export-banned",
+          "title": "Forensic analysis finds Chinese AI labs used export-banned Nvidia chips",
+          "summary": "Four major Chinese labs allegedly trained models on Blackwell chips barred from export to China.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/willdepue/status/2120992457630326841"
+            }
+          ],
+          "article": {
+            "background": "The US bars the export of Nvidia's Blackwell chips to China. Blackwell is Nvidia's newer generation of chips for training AI models. Hopper is the generation before it. Training an AI model means adjusting its internal numbers, called weights, over huge amounts of data. A seed is a starting number that sets where those weights begin.",
+            "what_happened": "A post on X says its author found a hidden pattern in AI models. The pattern depends on the exact chip used and the seed, and the author says traces of it remain in finished models. The post names DeepSeek, Moonshot, MiniMax and Ant Group as the labs involved. A separate write-up on unemploymentlabs.com says six models released by these companies since April 2026 match Blackwell. It says earlier models from the same companies match Hopper.",
+            "why_it_matters": "If these findings hold, chips covered by US export rules may be in use by top Chinese AI labs. That would raise questions about how well those rules work. For most people, nothing changes right away. The excerpts reviewed do not include a response from the companies or an independent check of the claims.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "cd4d80051888e3e815211427e4337ae0",
+          "slug": "data-centers-raise-power-costs-for-lower-income-and-rural",
+          "title": "Data centers raise power costs for lower-income and rural households, study finds",
+          "summary": "Research shows residents in those areas bear disproportionate costs of grid upgrades for AI infrastructure.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://news.cornell.edu/stories/2026/11/data-centers-need-power-lower-income-rural-residents-pay-price"
+            }
+          ],
+          "article": {
+            "background": "Data centers are large buildings full of computers. They run artificial intelligence and many online services. The Cornell report says these centers can use as much power as a medium-sized city. Power grids are the networks that carry electricity from plants to homes and businesses. Big new users strain those networks and can force costly upgrades.",
+            "what_happened": "Cornell researchers studied four major U.S. power grids from 2020 to 2025. They published their findings Nov. 9 in Nature Energy, a science journal. The study found that data centers have pushed up wholesale energy prices. Wholesale prices are what utilities pay to buy power in bulk. On average, data centers paid only 38% of the costs tied to their growth.",
+            "why_it_matters": "Higher wholesale prices can reach the bills households pay, depending on local rules. The study found that lower-income and rural residents bear a larger share of these costs. If you pay an electric bill, the cost of building power for data centers may affect you.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "516b162689be19f6bfed2a8c6041c762",
+          "slug": "google-releases-gemini-4-hydrogen-model-with-better",
+          "title": "Google releases Gemini 4 Hydrogen model with better question handling",
+          "summary": "The new model can break down complex or multi-part questions and address each separately.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen"
+            }
+          ],
+          "article": {
+            "background": "Google makes Gemini, its family of AI models. An AI model is software that reads a question and writes an answer. Google uses Gemini in its search tool, in its Gemini app, and in tools for developers and businesses. This story is about a new version of that model.",
+            "what_happened": "Google says its new model, called Gemini 4 Hydrogen, gives more helpful answers to complex questions. Google says this includes questions with multiple parts, hard-to-understand typos, or very specific requests. The model can break a question into parts and answer each one. It is available starting today in Google search, the Gemini app, and several developer and business tools. Robby Stein, Google's vice president of product for Search, said it is now the default model in AI Mode.",
+            "why_it_matters": "If you use Google search or the Gemini app, your answers to long or messy questions may be more useful. Developers and businesses that use Gemini can also access the new model. The article does not say how much better the answers are, so the size of the change is not clear yet.",
+            "quote": {
+              "text": "now the new default model in AI Mode & being used for your hardest questions in AI Overviews.",
+              "attribution": "Robby Stein, VP of product at Google Search",
+              "source_url": "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "d9bf3b0fd76ea34fe0949c91acda191a",
+          "slug": "nvidia-ceo-jensen-huang-resigns-as-shares-fall-13-percent",
+          "title": "Nvidia CEO Jensen Huang resigns as shares fall 13 percent",
+          "summary": "The sudden departure prompted a sharp stock drop and congressional scrutiny over national security concerns.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/videos/c6wy9l859r94o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "the_conversation_business",
+              "url": "https://theconversation.com/from-ancient-asia-to-the-ai-age-has-chinas-beauty-stratagem-found-a-new-victim-in-nvidias-jensen-huang-296393"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.cnbc.com/2026/11/12/alice-huang-jensen-huang-nvidia-huawei.html"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1032434/nvidia-jensen-huang-resignation-reactions"
+            },
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/nov/12/nvidia-ceo-jensen-huang-resigns"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "pbs_economy",
+              "url": "https://www.pbs.org/newshour/show/what-huangs-resignation-mean-for-chipmakers-ai-and-u-s-national-security"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/12/jensen-huang-nvidia-ceo-replacement"
+            }
+          ],
+          "article": {
+            "background": "Nvidia is a large American technology company. It makes computer chips used to power artificial intelligence (AI) systems. Jensen Huang co-founded the company and led it as chief executive officer (CEO), its top job. He is 63 years old and had led Nvidia for decades.",
+            "what_happened": "Nvidia said Huang has resigned as CEO and from its board. Huang had admitted to an affair, according to reports. Media reports linked him to Alice Huang, a Singapore-based executive, and U.S. officials reportedly believe she is a Chinese spy. Reuters reported a separate relationship with a Nvidia employee, whose name it has not published. Nvidia's chief financial officer, Colette Kress, is now interim CEO, and no permanent successor has been named.",
+            "why_it_matters": "Nvidia now has an interim leader while it looks for a permanent CEO. This matters most to people who own its shares or funds that hold them. The case also raises questions about restricted AI chips reaching China, which could lead to new rules later. For most people, nothing changes right away.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "82b228899b8db58afeae44235c276f09",
+          "slug": "mercedes-benz-halts-all-german-factory-investment-as",
+          "title": "Mercedes-Benz halts all German factory investment as closures loom",
+          "summary": "The automaker stopped funding plants in Germany, signaling possible shutdowns and job losses ahead.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/world/mercedes-benz-halts-german-investments-plant-closures-loom-2026-11-12"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "336b633abd77e565b1617fa2c46041a1",
+          "slug": "mississippi-democrat-scott-colom-flips-us-senate-seat",
+          "title": "Mississippi Democrat Scott Colom flips US Senate seat",
+          "summary": "Colom defeated the Republican incumbent, becoming the state's first Democratic senator since 1989.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/how-scott-colom-won-his-longshot-bid-to-flip-mississippis-senate-seat"
+            }
+          ],
+          "article": {
+            "background": "Mississippi is a deeply conservative state. Its voters have not sent a Black senator to Washington since the Reconstruction era that followed the Civil War. The U.S. Senate is the chamber of Congress where each state gets two members. Cindy Hyde-Smith, a Republican, held one of Mississippi's seats going into this race.",
+            "what_happened": "Democrat Scott Colom won his bid to unseat Republican Sen. Cindy Hyde-Smith. The Associated Press reported the win on November 11, 2026. The race was seen as a longshot for Colom.",
+            "why_it_matters": "The result decides who represents Mississippi voters in the Senate. Senators vote on laws and federal spending that reach people across the country. Changes in who holds a seat can shift those votes over time.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e19610679aa2eff2d33bf6c4d808449f",
+          "slug": "kansas-democrat-cindy-holscher-wins-governor-s-race",
+          "title": "Kansas Democrat Cindy Holscher wins governor's race",
+          "summary": "State Senator Holscher defeated Republican Ty Masterson to keep the office in Democratic hands.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/12/g-s1-151187/holscher-kansas-masterson-governor-midterms"
+            },
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/cindy-holscher-wins-election-for-kansas-governor-extending-democrats-wave-of-victories"
+            }
+          ],
+          "article": {
+            "background": "The governor leads the state government in Kansas. Democrat Laura Kelly has held the job for eight years, but she is term-limited, which means state law bars her from running again. That left the seat open this year.",
+            "what_happened": "Democratic state Sen. Cindy Holscher defeated Republican Ty Masterson in the race for Kansas governor. The Associated Press called the race for Holscher. Masterson is the president of the state Senate and was endorsed by President Trump. The call came after days of counting provisional ballots, which are votes held back until election workers check voter eligibility. Local officials also ran recounts in the close contest.",
+            "why_it_matters": "The governor signs or vetoes bills passed by the state legislature and oversees state agencies. Kansas was seen as the governor race most likely to switch from Democratic to Republican control, so the result keeps the office with the same party. The AP described it as part of a wider set of Democratic wins across the country. For most residents, day-to-day effects will depend on the policies Holscher pursues next.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1bc50c9262c01c86169602460a450476",
+          "slug": "election-tool-flagged-living-voters-as-dead-in-georgia",
+          "title": "Election tool flagged living voters as dead in Georgia county",
+          "summary": "A system built by election activists incorrectly marked voters as deceased ahead of the midterms.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.propublica.org/article/election-challenge-forsyth-county-georgia"
+            }
+          ],
+          "article": {
+            "background": "Some conservative election activists are building data tools to find voters they think should not be on the rolls. One such tool was built by a person in their own movement. The activists talked about using it ahead of the midterm elections to challenge ballots.",
+            "what_happened": "A member of the election board in Forsyth County, Georgia, gave other officials a list of four voters. He said they were dead, which would be evidence of wrongdoing. ProPublica checked and found all four are alive. The board rejected the attempt to challenge their ballots.",
+            "why_it_matters": "If tools like this flag living voters as dead, eligible people could face challenges to their right to vote. The effort also shows that some people still doubt the 2020 election results, even after last week's election. Voters should expect more of these challenges as the midterms near.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "2769bd23d4c4feee2b9db02d48afe930",
+          "slug": "ukraine-reports-renewed-starlink-restrictions-during-us",
+          "title": "Ukraine reports renewed Starlink restrictions during US-Russia talks",
+          "summary": "Military Starlink access was throttled again weeks after a prior cutoff sparked an international dispute.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://uk.pcmag.com/networking/168362/amid-us-russia-talks-ukraine-says-its-starlink-access-is-restricted-again"
+            }
+          ],
+          "article": {
+            "background": "Starlink is a satellite internet service run by SpaceX. Starshield is a military version of it. Ukraine has used Starshield during its war with invading Russian forces. Earlier, Ukraine's Starlink access was cut off, and there was a dispute over whether SpaceX or President Trump ordered that cutoff.",
+            "what_happened": "Ukraine says the military version of Starlink has been slowed down again. President Volodymyr Zelenskyy said on Thursday at a political summit in Europe that speed limits are back on Starshield. He said the limit is 161 kilometers per hour, about 100 miles per hour, in the occupied parts of Ukraine. Ukraine has been using Starshield to fly military drones, sometimes faster than 240 miles per hour. Zelenskyy said the limits are not random errors and were set on purpose across the front line.",
+            "why_it_matters": "For most people, this is a story about a war and a shared tool. It shows how much a modern military can depend on one private company's network. Speed limits on that network could make it harder for Ukrainian forces to control drones. The effects on daily life far from the front are not clear yet.",
+            "quote": {
+              "text": "We have detected speed restrictions on Starshield on our Ukrainian territory again.",
+              "attribution": "Volodymyr Zelenskyy, President of Ukraine",
+              "source_url": "https://uk.pcmag.com/networking/168362/amid-us-russia-talks-ukraine-says-its-starlink-access-is-restricted-again"
+            }
+          }
+        },
+        {
+          "cluster_id": "e3304bf5afa6ff264d590f065152b267",
+          "slug": "us-envoys-meet-zelensky-in-dublin-after-moscow-talks-with",
+          "title": "US envoys meet Zelensky in Dublin after Moscow talks with Putin",
+          "summary": "Kushner and Witkoff held fresh discussions with Putin, then traveled to Ireland to meet Ukraine's president.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cwrkgmymk55zo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The war in Ukraine began when Russia invaded in 2022 and has continued since, with repeated rounds of talks aimed at ending it. Jared Kushner and Steve Witkoff are US envoys working on those talks. Recent discussions took place in Abu Dhabi, the capital of the United Arab Emirates.",
+            "what_happened": "US envoys Jared Kushner and Steve Witkoff held a fresh round of talks with Russian President Vladimir Putin in Moscow. This came a day after latest discussions aimed at ending the war wrapped up in Abu Dhabi. The pair then traveled to Dublin to meet Ukraine's President Volodymyr Zelensky. Witkoff said a new round of three-way talks involving the US, Russia and Ukraine had already been agreed with Putin. Zelensky said on Thursday morning that Ukraine's military again faces restrictions on Starshield, a military-grade satellite service run by Starlink, which makes it hard for Kyiv to track Russian jets.",
+            "why_it_matters": "Talks like these shape whether the war in Ukraine ends and on what terms. For most people outside the region, the effects are indirect for now, showing up in energy prices, aid decisions and security in Europe. The reported satellite restrictions show that access to technology can affect the fighting itself.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fcd875340afb6b8c6070df9169767b04",
+          "slug": "ukrainian-drone-strikes-russian-warship-in-gulf-of-finland",
+          "title": "Ukrainian drone strikes Russian warship in Gulf of Finland",
+          "summary": "Finland confirmed the attack on the Naro-Fominsk in Baltic waters near NATO territory.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmn0d33zz34zo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Ukraine and Russia have been at war since 2022. The Gulf of Finland is a narrow arm of the Baltic Sea that runs past Finland and Estonia toward St. Petersburg. Russia exports oil through Ust-Luga, a port on the Baltic coast. Finland has been one of Kyiv's closest European allies.",
+            "what_happened": "Finnish officials confirmed that a Russian warship was attacked in the Gulf of Finland on Wednesday. Ukraine's SBU security service said it targeted the ship Naro-Fominsk. The attack was part of a wider drone operation against the Ust-Luga oil export depot. Little is known about the strike itself.",
+            "why_it_matters": "For most people this does not change daily life yet. The attack raises questions about whether Ukraine will widen its strikes into shipping lanes that civilian vessels also use. That could affect the cost and safety of sea travel and trade in the region.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "9a6fdcc827d42ecac8ff5b9472d7a5e9",
+          "slug": "american-cancer-society-reverses-guidance-urges-prostate",
+          "title": "American Cancer Society reverses guidance, urges prostate screening for all men",
+          "summary": "Men at average risk should get a PSA test every two years from age 50 to 69.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/health/2026/11/in-reversal-american-cancer-society-urges-prostate-cancer-tests-for-all-men"
+            }
+          ],
+          "article": {
+            "background": "Prostate cancer is a common cancer in men. It starts in the prostate, a small gland below the bladder. Screening means testing people who have no symptoms, to catch disease early. One common screening test is the PSA test, a blood test that measures prostate-specific antigen, a protein the prostate makes. The American Cancer Society is a large cancer charity that publishes screening advice. This update reverses the group's earlier position, as the headline notes.",
+            "what_happened": "The American Cancer Society has updated its prostate cancer screening guidelines. It now recommends that all men get routine screening with a PSA test. Men at average risk should get the test every two years from age 50 to 69. Men at higher risk, based on race and family history, should start at age 45, and most should be tested every year. All Black men are advised to start yearly testing at 45, because they have higher rates of the disease. The new guidelines were released Thursday.",
+            "why_it_matters": "If you are a man, this may change when you first talk with your doctor about a PSA test. Your risk level depends on your race and on whether a close relative had prostate cancer. These are guidelines, not orders, so a test is still a choice to discuss with your doctor.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1d2cc3e42aea2592695f4e07632e9b03",
+          "slug": "study-shows-climate-change-has-pushed-ice-and-frozen-ground",
+          "title": "Study shows climate change has pushed ice and frozen ground out of safe zone",
+          "summary": "Conditions that kept ice, snow, and permafrost stable for 12,000 years are disappearing due to fossil fuel use.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wired.com/story/climate-change-abolishes-ice"
+            }
+          ],
+          "article": {
+            "background": "The cryosphere is the part of Earth covered by ice, frozen soil, and snow. For about 12,000 years, the planet's climate has stayed remarkably steady. That stability has let human civilization flourish. Rising temperatures are now pushing the climate outside the range where these frozen parts of the planet stay stable.",
+            "what_happened": "New research published in the journal Science on Thursday examines this shift. The scientists looked at what they call a \"safe operating space\" for the icy, snowy parts of the world. Their work shows that the conditions keeping ice, frozen soil, and snow stable are slipping away. The researchers link this change to the burning of fossil fuels, such as coal, oil, and gas.",
+            "why_it_matters": "A steady climate is what allowed people to build farms, towns, and cities over thousands of years. If that steadiness fades, the effects would reach everyone on Earth over time. The reporting describes the implications as grave for the entire globe, but the excerpts do not say how or when daily life would be affected.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "f6811674a3bfdede54f28e7ea9b61220",
+          "slug": "binance-lost-6-4-billion-dollars-in-fake-job-interview",
+          "title": "Binance lost 6.4 billion dollars in fake job interview attack",
+          "summary": "Hot wallets across 11 blockchains were drained in 20 minutes after someone opened a malicious file.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://rekt.news/binance-rekt"
+            }
+          ],
+          "article": {
+            "background": "Binance is one of the largest crypto exchanges, where people buy and sell digital currencies. Hot wallets are the online accounts an exchange uses to move coins quickly for customers, so they are a common target for thieves. In 2025, North Korea took about $1.5 billion from the exchange Bybit, which was the record until now. This story is about a new theft from Binance.",
+            "what_happened": "On October 28, Binance founder CZ warned followers never to open email links or attachments, even from trusted people. The next evening, Binance hot wallets were drained across 11 blockchains. Elliptic estimated the theft at $6.43 billion, and TRM Labs said most of it left in about twenty minutes. The FBI has linked the attack to the same group behind the Bybit theft, called TraderTraitor. Binance said a compromised laptop of a DevOps engineer, a worker who maintains the company's systems, may have let an attacker submit unauthorized withdrawals.",
+            "why_it_matters": "For now, this does not change much for most people who hold crypto on Binance. It does show that exchanges holding large sums can be drained in minutes. Customers may want to check how an exchange protects its funds before they deposit more.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bf642051079f2f8dc2dfd0c15ef2a874",
+          "slug": "humble-bundle-removes-two-factor-verification-from-account",
+          "title": "Humble Bundle removes two-factor verification from account settings",
+          "summary": "The storefront redesign eliminated the option to add or update two-factor security methods.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/games/1032659/humble-bundle-redesign-two-factor-verification-security-settings"
+            }
+          ],
+          "article": {
+            "background": "Humble Bundle is an online store where people buy games and other software. Two-factor verification is a security step. After you enter your password, the site also asks for a code from your phone or another device. This makes it harder for someone else to get into your account.",
+            "what_happened": "The Humble Bundle storefront recently got a new look. On the settings page, users can no longer add or update two-factor verification methods, according to Kotaku. PC Gamer noted that Humble Bundle support pages still discuss two-factor verification. A PC Gamer writer said they had set it up on the old version of the site.",
+            "why_it_matters": "If you have a Humble Bundle account, you may not be able to turn on or change this extra login check right now. Keeping two-factor verification helps protect your account and any saved payment details. If you already use it, it is worth checking that it still works.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "c214729cda6f0350ae75ef41100f190a",
+          "slug": "harry-kane-scores-winner-for-england-in-100th-cap-becomes",
+          "title": "Harry Kane scores winner for England in 100th cap, becomes all-time leading scorer",
+          "summary": "The captain netted his 92nd international goal from the penalty spot in the Nations League win.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/football/articles/c64gnd7vd912o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/football/2026/nov/12/england-croatia-nations-league-match-report"
+            }
+          ],
+          "article": {
+            "background": "The UEFA Nations League is a competition between national men's teams in Europe. England and Croatia were playing a group game in it. Harry Kane is England's record goalscorer. After this match he also became the country's most capped men's player, which means he has played more games for England than anyone else. Last month England beat Croatia 7-0 in Rijeka, Croatia's heaviest defeat.",
+            "what_happened": "England beat Croatia 2-1 at Wembley on Wednesday. Morgan Rogers scored first for England. Petar Sucic scored for Croatia after a mistake by England defender Jarell Quansah. Harry Kane then scored a penalty, his 92nd England goal, to win the match. It was also his 126th England appearance.",
+            "why_it_matters": "For most people this result changes little in daily life. It does show which players are in form for England. Coaches use results like these when they choose squads for big tournaments, such as the World Cup. Chelsea player Cole Palmer was left out of this squad, and England boss Thomas Tuchel said Palmer misses too many chances to impress.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d80b869e4be68056061dca0fc10011c5",
+          "slug": "victoria-police-decline-to-charge-four-sydney-swans-players",
+          "title": "Victoria police decline to charge four Sydney Swans players in sexual assault investigation",
+          "summary": "Authorities cited insufficient evidence in the case involving an alleged incident at a Melbourne hotel.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/nov/13/sydney-swans-players-no-charges-alleged-hotel-incident-ntwnfb"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ckregjwr7njqo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Four players from the Sydney Swans, an Australian Football League (AFL) club, were investigated by Victoria police. The investigation followed an alleged sexual assault at a hotel in Melbourne earlier this year. The men were suspended for the rest of the season in August. They denied wrongdoing but apologised for breaking club rules.",
+            "what_happened": "Victoria police have decided not to charge Isaac Heeney, James Jordon, Chad Warner and Nick Blakey. Police said they made the decision after a thorough investigation and legal advice. They cited insufficient evidence. The players are understood to have helped police with the investigation. Blakey now plays for North Melbourne.",
+            "why_it_matters": "For now, the decision means the four men will not face criminal court. The case shows how hard it can be to prove a serious allegation when evidence is limited. Readers who follow sport may also see how clubs handle players accused of misconduct, even when police bring no charges.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "2cbf7c39d1acc0eeab357715a33702ef",
+      "title": "FAA expands AI advice to manage air traffic congestion across entire US airspace",
+      "url": "https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "46b0a12d661f9831059767cf6bb8143d",
+      "title": "Kalshi ends Donald Trump Jr's advisory contract over Polymarket conflict",
+      "url": "https://www.reuters.com/business/finance/kalshi-ends-donald-trump-jrs-advisory-contract-due-polymarket-conflict-2026-11-12",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 118,
+    "clusters_considered": 89,
+    "stories_run": 19,
+    "sources": 18,
+    "sections_held": 2
+  }
+}
