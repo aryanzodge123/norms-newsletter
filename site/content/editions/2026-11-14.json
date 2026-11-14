@@ -1,0 +1,438 @@
+{
+  "date": "2026-11-14",
+  "edition_number": 160,
+  "edition_type": "normal",
+  "headline_of_the_day": "FAA ground stop halted all US flight departures for hours after communications equipment failure",
+  "headline_cluster_id": "ed9c886f0fba92eb7fc8348d50b2e5e1",
+  "headline_rationale": "Affected every traveler at every US airport, stranding thousands and disrupting essential services nationwide.",
+  "key_points": [
+    {
+      "text": "FAA halted all US departing flights for hours after a communications equipment outage, stranding thousands.",
+      "topic": "Tech"
+    },
+    {
+      "text": "Nvidia CEO Jensen Huang stepped down after 33 years, leaving a hole in AI startup funding.",
+      "topic": "AI"
+    },
+    {
+      "text": "Microsoft Outlook and Teams suffered a nearly 24-hour outage affecting millions worldwide.",
+      "topic": "Tech"
+    },
+    {
+      "text": "Trump, Putin, and Xi are planning a historic joint meeting in China next week.",
+      "topic": "World"
+    },
+    {
+      "text": "Lauren Boebert lost her Colorado House seat to Democrat Eileen Laubacher.",
+      "topic": "US Politics"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-14.mp3",
+    "duration_seconds": 459,
+    "size_bytes": 5505984
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "ed9c886f0fba92eb7fc8348d50b2e5e1",
+          "slug": "faa-ground-stop-halted-all-us-departing-flights-for-hours",
+          "title": "FAA ground stop halted all US departing flights for hours",
+          "summary": "Communications equipment failure stranded travelers nationwide, with cause still under investigation.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/13/u-s-government-grounds-all-flights-across-the-united-states-due-to-extraordinary-cirumstances"
+            },
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/11/faa-orders-third-nationwide-ground-stop-in-its-history"
+            },
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/news/1033489/faa-ground-stop"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/13/faa-ground-stop-flights-explained"
+            },
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/nov/14/faa-ground-stop-nba-nhl-college-football-travel-disruption"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqx2wyvyr3zzo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Federal Aviation Administration, or FAA, is the U.S. agency that manages air traffic and keeps flights safe. A ground stop means flights are held on the runway or at the gate and cannot take off. Ground stops usually affect one airport or region. This one covered the whole country. Ars Technica reported it was the third nationwide ground stop in the FAA's history.",
+            "what_happened": "On Friday afternoon, the FAA ordered a ground stop for all departing flights in the United States. The alert was issued at 3:54 p.m. ET and said the cause was \"extraordinary circumstances\" and safety. Transportation Secretary Sean Duffy said on X that the problem was a communication issue affecting all Air Route Traffic Control Centers. Homeland Security Secretary Markwayne Mullin said it was a telecommunications outage and not a security threat. Planes already in the air were allowed to land. FlightAware listed more than 10,000 delayed U.S. flights and about 3,400 canceled by 6:16 p.m. ET.",
+            "why_it_matters": "If you had a flight planned that day, it likely was delayed or canceled. The FAA said international flights would be handled case by case. Ground stops like this are rare, so the outage shows how much daily travel depends on a few shared systems.",
+            "quote": {
+              "text": "This is a telecommunications outage out of the FAA. Out of an abundance of caution, we have grounded all of the flights.",
+              "attribution": "Markwayne Mullin, Secretary of Homeland Security",
+              "source_url": "https://arstechnica.com/tech-policy/2026/11/faa-orders-third-nationwide-ground-stop-in-its-history"
+            }
+          }
+        },
+        {
+          "cluster_id": "744e6ce7f4fe9e3bbbc64ec69ca6b637",
+          "slug": "microsoft-outlook-and-teams-outage-disrupted-millions-for",
+          "title": "Microsoft Outlook and Teams outage disrupted millions for nearly 24 hours",
+          "summary": "Company says recovery is underway and outage is not related to cyberattack or AI.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/live/2026/nov/13/microsoft-outage-down-today-live-update-outlook-teams-365-when-fixed-latest-status-cause-news"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6rrg51rkz09o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/nov/14/microsoft-deeply-sorry-for-global-disruption-that-could-have-billion-dollar-impact-on-australia"
+            }
+          ],
+          "article": {
+            "background": "Microsoft makes Outlook, the email program, and Teams, the chat and video app many offices use every day. Its cloud services run behind the scenes for many businesses and governments. When those services go down, people can lose access to email and meetings. Microsoft said the outage started during a change it made to its systems.",
+            "what_happened": "Microsoft's services went down for almost 24 hours, affecting Outlook and Teams. The outage reached more than 70 countries, according to BBC reporting. Services were broadly recovering by Friday afternoon, but Microsoft said it did not know when everything would fully return. Microsoft said it was a technical issue and was not caused by a cyber attack or AI. The company said it was \"deeply sorry\" and had \"addressed the underlying issue.\" The Australian Medical Association said it had no reports of hospitals or clinics being affected.",
+            "why_it_matters": "If you rely on work email or Teams, you may have had trouble sending or getting messages. Experts warned that businesses in Australia could lose money, and some small firms might close. The outage also shows how much countries depend on services run by a few foreign companies. Services were recovering, so most people should now be back to normal.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "17698ef3720d3c9c8ee2bab9e026055e",
+          "slug": "nvidia-ceo-jensen-huang-steps-down-after-33-years",
+          "title": "Nvidia CEO Jensen Huang steps down after 33 years",
+          "summary": "Departure leaves big gap in AI startup funding and casts uncertainty over industry.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ck1exevgql4qo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Nvidia makes the chips that power many AI systems. The company has also been a major investor in young companies. Those startups build AI tools, data centers, and related products. Jensen Huang co-founded Nvidia and led it for 33 years.",
+            "what_happened": "Huang has stepped down as Nvidia's chief executive. The BBC reports he stepped down after admitting he had an affair. The woman involved, Alice Huang, ran Megaspeed, a Singapore data center company that buys a lot of Nvidia chips. Over recent years, Nvidia has invested tens of billions of dollars in startups each year. PitchBook, a firm that tracks investment deals, counts 105 funding rounds with Nvidia this year alone, often as the largest investor.",
+            "why_it_matters": "Many startups depend on money from big investors like Nvidia. If Nvidia changes how it invests, some of those companies could struggle to raise money. For most people, the effect would show up later, in the AI products that young companies do or do not build. For now, the outcome is unclear.",
+            "quote": {
+              "text": "If that direction changes, it'll be a big blow to so many young companies.",
+              "attribution": "Maria Davidson, founder of Relational Capital",
+              "source_url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say"
+            }
+          }
+        },
+        {
+          "cluster_id": "0c86a2049c63ee36c59fc432d9293284",
+          "slug": "treasury-chief-blames-commerce-department-over-lack-of",
+          "title": "Treasury chief blames Commerce Department over lack of Nvidia export enforcement",
+          "summary": "Cabinet-level dispute erupts over whether US enforced AI chip export limits to China.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/nov/13/nvidia-scandal-sparks-us-national-security-concerns-china"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqvg2d1eg7zro?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/bessent-accuses-lutnick-of-failing-to-prevent-china-from-obtaining-nvidia-chips"
+            }
+          ],
+          "article": {
+            "background": "Nvidia makes the chips that power most advanced artificial intelligence systems. The US government limits which of these chips can be sent to China. Those limits are called export restrictions. The Commerce Department writes and enforces many of them. Megaspeed, a firm linked to a businesswoman described as a suspected Chinese spy, had been probed by US agencies over suspicions it smuggled Nvidia chips into China.",
+            "what_happened": "Treasury Secretary Scott Bessent blamed Commerce Secretary Howard Lutnick's department for failing to properly oversee the export of high-spec AI chips. Bessent said the US had not put export limits on certain Nvidia chips sent to China. Pressure on Lutnick is building from across the political spectrum. Jensen Huang stepped down as Nvidia's chief executive after reports of an affair with a businesswoman who was allegedly a Chinese spy. Colette Kress, the company's chief financial officer, took over on an interim basis.",
+            "why_it_matters": "For now, this does not change what most people pay or use. It does show how the government decides which advanced chips can leave the country. Those decisions can affect the price and supply of the computers and phones that depend on these chips. Rules set now may shape what later cases look like.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "c281c6f4055279f531c243296c0acc10",
+          "slug": "lauren-boebert-loses-colorado-house-seat-to-democrat-eileen",
+          "title": "Lauren Boebert loses Colorado House seat to Democrat Eileen Laubacher",
+          "summary": "Republican congresswoman defeated, shifting House control by one seat.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/gop-rep-lauren-boebert-of-colorado-loses-u-s-house-seat-to-democrat-eileen-laubacher"
+            }
+          ],
+          "article": {
+            "background": "Lauren Boebert is a Republican who served three terms in the U.S. House, the lower chamber of Congress in Washington. She represented a part of Colorado. She was also a familiar figure in conservative media. Members of the House are elected to represent one area of a state.",
+            "what_happened": "Democrat Eileen Laubacher defeated Boebert for the Colorado House seat on Friday. The Associated Press reported the result from Denver. The loss ended Boebert's three terms in the seat. Laubacher now takes the seat in its place.",
+            "why_it_matters": "Each House seat gives one lawmaker a vote on national laws. Those laws can affect taxes, spending, and other rules that reach everyday life. Who holds the seat decides who casts that vote for the next term.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "35f03fbd5e241c94ad0fd01397652e30",
+          "slug": "trump-and-nyc-mayor-mamdani-agree-to-90-day-delay-on-new",
+          "title": "Trump and NYC mayor Mamdani agree to 90-day delay on new food stamp rules",
+          "summary": "Extension gives corner stores time to comply with SNAP requirements affecting millions.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/13/mamdani-trump-deal-snap-delay"
+            }
+          ],
+          "article": {
+            "background": "SNAP is the Supplemental Nutrition Assistance Program, a federal program that helps people with low incomes buy food. Stores that accept SNAP must meet federal rules. The US Department of Agriculture sets those rules for retailers. Bodegas and corner stores are small neighborhood shops that often take SNAP.",
+            "what_happened": "New York City Mayor Zohran Mamdani said he struck a deal with President Donald Trump. The deal gives retailers a 90-day delay on new SNAP rules. Mamdani said the delay starts Friday. He said it followed conversations with Trump and Agriculture Secretary Brooke Rollins. The new rules were set to apply by 4 November. They require stores to stock at least seven varieties in each staple food category. Those categories are dairy, grains, protein, and fruits or vegetables.",
+            "why_it_matters": "If you use SNAP at a small store near you, the rules affect what that store must keep on its shelves. The delay gives those stores more time to meet them. The excerpts do not say what happens after the 90 days end.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8a18aad7f3cbdcc5ba94d00557b7b317",
+          "slug": "democrat-jonathan-kreiss-tomkins-wins-alaska-governor-race",
+          "title": "Democrat Jonathan Kreiss-Tomkins wins Alaska governor race at 37",
+          "summary": "Former state representative becomes youngest governor in Alaska history, replacing Republican Mike Dunleavy.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/14/g-s1-151719/midterms-alaska-governor-kreiss-tomkins"
+            }
+          ],
+          "article": {
+            "background": "Alaska voters choose a governor to lead the state government. Mike Dunleavy, a Republican, has been governor since 2018. He is term-limited, which means state law bars him from running again. The state's last Democratic governor was Tony Knowles, who left office in 2002. Jonathan Kreiss-Tomkins, known by his initials JKT, is a former state representative from Sitka, a small island community.",
+            "what_happened": "Democrat Jonathan Kreiss-Tomkins won the race for Alaska governor. The Associated Press made the call, meaning the news service decided he had won. He is 37, which will make him the youngest governor in state history. He will replace Mike Dunleavy when Dunleavy leaves office. Kreiss-Tomkins made a high-energy, bipartisan, problem-solving approach a centerpiece of his campaign.",
+            "why_it_matters": "A governor leads the state's executive branch, which carries out state laws and runs state services. This win puts a Democrat in the state's top job for the first time since 2002. The reporting does not yet say which policies he will push first, so the effect on everyday life is still unclear.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "cc5dcd586bc3bbf487ef049af1d1d18a",
+          "slug": "trump-putin-and-xi-plan-historic-joint-meeting-in-china",
+          "title": "Trump, Putin, and Xi plan historic joint meeting in China next week",
+          "summary": "White House announces unprecedented summit of US, Russian, and Chinese leaders.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Apec is the Asia-Pacific Economic Co-operation forum, a group of countries around the Pacific that meets to discuss trade and economic ties. This year its summit is in the southern Chinese city of Shenzhen. The three leaders named here, Donald Trump of the US, Vladimir Putin of Russia and Xi Jinping of China, lead three of the world's largest military powers.",
+            "what_happened": "The White House says Trump, Putin and Xi are planning to meet on the sidelines of the Apec summit next week. The meeting would bring together the leaders of the US, Russia and China. White House spokeswoman Olivia Wales told reporters that Trump wants to discuss reducing nuclear weapons around the world. She said he believes their spread is very dangerous.",
+            "why_it_matters": "Nuclear weapons affect everyone, even though few people ever think about them day to day. Talks between the three countries could shape whether these weapons spread or shrink. For now, the plans are only a White House statement, and no agreement has been reported.",
+            "quote": {
+              "text": "The president has made it clear that, among other topics, he will discuss the reduction of nuclear weapons in the world, whose proliferation President Trump believes is very dangerous.",
+              "attribution": "Olivia Wales, White House spokeswoman",
+              "source_url": "https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "e5ffb8c45748fe4d9e0e6af222b4c788",
+          "slug": "ukrainian-drones-knocked-out-36-percent-of-russia-oil",
+          "title": "Ukrainian drones knocked out 36 percent of Russia oil refining in two weeks",
+          "summary": "At least nine major refineries hit between late October and mid-November.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://english.nv.ua/nation/thirteen-day-drone-blitz-paralyzes-36-of-moscow-s-oil-50658616.html"
+            }
+          ],
+          "article": {
+            "background": "Russia refines crude oil into fuels like gasoline and diesel at large plants called refineries. Ukraine has been attacking Russian energy sites with drones for a long time, and refineries are among the targets. Refining capacity is how much crude oil a country's plants can process in a year.",
+            "what_happened": "Ukrainian drone strikes hit at least nine major Russian refineries between Oct. 30 and Nov. 11. Fire Point, a Ukrainian defense manufacturer, reported the attacks on Nov. 12. Fire Point says the plants hit can process more than 120 million metric tons of crude oil a year. That is 36% of Russia's total refining capacity.",
+            "why_it_matters": "Refineries turn crude oil into the fuels people use to drive and heat their homes. When many of them stop at once, fuel supply can tighten and prices can rise. The source reports do not say how much fuel prices have changed so far.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4668fa3bdeed9faafc55a018e4ab4487",
+          "slug": "all-130-passengers-rescued-after-new-orleans-cruise-ship",
+          "title": "All 130 passengers rescued after New Orleans cruise ship collision",
+          "summary": "American Heritage struck by tanker and left on its side in Mississippi River.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw20xmy0m5yyo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "American Heritage is a cruise ship that was docked in New Orleans. A cruise ship is a large vessel that carries tourists on trips. The Mississippi River runs past the city and is busy with cargo ships carrying goods up and down the water.",
+            "what_happened": "A tanker struck the cruise ship, which was left lying on its side in the river. The cargo vessel involved is named Atlantic Asphalt. About 130 people were on board and have been rescued. Thirty-two people were taken to hospital with injuries that are not critical. Officials say no one is unaccounted for. The exact cause is still under investigation. US Coast Guard Captain Melanie Burnham said there seems to have been a loss of steering.",
+            "why_it_matters": "For most people this changes little in daily life. It does show how risky busy river traffic can be near city docks. Investigators will look at why the steering failed, and their findings could lead to new safety rules for ships on the Mississippi.",
+            "quote": {
+              "text": "There seems to be some type of a loss of steering.",
+              "attribution": "Captain Melanie Burnham, US Coast Guard",
+              "source_url": "https://www.bbc.co.uk/news/articles/cw20xmy0m5yyo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "9b1cf5b24c103c55cb7ef2d55c02dd25",
+          "slug": "us-loses-measles-elimination-status-after-26-years",
+          "title": "US loses measles elimination status after 26 years",
+          "summary": "Public health milestone reversed as disease regains foothold in the country.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnn.com/2026/11/13/health/us-measles-elimination-status"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "5d6914ca792e837d6a6402b86fe27ca9",
+          "slug": "spacex-starship-completes-15th-test-flight-setting-up",
+          "title": "SpaceX Starship completes 15th test flight, setting up possible catch Saturday",
+          "summary": "Massive rocket reached orbit successfully after three-year gap in major tests.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/space/2026/11/starship-flight-15-powers-to-orbit-setting-up-a-possible-catch-on-saturday"
+            }
+          ],
+          "article": {
+            "background": "Starship is a very large rocket that launches from Starbase, a site in South Texas. Each test flight lets engineers see how the rocket performs in real conditions. Friday's flight was Starship's 15th test flight. Its previous test came more than three years earlier.",
+            "what_happened": "Starship lifted off right on schedule Friday evening. The launch took place as the Sun sank toward the western horizon. Winds were calm, so the rocket's white plume hung in the air for many minutes. The first stage rose cleanly and then released the upper stage over the Gulf of Mexico. Sources describe the launch as largely successful, and the upper stage kept climbing toward orbit.",
+            "why_it_matters": "For most people, this flight changes nothing right away. A catch on Saturday would be a test of whether the rocket can be recovered and flown again. If that works, it could shape how future rockets are built and used.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "1e2fc95eced89b420beb664331783ed4",
+      "title": "Increasing cost of housing squeezes Americans out of market",
+      "url": "https://www.pbs.org/newshour/show/increasing-cost-of-housing-squeezes-americans-out-of-market",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "bb39a5584509f069e643b13da2ee9f1c",
+      "title": "FAA expands AI advice to manage air traffic congestion across entire US airspace",
+      "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "ebf2639c94eb927e256e720b2639650b",
+      "title": "Jesús Owono given 12-match ban for tackle that resulted in Jesús de Miguel’s death",
+      "url": "https://www.theguardian.com/football/2026/nov/13/jesus-owono-given-12-match-ban-for-tackle-that-resulted-in-jesus-de-miguels-death",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "24d67d4a3b796361130e2041e9319040",
+      "title": "Hawaii DOT: All West Coast flights halted by SpaceX debris after FAA ground stop",
+      "url": "https://www.hawaiinewsnow.com/2026/11/14/dot-all-west-coast-flights-halted-by-spacex-debris-after-faa-ground-stop",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "b5db9fb633dd6e59bf87b732c3d82f1b",
+      "title": "Millions of Americans are not taking their GLP-1 drugs as prescribed",
+      "url": "https://arstechnica.com/health/2026/11/millions-in-us-use-unapproved-glp-1s-and-use-them-in-unapproved-ways",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "dccaaab86055134d7243c2380de9a981",
+      "title": "U.S. wrongly withheld New York highway funds over immigrant licenses, appeals court rules",
+      "url": "https://www.pbs.org/newshour/politics/u-s-wrongly-withheld-new-york-highway-funds-over-immigrant-licenses-appeals-court-rules",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "e315a3e1f3b24d49da818a4f1825a9f3",
+      "title": "ICE touts record number of deportations in agency's history",
+      "url": "https://www.pbs.org/newshour/show/ice-touts-record-number-of-deportations-in-agencys-history",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "7fa9643d5ebdd6606e340948a76fb386",
+      "title": "DHS head Markwayne Mullin says there is not a threat to the U.S. amid FAA ground stop",
+      "url": "https://www.npr.org/2026/11/13/nx-s1-6040418/dhs-head-markwayne-mullin-says-there-is-not-a-threat-to-the-u-s-amid-faa-ground-stop",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "ac02d630bbddd39699bd2fd5b305488d",
+      "title": "Restoring Flexibility To Support Head Start Program Access",
+      "url": "https://www.federalregister.gov/documents/2026/11/16/2026-23279/restoring-flexibility-to-support-head-start-program-access",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "c0dea587e739f6bd459e17060114ba25",
+      "title": "UK tells blind Nigerian pensioner to go to India for medical treatment",
+      "url": "https://www.theguardian.com/uk-news/2026/nov/14/uk-tells-blind-nigerian-pensioner-to-go-home-to-india",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "f51894e6f7b65031df69d562e603f932",
+      "title": "Probation officers in England and Wales vote to strike over pay and workloads",
+      "url": "https://www.theguardian.com/society/2026/nov/13/probation-officers-in-england-and-wales-vote-for-strike-action-over-pay-and-workloads",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5f02ae9e4f0bb863d43ee8fd30b525de",
+      "title": "France cling on for furious victory against South Africa after Dupont sizzles",
+      "url": "https://www.theguardian.com/sport/2026/nov/13/france-south-africa-nations-championship-match-report",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "9afa92c5ef6c3ed3fe539b0c5f866b91",
+      "title": "Ex-OpenAI researcher finds Blackwell signatures in open-weight models",
+      "url": "https://twitter.com/willdepue/status/2120992457630326841",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "47b40d6421254d23f5d8ecf5a85b47a5",
+      "title": "ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 188,
+    "clusters_considered": 133,
+    "stories_run": 12,
+    "sources": 17,
+    "sections_held": 0
+  }
+}
