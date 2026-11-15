@@ -1,0 +1,422 @@
+{
+  "date": "2026-11-15",
+  "edition_number": 161,
+  "edition_type": "normal",
+  "headline_of_the_day": "International Court of Justice to rule this week if Myanmar committed genocide against Rohingya minority",
+  "headline_cluster_id": "b9c418cd475930a62f9590cc255357e5",
+  "headline_rationale": "A landmark ruling from the world's top court on the gravest international crime sets a critical 21st-century precedent.",
+  "key_points": [
+    {
+      "text": "International Court of Justice rules this week on whether Myanmar committed genocide against Rohingya, setting critical precedent for international law.",
+      "topic": "World"
+    },
+    {
+      "text": "SpaceX successfully caught its Starship upper stage with mechanical arms in a major rocket recovery milestone on Saturday.",
+      "topic": "Tech"
+    },
+    {
+      "text": "Italy fined Meta 805 million euros for accessing Android users' photos and videos without specific consent through the Facebook app.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Arbitrator imposed first union contract for Amazon workers in North America at a British Columbia warehouse.",
+      "topic": "Business"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-15.mp3",
+    "duration_seconds": 503,
+    "size_bytes": 6037920
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "c01164102c8f2c1b15cae26093df5ae6",
+          "slug": "spacex-caught-starship-upper-stage-with-mechanical-tower",
+          "title": "SpaceX caught Starship upper stage with mechanical tower arms",
+          "summary": "The rocket stage flew horizontally before three engines flipped it vertical for a controlled tower catch.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/space/2026/11/with-starship-catch-spacex-still-shows-it-can-dazzle-the-world"
+            }
+          ],
+          "article": {
+            "background": "SpaceX is a rocket company, and Starship is one of its rockets. Starship is a very large rocket with a top section called the upper stage. The rocket returns to Starbase, SpaceX's site in Texas, after its flights.",
+            "what_happened": "On Saturday, the Starship upper stage came back down through the clouds near the end of its flight. For most of the descent, it flew sideways. At the last moment, three Raptor engines lit and turned it upright. Then it moved slowly toward a tower with two extended arms. Less than a minute after it came into view, the tower's arms caught it.",
+            "why_it_matters": "If rockets can be caught and flown again, they do not have to be thrown away after each trip. Reuse could lower the cost of sending things to space over time. For now, this is a test, and it does not change anything most people pay or use today.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d06662aa5ada52b7896919ab9b47ba5d",
+          "slug": "single-router-in-southern-arkansas-caused-nationwide-air",
+          "title": "Single router in southern Arkansas caused nationwide air travel shutdown",
+          "summary": "The Friday ground stop that halted thousands of flights traced to one defense contractor router.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "c736e484bdd15fd112648ab06651f350",
+          "slug": "arbitrator-imposes-first-amazon-union-contract-in-north",
+          "title": "Arbitrator imposes first Amazon union contract in North America",
+          "summary": "A British Columbia ruling set binding terms for Amazon workers at a Canadian warehouse.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cbc.ca/news/canada/british-columbia/amazon-union-contract-b-c-first-north-america-9.7421834"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "994c35c509c7aabe2dadc23d4d8ff690",
+          "slug": "gymshark-seeks-trademark-that-threatens-small-fitness",
+          "title": "Gymshark seeks trademark that threatens small fitness business",
+          "summary": "The billion-pound sportswear company is trying to register The Conditioning Club name already used by another firm.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/law/2026/nov/15/gymshark-trademark-battle-the-conditioning-club-gloucestershire"
+            }
+          ],
+          "article": {
+            "background": "Gymshark is a British sportswear company. It makes gym clothes and workout wear, and it is now worth about £1bn. The company started in a family garage. A trademark is a legal right to use a name or logo for certain goods or services. Owning one usually stops others from using the same name in the same field.",
+            "what_happened": "Ben Francis, the company's founder, is trying to add The Conditioning Club to Gymshark's trademarks. Francis dropped out of university and began by sewing gym clothes in his parents' garage. He is now estimated to be worth £800m. A gym and fitness business already uses The Conditioning Club name. It is based on an industrial estate in Fairford, Gloucestershire. The business was founded by John Watson, who is also 34, the same age as Francis.",
+            "why_it_matters": "If you run a small business, your name could be at risk if a larger company wants the same one. This case may show how much protection a small firm has when a bigger brand seeks the same name. The dispute is still ongoing.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "56874a61e7fa5642662440b75a191782",
+          "slug": "judge-blocks-trump-from-closing-washington-dc-golf-course",
+          "title": "Judge blocks Trump from closing Washington DC golf course for renovation",
+          "summary": "A federal court temporarily halted the government's planned November closure of East Potomac Golf Links.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6j9mn7l14y0o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/14/nx-s1-6041152/judge-trump-golf-course-blocks"
+            }
+          ],
+          "article": {
+            "background": "East Potomac Golf Links is a public golf course and park on the Potomac River in Washington DC, not far from the White House. The course is 106 years old and considered historic. A group called the DC Preservation League and two local golfers filed a legal challenge against the project in February. The case has been running for months.",
+            "what_happened": "A federal judge, Ana Reyes, issued a temporary restraining order that pauses work at the course for two weeks. A restraining order is a short court order that stops an action while a case is heard. The course was set to close Sunday for renovations lasting 15 months. Trump has said the upgrade will create one of the best golf courses in the world. Reyes said the government cannot close the park or its golf course, but it is not required to actively manage either one.",
+            "why_it_matters": "For now, the course stays open to the public while the court considers the case. If the renovation goes ahead later, golfers and visitors could lose access to a public course for more than a year. The outcome will decide how a historic public park can be changed.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "68ceb92b0928dfddd9d07e6d87d56b44",
+          "slug": "katherine-deves-to-run-for-nsw-upper-house-with-one-nation",
+          "title": "Katherine Deves to run for NSW upper house with One Nation",
+          "summary": "The former Liberal candidate who campaigned against transgender athletes will stand in next year's state election.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/australia-news/2026/nov/15/katherine-deves-among-four-nsw-upper-house-candidates-revealed-by-one-nation-ntwnfb"
+            }
+          ],
+          "article": {
+            "background": "New South Wales is a state in Australia. Its parliament has two chambers, and the upper house is called the Legislative Council. Katherine Deves was a federal Liberal candidate who failed to win her seat. During that campaign she supported keeping transgender women out of women's sport.",
+            "what_happened": "One Nation has named four candidates for the New South Wales Legislative Council. Mike Newman, One Nation's state leader, announced them on Sunday. Katherine Deves is one of the four. Arnon Wither is a construction worker from the Hunter region who works for Senator Sean Bell. Manti Steele is a farmer, teacher and mother of eight from Dubbo. Daniel Hill is a surf lifesaver from the state's south coast. The state election will be held on 13 March.",
+            "why_it_matters": "Members of the upper house help make and check state laws. The election decides who holds those seats. For now, these four are only candidates, and voters will make the choice in March.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "b9c418cd475930a62f9590cc255357e5",
+          "slug": "world-s-top-court-to-rule-if-myanmar-committed-genocide",
+          "title": "World's top court to rule if Myanmar committed genocide against Rohingya",
+          "summary": "The International Court of Justice delivers a landmark judgment this week setting critical precedent for genocide cases.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/15/myanmar-rohingya-genocide-icj"
+            }
+          ],
+          "article": {
+            "background": "The Rohingya are a Muslim minority group in Myanmar, a country in Southeast Asia. Nearly a decade ago, a military campaign forced hundreds of thousands of Rohingya to flee their homes. The International Court of Justice (ICJ) is the world's top court for disputes between countries. Genocide is the gravest international crime. It was defined after the Nazi-led Holocaust.",
+            "what_happened": "The ICJ will deliver a judgment this week. The court will decide whether Myanmar committed genocide against its Rohingya minority. The case is being watched closely by governments and legal experts. The ICJ has never found a country responsible for genocide before.",
+            "why_it_matters": "The ruling could set a standard for how future genocide cases are judged. It will also affect a separate high-profile genocide case against Israel. For most people, the ruling will not change daily life directly. It will shape how the world responds to the most serious crimes.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5cd15349d318719f429295ebf80eb70a",
+          "slug": "planned-uk-asylum-detention-center-next-to-sewage-works",
+          "title": "Planned UK asylum detention center next to sewage works draws objections",
+          "summary": "Water officials warned detainees at Campsfield House would face insect swarms and strong smells from nearby pumping station.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/uk-news/2026/nov/15/planned-asylum-seeker-detention-centre-next-to-oxfordshire-sewage-works-criticised"
+            }
+          ],
+          "article": {
+            "background": "The Home Office is the UK government department that handles immigration. It plans to build asylum seeker detention facilities at Campsfield House, an immigration removal centre in Oxfordshire. Asylum seekers are people who have asked for protection in the country where they are staying. Thames Water is a water company, and it has raised concerns about the plan.",
+            "what_happened": "The Home Office wants to build new secure accommodation blocks at Campsfield House. The blocks would sit 20 metres from a sewage pumping station. Thames Water made a written submission about the plan. A senior development manager at the company wrote that the site could bring odour, noise, vibration, lighting, insects and flies for anyone living there.",
+            "why_it_matters": "Many people never think about where government detention sites are built. This case shows how close they can sit to ordinary utilities. The plan is still facing objections, so its final shape is not settled. For people held at the site, living conditions would depend on how these concerns are handled.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d9fb354050d8be4f4cdf2abb828ddd3e",
+          "slug": "uk-government-to-consider-changing-age-of-consent-after",
+          "title": "UK government to consider changing age of consent after Russell Brand allegations",
+          "summary": "Ministers said they will review calls for change after woman claimed Brand raped her at sixteen.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/law/2026/nov/15/uk-government-to-consider-changing-age-of-consent-after-allegations-against-russell-brand"
+            }
+          ],
+          "article": {
+            "background": "The age of consent is the minimum age at which the law says a person can agree to sex. Mia Latter is now 37 and has waived her right to anonymity, so she has agreed to be named publicly. She alleges that Russell Brand, a comedian now in prison, orally raped her when she was 16 and he was 30. Her claims are the basis for the current debate.",
+            "what_happened": "The government has said it will consider calls to change the age of consent. Latter made her allegations public and gave an interview to the Sunday Times. In it, she called for a staggered age of consent. A staggered age of consent would make relationships between adults and 16 and 17 year olds illegal. Louise Haigh, who acts as de facto deputy prime minister, told the newspaper that Latter's story meant a law change deserved consideration.",
+            "why_it_matters": "For now, the law has not changed, and the government has only said it will consider the idea. If a staggered age of consent became law, a relationship between an adult and a 16 or 17 year old would be illegal. Any change would affect how the law treats young people and the adults around them.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "e6c06190879c1cdf8895a752426d65bd",
+          "slug": "italy-fines-meta-887-million-dollars-for-accessing-users",
+          "title": "Italy fines Meta 887 million dollars for accessing users' photos without consent",
+          "summary": "The data protection agency said Facebook's Android app accessed photos and videos without properly informing Italian users.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/technology/2026/nov/15/italy-fines-meta-887m-for-accessing-android-users-photos-and-videos"
+            }
+          ],
+          "article": {
+            "background": "Italy has a data protection agency. It is a government office that enforces privacy rules for people's personal information. Meta owns Facebook, the social media app. Android is a phone operating system, and many apps on it can reach files stored on the phone. This case looks at how the Facebook app handled that access in Italy.",
+            "what_happened": "Italy's data protection agency fined Meta €805 million, about $887 million. The agency said the Facebook app on Android phones accessed Italian users' photos, videos and related metadata. Metadata is information about a file, such as when it was made. The agency said Meta did this without getting specific consent and without properly informing users. Meta says it will appeal the decision.",
+            "why_it_matters": "If you use Facebook on an Android phone in Italy, this case concerns your photos and videos. The fine is not final, because Meta has said it will appeal. For most readers, the case shows that regulators expect apps to ask clearly before they access personal files.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ac02d630bbddd39699bd2fd5b305488d",
+          "slug": "federal-rule-removes-wage-and-benefit-requirements-from",
+          "title": "Federal rule removes wage and benefit requirements from Head Start programs",
+          "summary": "Administration for Children and Families removed standards it said limited local flexibility in early childhood education.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "federal_register",
+              "url": "https://www.federalregister.gov/documents/2026/11/16/2026-23279/restoring-flexibility-to-support-head-start-program-access"
+            }
+          ],
+          "article": {
+            "background": "Head Start is a federal program that funds early learning and family services for children from low-income families. The Head Start Program Performance Standards are the rules that local Head Start programs must follow. The Administration for Children and Families (ACF), the federal agency that runs Head Start, sets those rules.",
+            "what_happened": "ACF issued a final rule that removes some requirements from the Performance Standards. The removed requirements deal with wages and benefits for Head Start staff. ACF says these requirements do not match the plain language of the Head Start Act, the law that governs the program. ACF also says they are costly and too strict. ACF estimates the changes will save Head Start programs over $2 billion in future costs.",
+            "why_it_matters": "The rule gives local Head Start programs more room to decide how to pay staff and run services. Families who use Head Start may see changes in the services their local program offers. The size of those changes is not yet clear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d8d0afc5f64db4128dcfaa6658427a21",
+          "slug": "court-denies-motion-to-dismiss-memory-chip-price-fixing",
+          "title": "Court denies motion to dismiss memory chip price-fixing lawsuit",
+          "summary": "Judge allowed class action alleging Samsung, SK Hynix and Micron conspired to restrict DRAM supply to proceed.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://litnews.ai/articles/garciaguirre-samsung-sk-hynix-micron-dram-conspiracy-suit-survives-dismissal"
+            }
+          ],
+          "article": {
+            "background": "DRAM is a type of computer memory used in phones, laptops, and other devices. Samsung, SK Hynix, and Micron are the companies named in this case. Norm covered an earlier DRAM lawsuit against the same companies, which the Ninth Circuit, a federal appeals court, upheld in 2022 when it affirmed dismissal of that case. This new case is a separate proposed class action. It is brought by indirect buyers, meaning people who bought products containing the chips rather than buying them directly from the companies.",
+            "what_happened": "Judge Noël Wise denied a joint request by the three companies to dismiss the case. A motion to dismiss asks a court to end a lawsuit before trial. The plaintiffs allege the companies conspired to limit the supply of conventional DRAM. The court said this case is not a repeat of the earlier one. The judge found that several facts plausibly suggest an agreement. Those facts include long-term deals to lock up supply of high-bandwidth memory, Micron closing its Crucial consumer brand, factory delays, the exit from an older memory type called DDR4, and customer vetting that looked nearly identical across companies. The court sided with the companies on some claims, including allegations about DDR3 memory and public statements.",
+            "why_it_matters": "For now, the case moves forward, but no court has found that the companies broke the law. The judge only decided the case has enough detail to continue. Most people will not see a change in device prices or choices from this ruling alone. If the plaintiffs eventually win, people who bought devices with these chips could be affected.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "43f464db39e7316767883f24dd07ccab",
+          "slug": "us-aviation-shutdown-blamed-on-defense-contractor-router",
+          "title": "US aviation shutdown blamed on defense contractor router",
+          "summary": "The nationwide Federal Aviation Administration ground stop Friday traced to an L3 Harris installed router.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/business/aerospace-defense/us-aviation-shutdown-blamed-l3-harris-installed-router-2026-11-14"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "e82551ed91742b900ad83894bf279f6e",
+          "slug": "civil-liberties-groups-ask-appeals-court-to-require-warrant",
+          "title": "Civil liberties groups ask appeals court to require warrant for license plate tracking",
+          "summary": "Electronic Frontier Foundation and ACLU filed brief arguing automated license plate reader searches are Fourth Amendment searches.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.eff.org/deeplinks/2026/11/were-asking-appeals-court-require-warrant-alpr-searches"
+            }
+          ],
+          "article": {
+            "background": "Automated license plate readers, or ALPRs, are cameras that capture and record the license plates of passing cars. Police use the records to look for cars tied to crimes. The Electronic Frontier Foundation (EFF) and the American Civil Liberties Union (ACLU) are groups that defend digital privacy and civil rights. They filed an amicus brief, which is a legal filing from people who are not parties to the case. The case is United States v. Sturdivant, now before a federal appeals court. The Fourth Amendment is the part of the US Constitution that limits government searches.",
+            "what_happened": "The Sturdivant case involves a series of robberies in and around Cleveland, Ohio. Surveillance camera footage showed the make, model, and color of the robber's car. Police did not know its license plate number. They ran an open-ended search of ALPR data and tracked a suspect's movements without a warrant. The brief argues that this kind of tracking is a search under the Fourth Amendment. It also describes a large, connected network of these cameras that track drivers around the country.",
+            "why_it_matters": "If the court agrees, police may need a judge's approval before searching plate camera records. Many drivers pass these cameras every day without knowing it. The appeals court has not yet decided the question. Its answer could shape how police use this data in other cases.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "6ae9a22b7151b2011c478f797036386a",
+          "slug": "faa-ground-stop-disrupted-college-football-travel-and",
+          "title": "FAA ground stop disrupted college football travel and schedules",
+          "summary": "Friday's nationwide flight halt stranded teams in airports and forced game delays and schedule changes.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "npr_sports",
+              "url": "https://www.npr.org/2026/11/14/nx-s1-6041115/faa-ground-stop-college-football-delays"
+            }
+          ],
+          "article": {
+            "background": "The Federal Aviation Administration, or FAA, is the U.S. agency that oversees air travel. A ground stop is an order that holds flights on the ground, so they cannot take off. Norm covered the same ground stop earlier this week, when the agency halted departing flights across the country with little explanation. The excerpts for this story focus on how that pause spread into college sports.",
+            "what_happened": "On Friday, the FAA issued a nationwide ground stop, and thousands of flights were canceled. Many college football teams were in airports that day, on their way to upcoming games. Several games on Saturday were delayed for hours. On Saturday, the FAA said airports were returning to normal, but delays and cancellations would continue through the day.",
+            "why_it_matters": "If you are flying this weekend, delays and cancellations may still affect your trip. Sports fans who planned to attend a game may also face schedule changes. The episode shows how one air traffic order can ripple far beyond the airport.",
+            "quote": {
+              "text": "If you look at the cost of what happened yesterday, we'",
+              "attribution": "Transportation Secretary Sean Duffy",
+              "source_url": "https://www.npr.org/2026/11/14/nx-s1-6041115/faa-ground-stop-college-football-delays"
+            }
+          }
+        },
+        {
+          "cluster_id": "8599a7f0301c829f6319ac5a6f6d55e1",
+          "slug": "nfl-referee-to-work-two-games-on-same-day-after-flight-halt",
+          "title": "NFL referee to work two games on same day after flight halt",
+          "summary": "Don Willard faces 112-mile trip between Sunday games after Friday's Federal Aviation Administration shutdown disrupted travel.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/nov/14/nfl-referee-two-games-faa-ground-stop-sports-travel-disruption"
+            }
+          ],
+          "article": {
+            "background": "The National Football League, or NFL, is the top professional football league in the United States. Referees are the officials who enforce its rules during games. The Federal Aviation Administration, or FAA, is the federal agency that oversees air travel in the United States. When it halts flights, travelers and teams can be stranded far from where they need to be.",
+            "what_happened": "On Friday, the FAA grounded all flights nationwide for several hours. The stop disrupted travel plans for professional and college teams. NFL referee Don Willard has two games on Sunday. He will work the Miami Dolphins against the Indianapolis Colts at 1 p.m. Eastern. He will then travel 112 miles east to work the Pittsburgh Steelers against the Cincinnati Bengals on Sunday Night Football. The National Basketball Association, or NBA, scrambled to replace referees stranded by the delays. Some college football games were postponed as teams struggled to travel.",
+            "why_it_matters": "Most fans will never notice how a referee gets to a game. Still, delays like this can change who officiates a game and when it is played. If you have plans to watch Sunday's games, check for schedule changes.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "818059f6797c5e1f3a860bacfcca3553",
+      "title": "World leaders head to Asia for back-to-back diplomatic summits",
+      "url": "https://www.theguardian.com/world/2026/nov/15/asia-diplomatic-summits-trump-xi-putin-apec-asean",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8fe6d9436f61f2251a78fc5f5eda35f2",
+      "title": "How Jensen Huang Built the Backdoor Route That Keeps Beijing in the AI Race",
+      "url": "https://www.wsj.com/tech/jensen-huang-backdoor-ai-data-centers-a5e4499d",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "2f423c89dd2e1fc09a1d015ff7d8ece6",
+      "title": "The NBA player who got hooked on sports betting",
+      "url": "https://www.newyorker.com/magazine/2026/11/16/the-nba-player-who-got-hooked-on-sports-betting",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "32a4aa0c114c73b4bbfeb478588c5e17",
+      "title": "Pope Leo XIV warns against transhumanism serving the ultra-rich",
+      "url": "https://twitter.com/Pontifex/status/2121425383480529346",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "709971355b780ef6324635e5ae1f0d9c",
+      "title": "Wade-Dahl-Till valve",
+      "url": "https://en.wikipedia.org/wiki/Wade-Dahl-Till_valve",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "1a7581715501ecae151a90eea8b16ec7",
+      "title": "US Olympic hero Kayla Harrison chokes out Amanda Nunes in fourth round to retain UFC title",
+      "url": "https://www.theguardian.com/sport/2026/nov/15/kayla-harrison-amanda-nunes-ufc-334-ciryl-gane-josh-hokit",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "d1b5ac82e147ec337d2048363fa3538b",
+      "title": "Fiji 'did Ireland a favour' before South Africa game",
+      "url": "https://www.bbc.co.uk/sport/rugby-union/articles/c9e85d7mm0myo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "b67b6a45228ab2c7eb6badf4a9c46740",
+      "title": "Australia v New Zealand: Women’s Rugby League World Cup final – live",
+      "url": "https://www.theguardian.com/sport/live/2026/nov/15/australia-jillaroos-vs-new-zealand-kiwi-ferns-womens-rugby-league-world-cup-final-live-updates",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 74,
+    "clusters_considered": 48,
+    "stories_run": 16,
+    "sources": 9,
+    "sections_held": 2
+  }
+}
