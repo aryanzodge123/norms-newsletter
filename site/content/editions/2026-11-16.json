@@ -1,0 +1,444 @@
+{
+  "date": "2026-11-16",
+  "edition_number": 162,
+  "edition_type": "normal",
+  "headline_of_the_day": "Reports of AI-generated child abuse material rose 8,400% in two years",
+  "headline_cluster_id": "025e405b7b316714d900707d533957ed",
+  "headline_rationale": "A sharp rise in reports affects child safety systems worldwide and reflects a new misuse of AI tools that law enforcement and platforms must respond to.",
+  "key_points": [
+    {
+      "text": "Reports of AI-generated child abuse material rose from 4,700 in 2023 to over 400,000 in 2025, an 8,400% increase.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Tor Project issued an emergency security fix to defend against an ongoing distributed denial-of-service attack on the anonymity network.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Yemeni forces withdrew from the Bab al-Mandab Strait, leaving the Iran-backed Houthis in control of the key Red Sea shipping gateway.",
+      "topic": "World"
+    },
+    {
+      "text": "Megaspeed International says it is a legitimate business and that Alice Huang, accused of being a Chinese spy, left in late 2025.",
+      "topic": "World"
+    },
+    {
+      "text": "Coles is investigating a cybersecurity incident but has found no evidence customer or employee data was compromised.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-16.mp3",
+    "duration_seconds": 443,
+    "size_bytes": 5321088
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "af475649dd4e8567a71eabf69f95fcbb",
+          "slug": "apple-plans-to-unveil-smart-glasses-at-wwdc-in-june-2027",
+          "title": "Apple plans to unveil smart glasses at WWDC in June 2027",
+          "summary": "Bloomberg reports the glasses will integrate Siri and iPhone apps, with prototypes slightly thinner than Meta's Ray-Bans.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.macrumors.com/2026/11/15/apple-smart-glasses-hinge-on-siri"
+            }
+          ],
+          "article": {
+            "background": "Apple makes the iPhone, the Mac computer, and other devices. Smart glasses are eyewear with a small computer, camera, and speakers built in. Meta already sells glasses like this, made with Ray-Ban, and Apple's plans are being compared to them. Siri is Apple's voice assistant. WWDC is Apple's yearly developer conference, where the company often shows new software.",
+            "what_happened": "Apple plans to unveil its first smart glasses at WWDC in June 2027, according to Bloomberg's Mark Gurman. He reported the plan in his \"Power On\" newsletter. Gurman says shipping could begin before the end of 2027. Current prototypes, code-named \"N50,\" are reportedly a little thinner than Meta's second-generation Ray-Bans. Some test units have oval camera openings built into the frame. A front light shows when the glasses are in use or charging. Apple is also testing extra privacy features and reportedly plans several styles and colors.",
+            "why_it_matters": "If the plan holds, the glasses could give iPhone owners a hands-free way to use Siri and their apps. For now, this changes nothing for most people, since the glasses are still in development. The front light and privacy features matter because cameras worn on the face affect people nearby. Details could still change before any glasses reach stores.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "00cc050a47397c8da7fbca1d9446df65",
+          "slug": "universal-cross-site-scripting-flaw-found-in-ublock-origin",
+          "title": "Universal cross-site scripting flaw found in uBlock Origin ad blocker",
+          "summary": "A malicious website could trick the Firefox extension into adding trusted filters that inject JavaScript into any page.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://iter.ca/post/ubo-uxss"
+            }
+          ],
+          "article": {
+            "background": "uBlock Origin is a browser extension that changes what appears on web pages. Browser extensions are add-on programs that run inside a web browser. Cross-site scripting, or XSS, is a flaw where a website can run its own code on a different website. MV2 and MV3 are two versions of the rules browsers use for extensions. This story involves the older MV2 version for Firefox and the newer MV3 version, called uBO Lite.",
+            "what_happened": "A researcher found a one-click universal XSS issue in the Firefox version of uBlock Origin. A malicious website could trick the extension into adding trusted filters. Trusted filters can run JavaScript code on pages, so the site could use one to run code on any other website. A similar but less serious issue also affected uBO Lite. The researcher said an AI model, GPT-5.6 Sol, did most of the hard work of finding the flaw. The issue is now fixed, and the developers published a GitHub advisory with more details.",
+            "why_it_matters": "If you use uBlock Origin on Firefox, a website could have exploited this with one click. Updating the extension closes the gap. Most people who use the extension have nothing else to do beyond installing the fix.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "cc761a6d00a399e4579bdecca93ed5d7",
+          "slug": "apple-launches-study-on-effectiveness-of-ai-health-tools",
+          "title": "Apple launches study on effectiveness of AI health tools",
+          "summary": "The company is partnering with OpenEvidence to understand how people use conversational AI for medical information.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health"
+            }
+          ],
+          "article": {
+            "background": "Many people now ask AI chatbots health questions. An AI chatbot is a program that answers written questions in ordinary language. OpenAI and Anthropic, two large AI companies, have both built health features into their chatbots. Apple is taking a different approach. It wants to learn whether answers grounded in clinical sources, meaning medical research and expert guidance, are more useful.",
+            "what_happened": "Apple announced a study on how people use AI tools for health questions. The study is called the Apple Health AI Usage Study. Apple is working with OpenEvidence, a company whose AI tool is used by health care professionals. OpenEvidence builds its answers from medical sources such as The New England Journal of Medicine. Participants will use a new iPhone app to ask medical questions, then rate the answers for accuracy, detail, and relevance. Apple plans to include up to 200,000 people over more than 12 months. Only adults in the U.S. over 21 with an iPhone 15 or later can join.",
+            "why_it_matters": "If you ask an AI tool about a health concern, this study may help show which answers are reliable. For most people, nothing changes yet. The study is still gathering ratings, so it will not set new rules on its own.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4b62e1a4ef5e02481e949baee1a43cef",
+          "slug": "hobbyist-reports-ai-agents-designed-an-analog-synthesizer",
+          "title": "Hobbyist reports AI agents designed an analog synthesizer circuit in hardware",
+          "summary": "A self-described experiment with GPT-6 Astra and Claude Opus 5.5 tested their spatial reasoning on circuit design.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://cpldcpu.github.io/2026/11/14/touchsynth"
+            }
+          ],
+          "article": {
+            "background": "An analog synthesizer is a musical instrument made from electronic circuits. Its circuits create and shape sound directly, without computer code. In September 2026, two new AI models came out: GPT-6 Astra and Claude Opus 5.5. The author of the linked post says both models were clearly better at spatial reasoning, meaning how parts fit together in space, and at engineering in general. OpenAI also showed a circuit board that Astra had designed, in its announcement.",
+            "what_happened": "The author tested whether AI could design a real analog circuit, not just software. The project is titled \"Agentic AI Designs an Analog Synthesizer.\" The author says the results surprised them. They also learned a lot about how analog synthesizers work. The post links to the final result, audio examples, an AI-generated design report, and an AI-generated website with sound samples.",
+            "why_it_matters": "For most people, this does not change anything yet. It is one test of AI on physical hardware, not only on text and software. Readers who care about music gear can listen to the sound samples and hear what the design produced.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "b409ae6df6de9625e8bc1460c72e79df",
+          "slug": "investors-sue-intel-after-29-stock-plunge-over-undisclosed",
+          "title": "Investors sue Intel after 29% stock plunge over undisclosed PC sales slump",
+          "summary": "Shareholders accuse the chip giant of hiding the severity of a downturn that led to a one-day collapse.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cw62p42p288do?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/business/intel-sued-by-shareholders-following-29-stock-plunge-2026-11-15"
+            }
+          ],
+          "article": {
+            "background": "Intel is one of the largest makers of computer chips, the small parts that run laptops and desktop computers. Its business depends heavily on how many personal computers people and companies buy. Publicly traded companies like Intel sell shares, and shareholders are the people who own those shares. A class action lawsuit is a case filed on behalf of a group of people who were harmed in similar ways.",
+            "what_happened": "Shareholders have sued Intel in a proposed class action filed in San Jose, California. They accuse the company of hiding how serious a slump in personal computer sales had become. The lawsuit says Intel warned investors too late about how slowing sales could hurt its earnings. Intel shares fell nearly 29% in one day on 30 October, the day after the company forecast weaker revenue for its coming earnings report. The BBC has contacted Intel for comment.",
+            "why_it_matters": "If you own Intel stock directly or through a retirement fund, this lawsuit concerns your investment. The case is only a claim so far, and a court has not decided whether Intel did anything wrong. Most people will not see a direct change in their daily lives from this case alone.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ec68a79b1eb9b5292dfd56e17a34e23e",
+          "slug": "elon-musk-joins-165-000-signatories-calling-for-jensen",
+          "title": "Elon Musk joins 165,000 signatories calling for Jensen Huang's return to Nvidia",
+          "summary": "An open letter demands the board bring back the CEO who resigned Thursday after 33 years leading the company.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/16/elon-musk-tech-execs-open-letter-jensen-huang-return-nvidia-ceo"
+            }
+          ],
+          "article": {
+            "background": "Nvidia is a chipmaker. Its chips power the artificial intelligence, or AI, systems that many companies now build and use. Jensen Huang co-founded Nvidia and led it for 33 years. Norm covered his stepping down in an earlier edition on November 14. The open letter is one of the public reactions since then.",
+            "what_happened": "Huang resigned as Nvidia's chief executive on Thursday. The move came after revelations that he had at least two extramarital affairs. One involved a woman accused of spying for China. The other involved a subordinate. More than 165,000 people have signed an open letter asking Nvidia's board to bring him back. Elon Musk is among the signers, along with other tech executives. The letter asks the board to act while an independent investigation looks into the facts.",
+            "why_it_matters": "For most people, this does not change what they buy or use right away. Nvidia is worth trillions of dollars, so its leadership affects the wider tech market and the companies that rely on its chips. US lawmakers from both parties want Huang and Nvidia to appear before Congress.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "3e290aa8250c0b5cc3cad2cd67ebd24a",
+          "slug": "ai-disrupts-self-publishing-as-romance-writers-face",
+          "title": "AI disrupts self-publishing as romance writers face generated competition",
+          "summary": "Authors report a flood of algorithmically written books crowding out human work in a once-accessible market.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/books/ng-interactive/2026/nov/14/its-like-the-wild-west-how-ai-has-rocked-the-literary-world"
+            }
+          ],
+          "article": {
+            "background": "Coral Hart is a romance novelist. She got her start writing for Mills & Boon, a publisher known for bodice-ripper paperbacks, which are cheap, steamy romance novels. In 2012 she began self-publishing, meaning she published her books herself instead of through a company. She was drawn to dark romance, love stories built on twisted, toxic relationships. Publishers did not want that style, but it was taking off online.",
+            "what_happened": "Three years later, Hart decided to self-publish full-time. She sells her books through Kindle Unlimited, a service where readers can read many books. The service's algorithm, the automatic system that decides what readers see, favors writers who publish a new book at least once a month. Hart says some authors hire more than a dozen ghostwriters, people paid to write books that others publish under their names, to keep pace. Hart says she can write 10,000 words a day herself.",
+            "why_it_matters": "This story shows how a platform's rules can shape the books people find. When speed is rewarded, writers may feel pressure to publish faster. Readers browsing romance novels are seeing a market built around how much gets written.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "2cedae4b2a2bbd7cffc346a467294d22",
+          "slug": "yemeni-forces-withdraw-from-bab-al-mandab-strait-leaving",
+          "title": "Yemeni forces withdraw from Bab al-Mandab Strait, leaving Houthis in control",
+          "summary": "Saudi-backed troops left the area overlooking the Red Sea shipping chokepoint, handing control to Iran-backed Houthis.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqvg2xgyvnjpo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The Bab al-Mandab Strait is a narrow waterway at the southern end of the Red Sea. Ships use it to carry oil and goods between Asia, Africa, and Europe. Yemen's government is fighting the Houthis, an armed group backed by Iran. The Houthis seized the area near the strait in a surprise offensive in September.",
+            "what_happened": "Yemeni pro-government forces, backed by Saudi Arabia, said they are pulling out of an area that overlooks the strait. The Houthis will now control it. Yemen's military said it is moving troops to defend Aden, the country's interim capital. The move ends a weeks-long effort to take the area back. That fighting squeezed global oil exports and led thousands of people to flee.",
+            "why_it_matters": "Oil and goods that pass through this strait can be delayed or cost more when shipping is disrupted. The strait is now in Houthi hands, and the reporting does not say how soon prices or supplies will change. People who fill a gas tank or buy imported goods may feel any effects later.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6cbd043d8353cc3880a68f2c89d5a28a",
+          "slug": "megaspeed-international-says-alleged-chinese-spy-left",
+          "title": "Megaspeed International says alleged Chinese spy left company in late 2025",
+          "summary": "The firm linked to Nvidia chief Jensen Huang's resignation insists it is legitimate and Alice Huang departed months ago.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/16/megaspeed-company-breaks-slience-nvidia-jensen-huang-alice-huang"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmdx1vpprk9vo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.nytimes.com/2026/11/15/business/megaspeed-alice-huang-nvidia-china.html"
+            }
+          ],
+          "article": {
+            "background": "Megaspeed International is a cloud computing company based in Singapore. Cloud computing means renting out computing power over the internet. BBC reports that Megaspeed is the biggest buyer of Nvidia chips in South East Asia. Nvidia is a major maker of AI chips. Alice Huang was a former Megaspeed executive, and U.S. officials say she spied for China.",
+            "what_happened": "On Sunday, Megaspeed said Alice Huang left the company in August 2025. The company said it was aware of recent media reports about its business, supply chain and global operations. It said those reports are not supported by verifiable evidence. Megaspeed called itself a legitimate and lawful business. The New York Times said this was the company's first direct statement on Huang's status.",
+            "why_it_matters": "The scandal has raised questions about whether high-end AI chips may have reached China despite U.S. export restrictions. Export restrictions are rules that limit sales of certain technology to other countries. For most readers, this does not change what they pay or use today. It may affect how closely future chip sales are watched.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "dda5365f5bda015118930d9752059f55",
+          "slug": "new-mexico-made-childcare-free-for-eligible-families",
+          "title": "New Mexico made childcare free for eligible families, results are mixed",
+          "summary": "The state's experiment shows what worked and what has not in the push for universal childcare access.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://text.npr.org/nx-s1-6040194"
+            }
+          ],
+          "article": {
+            "background": "New Mexico is a state in the American Southwest. Childcare is paid care for young children while parents work or study. A year before this story, New Mexico became the first state to offer free childcare to every family, regardless of income. The program is one of the first of its kind in the country. The story looks at what has worked so far and what has not.",
+            "what_happened": "A year after the launch, reporter Julie Depenbrock visited the program. She looked at what is working and what is not. The story features Judyn Martinez, a parent who drops her daughter off at Kids Campus, a childcare center in Santa Fe. The center is now free for any eligible family in New Mexico. Martinez says her daughter is already learning and growing there.",
+            "why_it_matters": "For families who qualify, the cost of childcare is now zero. Eligible families must be residents of New Mexico. Other states are likely to watch how this program works in practice. For now, the program affects only families in New Mexico.",
+            "quote": {
+              "text": "It's an amazing school so far. She loves it. I love it,",
+              "attribution": "Judyn Martinez, parent of a child at Kids Campus in Santa Fe",
+              "source_url": "https://text.npr.org/nx-s1-6040194"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "ff93e758abb7af6872b5826de0fbef61",
+          "slug": "ice-on-puncak-jaya-in-indonesia-has-shrunk-to-patches-too",
+          "title": "Ice on Puncak Jaya in Indonesia has shrunk to patches too small to flow",
+          "summary": "NASA reports the equatorial glaciers in the Sudirman Range have dwindled below the size needed to act as glaciers.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "nasa_news",
+              "url": "https://science.nasa.gov/earth/earth-observatory/the-last-ice-on-puncak-jaya"
+            }
+          ],
+          "article": {
+            "background": "The Sudirman Range is a mountain range on the island of New Guinea, in Indonesia. It is one of the few places near the equator that has held ice all year. Scientists call these high-altitude glaciers \"canaries in the coal mine,\" meaning an early warning that something is changing. Other tropical ice fields are in the same group, including remnants of Humboldt Glacier in Venezuela, Quelccaya Ice Cap in Peru, and the ice fields of Kilimanjaro in Tanzania.",
+            "what_happened": "Near the top of Puncak Jaya, the ice has broken into small patches. The patches are too small to flow the way glaciers do. A glacier is a slow-moving mass of ice that creeps downhill. NASA's Earth Observatory shows the change in an image of the mountain.",
+            "why_it_matters": "For most people, this does not change daily life directly, because the ice is far away. The ice sits near the warmest conditions in which ice can survive all year. That makes it an early sign of how ice in other warm places may respond.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9439fcf86acb309f1ccda954f85a7c5c",
+          "slug": "webb-telescope-captures-star-formation-and-jets-in-ngc-7129",
+          "title": "Webb telescope captures star formation and jets in NGC 7129",
+          "summary": "The infrared image shows how stars form in a region 3,000 light-years away, with visible jets from young stars.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "nasa_news",
+              "url": "https://science.nasa.gov/image-article/apod-2026-november-16-ngc-7129-star-formation-with-jets-from-webb"
+            }
+          ],
+          "article": {
+            "background": "NGC 7129 is a region of space where new stars are forming. Stars form when gravity pulls together huge amounts of gas. Infrared light is light that human eyes cannot see. Special telescopes can capture it. Stars that formed earlier can change the area around them.",
+            "what_happened": "NASA used the James Webb Space Telescope to take a detailed image of NGC 7129. The image shows the region in infrared light. NASA's explanation says older stars can send out powerful jets and winds. Some of those stars later explode. Dust can also form in the cool atmospheres of stars.",
+            "why_it_matters": "This image helps show how stars are born and how they change their surroundings. For most people, it does not change daily life. It does add to what scientists know about how the universe makes new stars.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "025e405b7b316714d900707d533957ed",
+          "slug": "reports-of-ai-generated-child-abuse-material-rose-8-400-in",
+          "title": "Reports of AI-generated child abuse material rose 8,400% in two years",
+          "summary": "Edinburgh researchers found cases jumped from 4,700 in 2023 to over 400,000 in 2025, including deepfakes from nudify apps.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theguardian.com/technology/2026/nov/16/ai-related-child-sexual-abuse-material-rise-exploitation-deepfakes"
+            }
+          ],
+          "article": {
+            "background": "Childlight is a child safety research group based in Edinburgh, Scotland. Its new report looks at reports of child sexual abuse material made with artificial intelligence (AI). Child sexual abuse material means sexual images or videos of children. A deepfake is a fake image or video made with AI that shows a real person doing or saying something they did not do. The research looked at reports that tech companies sent to the National Center for Missing and Exploited Children, a US organisation that handles these reports.",
+            "what_happened": "Childlight reports that AI-related child abuse material rose sharply over two years. It says reports rose from about 4,700 in 2023 to more than 400,000 in 2025. The material includes deepfakes made with \"nudify apps\", which edit photos to show people without clothes. The report says the fake images can be used to blackmail children for money or for more images.",
+            "why_it_matters": "For most families, this shows how easily a child's photo can be misused. Parents and schools may want to talk with children about sharing photos online. The numbers come from reports to one US organisation, so they show a trend more than a full count.",
+            "quote": {
+              "text": "the \"shocking\" level",
+              "attribution": "Prof Debi Fry, global director of data at Childlight",
+              "source_url": "https://www.theguardian.com/technology/2026/nov/16/ai-related-child-sexual-abuse-material-rise-exploitation-deepfakes"
+            }
+          }
+        },
+        {
+          "cluster_id": "1a5b7d37f35891e2fd45a332ed05a1ab",
+          "slug": "tor-project-issues-emergency-security-fix-during-ongoing",
+          "title": "Tor Project issues emergency security fix during ongoing DDoS attack",
+          "summary": "Version 0.4.9.17 includes relay defenses for IPv6 handling, released in rapid response to sustained network disruption.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://forum.torproject.org/t/security-release-0-4-9-17/22454"
+            }
+          ],
+          "article": {
+            "background": "Tor is a network that helps people browse the internet with more privacy. It routes traffic through volunteer computers called relays. A DDoS attack floods a service with so much traffic that it slows down or stops. Tor relays are the machines that carry traffic for users on the network.",
+            "what_happened": "The Tor Project released version 0.4.9.17 of its software. The release includes a series of security fixes. One fix targets how relays defend against floods, and it relates to IPv6, a newer format for internet addresses. The release responds to an ongoing DDoS attack that has affected most relay operators. Relays across the network are being overwhelmed by a large flood of client circuits.",
+            "why_it_matters": "If you use Tor, the network may be slower or less reliable while the attack continues. The Tor Project says it is still evaluating more defenses and expects further releases soon. Relay operators who run these machines need to install updates to stay protected.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "520dcf5a8fa01eb822c1b1e3c6849a86",
+          "slug": "coles-confirms-cybersecurity-incident-no-customer-data",
+          "title": "Coles confirms cybersecurity incident, no customer data compromise found yet",
+          "summary": "Australian retailer is working with the cyber security center and has found no evidence data was removed.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.colesgroup.com.au/updates"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/nov/16/coles-cyber-attack-incident-data"
+            }
+          ],
+          "article": {
+            "background": "Coles is one of Australia's largest supermarket chains. The Guardian describes it as the country's second-largest retailer. A cyber-attack is an attempt by outsiders to break into a company's computer systems. The Australian Cyber Security Centre is the national government agency that helps organisations respond to these attacks.",
+            "what_happened": "On Monday, 16 November 2026, Coles said it is investigating a cyber security incident. The company told the stock exchange about the incident in a statement. So far, Coles says it has found no evidence that customer, team or supplier data was stolen or removed. Coles is working with the Australian Cyber Security Centre and outside cyber security experts to contain the problem. Stores and online shopping are still working as normal.",
+            "why_it_matters": "For now, shoppers can keep buying groceries at Coles as usual. The company says no personal data has been found to be taken so far. The investigation is still early, so that could change. Coles has apologised to customers for any worry this causes.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "37596e0323b0d3d1186115a6f0db2a70",
+          "slug": "australian-surfer-leihani-zoric-14-wins-individual-gold-at",
+          "title": "Australian surfer Leihani Zoric, 14, wins individual gold at ISA World Surfing Games",
+          "summary": "She became the youngest champion in the tournament's history and earned her team a crucial Olympic boost.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/nov/16/australian-surfer-leihani-zoric-14-wins-gold-isa-world-surfing-games"
+            }
+          ],
+          "article": {
+            "background": "Leihani Zoric is a young surfer from Australia. The ISA World Surfing Games is an international surfing competition run by the International Surfing Association, or ISA. In September, Zoric represented Australia at the ISA junior world titles. She had not qualified for the under-16 category, so she received a wildcard, a special invitation, into the under-18 division. She is a Year 8 student.",
+            "what_happened": "Zoric won individual gold at the ISA World Surfing Games in Peru. She beat a field that included more experienced surfers. She turned 14 earlier this month. That makes her the youngest champion in the tournament's history. Her win gives Australia's team a boost ahead of the 2028 Los Angeles Olympics.",
+            "why_it_matters": "For most people, this win changes nothing day to day. It shows how quickly a young athlete can rise in her sport. It also helps shape Australia's team before the 2028 Olympics.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "746acad98cc6d335d7c3ec2316667ab5",
+          "slug": "toronto-tempo-wins-wnba-draft-lottery-and-top-pick-in-2027",
+          "title": "Toronto Tempo wins WNBA draft lottery and top pick in 2027 draft",
+          "summary": "The expansion team secured the number one selection with a 33% chance, potentially landing USC star JuJu Watkins.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/nov/15/toronto-tempo-wnba-draft-lottery-juju-watkins"
+            }
+          ],
+          "article": {
+            "background": "The WNBA is the top professional women's basketball league in the United States. Each year it holds a draft lottery to decide the order teams pick new players. The Toronto Tempo joined the league as an expansion team this past season, which means it was a new team added to the league. Teams that finish with weaker records usually get the best odds in the lottery.",
+            "what_happened": "The Toronto Tempo won the WNBA draft lottery on Sunday. That gives them the No 1 pick in the 2027 draft. The Tempo could use that pick to select Southern California star JuJu Watkins. Before the lottery, the Tempo and the Houston Comets each had a 33% chance of winning. The Comets, formerly the Connecticut Sun, will pick second.",
+            "why_it_matters": "For most fans, this means a new team gets a strong start on building its roster. The draft is where teams add young players, and the top pick often shapes a team's identity for years. Fans who follow women's college basketball may be most interested in whether Watkins joins Toronto.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "be8df407f445f79b51897954ea2e58d6",
+      "title": "Weakening UK electric vehicle targets would hurt car industry, ministers told",
+      "url": "https://www.theguardian.com/environment/2026/nov/16/weakening-uk-electric-vehicle-targets-would-hurt-car-industry-ministers-told",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "59f0346d72f9bd37e9e5fce20fa10256",
+      "title": "Home Office accused of trying to cancel online talk by Andreas Malm",
+      "url": "https://www.theguardian.com/politics/2026/nov/16/home-office-andreas-malm-climate-academic-online-talk",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 55,
+    "clusters_considered": 49,
+    "stories_run": 17,
+    "sources": 9,
+    "sections_held": 2
+  }
+}
