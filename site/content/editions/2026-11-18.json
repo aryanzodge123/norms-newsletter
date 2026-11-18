@@ -1,0 +1,373 @@
+{
+  "date": "2026-11-18",
+  "edition_number": 164,
+  "edition_type": "normal",
+  "headline_of_the_day": "US loses measles elimination status after 26 years as cases reach record levels",
+  "headline_cluster_id": null,
+  "headline_rationale": "A formal health milestone reflecting sustained transmission and rising deaths that affects every household with unvaccinated children and signals a widening public health gap.",
+  "key_points": [
+    {
+      "text": "The US lost measles elimination status after 26 years, amid record cases and deaths.",
+      "topic": "Science"
+    },
+    {
+      "text": "Ukraine destroyed part of the Crimean Bridge linking Russia to occupied Crimea, which Zelensky called unprecedented.",
+      "topic": "World"
+    },
+    {
+      "text": "The FAA paused new routers after a Friday ground stop of over four hours, the longest since 9/11.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Google's AI Overviews cut clicks to outside websites by about 40%, a randomized experiment found.",
+      "topic": "AI"
+    },
+    {
+      "text": "Waymo paused freeway rides nationwide after California limited operations following safety incidents.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-18.mp3",
+    "duration_seconds": 465,
+    "size_bytes": 5582304
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "0eaf677e269d4297c8738708e23eaeb8",
+          "slug": "google-ai-answers-cut-website-traffic-by-40-percent",
+          "title": "Google AI answers cut website traffic by 40 percent",
+          "summary": "An experiment found AI Overviews cut clicks to outside sites by about 40 percent.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://revscope.co/blog/search-seo-geo-2026"
+            }
+          ],
+          "article": {
+            "background": "Google shows AI Overviews, short answers written by AI, at the top of some search results. Most websites depend on visitors who click links in those results. Search engine optimization, or SEO, is the work of helping pages rank higher in search. A newer practice, generative engine optimization (GEO), aims to get websites cited inside AI answers instead.",
+            "what_happened": "In a randomized experiment, researchers hid AI Overviews from some US desktop users. They compared those users with people who still saw the summaries. The comparison found that an Overview cut clicks to outside websites by about 40%. Overviews now appear on more than half of the US search terms tracked by DataForSEO. Two years ago that share was 6%.",
+            "why_it_matters": "If you read websites for news, recipes, or reviews, you may notice answers appearing before any links. Fewer clicks can mean fewer visits to the sites that made the information. The industry's main response, GEO, has not yet shown a way to make up for the lost traffic. Whether those sites can keep going is still an open question.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "577db8d4ba8b0665c31e858bdc004da7",
+          "slug": "gpt-6-2-astra-scores-100-percent-on-arc-agi-3-benchmark",
+          "title": "GPT-6.2 Astra scores 100 percent on ARC-AGI-3 benchmark",
+          "summary": "An OpenAI model became the first to get a perfect score on an abstract reasoning test.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/arcprize/status/2122751233442156678"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "ab16307f27d46427e062e6211c5827aa",
+          "slug": "ukraine-destroys-section-of-crimean-bridge-in-major",
+          "title": "Ukraine destroys section of Crimean Bridge in major operation",
+          "summary": "Zelensky said an unprecedented attack collapsed part of a key Russia-Crimea link.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw772jk4rvmxo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cw772jk4rvmxo"
+            }
+          ],
+          "article": {
+            "background": "The Crimean Bridge connects Russia to Crimea, a region Russia occupies. Occupied means one country holds land that belongs to another, by force. The bridge matters for moving goods. It also carries strong meaning for Moscow.",
+            "what_happened": "Ukraine has badly damaged the Crimean Bridge. President Volodymyr Zelensky called the action an \"unprecedented operation.\" He said it had been weeks in the making. Images shared by Ukrainian officials show part of the bridge fallen into the water. The Kremlin said it would rebuild the bridge better than before. Separately, Kyiv's mayor, Vitaliy Klitschko, said traffic had partly resumed on two bridges over the Dnipro River.",
+            "why_it_matters": "For most people, this changes little right away. The bridge is a key route, so the damage is a setback for Russia's war effort. Watch whether the rebuild happens, and how fast.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6b50add06d6e726dd5e1da0bab11d68b",
+          "slug": "israeli-settlers-kill-palestinian-woman-near-jericho",
+          "title": "Israeli settlers kill Palestinian woman near Jericho, witnesses say",
+          "summary": "Witnesses say a 72-year-old was shot in the head outside her home in a settler-occupied village.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/17/palestinian-woman-shot-dead-israeli-settlers-near-jericho-witnesses-say"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The West Bank is an occupied territory where Israeli settlers live alongside Palestinians. Settlers are Israeli civilians who live in communities built there. Al-Duyuk al-Tahta is a Palestinian village near Jericho. Settlers recently moved into the village after taking over several Palestinian homes, according to reports. Part of the village is meant to be under full control of the Palestinian Authority, the government that runs parts of the West Bank.",
+            "what_happened": "A 72-year-old Palestinian woman, Fadha Wadha, was shot dead in an overnight attack. Residents say she was standing outside her home when a bullet hit her head. They say Israeli settlers were firing toward Palestinian houses at the time. Several other people were wounded by gunfire, including her son. The Palestinian health ministry reported the death. The Israeli army gives a different account. It says a Palestinian rammed an Israeli vehicle with a car. It says rocks were then thrown, and Israelis opened fire.",
+            "why_it_matters": "The two accounts conflict, so the full picture is not yet clear. For most readers, the story shows how a dispute over land can turn deadly. It also shows how quickly a night of gunfire can change a family's life.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "04056be6e1905eb4d8059782e25b00c3",
+          "slug": "us-army-officer-arrested-in-uk-on-spying-suspicion-moves-to",
+          "title": "US Army officer arrested in UK on spying suspicion moves to military custody",
+          "summary": "A lieutenant colonel held in Britain for suspected Russian spying moves to US custody.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6x284ez38vdo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/uk-news/2026/nov/17/american-soldier-brandon-carroll-tyner-spying-us-military-custody"
+            }
+          ],
+          "article": {
+            "background": "Lt Col Brandon Carroll Tyner is a 41-year-old officer in the US Army. He had served since 2008. He was based at Imjin Barracks in Innsworth, Gloucestershire, which is the headquarters of Nato's Allied Rapid Reaction Corps. Nato is the western military alliance. Norm covered his arrest on 11 November, when British police said a US Army soldier had been held on suspicion of spying for Russia.",
+            "what_happened": "British counter-terror police arrested Tyner near Gloucester on 10 November. Police said he is now in US military custody. The arrest was part of an investigation that involved UK Counter Terrorism Policing, the US military and the FBI, the US federal police agency. The FBI director, Kash Patel, made a statement on the case on Tuesday.",
+            "why_it_matters": "For now this changes little for most people. It is a case about how one officer is accused of handling secrets. It shows how closely allied countries work together when a suspected spy is caught. The case is still at an early stage, and no charges have been reported in the material we have.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "1c2745d01a09e6e73fb2cbb0dd94894c",
+          "slug": "faa-pauses-router-installs-after-nationwide-flight-ground",
+          "title": "FAA pauses router installs after nationwide flight ground stop",
+          "summary": "The agency paused new router installs after tech problems grounded departing flights for over four hours.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "cnbc_business",
+              "url": "https://www.cnbc.com/2026/11/17/faa-ground-stop-routers.html"
+            }
+          ],
+          "article": {
+            "background": "The Federal Aviation Administration, or FAA, runs air traffic control. Routers are devices that move data between computers. In this system, routers carry radar and other information. Norm covered the ground stop on Friday, November 14. The FAA ordered all departing flights to stay on the ground.",
+            "what_happened": "On Friday, the FAA ordered a nationwide ground stop. It held all departing flights for more than four hours. Tens of thousands of flights were affected. It was the longest halt to U.S. flight departures since 9/11. On Sunday, Transportation Secretary Sean Duffy said an overloaded router in southern Arkansas appeared to be the cause. The router was part of an upgrade to a system overseen by L3Harris Technologies. Duffy said it appeared to overwhelm systems that feed radar to air traffic control. Those systems also carry other data. On Tuesday, the FAA said it would pause installing new routers. The Wall Street Journal first reported the pause.",
+            "why_it_matters": "If you fly, a ground stop like this can hold up your trip for hours. For now, no new routers will be installed during the pause.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7ec250e0482e9e8c0d25d12b5601a599",
+          "slug": "california-restricts-waymo-robotaxis-from-freeways-after",
+          "title": "California restricts Waymo robotaxis from freeways after safety incidents",
+          "summary": "California regulator barred freeway use, so Waymo suspended freeway rides nationwide.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://abc7news.com/story/california-dmv-bans-waymos-operating-state-freeways-bay-area-traffic-incidents/20046974"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/17/california-waymo-banned-freeways"
+            }
+          ],
+          "article": {
+            "background": "Waymo runs robotaxis. These are self-driving cars used as taxis. California's Department of Motor Vehicles, or DMV, regulates self-driving cars. It sets how these cars are tested and used.",
+            "what_happened": "California's DMV ordered Waymo to stop operating its robotaxis on California freeways. The order, issued November 11, became public Tuesday. Three Waymo vehicles entered an active construction zone on Highway 101. A second incident on November 6 involved Waymo and highway patrol vehicles. Video of that incident spread widely online. The state called the cars an imminent hazard. Waymo has suspended freeway rides nationwide.",
+            "why_it_matters": "If you ride a Waymo, you cannot take it on freeways now. The case shows regulators can pull self-driving cars off roads fast. For most people, this changes little day to day for now.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "98b22895d0695bbd999cc51f50643ba9",
+          "slug": "sec-opens-civil-probe-into-nvidia-disclosures",
+          "title": "SEC opens civil probe into Nvidia disclosures",
+          "summary": "A federal regulator is probing a chipmaker's disclosures for misleading investors, the Wall Street Journal reported.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit"
+            }
+          ],
+          "article": {
+            "background": "Nvidia makes computer chips. Jensen Huang co-founded the company. He led it for 33 years. Reports on November 12 said the board was preparing to remove him. He resigned by November 14, after reports of his affairs.",
+            "what_happened": "The SEC oversees U.S. stock markets. It is reportedly opening a civil probe into Nvidia. The probe asks whether Nvidia misled investors, the Wall Street Journal reported. Separately, the Commerce Department has investigated Megaspeed since late 2024. It suspects some Nvidia chips went to China, breaking U.S. export laws.",
+            "why_it_matters": "For most people, this changes nothing right away. Nvidia's chips are used in many computers. A probe can lead to penalties, but no result is known yet.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "f159ea89f14ec2a04a2bb3dee0c23112",
+          "slug": "hundreds-of-major-websites-served-malware-through",
+          "title": "Hundreds of major websites served malware through Optimizely platform",
+          "summary": "Malware targeted crypto wallets, stole payment data and screenshots, and delivered iPhone exploits.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/11/malicious-code-delivered-through-optimizely-hits-visitors-to-hundreds-of-sites"
+            }
+          ],
+          "article": {
+            "background": "Optimizely makes software that helps websites test and personalize what visitors see. Websites that use it load Optimizely's code onto their own pages. That code carries Optimizely's digital signature.",
+            "what_happened": "On November 16, 2026, malicious code reached visitors of 178 sites. Affected sites included Zoom, the BBC, CNN, and Salesforce. The malware swapped crypto wallet addresses for the attacker's. It also stole payment card data, cookies, and screenshots. It tried to infect iPhones and iPads with exploit kits.",
+            "why_it_matters": "If you visited an affected site, your card data may be at risk. Check your card statements for charges you do not recognize. Crypto users should check recent transfers for anything unexpected.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "8932c908a8c636aa7fdf64d5fa53361f",
+          "slug": "remote-code-execution-flaw-disclosed-in-widely-used-java",
+          "title": "Remote code execution flaw disclosed in widely used Java library",
+          "summary": "A memory flaw in OpenJDK's Base64 decoder can let attackers overwrite heap memory.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://calif.io/java4shell"
+            }
+          ],
+          "article": {
+            "background": "OpenJDK is the most popular runtime for running Java programs. Java is the world's third most popular programming language. Base64 is a common way to turn data into text. Heap memory is a section programs use while they run. Remote code execution means an attacker runs commands on someone else's machine.",
+            "what_happened": "Calif researchers disclosed a memory flaw in OpenJDK's Base64 decoder, named Java4Shell. Its public security ID is CVE-2026-114938. The researchers say a remote attacker needs no login credentials. The attacker can overwrite heap memory and read it back. This can lead to remote code execution.",
+            "why_it_matters": "Java is widely used, so many programs may run on this code. An attacker in control of a server could read or change its data. The write-up does not say whether fixes exist yet.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "0021ce09b939b373c90bd61d50626f97",
+      "title": "US loses measles elimination status after 26 years amid record case numbers",
+      "url": "https://www.bbc.co.uk/news/articles/c977p71jx0xxo?at_medium=RSS&at_campaign=rss",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "f863265b98622683d9041d3f83994924",
+      "title": "Nvidia’s Q3 earnings hit the mark, without mentioning the whole Jensen Huang thing",
+      "url": "https://www.theverge.com/tech/1036032/nvidia-q3-2027-jensen-huang",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "03cbde107d48156eacff15445c6b2185",
+      "title": "What's in Trump's $50 billion air traffic control overhaul plan",
+      "url": "https://www.pbs.org/newshour/show/whats-in-trumps-50-billion-air-traffic-control-overhaul-plan",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "d025f16734ea60f166676ab22fcbcf10",
+      "title": "Isolated Brazilian tribe emerges amid alarm over threats to group’s way of life",
+      "url": "https://www.theguardian.com/world/2026/nov/17/brazil-amazon-isolated-indigenous-people",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "e1f790614fa373eb48553b1b6b781587",
+      "title": "Uncontacted Awá people approach government post in Brazil, ask for food",
+      "url": "https://www.popsci.com/environment/uncontacted-indigenous-tribe-asks-help-brazil",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "0780717626ffc034a227165e7f317122",
+      "title": "San Diego dumps both Flock cameras and smart streetlights",
+      "url": "https://arstechnica.com/tech-policy/2026/11/san-diego-dumps-both-flock-cameras-and-smart-streetlights",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "10fb80ad75fb83178524d68ee14636e9",
+      "title": "‘Godmother’ of illegal Israeli West Bank settler project Daniella Weiss among group sanctioned by Australia",
+      "url": "https://www.theguardian.com/world/2026/nov/18/australia-sanctions-construction-company-west-bank-settlement-expansion-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1260f86eca7747a61647053ed294de17",
+      "title": "Caribbean nations fear economic impact of shuttering citizenship program after EU threats",
+      "url": "https://www.theguardian.com/world/2026/nov/17/st-kitts-nevis-citizenship-investment",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "168a2216384f4cf5ce01018393027f62",
+      "title": "Ofqual urges ‘life-altering’ penalties for students who use tech to cheat",
+      "url": "https://www.theguardian.com/education/2026/nov/18/ofqual-urges-life-altering-penalties-for-students-who-use-tech-to",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "2f192924a97138c36e16bc3e2607218b",
+      "title": "Eight-year-old Haitian boy returns home after release from ICE custody",
+      "url": "https://www.theguardian.com/us-news/2026/nov/17/haitian-child-ice-custody-release",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "37e5afcb67be2ada1a4f66687552540d",
+      "title": "Carney looks to China as Trump tariffs squeeze Canada's car industry",
+      "url": "https://www.bbc.co.uk/news/articles/cq98xlz09ye0o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3baba8ee1fa49290d5a1d5ebac1df40f",
+      "title": "Pakistani man sentenced to 27 years in US prison over Trump murder plot",
+      "url": "https://www.theguardian.com/us-news/2026/nov/17/pakistani-man-jailed-trump-murder-plot",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "73b4fbf7c824a9e9903ba483f07fff42",
+      "title": "Quad9's withdrawal from France: A canary in the coal mine",
+      "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "db62ae29e38ac8c399efe7f86c93385b",
+      "title": "Speed camera fault may have allowed drivers to escape fines",
+      "url": "https://www.bbc.co.uk/news/articles/c5y4j7z373kzo?at_medium=RSS&at_campaign=rss",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "ddca5863addf8b4fa9fdfec4ebdc73b9",
+      "title": "Amazon and Google will together own nearly 30% of Anthropic after its IPO",
+      "url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "e6fed2891916b147636e0d620355f433",
+      "title": "Copilot is \"the new OS for work,\" and now Office runs inside of it",
+      "url": "https://arstechnica.com/gadgets/2026/11/microsoft-calls-copilot-the-new-os-for-work-at-ignite-keynote",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "e79ac3d8ad4ca26fe9453ba9f1f5ef8a",
+      "title": "UK will miss climate targets if it weakens EV sales rules, advisers warn",
+      "url": "https://www.theguardian.com/environment/2026/nov/18/uk-will-miss-climate-targets-if-weakens-rules-on-ev-sales-zev-ccc",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 141,
+    "clusters_considered": 117,
+    "stories_run": 10,
+    "sources": 16,
+    "sections_held": 1
+  }
+}
