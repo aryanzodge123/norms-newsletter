@@ -1,0 +1,442 @@
+{
+  "date": "2026-11-19",
+  "edition_number": 165,
+  "edition_type": "normal",
+  "headline_of_the_day": "Anthropic set to debut at $83 a share in one of the largest AI public offerings ever",
+  "headline_cluster_id": "f3165d75c0d08a01fbded15f0b632ac7",
+  "headline_rationale": "A $1.5 trillion market debut of a leading AI lab affects millions of savers whose retirement funds hold major stocks.",
+  "key_points": [
+    {
+      "text": "Anthropic shares priced at $83 for Thursday trading, positioning the AI firm for one of history's biggest IPOs.",
+      "topic": "AI"
+    },
+    {
+      "text": "Iran widened Gulf attacks by targeting a US air base in Kuwait and sites in Bahrain.",
+      "topic": "World"
+    },
+    {
+      "text": "Israeli tanks launched a rare ground operation in central Gaza, forcing residents to flee under artillery fire.",
+      "topic": "World"
+    },
+    {
+      "text": "Democrats flipped nine US Senate seats, the largest change of control in almost 70 years.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "The UN's top court will deliver a historic verdict Thursday on whether Myanmar committed genocide against the Rohingya.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-19.mp3",
+    "duration_seconds": 415,
+    "size_bytes": 4983840
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "f3165d75c0d08a01fbded15f0b632ac7",
+          "slug": "anthropic-shares-priced-at-83-for-stock-market-debut",
+          "title": "Anthropic shares priced at $83 for stock market debut Thursday",
+          "summary": "The AI firm set its price above the expected range for one of the largest public offerings in history.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/18/anthropic-share-price-stock-market-ipo"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://apnews.com/article/anthropic-ipo-pricing-70b660ddf900d90bbf484ecdf1fb441c"
+            },
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cmd7159vlr85o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "pbs_economy",
+              "url": "https://www.pbs.org/newshour/economy/anthropic-prices-its-ipo-at-83-per-share-valuing-the-ai-giant-at-1-5-trillion"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6742m39xgzxo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Anthropic is an artificial intelligence company based in San Francisco. It makes Claude, a chatbot. Seven people who left OpenAI, another AI company, founded it in 2021. An initial public offering, or IPO, is when a private company sells shares to the public for the first time. In May, Anthropic raised $65 billion in a private funding round that valued it at $965 billion.",
+            "what_happened": "Anthropic set its IPO share price at $83 on Wednesday. That is above the $70 to $78 range it set last week. At $83, the company is valued at about $1.5 trillion on a fully diluted basis, which counts every possible share. That is below the $2 trillion it reportedly sought several months ago. Trading is expected to start Thursday, November 19, on the Nasdaq stock exchange under the ticker symbol ANT.",
+            "why_it_matters": "Until now, ordinary people could not directly own a piece of Anthropic. Once trading starts, anyone with a brokerage account may be able to buy shares. Share prices can rise or fall quickly after a stock debut, so buyers can gain or lose money.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ddf01a6e69ca9b9353907e3fef66929e",
+          "slug": "trump-administration-under-scrutiny-over-how-top-nvidia",
+          "title": "Trump administration under scrutiny over how top Nvidia chips reached China",
+          "summary": "The White House faces intense questions about how America's most advanced AI chips ended up in Chinese hands.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/18/nx-s1-6044275/why-the-nvidia-scandal-is-a-national-security-issue"
+            }
+          ],
+          "article": {
+            "background": "Nvidia is a company that makes computer chips. Its chips are widely used to build and run artificial intelligence, the software behind many new tools. Governments often limit which advanced technology can be sent to rival countries. This story is about the scandal around how top American AI chips reached China.",
+            "what_happened": "The Nvidia scandal has spread into the Trump administration. The administration is now under close scrutiny. The central question is how America's top AI chips ended up in China's hands. Details of how this happened are still emerging in the reporting.",
+            "why_it_matters": "AI chips help power many of the tools people use every day. Who gets access to them affects how advanced technology is controlled. For now, this may not change what most people pay or use. But it raises questions about how well the government guards its most important technology.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "1b81391f82e91473bc735ad382bf2c95",
+          "slug": "former-mcdonald-s-worker-says-managers-failed-to-protect",
+          "title": "Former McDonald's worker says managers failed to protect her from sexual harassment",
+          "summary": "Hope, who worked at a West Midlands branch in 2023, saw older colleagues eyeing up teenage employees.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c6x2eve321jno?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "McDonald's is one of the largest fast-food chains in the world, and it often employs teenagers on part-time shifts. Hope, a former worker, spoke to BBC News about her time at a branch in the West Midlands, a region of England, where she worked in 2023. Hundreds of workers are bringing a discrimination claim against the company, which is a formal complaint that they were treated unfairly.",
+            "what_happened": "Hope says a manager did not protect her when customers sexualised her at work. She also says she saw older colleagues looking at 16- and 17-year-old workers. She says they talked about wanting to sleep with those workers once they turned 18. She has called on the company to change how it treats younger staff. This week a judge ruled against McDonald's request to have the claims struck out, which means they can continue. Hope welcomed the decision.",
+            "why_it_matters": "If you are a teenager with a first job, or a parent of one, this story is about what that work should feel like. The claims are still moving forward, so no outcome has been decided. For now, the ruling means the workers' complaints will be heard rather than dismissed at this stage.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e5ad3cb5a7281e090d0af4acf6ddac93",
+          "slug": "microsoft-ceo-satya-nadella-explains-why-he-offered-buyouts",
+          "title": "Microsoft CEO Satya Nadella explains why he offered buyouts to 60,000 employees",
+          "summary": "Nadella says he is reorganizing Microsoft around AI, not replacing engineers with the technology.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit"
+            }
+          ],
+          "article": {
+            "background": "Satya Nadella is the chief executive, or top leader, of Microsoft. In October, Microsoft offered buyouts to 60,000 employees. A buyout is a payment that asks workers to leave their jobs by choice. Companies often offer buyouts instead of forced layoffs, which are job cuts the employer decides on.",
+            "what_happened": "On Wednesday, Nadella explained why he made the offers. He said the goal was to avoid another massive layoff. He tied the decision to artificial intelligence, or AI, which is software that can do tasks people usually do. He said Microsoft is not replacing workers with AI, especially software engineers. Instead, he said, the company is reorganizing so everyone uses AI in their work.",
+            "why_it_matters": "If you hold an office job, this shows how one large employer plans to use AI. Nadella said jobs at Microsoft will focus more on managing AI tools. The reporting does not yet show how this will change pay or hiring for most workers.",
+            "quote": {
+              "text": "to make sure that at least everyone felt like they had agency in making choices",
+              "attribution": "Satya Nadella, CEO of Microsoft, speaking to Andrew Ross Sorkin at the DealBook Summit",
+              "source_url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "b26f3d21b63e687d1b50fa9a45b95bed",
+          "slug": "democrats-flipped-nine-us-senate-seats-the-most-in-almost",
+          "title": "Democrats flipped nine US Senate seats, the most in almost 70 years",
+          "summary": "The largest change of control since the 1950s reshapes what the Senate can pass.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/democrats-flipped-9-us-senate-seats-the-most-in-almost-70-years"
+            }
+          ],
+          "article": {
+            "background": "The U.S. Senate is one of the two chambers of Congress, the national lawmaking body. Senators are elected by voters in each state, and the party with more seats usually controls the chamber's agenda. A seat flip happens when a seat held by one party is won by the other party in an election. Mary Peltola is a former U.S. House member who ran for a Senate seat in Alaska.",
+            "what_happened": "Mary Peltola won her Alaska Senate race against Republican Senator Dan Sullivan, who was seeking reelection. The Associated Press reported that her victory gave Democrats a ninth Republican-held Senate seat. The report says this is the biggest midterm gain for Democrats in nearly 70 years. A midterm is an election held halfway through a president's term.",
+            "why_it_matters": "The Senate votes on federal laws and many government appointments. Which party holds more seats can affect which bills get a vote and which ones pass. For most people, this changes nothing right away. It does shift the balance of power in Congress, which can shape policy in the years ahead.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "053df7cbded00e0c7035e2edc34c8dc0",
+          "slug": "democrats-nominate-hakeem-jeffries-to-be-us-speaker-of-the",
+          "title": "Democrats nominate Hakeem Jeffries to be US Speaker of the House",
+          "summary": "The House will elect its new Speaker on January 3 when Democrats take the majority.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmy49873dn95o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/18/nx-s1-6043185/democrats-nominate-jeffries-for-speaker-prep-investigations-into-trumps-orbit"
+            },
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/show/news-wrap-democrats-nominate-hakeem-jeffries-for-speaker-of-the-house"
+            }
+          ],
+          "article": {
+            "background": "The US House of Representatives is one of two chambers of Congress. It is led by a Speaker, who runs the House and sets its agenda. Hakeem Jeffries is the top Democrat in the House. The House will choose its new Speaker when the next two-year term begins. The Speaker is also in line to become president if the president and vice-president cannot serve.",
+            "what_happened": "House Democrats officially nominated Hakeem Jeffries to be Speaker. The House will vote on the new Speaker on 3 January, when the next term starts. Democrats will hold the majority in the House at that time. If he wins, Jeffries would be the first Black lawmaker to lead the House. Reports say Democrats also control the Senate.",
+            "why_it_matters": "The Speaker helps decide which bills the House votes on. That shapes laws that affect everyday life. Democrats also plan to start investigations into the Trump administration in January. Those inquiries could bring new information to the public.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "0d5123226dbd17fb9dd0cbdad5dcfaaf",
+          "slug": "iran-widens-gulf-attacks-by-targeting-us-air-base-in-kuwait",
+          "title": "Iran widens Gulf attacks by targeting US air base in Kuwait and sites in Bahrain",
+          "summary": "Armed strikes on American military sites expand an active conflict across the Gulf region.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/iran-widens-gulf-attacks-by-targeting-u-s-air-base-in-kuwait-and-sites-in-bahrain"
+            }
+          ],
+          "article": {
+            "background": "Kuwait and Bahrain are small countries on the Persian Gulf, across the water from Iran. The United States has military bases in the region, including the air base in Kuwait. When a conflict reaches neighboring countries, more people and places get pulled into it.",
+            "what_happened": "On Wednesday, Iran widened its attacks on its Gulf neighbors. One target was a U.S. air base in Kuwait. Iran also launched several attacks on Bahrain.",
+            "why_it_matters": "The attacks now reach more countries in the region. The reporting does not yet say how this affects people outside the region. For now, the main change is that more places are part of the fighting.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "33a16dac7ade521f5db5b39adf1799a7",
+          "slug": "israeli-military-launches-rare-ground-operation-in-gaza",
+          "title": "Israeli military launches rare ground operation in Gaza beyond Yellow Line",
+          "summary": "Tanks advanced into central Gaza under artillery cover after the military issued evacuation orders for residents.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/18/israeli-tanks-cross-yellow-line-boundary-into-hamas-controlled-central-gaza"
+            }
+          ],
+          "article": {
+            "background": "Israel and Hamas agreed to a ceasefire in October. Under that deal, Israeli forces stayed behind a boundary called the Yellow Line. The line marks the more than 60% of Gaza that Israel occupies. Hamas controls the rest of the territory.",
+            "what_happened": "Israeli ground forces moved into part of central Gaza outside their control. Israel issued evacuation orders for residents first. Witnesses said tanks advanced east of the Nuseirat refugee camp and rolled onto Salah al-Din road, Gaza's main north to south route. The Israeli military said the operation aimed to destroy a tunnel west of the Yellow Line. Hamas called it a flagrant violation of the ceasefire.",
+            "why_it_matters": "For people in Gaza, this raises the risk of displacement. Reports said dozens of displaced people fled their tents. For readers elsewhere, it is a test of whether the ceasefire will hold. The outcome will affect aid access and civilian safety in the coming weeks.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "59262d67bd1675b21478bc2c836d65fc",
+          "slug": "myanmar-faces-historic-genocide-verdict-at-un-court-over",
+          "title": "Myanmar faces historic genocide verdict at UN court over Rohingya massacres",
+          "summary": "The International Court of Justice will deliver judgment Thursday on seven-year-old charges filed by The Gambia.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c5m2l90ez144o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The International Court of Justice (ICJ) is the United Nations' top court for disputes between countries. The Gambia filed this genocide case against Myanmar seven years ago. Genocide is a crime defined in the Genocide Convention, a treaty signed in 1948 after the Nazi Holocaust. Dozens of people have been prosecuted for genocide in conflicts such as Rwanda and the former Yugoslavia. But no country has ever been found guilty of genocide by an international court.",
+            "what_happened": "The ICJ judges are set to read their verdict on Thursday. The case asks whether Myanmar committed genocide against its Rohingya minority. Norm's earlier coverage described the judgment as a possible turning point in international law. The court has never found a country responsible for genocide. A ruling for The Gambia would be the first of its kind.",
+            "why_it_matters": "For most people, this ruling will not change daily life right away. It could set a standard for how the world judges the gravest crimes. Future cases would likely be measured against it.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6cc550d340c1b77f9cade8afeb53ba38",
+          "slug": "eu-proposes-45-billion-euro-loan-for-ukraine-to-avert-cash",
+          "title": "EU proposes 45 billion euro loan for Ukraine to avert cash crisis",
+          "summary": "The European Commission wants to reinforce Kyiv's defenses and give it leverage in talks with Russia.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/18/eu-loan-ukraine-cash-crisis-defences-von-der-leyen-kyiv"
+            }
+          ],
+          "article": {
+            "background": "The European Union is a group of 27 countries that often works together on shared money and policy. Its European Commission is the executive body that proposes new plans for the group to vote on. Russia's bombardment of Ukraine is still going on, and that war is the backdrop for this proposal. Ukraine is short of money, and the plan is meant to help it keep running.",
+            "what_happened": "The European Commission has proposed a loan of €45bn, about £37.5bn, for Ukraine. The loan would be given to Kyiv in 2027. The money is meant to help Ukraine avoid a looming cash crisis and to strengthen its defences. Ursula von der Leyen, the Commission president, announced the plan. She said she is confident all 27 member states will back it. She also said Ukraine would only need to repay the loan once Russia pays for the damage it has caused.",
+            "why_it_matters": "The loan is a proposal, so it does not change anything for ordinary people yet. It still needs approval from the member states. If it passes, it would shape how Ukraine pays for its government and its military in the coming years. The repayment terms also depend on whether Russia ever pays for the damage it has caused.",
+            "quote": {
+              "text": "We think this is the best way to give Ukraine a strong hand at the negotiating table.",
+              "attribution": "Ursula von der Leyen, president of the European Commission",
+              "source_url": "https://www.theguardian.com/world/2026/nov/18/eu-loan-ukraine-cash-crisis-defences-von-der-leyen-kyiv"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "24caf9e7ec7ee6aa94a43e40204e2341",
+          "slug": "waymo-pulls-driverless-taxis-from-freeways-nationwide-after",
+          "title": "Waymo pulls driverless taxis from freeways nationwide after California ban",
+          "summary": "The Alphabet subsidiary suspended highway rides indefinitely days after the state barred freeway operations.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/technology/2026/nov/18/waymo-pulls-driverless-taxis-us-freeways"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cmx2ryw97x4go?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Waymo runs driverless taxis, cars with no human driver that carry paying riders. Riders hail them with a phone app, much like a ride from a traditional taxi service. Until recently, Waymo let riders take these cars on freeways, the fast multi-lane highways that cut through cities, in several US areas. Norm covered the state's restrictions on Waymo's freeway service earlier this month. Those restrictions were issued November 11 but were not made public until a later date.",
+            "what_happened": "Waymo has stopped offering driverless freeway rides across the US, and it says the pause is indefinite. California first banned its driverless cars from state freeways after a series of traffic incidents. California's Department of Motor Vehicles said the incidents included robotaxis entering active construction zones, and it called them an imminent risk to public safety. Waymo then pulled freeway service in all other US markets while it reviews how its vehicles perform. Rides on city streets are not affected.",
+            "why_it_matters": "If you live in one of the cities where Waymo offered freeway rides, you can no longer ride on highways in its cars for now. Rides on city streets in places like Las Vegas, Dallas, and Denver continue as before. For most people, this changes little day to day, but it shows how quickly regulators can pull back self-driving car services when safety questions arise.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "74595302d32fbd81f6da0d1e64b0a246",
+          "slug": "leaseholders-in-england-and-wales-will-have-ground-rent",
+          "title": "Leaseholders in England and Wales will have ground rent capped in 2028",
+          "summary": "A government bill will cap charges and eventually ban virtually all new leasehold properties.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/society/2026/nov/18/leaseholders-in-england-and-wales-to-have-ground-rent-capped-in-2028"
+            }
+          ],
+          "article": {
+            "background": "Leasehold is a way of owning a home where you own the flat or house for a set number of years, but not the land under it. The landlord who owns the land is paid rent, called ground rent, for that land. Many leaseholders have said these charges are unfair and hard to predict. The government has promised for years to reform the system.",
+            "what_happened": "Housing minister Matthew Pennycook will introduce a leasehold reform bill in Parliament on Thursday. The bill includes a plan to cap ground rent at £250 a year. Pennycook said this cap will be one of the first parts of the bill to take effect, though not as quickly as some MPs want. The bill also aims to end the sale of new leasehold flats and make it easier to extend leases or buy them out.",
+            "why_it_matters": "If you rent a leasehold flat, the cap could lower the yearly cost you pay to the landlord. If you plan to buy a flat, new homes may be sold as freehold instead of leasehold, which can make ownership simpler. The cap is not set to start until 2028, so most people will not see a change right away.",
+            "quote": {
+              "text": "The ground rent can be expected fairly early.",
+              "attribution": "Matthew Pennycook, housing minister",
+              "source_url": "https://www.theguardian.com/society/2026/nov/18/leaseholders-in-england-and-wales-to-have-ground-rent-capped-in-2028"
+            }
+          }
+        },
+        {
+          "cluster_id": "5a60e4c2cb1404e199b82c56acdc1be6",
+          "slug": "four-maryland-high-school-students-sue-after-ai-mistakes",
+          "title": "Four Maryland high school students sue after AI mistakes Doritos bag for gun",
+          "summary": "The football players say they feared for their lives after police detained them based on a false alert.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/us-news/2026/nov/18/maryland-baltimore-county-doritos-gun-ai-lawsuit"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm"
+            }
+          ],
+          "article": {
+            "background": "Schools in some places use AI software that scans camera footage for guns. When the system thinks it sees a weapon, it sends an alert to staff and police. Omnilert is the company behind one such system used at a Maryland high school in Baltimore County. The alert is meant to help officers respond fast to real threats.",
+            "what_happened": "Four current and former students at a Maryland high school have filed a lawsuit. The suit was filed a year after armed police detained them. An AI alert had flagged a bag of Doritos as a gun. The students say they were handcuffed and detained while waiting for rides home. They say the experience left them fearing for their lives. The lawsuit names Omnilert, Baltimore County police, the board of education, individual officers, and the school principal. It alleges unlawful detention and search caused by both technology and human error.",
+            "why_it_matters": "For now this changes little for most people, but it shows what can happen when an automated alert leads to a police response. Students and families at schools that use similar systems may want to know how alerts are checked before officers act. The case may help decide who is responsible when a system gets it wrong.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "5b976b0606c9d2da26818b0f757c851b",
+      "title": "Australia may have ‘one foot in recession’ as unemployment surges to five-year high",
+      "url": "https://www.theguardian.com/business/2026/nov/19/unemployment-rate-jumps-highest-level-five-years-job-figures",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "e963f63eb57677125e7c41f7529f1c92",
+      "title": "Hackers Hijack Websites of CNN, BBC and Major Banks",
+      "url": "https://www.thedailybeast.com/hackers-hijack-websites-of-cnn-bbc-and-major-banks",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "c5524d82a4b05884be918fef4ae4c37b",
+      "title": "MLB commissioner Manfred cites fan support for salary cap as baseball heads towards lockout",
+      "url": "https://www.theguardian.com/sport/2026/nov/18/mlb-commissioner-manfred-cites-fan-support-for-salary-cap-as-baseball-heads-towards-lockout",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "bbda35cc54f8497e9883ee1bab1ce711",
+      "title": "Trump lands in China for trade talks and high-stakes summit with Xi and Putin",
+      "url": "https://www.pbs.org/newshour/show/trump-lands-in-china-for-trade-talks-and-high-stakes-summit-with-xi-and-putin",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "30efbdcc3f305e73c669e43cf048411f",
+      "title": "Florida pastor found guilty over 2021 assassination of Haitian president",
+      "url": "https://www.theguardian.com/us-news/2026/nov/18/florida-pastor-guilty-haiti-president-assassination",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "85ac8f2cd31a8444181367b8bf18aace",
+      "title": "Crimea bridge has been attacked again, says Russian-installed governor",
+      "url": "https://www.theguardian.com/world/2026/nov/19/kerch-bridge-crimea-russia-attacked-again-ukraine",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "59d8b5ffe47647a40a8f4e46edb4cf31",
+      "title": "Elon Musk tries to explain what&#8217;s going on with Ukraine and Starlink",
+      "url": "https://www.theverge.com/tech/1037448/elon-musk-ukraine-starlink-starshield-nyt-dealbook",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5195228394076986992af57ad35dca08",
+      "title": "Trump abandons his FDA nominee, and Senate scraps vote on his NSF pick",
+      "url": "https://arstechnica.com/health/2026/11/trump-abandons-his-fda-nominee-and-senate-scraps-vote-on-his-nsf-pick",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "ad100c0616aa6acb41278d29fa02f66d",
+      "title": "Russian arrested for spying on US defence company Palantir over Ukraine support",
+      "url": "https://www.bbc.co.uk/news/articles/cq20xg80ly47o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "db98cf0329e7455c5ac0c0505d53f249",
+      "title": "Record-breaking rain lashes California’s Bay area as ‘atmospheric river’ arrives",
+      "url": "https://www.theguardian.com/us-news/2026/nov/18/california-atmospheric-river-flooding",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "7d3e72cf40eb1b9224e8cca834c98e20",
+      "title": "Member of anti-migrant group found guilty of Staffordshire murder",
+      "url": "https://www.theguardian.com/uk-news/2026/nov/18/member-anti-migrant-group-guilty-murder-raise-colours-billy-allison",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8c95d894cfc7f11a7136326f188c6d1e",
+      "title": "The nation’s largest school districts consider ditching Google Search",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
+      "topic": "Tech"
+    }
+  ],
+  "stats": {
+    "items_ingested": 130,
+    "clusters_considered": 108,
+    "stories_run": 13,
+    "sources": 16,
+    "sections_held": 0
+  }
+}
