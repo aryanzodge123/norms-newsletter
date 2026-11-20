@@ -1,0 +1,394 @@
+{
+  "date": "2026-11-20",
+  "edition_number": 166,
+  "edition_type": "normal",
+  "headline_of_the_day": "International Court of Justice finds Myanmar guilty of Rohingya genocide",
+  "headline_cluster_id": "bc63b13d659ea340dbf3618fe359a36e",
+  "headline_rationale": "First genocide conviction by the world's top court sets a landmark precedent for international law and accountability for mass atrocities.",
+  "key_points": [
+    {
+      "text": "International Court of Justice ruled Myanmar committed genocide against Rohingya, the first such conviction by the UN's top court.",
+      "topic": "World"
+    },
+    {
+      "text": "Anthropic closed its first trading day valued at $1.3 trillion after a record stock sale.",
+      "topic": "Business"
+    },
+    {
+      "text": "A federal court ruled a Cabinet secretary's religious emails to 100,000 USDA employees unconstitutional.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "California filed a lawsuit against OpenAI alleging the company misled the public about AI safety.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "White House cyber chief was ousted after outages hit air travel, banking, and national security.",
+      "topic": "Cyber"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-20.mp3",
+    "duration_seconds": 668,
+    "size_bytes": 8013600
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "9562a4884ebc61914e2c5c3b069ea587",
+          "slug": "anthropic-closes-first-day-of-public-trading-at-1-3",
+          "title": "Anthropic closes first day of public trading at $1.3 trillion valuation",
+          "summary": "AI startup's shares rose 17 percent over its offering price, the biggest stock sale ever.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/nov/19/anthropic-public-trading-ipo"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c3x29ggenz12o?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo"
+            }
+          ],
+          "article": {
+            "background": "Anthropic is an artificial intelligence (AI) company. It makes Claude, a chatbot you can type questions to and get written answers. A company goes public by selling shares to ordinary investors. This first sale is called an initial public offering, or IPO. On Wednesday, Anthropic set the price for its shares at $83 each. Norm reported on that pricing before trading began.",
+            "what_happened": "Anthropic's shares began trading on Thursday on the Nasdaq stock exchange, under the ticker ANT, a short code used to track the stock. Early in the day, shares jumped about 34%, briefly valuing the company above $2 trillion. The price then fell back from an early high of $111.50. At the close, shares were at $97.17, about 17% above the $83 offer price. The company raised $81.3 billion in total from the sale. The wider technology sector fell 2.4% the same day.",
+            "why_it_matters": "For most people, daily life does not change because of one day of trading. But anyone who owns Anthropic shares now will see their value rise and fall with the stock price. The company will stay under close scrutiny, and its results may shape how investors view the AI industry.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b4c06238d5f13699aac543cee47280cd",
+          "slug": "uk-secures-tens-of-thousands-of-commercial-fridges-from",
+          "title": "UK secures tens of thousands of commercial fridges from hackers in secret operation",
+          "summary": "Quiet cybersecurity work stopped attacks that spoiled tonnes of food at European sites.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c6eq49zyx7p4o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Cyber-security means protecting computer systems from hackers. Recent waves of cyber-attacks in Europe spoiled food at hundreds of stores. France has blamed Iran for one wave. Tehran denies the claim. It was thought the UK had largely escaped such hacks. The British refrigeration industry relies on different devices.",
+            "what_happened": "The BBC has learned of a secret operation across the UK. It secured tens of thousands of fridges and freezers from hackers. The sites include major supermarkets, warehouses, restaurants, petrol stations and stadiums.",
+            "why_it_matters": "Shoppers rarely see the fridges that keep their food cold. Attacks on those fridges could spoil food on shelves. This work aims to stop that kind of damage.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "e6aee85a4dc79bba1c7b9c53d6c2a7b4",
+          "slug": "federal-judge-rules-agriculture-secretary-s-religious",
+          "title": "Federal judge rules agriculture secretary's religious emails to staff unconstitutional",
+          "summary": "Brooke Rollins's messages to 100,000 USDA staff broke the First Amendment's establishment clause.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/19/religious-messages-agriculture-secretary-unconstitutional"
+            }
+          ],
+          "article": {
+            "background": "The USDA is the federal agency that oversees farming and food. Brooke Rollins leads it as agriculture secretary. The First Amendment is the part of the US Constitution that protects religious freedom. It also limits government involvement in religion. Its rules apply to official government actions. That includes messages sent by officials.",
+            "what_happened": "A federal judge ruled Thursday that the messages were unconstitutional. Rollins sent the messages to the agency's 100,000 employees. She sent them from her official email account. The messages included Christian messages and images. She sent them on holidays such as Independence Day, Thanksgiving, Christmas and Easter. She did not send messages for holidays from other religions. The judge also said she must be careful with workers. She must avoid proselytizing. That means trying to convert people to a faith.",
+            "why_it_matters": "For most people, this changes nothing right away. It does set a clear limit on how officials talk about religion to staff.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "78c6d44d149a76eb3ed5c043155c34e5",
+          "slug": "house-staffer-built-custom-ai-tool-to-monitor-democratic",
+          "title": "House staffer built custom AI tool to monitor Democratic caucus factions",
+          "summary": "A Hakeem Jeffries aide ran Caucus Pulse to watch party groups and suggest messages.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.washingtonsun.com/congress/hakeem-jeffries-ai-caucus-pulse-office-policy"
+            }
+          ],
+          "article": {
+            "background": "The House of Representatives is the lower chamber of Congress. Hakeem Jeffries leads the House Democrats. A caucus is a group of lawmakers with shared goals. AI, or artificial intelligence, is software that reads large amounts of information.",
+            "what_happened": "The Washington Sun reported that a Jeffries staffer ran an AI program. The program, called Caucus Pulse, watched groups in the Democratic caucus. It also suggested messages for Jeffries to use. The staffer paid X, formerly Twitter, for tens of thousands of tweets. The tweets came from House lawmakers' official and personal accounts. Claude, an AI agent from Anthropic, largely made the program.",
+            "why_it_matters": "For most people, this changes nothing right away. It does raise questions about how public posts get used.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "bc63b13d659ea340dbf3618fe359a36e",
+          "slug": "international-court-of-justice-convicts-myanmar-of-genocide",
+          "title": "International Court of Justice convicts Myanmar of genocide against Rohingya",
+          "summary": "The UN's top court ruled Myanmar's military committed genocide, a first in modern history.",
+          "score": 9,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/show/international-court-of-justice-finds-myanmar-guilty-of-genocide-against-rohingya"
+            }
+          ],
+          "article": {
+            "background": "The International Court of Justice is the top court of the United Nations. It settles legal disputes between countries. The Rohingya are a Muslim minority group in Myanmar. The Gambia filed the genocide case against Myanmar about seven years ago. Genocide is a crime defined in a 1948 treaty, signed after the Nazi Holocaust. Norm covered the case earlier this month.",
+            "what_happened": "The judges read their verdict on Thursday. The court ruled that Myanmar committed genocide against its Rohingya minority. The ruling comes years after many Rohingya were forced to flee Myanmar. It is a major legal finding against a country.",
+            "why_it_matters": "For most people, this ruling does not change daily life right away. Earlier reporting said the court had never before found a country responsible for genocide. The decision may shape how future cases of this crime are handled.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "5c0e32580af3455343f118af71ddb548",
+          "slug": "trump-xi-and-putin-hold-unprecedented-three-leader-summit",
+          "title": "Trump, Xi, and Putin hold unprecedented three-leader summit",
+          "summary": "The three presidents hold their first-ever trilateral summit, a historic meeting of major powers.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/3-takeaways-from-trump-xi-and-putins-historic-summit"
+            }
+          ],
+          "article": {
+            "background": "Donald Trump is the president of the United States. Xi Jinping leads China, and Vladimir Putin leads Russia. The three countries are among the most powerful in the world. Before this meeting, the leaders of the three countries had never sat down together.",
+            "what_happened": "The three leaders met on Thursday in Shenzhen, China, according to the Associated Press. The meeting ended with a joint statement, a written statement agreed to by the sides. The statement included promises to release more oil. It also included plans to hold formal talks about nuclear weapons.",
+            "why_it_matters": "Oil supply can affect the price of gasoline and other fuels. Talks about nuclear weapons affect global safety. The reporting does not say when any of these changes will happen, so the effect on daily life is not yet clear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "442fadb77ecf8752c7676335b142e372",
+          "slug": "european-leaders-signal-readiness-to-negotiate-with-russia",
+          "title": "European leaders signal readiness to negotiate with Russia on Ukraine war",
+          "summary": "UK and German leaders said Europe has a united position for talks to end the conflict.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ckzd9nln5e6go?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia and Ukraine have been at war. Ukraine's allies are countries that back Kyiv, Ukraine's capital and seat of government. The Coalition of the Willing is the name for this group of allies. Its leaders meet to discuss how to support Ukraine and how the war might end.",
+            "what_happened": "European leaders said they are ready for negotiations with Russia to end the war in Ukraine. They spoke at a summit in Berlin of Ukraine's allies, the Coalition of the Willing. UK Prime Minister Andy Burnham said Europe has a united negotiating position. German Chancellor Friedrich Merz said Moscow's maximalist demands, meaning its most far-reaching demands, are not realistic. Jared Kushner, one of two US envoys in Berlin, said the US president wants a deal with Moscow with Europe by his side.",
+            "why_it_matters": "Talks could affect when the fighting stops, which would change life for people in Ukraine and across Europe. For now, this news does not change daily life for most people. It does show that European leaders plan to take part in any talks, not only watch them.",
+            "quote": {
+              "text": "Europe has a clear and consistent and united negotiating position.",
+              "attribution": "Andy Burnham, UK Prime Minister",
+              "source_url": "https://www.bbc.co.uk/news/articles/ckzd9nln5e6go?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "98380a79e9183ec2833cf216a56c5b80",
+          "slug": "california-sues-openai-for-misleading-public-about-ai-safety",
+          "title": "California sues OpenAI for misleading public about AI safety",
+          "summary": "State filed lawsuit alleging the artificial intelligence company made false safety claims to consumers.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theregister.com/ai-and-ml/2026/11/16/california-sues-openai-for-misleading-public-about-ai-safety/5310297"
+            }
+          ],
+          "article": {
+            "background": "OpenAI is the company that makes ChatGPT, a popular AI chatbot. AI safety means efforts to keep AI systems from causing harm to people. Companies often make public statements about how safe their tools are. Our source material for this story is thin, so this is the context we can confirm.",
+            "what_happened": "The State of California has sued OpenAI. The lawsuit says OpenAI misled the public about AI safety. The material we had does not include the specific claims, the court, or OpenAI's response. The linked report has the full account.",
+            "why_it_matters": "For now, this case mainly involves OpenAI and the state. It could shape how AI companies describe the safety of products that everyday people use. Readers who use AI tools may want to follow how the case develops.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ddf348f5f9cadd5f1eb005d7ad1fd936",
+          "slug": "court-rules-fourth-amendment-bars-ai-generated-probable",
+          "title": "Court rules Fourth Amendment bars AI-generated probable cause for searches",
+          "summary": "A court limits police use of artificial intelligence output to justify warrants in criminal cases.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.techdirt.com/2026/11/19/court-tells-cops-that-the-4th-amendment-doesnt-cover-ai-generated-probable-cause"
+            }
+          ],
+          "article": {
+            "background": "The Fourth Amendment is part of the US Constitution. It protects people from unreasonable searches and seizures. Police usually need probable cause before they arrest or search someone. Probable cause means a fair reason to believe a crime happened. A Techdirt commentary names facial recognition and predictive policing software.",
+            "what_happened": "A court ruled the Fourth Amendment does not allow AI-generated probable cause. Techdirt published a report on the ruling on November 19, 2026. The text we have stops before naming the people in the case. A commentary says the reasoning could reach beyond this one case.",
+            "why_it_matters": "For now, this changes little for most people directly. It applies to criminal cases, where police must show probable cause. If the reasoning spreads, it could change how police use AI tools. That could touch tools you may see in your own city.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "a5581d5399d1713a40dce7db5144372a",
+          "slug": "uk-government-forced-to-disclose-secret-order-demanding",
+          "title": "UK government forced to disclose secret order demanding Apple backdoor",
+          "summary": "A tribunal ordered the government to confirm an encryption demand, a rare rebuke of secrecy.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://techcrunch.com/2026/11/19/u-k-government-forced-to-disclose-secret-apple-backdoor-order"
+            }
+          ],
+          "article": {
+            "background": "Apple uses encryption to lock up customer data. Encryption scrambles information so that only the account holder can read it. A backdoor is a hidden way around that lock. The U.K. government reportedly asked Apple to build one a year before this ruling.",
+            "what_happened": "The U.K. government has been ordered to confirm that it issued a secret order. The order demanded that Apple give authorities access to encrypted customer information. The ruling came from the Investigatory Powers Tribunal on Thursday. That court lets citizens challenge government surveillance orders. The Home Office, the U.K. department responsible for security, argued that disclosing the order would harm national security. The tribunal rejected that claim.",
+            "why_it_matters": "If you store data with Apple, that data is meant to stay private through encryption. The government had tried to keep this order secret. Now it must say whether the order exists. That gives the public a rare way to check what governments ask of tech companies.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "91a6ebff75b911ac2f76e7639646a41e",
+          "slug": "white-house-cyber-director-ousted-after-wave-of-tech-outages",
+          "title": "White House cyber director ousted after wave of tech outages",
+          "summary": "Days after tech outages hit air travel, banking, and national security, Sean Cairncross was removed.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/19/white-house-cyber-director-ousted"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.cbsnews.com/news/white-house-national-cyber-director-sean-cairncross-leaving"
+            }
+          ],
+          "article": {
+            "background": "Sean Cairncross was the White House National Cyber Director. The job leads cybersecurity policy and strategy across the federal government. The office sets the government's overall approach to protecting computer systems from hackers and failures.",
+            "what_happened": "A person close to the White House told Reuters on Thursday that Cairncross was removed from the job. Axios reported the departure first, citing anonymous officials. The news came days after a run of technology outages. The outages hit air travel, banking, Microsoft services, air traffic control and the National Security Agency's internal network. Kirsten Davies will take over the role temporarily, according to the source. Davies is the Department of Defense chief information officer. Homeland Security Secretary Markwayne Mullin told lawmakers this week that investigators have seen nothing linking the outages.",
+            "why_it_matters": "For most people, this does not change daily life yet. The outages reached air travel and banking, which people use every day. The cyber office helps set how the government protects its computer systems, so who leads it shapes that work.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "1124c9607cbe51af8c8e73922aaf95c7",
+          "slug": "hackers-reportedly-leaked-customer-data-from-visa",
+          "title": "Hackers reportedly leaked customer data from Visa, Mastercard, and JPMorgan",
+          "summary": "A security breach allegedly exposed payment card data from major financial institutions.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wsj.com/finance/banking/visa-mastercard-and-jpmorgan-customer-data-leaked-by-hackers-3b5a0f87"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "04f2dac9414720e7ed61bee3a6cb0dfd",
+      "title": "California targets Nvidia in China AI chip probe",
+      "url": "https://www.bbc.co.uk/news/articles/cqn70vxp5p4no?at_medium=RSS&at_campaign=rss",
+      "topic": "AI"
+    },
+    {
+      "cluster_id": "6695de2b5a680b46ee3153512b2717c3",
+      "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
+      "url": "https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "1845f505214d80c331de7aaa44b0b330",
+      "title": "An elevator, a brick wall and a bathroom: scientists use gravity to send ‘practically unblockable’ message",
+      "url": "https://www.theguardian.com/science/2026/nov/20/scientists-communicate-using-gravity-elevator-brick-wall-bathroom-experiment",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "35e4573810b04bfb3418b375ded44efc",
+      "title": "12-year-old Little League player dies after being struck by baseball during game",
+      "url": "https://www.theguardian.com/sport/2026/nov/19/xavier-taylor-dies-new-jersey-baseball-little-league",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "b3f1d22a9a5779e496ec4e4472834ebd",
+      "title": "UK-EU reset talks will go ‘down to the wire’ as crunch summit approaches",
+      "url": "https://www.theguardian.com/world/2026/nov/19/uk-eu-reset-talks-andy-burnham-food-farming-tuition-fees",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "3c5fb724da7aa490d533153b27497c21",
+      "title": "US warned supplying nuclear-powered submarines to Australia would diminish its own fleet for ‘many years’",
+      "url": "https://www.theguardian.com/world/2026/nov/20/aukus-defence-us-warned-supplying-nuclear-powered-submarines-to-australia-would-diminish-its-own-fleet-for-many-years",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "611310ccd31f75f40fdd4a1dc5b403da",
+      "title": "Religion should be removed from terrorism definition under Australian law as it gives ‘false credibility’, watchdog says",
+      "url": "https://www.theguardian.com/law/2026/nov/20/religion-should-removed-from-terrorism-definition-australian-law-gives-false-credibility-watchdog-ntwnfb",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "b99679fe440b67efff6bd0da048c7de1",
+      "title": "CA Sales and Use Tax Applies to Digital Products Beginning January 1, 2027 [pdf]",
+      "url": "https://cdtfa.ca.gov/formspubs/L1036.pdf",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "bc45836e9bac78258427e108e5031134",
+      "title": "Uber tests rides for kids as young as 10, with extra pay for drivers",
+      "url": "https://techcrunch.com/2026/11/19/uber-tests-rides-for-kids-as-young-as-10-with-extra-pay-for-drivers",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "0af565085b7dadba00ec9da478caff30",
+      "title": "F1 to introduce full-time race stewards from 2027",
+      "url": "https://www.bbc.co.uk/sport/formula1/articles/cv62pxxkz8wxo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "70524ef380d772ed6760d573c87cfdf5",
+      "title": "Ex MS researcher publishes claimed Windows lock-screen bypass through Narrator",
+      "url": "https://runtimewire.com/article/former-microsoft-researcher-publishes-claimed-windows-lock-screen-bypass-through",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "2a8beae87680e647ed7645152f249db4",
+      "title": "Amazon fights the Delivery Protection Act with homepage banner, in-app pop-up",
+      "url": "https://arstechnica.com/tech-policy/2026/11/amazon-takes-its-fight-against-nyc-delivery-bill-to-shoppers-with-in-app-pop-up",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "64927beaa79c2bf14ae57972ab4bff28",
+      "title": "Americans will pay more for Thanksgiving dinners this year, says Farm Bureau survey",
+      "url": "https://www.pbs.org/newshour/economy/americans-will-pay-more-for-thanksgiving-dinners-this-year-says-farm-bureau-survey",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "8c1e049c7d11b178ab1bdfe6a7c44d5e",
+      "title": "Shevchenko accuses Mudryk camp of 'baseless slander'",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cmgqx908lk44o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    }
+  ],
+  "stats": {
+    "items_ingested": 107,
+    "clusters_considered": 91,
+    "stories_run": 12,
+    "sources": 15,
+    "sections_held": 0
+  }
+}
