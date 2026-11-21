@@ -1,0 +1,375 @@
+{
+  "date": "2026-11-21",
+  "edition_number": 167,
+  "edition_type": "normal",
+  "headline_of_the_day": "Russian missiles hit NATO member Poland, alliance calls it grave violation",
+  "headline_cluster_id": "7607b5439970209c1a1d90202ad4a356",
+  "headline_rationale": "Direct missile incursion into NATO territory is the most serious escalation with immediate security consequences for the alliance and its member states.",
+  "key_points": [
+    {
+      "text": "Russian missiles landed inside NATO member Poland, with the alliance calling it a grave violation of airspace.",
+      "topic": "World"
+    },
+    {
+      "text": "The Nasdaq fell 5% Friday, erasing all 2026 gains as AI stocks dropped on Anthropic's second trading day.",
+      "topic": "Finance"
+    },
+    {
+      "text": "The International Court of Justice found Myanmar guilty of genocide against the Rohingya, setting a precedent.",
+      "topic": "World"
+    },
+    {
+      "text": "A Missouri judge approved Bayer's $7.25 billion settlement of lawsuits claiming Roundup causes cancer.",
+      "topic": "Business"
+    },
+    {
+      "text": "YouTube plans to pay $3 billion to settle claims its addictive design harmed children, sources say.",
+      "topic": "Regulation"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-21.mp3",
+    "duration_seconds": 424,
+    "size_bytes": 5089824
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "e7dd8514d5d5da91a572dd81c217439e",
+          "slug": "judge-approves-7-25-billion-dollar-bayer-settlement-over",
+          "title": "Judge approves 7.25 billion dollar Bayer settlement over Roundup cancer claims",
+          "summary": "The Missouri ruling could end nearly a decade of lawsuits claiming the weedkiller causes cancer.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/business/2026/nov/20/bayer-roundup-cancer-litigation"
+            }
+          ],
+          "article": {
+            "background": "Roundup is a weedkiller sold by Bayer, a German company. People have sued Bayer, saying Roundup causes cancer. Those lawsuits have hung over the company for close to a decade. A settlement is a deal where the company agrees to pay people to drop their claims.",
+            "what_happened": "On Friday, a judge in a state court in St Louis, Missouri, approved a $7.25 billion settlement. Judge Timothy Boyer found the deal \"fair, reasonable and adequate.\" He rejected objections that payments to individual cancer victims would be too low. He said that delaying payments could make victims, including people with terminal cancer, wait an indeterminate number of years. Bayer had faced about 65,000 claims in US state and federal courts.",
+            "why_it_matters": "If the settlement holds, it could end a long legal fight over this weedkiller. People who have cancer and used Roundup may be able to get paid sooner. The reporting does not say how much any one person will receive.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bd8546e5336fbeace62cc4588d6828a1",
+          "slug": "grand-theft-auto-6-sets-entertainment-launch-record-with-3",
+          "title": "Grand Theft Auto 6 sets entertainment launch record with 3.8 billion dollars in one day",
+          "summary": "The game became the biggest entertainment launch ever, based on first-day sales estimates.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Grand Theft Auto 6 (GTA 6) is a video game made by Rockstar Games. Rockstar is owned by Take-Two, which is its parent company. The figures in this story are Take-Two's own estimates, not audited totals. Sales numbers like these are often compared with box office totals for movies.",
+            "what_happened": "Take-Two said on Friday that GTA 6 had record retail sales in its first full day of release. The company put those sales at $3.8 billion, or about £2.9 billion. The figures cover estimates through the end of Thursday. Take-Two said the total was a record for entertainment across any medium. Before release, the game had already pre-sold 32.5 million copies. For comparison, the film Spider-Man: Brand New Day made $2.5 billion in cinemas over its full run.",
+            "why_it_matters": "For most people, this number does not change what they pay or how they play. It does show how much demand there is for the game. Video game prices, and how many people buy games on day one, can be shaped by numbers like these over time.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "7607b5439970209c1a1d90202ad4a356",
+          "slug": "russian-missiles-land-inside-nato-member-poland",
+          "title": "Russian missiles land inside NATO member Poland",
+          "summary": "NATO called the incident a grave violation of Polish airspace, raising security concerns across the alliance.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/nato-calls-russian-missiles-landing-in-poland-a-grave-violation-of-airspace"
+            }
+          ],
+          "article": {
+            "background": "NATO is a military alliance of countries. Its members agree to defend one another. This story is about Russian weapons landing inside Poland.",
+            "what_happened": "Two Russian missiles and a suspected drone came down in Poland on Friday. The incident happened in Nowa Deba, Poland. Poland's prime minister said it was likely a provocation. A provocation is a deliberate act meant to cause a reaction. NATO called it a grave violation of Polish airspace. Airspace is the sky above a country.",
+            "why_it_matters": "For most people, daily life does not change because of this yet. The incident does raise security concerns across the alliance.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d45999b6cdf82575780d7b9264109587",
+          "slug": "international-court-finds-myanmar-guilty-of-genocide",
+          "title": "International court finds Myanmar guilty of genocide against Rohingya",
+          "summary": "The ruling sets a legal precedent, and human rights groups urge sanctions on the country.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/rights-groups-urge-sanctions-after-icj-finds-myanmar-guilty-of-genocide-against-rohingya"
+            }
+          ],
+          "article": {
+            "background": "Myanmar is a country in Southeast Asia. The Rohingya are a minority group living there. The International Court of Justice is the United Nations' highest court, and it settles disputes between countries. Its rulings are binding on the countries involved, though the court has no police force to enforce them.",
+            "what_happened": "Rights groups are calling for military and economic sanctions against Myanmar. The court ruled that Myanmar's government committed genocide against the Rohingya. The AP report describes this as the first ruling of its kind. Genocide is an effort to destroy a group of people, in whole or in part.",
+            "why_it_matters": "For most people, this does not change daily life right away. Sanctions, if they are imposed, could limit trade and money moving to and from Myanmar. The ruling also creates a legal record that future cases can point to.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fb7b7c7ec9356c0fdc253d128ea89acf",
+          "slug": "french-police-officers-convicted-of-racist-assault-on-black",
+          "title": "French police officers convicted of racist assault on black music producer",
+          "summary": "Three officers were found guilty of intentional, racist violence caught on security cameras during the pandemic.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/20/french-police-officers-found-guilty-of-racist-assault-on-black-music-producer"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ck9d7e9wvvweo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Michel Zecler is a Black music producer in Paris. He works at a recording studio there. In November 2020, police stopped him outside the studio. The officers said he was not wearing a face mask. This was during the Covid pandemic, a global virus outbreak.",
+            "what_happened": "Three police officers were found guilty of racist violence. Security cameras caught the attack on video. The video shows he offered little resistance. He was hit about 30 times with punches, kicks or baton strikes. The officers also signed a false report saying he violently resisted. They were sentenced to one to two years in prison, with more years suspended.",
+            "why_it_matters": "The trial was seen as a turning point in France. It recognized racist violence by police in court. For most people, this case is about trust in police. Video showed what happened, even though the officers' report said otherwise.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "2c6b06d70e8571e59f4170b00c766382",
+          "slug": "youtube-preparing-three-billion-dollar-settlement-over",
+          "title": "YouTube preparing three billion dollar settlement over youth addiction claims",
+          "summary": "The deal would cover thousands of school districts and add new teen safeguards, sources say.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/streaming/1039096/youtube-social-media-addiction-school-districts-settlement"
+            }
+          ],
+          "article": {
+            "background": "Many US school districts have sued large social media companies. They say the apps were built to keep kids hooked, which they call an addictive design. YouTube is one of the platforms named in these claims. A settlement is an agreement to end a lawsuit, usually with a payment and no admission of wrongdoing.",
+            "what_happened": "According to Bloomberg, YouTube is preparing to pay $3 billion to thousands of school districts. The payment would settle claims that its addictive design harmed kids. Sources told Bloomberg that YouTube reached the deal in principle, which means the terms are agreed in outline but not yet final. The deal would also require new safeguards for teens.",
+            "why_it_matters": "If the deal is finalized, teens who use YouTube could see new protections on the app. The details of those safeguards have not been reported yet. For now, this changes nothing about how most people use the app.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "db7d58ba89716dcb9003295811172dca",
+          "slug": "trump-administration-blocks-california-from-enforcing-phone",
+          "title": "Trump administration blocks California from enforcing phone service rules",
+          "summary": "The Federal Communications Commission ordered California to stop enforcing phone rules against telecom companies.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/tech-policy/2026/11/fcc-orders-california-to-stop-enforcing-phone-service-rules-against-att"
+            }
+          ],
+          "article": {
+            "background": "The Federal Communications Commission, or FCC, oversees phone companies. States also set their own phone rules. In California, AT&T is a Carrier of Last Resort. That means AT&T must offer phone service to any potential customer.",
+            "what_happened": "The FCC ordered California to stop enforcing its phone rules against AT&T. The order was released today. AT&T wants to stop offering basic phone service to new customers. AT&T also wants to end service on June 1, 2027. That would affect 184,000 home customers and 15,000 business customers. The order grants AT&T's request to override state rules. It follows an earlier FCC approval.",
+            "why_it_matters": "If you use AT&T phone service in California, this could affect you. Rules for phone service may now come from Washington, not the state. The planned end date is June 1, 2027.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "eb4f7c18b6c55b77bff74f983e45f134",
+          "slug": "human-liver-kept-alive-outside-body-for-record-seven-weeks",
+          "title": "Human liver kept alive outside body for record seven weeks",
+          "summary": "Australian researchers kept a liver alive outside the body for a record seven weeks, which may help transplants.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.technologyreview.com/2026/11/19/1148934/a-human-liver-has-been-kept-alive-outside-the-body-for-seven-weeks-setting-a-record"
+            }
+          ],
+          "article": {
+            "background": "A liver is one of the largest organs in the body. It helps clean the blood and process food. Doctors sometimes replace a failed liver with one from a donor. Machine perfusion is a method that pumps blood and nutrients through an organ kept outside the body. The technology is seen as a way to create more chances for transplants.",
+            "what_happened": "Researchers in Australia say they kept a human liver alive outside the body for seven weeks. The work was done in Sydney. A team led by surgeon and inventor Carlo Pulitano connected a donated liver to a system of automated pumps and sensors. The system fed the organ nutrients, supplied it with blood, and removed waste. The researchers have not yet published the full details.",
+            "why_it_matters": "For most people, this does not change anything right now. If the method proves reliable, more donated livers could be kept in good condition until they reach patients. That could help people waiting for a transplant.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e03d45a22b5cc65db64111fc92e4847b",
+          "slug": "this-year-s-el-ni-o-unlike-any-other-on-record",
+          "title": "This year's El Niño unlike any other on record",
+          "summary": "Ocean monitoring areas hit record heat above 30 degrees Celsius, with effects lasting into next year.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "science_news",
+              "url": "https://www.sciencenews.org/article/super-el-nino-historic-effect-hurricane"
+            }
+          ],
+          "article": {
+            "background": "El Niño is a weather-changing pattern in the Pacific Ocean. Its key sign is warmer-than-normal surface water in the Pacific. This water sits in the central and eastern Pacific, near the equator. Researchers watch one area of ocean to measure how strong it is.",
+            "what_happened": "In September, the daily average hit a record high. Sea surface temperature is the heat at the top of the ocean. It was more than 3.03 degrees Celsius above the 30-year average. By October 18, the monitored area averaged over 30°C (86°F). It was the first time in history. Then it kept rising.",
+            "why_it_matters": "Its effects will last well into 2027. That gives its weather impacts a long run.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "867c33b774571bc19c1493421d856bc3",
+          "slug": "white-house-removes-national-cyber-director-after-tech",
+          "title": "White House removes national cyber director after tech outages",
+          "summary": "Sean Cairncross was fired after losing confidence of the chief of staff following disruptions to air travel and banking.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/cwz0k3nn5p5mo"
+            }
+          ],
+          "article": {
+            "background": "The National Cyber Director is the top cybersecurity official in the US government. This person oversees cybersecurity policy and strategy across federal agencies. Sean Cairncross held the job for a little over a year. Norm reported in November that he was ousted. It came days after outages hit air travel, banking, and national security systems.",
+            "what_happened": "Sean Cairncross was fired from the job. He lost the confidence of White House chief of staff Stephen Miller. That account comes from CBS, the BBC's US news partner. On Friday, President Donald Trump was asked about the removal. He said Cairncross was not \"good enough.\" Kirsten Davies, the Department of Defense chief information officer, will take over for now, according to a source.",
+            "why_it_matters": "For now, most people will not see a direct change. The outages hit banking and air travel, things many people use often. US officials said cyberattacks did not cause them, but members of Congress are asking questions. Who leads this work can shape how those systems are protected.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "eb944a8b4823ce33b70209f1a3c7507d",
+          "slug": "researcher-finds-widespread-data-leaks-across-ai-service",
+          "title": "Researcher finds widespread data leaks across AI service networks",
+          "summary": "A researcher planted two million digital tripwires in AI requests, exposing data leaking through the supply chain.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "arstechnica",
+              "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate"
+            }
+          ],
+          "article": {
+            "background": "Many AI apps do not talk to a model directly. They send requests through middleman services called AI routers, also known as AI gateways. A router receives a prompt from an app and forwards it to the AI model that answers. Services such as OpenRouter and Vercel act as routers. The chain of these services is sometimes called the AI supply chain.",
+            "what_happened": "Researchers planted 2 million digital tripwires in requests sent through this network of AI services. A tripwire is a marker that reveals when information has been read or copied. The researchers wanted to learn what happened to sensitive information sent through the chain. They found that the ecosystem leaked highly sensitive data.",
+            "why_it_matters": "If you use an app that relies on AI, your private messages or files may pass through several companies you have never heard of. This research suggests that data can leak at these middle steps. The full scope of the risk to everyday users is not yet clear from the reporting.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "d021d9a569760ae4897c0989dd94b631",
+          "slug": "ransomware-recovery-firm-chief-technology-officer-charged",
+          "title": "Ransomware recovery firm chief technology officer charged with fraud",
+          "summary": "Federal prosecutors say the firm paid attackers and charged victims extra for decryption work that never existed.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "krebs_on_security",
+              "url": "https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud"
+            }
+          ],
+          "article": {
+            "background": "Ransomware locks a victim's files until they pay. RansomwareHelp is a six-year-old Florida business. It said its advanced cryptographic tools could restore 100 percent of data. Cryptography is the math used to scramble and unscramble data. Its website told victims not to pay the ransom.",
+            "what_happened": "The company's chief technology officer has been charged with wire fraud. Wire fraud means cheating people for money using electronic messages or transfers. The FBI, the U.S. federal police, ran a sting operation. Prosecutors say the firm paid hackers for a key that unlocks files. It then charged victims more for work it never did.",
+            "why_it_matters": "Most people will not face this directly. Anyone hit by ransomware may get offers for help. Ask a recovery firm how it works before you pay it.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "caf1af2087b07ca4a9b7a83c17cb9d49",
+      "title": "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day of trading",
+      "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "196f4c7ed769c9047eab9a66b354563f",
+      "title": "Man accused of sparking deadly Los Angeles wildfire found guilty",
+      "url": "https://www.theguardian.com/us-news/2026/nov/20/los-angeles-palisades-wildfire-trial-verdict",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "388a10876662ede29c9d16e741461567",
+      "title": "Second federal judge blocks construction of Trump's memorial arch",
+      "url": "https://www.pbs.org/newshour/politics/second-federal-judge-blocks-construction-of-trumps-memorial-arch",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "2a5cc21ca9b9d8374189b10bdbe409cb",
+      "title": "Price beats Kotaskova to become undisputed champion",
+      "url": "https://www.bbc.co.uk/sport/boxing/articles/cw808y2lrkzxo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "bdd3373ab6ea39887ebd91f9cb1db447",
+      "title": "Google rolls out new search homepage with AI chat history and no search button",
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "050d4f32ea8304258084aa0aae7c8690",
+      "title": "ANC fights to keep control of South Africa's key cities after election setback",
+      "url": "https://www.bbc.co.uk/news/articles/cqpv94d10rwpo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "a91939bcb91dbea02c54ef14ef1be2b8",
+      "title": "Denmark accuses Russia of plotting to assassinate US-Ukrainian rapper",
+      "url": "https://www.bbc.co.uk/news/articles/cmde1lj4yjxno?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "eb7037644a273f2390d8ce0395812438",
+      "title": "What the new UK-EU deal could mean for future post-Brexit relations",
+      "url": "https://www.bbc.co.uk/news/videos/c90k6gl3lyxeo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ff01bb377b08e3dd632a2f0c30e0fbb0",
+      "title": "SpaceX's Starshield troubles in Ukraine could threaten its broader military business",
+      "url": "https://arstechnica.com/space/2026/11/incoming-house-chair-threatens-spacex-funding-over-ukraine-controversy",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "9b75d927a9b9606ae0034437e3597a1d",
+      "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+      "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "1138e8324dad4ac411c4d956e020c99b",
+      "title": "NASA’s new Moon plan is taking shape, but some big questions remain",
+      "url": "https://arstechnica.com/space/2026/11/nasas-new-moon-plan-is-taking-shape-but-some-big-questions-remain",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "7e13872528b6d4c9a604c8e842bae68c",
+      "title": "Mamdani announces plan to close New York's Rikers Island jail by 2032",
+      "url": "https://www.bbc.co.uk/news/articles/cmjeqv89egylo?at_medium=RSS&at_campaign=rss",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 112,
+    "clusters_considered": 105,
+    "stories_run": 12,
+    "sources": 21,
+    "sections_held": 0
+  }
+}
