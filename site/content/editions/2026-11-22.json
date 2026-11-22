@@ -1,0 +1,320 @@
+{
+  "date": "2026-11-22",
+  "edition_number": 168,
+  "edition_type": "normal",
+  "headline_of_the_day": "FBI investigates breach of nationwide law enforcement criminal information database",
+  "headline_cluster_id": "277768f84e8975a96222702c8aa7465a",
+  "headline_rationale": "A suspected compromise of the system federal, state, and local police use to share criminal justice records affects investigations and background checks nationwide.",
+  "key_points": [
+    {
+      "text": "FBI is investigating a suspected breach of the National Crime Information Center database used by federal, state, and local law enforcement.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "Anthropic's AI assistant Claude helped solve a 19th-century mathematics problem, with two independent groups verifying the claim.",
+      "topic": "AI"
+    },
+    {
+      "text": "A Russian cargo ship bound for Kaliningrad caught fire after a drone strike in the Gulf of Finland and drifted into Finnish waters.",
+      "topic": "World"
+    },
+    {
+      "text": "Trump signed an order requiring federal contractors to check with the White House before responding to congressional inquiries.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "Mexico detained cartel leader El Chapo Isidro, triggering a burst of violence in Sinaloa state.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-22.mp3",
+    "duration_seconds": 433,
+    "size_bytes": 5197248
+  },
+  "sections": [
+    {
+      "name": "Technology",
+      "stories": [
+        {
+          "cluster_id": "4df5f73b368450f5efc37b451bb95b12",
+          "slug": "meta-planned-project-gryffindor-to-boost-instagram-use",
+          "title": "Meta planned Project Gryffindor to boost Instagram use among school students",
+          "summary": "Internal documents show Meta targeted schools to encourage teens to add school banners to their profiles and build student communities.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.npr.org/2026/11/18/nx-s1-6037808/meta-instagram-schools-teens-safety"
+            }
+          ],
+          "article": {
+            "background": "Instagram is a photo and video app where people share posts and follow friends. Companies that run apps like this want more people to use them. Teens are one group they work to reach. Schools are one place where those efforts can happen.",
+            "what_happened": "Internal Meta documents show a plan called Project Gryffindor to grow teen Instagram use through schools. The plan aimed to build what Meta called \"school communities\" in the U.S. Teens were encouraged to add their school banner to their profiles. A student directory lets users find and connect with others from their school on the app. Meta launched the effort in 2025 as a \"school partnership program\" and expanded it in September 2026. The company said almost 17,000 schools had signed up.",
+            "why_it_matters": "If you are a student at a participating school, the app may show you classmates who use it. Parents may want to know that a school name can now appear on a child's profile. For most people, this changes little about the app itself right now, but it shows how companies reach young users through schools.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "64d1996f051da8fd2ca11c7232720fb8",
+          "slug": "tesla-rolls-out-fsd-v15-with-live-visualization-and",
+          "title": "Tesla rolls out FSD v15 with live visualization and improved safety",
+          "summary": "The company claims safety is 25 times better in critical cases, though the figure is unverified by independent sources.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://twitter.com/Tesla/status/2124222447855743019"
+            }
+          ],
+          "article": {
+            "background": "Tesla sells cars with a driver-assist system it calls Full Self-Driving, or FSD. FSD helps steer, brake, and change lanes, but the driver must stay alert and in control. Tesla releases new versions of this software to its cars over time. This story is about the newest version, called v15.",
+            "what_happened": "Tesla has started rolling out FSD v15 to its cars. Tesla says the update upgrades the core driving software. It also says the system handles safety-critical cases 25 times better, though the excerpts do not explain how that number was measured. A new feature called Reality View shows a live picture of the drive, and lets the driver see and control what FSD plans to do. Tesla also says the system now detects signs, animals, debris, potholes, and standing water better. It says FSD will slow for speed cameras, and a new Bike Rack Mode lets drivers use FSD with bike racks or similar hitch gear.",
+            "why_it_matters": "If you drive a Tesla, you may see these changes soon, though Tesla did not say which vehicles get v15 first. The update aims at common road hazards like potholes and standing water. For now, the claims come from Tesla and have not been independently verified.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "ce2a1f1b2b1da619afc570d071ae4896",
+          "slug": "mathematician-says-anthropic-s-claude-helped-crack-major",
+          "title": "Mathematician says Anthropic's Claude helped crack major math problem, experts confirm",
+          "summary": "Levent Alpöge says Claude contributed to solving a 19th-century problem related to the Riemann hypothesis in six weeks.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "guardian_technology",
+              "url": "https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai"
+            }
+          ],
+          "article": {
+            "background": "The Riemann hypothesis is a famous math problem first proposed in the 19th century. It is a claim about the pattern of prime numbers, the whole numbers that can only be divided evenly by one and themselves. It has stayed unsolved for a long time, and it is widely seen as one of the most important open problems in mathematics.",
+            "what_happened": "Levent Alpöge, a mathematician at Anthropic, posted a note on his personal website on Friday. Anthropic is a San Francisco-based artificial intelligence company. He said its AI software, Claude, helped prove the Riemann hypothesis. He said the work took about six weeks. Two groups checked the claim, and experts say it holds up.",
+            "why_it_matters": "For most people, this does not change daily life right away. It is a sign that AI tools can help with very hard research work. If that holds up over time, it may change how future math gets done.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "94defacb5f2cad1f69f27ac3e0b4e35a",
+          "slug": "how-to-run-qwen3-8-ai-model-on-consumer-hardware",
+          "title": "How to run Qwen3.8 AI model on consumer hardware",
+          "summary": "Local users report getting real coding work done with Qwen3.8-27B on a single GPU or Mac.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://igorstechnoclub.com/field-guide-running-qwen38-locally"
+            }
+          ],
+          "article": {
+            "background": "Qwen is a family of AI language models made by Alibaba. A language model is the kind of AI that reads and writes text. Running a model locally means it runs on your own computer, not on a company's servers. This guide is a how-to for people who want to try that.",
+            "what_happened": "The guide says local AI models have reached a useful level for real coding work. It names Qwen3.8-27B as the model local users most often mention for this. The guide says it runs on a single consumer graphics card or a well-equipped Mac. It also says smaller Qwen models can run on smaller machines. The guide walks readers through setup and helps them choose a version for their hardware.",
+            "why_it_matters": "If you write code, you may be able to try an AI helper without sending your work to an outside company. The speed numbers in the guide come from individual users, not formal tests. So your results may differ based on your computer and setup.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "dd25f2121b668d9590e79a48a073bb28",
+          "slug": "trump-orders-federal-contractors-to-clear-congressional",
+          "title": "Trump orders federal contractors to clear congressional inquiries with White House",
+          "summary": "The signed executive order changes how contractors handle requests from Congress, affecting government oversight.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/trump-orders-federal-contractors-to-check-with-white-house-before-responding-to-congress"
+            },
+            {
+              "name": "npr_politics",
+              "url": "https://www.npr.org/2026/11/21/g-s1-154966/trump-contractors-congress"
+            }
+          ],
+          "article": {
+            "background": "Federal contractors are private companies that do work for the U.S. government. Many also get requests from Congress, the body that makes laws and oversees federal agencies. Congress can ask these companies for records and information. The White House now has a new order that changes how contractors handle those requests.",
+            "what_happened": "President Donald Trump signed a new executive order directing federal contractors and subcontractors to consult with his administration about inquiries they get from Congress. The order also tells them to hold back any communications the White House considers privileged. Companies must coordinate with the White House and federal agencies on how they respond. The order was issued late on a Friday. If a company does not comply, the White House warns its contracts could be ended and its future government work suspended.",
+            "why_it_matters": "For most people this does not change daily life right away. It does affect how information about government work reaches lawmakers and the public. Companies that do federal work now have to check with the White House before answering Congress, which could slow down or limit what lawmakers learn.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "9ae8f0fb40d0b4318e2e3b0afb72e625",
+          "slug": "trump-pledges-to-work-with-democrats-on-10-percent-credit",
+          "title": "Trump pledges to work with Democrats on 10 percent credit card rate cap",
+          "summary": "The president stated his intention to pursue legislation, though no bill has been introduced.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "pbs_politics",
+              "url": "https://www.pbs.org/newshour/politics/trump-vows-to-work-with-democrats-to-cap-credit-card-interest-rates-at-10"
+            }
+          ],
+          "article": {
+            "background": "A credit card lets you borrow money to buy things now and pay later. If you do not pay the full balance, the bank charges interest, which is the cost of borrowing. An interest rate cap is a legal limit on how high that cost can go. Trump made a similar promise during his 2024 campaign.",
+            "what_happened": "On Saturday, President Donald Trump said he would work with the incoming Democratic Congress to cap credit card interest rates. The headline describes the goal as a 10% cap. Trump hopes to fulfill the 2024 promise. He could not deliver on it before, according to the report. The report blames industry pressure and a lack of interest from fellow Republicans.",
+            "why_it_matters": "Nothing has changed yet for credit card users. A cap would only affect people if Congress passes one. People who carry a balance from month to month would be the ones most affected.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "39af5894c035d0add40d476d37f7a5b4",
+          "slug": "drone-strike-hits-russia-bound-cargo-ship-in-gulf-of-finland",
+          "title": "Drone strike hits Russia-bound cargo ship in Gulf of Finland",
+          "summary": "The Sparta II caught fire and drifted into Finnish waters; Finland says Ukraine was likely responsible.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Kaliningrad is a Russian region on the Baltic Sea. It is cut off from the rest of Russia by land, so ships are its main link for many goods. The Gulf of Finland is the narrow body of water between Finland and Estonia that leads toward St. Petersburg and Kaliningrad. The war between Russia and Ukraine has pushed fighting and tension into the Baltic region.",
+            "what_happened": "A Russian cargo ship called the Sparta II was hit by a drone attack on Saturday morning. It was sailing toward Kaliningrad in the eastern Gulf of Finland. The ship caught fire after the strike and then drifted into Finnish waters. Russian and Finnish authorities both reported the attack. Kaliningrad's governor said two drones were used, based on early information. Finnish defence forces said Ukraine was likely behind the attack. Kyiv has not commented.",
+            "why_it_matters": "For now, this is unlikely to change daily life for most people. It does show that the war is reaching waters near Finland, a NATO member that shares a long border with Russia. Finland's prime minister said the war is spilling over into its immediate area, so people in the region may see more security news in the months ahead.",
+            "quote": {
+              "text": "War is spilling over into our immediate vicinity.",
+              "attribution": "Petteri Orpo, Finnish Prime Minister",
+              "source_url": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "633102bb3752e1e94421c13db8be4f66",
+          "slug": "mexico-arrests-fbi-most-wanted-cartel-leader-el-chapo",
+          "title": "Mexico arrests FBI most-wanted cartel leader El Chapo Isidro in shoot-out",
+          "summary": "Fausto Isidro Meza Flores and seven others were detained after special forces killed seven suspects in Sinaloa.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/ckz749ey0r75o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The FBI is the main federal police agency of the United States. Its Ten Most Wanted list names people the agency wants found for serious crimes. Fausto Isidro Meza Flores, also called \"Chapo Isidro,\" was on that list. He was wanted in Mexico on organized crime charges. Organized crime means groups that run illegal business, such as drug trafficking.",
+            "what_happened": "Mexican special forces detained Meza Flores and seven others on Friday in Guasave, a city in the state of Sinaloa. Mexico's defense secretariat, a government ministry, said the arrests followed a shoot-out with authorities. Seven suspects were killed in the operation. Four members of the Mexican army also died. They were traveling to Guasave to reinforce security there.",
+            "why_it_matters": "Meza Flores is accused of flooding the US with fentanyl, cocaine, heroin and other deadly drugs. Fentanyl is a very strong synthetic painkiller that can cause death in small amounts. For most people, the arrest does not change what they pay or what they can buy. It shows that a wanted suspect can be caught, though the operation also cost lives.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b0af2d8e75fac38334d8d68d421a3473",
+          "slug": "cop31-climate-talks-in-turkey-stall-over-fossil-fuel-dispute",
+          "title": "COP31 climate talks in Turkey stall over fossil fuel dispute",
+          "summary": "Negotiations ran more than a day over time, with the EU and Pacific nations opposing the draft agreement.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "COP31 is the annual UN climate summit, this year held in Turkey. Countries meet there to negotiate a shared plan for cutting the greenhouse gases that warm the planet. Fossil fuels, such as coal, oil, and gas, are the main source of those gases.",
+            "what_happened": "Talks at the COP31 summit in Turkey have stalled. Negotiators paused for the night after running more than a day over schedule. They have not agreed on a new global climate deal. The EU and several Pacific island nations are pushing back on the latest draft. It does not mention reducing the world's demand for fossil fuels. A second dispute involves the Africa Group, which wants firm commitments for more money to help countries adapt to climate change. The EU has said it will not support that request.",
+            "why_it_matters": "The outcome could shape how fast countries cut the fuels that power cars, homes, and factories. Those choices can affect energy bills and the air people breathe. For now the talks are unresolved, so nothing changes in daily life yet.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "277768f84e8975a96222702c8aa7465a",
+          "slug": "fbi-investigates-suspected-breach-of-nationwide-criminal",
+          "title": "FBI investigates suspected breach of nationwide criminal information database",
+          "summary": "The National Crime Information Center database is used by federal, state, and local law enforcement to share criminal justice records.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.cnbc.com/2026/11/21/fbis-criminal-information-database-hacked-cnn-reports.html"
+            },
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The FBI runs a nationwide database called the National Crime Information Center, or NCIC. Police, courts, and other law enforcement agencies use it to share information on warrants and criminal histories. It is also used for background checks. The reports say the FBI is investigating a suspected breach of this system.",
+            "what_happened": "CNN reported on Friday that the FBI is looking into a possible breach of the NCIC database. The report cited two people briefed on the investigation. The FBI did not respond to requests for comment. The reports say this would be the second intrusion involving an FBI system in recent months. The BBC reported that President Donald Trump said in a Fox News interview on Saturday that he had \"just heard\" about the hack.",
+            "why_it_matters": "This database holds information on warrants and background checks. If it was breached, the information in it could be exposed or misused. For now, the reports do not say what data, if any, was taken. Readers should watch for official confirmation from the FBI.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0b72c03dcb6f2ab759be1becfd87ae96",
+          "slug": "signal-restricts-mobile-screenshots-to-counter-ai",
+          "title": "Signal restricts mobile screenshots to counter AI surveillance in operating systems",
+          "summary": "The app says Windows, Android, and iOS are giving AI agents screen-scanning abilities that undermine secure messaging.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance"
+            }
+          ],
+          "article": {
+            "background": "Signal is a messaging app known for strong privacy protections, which means its messages are scrambled so only the people in a chat can read them. Signal's president, Meredith Whittaker, has been vocal about the risks of AI tools that run across a phone or computer. Those tools are often called AI agents, meaning software that can act on a user's behalf. The reporting here does not describe earlier versions of this dispute.",
+            "what_happened": "Signal announced on Friday that it is limiting users' ability to take screenshots inside the app. Whittaker described operating systems that now include agentic AI as an \"existential threat\" to the app's privacy. She wrote that Windows, Android, and macOS/iOS let AI agents \"scan\" what is on a user's screen. She said that puts sensitive data within reach of whatever local or remote system the AI agent is using.",
+            "why_it_matters": "If you use Signal, your private chats may be easier for other software on your device to read. Signal says it cannot fully protect those messages once the operating system allows this kind of scanning. The change limits screenshots, so it is a direct response to that risk.",
+            "quote": {
+              "text": "Now, in service of AI agentic capabilities, your sensitive data is being captured, stored, and made accessible to whatever local database or remote server an OS-level AI agent is using at that moment.",
+              "attribution": "Meredith Whittaker, President of Signal",
+              "source_url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "e9cedf916c7708bcfde68af99b54da98",
+      "title": "Pakistan's solar revolution is so successful the national grid is lagging behind",
+      "url": "https://www.bbc.com/news/articles/ckvg2n2q3103o",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "ef0658d7f0a92aa5156e7173ed4d55a3",
+      "title": "The UN fails to agree on rules regulating ‘killer robots’",
+      "url": "https://www.theverge.com/tech/1039554/un-regulations-killer-robots",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "5ef213015e314f8d2f4d4dd9c8c95802",
+      "title": "Chinese-Born Neuroscientist Is Detained by ICE While Traveling from Conference",
+      "url": "https://www.nytimes.com/2026/11/20/science/chinese-scientist-detained-ice-princeton-eva-yi-xie-.html",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "5e238076365b8d03bbf7e54bb1d70385",
+      "title": "Amazon is complaining about NYC Council on shipping labels, too",
+      "url": "https://www.theverge.com/tech/1039564/amazon-nyc-council-packages-shipping-label",
+      "topic": "Regulation"
+    }
+  ],
+  "stats": {
+    "items_ingested": 92,
+    "clusters_considered": 73,
+    "stories_run": 11,
+    "sources": 15,
+    "sections_held": 1
+  }
+}
