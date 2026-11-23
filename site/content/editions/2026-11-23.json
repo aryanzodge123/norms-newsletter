@@ -1,0 +1,232 @@
+{
+  "date": "2026-11-23",
+  "edition_number": 169,
+  "edition_type": "normal",
+  "headline_of_the_day": "Democrats take largest House majority since 1992 after flipping North Carolina seat by 330 votes",
+  "headline_cluster_id": "99e51dbd331600e63c0ade5443ffca8d",
+  "headline_rationale": "Shifts control of a co-equal branch of government, affecting every piece of federal legislation and oversight for the next two years.",
+  "key_points": [
+    {
+      "text": "Democrats won the House with the largest majority since 1992 after flipping a North Carolina seat by 330 votes.",
+      "topic": "US Politics"
+    },
+    {
+      "text": "COP31 climate talks in Turkey ended without a major deal after becoming the longest UN climate conference in history.",
+      "topic": "World"
+    },
+    {
+      "text": "A suspected drone strike sank a Russian navy ship docked in Libya, escalating the Ukraine conflict to a third country.",
+      "topic": "World"
+    },
+    {
+      "text": "Energy bills in the UK are forecast to rise 26% in January for millions of households.",
+      "topic": "Finance"
+    },
+    {
+      "text": "Poundland, with 600 UK and Ireland stores, faces possible collapse into administration after its owner rejected rescue offers.",
+      "topic": "Business"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-23.mp3",
+    "duration_seconds": 450,
+    "size_bytes": 5399424
+  },
+  "sections": [
+    {
+      "name": "US politics",
+      "stories": [
+        {
+          "cluster_id": "99e51dbd331600e63c0ade5443ffca8d",
+          "slug": "democrats-flip-north-carolina-house-seat-by-330-votes",
+          "title": "Democrats flip North Carolina House seat by 330 votes, securing largest majority since 1992",
+          "summary": "Chuck Hubbard unseated Republican Virginia Foxx, giving Democrats the strongest House position in over three decades.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c6vg29g7dlyno?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The US House of Representatives is one of the two chambers of Congress, the national lawmaking body. Its members are elected from districts across the country. Control of the House is decided by how many seats each party wins in an election. Party control matters because the majority party decides which bills come up for a vote.",
+            "what_happened": "Democrat Chuck Hubbard unseated Republican Representative Virginia Foxx in North Carolina. The race was called on Sunday. Hubbard beat Foxx by 330 votes with 99% of ballots counted. The Democratic Party has now won at least 258 House seats, while Republicans hold at least 173. Four races have not been called yet. Neither party has won this many House races since 1992.",
+            "why_it_matters": "A larger House majority gives one party more power to pass laws and set the agenda in Congress. The House also helps decide how federal money is spent. For now, daily life changes little, but the result shapes which policies get debated in the next term.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "85c5b3477fef17952edf2b800af54722",
+          "slug": "us-army-plans-emergency-detonation-of-bomb-chemicals-in",
+          "title": "US Army plans emergency detonation of bomb chemicals in Iowa despite court hold",
+          "summary": "The Army invoked emergency provisions to avoid a judge's order halting the disposal over health concerns.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/us-news/2026/nov/22/army-blow-up-bomb-making-chemicals-iowa"
+            }
+          ],
+          "article": {
+            "background": "The US army has plans to blow up several tons of chemicals used to make bombs. The chemicals are stored in Iowa. A court order has paused those plans while the case moves forward. Critics have raised worries about health and environmental risks from the work.",
+            "what_happened": "The army plans to use emergency rules to get around that court order. Government lawyers filed their request with a federal appeals court late on Saturday. They said continued delays would make the work more dangerous. They also said colder weather is arriving soon. The lawyers wrote that protecting human health and the environment requires action now.",
+            "why_it_matters": "If the army goes ahead, the chemicals in Iowa could be destroyed much sooner than the court order allowed. People who live near the site would be most directly affected by any risks from the work. The court's next decision will decide whether the blast happens this winter or later.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "7f254d2eed78c4e02150cd379a8b88d0",
+          "slug": "cop31-climate-talks-end-without-deal-after-record-long",
+          "title": "COP31 climate talks end without deal after record-long negotiations",
+          "summary": "The UN conference in Turkey became the longest in history but failed to bridge divisions over fossil fuels.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqwy06zrd26lo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UN climate summit called COP31 is being held in Turkey. Countries use these talks to agree on new steps against climate change. Fossil fuels, like coal, oil and gas, are the main cause of global warming. Norm reported on November 22 that talks had stalled. The EU and Pacific island nations were pushing back against a draft that did not mention cutting the world's demand for fossil fuels.",
+            "what_happened": "Countries failed to reach a major new climate deal at COP31. Talks were due to finish on Friday but ran until Sunday. It became the longest UN climate conference in history. The final deal was unacceptable to the EU, Pacific island nations and others. It did not directly mention fossil fuels.",
+            "why_it_matters": "The outcome does not change daily life for most people yet. It shows how hard it is for countries to agree on fossil fuels and money. Poorer countries say richer nations made no clear money promises to help them adapt to a warmer world.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e911ee61b3395a9136d5eba5b59b5a1a",
+          "slug": "suspected-drone-strike-sinks-russian-ship-docked-at-libyan",
+          "title": "Suspected drone strike sinks Russian ship docked at Libyan port",
+          "summary": "The explosion at Benghazi naval base marks an escalation of the Ukraine conflict into North Africa.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "guardian_world",
+              "url": "https://www.theguardian.com/world/2026/nov/22/blast-russian-ship-suspected-drone-attack-benghazi-libya"
+            }
+          ],
+          "article": {
+            "background": "Benghazi is a port city on the coast of Libya. The ship involved was the Merkury, a Russian navy corvette. A corvette is a small, fast warship. The ship had stopped at the port to refuel and take on supplies. Sea drones are unmanned boats that can be steered remotely.",
+            "what_happened": "In the early hours of Sunday, an explosion hit a Russian ship docked at a naval base in Benghazi. Libya's eastern government said the blast was caused by a suspected drone attack. Officials told the Associated Press that at least four drones were intercepted and destroyed. Two others hit the ship. Satellite images showed the ship had sunk. The government said there were no casualties, and Moscow has not commented yet. Later on Sunday, the health ministry said it treated people with minor injuries from a separate commercial ship that was also targeted off the coast.",
+            "why_it_matters": "For most readers, this does not change daily life right away. It shows that attacks on ships can reach ports far from where the conflict started. Shipping and port security may be discussed more in the coming days.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "34b1eced2f6eb60a7944294907e05b89",
+          "slug": "russian-strike-on-kyiv-region-residential-building-kills",
+          "title": "Russian strike on Kyiv region residential building kills six, injures six more",
+          "summary": "The early morning attack in Dymer village left several bodies recovered and multiple people missing.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cre3dvd1k9y1o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia has been striking Ukraine for years, and attacks on homes and apartment buildings are a common part of the war. Dymer is a village in the Kyiv region, the area around Ukraine's capital. Ukraine's State Emergency Services is the government agency that searches for people after disasters and attacks. The excerpts do not give more history on this specific strike.",
+            "what_happened": "Russia struck a residential building in the village of Dymer, in the Kyiv region, early on a Sunday morning. Kyiv's regional head, Tymur Tkachenko, said the attack killed six people. Six more were injured, and others are still missing. Rescuers have recovered several bodies from the site. Warnings of more drone attacks nearby have slowed the search, but some people were evacuated earlier in the day.",
+            "why_it_matters": "This shows how the war reaches ordinary homes far from the front lines. For readers outside Ukraine, it is a reminder that civilian buildings are being hit. The excerpts do not describe any change in rules or policy that would affect daily life elsewhere.",
+            "quote": {
+              "text": "We are living a nightmare... only God knows when it will end.",
+              "attribution": "One woman, speaking to the BBC's Sarah Rains",
+              "source_url": "https://www.bbc.co.uk/news/videos/cre3dvd1k9y1o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "6cf1e5594b794b5c88ed5af52bc08ed2",
+          "slug": "fifa-to-confirm-uk-as-host-for-2035-women-s-world-cup",
+          "title": "FIFA to confirm UK as host for 2035 Women's World Cup",
+          "summary": "England, Northern Ireland, Scotland and Wales are the only bidders for the tournament.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/football/articles/cx30g83716lzo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Fifa is the world body that runs international football, including the World Cup. The Women's World Cup is the sport's major tournament for national women's teams. The 2035 edition needs a host, and four nations are bidding together to hold it. England, Northern Ireland, Scotland and Wales are the only bidders to propose a joint tournament. Their bid is called All Together.",
+            "what_happened": "Fifa is set to confirm on Monday that the UK will host the 2035 Women's World Cup. It would be the first football World Cup held in the United Kingdom since 1966. A delegation will be at Fifa's headquarters in Zurich, Switzerland. National football associations will hold a special virtual meeting and vote to approve the co-hosts. The tournament would include 104 matches, 48 teams and 39 days of play.",
+            "why_it_matters": "If the plan goes ahead, matches would be played at 19 venues across the four nations. Fourteen of those venues are in England, with the rest in Northern Ireland, Scotland and Wales. Fans in each of those nations would have matches close to home. The vote is set for Monday, so the answer should be clear soon.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "b1b9e9c2e9a2360b972e7fec35399763",
+          "slug": "mets-agree-450-million-contract-with-pitcher-tarik-skubal",
+          "title": "Mets agree $450 million contract with pitcher Tarik Skubal, record for position",
+          "summary": "The nine-year deal surpasses Yoshinobu Yamamoto's $325 million as the richest ever for a pitcher.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "guardian_sport",
+              "url": "https://www.theguardian.com/sport/2026/nov/22/tarik-skubal-new-york-mets-reported-deal-contract"
+            }
+          ],
+          "article": {
+            "background": "Tarik Skubal is a starting pitcher, the player who throws the most innings for a baseball team. He is a left-hander, which means he throws with his left arm. He has won the Cy Young Award twice, an honor given to the best pitcher in each league. He is a free agent, so his old contract has ended and he can sign with any team.",
+            "what_happened": "The New York Mets look to have agreed to a deal with Skubal, according to reports. The New York Post's Jon Heyman reported that the contract is worth $450 million over nine years. That would be the largest contract ever given to a pitcher in baseball history. The old record was $325 million over 12 years, which Yoshinobu Yamamoto signed with the Dodgers in 2024. Skubal turned 30 last week. In May he had surgery to remove loose bodies, which are small bits of bone or cartilage, from his left elbow. He reportedly also met with the Toronto Blue Jays and San Diego Padres.",
+            "why_it_matters": "For most fans, the main change is which team Skubal will pitch for in the coming seasons. The deal also raises the price teams may pay for top pitchers in future contracts. Its effect on everyday life is limited for now.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "ff8cb4c15cc0c7694269f222505aefbf",
+      "title": "Energy bills will soar - here's how you can ease the pain",
+      "url": "https://www.bbc.co.uk/news/articles/crm4rygl4m3o?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "5fa04e172e542c7e3d405f84ba2e8e49",
+      "title": "What is going on with Poundland?",
+      "url": "https://www.bbc.co.uk/news/articles/cm4g10p2r0g9o?at_medium=RSS&at_campaign=rss",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "6c28918c51f56508c087508c4f650915",
+      "title": "You couldn't have proved the Riemann hypothesis on a $200/month Claude/GPT plan",
+      "url": "https://greyenlightenment.com/2026/11/20/the-riemann-hypothesis-and-the-industrialization-of-mathematics",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "a6ba0bcf7680ac994a4cbd2513830564",
+      "title": "We haven’t seen the last of the major tech outages",
+      "url": "https://www.theverge.com/tech/1039851/major-tech-outages",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "82438449f5fe876ff57d3679afddcf3a",
+      "title": "GL.iNet Security Notice 2026-11-20",
+      "url": "https://www.gl-inet.com/en-us/blogs/blog/glinet-security-notice-2026-11-20",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 114,
+    "clusters_considered": 92,
+    "stories_run": 7,
+    "sources": 13,
+    "sections_held": 1
+  }
+}
