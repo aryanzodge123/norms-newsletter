@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-24",
+  "edition_number": 170,
+  "edition_type": "fallback",
+  "notice": "Today's brief is a short one. The usual edition could not be built, so here are the stories that ranked highest, with links to the sources. Full service resumes tomorrow.",
+  "stories": [
+    {
+      "rank": 1,
+      "title": "Russian incursions into NATO territory are increasing",
+      "score": 8,
+      "url": "https://www.npr.org/2026/11/23/nx-s1-6051013/russian-incursions-into-nato-territory-are-increasing",
+      "source": "npr_world"
+    },
+    {
+      "rank": 2,
+      "title": "Nvidia employees greet Jensen Huang like a hero as he returns to company’s HQ",
+      "score": 8,
+      "url": "https://techcrunch.com/2026/11/23/nvidia-employees-greet-jensen-huang-like-a-hero-as-he-returns-to-companys-hq",
+      "source": "techcrunch"
+    },
+    {
+      "rank": 3,
+      "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
+      "score": 7,
+      "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn",
+      "source": "arstechnica"
+    },
+    {
+      "rank": 4,
+      "title": "Ethics probe finds Democratic Rep. Jimmy Gomez made unwelcome sexual advances to a staffer",
+      "score": 6,
+      "url": "https://www.pbs.org/newshour/politics/ethics-probe-finds-democratic-rep-jimmy-gomez-made-unwelcome-sexual-advances-to-a-staffer",
+      "source": "pbs_politics"
+    },
+    {
+      "rank": 5,
+      "title": "Math’s holy grail, the Riemann hypothesis, appears solved with AI’s help",
+      "score": 6,
+      "url": "https://www.sciencenews.org/article/riemann-hypothesis-solved-math-ai",
+      "source": "science_news"
+    },
+    {
+      "rank": 6,
+      "title": "Federal appeals court gives President Donald Trump a path to erasing hush money conviction",
+      "score": 6,
+      "url": "https://www.pbs.org/newshour/politics/federal-appeals-court-gives-president-donald-trump-a-path-to-erasing-hush-money-conviction",
+      "source": "pbs_politics"
+    },
+    {
+      "rank": 7,
+      "title": "What strike on Russian ship in Libya says about spread of Ukraine war",
+      "score": 6,
+      "url": "https://www.bbc.co.uk/news/articles/cm894p88jzxpo?at_medium=RSS&at_campaign=rss",
+      "source": "bbc_world"
+    },
+    {
+      "rank": 8,
+      "title": "Severe drought pushes millions in Afghanistan deeper into crisis",
+      "score": 5,
+      "url": "https://www.pbs.org/newshour/show/severe-drought-pushes-millions-in-afghanistan-deeper-into-crisis",
+      "source": "pbs_world"
+    },
+    {
+      "rank": 9,
+      "title": "Alcohol use reduces efficacy of immunotherapy by disrupting antitumor immunity",
+      "score": 5,
+      "url": "https://www.science.org/doi/10.1126/scisignal.aef1375",
+      "source": "hackernews"
+    },
+    {
+      "rank": 10,
+      "title": "Trump halts Iowa detonation, says new governor to blame if it blows accidentally",
+      "score": 5,
+      "url": "https://arstechnica.com/health/2026/11/trump-halts-iowa-detonation-says-new-governor-to-blame-if-it-blows-accidentally",
+      "source": "arstechnica"
+    }
+  ]
+}
