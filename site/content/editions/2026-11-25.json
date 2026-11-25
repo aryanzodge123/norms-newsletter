@@ -1,0 +1,182 @@
+{
+  "date": "2026-11-25",
+  "edition_number": 171,
+  "edition_type": "normal",
+  "headline_of_the_day": "Energy bills will rise by 26 percent in January as regulator raises price cap after gas surge",
+  "headline_cluster_id": null,
+  "headline_rationale": "Affects millions of households directly through higher costs at the coldest time of year, with an immediate January start date.",
+  "key_points": [
+    {
+      "text": "Energy bills will rise 26 percent in January, adding about 37 pounds a month per home.",
+      "topic": "Finance"
+    },
+    {
+      "text": "A US jury found Huawei guilty of trade secret theft and fraud but cleared it of racketeering.",
+      "topic": "World"
+    },
+    {
+      "text": "Hackers broke into 24 Check Point management servers at 22 organizations using AI tools.",
+      "topic": "Cyber"
+    },
+    {
+      "text": "A spacecraft reached an asteroid to check damage from NASA's 2022 crash test.",
+      "topic": "Science"
+    },
+    {
+      "text": "Senegal got back the Africa Cup of Nations title after a sports court overturned Morocco's win.",
+      "topic": "Sports"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-25.mp3",
+    "duration_seconds": 26,
+    "size_bytes": 313344
+  },
+  "sections": [
+    {
+      "name": "Science",
+      "stories": [
+        {
+          "cluster_id": "f32385157c919909aaca288e9fc125ba",
+          "slug": "spacecraft-returns-to-asteroid-four-years-after-crash-test",
+          "title": "Spacecraft returns to asteroid four years after crash test",
+          "summary": "NASA's probe will assess damage from the 2022 collision that knocked the rock off course.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cw8dv112r5gmo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Asteroids are rocks that orbit the Sun, and some pass near Earth. In 2022, Nasa sent a spacecraft called Dart to crash into one on purpose. The goal was to knock the space rock off course. The Nasa craft was destroyed on impact.",
+            "what_happened": "The asteroid poses no threat to Earth. Four years after the crash, a European Space Agency mission called Hera has arrived at the asteroid. Its job is to study the damage from the collision. The first images from Hera are set to be released on Wednesday.",
+            "why_it_matters": "For now, this changes little for most people, because the asteroid poses no threat. The test checks whether a spacecraft can change the path of a space rock. That matters only if a dangerous asteroid is ever found heading toward Earth.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f3c20f6f5f906cbd810e5fd5e01600c9",
+          "slug": "china-launches-space-mission-with-first-pakistan-astronaut",
+          "title": "China launches space mission with first Pakistan astronaut aboard",
+          "summary": "Muhammad Zeeshan Ali became the first foreign national to visit the Tiangong space station.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/videos/cmz74l0yzzvyo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": null
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "a04d1831b7e342ecd88455289e201078",
+          "slug": "hackers-compromise-24-check-point-servers-using-ai-tools",
+          "title": "Hackers compromise 24 Check Point servers using AI tools",
+          "summary": "The campaign hit financial, energy, and government groups in 22 countries.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html"
+            }
+          ],
+          "article": {
+            "background": "Check Point makes security software that businesses use to manage firewalls. A firewall is a system that filters network traffic. Security Management servers let staff control many firewalls from one place. A threat actor is a person or group that attacks computer systems. Attacks on this kind of server can give intruders deep access to a company's network.",
+            "what_happened": "An unknown threat actor is behind the campaign. The actor used AI-driven hacking tools against Check Point Security Management servers. Reports say 24 servers were compromised. The campaign affected 22 organizations around the world. GreyNoise tracks the activity as GreyNoise Threat 13, or GT13. Targets include financial services, energy, government, and transportation. Other targets include mining, engineering, and manufacturing firms. Targets span Europe, Asia, Australia, and the U.S. Reporting says attacks were confirmed between October 17 and November.",
+            "why_it_matters": "The attack shows criminals may use AI tools to break into business networks. For most people, this changes nothing directly yet. Banks, utilities, and city governments may use this kind of software. If they do, their network security could be at risk.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "73387a19e2ba7b8cb7cda7a1b4cca5c7",
+          "slug": "us-treasury-bureau-investigating-cybersecurity-breach",
+          "title": "US Treasury bureau investigating cybersecurity breach",
+          "summary": "Hackers got into some Financial Crimes Enforcement Network systems without permission.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.theverge.com/policy/1041957/fincen-treasury-cybersecurity-incident"
+            }
+          ],
+          "article": {
+            "background": "FinCEN is a bureau inside the US Treasury Department. Its full name is the Financial Crimes Enforcement Network. The Treasury Department handles federal money matters. A breach of unclassified information was reported at US spy agencies. The reported breach reached agencies including the CIA.",
+            "what_happened": "FinCEN said on Tuesday that it is investigating a cybersecurity incident. Someone got into some FinCEN systems without permission. The bureau said only a limited set of its systems was affected. It has not said how wide the breach goes or who caused it. FinCEN has shut down some systems as a precaution.",
+            "why_it_matters": "FinCEN tracks financial crime. Its investigation could matter to anyone whose money activity the bureau follows. For now, the full effects are not yet clear.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "bdb2f44d162136e0172801e82939fe00",
+          "slug": "phone-scam-wave-hits-cloud-accounts-at-financial-and-legal",
+          "title": "Phone scam wave hits cloud accounts at financial and legal firms",
+          "summary": "Com-affiliated hackers used phone calls to steal data and demand money since August.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_hacker_news",
+              "url": "https://thehackernews.com/2026/11/com-affiliated-hackers-hijack-cloud.html"
+            }
+          ],
+          "article": {
+            "background": "Vishing is short for voice phishing. It means scam phone calls that trick people into giving up login details. Attackers use these calls to get into company cloud accounts. Cloud accounts store company files online.",
+            "what_happened": "Palo Alto Networks Unit 42 says it has responded to many waves of vishing attacks. The attacks began in August 2026. Com-affiliated threat actors ran them. Some led to data theft and attempts to extort victims. The main targets are financial, healthcare, and legal services. Those sectors are in the U.S., the U.K., and Australia. Other targets include construction, high-technology, transportation, and manufacturing. Pharmaceutical, insurance, and real estate firms were also hit.",
+            "why_it_matters": "If a company holds your bank or medical records, be careful. Watch for unexpected callers who ask for passwords or login codes.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "304af08c6ff392b436aefb46ea5d260b",
+      "title": "Energy bills to rise by 26% from January",
+      "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "76a5077b3286471e0c383d3ee4226ceb",
+      "title": "Huawei found guilty of stealing US trade secrets but acquitted of racketeering",
+      "url": "https://www.bbc.co.uk/news/articles/cmy49ngydqzpo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "93df33f3179982ba4a18c376eb2de3c5",
+      "title": "Africa Cup title given back to Senegal after sports court rules against Morocco",
+      "url": "https://www.npr.org/2026/11/25/nx-s1-6053783/africa-cup-senegal-morocco",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "32b5e01691b48585f4a9c1cfa8db2a17",
+      "title": "Australians can sue big tech for online harm under digital duty of care law",
+      "url": "https://theconversation.com/australians-will-be-able-to-sue-big-tech-platforms-for-online-harm-under-digital-duty-of-care-law-297390",
+      "topic": "Regulation"
+    },
+    {
+      "cluster_id": "fc961bfcd7ccfaddf084cff808fb1582",
+      "title": "WordPress Blocks Six Backdoored WP Connect Plugins Before Malicious Releases Go Live",
+      "url": "https://thehackernews.com/2026/11/wordpress-blocks-six-backdoored-wp.html",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "9da202e7730e5744937c0187a203ad07",
+      "title": "Taking over US Treasury subdomains for $3 each",
+      "url": "https://www.intruder.io/research/taking-over-us-treasury-subdomains-for-3-each",
+      "topic": "Cyber"
+    }
+  ],
+  "stats": {
+    "items_ingested": 54,
+    "clusters_considered": 53,
+    "stories_run": 5,
+    "sources": 7,
+    "sections_held": 1
+  }
+}
