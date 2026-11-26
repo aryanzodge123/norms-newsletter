@@ -1,0 +1,250 @@
+{
+  "date": "2026-11-26",
+  "edition_number": 172,
+  "edition_type": "normal",
+  "headline_of_the_day": "US announces new tariffs on China, the European Union, and 12 other major trading partners",
+  "headline_cluster_id": "f9c5142ddd7f0a249a2c4941bb911cfc",
+  "headline_rationale": "Broad tariffs on major trading partners will raise prices for many household goods and reshape global trade relationships.",
+  "key_points": [
+    {
+      "text": "US announced tariffs on China, the EU, Japan, South Korea, Taiwan and nine other major trading partners.",
+      "topic": "World"
+    },
+    {
+      "text": "Poundland entered administration putting 11,000 jobs at risk, though stores remain open during the process.",
+      "topic": "Business"
+    },
+    {
+      "text": "Federal regulators approved SpaceX plan to launch one million satellites to build data centers in space.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "Court ruled Amazon must recall over 400,000 hazardous products sold by third-party sellers on its platform.",
+      "topic": "Regulation"
+    },
+    {
+      "text": "European spacecraft found chaotic debris field at asteroid Dimorphos four years after NASA deflection test.",
+      "topic": "Science"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-26.mp3",
+    "duration_seconds": 433,
+    "size_bytes": 5193504
+  },
+  "sections": [
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "ccde14f8356354861af228392759463f",
+          "slug": "poundland-enters-administration-putting-11-000-jobs-at-risk",
+          "title": "Poundland enters administration putting 11,000 jobs at risk across UK",
+          "summary": "Discount chain's stores stay open during administration as owners seek buyers for parts of business.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cm3vgdn037z4o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Poundland is a retailer with shops and distribution centres. Distribution centres are warehouses where goods are stored before they are sent to stores. When a company goes into administration, an outside professional takes control. That person tries to save the business, sell it, or break it up. Poundland's owners are based in the United States.",
+            "what_happened": "Poundland has collapsed into administration. Its owners could not find a buyer to keep it in business. About 11,000 jobs are now at risk. The shops and distribution centres will stay open and keep trading during the process. The business is likely to be broken up, and some stores may be sold to rival retailers. Poundland's US owners held talks with several possible bidders on a last-minute rescue deal. No agreement was reached.",
+            "why_it_matters": "If you shop at Poundland, its stores will stay open for now. Some of them may get new owners, so the shop you use could change hands. The biggest effect falls on the 11,000 people who work for the company. Their jobs are at risk, and what happens next depends on which buyers step in.",
+            "quote": {
+              "text": "no alternative but to take this decision",
+              "attribution": "Barry Williams, Poundland boss, in a note to staff",
+              "source_url": "https://www.bbc.co.uk/news/articles/cm3vgdn037z4o?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "e88fccce2d3037aa3b9c6ef2abbe71db",
+          "slug": "trump-tariffs-on-china-and-eu-could-raise-household-prices",
+          "title": "Trump tariffs on China and EU could raise household prices across categories",
+          "summary": "Administration plans new round of import taxes affecting everyday goods many Americans buy.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_economy",
+              "url": "https://www.pbs.org/newshour/show/how-trumps-newest-tariffs-could-impact-americans-and-the-economy"
+            }
+          ],
+          "article": {
+            "background": "Tariffs are taxes a country charges on goods brought in from other countries. They can make imported products cost more. Governments use them to shape trade and to protect or pressure certain industries.",
+            "what_happened": "The Trump administration announced plans for a new round of tariffs. The tariffs would apply to China, the European Union, and 12 other major trading partners. China would face the highest rate, a new 20% tariff on most products.",
+            "why_it_matters": "If the tariffs take effect, some imported goods could cost more. The reporting so far does not say how much prices would change or when. For now, this is an announcement, and the details that affect everyday shoppers are not yet clear.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "f9c5142ddd7f0a249a2c4941bb911cfc",
+          "slug": "us-announces-tariffs-on-china-eu-japan-south-korea-and-nine",
+          "title": "US announces tariffs on China, EU, Japan, South Korea and nine other partners",
+          "summary": "New taxes on imports will hit many of America's biggest trading partners starting soon.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "A tariff is a tax on goods brought into a country from abroad. President Donald Trump has made tariffs a central part of his trade policy. The US Supreme Court ruled that his earlier tariffs were illegal. The White House then began looking into the trade practices of other countries.",
+            "what_happened": "The US has announced a new set of tariffs. The taxes apply to imports from China, the European Union, and 12 other jurisdictions, including Japan, South Korea, and Taiwan. China faces the highest rate, up to 40%. Vietnam faces up to 35%. Others face either 20% or 25%.",
+            "why_it_matters": "Tariffs are paid on goods coming into the US, so they can affect what imported products cost. The excerpts do not say how much prices will change for shoppers. The full effect will depend on how businesses and trading partners respond.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "f4d2e78ef439b2681c3429b6b4e78e30",
+          "slug": "renovation-sparked-hong-kong-fire-that-killed-168-people",
+          "title": "Renovation sparked Hong Kong fire that killed 168 people last November",
+          "summary": "Fire at activity center near residential homes became one of the city's deadliest blazes.",
+          "score": 7,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cqx2wrkyrdn8o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Wang Fuk Court is an apartment complex in Hong Kong with eight blocks of homes. A renovation was meant to improve these homes. Some residents had lived there for a long time. Mrs Lau had called it home for the past 40 years.",
+            "what_happened": "On a sunny Wednesday afternoon, 26 November, Mrs Lau was at a dance class at an activity centre near her home. Around 14:45 she heard faint fire engine sirens, but did not think much of it. Later, calls from a friend told her the complex was ablaze. Her husband, a wheelchair user, was trapped inside their home. The blaze killed 168 people.",
+            "why_it_matters": "The fire shows how quickly a home can turn dangerous. People who live in buildings under renovation rely on that work being done safely. Mrs Lau had only moments to get out, and she learned what was happening from a friend's calls.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Regulation",
+      "stories": [
+        {
+          "cluster_id": "5d3db377521d989f381af5672ee8eb04",
+          "slug": "federal-regulators-approve-spacex-plan-to-launch-one",
+          "title": "Federal regulators approve SpaceX plan to launch one million satellites for space data centers",
+          "summary": "First approval of its kind allows company to use solar power for orbital processing.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss"
+            },
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo"
+            }
+          ],
+          "article": {
+            "background": "Data centres are large buildings full of computers. They store and process data, and they power many AI tools. Communities across the US have pushed back against new data centres built on the ground. SpaceX is a rocket and satellite company owned by Elon Musk. Its plan moves some of this work into orbit, far above Earth.",
+            "what_happened": "US regulators have approved a SpaceX plan to launch a million satellites into Earth's orbit. The Federal Communications Commission (FCC), the agency that oversees communications, announced the decision on Wednesday. The project is called Starmind. SpaceX wants the satellites to use sunlight for power. They would process data for AI and send the results back to Earth. The FCC said this is the first approval of its kind.",
+            "why_it_matters": "For most people, this does not change much yet. Launching satellites and building data centres in space will take time. The decision does set a precedent, so future space projects may follow the same path. If space data centres grow, they could affect how AI services are built and where the computing power sits.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ff9e4b2afbf9f6da9dc44a75a46e9240",
+          "slug": "court-confirms-amazon-must-recall-over-400-000-hazardous",
+          "title": "Court confirms Amazon must recall over 400,000 hazardous third-party products",
+          "summary": "Federal judge ruled company is a distributor responsible for product safety, not just logistics.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1042870/amazon-recall-order-cpsc"
+            }
+          ],
+          "article": {
+            "background": "Amazon runs an online marketplace where many outside companies sell their products. The US Consumer Product Safety Commission is the federal agency that works to keep dangerous consumer goods off the market. A recall is when a company or agency asks people to stop using a product, often because it could cause harm. Amazon has tried before to avoid recall duties for products sold on its site. This is its latest attempt, and it did not succeed.",
+            "what_happened": "A federal court in Maryland ruled in favor of the US Consumer Product Safety Commission. The ruling means Amazon must carry out recalls for more than 400,000 hazardous products. The agency argued that Amazon is a distributor of goods, meaning a business that gets products to buyers. Amazon argued it is only a logistics provider, a company that moves and stores goods. The court sided with the agency and said Amazon is responsible for recalled products that other companies sell on its platforms.",
+            "why_it_matters": "If you buy from Amazon, this ruling means the company must help get recall notices to people who bought unsafe items. Before this, a buyer might have had to rely only on the outside seller. The ruling sets a clear rule that Amazon carries part of that responsibility.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "aa99c1c6f88368d897967fd937831083",
+          "slug": "uk-government-to-publish-eu-treaties-with-ten-year",
+          "title": "UK government to publish EU treaties with ten-year termination clause",
+          "summary": "New deal texts include provision letting either side end agreements after a decade.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK and the EU agreed a new deal last week. A treaty is a formal agreement between countries that is legally binding. Border checks are the inspections that goods and travellers go through at a border. This story is about how the new deal could be ended.",
+            "what_happened": "The government and the EU are set to publish the texts of two treaties on Thursday afternoon. The UK government will also publish legislation to put most of the deal into UK law. The BBC understands the treaties include a 10-year termination clause. A termination clause sets out how an agreement can be ended. Under this clause, a party that ends the deal in that time would have to pay to rebuild border check facilities, which the new deal significantly scales back.",
+            "why_it_matters": "For now, this does not change much for most people. The clause makes ending the deal early costly, so a future government or the EU would have to weigh that cost. The reporting describes the costs as potentially significant but does not give figures.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "c0f6013f607a67388a155a9d0816ff36",
+      "title": "European spacecraft finds chaotic scene after asteroid deflection experiment",
+      "url": "https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "35b315b80aed81a452c28c3c83e6f0d6",
+      "title": "Defang Security Incident",
+      "url": "https://defang.io/blog/post/security-incident-november-2026",
+      "topic": "Cyber"
+    },
+    {
+      "cluster_id": "5f0bb44e68ba8bc8a936a8456353c335",
+      "title": "US stocks fall further as fears over AI intensify",
+      "url": "https://www.bbc.co.uk/news/articles/cq0md8g14zryo?at_medium=RSS&at_campaign=rss",
+      "topic": "Finance"
+    },
+    {
+      "cluster_id": "86b38560cc0034227c01b3591f2ba003",
+      "title": "Spanish elections: What you need to know and what's at stake",
+      "url": "https://www.bbc.co.uk/news/articles/c6wy4ejnyvdyo?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "1f367edd637a614d8a3e78ea44d6c030",
+      "title": "Georgia's Fulton County ordered to give copy of 2020 election records seized by FBI to state board",
+      "url": "https://www.pbs.org/newshour/politics/georgias-fulton-county-ordered-to-give-copy-of-2020-election-records-seized-by-fbi-to-state-board",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "e52be63eaabb5d99f70106a7be0ee1ba",
+      "title": "Alaska ends voter data agreement with Justice Department, which had been searching for noncitizens",
+      "url": "https://www.pbs.org/newshour/politics/alaska-ends-voter-data-agreement-with-justice-department-which-had-been-searching-for-noncitizens",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "359511ccc64bd7389acab1dc284647cd",
+      "title": "Thirty-one killed in massive fire as fuel tanker crashes on Cairo highway",
+      "url": "https://www.bbc.co.uk/news/articles/cqy7rn30v314o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "6104c3703782208ceedcb3685d7263b8",
+      "title": "&Aacute;brego Garc&iacute;a, a Salvadoran mistakenly deported by U.S., goes to Spain but hopes to return after Trump",
+      "url": "https://www.pbs.org/newshour/politics/abrego-garcia-a-salvadoran-mistakenly-deported-by-u-s-goes-to-spain-but-hopes-to-return-after-trump",
+      "topic": "US Politics"
+    }
+  ],
+  "stats": {
+    "items_ingested": 70,
+    "clusters_considered": 66,
+    "stories_run": 7,
+    "sources": 12,
+    "sections_held": 0
+  }
+}
