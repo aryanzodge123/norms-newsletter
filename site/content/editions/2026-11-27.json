@@ -1,0 +1,278 @@
+{
+  "date": "2026-11-27",
+  "edition_number": 173,
+  "edition_type": "normal",
+  "headline_of_the_day": "Two Italians killed in Kuwait strike that Italy and Kuwait blame on Iran",
+  "headline_cluster_id": "5f8671ff83ec990340e978c5f8c5c407",
+  "headline_rationale": "Cross-border strike with confirmed fatalities and international blame creates immediate security implications",
+  "key_points": [
+    {
+      "text": "Two Italian technicians died in a strike on a facility in Kuwait that both countries attribute to Iran, which denies responsibility.",
+      "topic": "World"
+    },
+    {
+      "text": "Nvidia paused chip server shipments to four Southeast Asian countries while checking partners meet US export rules.",
+      "topic": "AI"
+    },
+    {
+      "text": "North Korea's Kim Jong Un vowed to expand the country's nuclear arsenal after ignoring a US overture from Trump.",
+      "topic": "World"
+    },
+    {
+      "text": "Norse Atlantic Airways suspended all flights and may file for bankruptcy, leaving travelers with active bookings stranded.",
+      "topic": "Business"
+    },
+    {
+      "text": "Ukraine's president criticized the US for being too focused on the Middle East and not pushing Russia hard enough in peace talks.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-27.mp3",
+    "duration_seconds": 404,
+    "size_bytes": 4847040
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "0e0f62ce49e4bcebea3a4c23fba40b4c",
+          "slug": "nvidia-pauses-chip-shipments-to-four-southeast-asian",
+          "title": "Nvidia pauses chip shipments to four Southeast Asian countries",
+          "summary": "The company is checking whether regional partners meet US export requirements for AI hardware.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "techcrunch",
+              "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia"
+            }
+          ],
+          "article": {
+            "background": "The US limits which countries can buy the most advanced AI chips. These rules are meant to keep top chips away from certain foreign buyers. Nvidia designs many of the chips that power AI data centers, which are large computer facilities that train and run AI software. Manufacturing partners such as Dell and Super Micro build the complete servers that hold those chips.",
+            "what_happened": "According to a Wall Street Journal report, Nvidia has told its manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand, and Indonesia. The pause has no set end date. Nvidia is checking whether its partners in those countries follow US export requirements. The Journal reports that Chinese companies have used Nvidia chips remotely from data centers in these countries. The US Commerce Department closed that gap earlier this month, reportedly grudgingly.",
+            "why_it_matters": "For most people, this changes little right away. It shows how seriously the US is now enforcing rules on advanced chips. If the pause lasts, it could slow new AI computing projects in the four countries.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "21f2a4cf3cf6f9438471218d4aeed0a0",
+          "slug": "google-deepmind-lets-ai-agents-run-their-own-experiments",
+          "title": "Google DeepMind lets AI agents run their own experiments",
+          "summary": "Agents now control part of DeepMind's computing resources to test the next Gemini model.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant"
+            }
+          ],
+          "article": {
+            "background": "Google DeepMind is Google's artificial intelligence research lab. Gemini is the family of AI models the lab builds for Google's products. In the past, the lab often ran separate teams for special projects, such as AlphaFold and nuclear fusion research. Recent work has moved toward one general approach instead.",
+            "what_happened": "Google DeepMind now lets AI agents run experiments on their own. The experiments support the next Gemini model. AI agents are software programs that carry out tasks with little human help. Koray Kavukcuoglu, a vice president of research who leads Gemini development, described the change on the company's podcast. He said the lab now uses one general-purpose method for both science and products.",
+            "why_it_matters": "Recursive self-improvement means an AI system improving its own design with little human help. The reporting says that goal is still distant. For most people, this changes nothing they can see yet. It could affect how future Gemini models are built and how fast they arrive.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "461a943c6d416b0bb4ef2b446793d72f",
+          "slug": "norse-atlantic-suspends-all-flights-faces-bankruptcy",
+          "title": "Norse Atlantic suspends all flights, faces bankruptcy",
+          "summary": "The Norwegian low-cost carrier grounded its entire fleet of twelve Boeing 787 aircraft.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bbc.com/news/articles/c9kgmd0ldy0lo"
+            }
+          ],
+          "article": {
+            "background": "Norse Atlantic Airways is a Norwegian low-cost airline, meaning it sells cheap tickets by keeping its costs down. It flies long-haul routes, which are flights over long distances. The airline operates a fleet of 12 Boeing 787 jets from several European airports. Those airports include London Gatwick, Rome and Oslo.",
+            "what_happened": "Norse Atlantic has suspended all of its flights. The airline says it is working quickly to resolve what it calls a critical financial situation. It warned that if no solution is found, it intends to file for bankruptcy. Bankruptcy is a legal process where a company that cannot pay its debts asks a court for protection. Before the halt, the airline was advertising flights from London to Orlando, Cape Town, Bangkok and Phuket. On the day of the suspension, one plane was due to leave London for Orlando.",
+            "why_it_matters": "If you booked a Norse Atlantic flight, you will need to check with the airline about your trip. The airline's next steps will decide whether those flights and tickets go ahead. For most travelers, this is a reminder to check the airline's status before paying for a long trip.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "4ac24a2c1d1703de978d604aed34d490",
+          "slug": "uk-will-pay-eu-participation-fee-under-new-trade-deals",
+          "title": "UK will pay EU participation fee under new trade deals",
+          "summary": "The charge covers running costs for EU agencies and systems the agreements require.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_business",
+              "url": "https://www.bbc.co.uk/news/articles/ck2057x387ego?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "The UK has made new agreements with the European Union. The EU is a group of European countries that share rules and a common budget. EU members pay into that shared budget. Agencies are the official bodies that run EU programs and systems.",
+            "what_happened": "According to legal documents, the UK will pay a \"participation fee\" to the EU. The fee is part of the deals agreed by Andy Burnham. It will help cover running costs of EU agencies and systems needed for two of the agreements. The prime minister unveiled those agreements last week. The UK will also pay a contribution toward shared costs. That contribution broadly mirrors what EU members pay into the bloc's budget. The participation fee is paid on top of it.",
+            "why_it_matters": "The fee is public money the UK pays to the EU. The government says the deals will add billions to the economy each year. That estimate is the government's own, so readers should watch whether later figures support it.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "5f8671ff83ec990340e978c5f8c5c407",
+          "slug": "two-italians-killed-in-kuwait-strike-blamed-on-iran",
+          "title": "Two Italians killed in Kuwait strike blamed on Iran",
+          "summary": "The workers were technicians at a German arms factory when the strike occurred.",
+          "score": 8,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c39w9y5dx4k5o?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Rheinmetall is a German company that makes arms, meaning weapons and military equipment. The two men worked for it as technicians, people who install, run, and repair complex equipment. Kuwait is a small country in the Middle East. Iran is a large country in the same region.",
+            "what_happened": "Two Italian nationals died after a strike on a facility in Kuwait. Italy's foreign ministry said the two men were technicians working for Rheinmetall. Both countries involved have blamed Iran for the strike. Iran denies responsibility. Iran's foreign minister, Abbas Araghchi, said the incident looked suspicious. He said Tehran would work with Kuwait and Italy to determine the cause. Kuwait's defence ministry said falling shrapnel from drones injured several people.",
+            "why_it_matters": "For most readers, this changes little in daily life for now. It does show how one strike can pull several countries and a private company into the same dispute. The cause is still being investigated, so the picture may change.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0eb7a71e0ee982db3ae81f5ea1ca9170",
+          "slug": "north-korea-s-kim-vows-to-expand-nuclear-arsenal-after",
+          "title": "North Korea's Kim vows to expand nuclear arsenal after rejecting Trump overture",
+          "summary": "The announcement followed Kim ignoring a recent approach from the US president.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "pbs_world",
+              "url": "https://www.pbs.org/newshour/world/north-koreas-kim-vows-to-build-more-nuclear-weapons-after-ignoring-trumps-overture"
+            }
+          ],
+          "article": {
+            "background": "North Korea is a closed country that has built nuclear weapons despite years of international pressure and sanctions. Its leader, Kim Jong Un, has long treated these weapons as central to the country's security. The United States, under President Donald Trump, has tried to open talks with Pyongyang, the capital.",
+            "what_happened": "North Korean leader Kim Jong Un visited facilities that produce nuclear ingredients. He called for building more nuclear weapons. The visit came days after he ignored an offer from President Trump to talk. The report was published by the Associated Press from Seoul, South Korea.",
+            "why_it_matters": "For now this changes nothing for most people directly. It does show that talks between the two countries are not moving forward. More nuclear weapons in North Korea can raise long-term security concerns across the region.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "7d5705fcf9f8bdf0fc0b73d4a37806a4",
+          "slug": "zelensky-tells-bbc-the-us-is-too-focused-on-middle-east",
+          "title": "Zelensky tells BBC the US is too focused on Middle East",
+          "summary": "Ukraine's president said delays in missile deliveries are costing Ukrainian lives during the war.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Russia invaded Ukraine in 2022, and the two countries have been at war since then. The United States has been one of Ukraine's main supporters, and peace talks have been held to try to end the fighting. Anti-ballistic missiles are weapons designed to shoot down missiles that travel through the air at high speed.",
+            "what_happened": "Ukrainian President Volodymyr Zelensky said delays in delivering anti-ballistic missiles from the US are costing Ukrainian lives. He also said the US is not pushing Russia hard enough during peace talks. He spoke to the BBC at his office in central Kyiv. He also said it was \"strange\" that Donald Trump posted a picture of himself embracing Vladimir Putin and called Putin his \"friend\".",
+            "why_it_matters": "Delays in weapons and the pace of peace talks can affect how long the war lasts. For most people outside Ukraine, the change is not yet clear. The comments show a rift between Kyiv and Washington over how to deal with Russia.",
+            "quote": {
+              "text": "He's an aggressor, and a killer…He can't be a friend.",
+              "attribution": "Volodymyr Zelensky, President of Ukraine",
+              "source_url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "a1c229b5da55c12f1767569faa49e9d9",
+          "slug": "sap-confirms-suspicious-activities-on-its-github-platform",
+          "title": "SAP confirms suspicious activities on its GitHub platform",
+          "summary": "The software company said it identified the activities and responded quickly to the incident.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.faz.net/agenturmeldungen/dpa/sap-haben-verdaechtige-aktivitaeten-identifiziert-201721612.html"
+            }
+          ],
+          "article": {
+            "background": "SAP is a large German software company. It makes programs that big businesses use to run things like finance, sales, and supplies. GitHub is a website where software developers store, share, and work on computer code. Companies often keep some of their code there.",
+            "what_happened": "SAP says it found suspicious activities on its GitHub platform. The company says it acted quickly and took the steps it needed to protect customers and keep its services secure. SAP made this statement to the German Press Agency, dpa, when asked. The reporting available so far does not say what kind of activity it was or when it happened.",
+            "why_it_matters": "If you or your work uses SAP products, watch for direct notices from the company. For most people, nothing changes yet. The open questions about what happened will shape how much risk there is for customers.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "0044efed29a5a344f4fc8ceb4b1911ad",
+          "slug": "us-government-reportedly-under-ai-driven-cyberattack",
+          "title": "US government reportedly under AI-driven cyberattack",
+          "summary": "Details of the attack's scale and impact remain unconfirmed from initial reports.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.forbes.com/sites/the-wiretap/2026/11/25/us-government-under-ai-cyberattack"
+            }
+          ],
+          "article": null
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "5ab41ea9143d5adb2495b5b639476fb8",
+      "title": "No post-match drug testing in South Africa v New Zealand series",
+      "url": "https://www.bbc.co.uk/sport/rugby-union/articles/c69309lz275wo?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "2ecb06ea9f181397039a08dc20361b7d",
+      "title": "Egyptian structure hidden beneath Nile mud for 2,600 years detected from space",
+      "url": "https://www.cnn.com/2026/11/26/science/egypt-structure-buto-ancient-building-techniques",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "828e78aa4ce29bcd07e7ce0d1f1612cd",
+      "title": "Death-sentenced Sheikh Hasina's planned return puts Bangladesh on edge - and India in a bind",
+      "url": "https://www.bbc.co.uk/news/articles/cx30g71rev23o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "8e3c9fe11c7ab513db3a1f17cc749cf8",
+      "title": "Zelensky questions 'strange' Trump-Putin friendship in BBC interview",
+      "url": "https://www.bbc.co.uk/news/videos/cm9309nwk7x9o?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "d4f0035292f93a7ba9089d76665a2fde",
+      "title": "Diesel tanker carrying up to 7,000 tonnes capsizes near Ibiza, killing one",
+      "url": "https://www.bbc.co.uk/news/articles/c9gklryvj24do?at_medium=RSS&at_campaign=rss",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "bb3028f28b3947bd7373b9330f2c4bde",
+      "title": "Australia's sandpapergate probe to also include 2017-18 Ashes",
+      "url": "https://www.bbc.co.uk/sport/cricket/articles/cxdd1335nyj0o?at_medium=RSS&at_campaign=rss",
+      "topic": "Sports"
+    },
+    {
+      "cluster_id": "bc4a97519009a89ae9fdacf8516b3db0",
+      "title": "Asia made a big AI bet on Nvidia. What happens now?",
+      "url": "https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss",
+      "topic": "AI"
+    }
+  ],
+  "stats": {
+    "items_ingested": 81,
+    "clusters_considered": 57,
+    "stories_run": 9,
+    "sources": 11,
+    "sections_held": 1
+  }
+}
