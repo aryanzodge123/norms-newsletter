@@ -1,0 +1,382 @@
+{
+  "date": "2026-11-28",
+  "edition_number": 174,
+  "edition_type": "normal",
+  "headline_of_the_day": "Trump administration demanded Intel hand over 10 percent stake or face consequences",
+  "headline_cluster_id": "0bda6e00795caa2f5cdccdda005c70a9",
+  "headline_rationale": "Direct government pressure on a major US semiconductor company to surrender equity is an extraordinary assertion of executive power over private enterprise.",
+  "key_points": [
+    {
+      "text": "Trump administration told Intel to give the government 10 percent of the company or face unspecified consequences.",
+      "topic": "Business"
+    },
+    {
+      "text": "Nvidia Blackwell chips reached a Shanghai data center linked to a figure under US scrutiny despite export controls.",
+      "topic": "AI"
+    },
+    {
+      "text": "Spain holds a national election that could shift the government, with the prime minister defying polls.",
+      "topic": "World"
+    },
+    {
+      "text": "Poland signed a five-year contract worth $300 million with US software firm Palantir.",
+      "topic": "World"
+    }
+  ],
+  "audio": {
+    "url": "https://pub-e21b0c352c734e8e9617b06cec6bce55.r2.dev/norms-audio/audio/2026-11-28.mp3",
+    "duration_seconds": 590,
+    "size_bytes": 7085664
+  },
+  "sections": [
+    {
+      "name": "Artificial intelligence",
+      "stories": [
+        {
+          "cluster_id": "a06bdce175e630a12943e7969d3e0f90",
+          "slug": "nvidia-blackwell-chips-installed-at-shanghai-site-tied-to",
+          "title": "Nvidia Blackwell chips installed at Shanghai site tied to Alice Huang",
+          "summary": "Two Chinese firms installed restricted Blackwell semiconductors at a data center linked to Huang.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.bloomberg.com/news/articles/2026-11-27/nvidia-blackwell-chips-turn-up-at-china-site-tied-to-alice-huang"
+            }
+          ],
+          "article": {
+            "background": "Nvidia is a US chipmaker. Its chips are the powerful processors that many AI systems run on. Chips like these are called semiconductors. The GB300 NVL72 is a rack, a metal frame that holds computer hardware, and it is among Nvidia's most powerful products. Alice Huang is the woman at the center of a controversy involving Nvidia, according to the report.",
+            "what_happened": "Two Chinese companies installed Nvidia Blackwell chips at a data center in Shanghai. A data center is a building full of computer servers. The data center is linked to Alice Huang. Documents submitted to Chinese regulators in November list a serial number for a GB300 NVL72 rack at the site. One company, Shanghai Shuoyao, offered the hardware as collateral for a 96 million yuan loan, about $14 million. Filings from Shanghai Innovation Bank, the lender, show the loan.",
+            "why_it_matters": "For most readers, this does not change what they pay or use today. It shows where some of the most advanced chips end up and who is using them. The reporting so far does not show a direct effect on everyday users.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "ea610c8fea1c3ede224abe714fa3add1",
+          "slug": "north-carolina-woman-evicted-after-landlord-s-ai-approved",
+          "title": "North Carolina woman evicted after landlord's AI approved late rent payment",
+          "summary": "Laura Mack lost her home after an AI assistant sent an email she believed approved her delay.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai"
+            }
+          ],
+          "article": {
+            "background": "Colony Townhome Apartments is a rental complex in Raleigh, North Carolina. Laura Mack rented a unit there. Her account of a payment exchange with the complex is the center of this story. Emails reviewed by WRAL, a local news outlet, appeared to come from the complex and accepted a later payment date.",
+            "what_happened": "Laura Mack was evicted on 19 November. She owed $3,934.17 in overdue rent. An email that appeared to come from the complex indicated she could pay the full balance by 30 November. She says an AI assistant sent that message without her knowledge. The complex has not confirmed her account of the exchange.",
+            "why_it_matters": "Tenants may receive messages from automated tools that look like they come from a landlord. A message like this can affect whether a person keeps their home. The case raises questions about who is responsible when an automated system makes a promise to a customer.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "2e897cbb5fe6b092a3854d86f42dee9d",
+          "slug": "google-announces-deepcrossattention-architecture-with-speed",
+          "title": "Google announces DeepCrossAttention architecture with speed gains",
+          "summary": "The new transformer design uses learnable weights to combine layer outputs up to three times faster.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://research.google/blog/supercharging-transformer-residual-connections"
+            }
+          ],
+          "article": {
+            "background": "Many modern AI systems are built on transformer networks, which process information through a stack of layers. Each layer passes its results to the next one. Google Research compares this to a giant game of Telephone, where a message gets a little garbled at each step. Engineers use shortcuts called residual connections to carry earlier information forward. The blog says these shortcuts can dilute, or thin out, what the model learned early on.",
+            "what_happened": "Google Research described a new design called DeepCrossAttention, or DCA. DCA lets a model combine outputs from earlier layers using learnable weights, which are numbers the model adjusts during training. The team presented the work in an ICML 2025 paper. The blog says models can reach the same quality up to three times faster. It adds only a negligible increase in parameters, the adjustable numbers inside a model.",
+            "why_it_matters": "For most people this is a behind-the-scenes change. If the speed gain holds up, AI tools could be built or run with less computing time for similar results. The excerpts do not say whether or when any product will use DCA.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "stories": [
+        {
+          "cluster_id": "0bda6e00795caa2f5cdccdda005c70a9",
+          "slug": "trump-administration-demanded-10-percent-stake-in-intel",
+          "title": "Trump administration demanded 10 percent stake in Intel",
+          "summary": "Commerce officials told Intel to hand over equity immediately or face unspecified consequences.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.wired.com/story/inside-trumps-demands-to-another-chips-ceo"
+            }
+          ],
+          "article": {
+            "background": "Intel is one of the world's largest makers of computer chips. In August 2025, according to internal notes from a company call, a Commerce Department lawyer told Intel's chief financial officer that the government wanted a stake in the company. The notes were later filed in a federal lawsuit.",
+            "what_happened": "A Commerce Department lawyer, David Shapiro, told Intel's chief financial officer not to treat the talks as a negotiation. According to notes of the call, he said the President expected to announce a deal on these terms that Friday. Shapiro also said the board could choose not to accept the offer. The notes describe a summary of his remarks prepared for Intel's directors.",
+            "why_it_matters": "For now, this does not change much for most people directly. It does show how the government may use its power over large companies. Chips power phones, cars, and many everyday devices, so rules that shape chipmakers can affect the prices and products people see over time.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "6a857b36f507f47bfea12bf75ee2e7b9",
+          "slug": "musk-pledges-two-spacex-shares-for-every-child-in-america",
+          "title": "Musk pledges two SpaceX shares for every child in America",
+          "summary": "The $18 billion pledge would give each American child two SpaceX shares from company and Musk.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://finance.yahoo.com/markets/stocks/articles/musk-makes-18-billion-spacex-053902980.html"
+            }
+          ],
+          "article": {
+            "background": "Elon Musk owns SpaceX, a rocket and satellite company. On Oct. 19, he promised that every child in the U.S. would receive one SpaceX share next year. He called it the \"first of many.\" Musk owns billions of dollars in SpaceX stock. Michael Dell gave a large gift to Trump accounts before this.",
+            "what_happened": "On Wednesday, Musk pledged two SpaceX shares for every child in America. That doubles his October offer of one share. He said the shares would come from the company and from him personally. He made the statement in a post on X. Using about 72 million minors in the U.S. from Census estimates, and SpaceX's closing price on Wednesday, the gift would be worth about $18.35 billion.",
+            "why_it_matters": "The pledge would be worth roughly $255 per child at Wednesday's price, by this estimate. A pledge is not the same as shares in a child's hands. How and when families would receive the stock is not yet clear. For now, most families see no change in what they pay or own.",
+            "quote": {
+              "text": "Every child in America will receive two SpaceX shares, one from the company and one from me personally.",
+              "attribution": "Elon Musk, in a post on X",
+              "source_url": "https://finance.yahoo.com/markets/stocks/articles/musk-makes-18-billion-spacex-053902980.html"
+            }
+          }
+        },
+        {
+          "cluster_id": "d476fec18398bf6943f35820acdd1608",
+          "slug": "allstate-website-and-app-down-since-monday-in-multi-day",
+          "title": "Allstate website and app down since Monday in multi-day outage",
+          "summary": "The insurer's customer-facing systems including roadside assistance have been unavailable since Monday.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "the_verge",
+              "url": "https://www.theverge.com/tech/1044612/allstate-has-been-suffering-an-outage-since-monday"
+            }
+          ],
+          "article": {
+            "background": "Allstate is one of the largest car and home insurance companies in the United States. Customers use its website and mobile app to view policies, make payments, and request roadside help. Outages like this one stop those everyday tasks until service comes back. Other large companies, including Microsoft and JPMorgan Chase, have also had outages in recent weeks.",
+            "what_happened": "Allstate began having an outage on Monday, November 23. The problem has affected its website, its mobile apps, and its roadside assistance service. As of Friday afternoon, customers still appeared unable to reach their accounts through the app or site. Allstate pointed reporters to a notice on its website that says it has been dealing with an outage since Monday.",
+            "why_it_matters": "If you hold an Allstate policy, you may have had trouble checking your account or getting roadside help during this outage. Problems like this can be stressful if you need help right away. The outage has lasted several days, so it is worth checking Allstate's website for updates if you rely on its services.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "stories": [
+        {
+          "cluster_id": "e292ce4e8c621327e8dfec84f6d7e4b6",
+          "slug": "spain-holds-national-election-with-government-control-at",
+          "title": "Spain holds national election with government control at stake",
+          "summary": "Prime Minister Sánchez told supporters he expects to defy polls predicting a conservative victory.",
+          "score": 6,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/c8wy5p4gdnwvo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Spain holds a national election on Sunday. The main contest is between Prime Minister Pedro Sánchez, of the Socialist party, and Alberto Núñez Feijóo, leader of the conservative People's Party (PP). Both leaders held final rallies to win votes before the vote.",
+            "what_happened": "Sánchez told supporters at his last rally that he is confident he will beat the polls. \"I cannot imagine us losing,\" he said. He accused Feijóo of planning a coalition with the far right. Feijóo's PP is narrowly ahead in the polls. In the final hours of the campaign, he travelled to Barcelona and then Seville, promising voters a new era of \"truth, decency and good governance.\"",
+            "why_it_matters": "The result decides who runs Spain's government for the next several years. Government decisions shape taxes, public services, and daily life. Because the race is close, the outcome is hard to predict.",
+            "quote": {
+              "text": "I cannot imagine us losing.",
+              "attribution": "Pedro Sánchez, Spanish Prime Minister",
+              "source_url": "https://www.bbc.co.uk/news/articles/c8wy5p4gdnwvo?at_medium=RSS&at_campaign=rss"
+            }
+          }
+        },
+        {
+          "cluster_id": "6894525a885a091251eebbcb9ac62f8d",
+          "slug": "poland-signs-five-year-300-million-contract-with-palantir",
+          "title": "Poland signs five-year $300 million contract with Palantir",
+          "summary": "The government contracted with the US software firm for an undisclosed scope of work.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.reuters.com/technology/poland-signs-contract-with-palantir-worth-300-mln-over-5-years-2026-11-27"
+            }
+          ],
+          "article": null
+        },
+        {
+          "cluster_id": "a462d46aa777de6e00267626ec7c8c49",
+          "slug": "kenneth-law-apologizes-to-victims-families-at-sentencing",
+          "title": "Kenneth Law apologizes to victims' families at sentencing hearing",
+          "summary": "The Canadian who sold toxic chemicals through suicide forums told a court he deeply regrets his actions.",
+          "score": 5,
+          "sources": [
+            {
+              "name": "bbc_world",
+              "url": "https://www.bbc.co.uk/news/articles/cmx2898wq2qjo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Kenneth Law is a Canadian man who sold toxic chemicals. He sold them through online suicide forums, which are websites where people talk about ending their own lives. His sales reached buyers in 40 countries. Law is 61 years old.",
+            "what_happened": "On Friday, Law apologised in court to the families of the victims. He said he deeply regrets his actions and will never repeat them. Prosecutors asked the judge to give him a 25-year prison term. In May, Law pleaded guilty to 14 counts of helping 14 people die by suicide in Ontario, Canada. He has also admitted that he caused the deaths of dozens of people in England and Wales.",
+            "why_it_matters": "For most people, this case does not change daily life. It does show how an online seller can reach buyers across many countries. The judge's sentence will decide how long Law stays in prison.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "57437dd5ab0cd2aa225f349bd8fac6bb",
+          "slug": "dutch-foreign-minister-urges-us-to-drop-asml-restrictions",
+          "title": "Dutch foreign minister urges US to drop ASML restrictions",
+          "summary": "Tom Berendsen asked Washington not to adopt the proposed MATCH Act targeting ASML's China business.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://nltimes.nl/2026/11/25/dutch-foreign-minister-urges-us-drop-proposed-restrictions-asml-china"
+            }
+          ],
+          "article": {
+            "background": "ASML is a Dutch company that makes chipmaking equipment. Chips are the small parts that power phones, computers, and cars. Governments set export controls, which are rules on what technology can be sold to other countries. A proposed U.S. law called the MATCH Act would add further limits on ASML's business in China.",
+            "what_happened": "Dutch Foreign Minister Tom Berendsen urged the United States not to pass the MATCH Act. He spoke to reporters on Wednesday after meetings with senior Chinese officials. During the visit, he met Chinese Vice Premier Ding Xuexiang and Foreign Minister Wang Yi. Berendsen said export controls are a matter for the Netherlands to decide.",
+            "why_it_matters": "For now this is only a proposal, so it changes nothing for most people. If passed, it would limit what a major chipmaking tool company can sell in China. Rules like this can affect how many chips get made over time.",
+            "quote": {
+              "text": "The MATCH Act must not be passed. That is the most important thing.",
+              "attribution": "Tom Berendsen, Dutch Foreign Minister",
+              "source_url": "https://nltimes.nl/2026/11/25/dutch-foreign-minister-urges-us-drop-proposed-restrictions-asml-china"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "stories": [
+        {
+          "cluster_id": "3f66c3c8da691f6408a1d1ab4780ee21",
+          "slug": "treasury-cio-updated-personal-game-project-during",
+          "title": "Treasury CIO updated personal game project during department hack",
+          "summary": "Sam Corcos pushed code to his civilization game clone while Treasury dealt with a cyberattack.",
+          "score": 4,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://www.404media.co/sam-corcos-legatum-treasury-cio-is-vibe-coding-a-civilization-clone-during-treasury-department-hack"
+            }
+          ],
+          "article": {
+            "background": "Sam Corcos is a co-founder of Levels, a health startup that makes glucose monitors, which track blood sugar. He became the Treasury Department's Chief Information Officer, its top technology official, near the start of Trump's second term. He was brought in as a hire tied to DOGE, the government efficiency effort. Since then he has been a leading promoter of AI use inside the administration. Vibe coding means building software by describing what you want to an AI tool.",
+            "what_happened": "The Treasury Department was dealing with the fallout of a hack that took down some of its services. During that time, Corcos was pushing updates to Legatum, a Civilization-style strategy game he built with vibe coding. The Financial Crimes Enforcement Network (FinCEN), a Treasury unit, was dealing with what it called a \"cybersecurity incident.\" Corcos's department is in charge of cybersecurity for the whole Treasury Department.",
+            "why_it_matters": "The office that guards Treasury's systems is led by the official who was working on the game during the hack. People who use government services should care how well those systems are protected. The reporting so far does not say how much was affected or for how long.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "fadc6c22036938330f600bc0b6e9c2a9",
+          "slug": "passkeys-offer-convenience-but-create-new-problems-for-users",
+          "title": "Passkeys offer convenience but create new problems for users",
+          "summary": "The passwordless login system eliminates phishing but introduces its own friction points.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "hackernews",
+              "url": "https://ssg.dev/passkey-blues"
+            }
+          ],
+          "article": {
+            "background": "A passkey is a way to log in to a website or app without typing a password. Your device creates a pair of secret keys. The public half goes to the website, and the private half stays with you or with a password manager. To log in, you confirm with a click, a PIN, or a fingerprint or face scan. Passkeys aim to replace passwords, which people often reuse or forget.",
+            "what_happened": "A post on ssg.dev, shared on Hacker News, argues that passkeys are useful but have real problems. The author says passkeys cannot be backed up the way a written-down password can. The passkey provider must keep your passkey safe and working. If that provider goes down, you may be unable to use the passkey.",
+            "why_it_matters": "If you use passkeys, you may need a plan for getting back into your accounts. Losing access to your provider could lock you out. For now, most people can keep using passwords alongside passkeys.",
+            "quote": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "stories": [
+        {
+          "cluster_id": "af42d507ae25f732fb5d636851fb3f80",
+          "slug": "nottingham-forest-beat-chelsea-3-2-at-city-ground",
+          "title": "Nottingham Forest beat Chelsea 3-2 at City Ground",
+          "summary": "Morgan Gibbs-White scored twice as Forest won their first home match against Chelsea since 1997.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/football/articles/cmwy85xxjgxvo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Nottingham Forest and Chelsea are both teams in the Premier League, the top tier of English football. The match was played at the City Ground, Forest's home stadium. Chelsea came into the game on a poor run, and this was their fourth defeat in five matches.",
+            "what_happened": "Igor Jesus scored first with a volley after just five minutes. Morgan Gibbs-White then scored twice in the second half. Emmanuel Emegha pulled two goals back for Chelsea, but Forest held on to win 3-2. It was Forest's first win over Chelsea at the City Ground since 1997.",
+            "why_it_matters": "For most people, this result changes little beyond the league table. For Forest fans, it ends a long wait for a home win over Chelsea.",
+            "quote": null
+          }
+        },
+        {
+          "cluster_id": "e268427798712423be3d8eb79ba67774",
+          "slug": "ireland-finishes-fifth-in-nations-championship-with-win",
+          "title": "Ireland finishes fifth in Nations Championship with win over Australia",
+          "summary": "Five tries gave Ireland a 38-14 victory and a fifth-place finish in the new tournament.",
+          "score": 3,
+          "sources": [
+            {
+              "name": "bbc_sport",
+              "url": "https://www.bbc.co.uk/sport/rugby-union/articles/cw987l0ej11mo?at_medium=RSS&at_campaign=rss"
+            }
+          ],
+          "article": {
+            "background": "Rugby union is a team sport played with an oval ball. Ireland and Australia are both national teams in the sport. This game was part of the Nations Championship, a new tournament between national teams. It was the first time the event had been held.",
+            "what_happened": "Ireland beat Australia 38-14 in London on Friday night. Ireland scored five tries, and Australia scored two. Ireland started slowly in a quiet stadium but still won comfortably. The win gave Ireland fifth place in the new tournament. Ireland also won all four of its November games, including a 20-17 win over South Africa the week before.",
+            "why_it_matters": "For most readers, this is a sports result with little effect on daily life. Fans of the teams will track where each side finishes in the new tournament.",
+            "quote": null
+          }
+        }
+      ]
+    }
+  ],
+  "briefly": [
+    {
+      "cluster_id": "f86772e01d1a125d88c62808e33cf9f3",
+      "title": "This purple electric Chinese minivan can go up to 559 miles on a charge",
+      "url": "https://www.theverge.com/transportation/1044706/this-purple-electric-chinese-minivan-can-go-up-to-559-miles-on-a-charge",
+      "topic": "Tech"
+    },
+    {
+      "cluster_id": "ca9a4fc116d75712f5294925f52490f8",
+      "title": "Alaska seized his plane over some beers. He is asking the Supreme Court for help",
+      "url": "https://www.reuters.com/legal/government/alaska-seized-his-seaplane-over-some-beers-he-is-asking-us-supreme-court-help-2026-11-27",
+      "topic": "US Politics"
+    },
+    {
+      "cluster_id": "28dd3930905d468aa6863dc8167b9a8c",
+      "title": "A clinic is reassessing people with ADHD and autism diagnoses - but critics fear it could deepen stigma",
+      "url": "https://www.bbc.co.uk/news/articles/cr9309nyg2vno?at_medium=RSS&at_campaign=rss",
+      "topic": "Science"
+    },
+    {
+      "cluster_id": "69edd69fcf3dfeb906d019d6f30af9e2",
+      "title": "Inflation has shoppers hunting for value. That bodes well for Black Friday",
+      "url": "https://www.cnbc.com/2026/11/27/black-friday-2026-inflation-value-deals.html",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "b746031b1fbf2e4a28c8b949cecb6de9",
+      "title": "Mexico's government is slamming a DEA crime tip line as foreign interference. Others are thrilled.",
+      "url": "https://www.pbs.org/newshour/world/mexicos-government-is-slamming-a-dea-crime-tip-line-as-foreign-interference-others-are-thrilled",
+      "topic": "World"
+    },
+    {
+      "cluster_id": "d7476513ee8151335f88982660765ca4",
+      "title": "NPR's All Things Considered Makes the Case for Data Centers",
+      "url": "https://www.npr.org/2026/11/26/nx-s1-6030630/the-case-for-data-centers",
+      "topic": "Business"
+    },
+    {
+      "cluster_id": "d163e6d6d6fed34c85aa43c99c398fa8",
+      "title": "American consumers face pitfalls with rise of 'buy now, pay later'",
+      "url": "https://www.pbs.org/newshour/show/american-consumers-face-pitfalls-with-rise-of-buy-now-pay-later",
+      "topic": "Finance"
+    }
+  ],
+  "stats": {
+    "items_ingested": 55,
+    "clusters_considered": 53,
+    "stories_run": 14,
+    "sources": 9,
+    "sections_held": 1
+  }
+}
